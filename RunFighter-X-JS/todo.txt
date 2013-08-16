@@ -1,0 +1,72 @@
+Tech Stuff:
+Write up:
+* verify wizard batch is only in memory once
+* what is the memory size of N sprites, how much memory per sprite, how much per batch?
+* how does sin/cos wave gen effect frame rate
+
+how to make a native function using bindings? how to make your own bindings
+can I use the cocos player? can i use cocosbuilder?
+content pipeline
+    **http json
+    http images - todo - right now, unconcerned, resource will get packed.
+    /*
+        var arrayBuffer = oReq.response; // Note: not oReq.responseText
+        if (arrayBuffer) {
+            var byteArray = new Uint8Array(arrayBuffer);
+    
+    */
+    *If needed: How to make my own js binding?
+    *how to save data locally 
+    *how to do offline sync
+    show modification to asset and behavior on the fly while live in the android store
+        -> get android device
+		* technique -> Pull file, use new Function(contents); 
+
+    websocket - ????
+collisions
+
+general character framework
+
+FTUE - cocos dialogs?
+
+GUI
+
+how to do 100 A/B tests per week
+how to internationalize javascript
+cocos - how to change a color of a sprite
+cocos - how to layer 2 sprites, create a sprite from multiple sheets?
+
+
+Design:
+What is collaborative? quests
+What is competition
+What are our consumables - bombs, mines
+CCS energy mechanic is difficulty and lives
+Clash - would be amazing if power was something you could share if you see your buddy got beat up, you can revenge.
+level = more heros on board = higher strength
+seasonal and limited addition heros
+CvC???
+wagering
+clan boards?
+what is an incentivized viral in this game? How to avoid looking like a viral?
+The Stoplight Test
+make people feel like heros
+weekly badges? hero points?
+could matching or mixing elements/characters cause chains?
+can we release a grid which is "ownable"?
+slot effect, build up, repeated, big win etc
+single player zones are coded with an element, some elements are anti others, those characters are weakened
+
+
+
+****
+Me
+Come up with OKRs
+Come up with time goals to OKRs
+Track time against OKRS
+
+
+
+
+
+

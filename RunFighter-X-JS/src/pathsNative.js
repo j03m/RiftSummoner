@@ -1,0 +1,2 @@
+var dirImg = "";
+var dirMusic = "";

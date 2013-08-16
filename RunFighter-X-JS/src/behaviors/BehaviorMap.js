@@ -1,0 +1,3 @@
+var BehaviorMap = {
+    'tank':TankBehavior
+}
