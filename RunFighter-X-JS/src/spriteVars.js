@@ -15,7 +15,7 @@ var spriteDefs = {
                 "delay": 0.1,
                 "type": 0
             },
-            "attack1": {
+            "attack": {
                 "start": 190,
                 "end": 206,
                 "delay": 0.1,
@@ -27,12 +27,12 @@ var spriteDefs = {
                 "delay": 0.1,
                 "type": 1
             },
-            "damage": {
-                "start": 242,
-                "end": 77,
-                "delay": 0.1,
-                "type": 1
-            },
+//            "damage": {
+//                "start": 242,
+//                "end": 277,
+//                "delay": 0.1,
+//                "type": 1
+//            },
             "dead": {
                 "start": 236,
                 "end": 257,
@@ -104,7 +104,7 @@ var spriteDefs = {
                 "delay": 0.1,
                 "type": 0
             },
-            "attack1": {
+            "attack": {
                 "start": 17,
                 "end": 34,
                 "delay": 0.1,
@@ -193,7 +193,7 @@ var spriteDefs = {
                 "delay": 0.1,
                 "type": 0
             },
-            "attack1": {
+            "attack": {
                 "start": 147,
                 "end": 175,
                 "delay": 0.1,

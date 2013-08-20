@@ -10,7 +10,7 @@ require("xmlhttp.js");
 require("eventemitter2.js");
 require("RequestManager.js");
 require("spriteVars.js");
-require("ArenaLayer.js");
+require("ArenaGame.js");
 
 
 

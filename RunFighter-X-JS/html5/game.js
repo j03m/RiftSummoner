@@ -46,11 +46,13 @@ var MW = MW || {};
 			'../src/jocos2d-js/eventemitter2.js',
 			'../src/jocos2d-js/xmlhttp.js',
 			'../src/jocos2d-js/RequestManager.js',
-			'../src/ArenaLayer.js',
-			'../src/spriteVars.js',
+            '../src/sha256.js',
+            '../src/TouchId.js',
+            '../src/spriteVars.js',
             '../src/behaviors/GeneralBehavior.js',
             '../src/behaviors/TankBehavior.js',
             '../src/behaviors/BehaviorMap.js',
+            '../src/ArenaGame.js',
 			'gameHtml5.js'
     
         ]

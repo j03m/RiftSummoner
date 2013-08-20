@@ -1,7 +1,7 @@
 if (typeof jc === 'undefined'){
     var jc = {};
     jc.log = function(array, msg){
-        console.log(msg);
+        //console.log(msg);
     }
 }
 
@@ -12,30 +12,12 @@ var TouchIdHandler =  function(params){
 	this.sha = params.sha;
 }
 
-TouchIdHandler.prototype.mapCells = function(touches){
-    var diffs = [];
-    //touches.sort(this.compare);
-    var guide = touches[0];
-    for (var i =1; i<touches.length; i++){
-        var diff = this.convertCell(touches[i], guide, this.cellSizePoints);
-        diffs.push(diff);
-    }
-    jc.log(['touchcore'],'returning');
-    return diffs;
-}
-
 TouchIdHandler.prototype.processTouches = function(touches){
 	//locate the guide
 	//guide is the closest point to 0, maxy
 	//sort by xy
-	touches.sort(this.compare);
-    var guide = touches[0];
-    jc.log(['touchcore'], 'Guide:');
-    jc.log(['touchcore'], guide.x + "," + guide.y);
-    jc.log(['touchcore'], 'Touches:');
-    for (var i =0;i<touches.length;i++){
-        jc.log(['touchcore'], touches[i].x + "," + touches[i].y);
-    }
+	//touches.sort(this.compare);
+    //var guide = touches[0];
 
 			
 	//use the guide to position our grid.
@@ -49,24 +31,23 @@ TouchIdHandler.prototype.processTouches = function(touches){
 		for(var ii=0; ii<touches.length; ii++){
             if (i != ii){
                 var diff = this.convertCell(touches[i], touches[ii], this.cellSizePoints);
-                jc.log(['touchcore'], "Diff Input: " + diff);
-                diff = Math.floor(diff/this.cellSizePoints);
-                jc.log(['touchcore'], "Diff Flat: " + diff);
                 //var diffId = i + '-' + ii + '-' + diff;
-                //jc.log(['touchcore'], "Cell Diff Id:: " + diffId);
+                jc.log(['touchid'], "Cell Diff Id: " + diff);
                 diffs.push(diff);
             }
         }
 	}
     diffs.sort();
-    jc.log(['touchcore'], 'Coverted:');
+    jc.log(['touchid'], 'Coverted:');
     for (var i =0;i<diffs.length;i++){
-        jc.log(['touchcore'], diffs[i]);
+        jc.log(['touchout'], diffs[i]);
         keyRaw+=this.serializeCell(diffs[i]);
     }
 
     //sha-256 the string
-	return this.sha.SHA256(keyRaw);
+	var sha = this.sha.SHA256(keyRaw).toString();
+    jc.log(['touchout'], sha);
+    return sha;
 	
 }
 
@@ -75,16 +56,34 @@ TouchIdHandler.prototype.serializeCell = function(diff){
 }
 
 TouchIdHandler.prototype.convertCell = function (cell, guide, pointSize){
-    var diffX = guide.x - cell.x;
-    var diffY = guide.y - cell.y;
+    var diffX = Math.abs(guide.x/pointSize - cell.x/pointSize);
+    var diffY = Math.abs(guide.y/pointSize - cell.y/pointSize);
 
     var diff = Math.sqrt(Math.pow(diffX,2)+Math.pow(diffY,2));
+    jc.log(['touchid'], "Distance: " + diff);
+
+    diff = Math.floor(diff);
+    jc.log(['touchid'], "Distance by cell width: " + diff);
+
+
+
+//    var angle =  Math.atan2(diffY, diffX) * 180 / Math.PI;
+//    jc.log(['touchid'], "Angle : " + angle);
+
     return diff;
+}
+
+TouchIdHandler.prototype.normalizeAngle=function(angle)
+{
+    var newAngle = angle;
+    while (newAngle <= -180) newAngle += 360;
+    while (newAngle > 180) newAngle -= 360;
+    return Math.floor(newAngle);
 }
 
 TouchIdHandler.prototype.printTouches = function (){
 	for(var i =0; i<this.touches.length;i++){
-		jc.log(['touchcore'], i + ' : ' + this.touches[i].x + "," + this.touches[i].y);
+		jc.log(['touchid'], i + ' : ' + this.touches[i].x + "," + this.touches[i].y);
 	}
 }
 

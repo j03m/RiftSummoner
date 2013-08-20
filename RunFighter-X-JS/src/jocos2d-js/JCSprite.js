@@ -1,5 +1,3 @@
-//REQUIRES: https://github.com/alexei/sprintf.js
-
 jc.AnimationTypeOnce=1;
 jc.AnimationTypeLoop=0;
 
@@ -17,7 +15,8 @@ if (!String.prototype.format) {
   
 jc.Sprite = cc.Sprite.extend({
     layer:undefined, //parent reference
-	initWithPlist: function(plist, sheet, firstFrame, name) {
+	alive:true,
+    initWithPlist: function(plist, sheet, firstFrame, name) {
 		this.animations = [];
 		this.batch = null;
 		this.state = -1;
@@ -26,8 +25,18 @@ jc.Sprite = cc.Sprite.extend({
 		this.nextState = 0;
 		this.idle = 0;
 		this.name = name;
+        this.slowRadius=200;
+        this.maxVelocity=100;
+        this.maxAcceleration=25;
+        this.velocity = cc.p(0,0);
+        this.targetVelocity = 100;
+        this.targetRadius = 100;
+        this.homeTeam = undefined;
+        this.enemyTeam = undefined;
+        this.acceleration = 0;
 		cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
 		this.batch = cc.SpriteBatchNode.create(sheet);
+        this.batch.retain();
 		var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame); 		
 		this.initWithSpriteFrame(frame);
 		return this;
@@ -41,6 +50,7 @@ jc.Sprite = cc.Sprite.extend({
 		for(var i =0; i<this.animations.length; i++){
 			this.animations[i].action.release();
 		}
+        this.batch.release();
 	},
 	addDef: function(entry) {
 		if (entry.nameFormat==undefined){
@@ -106,9 +116,9 @@ jc.Sprite = cc.Sprite.extend({
 		}
 		return action;
 	},
-	seek: function(point, accel){
-        var direction = cc.pNormalize(cc.pSub(point,this.getPosition()));
-        return cc.pMult(direction, accel);
+    update: function(dt){
+        if (!this.alive) return;
+        this.think(dt);
     },
     moveTo: function(point, state, velocity, callback){
 		jc.log(['sprite', 'move'],"Moving:"+ this.name);
@@ -149,9 +159,15 @@ jc.Sprite = cc.Sprite.extend({
 		this.stopAction(this.currentMove);		
 	},
 	animationDone:function(){
-		this.setState(this.nextState);
+        this.setState(this.nextState);
 	},
+    getState:function(){
+        return this.state;
+    },
 	setState:function(state){
+        if (!state){
+            return;
+        }
 		var currentState = this.state;
 		this.state = state;
 		jc.log(['sprite', 'state'],"State Change For:" + this.name + ' from:' + currentState + ' to:' + this.state);	
@@ -164,10 +180,18 @@ jc.Sprite = cc.Sprite.extend({
 			var stopMe = this.animations[currentState];
 			if (startMe && stopMe){
 				this.nextState = startMe.transitionTo;
+                if (!this.nextState){
+                    this.nextState = 'idle';
+                }
 	            jc.log(['sprite', 'state'],"Stopping action.")
-	            this.stopAction(stopMe.action);
+	            if(stopMe.action){
+                    this.stopAction(stopMe.action);
+                }
 	            jc.log(['sprite', 'state'],"Starting action.")
-	            this.runAction(startMe.action);
+	            if (startMe.action){
+                    this.runAction(startMe.action);
+                }
+
 				
 			}else{
 				throw "Couldn't set state. What is state: " + state + " currentState:" + currentState;			
@@ -194,6 +218,12 @@ jc.Sprite = cc.Sprite.extend({
     },
     think:function(dt){
         this.behavior.think(dt);
+    },
+    getAllies:function(){
+        if (this.homeTeam == undefined){
+            throw "Sprite not init-ed correctly. Hometeam is not set.";
+        }
+        return this.homeTeam;
     }
 });
 
@@ -229,10 +259,7 @@ jc.Sprite.spriteGenerator = function(allDefs, def, png, plist){
         if (animation == 'idle'){
             sprite.idle = animation;
         }
-        if (animation == 'walk'){
-            sprite.moving = animation;
-        }
-        if (animation == 'fly'){
+        if (animation == 'move'){
             sprite.moving = animation;
         }
     }
