@@ -8,6 +8,8 @@ var spriteDefs = {
         "inherit": "knight"
     },
     "dragon": {
+        "name": "dragon",
+        "parentOnly": true,
         "animations": {
             "move": {
                 "start": 178,
@@ -27,12 +29,12 @@ var spriteDefs = {
                 "delay": 0.1,
                 "type": 1
             },
-//            "damage": {
-//                "start": 242,
-//                "end": 277,
-//                "delay": 0.1,
-//                "type": 1
-//            },
+            "damage": {
+                "start": 242,
+                "end": 77,
+                "delay": 0.1,
+                "type": 1
+            },
             "dead": {
                 "start": 236,
                 "end": 257,
@@ -52,9 +54,12 @@ var spriteDefs = {
         "inherit": "dragon"
     },
     "dragonRed": {
-        "inherits": "dragon.js"
+        "name": "dragonRed",
+        "inherit": "dragon"
     },
     "elf": {
+        "name": "elf",
+        "parentOnly": true,
         "animations": {
             "move": {
                 "start": 242,
@@ -89,7 +94,7 @@ var spriteDefs = {
         }
     },
     "fireKnight": {
-        "name": "blueKnight",
+        "name": "fireKnight",
         "inherit": "knight"
     },
     "forestElf": {
@@ -97,6 +102,8 @@ var spriteDefs = {
         "inherit": "elf"
     },
     "gargoyle": {
+        "name": "gargoyle",
+        "parentOnly": true,
         "animations": {
             "move": {
                 "start": 78,
@@ -186,6 +193,8 @@ var spriteDefs = {
         "inherit": "knight"
     },
     "knight": {
+        "name": "knight",
+        "parentOnly": true,
         "animations": {
             "move": {
                 "start": 1,
@@ -232,6 +241,8 @@ var spriteDefs = {
         }
     },
     "monsterbase": {
+        "name": "monsterbase",
+        "parentOnly": true,
         "animations": {
             "move": {
                 "start": 55,

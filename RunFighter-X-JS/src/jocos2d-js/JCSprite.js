@@ -17,7 +17,7 @@ jc.Sprite = cc.Sprite.extend({
     layer:undefined, //parent reference
 	alive:true,
     initWithPlist: function(plist, sheet, firstFrame, name) {
-		this.animations = [];
+		this.animations = {};
 		this.batch = null;
 		this.state = -1;
 		this.moving = 0;
@@ -120,6 +120,23 @@ jc.Sprite = cc.Sprite.extend({
         if (!this.alive) return;
         this.think(dt);
     },
+    getBasePosition:function(){
+        //get the position of this sprite, push the y coord down to the base (feet)
+        var point = this.getPosition();
+        var box = this.getBoundingBox();
+        point.x = Math.floor(point.x);
+        point.y -= box.height/2;
+        point.y = Math.floor(point.y);
+        return point;
+    },
+    setBasePosition:function(point){
+        var box = this.getBoundingBox();
+        point.x = Math.floor(point.x);
+        point.y += box.height/2;
+        point.y = Math.floor(point.y);
+        this.setPosition(point);
+
+    },
     moveTo: function(point, state, velocity, callback){
 		jc.log(['sprite', 'move'],"Moving:"+ this.name);
 		var moveDiff = cc.pSub(point, this.getPosition());
@@ -221,27 +238,25 @@ jc.Sprite = cc.Sprite.extend({
     },
     getAllies:function(){
         if (this.homeTeam == undefined){
-            throw "Sprite not init-ed correctly. Hometeam is not set.";
+            throw "Sprite not init-ed correctly. Home team is not set.";
         }
         return this.homeTeam;
     }
 });
 
-jc.Sprite.spriteGenerator = function(allDefs, def, png, plist){
-
+jc.Sprite.spriteGenerator = function(allDefs, def, layer){
 
     var character = allDefs[def];
     var sprite = new jc.Sprite();
+    sprite.layer= layer;
 
     var nameFormat = character.name + ".{0}.png";
     if (character.inherit){
         //find who we inherit from, copy everything that doesn't exist over.
-        var parent = allDefs[character.inherit];
-        for (var prop in parent){
-            if (character[prop]==undefined){
-                character[prop] = parent[prop];
-            }
-        }
+        var nameSave = character.name;
+        _.extend(character, allDefs[character.inherit]);
+        character.name = nameSave;
+        character.parentOnly = undefined;
     }
 
     if (character['animations']== undefined){
@@ -249,13 +264,14 @@ jc.Sprite.spriteGenerator = function(allDefs, def, png, plist){
     }
 
     var firstFrame = character.animations['idle'].start;
-    sprite.initWithPlist(plist, png, nameFormat.format(firstFrame), character.name);
+    sprite.initWithPlist(g_characterPlists[def], g_characterPngs[def], nameFormat.format(firstFrame), character.name);
 
     for (var animation in character.animations){
         //use this to create a definition in the sprite
-        character.animations[animation].nameFormat = nameFormat; //jack this in.
-        character.animations[animation].state = animation;
-        sprite.addDef(character.animations[animation]);
+        var useThis = jc.clone(character.animations[animation]);
+        useThis.nameFormat = nameFormat; //jack this in.
+        useThis.state = animation;
+        sprite.addDef(useThis);
         if (animation == 'idle'){
             sprite.idle = animation;
         }

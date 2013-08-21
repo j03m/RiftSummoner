@@ -10,15 +10,10 @@ var TankBehavior = function(sprite){
 TankBehavior.prototype.think = function(dt){
 
     //if I'm not locked on, lock on
-    if (!this.locked){
-        this.lockOnAny();
 
-        //todo as sub behaviors:
 
-        //this.lockOnClosest(); //aka closestEnemyToGameObject
-        //this.lockOnHatred();
-        //this.lockOnStrongest();
-    }
+    this.lockOnClosestUnlocked();
+
 
     if  (this.state() == 'attack'){ //todo: replace with isAttacking to cover all possible attack states
         //let attack finish
@@ -29,13 +24,23 @@ TankBehavior.prototype.think = function(dt){
         //update our sprites animation to move
         this.owner.setState('move');
 
-        var seekAccel = this.seek();  //todo: if seek is 0,0 - attack
-        if (seekAccel.x==0 && seekAccel.y==0){
+        var seekDesc = this.seek();  //todo: if seek is 0,0 - attack
+        if (seekDesc.acceleration.x==0 && seekDesc.acceleration.y==0){
             //plant and attack
             this.owner.setState('attack');
         }else{
             var separateAccel = this.separate();
-            this.moveToward(seekAccel, separateAccel, dt);
+            this.moveToward(seekDesc.acceleration, separateAccel, dt, seekDesc.lineUp);
+
+
+            //modify landing so that if two sprites are lock on each other, they do a sort of square off.
+
+            //if the sprite im locked onto is locked squared on someone else, find open space in what we'll call the attack radius
+
+            //attack radius is a place where i am visible and not in anyone elses bounding box
+
+
+
         }
     }
 }

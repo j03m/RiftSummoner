@@ -28,28 +28,27 @@ var ArenaGame = cc.Layer.extend({
 			return false;
 		}
 	},
-
 	getRandomSprite:function(toCreate){
         var nameCreate = "";
         var sprite;
         if (toCreate == 0){
-            nameCreate = 'blackGargoyle';
-            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, blackGargoyleSheet, blackGargoylePlist);
+            nameCreate = 'fireKnight';
+            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         }
 
         if (toCreate == 1){
-            nameCreate = 'dragonBlack';
-            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, dragonBlackSheet, dragonBlackPlist);
+            nameCreate = 'forestElf';
+            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         }
 
         if (toCreate == 2){
             nameCreate = 'blueKnight';
-            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, blueKnightSheet, blueKnightPlist);
+            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         }
 
         if (toCreate == 3){
-            nameCreate = 'orc';
-            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, orcSheet, orcPlist);
+            nameCreate = 'voidElf';
+            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         }
 
         sprite.setState('idle');

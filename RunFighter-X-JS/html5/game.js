@@ -40,7 +40,8 @@ var MW = MW || {};
         appFiles:[
 			'pathsHtml5.js',
 			'../src/underscore-min.js',
-			'../src/resource.js',
+            '../src/spriteVars.js',
+            '../src/resource.js',
 			'../src/jocos2d-js/JCTrace.js',
 			'../src/jocos2d-js/JCSprite.js',
 			'../src/jocos2d-js/eventemitter2.js',
@@ -48,7 +49,6 @@ var MW = MW || {};
 			'../src/jocos2d-js/RequestManager.js',
             '../src/sha256.js',
             '../src/TouchId.js',
-            '../src/spriteVars.js',
             '../src/behaviors/GeneralBehavior.js',
             '../src/behaviors/TankBehavior.js',
             '../src/behaviors/BehaviorMap.js',

@@ -29,3 +29,14 @@ jc.log = function(categories, msg){
 	}
 
 };
+
+jc.clone = function (obj){
+    if(obj == null || typeof(obj) != 'object')
+        return obj;
+
+    var temp = obj.constructor(); // changed
+
+    for(var key in obj)
+        temp[key] = jc.clone(obj[key]);
+    return temp;
+}
