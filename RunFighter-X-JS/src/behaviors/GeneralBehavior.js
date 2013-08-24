@@ -128,25 +128,6 @@ GeneralBehavior.prototype.getVectorTo= function(to, from){
     return {direction:direction, distance:distance, xd:xd, yd:yd};
 }
 
-GeneralBehavior.prototype.separate = function(){
-    var steering = cc.p(0,0);
-    var allies = this.owner.getAllies();
-    for (var i =0; i< allies.length; i++) {
-        if (allies[i] != this.owner){
-            var ally = allies[i];
-            var direction = cc.pSub(this.owner.getBasePosition(), ally.getBasePosition());
-            var distance = cc.pLength(direction);
-            var SEPARATE_THRESHHOLD = 300;
-
-            if (distance < SEPARATE_THRESHHOLD) {
-                direction = cc.pNormalize(direction);
-                steering = cc.pAdd(steering, cc.pMult(direction, this.owner.maxAcceleration));
-            }
-        }
-    }
-    return steering;
-}
-
 
 GeneralBehavior.prototype.moveToward = function(point, dt){
 
@@ -157,21 +138,14 @@ GeneralBehavior.prototype.moveToward = function(point, dt){
 
 }
 
-GeneralBehavior.prototype.setState = function(){
-
-
-}
-
 
 //pushes a state
-GeneralBehavior.prototype.queueState = function(brainState, animationState){
-    this.brainState = brainState;
-    if (animationState){
-        this.animationState = animationState;
-    }else{
-        this.animationState = this.brainState;
+GeneralBehavior.prototype.setState = function(brainState, animationState){
+    if (brainState){
+        this.brainState = brainState;
     }
     if (animationState){
+        this.animationState = animationState;
         this.owner.setState(this.animationState, function(newState){
             this.brainState = newState;
             this.animationState = newState;

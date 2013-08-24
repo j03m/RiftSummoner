@@ -53,7 +53,10 @@ RangeBehavior.prototype.think = function(dt){
         if (point.x==0 && point.y==0){
             if (!this.owner.once){
                 this.setState('attack', 'attack');
-                this.locked.scheduleDamage(this.owner.damage, this.owner.strikeTime);
+                this.locked.addDamage(this.owner.damage);
+                if (!this.isAlive()){
+                    this.locked.setState('dead', 'dead');
+                }
             }
         }else{
             this.moveToward(point, dt);

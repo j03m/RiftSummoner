@@ -1,3 +1,89 @@
-??? PERFORMANCE WARNING: Some textures are unrenderable. game.html
+//create sprite tester
+//work out bounding box vs texturerect to get optimal sprite position
+//fix ai - copy kingdom rush
+
+
+
+
+
+arena:
+implement green bar / damage / death / hp
+* outsource particle - implement blood splat
+* outsource particle - implement blood pool
+
+implement range behavior
+implement missles
+implement flying
+implement backend event gen
+implement playback
+implement particles
+implement powers
+implement overhead arrows
+implement figure radius (power radius)
+implement waves
+implement wave particle
+implment y axis sort
+implement damage on frame
+fix blood
+
+
+
+intro comic (check)
+landing
+	play -> to map
+	facebook -> connect (maybe)
+map - kik pic - scrollable, candy crush style
+	click any unlocked level
+	onclick -> preplay
+
+preplay 
+	show level, challenges, stars, [get help - facebook or kik it]	
+	play -> manage team
+
+manage team
+	rows of characters, frontier style, wave 1, wave 2
+	drag and drop cards
+	tap card - manage card
+	empty slot -> slot
+	done button -> to battle
+
+manage card
+	kingdom rush card
+	sell card
+	train card - kingdom rush rip
+	revive
+
+to battle
+	battle runs on server, generates outcome, stores
+	play battle	
+	handle outcome
+		victory -> unlock
+		defeat -> defeat
+
+defeat
+	power up -> slot
+	restart - preplay
+	quit - map
+
+unlock
+	reward presentation
+	coins
+	cards
+	gems
+
+gethelp
+	select friends, they can send you slot tokens
+
+manage deck
+	arrange
+	sell - coins
+	level - frontier 
+	
+slot machine
+	pu
+	
+
+
+
 
 

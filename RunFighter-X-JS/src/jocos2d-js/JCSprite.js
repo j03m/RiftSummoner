@@ -48,12 +48,6 @@ jc.Sprite = cc.Sprite.extend({
     addDamage: function(amount){
         this.hp -=amount;
         this.layer.doBlood(this);
-        if (this.isAlive()){
-            this.nextState = 'damage';
-        }else{
-            this.nextState = 'dead';
-        }
-
     },
     initHealthBar:function(){
         this.healthBar = cc.DrawNode.create();
