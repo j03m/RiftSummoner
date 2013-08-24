@@ -1,15 +1,38 @@
 var spriteDefs = {
     "blackGargoyle": {
         "name": "blackGargoyle",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "inherit": "gargoyle"
     },
     "blueKnight": {
         "name": "blueKnight",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "inherit": "knight"
     },
     "dragon": {
         "name": "dragon",
         "parentOnly": true,
+        "targetRadius": 100,
         "animations": {
             "move": {
                 "start": 178,
@@ -51,15 +74,38 @@ var spriteDefs = {
     },
     "dragonBlack": {
         "name": "dragonBlack",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "inherit": "dragon"
     },
     "dragonRed": {
         "name": "dragonRed",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "inherit": "dragon"
     },
     "elf": {
         "name": "elf",
         "parentOnly": true,
+        "targetRadius": 600,
         "animations": {
             "move": {
                 "start": 242,
@@ -95,10 +141,33 @@ var spriteDefs = {
     },
     "fireKnight": {
         "name": "fireKnight",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "inherit": "knight"
     },
     "forestElf": {
         "name": "forestElf",
+        "gameProperties": {
+            "MaxHP": 200,
+            "damage": 25,
+            "speed": 25,
+            "actionDelays": {
+                "attack": 0.5
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 10
+        },
         "inherit": "elf"
     },
     "gargoyle": {
@@ -145,6 +214,18 @@ var spriteDefs = {
     },
     "goblin": {
         "name": "goblin",
+        "targetRadius": 300,
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "animations": {
             "move": {
                 "start": 27,
@@ -186,15 +267,39 @@ var spriteDefs = {
     },
     "goldElf": {
         "name": "goldElf",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack":0.5
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "inherit": "elf"
     },
     "goldKnight": {
         "name": "goldKnight",
+        "gameProperties": {
+            "MaxHP": 500,
+            "speed": 30,
+            "damage": 50,
+            "actionDelays": {
+                "attack": 0.5
+            },
+            "effectDelays": {
+                "attack": 1.0
+            },
+            "targetRadius": 50
+        },
         "inherit": "knight"
     },
     "knight": {
         "name": "knight",
         "parentOnly": true,
+        "targetRadius": 200,
         "animations": {
             "move": {
                 "start": 1,
@@ -284,18 +389,67 @@ var spriteDefs = {
     },
     "orc": {
         "name": "orc",
+        "targetRadius": 50,
+        "gameProperties": {
+            "MaxHP": 300,
+            "speed": 50,
+            "damage":25,
+            "actionDelays": {
+                "attack": 0.5
+            },
+            "effectDelays": {
+                "attack": 1.0
+            },
+            "targetRadius": 25
+        },
         "inherit": "monsterbase"
     },
     "orge": {
         "name": "orge",
+        "targetRadius": 150,
+        "gameProperties": {
+            "MaxHP": 1000,
+            "speed": 25,
+            "damage": 100,
+            "actionDelays": {
+                "attack": 2
+            },
+            "effectDelays": {
+                "attack": 2.5
+            },
+            "targetRadius": 50
+        },
         "inherit": "monsterbase"
     },
     "redGargoyle": {
         "name": "redGargoyle",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "inherit": "gargoyle"
     },
     "scowerer": {
         "name": "scowerer",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
+        "targetRadius": 25,
         "animations": {
             "move": {
                 "start": 1,
@@ -331,6 +485,17 @@ var spriteDefs = {
     },
     "shellback": {
         "name": "shellback",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "animations": {
             "move": {
                 "start": 25,
@@ -366,6 +531,17 @@ var spriteDefs = {
     },
     "snakeThing": {
         "name": "snakeThing",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "animations": {
             "move": {
                 "start": 54,
@@ -401,6 +577,19 @@ var spriteDefs = {
     },
     "spider": {
         "name": "spider",
+        "MaxHP": 250,
+        "speed": 125,
+        "gameProperties": {
+            "MaxHP": 500,
+            "speed": 100,
+            "actionDelays": {
+                "attack":.2
+            },
+            "effectDelays": {
+                "attack":.2
+            },
+            "targetRadius": 25
+        },
         "animations": {
             "move": {
                 "start": 54,
@@ -436,14 +625,48 @@ var spriteDefs = {
     },
     "troll": {
         "name": "troll",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "inherit": "monsterbase"
     },
     "voidElf": {
         "name": "voidElf",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
         "inherit": "elf"
     },
     "wizard": {
         "name": "wizard",
+        "gameProperties": {
+            "MaxHP": 100,
+            "speed": 100,
+            "actionDelays": {
+                "attack": 1
+            },
+            "effectDelays": {
+                "attack": 1
+            },
+            "targetRadius": 25
+        },
+        "targetRadius": 500,
         "inherit": "monsterbase"
     }
 }

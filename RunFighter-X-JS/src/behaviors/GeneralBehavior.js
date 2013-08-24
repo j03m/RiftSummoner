@@ -1,29 +1,26 @@
 
 
 
-var GeneralBehavior = function(sprite){
-    if (!sprite){
-        throw "behaviors need an owner, supply a game object";
-    }
-    this.owner = sprite;
-}
+var GeneralBehavior = cc.Node.extend({});
 
 
 GeneralBehavior.prototype.state = function(){
-    return this.owner.getState();
+    //some behaviors have aiStates, which are in addition to sprite states, this is shitty. I know this.
+    if (!this.brainState){
+        this.setState('idle');
+    }
+    return this.brainState;
 }
 
 //init
-GeneralBehavior.prototype.init = function(){
-    if (this.owner.slowRadius==undefined) throw "slowradius not implemented on owning sprite.";
-    if (this.owner.maxVelocity==undefined) throw "maxVelocity not implemented on owning sprite.";
-    if (this.owner.maxAcceleration==undefined) throw "maxAcceleration not implemented on owning sprite.";
-    if (this.owner.velocity==undefined) throw "velocity not implemented on owning sprite.";
-    if (this.owner.targetVelocity==undefined) throw "targetVelocity not implemented on owning sprite.";
+GeneralBehavior.prototype.init = function(sprite){
+    this.owner = sprite;
     if (this.owner.targetRadius==undefined) throw "targetRadius not implemented on owning sprite.";
     if (this.owner.homeTeam==undefined) throw "homeTeam not implemented on owning sprite.";
     if (this.owner.enemyTeam==undefined) throw "enemyTeam not implemented on owning sprite.";
-    if (this.owner.acceleration==undefined) throw "acceleration not implemented on owning sprite.";
+    this.directions = [0, 45, 90, 135, 180, 225, 270];
+    this.stateQueue = [];
+    this.owner = sprite;
 }
 
 //find a random opposing badguy
@@ -33,45 +30,11 @@ GeneralBehavior.prototype.lockOnAny = function(){
     return sprite;
 }
 
-//lock onto the closest bad guy but use the check function for exceptions
-GeneralBehavior.prototype.lockOnClosest = function(checkFunc){
-    var currentlyLocked = undefined;
-    var winSize = cc.Director.getInstance().getWinSize()
-    var minDistance = winSize.width;
-    for (var i =0; i< this.owner.enemyTeam.length; i++){
-        var sprite = this.owner.enemyTeam[i];
-        var vector = this.getVectorTo(sprite.getBasePosition(), this.owner.getBasePosition());
-        if (vector.distance < minDistance){
-            if (checkFunc != undefined){
-                if (checkFunc(sprite)){
-                    minDistance = vector.distance;
-                    currentlyLocked = sprite;
-                }
-            }else{
-                minDistance = vector.distance;
-                currentlyLocked = sprite;
-            }
-        }
-    }
-
-    if (currentlyLocked == undefined){
-        throw "couldn't lock on - something is wrong am the big winner?";
-    }
-
-    this.locked = currentlyLocked;
-    return this.locked;
-}
-
 //call lock on closest, but pass isUnlocked to check if anyone is locked on already, if so pass and check the next.
 GeneralBehavior.prototype.lockOnClosestUnlocked = function(){
-    this.lockOnClosest(this.isUnlocked.bind(this));
+    return this.lockOnClosest(this.isUnlocked.bind(this));
 }
-//todo as sub behaviors:
-//this.lockOnHatred();
-//this.lockOnStrongest();
-//this.lockOnAir
-//this.lockOnRange
-//this.lockOnSupport
+
 
 //loops through all hometeam sprites and checks to see if any of them are locked onto the target
 GeneralBehavior.prototype.isUnlocked = function(target){
@@ -87,60 +50,82 @@ GeneralBehavior.prototype.isUnlocked = function(target){
     return true;
 }
 
-GeneralBehavior.prototype.seek = function(){
-    var timeToTarget = 0.1; //move to sprite?
+//lock onto the closest bad guy but use the check function for exceptions
+GeneralBehavior.prototype.lockOnClosest = function(checkFunc){
+    var currentlyLocked = undefined;
+    var winSize = cc.Director.getInstance().getWinSize()
+    var minDistance = winSize.width;
+    for (var i =0; i< this.owner.enemyTeam.length; i++){
+        var sprite = this.owner.enemyTeam[i];
+        if (sprite.isAlive()){
+            var vector = this.getVectorTo(sprite.getBasePosition(), this.owner.getBasePosition());
+            if (vector.distance < minDistance){
+                if (checkFunc != undefined){
+                    if (checkFunc(sprite)){
+                        minDistance = vector.distance;
+                        currentlyLocked = sprite;
+                    }
+                }else{
+                    minDistance = vector.distance;
+                    currentlyLocked = sprite;
+                }
+            }
+        }
+    }
+
+    return currentlyLocked;
+}
+GeneralBehavior.prototype.seekEnemy = function(){
     if (!this.locked){
         throw "invalid state, character must be locked to seek.";
     }
+    return this.seek(this.locked.getBasePosition());
+}
+
+GeneralBehavior.prototype.seek = function(toPoint){
 
     if (!this.owner){
         throw "Owning game object required";
     }
 
-    var targetSpeed = 0;
-    if (this.owner.slowRadius == undefined ||  this.owner.maxVelocity == undefined){
-        throw "Owning game object must have slowRadius, targetSpeed and maxVelocity properties";
-    }
-
     var myFeet = this.owner.getBasePosition();
-    var enemyFeet = this.locked.getBasePosition();
-    var vector = this.getVectorTo(enemyFeet, myFeet);
-    var distance = vector.distance;
-    var direction = vector.direction;
-    var lineUp = false;
-    if (distance < this.owner.targetRadius) {
-       // if (myFeet.y == enemyFeet.y){
-            this.owner.velocity = cc.p(0,0);  //CGPointZero? This correct?
-            this.owner.acceleration = cc.p(0,0);
-            return {lineUp:false, acceleration:cc.p(0,0)};
-//        }else{
-//            //go into lineup mode
-//            lineUp = true;
-//        }
+    var mySize = this.owner.getTextureRect();
+    //if locked on someone else, target radius behind them
+    //otherwise, target radius face to face
+    var side = this.leftOrRight(myFeet, toPoint);
+    var attackPosition =0;
+    if (side == 'left'){
+        attackPosition = cc.p(toPoint.x - mySize.width, toPoint.y);
+    }else{ //right
+        attackPosition = cc.p(toPoint.x + mySize.height, toPoint.y);
     }
 
-    if (distance > this.owner.slowRadius) {
-        targetSpeed = this.owner.maxVelocity;
-    } else {
-        targetSpeed = this.owner.maxVelocity * distance / this.owner.slowRadius;
+    var vector = this.getVectorTo(attackPosition, myFeet);
+
+    if (vector.xd < this.owner.targetRadius && vector.yd < this.owner.speed/2){
+        return cc.p(0,0);
     }
 
-    this.owner.targetVelocity = cc.pMult(cc.pNormalize(direction), targetSpeed);
-    var acceleration = cc.pMult(cc.pSub(this.owner.targetVelocity, this.owner.velocity), 1/timeToTarget);
-    if (cc.pLength(acceleration) > this.owner.maxAcceleration) {
-        acceleration = cc.pMult(cc.pNormalize(acceleration), this.owner.maxAcceleration);
+    var speed = 0;
+    if (this.owner.speed > vector.distance){
+        speed = vector.distance; //slow down
+    }else{
+        speed = this.owner.speed;
     }
-    return {lineUp:lineUp, acceleration:acceleration};
 
+    return cc.pMult(cc.pNormalize(vector.direction), speed);
 }
+
 
 GeneralBehavior.prototype.getVectorTo= function(to, from){
     if (!to || !from){
         throw "To and From positions required!";
     }
     var direction = cc.pSub(to,from);
+    var xd = Math.abs(to.x - from.x);
+    var yd = Math.abs(to.y - from.y);
     var distance = cc.pLength(direction);
-    return {direction:direction, distance:distance};
+    return {direction:direction, distance:distance, xd:xd, yd:yd};
 }
 
 GeneralBehavior.prototype.separate = function(){
@@ -163,26 +148,88 @@ GeneralBehavior.prototype.separate = function(){
 }
 
 
-GeneralBehavior.prototype.moveToward = function(seekAccel, separateAccel, dt, lineUp){
-    var newAcceleration = cc.pAdd(seekAccel, separateAccel);
-    this.owner.acceleration = cc.pAdd(this.owner.acceleration, newAcceleration);
-    if (cc.pLength(this.owner.acceleration) > this.owner.maxAcceleration) {
-        this.owner.acceleration = cc.pMult(cc.pNormalize(this.owner.acceleration), this.owner.maxAcceleration);
-    }
-
-    // Update current velocity based on acceleration and dt, and clamp
-    this.owner.velocity = cc.pAdd(this.owner.velocity, cc.pMult(this.owner.acceleration, dt));
-    if (cc.pLength(this.owner.velocity) > this.owner.maxVelocity) {
-        this.owner.velocity = cc.pMult(cc.pNormalize(this.owner.velocity), this.owner.maxVelocity);
-    }
+GeneralBehavior.prototype.moveToward = function(point, dt){
 
     // Update position based on velocity
-    var newPosition = cc.pAdd(this.owner.getBasePosition(), cc.pMult(this.owner.velocity, dt));
-    var winSize = cc.Director.getInstance().getWinSize()
-    if (!lineUp){ //if lineup mode == true, only modify our y position
-        newPosition.x = Math.max(Math.min(newPosition.x, winSize.width), 0);
-    }
-    newPosition.y = Math.max(Math.min(newPosition.y, winSize.height), 0);
+    var newPosition = cc.pAdd(this.owner.getBasePosition(), cc.pMult(point, dt));
+
     this.owner.setBasePosition(newPosition);
 
+}
+
+GeneralBehavior.prototype.setState = function(){
+
+
+}
+
+
+//pushes a state
+GeneralBehavior.prototype.queueState = function(brainState, animationState){
+    this.brainState = brainState;
+    if (animationState){
+        this.animationState = animationState;
+    }else{
+        this.animationState = this.brainState;
+    }
+    if (animationState){
+        this.owner.setState(this.animationState, function(newState){
+            this.brainState = newState;
+            this.animationState = newState;
+            this.owner.setState(this.animationState);
+        }.bind(this));
+    }
+
+}
+
+GeneralBehavior.prototype.leftOrRight = function (me, them){
+    if (me.x < them.x){
+        return 'left';
+    }else{
+        return 'right';
+    }
+}
+
+GeneralBehavior.prototype.getRandomFleePosition = function(){
+    //find a random spot, targetRadius away
+    var randomAngle = jc.randomNum(0,this.directions.length);
+    var direction = cc.pForAngle(randomAngle);
+    var destination = cc.pMult(direction, this.owner.targetRadius);
+    return this.clamp(destination);
+
+}
+
+GeneralBehavior.prototype.doAttack = function(){
+    var actionDelay = this.owner.actionDelays['attack'];
+    var effectDelay = this.owner.effectDelays['attack'];
+    this.setState('attack');
+    this.owner.scheduleOnce(function(){
+        this.setState('attack', 'attack');
+        this.locked.scheduleDamage(this.owner.damage, effectDelay);
+    }.bind(this),actionDelay);
+}
+
+GeneralBehavior.prototype.clamp=function(point){
+    var winSize = cc.Director.getInstance().getWinSize();
+    var mySize = this.owner.getTextureRect();
+    var rightLimit = winSize.width - mySize.width;
+    var leftLimit = mySize.width;
+    var topLimit = winSize.height - mySize.height;
+    var bottomLimit = mySize.height;
+
+    if (point.x > rightLimit){
+        point.x = rightLimit;
+    }
+
+    if (point.x < leftLimit){
+        point.x = leftLimit;
+    }
+
+    if( point.y > topLimit){
+        point.y = topLimit;
+    }
+
+    if (point.y < bottomLimit){
+        point.y = bottomLimit;
+    }
+    return point;
 }

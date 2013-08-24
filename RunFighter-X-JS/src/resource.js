@@ -12,6 +12,7 @@ var ibukiPlist = dirImg + "ibuki.plist"
 var ibukiSheet = dirImg + "ibuki.png"
 var arenaSheet = dirImg + "arena.png";
 var arenaPlist = dirImg + "arena.plist";
+var bloodPlist = dirImg + "blood.plist";
 
 //var blackGargoyleSheet = dirImg + 'blackGargoyleSheet.png';
 //var dragonBlackSheet = dirImg + 'dragonBlackSheet.png';
@@ -30,7 +31,8 @@ var g_characterPlists = {};
 var g_maingame = [
     //image
 	{src:arenaSheet},
-	{src:arenaPlist}
+	{src:arenaPlist},
+    {src:bloodPlist}
 //	{src:blackGargoyleSheet},
 //	{src:blackGargoylePlist},
 //	{src:blueKnightSheet},

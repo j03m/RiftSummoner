@@ -1,36 +1,43 @@
 var TankBehavior = function(sprite){
-    _.extend(this, new GeneralBehavior(sprite));
-    this.targetRadius=5;
-    this.slowRadius=this.targetRadius + 25;
-    this.timeToTarget=0.1;
-    this.init();
+    _.extend(this, new GeneralBehavior());
+    this.init(sprite);
+    this.stateMap
 }
-
 
 TankBehavior.prototype.think = function(dt){
 
     //if I'm not locked on, lock on
-
-
-    this.lockOnClosestUnlocked();
-
+    if (this.state() == 'dead' || !this.owner.isAlive()){
+        return;
+    }
 
     if  (this.state() == 'attack'){ //todo: replace with isAttacking to cover all possible attack states
         //let attack finish
+        return;
+    }
+
+    if (!this.locked || !this.locked.isAlive()){
+        this.locked = this.lockOnClosestUnlocked();
+        if (!this.locked){
+            this.locked = this.lockOnClosest();
+        }
+        this.setState('idle', 'idle');
+        if (!this.locked){
+            return;
+        }
+
     }
 
     if (this.state() == 'idle' || this.state() == 'move'){
         //set state to moving
         //update our sprites animation to move
-        this.owner.setState('move');
+        this.setState('move', 'move');
 
-        var seekDesc = this.seek();  //todo: if seek is 0,0 - attack
-        if (seekDesc.acceleration.x==0 && seekDesc.acceleration.y==0){
-            //plant and attack
-            this.owner.setState('attack');
+        var point = this.seekEnemy();  //todo: if seek is 0,0 - attack
+        if (point.x==0 && point.y==0){
+            this.doAttack();
         }else{
-            var separateAccel = this.separate();
-            this.moveToward(seekDesc.acceleration, separateAccel, dt, seekDesc.lineUp);
+            this.moveToward(point, dt);
 
 
             //modify landing so that if two sprites are lock on each other, they do a sort of square off.

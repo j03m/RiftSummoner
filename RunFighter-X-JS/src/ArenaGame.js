@@ -12,7 +12,8 @@ var ArenaGame = cc.Layer.extend({
     init: function() {
 		if (this._super()) {							
 			this.background = new jc.Sprite();
-			this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', 'arena');
+			this.background.layer = this;
+            this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', 'arena');
 			this.background.centerOnScreen();
 			this.addChild(this.background);
             this.teams['a'] = [];
@@ -32,22 +33,22 @@ var ArenaGame = cc.Layer.extend({
         var nameCreate = "";
         var sprite;
         if (toCreate == 0){
-            nameCreate = 'fireKnight';
+            nameCreate = 'goldKnight';
             sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         }
 
         if (toCreate == 1){
-            nameCreate = 'forestElf';
+            nameCreate = 'spider';
             sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         }
 
         if (toCreate == 2){
-            nameCreate = 'blueKnight';
+            nameCreate = 'orc';
             sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         }
 
         if (toCreate == 3){
-            nameCreate = 'voidElf';
+            nameCreate = 'orge';
             sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         }
 
@@ -60,31 +61,25 @@ var ArenaGame = cc.Layer.extend({
     arrange:function(sprites){
         //get random position on the bottom portion of the screen
         var size = cc.Director.getInstance().getWinSize();
-        var midW = size.width/2;
-        var midH = size.height/2;
+        var teamAX = size.width/4;
+        var teamAY = size.height/4;
+        var teamBX = size.width - teamAX;
 
         for (var i =0; i<sprites.length/2;i++){
-            var box = sprites[i].getBoundingBox();
-            var posW = jc.randomNum(box.width, midW-box.width);
-            var posH = jc.randomNum(box.height, midH-box.height);
-            jc.log(['gameplay'], sprites[i].name + " starting@:" + posW + "," + posH);
-            sprites[i].setPosition(cc.p(posW,posH));
+            sprites[i].setBasePosition(cc.p(teamAX,teamAY*(i+1)));
             sprites[i].homeTeam = this.teams['a'];
             sprites[i].enemyTeam = this.teams['b'];
             this.teams['a'].push(sprites[i]);
         }
 
+        var count =0;
         for (var i =sprites.length/2; i<sprites.length;i++){
-            var box = sprites[i].getBoundingBox();
-            var posW = jc.randomNum(midW + box.width, size.width-box.width);
-            var posH = jc.randomNum(box.height, midH-box.height);
-            jc.log(['gameplay'], sprites[i].name + " starting@:" + posW + "," + posH);
-            sprites[i].setPosition(cc.p(posW,posH));
+            sprites[i].setBasePosition(cc.p(teamBX,teamAY*(count+1)));
             sprites[i].setFlipX(true);
             sprites[i].homeTeam = this.teams['b'];
             sprites[i].enemyTeam = this.teams['a'];
-
             this.teams['b'].push(sprites[i]);
+            count++;
         }
 
         for (var i =0; i<sprites.length/2;i++){
@@ -104,7 +99,25 @@ var ArenaGame = cc.Layer.extend({
         for (var i =0; i<this.sprites.length;i++){
             this.sprites[i].think(dt);
         }
+    },
+    doBlood:function(sprite){
+        var flower = cc.ParticleSystem.create(bloodPlist);
+        this.addChild( flower );
+        flower.setPosition( this.getRandomBloodSpot(sprite));
+    },
+    getRandomBloodSpot:function(sprite){
+        var pos = sprite.getPosition();    //explicity use getPosition, not getBasePoisition here
+        var rect = sprite.getTextureRect();
+        var offset = jc.randomNum((rect.width/2)*-1, rect.width/2);
+        pos.x+=offset;
+        offset = jc.randomNum((rect.height/2)*-1, rect.height/2);
+        pos.y+=offset;
+        return pos;
+
     }
+    //todo: sort sprites by y pos, draw in order
+
+
 });
 
 ArenaGame.create = function() {

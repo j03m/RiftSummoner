@@ -17,7 +17,11 @@ jc.Sprite = cc.Sprite.extend({
     layer:undefined, //parent reference
 	alive:true,
     initWithPlist: function(plist, sheet, firstFrame, name) {
-		this.animations = {};
+        this.MaxHP = 100;
+        this.hp = this.MaxHP;
+        this.HealthBarWidth = 40;
+        this.HealthBarHeight = 10;
+        this.animations = {};
 		this.batch = null;
 		this.state = -1;
 		this.moving = 0;
@@ -25,22 +29,38 @@ jc.Sprite = cc.Sprite.extend({
 		this.nextState = 0;
 		this.idle = 0;
 		this.name = name;
-        this.slowRadius=200;
-        this.maxVelocity=100;
-        this.maxAcceleration=25;
-        this.velocity = cc.p(0,0);
-        this.targetVelocity = 100;
-        this.targetRadius = 100;
+        this.speed = 50;
         this.homeTeam = undefined;
         this.enemyTeam = undefined;
-        this.acceleration = 0;
 		cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
 		this.batch = cc.SpriteBatchNode.create(sheet);
         this.batch.retain();
 		var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame); 		
 		this.initWithSpriteFrame(frame);
+        this.superDraw = this.draw;
+        this.draw = this.customDraw;
+        this.initHealthBar();
+        this.debug = false;
+        this.damage = 100;
+        this.strikeTime = 1;
 		return this;
 	},
+    addDamage: function(amount){
+        this.hp -=amount;
+        this.layer.doBlood(this);
+        if (this.isAlive()){
+            this.nextState = 'damage';
+        }else{
+            this.nextState = 'dead';
+        }
+
+    },
+    initHealthBar:function(){
+        this.healthBar = cc.DrawNode.create();
+        this.healthBar.contentSize = cc.SizeMake(this.HealthBarWidth, this.HealthBarHeight);
+        this.layer.addChild(this.healthBar);
+        this.updateHealthBarPos();
+    },
 	cleanUp: function(){
 		this.stopAction(this.currentMove);
 		this.currentMove.release();
@@ -116,6 +136,9 @@ jc.Sprite = cc.Sprite.extend({
 		}
 		return action;
 	},
+    scheduleDamage:function(amount, time){
+        this.scheduleOnce(this.addDamage.bind(this, amount));
+    },
     update: function(dt){
         if (!this.alive) return;
         this.think(dt);
@@ -123,19 +146,18 @@ jc.Sprite = cc.Sprite.extend({
     getBasePosition:function(){
         //get the position of this sprite, push the y coord down to the base (feet)
         var point = this.getPosition();
-        var box = this.getBoundingBox();
-        point.x = Math.floor(point.x);
+        var box = this.getTextureRect();
+        var box2 = this.getContentSize();
+        //point.x = point.x + (box2.width - box.width)/2;
+        //point.y = point.y + (box2.height - box.height)/2;
         point.y -= box.height/2;
-        point.y = Math.floor(point.y);
         return point;
     },
     setBasePosition:function(point){
-        var box = this.getBoundingBox();
-        point.x = Math.floor(point.x);
+        var box = this.getTextureRect();
         point.y += box.height/2;
-        point.y = Math.floor(point.y);
         this.setPosition(point);
-
+        this.updateHealthBarPos();
     },
     moveTo: function(point, state, velocity, callback){
 		jc.log(['sprite', 'move'],"Moving:"+ this.name);
@@ -171,17 +193,28 @@ jc.Sprite = cc.Sprite.extend({
 		jc.log(['sprite', 'move'],'running move sequence');
 		this.runAction(this.currentMove);		
 	},
+    isAlive: function(){
+        if (this.hp>0){
+            return true;
+        }else{
+            return false;
+        }
+    },
 	moveEnded: function(){
 		this.setState(this.idle);
 		this.stopAction(this.currentMove);		
 	},
 	animationDone:function(){
-        this.setState(this.nextState);
+        if (this.animations[this.state].callback){
+            this.animations[this.state].callback(this.nextState);
+        }else{
+            this.setState(this.nextState);
+        }
 	},
     getState:function(){
         return this.state;
     },
-	setState:function(state){
+	setState:function(state, callback){
         if (!state){
             return;
         }
@@ -198,14 +231,20 @@ jc.Sprite = cc.Sprite.extend({
 			if (startMe && stopMe){
 				this.nextState = startMe.transitionTo;
                 if (!this.nextState){
-                    this.nextState = 'idle';
+                    if (this.isAlive()){
+                        this.nextState = 'idle';
+                    }else{
+                        this.nextState = 'dead';
+                    }
+
                 }
 	            jc.log(['sprite', 'state'],"Stopping action.")
 	            if(stopMe.action){
                     this.stopAction(stopMe.action);
                 }
 	            jc.log(['sprite', 'state'],"Starting action.")
-	            if (startMe.action){
+                this.animations[state].callback = callback;
+                if (startMe.action){
                     this.runAction(startMe.action);
                 }
 
@@ -241,7 +280,82 @@ jc.Sprite = cc.Sprite.extend({
             throw "Sprite not init-ed correctly. Home team is not set.";
         }
         return this.homeTeam;
+    },
+    customDraw:function(){
+        //team id
+        //area effects
+        this.superDraw();
+
+        if (this.debug){
+            this.drawBorders();
+        }
+
+        //health bar
+        this.drawHealthBar();
+        //ispoisoned
+    },
+    drawBorders:function(){
+        if (!this.debugContentBorder){
+            this.debugContentBorder = cc.DrawNode.create();
+            this.layer.addChild(this.debugContentBorder);
+            this.debugContentBorder.setPosition(this.getPosition());
+        }
+
+        if (!this.debugTextureBorder){
+            this.debugTextureBorder = cc.DrawNode.create();
+            this.layer.addChild(this.debugTextureBorder);
+            this.debugContentBorder.setPosition(this.getPosition());
+        }
+
+        var color = cc.c4f(0,0,0,0);
+        var border = cc.c4f(35.0/255.0, 28.0/255.0, 40.0/255.0, 1.0);
+        this.debugContentBorder.clear();
+        this.debugTextureBorder.clear();
+        this.drawRect(this.debugContentBorder, this.getContentSize(), color, border);
+        this.drawRect(this.debugTextureBorder, this.getTextureRect(), color, border);
+
+    },
+    drawRect:function(poly, rect, fill, border, borderWidth){
+        var height = rect.height;
+        var width = rect.width;
+        var vertices = [cc.p(0, 0), cc.p(0, height), cc.p(width, height), cc.p(width, 0)];
+        poly.drawPoly(vertices, fill, borderWidth, border);
+    },
+    drawHealthBar: function(){
+        this.healthBar.clear();
+        var verts = [4];
+        verts[0] = cc.p(0.0, 0.0);
+        verts[1] = cc.p(0.0, this.HealthBarHeight - 1.0);
+        verts[2] = cc.p(this.HealthBarWidth - 1.0, this.HealthBarHeight - 1.0);
+        verts[3] = cc.p(this.HealthBarWidth - 1.0, 0.0);
+
+        var clearColor = cc.c4f(181.0, 0.0, 18.0, 1.0);
+        var fillColor = cc.c4f(26.0/255.0, 245.0/255.0, 15.0/255.0, 1.0);
+        var borderColor = cc.c4f(35.0/255.0, 28.0/255.0, 40.0/255.0, 1.0);
+
+        this.healthBar.drawPoly(verts,clearColor,0.7, borderColor);
+
+        verts[0].x += 0.5;
+        verts[0].y += 0.5;
+        verts[1].x += 0.5;
+        verts[1].y -= 0.5;
+        verts[2].x = (this.HealthBarWidth - 2.0)*this.hp/this.MaxHP + 0.5;
+        verts[2].y -= 0.5;
+        verts[3].x = verts[2].x;
+        verts[3].y += 0.5;
+
+        this.healthBar.drawPoly(verts,fillColor,0.7, borderColor);
+
+    },
+    updateHealthBarPos:function(){
+        var myPos = this.getBasePosition();
+        var myRect = this.getTextureRect();
+        myPos.y+=myRect.height;
+        myPos.x-=(myRect.width/4);
+        this.healthBar.setPosition(myPos);
     }
+
+
 });
 
 jc.Sprite.spriteGenerator = function(allDefs, def, layer){
@@ -278,9 +392,13 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
         if (animation == 'move'){
             sprite.moving = animation;
         }
+
     }
+    _.extend(sprite,character.gameProperties);
+    sprite.hp = sprite.MaxHP;
     return sprite;
 }
+
 
 jc.randomNum= function(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
