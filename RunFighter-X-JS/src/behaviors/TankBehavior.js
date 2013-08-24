@@ -21,8 +21,9 @@ TankBehavior.prototype.think = function(dt){
         if (!this.locked){
             this.locked = this.lockOnClosest();
         }
-        this.setState('idle', 'idle');
+        //push idle, force idle
         if (!this.locked){
+            this.pushState('idle', 'idle');
             return;
         }
 
@@ -31,23 +32,15 @@ TankBehavior.prototype.think = function(dt){
     if (this.state() == 'idle' || this.state() == 'move'){
         //set state to moving
         //update our sprites animation to move
-        this.setState('move', 'move');
+        this.pushState('move', 'move');
 
         var point = this.seekEnemy();  //todo: if seek is 0,0 - attack
         if (point.x==0 && point.y==0){
-            this.doAttack();
+            this.pushState('attack', 'attack');
+            var effectDelay = this.owner.effectDelays['attack'];
+            this.scheduleDamage(this.owner.damage, effectDelay);
         }else{
             this.moveToward(point, dt);
-
-
-            //modify landing so that if two sprites are lock on each other, they do a sort of square off.
-
-            //if the sprite im locked onto is locked squared on someone else, find open space in what we'll call the attack radius
-
-            //attack radius is a place where i am visible and not in anyone elses bounding box
-
-
-
         }
     }
 }

@@ -5,9 +5,8 @@ var GeneralBehavior = cc.Node.extend({});
 
 
 GeneralBehavior.prototype.state = function(){
-    //some behaviors have aiStates, which are in addition to sprite states, this is shitty. I know this.
     if (!this.brainState){
-        this.setState('idle');
+        this.brainState = 'idle';
     }
     return this.brainState;
 }
@@ -19,8 +18,8 @@ GeneralBehavior.prototype.init = function(sprite){
     if (this.owner.homeTeam==undefined) throw "homeTeam not implemented on owning sprite.";
     if (this.owner.enemyTeam==undefined) throw "enemyTeam not implemented on owning sprite.";
     this.directions = [0, 45, 90, 135, 180, 225, 270];
-    this.stateQueue = [];
     this.owner = sprite;
+    this.states = [];
 }
 
 //find a random opposing badguy
@@ -157,28 +156,54 @@ GeneralBehavior.prototype.moveToward = function(point, dt){
 
 }
 
-GeneralBehavior.prototype.setState = function(){
+//high priority animation
+GeneralBehavior.prototype.pushState = function(brainState, animationState){
 
-
+    //save the old state
+    this.states.push({
+        brain:this.brainState,
+        anim:this.animationState
+    });
+    //push the new state
+    this.states.push({
+        brain:brainState,
+        anim:animationState
+    });
+    this.setState(); //make it happen asap
 }
 
-
-//pushes a state
+//animation that shouldn't be forgotten but is not priority
 GeneralBehavior.prototype.queueState = function(brainState, animationState){
-    this.brainState = brainState;
+    this.states.unshift({
+            brain:brainState,
+            anim:animationState
+    });
+}
+
+GeneralBehavior.prototype.setState = function(){
+    var state = this.states.pop();
+    if (!state){
+        state = {
+            brain:'idle',
+            anim:'idle'
+        }
+    }
+    var brainState = state.brain;
+    var animationState = state.anim;
+
+    if(brainState){
+        this.brainState = brainState;
+    }
+
+
     if (animationState){
         this.animationState = animationState;
-    }else{
-        this.animationState = this.brainState;
+        if (animationState){
+            this.owner.setState(this.animationState, function(){
+                this.setState(); //go to next state
+            }.bind(this));
+        }
     }
-    if (animationState){
-        this.owner.setState(this.animationState, function(newState){
-            this.brainState = newState;
-            this.animationState = newState;
-            this.owner.setState(this.animationState);
-        }.bind(this));
-    }
-
 }
 
 GeneralBehavior.prototype.leftOrRight = function (me, them){
@@ -198,15 +223,20 @@ GeneralBehavior.prototype.getRandomFleePosition = function(){
 
 }
 
-GeneralBehavior.prototype.doAttack = function(){
-    var actionDelay = this.owner.actionDelays['attack'];
-    var effectDelay = this.owner.effectDelays['attack'];
-    this.setState('attack');
+GeneralBehavior.prototype.scheduleDamage=function(amount, time){
     this.owner.scheduleOnce(function(){
-        this.setState('attack', 'attack');
-        this.locked.scheduleDamage(this.owner.damage, effectDelay);
-    }.bind(this),actionDelay);
+        this.owner.addDamage(amount);
+        if (this.owner.isAlive()){
+            this.pushState('damage', 'damage');
+        }else{
+            this.pushState('dead', 'dead');
+        }
+    }.bind(this,amount),time);
+
+
+
 }
+
 
 GeneralBehavior.prototype.clamp=function(point){
     var winSize = cc.Director.getInstance().getWinSize();

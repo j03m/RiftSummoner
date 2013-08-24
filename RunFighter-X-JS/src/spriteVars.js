@@ -389,7 +389,7 @@ var spriteDefs = {
     },
     "orc": {
         "name": "orc",
-        "targetRadius": 50,
+        "targetRadius": 25,
         "gameProperties": {
             "MaxHP": 300,
             "speed": 50,
@@ -577,8 +577,6 @@ var spriteDefs = {
     },
     "spider": {
         "name": "spider",
-        "MaxHP": 250,
-        "speed": 125,
         "gameProperties": {
             "MaxHP": 500,
             "speed": 100,
@@ -588,7 +586,7 @@ var spriteDefs = {
             "effectDelays": {
                 "attack":.2
             },
-            "targetRadius": 25
+            "targetRadius": 50
         },
         "animations": {
             "move": {

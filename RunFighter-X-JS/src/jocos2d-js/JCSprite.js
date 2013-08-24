@@ -48,12 +48,6 @@ jc.Sprite = cc.Sprite.extend({
     addDamage: function(amount){
         this.hp -=amount;
         this.layer.doBlood(this);
-        if (this.isAlive()){
-            this.nextState = 'damage';
-        }else{
-            this.nextState = 'dead';
-        }
-
     },
     initHealthBar:function(){
         this.healthBar = cc.DrawNode.create();
@@ -136,9 +130,6 @@ jc.Sprite = cc.Sprite.extend({
 		}
 		return action;
 	},
-    scheduleDamage:function(amount, time){
-        this.scheduleOnce(this.addDamage.bind(this, amount));
-    },
     update: function(dt){
         if (!this.alive) return;
         this.think(dt);
@@ -206,9 +197,7 @@ jc.Sprite = cc.Sprite.extend({
 	},
 	animationDone:function(){
         if (this.animations[this.state].callback){
-            this.animations[this.state].callback(this.nextState);
-        }else{
-            this.setState(this.nextState);
+            this.animations[this.state].callback();
         }
 	},
     getState:function(){
@@ -229,15 +218,6 @@ jc.Sprite = cc.Sprite.extend({
 		if (currentState != -1){
 			var stopMe = this.animations[currentState];
 			if (startMe && stopMe){
-				this.nextState = startMe.transitionTo;
-                if (!this.nextState){
-                    if (this.isAlive()){
-                        this.nextState = 'idle';
-                    }else{
-                        this.nextState = 'dead';
-                    }
-
-                }
 	            jc.log(['sprite', 'state'],"Stopping action.")
 	            if(stopMe.action){
                     this.stopAction(stopMe.action);
@@ -247,8 +227,6 @@ jc.Sprite = cc.Sprite.extend({
                 if (startMe.action){
                     this.runAction(startMe.action);
                 }
-
-				
 			}else{
 				throw "Couldn't set state. What is state: " + state + " currentState:" + currentState;			
 			}			
