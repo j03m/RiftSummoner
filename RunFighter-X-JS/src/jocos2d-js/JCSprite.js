@@ -16,9 +16,7 @@ if (!String.prototype.format) {
 jc.Sprite = cc.Sprite.extend({
     layer:undefined, //parent reference
 	alive:true,
-    initWithPlist: function(plist, sheet, firstFrame, name) {
-        this.MaxHP = 100;
-        this.hp = this.MaxHP;
+    initWithPlist: function(plist, sheet, firstFrame, name, gameObject, behavior, type) {
         this.HealthBarWidth = 40;
         this.HealthBarHeight = 10;
         this.animations = {};
@@ -26,29 +24,29 @@ jc.Sprite = cc.Sprite.extend({
 		this.state = -1;
 		this.moving = 0;
 		this.currentMove = null;
-		this.nextState = 0;
 		this.idle = 0;
 		this.name = name;
-        this.speed = 50;
-        this.homeTeam = undefined;
-        this.enemyTeam = undefined;
 		cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
 		this.batch = cc.SpriteBatchNode.create(sheet);
         this.batch.retain();
 		var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame); 		
 		this.initWithSpriteFrame(frame);
-        this.superDraw = this.draw;
-        this.draw = this.customDraw;
-        this.initHealthBar();
+        this.type = type;
+        if(this.type != 'background'){
+            this.superDraw = this.draw;
+            this.draw = this.customDraw;
+            this.initHealthBar();
+        }
+
         this.debug = false;
-        this.damage = 100;
-        this.strikeTime = 1;
+        this.behavior = behavior;
+        this.gameObject = gameObject;
+        if(this.gameObject){
+            this.gameObject.init();
+        }
+
 		return this;
 	},
-    addDamage: function(amount){
-        this.hp -=amount;
-        this.layer.doBlood(this);
-    },
     initHealthBar:function(){
         this.healthBar = cc.DrawNode.create();
         this.healthBar.contentSize = cc.SizeMake(this.HealthBarWidth, this.HealthBarHeight);
@@ -130,20 +128,15 @@ jc.Sprite = cc.Sprite.extend({
 		}
 		return action;
 	},
-    scheduleDamage:function(amount, time){
-        this.scheduleOnce(this.addDamage.bind(this, amount));
-    },
     update: function(dt){
-        if (!this.alive) return;
-        this.think(dt);
+        if (!this.isAlive()){
+            this.think(dt);
+        }
     },
     getBasePosition:function(){
         //get the position of this sprite, push the y coord down to the base (feet)
         var point = this.getPosition();
         var box = this.getTextureRect();
-        var box2 = this.getContentSize();
-        //point.x = point.x + (box2.width - box.width)/2;
-        //point.y = point.y + (box2.height - box.height)/2;
         point.y -= box.height/2;
         return point;
     },
@@ -188,7 +181,7 @@ jc.Sprite = cc.Sprite.extend({
 		this.runAction(this.currentMove);		
 	},
     isAlive: function(){
-        if (this.hp>0){
+        if (this.gameObject.hp>0){
             return true;
         }else{
             return false;
@@ -199,10 +192,13 @@ jc.Sprite = cc.Sprite.extend({
 		this.stopAction(this.currentMove);		
 	},
 	animationDone:function(){
+        var call;
         if (this.animations[this.state].callback){
-            this.animations[this.state].callback(this.nextState);
-        }else{
-            this.setState(this.nextState);
+            call = this.animations[this.state].callback;
+        }
+        this.setState(this.nextState);
+        if (call){
+            call(this.nextState);
         }
 	},
     getState:function(){
@@ -210,103 +206,94 @@ jc.Sprite = cc.Sprite.extend({
     },
 	setState:function(state, callback){
         if (!state){
-            return;
+            throw "Undefined state passed to setState";
         }
-		var currentState = this.state;
+		//catch next state and current state
+        var currentState = this.state;
 		this.state = state;
-		jc.log(['sprite', 'state'],"State Change For:" + this.name + ' from:' + currentState + ' to:' + this.state);	
-		if (this.state == currentState){
+
+        jc.log(['sprite', 'state'],"State Change For:" + this.name + ' from:' + currentState + ' to:' + this.state);
+
+        //no need to do anything
+        if (this.state == currentState){
 			jc.log(['sprite', 'state'],"Trying to set a state already set, exit");
 			return;
 		}
-		var startMe = this.animations[this.state];		
-		if (currentState != -1){
-			var stopMe = this.animations[currentState];
-			if (startMe && stopMe){
-				this.nextState = startMe.transitionTo;
-                if (!this.nextState){
-                    if (this.isAlive()){
-                        this.nextState = 'idle';
-                    }else{
-                        this.nextState = 'dead';
-                    }
 
-                }
-	            jc.log(['sprite', 'state'],"Stopping action.")
-	            if(stopMe.action){
-                    this.stopAction(stopMe.action);
-                }
-	            jc.log(['sprite', 'state'],"Starting action.")
-                this.animations[state].callback = callback;
-                if (startMe.action){
-                    this.runAction(startMe.action);
-                }
+        //if I'm dead, return state shouldn't be idle
+        if (this.isAlive()){
+            this.nextState = 'idle';
+        }else{
+            this.nextState = 'dead';
+        }
 
-				
-			}else{
-				throw "Couldn't set state. What is state: " + state + " currentState:" + currentState;			
-			}			
-		}else{
-			this.nextState = startMe.transitionTo;
-            jc.log(['sprite', 'state'],"Starting action.")
-            this.runAction(startMe.action);
+        //make sure start state is known
+        var startMe = this.animations[this.state];
+        var stopMe = this.animations[currentState];
+        if (!startMe){
+            throw "Couldn't start state. What is state: " + this.state + " currentState:" + currentState;
+        }
+
+        //capture callback if one is provided
+        startMe.callback = callback;
+
+        //if this isn't my first state call, we need to stop an action
+        if (currentState != -1){
+            //make sure the stop state exists
+            if (!stopMe){
+                throw "Couldn't stop state. What is currentState:" + currentState;
+            }
+            jc.log(['sprite', 'state'],"Stopping action.");
+            if(stopMe.action){
+                this.stopAction(stopMe.action);
+            }
 		}
+
+        jc.log(['sprite', 'state'],"Starting action.");
+        if (startMe.action){
+            this.runAction(startMe.action);
+        }
+
 	},
 	centerOnScreen:function(){
 		var size = cc.Director.getInstance().getWinSize();
 		var x = size.width/2;
 		var y = size.height/2;
-		this.setPosition(cc.p(x,y));		
+		this.setPosition(cc.p(x,y));
 	},
     setBehavior: function(behavior){
         var behaviorClass = BehaviorMap[behavior];
         if (!behaviorClass){
             throw 'Unrecognized behavior name: ' + behavior;
         }
-
         this.behavior = new behaviorClass(this);
     },
     think:function(dt){
         this.behavior.think(dt);
     },
-    getAllies:function(){
-        if (this.homeTeam == undefined){
-            throw "Sprite not init-ed correctly. Home team is not set.";
-        }
-        return this.homeTeam;
-    },
     customDraw:function(){
-        //team id
-        //area effects
         this.superDraw();
-
         if (this.debug){
             this.drawBorders();
         }
-
-        //health bar
         this.drawHealthBar();
-        //ispoisoned
     },
     drawBorders:function(){
-        if (!this.debugContentBorder){
-            this.debugContentBorder = cc.DrawNode.create();
-            this.layer.addChild(this.debugContentBorder);
-            this.debugContentBorder.setPosition(this.getPosition());
-        }
 
+        var position = this.getBasePosition();
+        var rect = this.getTextureRect();
         if (!this.debugTextureBorder){
             this.debugTextureBorder = cc.DrawNode.create();
             this.layer.addChild(this.debugTextureBorder);
-            this.debugContentBorder.setPosition(this.getPosition());
+            position.x = position.x - rect.width/2;
+            this.debugTextureBorder.setPosition(position);
         }
 
         var color = cc.c4f(0,0,0,0);
         var border = cc.c4f(35.0/255.0, 28.0/255.0, 40.0/255.0, 1.0);
-        this.debugContentBorder.clear();
+
         this.debugTextureBorder.clear();
-        this.drawRect(this.debugContentBorder, this.getContentSize(), color, border);
-        this.drawRect(this.debugTextureBorder, this.getTextureRect(), color, border);
+        this.drawRect(this.debugTextureBorder, this.getTextureRect(), color, border,4);
 
     },
     drawRect:function(poly, rect, fill, border, borderWidth){
@@ -333,7 +320,7 @@ jc.Sprite = cc.Sprite.extend({
         verts[0].y += 0.5;
         verts[1].x += 0.5;
         verts[1].y -= 0.5;
-        verts[2].x = (this.HealthBarWidth - 2.0)*this.hp/this.MaxHP + 0.5;
+        verts[2].x = (this.HealthBarWidth - 2.0)*this.gameObject.hp/this.gameObject.MaxHP + 0.5;
         verts[2].y -= 0.5;
         verts[3].x = verts[2].x;
         verts[3].y += 0.5;
@@ -342,11 +329,13 @@ jc.Sprite = cc.Sprite.extend({
 
     },
     updateHealthBarPos:function(){
-        var myPos = this.getBasePosition();
-        var myRect = this.getTextureRect();
-        myPos.y+=myRect.height;
-        myPos.x-=(myRect.width/4);
-        this.healthBar.setPosition(myPos);
+        if (this.type != 'background'){
+            var myPos = this.getBasePosition();
+            var myRect = this.getTextureRect();
+            myPos.y+=myRect.height;
+            myPos.x-=(myRect.width/4);
+            this.healthBar.setPosition(myPos);
+        }
     }
 
 
@@ -354,11 +343,19 @@ jc.Sprite = cc.Sprite.extend({
 
 jc.Sprite.spriteGenerator = function(allDefs, def, layer){
 
+    //get details for sprite def
     var character = allDefs[def];
+
+    //make a sprite
     var sprite = new jc.Sprite();
+
+    //set the layer
     sprite.layer= layer;
 
+    //nameformat
     var nameFormat = character.name + ".{0}.png";
+
+    //if this character is inherited, find the parent
     if (character.inherit){
         //find who we inherit from, copy everything that doesn't exist over.
         var nameSave = character.name;
@@ -367,13 +364,36 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
         character.parentOnly = undefined;
     }
 
+    //are we brokified?
     if (character['animations']== undefined){
         throw def + " has a malformed configation. Animation property missing.";
     }
 
+    //what is our init frame?
     var firstFrame = character.animations['idle'].start;
-    sprite.initWithPlist(g_characterPlists[def], g_characterPngs[def], nameFormat.format(firstFrame), character.name);
 
+    //make a game object, merge with props
+    var gameObject = new jc.GameObject();
+    _.extend(gameObject,character.gameProperties);
+
+    //if we don't have a behavior, default to tank
+    if (!character.behavior){
+        character.behavior = 'tank';
+    }
+
+    //look up behavior
+    var behaviorClass = BehaviorMap[character.behavior];
+    if (!behaviorClass){
+        throw 'Unrecognized behavior name: ' + character.behavior;
+    }
+
+    //set it
+    var behavior = new behaviorClass(sprite);
+
+    //init
+    sprite.initWithPlist(g_characterPlists[def], g_characterPngs[def], nameFormat.format(firstFrame), character.name, gameObject, behavior);
+
+    //create definitions from the animation states
     for (var animation in character.animations){
         //use this to create a definition in the sprite
         var useThis = jc.clone(character.animations[animation]);
@@ -388,8 +408,8 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
         }
 
     }
-    _.extend(sprite,character.gameProperties);
-    sprite.hp = sprite.MaxHP;
+
+    //return the sprite;
     return sprite;
 }
 

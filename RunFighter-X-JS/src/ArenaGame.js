@@ -13,23 +13,42 @@ var ArenaGame = cc.Layer.extend({
 		if (this._super()) {							
 			this.background = new jc.Sprite();
 			this.background.layer = this;
-            this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', 'arena');
-			this.background.centerOnScreen();
+            this.background.type = 'background';
+            this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', 'arena', undefined, undefined, 'background');
+            this.background.centerOnScreen();
+
 			this.addChild(this.background);
             this.teams['a'] = [];
             this.teams['b'] = [];
-            this.getRandomSprite(0);
-            this.getRandomSprite(1);
-            this.getRandomSprite(2);
-            this.getRandomSprite(3);
-            this.arrange(this.sprites);
+            //this.runScenario1();
+            this.runScenario2();
+
             this.scheduleUpdate();
 			return true;
 		} else {
 			return false;
 		}
 	},
-	getRandomSprite:function(toCreate){
+    runScenario1:function(){
+        this.getRandomSprite(0);
+        this.getRandomSprite(2);
+        this.arrange(this.sprites);
+    },
+    runScenario2:function(){
+        this.getRandomSprite(0);
+        //this.getRandomSprite(1);
+        this.getRandomSprite(2);
+        //this.getRandomSprite(3);
+        this.arrange(this.sprites);
+        //now set orc (sprite #2) into the middle of the screen
+        this.sprites[1].centerOnScreen();
+        this.sprites[1].updateHealthBarPos();
+        var base = this.sprites[1].getBasePosition();
+        //set me to his right
+        this.sprites[0].setBasePosition(cc.p(base.x + 400, base.y+400));
+
+    },
+    getRandomSprite:function(toCreate){
         var nameCreate = "";
         var sprite;
         if (toCreate == 0){

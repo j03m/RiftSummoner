@@ -4,20 +4,38 @@
 var GeneralBehavior = cc.Node.extend({});
 
 
-GeneralBehavior.prototype.state = function(){
+GeneralBehavior.prototype.getState = function(){
     //some behaviors have aiStates, which are in addition to sprite states, this is shitty. I know this.
     if (!this.brainState){
         this.setState('idle');
     }
-    return this.brainState;
+
+    if (!this.animationState){
+        this.owner.setState('idle');
+    }
+    return {brain:this.brainState, anim:this.animationState};
 }
+
+//sets a state
+GeneralBehavior.prototype.setState = function(brainState, animationState){
+    if (brainState){
+        this.brainState = brainState;
+    }
+    if (animationState){
+        this.animationState = animationState;
+        this.owner.setState(this.animationState, function(newState){
+            this.animationState = newState;
+            this.owner.setState(this.animationState);
+        }.bind(this));
+    }
+}
+
+
+
 
 //init
 GeneralBehavior.prototype.init = function(sprite){
     this.owner = sprite;
-    if (this.owner.targetRadius==undefined) throw "targetRadius not implemented on owning sprite.";
-    if (this.owner.homeTeam==undefined) throw "homeTeam not implemented on owning sprite.";
-    if (this.owner.enemyTeam==undefined) throw "enemyTeam not implemented on owning sprite.";
     this.directions = [0, 45, 90, 135, 180, 225, 270];
     this.stateQueue = [];
     this.owner = sprite;
@@ -96,21 +114,27 @@ GeneralBehavior.prototype.seek = function(toPoint){
     var attackPosition =0;
     if (side == 'left'){
         attackPosition = cc.p(toPoint.x - mySize.width, toPoint.y);
+        if (this.owner.isFlippedX()){
+            this.owner.setFlipX(false);
+        }
     }else{ //right
         attackPosition = cc.p(toPoint.x + mySize.height, toPoint.y);
+        if (!this.owner.isFlippedX()){
+            this.owner.setFlipX(true);
+        }
     }
 
     var vector = this.getVectorTo(attackPosition, myFeet);
 
-    if (vector.xd < this.owner.targetRadius && vector.yd < this.owner.speed/2){
+    if (vector.xd < this.owner.gameObject.targetRadius && vector.yd < this.owner.gameObject.speed/2){
         return cc.p(0,0);
     }
 
     var speed = 0;
-    if (this.owner.speed > vector.distance){
+    if (this.owner.gameObject.speed > vector.distance){
         speed = vector.distance; //slow down
     }else{
-        speed = this.owner.speed;
+        speed = this.owner.gameObject.speed;
     }
 
     return cc.pMult(cc.pNormalize(vector.direction), speed);
@@ -139,21 +163,6 @@ GeneralBehavior.prototype.moveToward = function(point, dt){
 }
 
 
-//pushes a state
-GeneralBehavior.prototype.setState = function(brainState, animationState){
-    if (brainState){
-        this.brainState = brainState;
-    }
-    if (animationState){
-        this.animationState = animationState;
-        this.owner.setState(this.animationState, function(newState){
-            this.brainState = newState;
-            this.animationState = newState;
-            this.owner.setState(this.animationState);
-        }.bind(this));
-    }
-
-}
 
 GeneralBehavior.prototype.leftOrRight = function (me, them){
     if (me.x < them.x){
@@ -170,16 +179,6 @@ GeneralBehavior.prototype.getRandomFleePosition = function(){
     var destination = cc.pMult(direction, this.owner.targetRadius);
     return this.clamp(destination);
 
-}
-
-GeneralBehavior.prototype.doAttack = function(){
-    var actionDelay = this.owner.actionDelays['attack'];
-    var effectDelay = this.owner.effectDelays['attack'];
-    this.setState('attack');
-    this.owner.scheduleOnce(function(){
-        this.setState('attack', 'attack');
-        this.locked.scheduleDamage(this.owner.damage, effectDelay);
-    }.bind(this),actionDelay);
 }
 
 GeneralBehavior.prototype.clamp=function(point){
@@ -206,4 +205,20 @@ GeneralBehavior.prototype.clamp=function(point){
         point.y = bottomLimit;
     }
     return point;
+}
+
+GeneralBehavior.prototype.hitLogic = function(){
+    if (!this.locked){
+        return;
+    }
+    if (this.locked.gameObject.hp>0){
+        this.locked.gameObject.hp-=this.owner.gameObject.damage;
+    }
+    this.owner.layer.doBlood(this.locked);
+    if (this.locked.gameObject.hp <=0){
+        this.locked.behavior.setState('dead', 'dead');
+    }else{
+        this.locked.behavior.setState(undefined, 'damage'); //damage shouldn't interupt whatever is happening.
+    }
+
 }
