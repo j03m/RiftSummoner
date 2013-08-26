@@ -392,7 +392,7 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
 
     //init
     sprite.initWithPlist(g_characterPlists[def], g_characterPngs[def], nameFormat.format(firstFrame), character.name, gameObject, behavior);
-
+    sprite.behaviorType = character.behavior;
     //create definitions from the animation states
     for (var animation in character.animations){
         //use this to create a definition in the sprite

@@ -1,75 +1,59 @@
 var RangeBehavior =  function(sprite){
     _.extend(this, new GeneralBehavior());
     this.init(sprite);
+    //this.handleTankIdle = this.handleIdle;
+    //this.handleIdle = this.handleRangeIdle;
+
 }
 
+RangeBehavior.prototype.handleRangeIdle = function(dt){
+    //find a tank team mate's target
+    this.locked = this.getClosestTankFriendTarget();
+    if (this.locked){
+        this.setState('move', 'move');
+    }else{
+        //if none, act like a tank
+        this.handleTankIdle(dt);
+    }
+}
 
-RangeBehavior.prototype.think = function(dt){
+//todo: Override damage here, damage should be off of projectile
+RangeBehavior.prototype.handleFight = function(dt){
 
-    //if I'm not locked on, lock on
-    if (this.getState() == 'dead' || !this.owner.isAlive()){
+    //is my target alive?
+    if (!this.locked.isAlive()){
+        this.setState('idle', 'idle');
         return;
     }
 
-
-    if (this.state() == 'flee'){
-        //pick a spot away from things
-        this.locked = undefined;
-        if (!this.fleePoint){
-            this.fleePoint = this.getRandomFleePosition();
-        }
-        var seekPoint = this.seek(this.fleePoint);
-        if (seekPoint.x==0 && seekPoint.y==0){
-            this.setState('idle');
-            return;
-        }else{
-            this.moveToward(this.fleePoint, dt);
-        }
+    var state= this.getState();
+    var targetState = this.locked.getState();
+    if (targetState.brain == 'flee'){
+        //he's running away - follow
+        this.setState('move', 'move');
     }
 
-    if (!this.locked || !this.locked.isAlive()){
-        this.locked = this.lockOnClosestUnlocked();
-        if (!this.locked){
-            this.locked = this.lockOnClosest();
-        }
-        this.setState('idle');
-        if (!this.locked){
-            return;
-        }
-
+    //get the action delay for attacking
+    var actionDelay = this.owner.gameObject.actionDelays['attack'];
+    var damageDelay = this.owner.gameObject.effectDelays['attack'];
+    if (this.lastAttack==undefined){
+        this.lastAttack = actionDelay;
     }
 
-    if  (this.state() == 'attack'){ //todo: replace with isAttacking to cover all possible attack states
-        //let attack finish
-        return;
-    }
-
-    if (this.state() == 'idle' || this.state() == 'move'){
-        //set state to moving
-        //update our sprites animation to move
-        this.setState('move');
-
-        var point = this.seek();  //todo: if seek is 0,0 - attack
-        if (point.x==0 && point.y==0){
-            if (!this.owner.once){
-                this.setState('attack', 'attack');
-                this.locked.addDamage(this.owner.damage);
-                if (!this.isAlive()){
-                    this.locked.setState('dead', 'dead');
-                }
-            }
-        }else{
-            this.moveToward(point, dt);
-        }
-    }
-
-
-
-    if (this.state() == 'damage'){
-        //get out of there
-        this.setState('flee', 'idle');
+    //if time is past the actiondelay and im not in another animation other than idle or damage
+    if (this.lastAttack >= actionDelay && state.anim != 'attack'){
+        this.setState(undefined, 'attack');
+        this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
+        this.lastAttack = 0;
+    }else{
+        this.lastAttack+=dt;
     }
 }
+
+
+
+
+
 
 
 

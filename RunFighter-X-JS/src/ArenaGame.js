@@ -21,8 +21,9 @@ var ArenaGame = cc.Layer.extend({
             this.teams['a'] = [];
             this.teams['b'] = [];
             //this.runScenario1();
-            this.runScenario2();
-
+            //this.runScenario2();
+            //this.runScenario3();
+            this.runScenario6();
             this.scheduleUpdate();
 			return true;
 		} else {
@@ -30,47 +31,65 @@ var ArenaGame = cc.Layer.extend({
 		}
 	},
     runScenario1:function(){
-        this.getRandomSprite(0);
-        this.getRandomSprite(2);
+        this.getRandomSprite('goldKnight');
+        this.getRandomSprite('orc');
         this.arrange(this.sprites);
     },
     runScenario2:function(){
-        this.getRandomSprite(0);
-        //this.getRandomSprite(1);
-        this.getRandomSprite(2);
-        //this.getRandomSprite(3);
+        this.getRandomSprite('goldKnight');
+        this.getRandomSprite('orc');
         this.arrange(this.sprites);
         //now set orc (sprite #2) into the middle of the screen
         this.sprites[1].centerOnScreen();
         this.sprites[1].updateHealthBarPos();
         var base = this.sprites[1].getBasePosition();
         //set me to his right
-        this.sprites[0].setBasePosition(cc.p(base.x + 400, base.y+400));
+        this.sprites[0].setBasePosition(cc.p(base.x + 100, base.y+100));
 
     },
-    getRandomSprite:function(toCreate){
-        var nameCreate = "";
+    runScenario3:function(){
+        this.getRandomSprite('goldKnight');
+        this.getRandomSprite('forestElf');
+        this.arrange(this.sprites);
+    },
+    runScenario4:function(){
+        this.getRandomSprite('goldKnight');
+        this.getRandomSprite('forestElf');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('voidElf');
+        this.arrange(this.sprites);
+    },
+    runScenario4:function(){
+        this.getRandomSprite('goldKnight');
+        this.getRandomSprite('forestElf');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('dragonRed');
+
+
+        this.getRandomSprite('blueKnight');
+        this.getRandomSprite('redGargoyle');
+        this.getRandomSprite('orge');
+        this.getRandomSprite('voidElf');
+
+        this.arrange(this.sprites);
+    },
+    runScenario5:function(){
+        this.getRandomSprite('orc');
+        this.getRandomSprite('troll');
+        this.arrange(this.sprites);
+    },
+    runScenario6:function(){
+        this.getRandomSprite('orc');
+        this.getRandomSprite('orc');
+
+        this.getRandomSprite('goldKnight');
+        this.getRandomSprite('troll');
+        this.arrange(this.sprites);
+    },
+
+    getRandomSprite:function(nameCreate){
         var sprite;
-        if (toCreate == 0){
-            nameCreate = 'goldKnight';
-            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
-        }
-
-        if (toCreate == 1){
-            nameCreate = 'spider';
-            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
-        }
-
-        if (toCreate == 2){
-            nameCreate = 'orc';
-            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
-        }
-
-        if (toCreate == 3){
-            nameCreate = 'orge';
-            sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
-        }
-
+        sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         sprite.setState('idle');
 		this.addChild(sprite.batch);
 		this.addChild(sprite);
@@ -81,7 +100,7 @@ var ArenaGame = cc.Layer.extend({
         //get random position on the bottom portion of the screen
         var size = cc.Director.getInstance().getWinSize();
         var teamAX = size.width/4;
-        var teamAY = size.height/4;
+        var teamAY = size.height/8;
         var teamBX = size.width - teamAX;
 
         for (var i =0; i<sprites.length/2;i++){
@@ -103,12 +122,10 @@ var ArenaGame = cc.Layer.extend({
 
         for (var i =0; i<sprites.length/2;i++){
             sprites[i].team = 'a';
-            sprites[i].setBehavior('tank');
         }
 
         for (var i =sprites.length/2; i<sprites.length;i++){
             sprites[i].team = 'b';
-            sprites[i].setBehavior('tank');
         }
 
 

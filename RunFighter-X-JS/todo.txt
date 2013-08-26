@@ -9,9 +9,11 @@ implement green bar / damage / death / hp
 * outsource particle - implement blood splat
 * outsource particle - implement blood pool
 
-implement range behavior
+implement chained or randomized attack sequence  (attack count, bla)
+
 implement missles
-implement flying
+implement flying tank
+implement range tank
 implement backend event gen
 implement playback
 implement particles

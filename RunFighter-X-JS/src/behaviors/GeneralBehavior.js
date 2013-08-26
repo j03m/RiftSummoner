@@ -16,8 +16,14 @@ GeneralBehavior.prototype.getState = function(){
     return {brain:this.brainState, anim:this.animationState};
 }
 
+GeneralBehavior.prototype.resume = function(){
+    this.setState(this.lastBrain, this.lastAnim);
+}
+
 //sets a state
 GeneralBehavior.prototype.setState = function(brainState, animationState){
+    this.lastBrain = this.brainState;
+    this.lastAnim = this.animationState;
     if (brainState){
         this.brainState = brainState;
     }
@@ -50,9 +56,20 @@ GeneralBehavior.prototype.lockOnAny = function(){
 
 //call lock on closest, but pass isUnlocked to check if anyone is locked on already, if so pass and check the next.
 GeneralBehavior.prototype.lockOnClosestUnlocked = function(){
-    return this.lockOnClosest(this.isUnlocked.bind(this));
+    return this.lockOnClosest(this.isUnlocked.bind(this), this.owner.enemyTeam);
 }
 
+
+GeneralBehavior.prototype.getClosestFriendToSupport = function(){
+    return this.lockOnClosest(this.isTankOrRange.bind(this), this.owner.homeTeam);
+}
+
+GeneralBehavior.prototype.isTankOrRange = function(target){
+    if (target.behaviorType == 'tank' || target.behaviorType == 'range'){
+        return true;
+    }
+    return false;
+}
 
 //loops through all hometeam sprites and checks to see if any of them are locked onto the target
 GeneralBehavior.prototype.isUnlocked = function(target){
@@ -69,12 +86,12 @@ GeneralBehavior.prototype.isUnlocked = function(target){
 }
 
 //lock onto the closest bad guy but use the check function for exceptions
-GeneralBehavior.prototype.lockOnClosest = function(checkFunc){
+GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
     var currentlyLocked = undefined;
     var winSize = cc.Director.getInstance().getWinSize()
     var minDistance = winSize.width;
-    for (var i =0; i< this.owner.enemyTeam.length; i++){
-        var sprite = this.owner.enemyTeam[i];
+    for (var i =0; i< team.length; i++){
+        var sprite = team[i];
         if (sprite.isAlive()){
             var vector = this.getVectorTo(sprite.getBasePosition(), this.owner.getBasePosition());
             if (vector.distance < minDistance){
@@ -126,7 +143,7 @@ GeneralBehavior.prototype.seek = function(toPoint){
 
     var vector = this.getVectorTo(attackPosition, myFeet);
 
-    if (vector.xd < this.owner.gameObject.targetRadius && vector.yd < this.owner.gameObject.speed/2){
+    if (vector.xd < this.owner.gameObject.targetRadius && vector.yd < 25){
         return cc.p(0,0);
     }
 
@@ -207,6 +224,20 @@ GeneralBehavior.prototype.clamp=function(point){
     return point;
 }
 
+GeneralBehavior.prototype.healLogic = function(){
+    if (!this.support){
+        return;
+    }
+    //can't heal a dead guy or full hp
+    if (this.support.gameObject.hp<0 || this.support.gameObject.hp == this.support.gameObject.MaxHP){
+        return;
+    }
+
+    //todo: implement me this.owner.layer.doHealParticle(this.locked);
+    this.support.gameObject.hp+= this.owner.gameObject.heal;
+}
+
+
 GeneralBehavior.prototype.hitLogic = function(){
     if (!this.locked){
         return;
@@ -218,7 +249,101 @@ GeneralBehavior.prototype.hitLogic = function(){
     if (this.locked.gameObject.hp <=0){
         this.locked.behavior.setState('dead', 'dead');
     }else{
-        this.locked.behavior.setState(undefined, 'damage'); //damage shouldn't interupt whatever is happening.
+        //this.locked.behavior.setState(undefined, 'damage'); //damage shouldn't interupt whatever is happening.
     }
 
+}
+
+GeneralBehavior.prototype.think = function(dt){
+    //todo remove this:
+    if (this.owner.isAlive()){
+        this.handleState(dt);
+    }
+}
+
+GeneralBehavior.prototype.handleState = function(dt){
+    var state= this.getState();
+    if (!this.owner.isAlive() && state.brain!='dead'){
+        this.setState('dead','dead');
+        return;
+    }
+
+
+    switch(state.brain){
+        case 'idle':this.handleIdle(dt);
+            break;
+        case 'move':this.handleMove(dt);
+            break;
+        case 'fighting':this.handleFight(dt);
+            break;
+        case 'damage':this.handleDamage(dt);
+            break;
+    }
+}
+
+GeneralBehavior.prototype.handleDamage = function(dt){
+    var state= this.getState();
+    if (state.anim == 'idle'){
+        this.setState('idle', 'idle');
+    }
+}
+
+GeneralBehavior.prototype.handleFight = function(dt){
+
+    //is my target alive?
+
+    if (!this.locked){
+        this.setState('idle', 'idle');
+        return;
+    }
+
+    if (!this.locked.isAlive()){
+        this.setState('idle', 'idle');
+        return;
+    }
+
+    var state= this.getState();
+    var targetState = this.locked.getState();
+    if (targetState.brain == 'flee'){
+        //he's running away - follow
+        this.setState('move', 'move');
+    }
+
+    //get the action delay for attacking
+    var actionDelay = this.owner.gameObject.actionDelays['attack'];
+    var damageDelay = this.owner.gameObject.effectDelays['attack'];
+    if (this.lastAttack==undefined){
+        this.lastAttack = actionDelay;
+    }
+
+    //if time is past the actiondelay and im not in another animation other than idle or damage
+    if (this.lastAttack >= actionDelay && state.anim != 'attack'){
+        this.setState(undefined, 'attack');
+        this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
+        this.lastAttack = 0;
+    }else{
+        this.lastAttack+=dt;
+    }
+}
+
+GeneralBehavior.prototype.handleIdle = function(dt){
+    //if I'm idle, lock on
+    this.locked = this.lockOnClosestUnlocked();
+    if (!this.locked){
+        this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam);
+    }
+
+    if (this.locked){
+        this.setState('move', 'move');
+    }
+}
+
+GeneralBehavior.prototype.handleMove = function(dt){
+    var point = this.seekEnemy();
+    if (point.x == 0 && point.y == 0){
+        //arrived - attack
+        this.setState('fighting', 'attack');
+        return;
+    }
+    this.moveToward(point, dt);
 }
