@@ -18,6 +18,8 @@ var ArenaLayer = cc.Layer.extend({
             var layerColor = cc.LayerColor.create(cc.c4(128, 128, 128, 255));
             layerColor.setPosition(new cc.p(0.0,0.0));
             this.addChild(layerColor);
+            this.superDraw = this.draw;
+            this.draw = this.customDraw();
 
 
             if ('mouse' in sys.capabilities) {

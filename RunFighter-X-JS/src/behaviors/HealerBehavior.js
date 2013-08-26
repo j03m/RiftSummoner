@@ -44,7 +44,30 @@ HealerBehavior.prototype.handleHealerIdle = function(dt){
 }
 
 HealerBehavior.prototype.handleHealMove = function(dt){
-    var point = this.seek(this.support.getBasePosition());
+    var mySize = this.owner.getTextureRect();
+    var myFeet = this.owner.getBasePosition();
+    var toPoint = this.support.getBasePosition();
+    var healPosition;
+
+    var side = this.leftOrRight(myFeet, toPoint);
+    if (side == 'left'){
+        if (this.owner.isFlippedX()){
+            this.owner.setFlipX(false);
+        }
+    }else{ //right
+        if (!this.owner.isFlippedX()){
+            this.owner.setFlipX(true);
+        }
+    }
+
+    if (this.support.isFlippedX()){
+        healPosition = cc.p(toPoint.x + mySize.width, toPoint.y);
+    }else{
+        healPosition = cc.p(toPoint.x - mySize.width, toPoint.y);
+    }
+
+
+    var point = this.seek(healPosition);
     if (point.x == 0 && point.y == 0){
         //arrived - heal
         this.setState('healing');

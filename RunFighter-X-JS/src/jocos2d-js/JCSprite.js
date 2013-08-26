@@ -144,6 +144,7 @@ jc.Sprite = cc.Sprite.extend({
         var box = this.getTextureRect();
         point.y += box.height/2;
         this.setPosition(point);
+        this.layer.reorderChild(this, point.y*-1);
         this.updateHealthBarPos();
     },
     moveTo: function(point, state, velocity, callback){

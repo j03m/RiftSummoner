@@ -16,14 +16,15 @@ var ArenaGame = cc.Layer.extend({
             this.background.type = 'background';
             this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', 'arena', undefined, undefined, 'background');
             this.background.centerOnScreen();
-
 			this.addChild(this.background);
+
+            this.reorderChild(this.background,  (cc.Director.getInstance().getWinSize().height+10) * -1);
             this.teams['a'] = [];
             this.teams['b'] = [];
             //this.runScenario1();
             //this.runScenario2();
             //this.runScenario3();
-            this.runScenario6();
+            this.runScenario7();
             this.scheduleUpdate();
 			return true;
 		} else {
@@ -81,9 +82,27 @@ var ArenaGame = cc.Layer.extend({
     runScenario6:function(){
         this.getRandomSprite('orc');
         this.getRandomSprite('orc');
+        this.getRandomSprite('voidElf');
 
+        this.getRandomSprite('orc');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('orc');
+        this.arrange(this.sprites);
+    },
+    runScenario7:function(){
+        this.getRandomSprite('orc');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('voidElf');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('goldKnight');
+
+
+        this.getRandomSprite('orc');
+        this.getRandomSprite('troll');
         this.getRandomSprite('goldKnight');
         this.getRandomSprite('troll');
+        this.getRandomSprite('orge');
+
         this.arrange(this.sprites);
     },
 

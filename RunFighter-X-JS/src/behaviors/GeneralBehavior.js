@@ -114,7 +114,26 @@ GeneralBehavior.prototype.seekEnemy = function(){
     if (!this.locked){
         throw "invalid state, character must be locked to seek.";
     }
-    return this.seek(this.locked.getBasePosition());
+
+    var mySize = this.owner.getTextureRect();
+    var myFeet = this.owner.getBasePosition();
+    var toPoint = this.locked.getBasePosition();
+    var attackPosition;
+    //if locked on someone else, target radius behind them
+    //otherwise, target radius face to face
+    var side = this.leftOrRight(myFeet, toPoint);
+    if (side == 'left'){
+        attackPosition = cc.p(toPoint.x - mySize.width, toPoint.y);
+        if (this.owner.isFlippedX()){
+            this.owner.setFlipX(false);
+        }
+    }else{ //right
+        attackPosition = cc.p(toPoint.x + mySize.width, toPoint.y);
+        if (!this.owner.isFlippedX()){
+            this.owner.setFlipX(true);
+        }
+    }
+    return this.seek(attackPosition);
 }
 
 GeneralBehavior.prototype.seek = function(toPoint){
@@ -124,24 +143,8 @@ GeneralBehavior.prototype.seek = function(toPoint){
     }
 
     var myFeet = this.owner.getBasePosition();
-    var mySize = this.owner.getTextureRect();
-    //if locked on someone else, target radius behind them
-    //otherwise, target radius face to face
-    var side = this.leftOrRight(myFeet, toPoint);
-    var attackPosition =0;
-    if (side == 'left'){
-        attackPosition = cc.p(toPoint.x - mySize.width, toPoint.y);
-        if (this.owner.isFlippedX()){
-            this.owner.setFlipX(false);
-        }
-    }else{ //right
-        attackPosition = cc.p(toPoint.x + mySize.height, toPoint.y);
-        if (!this.owner.isFlippedX()){
-            this.owner.setFlipX(true);
-        }
-    }
 
-    var vector = this.getVectorTo(attackPosition, myFeet);
+    var vector = this.getVectorTo(toPoint, myFeet);
 
     if (vector.xd < this.owner.gameObject.targetRadius && vector.yd < 25){
         return cc.p(0,0);
@@ -229,7 +232,7 @@ GeneralBehavior.prototype.healLogic = function(){
         return;
     }
     //can't heal a dead guy or full hp
-    if (this.support.gameObject.hp<0 || this.support.gameObject.hp == this.support.gameObject.MaxHP){
+    if (this.support.gameObject.hp<0 || this.support.gameObject.hp >= this.support.gameObject.MaxHP){
         return;
     }
 
@@ -318,7 +321,7 @@ GeneralBehavior.prototype.handleFight = function(dt){
 
     //if time is past the actiondelay and im not in another animation other than idle or damage
     if (this.lastAttack >= actionDelay && state.anim != 'attack'){
-        this.setState(undefined, 'attack');
+        this.setState('idle', 'attack');
         this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
         this.lastAttack = 0;
     }else{
@@ -328,14 +331,18 @@ GeneralBehavior.prototype.handleFight = function(dt){
 
 GeneralBehavior.prototype.handleIdle = function(dt){
     //if I'm idle, lock on
-    this.locked = this.lockOnClosestUnlocked();
-    if (!this.locked){
+    if (!this.locked || !this.locked.isAlive()){
+        this.locked = this.lockOnClosestUnlocked();
+    }
+
+    if (!this.locked || !this.locked.isAlive()){
         this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam);
     }
 
     if (this.locked){
         this.setState('move', 'move');
     }
+
 }
 
 GeneralBehavior.prototype.handleMove = function(dt){
