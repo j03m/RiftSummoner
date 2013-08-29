@@ -1,24 +1,27 @@
-
-
-
-
-
+Tomorrow:
+    spec map
+    spec arrange team
+    spec first character - acid bear
+    healers still get stuck in idle   - think about cocos follow
 
 arena:
-implement green bar / damage / death / hp
+
+bug: why no particle???
 * outsource particle - implement blood splat
 * outsource particle - implement blood pool
+* outsource particle - heal effect
 
-implement chained or randomized attack sequence  (attack count, bla)
-
-implement missles
+*implement flanker
+fix healer bug - awful - what about cocos2d follow?
+implement defender - hangs around support or range
 implement flying tank
 implement range tank
+implement missles
+
+implement particles
+implement special powers for different units???
 implement backend event gen
 implement playback
-implement particles
-implement powers
-implement overhead arrows
 implement figure radius (power radius)
 implement waves
 implement wave particle
