@@ -1,31 +1,21 @@
-var ryuPlist = dirImg + "ryu-packed.plist"
-var ryuSheet = dirImg + "ryu-packed.png"
-var wizardPlist = dirImg + "wizard.plist";
-var wizardSheet = dirImg + "wizard.png";
-var mapTiles = dirImg + "mymap.tmx";
-var mapSheet = dirImg + "dontstarve.png";
-var alexPlist = dirImg + "alex.plist"
-var alexSheet = dirImg + "alex.png"
-var ogrePlist = dirImg + "ogre.plist"
-var ogreSheet = dirImg + "ogre.png"
-var ibukiPlist = dirImg + "ibuki.plist"
-var ibukiSheet = dirImg + "ibuki.png"
 var arenaSheet = dirImg + "arena.png";
 var arenaPlist = dirImg + "arena.plist";
 var bloodPlist = dirImg + "blood.plist";
 
-//var blackGargoyleSheet = dirImg + 'blackGargoyleSheet.png';
-//var dragonBlackSheet = dirImg + 'dragonBlackSheet.png';
-//var blueKnightSheet =  dirImg + 'blueKnightSheet.png';
-//var orcSheet =  dirImg + 'orcSheet.png';
-//
-//var blackGargoylePlist = dirImg + 'blackGargoyleSheet.plist';
-//var dragonBlackPlist = dirImg + 'dragonBlackSheet.plist';
-//var blueKnightPlist =  dirImg + 'blueKnightSheet.plist';
-//var orcPlist =  dirImg + 'orcSheet.plist';
+//remove us
+var s_spineboy = dirImg + "spineboy.png";
+var s_spineboyJSON = dirImg + "spineboy.json";
+var s_spineboyATLAS = dirImg + "spineboy.atlas";
+
 
 var g_characterPngs = {};
 var g_characterPlists = {};
+
+var g_mainmenu = [
+    {type:"IMAGE", src:s_spineboy},
+    {type:"XML", src:s_spineboyJSON},
+    {type:"TEXT", src:s_spineboyATLAS}
+];
 
 
 var g_maingame = [
@@ -33,14 +23,6 @@ var g_maingame = [
 	{src:arenaSheet},
 	{src:arenaPlist},
     {src:bloodPlist}
-//	{src:blackGargoyleSheet},
-//	{src:blackGargoylePlist},
-//	{src:blueKnightSheet},
-//	{src:blueKnightPlist},
-//	{src:dragonBlackSheet},
-//	{src:dragonBlackPlist},
-//	{src:orcPlist},
-//	{src:orcSheet}
 
 ];
 

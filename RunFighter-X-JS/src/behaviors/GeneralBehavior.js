@@ -30,8 +30,12 @@ GeneralBehavior.prototype.setState = function(brainState, animationState){
     if (animationState){
         this.animationState = animationState;
         this.owner.setState(this.animationState, function(newState){
-            this.animationState = newState;
-            this.owner.setState(this.animationState);
+            if (this.animationState == 'damage'){
+                this.resume();
+            }else{
+                this.animationState = newState;
+                this.owner.setState(this.animationState);
+            }
         }.bind(this));
     }
 }
@@ -54,21 +58,60 @@ GeneralBehavior.prototype.lockOnAny = function(){
     return sprite;
 }
 
+GeneralBehavior.prototype.targetWithinRadius = function(target){
+    return this.withinRadius(target.getBasePosition());
+}
+
+GeneralBehavior.prototype.withinRadius = function(toPoint){
+    return this.withinThisRadius(toPoint, this.owner.getTargetRadius(), this.owner.getTargetRadiusY()/8);
+}
+
+GeneralBehavior.prototype.withinThisRadius = function(toPoint, xRad, yRad){
+    var feet = this.owner.getBasePosition();
+    var vector = this.getVectorTo(toPoint, feet);
+    if (vector.xd <= xRad && vector.yd <= yRad){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//find an enemy that that is within my attack radius
+GeneralBehavior.prototype.lockOnEnemyInRadius = function(){
+    return this.lockOnClosest(this.targetWithinRadius.bind(this), this.owner.enemyTeam);
+}
+
 //call lock on closest, but pass isUnlocked to check if anyone is locked on already, if so pass and check the next.
 GeneralBehavior.prototype.lockOnClosestUnlocked = function(){
     return this.lockOnClosest(this.isUnlocked.bind(this), this.owner.enemyTeam);
 }
 
-
-GeneralBehavior.prototype.getClosestFriendToSupport = function(){
-    return this.lockOnClosest(this.isTankOrRange.bind(this), this.owner.homeTeam);
+GeneralBehavior.prototype.lockOnClosestFriendlyNonTank = function(){
+    return this.lockOnClosest(this.is.bind(this, ['healer', 'range']), this.owner.homeTeam);
 }
 
-GeneralBehavior.prototype.isTankOrRange = function(target){
-    if (target.behaviorType == 'tank' || target.behaviorType == 'range'){
+GeneralBehavior.prototype.lockOnClosestNonTank = function(){
+    return this.lockOnClosest(this.is.bind(this, ['healer', 'range']), this.owner.enemyTeam);
+}
+
+GeneralBehavior.prototype.isNot = function(nots,target){
+    if (nots.indexOf(target.behaviorType) == -1){
         return true;
+    }else{
+        return false;
     }
-    return false;
+}
+
+GeneralBehavior.prototype.is = function(iss,target){
+    if (iss.indexOf(target.behaviorType) != -1){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+GeneralBehavior.prototype.getClosestFriendToSupport = function(){
+    return this.lockOnClosest(this.is.bind(this, ['tank', 'range']), this.owner.homeTeam);
 }
 
 //loops through all hometeam sprites and checks to see if any of them are locked onto the target
@@ -115,25 +158,64 @@ GeneralBehavior.prototype.seekEnemy = function(){
         throw "invalid state, character must be locked to seek.";
     }
 
-    var mySize = this.owner.getTextureRect();
-    var myFeet = this.owner.getBasePosition();
-    var toPoint = this.locked.getBasePosition();
-    var attackPosition;
-    //if locked on someone else, target radius behind them
-    //otherwise, target radius face to face
-    var side = this.leftOrRight(myFeet, toPoint);
-    if (side == 'left'){
-        attackPosition = cc.p(toPoint.x - mySize.width, toPoint.y);
-        if (this.owner.isFlippedX()){
-            this.owner.setFlipX(false);
-        }
-    }else{ //right
-        attackPosition = cc.p(toPoint.x + mySize.width, toPoint.y);
-        if (!this.owner.isFlippedX()){
-            this.owner.setFlipX(true);
-        }
-    }
+    var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
+
     return this.seek(attackPosition);
+}
+
+
+GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target){
+
+    if (!target){
+        return this.owner.getBasePosition();
+    }
+    var mySize = this.owner.getTextureRect();
+    var toPoint = target.getBasePosition();
+    var supportPos;
+
+    if (position == 'front'){
+        //if my target is flip x and i am supposed to be infront of them, that means
+        //I need to position myself to their right, ortherwise left
+        if (target.isFlippedX()){
+            supportPos = cc.p(toPoint.x - mySize.width, toPoint.y);
+        }else{
+            supportPos = cc.p(toPoint.x + mySize.width, toPoint.y);
+        }
+
+    }
+
+    if (position == 'behind'){
+        //if my target is flip x and i am supposed to be behind of them, that means
+        //I need to position myself to their left, otherwise right
+        if (target.isFlippedX()){
+            supportPos = cc.p(toPoint.x + mySize.width, toPoint.y);
+        }else{
+            supportPos = cc.p(toPoint.x - mySize.width, toPoint.y);
+        }
+
+    }
+
+    //if I am to face the character and I am in front of them, I need to be the opposite flipx
+    if (facing == 'facing' && position == 'front'){
+        this.owner.setFlipX(!target.isFlippedX())
+    }
+
+    //if I am to face the character and i am behind them I need to be the same flipx
+    if (facing == 'facing' && position == 'behind'){
+        this.owner.setFlipX(target.isFlippedX())
+    }
+
+    //if I am NOT to face the character and i am front of them I need to be same flipx
+    if (facing == 'away' && position == 'font'){
+        this.owner.setFlipX(target.isFlippedX())
+    }
+
+    //if I am NOT to face the character and i am behind them of them I need to be opposite flipx
+    if (facing == 'away' && position == 'behind'){
+        this.owner.setFlipX(!target.isFlippedX())
+    }
+
+    return supportPos;
 }
 
 GeneralBehavior.prototype.seek = function(toPoint){
@@ -142,20 +224,19 @@ GeneralBehavior.prototype.seek = function(toPoint){
         throw "Owning game object required";
     }
 
+
+    if (this.withinRadius(toPoint)){
+        return cc.p(0,0);
+    }
+
     var myFeet = this.owner.getBasePosition();
 
     var vector = this.getVectorTo(toPoint, myFeet);
 
-    if (vector.xd < this.owner.gameObject.targetRadius && vector.yd < 25){
-        return cc.p(0,0);
-    }
 
     var speed = 0;
-    if (this.owner.gameObject.speed > vector.distance){
-        speed = vector.distance; //slow down
-    }else{
-        speed = this.owner.gameObject.speed;
-    }
+    speed = this.owner.gameObject.speed;
+
 
     return cc.pMult(cc.pNormalize(vector.direction), speed);
 }
@@ -182,21 +263,11 @@ GeneralBehavior.prototype.moveToward = function(point, dt){
 
 }
 
-
-
-GeneralBehavior.prototype.leftOrRight = function (me, them){
-    if (me.x < them.x){
-        return 'left';
-    }else{
-        return 'right';
-    }
-}
-
 GeneralBehavior.prototype.getRandomFleePosition = function(){
     //find a random spot, targetRadius away
     var randomAngle = jc.randomNum(0,this.directions.length);
     var direction = cc.pForAngle(randomAngle);
-    var destination = cc.pMult(direction, this.owner.targetRadius);
+    var destination = cc.pMult(direction, this.owner.getTargetRadius());
     return this.clamp(destination);
 
 }
@@ -252,16 +323,16 @@ GeneralBehavior.prototype.hitLogic = function(){
     if (this.locked.gameObject.hp <=0){
         this.locked.behavior.setState('dead', 'dead');
     }else{
-        //this.locked.behavior.setState(undefined, 'damage'); //damage shouldn't interupt whatever is happening.
+        this.locked.behavior.damager = this.owner;
+        this.locked.behavior.setState('damage', undefined); //damage shouldn't interupt whatever is happening.
     }
 
 }
 
 GeneralBehavior.prototype.think = function(dt){
     //todo remove this:
-    if (this.owner.isAlive()){
-        this.handleState(dt);
-    }
+    this.handleState(dt);
+
 }
 
 GeneralBehavior.prototype.handleState = function(dt){
@@ -285,10 +356,15 @@ GeneralBehavior.prototype.handleState = function(dt){
 }
 
 GeneralBehavior.prototype.handleDamage = function(dt){
-    var state= this.getState();
-    if (state.anim == 'idle'){
-        this.setState('idle', 'idle');
+
+    if (this.damager && this.damager.isAlive() && this.damager != this.locked){
+        this.setState('idle', 'idle'); //give us a chance to decide to attack the damager, or someone else nearby
+    }else{
+        this.resume();
     }
+
+
+    //otherwise do nothing and recheck
 }
 
 GeneralBehavior.prototype.handleFight = function(dt){
@@ -330,14 +406,9 @@ GeneralBehavior.prototype.handleFight = function(dt){
 }
 
 GeneralBehavior.prototype.handleIdle = function(dt){
-    //if I'm idle, lock on
-    if (!this.locked || !this.locked.isAlive()){
-        this.locked = this.lockOnClosestUnlocked();
-    }
+    //lock on who-ever is closest
+    this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam);
 
-    if (!this.locked || !this.locked.isAlive()){
-        this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam);
-    }
 
     if (this.locked){
         this.setState('move', 'move');

@@ -1,45 +1,46 @@
-var Consts = {};
-Consts.idle=0;
-Consts.walk=1;
-Consts.attack=2;
-Consts.intro=2;
-Consts.dead=3;
-Consts.powerup=4;
-
 var SpriteTest = cc.Layer.extend({
-	sprites: [],
-    teams:{},
     init: function() {
-		if (this._super()) {							
-			this.background = new jc.Sprite();
-			this.background.layer = this;
-            this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', 'arena');
-			this.background.centerOnScreen();
-			this.addChild(this.background);
-            //var test = new jc.tests.SpriteAnimationTest('blueKnight', 'attack', this);
-            var test = new jc.tests.StateMachineTest('blueKnight', 'orge', this);
-            this.scheduleUpdate();
-			return true;
-		} else {
-			return false;
-		}
-	}
+        if (this._super()) {
+            cc.TextureCache.getInstance().addImageAsync(s_spineboy, this, this.loadSpineTest);
+            return true;
+        } else {
+            return false;
+        }
+    },
+    loadSpineTest: function () {
 
+        var ccSkelNode = cc.SkeletonAnimation.createWithFile(s_spineboyJSON, s_spineboyATLAS);
+
+        ccSkelNode.skeleton.setSlotsToSetupPose();
+        ccSkelNode.setMix("walk", "jump", 0.2);
+        ccSkelNode.setMix("jump", "walk", 0.4);
+
+        ccSkelNode.setAnimation("walk", true);
+
+        ccSkelNode.skeleton.getRootBone().x = 0;
+        ccSkelNode.skeleton.getRootBone().y = 0;
+
+        ccSkelNode.updateWorldTransform();
+        ccSkelNode.setPosition(cc.p(320, 5));
+
+        this.addChild(ccSkelNode);
+
+        this.removeChild(this._labelLoading, true);
+    }
 });
 
 SpriteTest.create = function() {
-	var ml = new SpriteTest();
-	if (ml && ml.init()) {
-		return ml;
-	} else {
-		throw "Couldn't create the main layer of the game. Something is wrong.";
-	}
-	return null;
+    var ml = new SpriteTest();
+    if (ml && ml.init()) {
+        return ml;
+    } else {
+        throw "Couldn't create the main layer of the game. Something is wrong.";
+    }
 };
 
 SpriteTest.scene = function() {
-	var scene = cc.Scene.create();
-	var layer = SpriteTest.create();
-	scene.addChild(layer);
-	return scene;
+    var scene = cc.Scene.create();
+    var layer = SpriteTest.create();
+    scene.addChild(layer);
+    return scene;
 };

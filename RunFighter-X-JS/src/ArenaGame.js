@@ -24,7 +24,7 @@ var ArenaGame = cc.Layer.extend({
             //this.runScenario1();
             //this.runScenario2();
             //this.runScenario3();
-            this.runScenario7();
+            this.runScenario11();
             this.scheduleUpdate();
 			return true;
 		} else {
@@ -82,11 +82,11 @@ var ArenaGame = cc.Layer.extend({
     runScenario6:function(){
         this.getRandomSprite('orc');
         this.getRandomSprite('orc');
-        this.getRandomSprite('voidElf');
+        this.getRandomSprite('troll');
 
         this.getRandomSprite('orc');
-        this.getRandomSprite('troll');
         this.getRandomSprite('orc');
+        this.getRandomSprite('troll');
         this.arrange(this.sprites);
     },
     runScenario7:function(){
@@ -94,15 +94,84 @@ var ArenaGame = cc.Layer.extend({
         this.getRandomSprite('orc');
         this.getRandomSprite('voidElf');
         this.getRandomSprite('troll');
-        this.getRandomSprite('goldKnight');
+        this.getRandomSprite('orge');
 
 
+        this.getRandomSprite('orge');
+        this.getRandomSprite('troll');
         this.getRandomSprite('orc');
         this.getRandomSprite('troll');
         this.getRandomSprite('goldKnight');
+
+        this.arrange(this.sprites);
+    },
+    runScenario8:function(){
+        this.getRandomSprite('orc');
+        this.getRandomSprite('shellback');
         this.getRandomSprite('troll');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('shellback');
         this.getRandomSprite('orge');
 
+        this.getRandomSprite('troll');
+        this.getRandomSprite('orge');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('troll');
+
+        this.arrange(this.sprites);
+    },
+    runScenario9:function(){
+        //todo: unbalanced, shellbacks should be like troll killing missles
+        this.getRandomSprite('shellback');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('shellback');
+
+        this.getRandomSprite('troll');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('shellback');
+        this.arrange(this.sprites);
+    },
+    runScenario10:function(){
+        //todo: unbalanced, shellbacks should be like troll killing missles
+        this.getRandomSprite('spider');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('orc');
+
+        this.getRandomSprite('orc');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('orc');
+        this.arrange(this.sprites);
+    },
+    runScenario11:function(){
+        this.getRandomSprite('orc');
+        this.getRandomSprite('shellback');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('shellback');
+        this.getRandomSprite('orge');
+
+        this.getRandomSprite('troll');
+        this.getRandomSprite('orge');
+        this.getRandomSprite('spider');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('troll');
+
+        this.arrange(this.sprites);
+    },
+    runScenario12:function(){
+        this.getRandomSprite('forestElf');
+        this.getRandomSprite('forestElf');
+        this.getRandomSprite('forestElf');
+
+
+        this.getRandomSprite('troll');
+        this.getRandomSprite('spider');
+        this.getRandomSprite('troll');
         this.arrange(this.sprites);
     },
 

@@ -133,6 +133,12 @@ jc.Sprite = cc.Sprite.extend({
             this.think(dt);
         }
     },
+    getTargetRadius:function(){
+        return this.gameObject.targetRadius + this.getTextureRect().width/2;
+    },
+    getTargetRadiusY:function(){
+        return this.gameObject.targetRadius + this.getTextureRect().height/2;
+    },
     getBasePosition:function(){
         //get the position of this sprite, push the y coord down to the base (feet)
         var point = this.getPosition();
@@ -311,22 +317,20 @@ jc.Sprite = cc.Sprite.extend({
         verts[2] = cc.p(this.HealthBarWidth - 1.0, this.HealthBarHeight - 1.0);
         verts[3] = cc.p(this.HealthBarWidth - 1.0, 0.0);
 
-        var clearColor = cc.c4f(181.0, 0.0, 18.0, 1.0);
+        var clearColor = cc.c4f(255.0/255, 0.0, 0.0, 1.0);
         var fillColor = cc.c4f(26.0/255.0, 245.0/255.0, 15.0/255.0, 1.0);
         var borderColor = cc.c4f(35.0/255.0, 28.0/255.0, 40.0/255.0, 1.0);
 
         this.healthBar.drawPoly(verts,clearColor,0.7, borderColor);
 
-        verts[0].x += 0.5;
-        verts[0].y += 0.5;
-        verts[1].x += 0.5;
-        verts[1].y -= 0.5;
-        verts[2].x = (this.HealthBarWidth - 2.0)*this.gameObject.hp/this.gameObject.MaxHP + 0.5;
-        verts[2].y -= 0.5;
-        verts[3].x = verts[2].x;
-        verts[3].y += 0.5;
+        var verts2 = [4];
+        verts2[0] = cc.p(0.0, 0.0);
+        verts2[1] = cc.p(0.0, this.HealthBarHeight - 1.0);
+        verts2[2] = cc.p((this.HealthBarWidth - 2.0)*this.gameObject.hp/this.gameObject.MaxHP + 0.5, this.HealthBarHeight - 1.0);
+        verts2[3] = cc.p((this.HealthBarWidth - 2.0)*this.gameObject.hp/this.gameObject.MaxHP + 0.5, 0.0);
 
-        this.healthBar.drawPoly(verts,fillColor,0.7, borderColor);
+
+        this.healthBar.drawPoly(verts2,fillColor,0.7, borderColor);
 
     },
     updateHealthBarPos:function(){
