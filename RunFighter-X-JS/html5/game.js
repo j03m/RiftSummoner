@@ -28,6 +28,8 @@
 
 var MW = MW || {};
 
+
+
 (function () {
     var d = document;
     var c = {
@@ -52,6 +54,8 @@ var MW = MW || {};
             '../src/TouchId.js',
             '../src/behaviors/GeneralBehavior.js',
             '../src/behaviors/RangeBehavior.js',
+            '../src/behaviors/DefenderBehavior.js',
+            '../src/behaviors/FlankerBehavior.js',
             '../src/behaviors/HealerBehavior.js',
             '../src/behaviors/TankBehavior.js',
             '../src/behaviors/BehaviorMap.js',

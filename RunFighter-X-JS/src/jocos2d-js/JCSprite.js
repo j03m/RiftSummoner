@@ -16,37 +16,70 @@ if (!String.prototype.format) {
 jc.Sprite = cc.Sprite.extend({
     layer:undefined, //parent reference
 	alive:true,
-    initWithPlist: function(plist, sheet, firstFrame, name, gameObject, behavior, type) {
-        this.HealthBarWidth = 40;
-        this.HealthBarHeight = 10;
+    initWithPlist: function(plist, sheet, firstFrame, config) {
+        this.HealthBarWidth = 20;
+        this.HealthBarHeight = 5;
         this.animations = {};
 		this.batch = null;
 		this.state = -1;
 		this.moving = 0;
 		this.currentMove = null;
 		this.idle = 0;
-		this.name = name;
+		this.name = config.name;
+        this.baseOffset = config.baseOffset;
 		cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
 		this.batch = cc.SpriteBatchNode.create(sheet);
         this.batch.retain();
-		var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame); 		
+		var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame);
+
 		this.initWithSpriteFrame(frame);
-        this.type = type;
+        this.type = config.type;
         if(this.type != 'background'){
             this.superDraw = this.draw;
             this.draw = this.customDraw;
             this.initHealthBar();
+            this.initShadow();
         }
 
         this.debug = false;
-        this.behavior = behavior;
-        this.gameObject = gameObject;
-        if(this.gameObject){
-            this.gameObject.init();
+
+        //if we don't have a behavior, default to tank
+        if (!config.behavior){
+            config.behavior = 'tank';
         }
+
+        //look up behavior
+        var behaviorClass = BehaviorMap[config.behavior];
+        if (!behaviorClass){
+            throw 'Unrecognized behavior name: ' + config.behavior;
+        }
+
+        //set it
+        var behavior = new behaviorClass(this);
+
+        this.behavior = behavior;
+        this.behaviorType = config.behavior;
+
+
+        this.gameObject = new jc.GameObject();
+        if(config.gameProperties){
+            _.extend(this.gameObject, config.gameProperties);
+        }
+        this.gameObject.init();
 
 		return this;
 	},
+    initShadow:function(){
+        this.shadow = new cc.Sprite();
+        cc.SpriteFrameCache.getInstance().addSpriteFrames(shadowPlist);
+        cc.SpriteBatchNode.create(shadowPng);
+        //todo change to size of sprite
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("shadowSmall.png");
+        this.shadow.initWithSpriteFrame(frame);
+        this.shadow.setScaleX(0.5);
+        this.layer.addChild(this.shadow);
+        this.updateShadowPosition();
+    },
     initHealthBar:function(){
         this.healthBar = cc.DrawNode.create();
         this.healthBar.contentSize = cc.SizeMake(this.HealthBarWidth, this.HealthBarHeight);
@@ -139,19 +172,25 @@ jc.Sprite = cc.Sprite.extend({
     getTargetRadiusY:function(){
         return this.gameObject.targetRadius + this.getTextureRect().height/2;
     },
+    getSeekRadius: function(){
+        return this.gameObject.seekRadius;
+    },
     getBasePosition:function(){
         //get the position of this sprite, push the y coord down to the base (feet)
         var point = this.getPosition();
+        var content = this.getContentSize();
         var box = this.getTextureRect();
         point.y -= box.height/2;
         return point;
     },
     setBasePosition:function(point){
         var box = this.getTextureRect();
+        var origY = point.y;
         point.y += box.height/2;
         this.setPosition(point);
-        this.layer.reorderChild(this, point.y*-1);
+        this.layer.reorderChild(this, origY*-1);
         this.updateHealthBarPos();
+        this.updateShadowPosition();
     },
     moveTo: function(point, state, velocity, callback){
 		jc.log(['sprite', 'move'],"Moving:"+ this.name);
@@ -279,11 +318,17 @@ jc.Sprite = cc.Sprite.extend({
         this.behavior.think(dt);
     },
     customDraw:function(){
+        this.drawShadow();
         this.superDraw();
         if (this.debug){
             this.drawBorders();
         }
         this.drawHealthBar();
+
+    },
+    drawShadow:function(){
+       // todo: fix shadow pos
+       // this.shadow.draw();
     },
     drawBorders:function(){
 
@@ -324,10 +369,15 @@ jc.Sprite = cc.Sprite.extend({
         this.healthBar.drawPoly(verts,clearColor,0.7, borderColor);
 
         var verts2 = [4];
+        var hpRatio = this.gameObject.hp/this.gameObject.MaxHP;
+        if (hpRatio <0){
+            hpRatio = 0;
+        }
+
         verts2[0] = cc.p(0.0, 0.0);
         verts2[1] = cc.p(0.0, this.HealthBarHeight - 1.0);
-        verts2[2] = cc.p((this.HealthBarWidth - 2.0)*this.gameObject.hp/this.gameObject.MaxHP + 0.5, this.HealthBarHeight - 1.0);
-        verts2[3] = cc.p((this.HealthBarWidth - 2.0)*this.gameObject.hp/this.gameObject.MaxHP + 0.5, 0.0);
+        verts2[2] = cc.p((this.HealthBarWidth - 2.0)* hpRatio + 0.5, this.HealthBarHeight - 1.0);
+        verts2[3] = cc.p((this.HealthBarWidth - 2.0)* hpRatio + 0.5, 0.0);
 
 
         this.healthBar.drawPoly(verts2,fillColor,0.7, borderColor);
@@ -341,10 +391,56 @@ jc.Sprite = cc.Sprite.extend({
             myPos.x-=(myRect.width/4);
             this.healthBar.setPosition(myPos);
         }
+    },
+    updateShadowPosition:function(){
+        if (this.type!='background'){
+//            var pos = this.getPosition();
+//            var offset = this.baseOffset;
+//            var rect = this.getTextureRect();
+//            pos.y -= rect.height/2;
+//            pos.y += offset.y;
+//            pos.x += offset.x;
+//
+//            this.shadow.setPosition(pos);
+//            this.layer.reorderChild(this.shadow, (cc.Director.getInstance().getWinSize().height+9) * -1);
+
+        }
+    }
+});
+
+//jc.Sprite.remapAnimations = function(character){
+//    jc.Sprite.getMinMax(character);
+//    var total = config.endFrame - character.startFrame;
+//    for (var anim in character.animations){
+//        character.animations[anim].start = (character.animations[anim].start+1) - character.startFrame; //normalize to 1
+//        character.animations[anim].end = (character.animations[anim].end+1) - character.startFrame;
+//    }
+//
+//}
+
+jc.Sprite.getMinMax = function(character){
+    var min = 99999;
+    var max = -1;
+    for (var anim in character.animations){
+        if (character.animations[anim].start < min){
+            min = character.animations[anim].start;
+        }
+        if (character.animations[anim].end > max){
+            max = character.animations[anim].end;
+        }
     }
 
+    if (min == 99999){
+        throw "something wrong..."
 
-});
+    }
+    if (max == 99999){
+        throw "something wrong..."
+    }
+
+    character.startFrame = min;
+    character.endFrame = max;
+}
 
 jc.Sprite.spriteGenerator = function(allDefs, def, layer){
 
@@ -374,6 +470,10 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
         throw def + " has a malformed configation. Animation property missing.";
     }
 
+
+    //remap animations
+    //jc.Sprite.remapAnimations(character);
+
     //what is our init frame?
     var firstFrame = character.animations['idle'].start;
 
@@ -381,23 +481,9 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
     var gameObject = new jc.GameObject();
     _.extend(gameObject,character.gameProperties);
 
-    //if we don't have a behavior, default to tank
-    if (!character.behavior){
-        character.behavior = 'tank';
-    }
-
-    //look up behavior
-    var behaviorClass = BehaviorMap[character.behavior];
-    if (!behaviorClass){
-        throw 'Unrecognized behavior name: ' + character.behavior;
-    }
-
-    //set it
-    var behavior = new behaviorClass(sprite);
-
     //init
-    sprite.initWithPlist(g_characterPlists[def], g_characterPngs[def], nameFormat.format(firstFrame), character.name, gameObject, behavior);
-    sprite.behaviorType = character.behavior;
+    character.type = 'character';
+    sprite.initWithPlist(g_characterPlists[def], g_characterPngs[def], nameFormat.format(firstFrame), character);
     //create definitions from the animation states
     for (var animation in character.animations){
         //use this to create a definition in the sprite
@@ -413,6 +499,8 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
         }
 
     }
+
+
 
     //return the sprite;
     return sprite;

@@ -1,19 +1,20 @@
-Tomorrow:
-    spec map
-    spec arrange team
-    spec first character - acid bear
-    healers still get stuck in idle   - think about cocos follow
-
 arena:
+Get render pipeline fixed*
+Set up and test correct radius and delays for each char
+Figure out hands
+    Set up borders
+    Manage deck page - random gen 25 (5 rows of 5) - 5 clicks to replace (temporary)
+    Intro gliff - ready, fight
+    Particle portal - dudes walk through
+
+Shadows
+Flying creature ai
 
 bug: why no particle???
 * outsource particle - implement blood splat
 * outsource particle - implement blood pool
 * outsource particle - heal effect
 
-*implement flanker
-fix healer bug - awful - what about cocos2d follow?
-implement defender - hangs around support or range
 implement flying tank
 implement range tank
 implement missles

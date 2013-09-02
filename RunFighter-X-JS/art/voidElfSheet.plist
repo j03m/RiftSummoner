@@ -4,1084 +4,2774 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>voidElf.242.png</key>
+            <key>voidElf.1263.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,980},{30,114}}</string>
+                <string>{{462,318},{32,68}}</string>
                 <key>offset</key>
-                <string>{0,-7}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{201,166},{30,114}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.243.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{194,374},{48,114}}</string>
-                <key>offset</key>
-                <string>{-2,-7}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{190,166},{48,114}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.244.png</key>
+            <key>voidElf.1264.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{202,2},{60,114}}</string>
+                <string>{{438,212},{32,68}}</string>
                 <key>offset</key>
-                <string>{-4,-6}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{182,165},{60,114}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.245.png</key>
+            <key>voidElf.1265.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,490},{72,106}}</string>
+                <string>{{438,142},{32,68}}</string>
                 <key>offset</key>
-                <string>{-11,-2}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{169,165},{72,106}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.246.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{478,228},{80,108}}</string>
-                <key>offset</key>
-                <string>{-6,-6}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{170,168},{80,108}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.247.png</key>
+            <key>voidElf.1266.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{532,338},{50,106}}</string>
+                <string>{{444,2},{32,68}}</string>
                 <key>offset</key>
-                <string>{3,-8}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{194,171},{50,106}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.248.png</key>
+            <key>voidElf.1267.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{476,560},{64,106}}</string>
+                <string>{{438,72},{32,68}}</string>
                 <key>offset</key>
-                <string>{-1,-7}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{183,170},{64,106}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.249.png</key>
+            <key>voidElf.1268.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,490},{72,106}}</string>
+                <string>{{404,212},{32,68}}</string>
                 <key>offset</key>
-                <string>{-8,-6}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{172,169},{72,106}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.250.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{534,2},{56,108}}</string>
-                <key>offset</key>
-                <string>{-5,-9}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{183,171},{56,108}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.251.png</key>
+            <key>voidElf.1269.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,258},{64,114}}</string>
+                <string>{{404,142},{32,68}}</string>
                 <key>offset</key>
-                <string>{-6,-6}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{178,165},{64,114}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.252.png</key>
+            <key>voidElf.1270.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{528,668},{74,96}}</string>
+                <string>{{410,2},{32,68}}</string>
                 <key>offset</key>
-                <string>{-7,-7}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{172,175},{74,96}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.253.png</key>
+            <key>voidElf.1271.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{438,904},{66,104}}</string>
+                <string>{{404,72},{32,68}}</string>
                 <key>offset</key>
-                <string>{-5,-10}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{178,174},{66,104}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.254.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{438,458},{80,100}}</string>
-                <key>offset</key>
-                <string>{1,5}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{177,161},{80,100}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.255.png</key>
+            <key>voidElf.1272.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{572,112},{88,96}}</string>
+                <string>{{472,140},{32,66}}</string>
                 <key>offset</key>
-                <string>{-4,12}</string>
+                <string>{6,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{168,156},{88,96}}</string>
+                <string>{{118,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.256.png</key>
+            <key>voidElf.1273.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{560,224},{90,96}}</string>
+                <string>{{478,2},{32,66}}</string>
                 <key>offset</key>
-                <string>{-4,14}</string>
+                <string>{6,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{167,154},{90,96}}</string>
+                <string>{{118,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.257.png</key>
+            <key>voidElf.1274.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{520,456},{90,96}}</string>
+                <string>{{474,654},{32,68}}</string>
                 <key>offset</key>
-                <string>{-3,15}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{168,153},{90,96}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.258.png</key>
+            <key>voidElf.1275.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{542,554},{88,94}}</string>
+                <string>{{468,528},{32,68}}</string>
                 <key>offset</key>
-                <string>{-2,15}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{170,154},{88,94}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.259.png</key>
+            <key>voidElf.1276.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{592,2},{86,96}}</string>
+                <string>{{444,458},{32,68}}</string>
                 <key>offset</key>
-                <string>{-1,14}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{172,154},{86,96}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.260.png</key>
+            <key>voidElf.1277.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{350,460},{86,100}}</string>
+                <string>{{438,388},{32,68}}</string>
                 <key>offset</key>
-                <string>{-1,9}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{172,157},{86,100}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.261.png</key>
+            <key>voidElf.1278.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{496,114},{74,108}}</string>
+                <string>{{428,318},{32,68}}</string>
                 <key>offset</key>
-                <string>{-6,-8}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{173,170},{74,108}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.262.png</key>
+            <key>voidElf.1279.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{484,2},{48,110}}</string>
+                <string>{{370,212},{32,68}}</string>
                 <key>offset</key>
-                <string>{0,-8}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{192,169},{48,110}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.263.png</key>
+            <key>voidElf.1280.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,118},{62,114}}</string>
+                <string>{{370,142},{32,68}}</string>
                 <key>offset</key>
-                <string>{-2,-6}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{183,165},{62,114}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.422.png</key>
+            <key>voidElf.1281.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{426,230},{50,112}}</string>
+                <string>{{376,2},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{50,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.423.png</key>
+            <key>voidElf.1282.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{404,344},{50,112}}</string>
+                <string>{{370,72},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{50,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.424.png</key>
+            <key>voidElf.1283.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,2},{50,112}}</string>
+                <string>{{336,212},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{50,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.425.png</key>
+            <key>voidElf.1284.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{486,790},{52,112}}</string>
+                <string>{{472,72},{32,66}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.426.png</key>
+            <key>voidElf.1285.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,676},{52,112}}</string>
+                <string>{{542,642},{32,66}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.427.png</key>
+            <key>voidElf.1286.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,790},{52,112}}</string>
+                <string>{{508,646},{32,66}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.428.png</key>
+            <key>voidElf.1287.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,562},{52,112}}</string>
+                <string>{{536,522},{32,66}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.429.png</key>
+            <key>voidElf.1288.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,676},{52,112}}</string>
+                <string>{{512,454},{32,66}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.430.png</key>
+            <key>voidElf.1289.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,562},{52,112}}</string>
+                <string>{{502,524},{32,66}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.431.png</key>
+            <key>voidElf.1290.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,792},{52,112}}</string>
+                <string>{{506,386},{32,66}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.432.png</key>
+            <key>voidElf.1291.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{366,678},{52,112}}</string>
+                <string>{{336,142},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.433.png</key>
+            <key>voidElf.1292.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,564},{52,112}}</string>
+                <string>{{342,2},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.434.png</key>
+            <key>voidElf.1293.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{324,792},{52,112}}</string>
+                <string>{{336,72},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.435.png</key>
+            <key>voidElf.1294.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{312,678},{52,112}}</string>
+                <string>{{458,908},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.436.png</key>
+            <key>voidElf.1295.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,564},{52,112}}</string>
+                <string>{{458,838},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.437.png</key>
+            <key>voidElf.1296.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{270,792},{52,112}}</string>
+                <string>{{458,768},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.438.png</key>
+            <key>voidElf.1297.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{258,678},{52,112}}</string>
+                <string>{{424,908},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.439.png</key>
+            <key>voidElf.1298.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{216,792},{52,112}}</string>
+                <string>{{424,838},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.440.png</key>
+            <key>voidElf.1299.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,2},{52,112}}</string>
+                <string>{{424,768},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.441.png</key>
+            <key>voidElf.1300.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,116},{52,112}}</string>
+                <string>{{478,456},{32,66}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,100},{32,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.442.png</key>
+            <key>voidElf.1301.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{320,230},{52,112}}</string>
+                <string>{{440,658},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.443.png</key>
+            <key>voidElf.1302.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{298,346},{52,112}}</string>
+                <string>{{406,658},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.444.png</key>
+            <key>voidElf.1303.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{324,2},{52,112}}</string>
+                <string>{{434,528},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.445.png</key>
+            <key>voidElf.1304.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{276,116},{52,112}}</string>
+                <string>{{410,458},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.446.png</key>
+            <key>voidElf.1305.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,232},{52,112}}</string>
+                <string>{{400,528},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.447.png</key>
+            <key>voidElf.1306.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{244,348},{52,112}}</string>
+                <string>{{404,388},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.448.png</key>
+            <key>voidElf.1307.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{206,564},{52,112}}</string>
+                <string>{{376,458},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{52,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.449.png</key>
+            <key>voidElf.1308.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{384,116},{50,112}}</string>
+                <string>{{394,318},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{50,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.450.png</key>
+            <key>voidElf.1309.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{374,230},{50,112}}</string>
+                <string>{{370,388},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{50,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.451.png</key>
+            <key>voidElf.1310.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{352,344},{50,112}}</string>
+                <string>{{360,318},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{50,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.452.png</key>
+            <key>voidElf.1311.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{482,972},{50,112}}</string>
+                <string>{{302,212},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,-8}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{202,168},{50,112}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.453.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{368,972},{50,112}}</string>
-                <key>offset</key>
-                <string>{11,-8}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{202,168},{50,112}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.454.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{254,972},{50,112}}</string>
-                <key>offset</key>
-                <string>{11,-8}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{202,168},{50,112}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.455.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{264,2},{58,112}}</string>
-                <key>offset</key>
-                <string>{15,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{58,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.456.png</key>
+            <key>voidElf.1312.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,118},{64,112}}</string>
+                <string>{{302,142},{32,68}}</string>
                 <key>offset</key>
-                <string>{16,-8}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{200,168},{64,112}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.457.png</key>
+            <key>voidElf.1313.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{80,702},{64,134}}</string>
+                <string>{{308,2},{32,68}}</string>
                 <key>offset</key>
-                <string>{10,3}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{194,146},{64,134}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.458.png</key>
+            <key>voidElf.1314.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,424},{62,138}}</string>
+                <string>{{302,72},{32,68}}</string>
                 <key>offset</key>
-                <string>{10,5}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{195,142},{62,138}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.459.png</key>
+            <key>voidElf.1315.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,284},{62,138}}</string>
+                <string>{{268,212},{32,68}}</string>
                 <key>offset</key>
-                <string>{10,5}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{195,142},{62,138}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.460.png</key>
+            <key>voidElf.1316.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,2},{62,138}}</string>
+                <string>{{268,142},{32,68}}</string>
                 <key>offset</key>
-                <string>{11,5}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{196,142},{62,138}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.461.png</key>
+            <key>voidElf.1317.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,564},{58,138}}</string>
+                <string>{{274,2},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,5}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{199,142},{58,138}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.462.png</key>
+            <key>voidElf.1318.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{62,140}}</string>
+                <string>{{268,72},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,6}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{197,140},{62,140}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.463.png</key>
+            <key>voidElf.1319.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,144},{68,138}}</string>
+                <string>{{372,658},{32,68}}</string>
                 <key>offset</key>
-                <string>{10,5}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{192,142},{68,138}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.464.png</key>
+            <key>voidElf.1320.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{62,564},{72,136}}</string>
+                <string>{{366,528},{32,68}}</string>
                 <key>offset</key>
-                <string>{10,4}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{190,144},{72,136}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.465.png</key>
+            <key>voidElf.1321.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,842},{70,136}}</string>
+                <string>{{342,458},{32,68}}</string>
                 <key>offset</key>
-                <string>{9,4}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{190,144},{70,136}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.466.png</key>
+            <key>voidElf.1322.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,842},{64,136}}</string>
+                <string>{{332,528},{32,68}}</string>
                 <key>offset</key>
-                <string>{8,4}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{192,144},{64,136}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.467.png</key>
+            <key>voidElf.1323.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,704},{76,136}}</string>
+                <string>{{336,388},{32,68}}</string>
                 <key>offset</key>
-                <string>{3,4}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{181,144},{76,136}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.468.png</key>
+            <key>voidElf.1324.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{140,838},{74,132}}</string>
+                <string>{{308,458},{32,68}}</string>
                 <key>offset</key>
-                <string>{7,2}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{186,148},{74,132}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.469.png</key>
+            <key>voidElf.1325.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,284},{66,122}}</string>
+                <string>{{326,318},{32,68}}</string>
+                <key>offset</key>
+                <string>{7,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{119,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1326.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{302,388},{32,68}}</string>
+                <key>offset</key>
+                <string>{7,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{119,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1327.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{292,318},{32,68}}</string>
+                <key>offset</key>
+                <string>{7,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{119,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1328.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{234,212},{32,68}}</string>
+                <key>offset</key>
+                <string>{7,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{119,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1329.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{234,142},{32,68}}</string>
+                <key>offset</key>
+                <string>{7,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{119,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1330.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{496,318},{32,66}}</string>
+                <key>offset</key>
+                <string>{6,-5}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,100},{32,66}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1331.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{472,388},{32,66}}</string>
+                <key>offset</key>
+                <string>{6,-5}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,100},{32,66}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1332.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{240,2},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1333.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{234,72},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1334.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{390,908},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1335.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{390,838},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1336.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{390,768},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1337.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{356,908},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1338.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{356,838},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1339.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{356,768},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1340.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{338,662},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1341.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{304,664},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1342.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{298,530},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1343.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{274,460},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1344.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{264,530},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1345.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{268,390},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1346.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{240,460},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1347.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{258,320},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1348.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{234,390},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1349.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{224,320},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1350.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{200,212},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1351.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{200,142},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1352.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{206,2},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1353.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{200,72},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1354.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{322,908},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1355.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{322,838},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1356.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{322,768},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1357.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{288,908},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1358.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{288,838},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1359.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{288,768},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1360.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{254,908},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-5}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,99},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1361.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{204,460},{34,68}}</string>
+                <key>offset</key>
+                <string>{7,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{34,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1362.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{196,390},{36,68}}</string>
+                <key>offset</key>
+                <string>{9,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{119,98},{36,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1363.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{184,320},{38,68}}</string>
+                <key>offset</key>
+                <string>{9,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{38,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1365.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{164,2},{40,68}}</string>
+                <key>offset</key>
+                <string>{9,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{117,98},{40,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1366.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{158,248},{40,70}}</string>
                 <key>offset</key>
                 <string>{8,-3}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{191,158},{66,122}}</string>
+                <string>{{116,96},{40,70}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.470.png</key>
+            <key>voidElf.1367.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,678},{56,112}}</string>
+                <string>{{92,508},{42,76}}</string>
                 <key>offset</key>
-                <string>{8,-8}</string>
+                <string>{6,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{196,168},{56,112}}</string>
+                <string>{{113,90},{42,76}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.471.png</key>
+            <key>voidElf.1368.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{140,972},{50,112}}</string>
+                <string>{{42,936},{40,80}}</string>
                 <key>offset</key>
-                <string>{10,-8}</string>
+                <string>{6,2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{114,86},{40,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1369.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,260},{38,84}}</string>
+                <key>offset</key>
+                <string>{6,4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,82},{38,84}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1370.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,174},{38,84}}</string>
+                <key>offset</key>
+                <string>{6,4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,82},{38,84}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1371.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{52,514},{38,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,84},{38,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1372.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{44,602},{38,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,84},{38,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1373.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{42,686},{38,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,84},{38,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1374.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,938},{38,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,84},{38,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1375.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,854},{38,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,84},{38,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1376.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,770},{38,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,84},{38,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1377.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,686},{38,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,84},{38,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1378.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{42,770},{36,82}}</string>
+                <key>offset</key>
+                <string>{7,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{117,84},{36,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1379.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{88,424},{36,82}}</string>
+                <key>offset</key>
+                <string>{7,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{117,84},{36,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1380.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{88,340},{36,82}}</string>
+                <key>offset</key>
+                <string>{7,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{117,84},{36,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1381.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,432},{36,84}}</string>
+                <key>offset</key>
+                <string>{7,4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{117,82},{36,84}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1382.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,346},{36,84}}</string>
+                <key>offset</key>
+                <string>{7,4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{117,82},{36,84}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1383.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,88},{38,84}}</string>
+                <key>offset</key>
+                <string>{7,4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{116,82},{38,84}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1384.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{42,84}}</string>
+                <key>offset</key>
+                <string>{6,4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,82},{42,84}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1385.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{90,2},{42,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,84},{42,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1386.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{88,86},{42,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,84},{42,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1387.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{86,172},{42,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,84},{42,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1388.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{42,256},{42,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,84},{42,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1389.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{82,686},{44,80}}</string>
+                <key>offset</key>
+                <string>{6,2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{112,86},{44,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1390.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{80,770},{44,80}}</string>
+                <key>offset</key>
+                <string>{6,2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{112,86},{44,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1391.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{42,88},{44,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{112,84},{44,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1392.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{42,172},{42,82}}</string>
+                <key>offset</key>
+                <string>{6,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,84},{42,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1393.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{84,598},{42,80}}</string>
+                <key>offset</key>
+                <string>{5,2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{112,86},{42,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1394.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,602},{40,82}}</string>
+                <key>offset</key>
+                <string>{5,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,84},{40,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1395.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{86,256},{40,82}}</string>
+                <key>offset</key>
+                <string>{4,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{112,84},{40,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1396.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{46,2},{42,82}}</string>
+                <key>offset</key>
+                <string>{3,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{110,84},{42,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1397.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{40,430},{46,82}}</string>
+                <key>offset</key>
+                <string>{1,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{106,84},{46,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1398.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{40,346},{46,82}}</string>
+                <key>offset</key>
+                <string>{2,3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,84},{46,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1399.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,518},{48,82}}</string>
+                <key>offset</key>
+                <string>{2,2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{106,85},{48,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1400.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{42,854},{46,80}}</string>
+                <key>offset</key>
+                <string>{4,2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{109,86},{46,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1401.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{84,936},{46,78}}</string>
+                <key>offset</key>
+                <string>{4,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{109,88},{46,78}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1402.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{90,852},{44,78}}</string>
+                <key>offset</key>
+                <string>{5,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{111,88},{44,78}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1403.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{126,768},{42,76}}</string>
+                <key>offset</key>
+                <string>{5,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{112,90},{42,76}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1404.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{156,664},{40,74}}</string>
+                <key>offset</key>
+                <string>{5,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,92},{40,74}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1405.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{160,164},{38,70}}</string>
+                <key>offset</key>
+                <string>{5,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{114,96},{38,70}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1406.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{166,478},{36,68}}</string>
+                <key>offset</key>
+                <string>{5,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,98},{36,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1407.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{234,664},{34,68}}</string>
+                <key>offset</key>
+                <string>{5,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{116,98},{34,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1408.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{198,664},{34,68}}</string>
+                <key>offset</key>
+                <string>{5,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{116,98},{34,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1409.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{254,838},{32,68}}</string>
+                <key>offset</key>
+                <string>{5,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{117,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1410.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{272,734},{32,68}}</string>
+                <key>offset</key>
+                <string>{6,-5}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{201,168},{50,112}}</string>
+                <string>{{118,99},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.472.png</key>
+            <key>voidElf.1411.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{204,678},{52,112}}</string>
+                <string>{{254,768},{32,68}}</string>
                 <key>offset</key>
-                <string>{12,-8}</string>
+                <string>{6,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{202,168},{52,112}}</string>
+                <string>{{118,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.473.png</key>
+            <key>voidElf.1412.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{436,116},{58,110}}</string>
+                <string>{{270,664},{32,68}}</string>
                 <key>offset</key>
-                <string>{14,-9}</string>
+                <string>{7,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,170},{58,110}}</string>
+                <string>{{119,98},{32,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.474.png</key>
+            <key>voidElf.1413.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{328,906},{64,108}}</string>
+                <string>{{230,530},{32,68}}</string>
                 <key>offset</key>
-                <string>{17,-10}</string>
+                <string>{7,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{119,98},{32,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1414.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{194,548},{34,68}}</string>
+                <key>offset</key>
+                <string>{7,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{118,98},{34,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.1415.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{342,732},{34,66}}</string>
+                <key>offset</key>
+                <string>{8,-5}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{201,172},{64,108}}</string>
+                <string>{{119,100},{34,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.475.png</key>
+            <key>voidElf.730.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{456,344},{74,110}}</string>
+                <string>{{156,408},{38,68}}</string>
                 <key>offset</key>
-                <string>{22,-9}</string>
+                <string>{-3,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{201,170},{74,110}}</string>
+                <string>{{106,98},{38,68}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.476.png</key>
+            <key>voidElf.731.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{72,142},{72,114}}</string>
+                <string>{{396,978},{42,66}}</string>
                 <key>offset</key>
-                <string>{20,-7}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{200,166},{72,114}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.477.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{130,2},{70,114}}</string>
-                <key>offset</key>
-                <string>{19,-7}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{200,166},{70,114}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.478.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{200,234},{64,112}}</string>
-                <key>offset</key>
-                <string>{16,-8}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{200,168},{64,112}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>voidElf.479.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{216,906},{64,110}}</string>
-                <key>offset</key>
-                <string>{10,-9}</string>
+                <string>{-5,-3}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{194,170},{64,110}}</string>
+                <string>{{102,98},{42,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.480.png</key>
+            <key>voidElf.732.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{136,564},{68,112}}</string>
+                <string>{{194,618},{44,64}}</string>
                 <key>offset</key>
-                <string>{8,-8}</string>
+                <string>{-7,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{99,97},{44,64}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.733.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{530,316},{46,64}}</string>
+                <key>offset</key>
+                <string>{-8,-2}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{190,168},{68,112}}</string>
+                <string>{{97,98},{46,64}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.481.png</key>
+            <key>voidElf.734.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,408},{66,114}}</string>
+                <string>{{540,590},{50,64}}</string>
                 <key>offset</key>
-                <string>{9,-7}</string>
+                <string>{-7,-3}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{96,99},{50,64}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.735.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{472,208},{48,64}}</string>
+                <key>offset</key>
+                <string>{-3,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{192,166},{66,114}}</string>
+                <string>{{101,100},{48,64}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>voidElf.482.png</key>
+            <key>voidElf.736.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,374},{58,114}}</string>
+                <string>{{540,382},{38,64}}</string>
                 <key>offset</key>
-                <string>{10,-7}</string>
+                <string>{-4,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{197,166},{58,114}}</string>
+                <string>{{105,101},{38,64}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.737.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{332,282},{34,64}}</string>
+                <key>offset</key>
+                <string>{-1,-5}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{110,101},{34,64}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.738.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{546,448},{32,64}}</string>
+                <key>offset</key>
+                <string>{1,-5}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,101},{32,64}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.739.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{266,282},{34,64}}</string>
+                <key>offset</key>
+                <string>{2,-4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{113,100},{34,64}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.740.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{200,282},{36,64}}</string>
+                <key>offset</key>
+                <string>{1,-4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{111,100},{36,64}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.741.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{478,724},{40,64}}</string>
+                <key>offset</key>
+                <string>{-1,-4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{107,100},{40,64}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.862.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,998},{22,68}}</string>
+                <key>offset</key>
+                <string>{-1,-4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{116,98},{22,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.863.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,742},{24,66}}</string>
+                <key>offset</key>
+                <string>{-1,-5}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{115,100},{24,66}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.864.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{570,514},{26,64}}</string>
+                <key>offset</key>
+                <string>{-1,-6}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{114,102},{26,64}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.865.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{302,600},{26,62}}</string>
+                <key>offset</key>
+                <string>{0,-7}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,104},{26,62}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.866.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{330,600},{28,60}}</string>
+                <key>offset</key>
+                <string>{1,-8}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,106},{28,60}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.867.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{438,598},{32,58}}</string>
+                <key>offset</key>
+                <string>{1,-9}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{113,108},{32,58}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.868.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{404,598},{32,58}}</string>
+                <key>offset</key>
+                <string>{2,-10}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{114,109},{32,58}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.869.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{398,282},{34,54}}</string>
+                <key>offset</key>
+                <string>{2,-11}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{113,112},{34,54}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.870.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{472,598},{32,54}}</string>
+                <key>offset</key>
+                <string>{3,-11}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,112},{32,54}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.871.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{506,592},{32,52}}</string>
+                <key>offset</key>
+                <string>{3,-12}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{115,114},{32,52}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.872.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{512,2},{32,50}}</string>
+                <key>offset</key>
+                <string>{5,-13}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{117,116},{32,50}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.873.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{506,70},{32,50}}</string>
+                <key>offset</key>
+                <string>{7,-14}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{119,117},{32,50}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.874.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{506,172},{32,48}}</string>
+                <key>offset</key>
+                <string>{9,-15}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{121,119},{32,48}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.875.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{454,282},{34,48}}</string>
+                <key>offset</key>
+                <string>{11,-16}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{122,120},{34,48}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.876.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{554,104},{38,48}}</string>
+                <key>offset</key>
+                <string>{12,-16}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{121,120},{38,48}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.877.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{546,2},{38,48}}</string>
+                <key>offset</key>
+                <string>{14,-15}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{123,119},{38,48}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.878.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{540,54},{40,48}}</string>
+                <key>offset</key>
+                <string>{15,-15}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{123,119},{40,48}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.879.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{504,274},{40,50}}</string>
+                <key>offset</key>
+                <string>{17,-14}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{125,117},{40,50}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.880.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{346,978},{44,48}}</string>
+                <key>offset</key>
+                <string>{18,-14}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{124,118},{44,48}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.881.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{506,122},{46,48}}</string>
+                <key>offset</key>
+                <string>{21,-14}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{126,118},{46,48}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.882.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{292,978},{52,44}}</string>
+                <key>offset</key>
+                <string>{23,-16}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{125,122},{52,44}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.883.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{464,978},{54,42}}</string>
+                <key>offset</key>
+                <string>{26,-17}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{127,124},{54,42}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.884.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{360,598},{58,42}}</string>
+                <key>offset</key>
+                <string>{28,-18}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,125},{58,42}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.885.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{260,600},{62,40}}</string>
+                <key>offset</key>
+                <string>{29,-19}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{126,127},{62,40}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.886.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{410,728},{66,38}}</string>
+                <key>offset</key>
+                <string>{31,-19}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{126,128},{66,38}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.887.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{162,80},{70,36}}</string>
+                <key>offset</key>
+                <string>{33,-19}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{126,129},{70,36}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.888.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{158,574},{72,34}}</string>
+                <key>offset</key>
+                <string>{35,-20}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,131},{72,34}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.889.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,924},{72,30}}</string>
+                <key>offset</key>
+                <string>{35,-22}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,135},{72,30}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.890.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{224,844},{72,28}}</string>
+                <key>offset</key>
+                <string>{35,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{72,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.891.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{156,334},{72,26}}</string>
+                <key>offset</key>
+                <string>{36,-25}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{128,140},{72,26}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.892.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{226,768},{72,26}}</string>
+                <key>offset</key>
+                <string>{36,-25}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{128,140},{72,26}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.893.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{198,768},{74,26}}</string>
+                <key>offset</key>
+                <string>{36,-25}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,140},{74,26}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.894.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{196,740},{74,26}}</string>
+                <key>offset</key>
+                <string>{37,-25}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{128,140},{74,26}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.895.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{136,496},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.896.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{196,846},{76,26}}</string>
+                <key>offset</key>
+                <string>{37,-25}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,140},{76,26}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.897.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,586},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.898.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{170,768},{76,26}}</string>
+                <key>offset</key>
+                <string>{37,-25}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,140},{76,26}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.899.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{126,418},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.900.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{134,2},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.901.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{132,86},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.902.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,170},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.903.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,256},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.904.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{126,340},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.905.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{192,924},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.906.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{166,846},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.907.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{162,924},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.908.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,664},{76,26}}</string>
+                <key>offset</key>
+                <string>{37,-25}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,140},{76,26}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.909.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{136,846},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,138},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>voidElf.910.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{132,932},{76,28}}</string>
+                <key>offset</key>
+                <string>{37,-25}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{127,139},{76,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -1093,7 +2783,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:424e240645308a58595d8dcc311a4245:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:845fda6d9c6c105a75cea5dad640ec6e:1/1$</string>
             <key>textureFileName</key>
             <string>voidElfSheet.png</string>
         </dict>

@@ -3,9 +3,24 @@
 <head>
     <title>Arena</title>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width; height=device-height; initial-scale=1.0; maximum-scale=1.0;"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 </head>
 <body>
-<canvas id="gameCanvas" width="800" height="600"></canvas>
-<script src="html5/game.js"></script>
+<canvas id="gameCanvas" width="480" height="320"></canvas>
+<script src="html5/game.js">
+
+  window.addEventListener("load",function() {
+    // Set a timeout...
+    setTimeout(function(){
+      // Hide the address bar!
+      window.scrollTo(0, 1);
+    }, 0);
+    var canvas = document.getElementById('gameCanvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
 </body>
 </html>

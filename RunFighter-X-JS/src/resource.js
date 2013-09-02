@@ -1,28 +1,20 @@
 var arenaSheet = dirImg + "arena.png";
 var arenaPlist = dirImg + "arena.plist";
 var bloodPlist = dirImg + "blood.plist";
-
-//remove us
-var s_spineboy = dirImg + "spineboy.png";
-var s_spineboyJSON = dirImg + "spineboy.json";
-var s_spineboyATLAS = dirImg + "spineboy.atlas";
-
-
+var shadowPlist = dirImg + "shadowSheet.plist";
+var shadowPng = dirImg + "shadowSheet.png";
 var g_characterPngs = {};
 var g_characterPlists = {};
 
-var g_mainmenu = [
-    {type:"IMAGE", src:s_spineboy},
-    {type:"XML", src:s_spineboyJSON},
-    {type:"TEXT", src:s_spineboyATLAS}
-];
 
 
 var g_maingame = [
     //image
 	{src:arenaSheet},
 	{src:arenaPlist},
-    {src:bloodPlist}
+    {src:bloodPlist},
+    {src:shadowPlist},
+    {src:shadowPng}
 
 ];
 

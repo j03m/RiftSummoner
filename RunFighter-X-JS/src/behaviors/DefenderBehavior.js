@@ -14,8 +14,14 @@ var DefenderBehavior = function(sprite){
 
 DefenderBehavior.prototype.handleSeek = function(dt){
 
-    if (this.support && this.support.damager){
-        this.locked = this.support.damager;
+    if (!this.support){
+        this.setState('idle', 'idle');
+        return;
+    }
+
+    //glade would not approve :(
+    if (this.support && this.support.behavior.damager && this.support.behavior.damager.isAlive()){
+        this.locked = this.support.behavior.damager;
         this.setState('attackmove', 'move');
         return;
     }
@@ -26,7 +32,7 @@ DefenderBehavior.prototype.handleSeek = function(dt){
         return;
     }
 
-    if(!this.withinThisRadius(this.support.getBasePosition(), this.owner.getTargetRadius()*2, this.owner.getTargetRadiusY()/2)){
+    if(!this.targetWithinSeekRadius(this.support)){
         this.setState('move', 'move');
     }
 
@@ -85,7 +91,7 @@ DefenderBehavior.prototype.handleDefenderIdle = function(dt){
         this.support = this.lockOnClosestFriendlyNonTank();
     }
 
-    if (!this.support.isAlive()){
+    if (!this.support || !this.support.isAlive()){
         this.support = undefined;
         this.locked = this.lockOnClosestFriendlyNonTank();
     }

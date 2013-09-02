@@ -76,9 +76,19 @@ GeneralBehavior.prototype.withinThisRadius = function(toPoint, xRad, yRad){
     }
 }
 
+GeneralBehavior.prototype.targetWithinSeekRadius = function(target){
+    var feet = this.owner.getBasePosition();
+    var vector = this.getVectorTo(target.getBasePosition(), feet);
+    if (vector.distance <= this.owner.getSeekRadius()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 //find an enemy that that is within my attack radius
 GeneralBehavior.prototype.lockOnEnemyInRadius = function(){
-    return this.lockOnClosest(this.targetWithinRadius.bind(this), this.owner.enemyTeam);
+    return this.lockOnClosest(this.targetWithinSeekRadius.bind(this), this.owner.enemyTeam);
 }
 
 //call lock on closest, but pass isUnlocked to check if anyone is locked on already, if so pass and check the next.
@@ -257,8 +267,9 @@ GeneralBehavior.prototype.getVectorTo= function(to, from){
 GeneralBehavior.prototype.moveToward = function(point, dt){
 
     // Update position based on velocity
+//    var separate = this.separate();
+//    var point = cc.pAdd(separate, point);
     var newPosition = cc.pAdd(this.owner.getBasePosition(), cc.pMult(point, dt));
-
     this.owner.setBasePosition(newPosition);
 
 }
@@ -396,13 +407,33 @@ GeneralBehavior.prototype.handleFight = function(dt){
     }
 
     //if time is past the actiondelay and im not in another animation other than idle or damage
-    if (this.lastAttack >= actionDelay && state.anim != 'attack'){
-        this.setState('idle', 'attack');
+    if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1){
+        this.setAttackAnim('fighting');
         this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
         this.lastAttack = 0;
     }else{
         this.lastAttack+=dt;
     }
+}
+
+GeneralBehavior.prototype.setAttackAnim = function(state){
+    if (this.attackSequence==undefined){
+        this.attackSequence = 1;
+    }
+
+    if (this.attackSequence == 1){
+        this.setState(state, 'attack');
+
+    }else{
+        var nextAttack = 'attack'+this.attackSequence;
+        if (this.owner.animations[nextAttack]){
+            this.setState(state, nextAttack);
+        }else{
+            this.attackSequence = 0;
+            this.setState(state, 'attack');
+        }
+    }
+    this.attackSequence++;
 }
 
 GeneralBehavior.prototype.handleIdle = function(dt){
@@ -420,8 +451,25 @@ GeneralBehavior.prototype.handleMove = function(dt){
     var point = this.seekEnemy();
     if (point.x == 0 && point.y == 0){
         //arrived - attack
-        this.setState('fighting', 'attack');
+        this.setAttackAnim('fighting');
         return;
     }
     this.moveToward(point, dt);
+}
+
+GeneralBehavior.prototype.separate = function(){
+    var steering = cc.p(0,0);
+    var myTeam = this.owner.homeTeam;
+    for (var i =0; i< myTeam.length; i++) {
+        if (myTeam[i] != this.owner){
+            var ally = myTeam[i];
+            var vector = this.getVectorTo(this.owner.getBasePosition(), ally.getBasePosition());
+            var SEPARATE_THRESHHOLD = 100;
+
+            if (vector.xd < SEPARATE_THRESHHOLD || vector.yd < SEPARATE_THRESHHOLD) {
+                steering = cc.pAdd(steering, vector.direction);
+            }
+        }
+    }
+    return steering;
 }

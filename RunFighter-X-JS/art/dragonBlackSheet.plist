@@ -4,1110 +4,2345 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>dragonBlack.1.png</key>
+            <key>dragonBlack.529.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{366,688},{180,52}}</string>
+                <string>{{600,122},{108,106}}</string>
                 <key>offset</key>
-                <string>{-19,-27}</string>
+                <string>{-11,24}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,217},{180,52}}</string>
+                <string>{{63,51},{108,106}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.178.png</key>
+            <key>dragonBlack.530.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{552,422},{180,170}}</string>
+                <string>{{490,122},{108,106}}</string>
                 <key>offset</key>
-                <string>{-18,38}</string>
+                <string>{-11,24}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,93},{180,170}}</string>
+                <string>{{63,51},{108,106}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.179.png</key>
+            <key>dragonBlack.531.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,578},{180,122}}</string>
+                <string>{{710,122},{108,102}}</string>
                 <key>offset</key>
-                <string>{-19,14}</string>
+                <string>{-11,22}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,141},{180,122}}</string>
+                <string>{{63,55},{108,102}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.180.png</key>
+            <key>dragonBlack.532.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{548,594},{180,92}}</string>
+                <string>{{710,226},{108,94}}</string>
                 <key>offset</key>
-                <string>{-18,-2}</string>
+                <string>{-11,19}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,172},{180,92}}</string>
+                <string>{{63,62},{108,94}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.181.png</key>
+            <key>dragonBlack.533.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{362,878},{178,48}}</string>
+                <string>{{898,298},{108,84}}</string>
                 <key>offset</key>
-                <string>{-17,-30}</string>
+                <string>{-11,13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{110,222},{178,48}}</string>
+                <string>{{63,73},{108,84}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.182.png</key>
+            <key>dragonBlack.534.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{362,928},{176,144}}</string>
+                <string>{{466,312},{108,72}}</string>
                 <key>offset</key>
-                <string>{-17,-74}</string>
+                <string>{-11,8}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{111,218},{176,144}}</string>
+                <string>{{63,84},{108,72}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.183.png</key>
+            <key>dragonBlack.535.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{540,1052},{174,142}}</string>
+                <string>{{898,522},{108,66}}</string>
                 <key>offset</key>
-                <string>{-16,-71}</string>
+                <string>{-11,4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{113,216},{174,142}}</string>
+                <string>{{63,91},{108,66}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.184.png</key>
+            <key>dragonBlack.536.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{182,994},{176,130}}</string>
+                <string>{{112,464},{108,62}}</string>
                 <key>offset</key>
-                <string>{-17,-66}</string>
+                <string>{-11,2}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{111,217},{176,130}}</string>
+                <string>{{63,95},{108,62}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.185.png</key>
+            <key>dragonBlack.537.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,894},{178,116}}</string>
+                <string>{{442,444},{108,56}}</string>
                 <key>offset</key>
-                <string>{-18,-63}</string>
+                <string>{-11,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{109,221},{178,116}}</string>
+                <string>{{63,101},{108,56}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.186.png</key>
+            <key>dragonBlack.538.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{366,582},{180,104}}</string>
+                <string>{{110,928},{106,46}}</string>
                 <key>offset</key>
-                <string>{-19,-60}</string>
+                <string>{-10,-6}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,224},{180,104}}</string>
+                <string>{{65,111},{106,46}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.187.png</key>
+            <key>dragonBlack.539.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,636},{180,110}}</string>
+                <string>{{986,690},{106,34}}</string>
                 <key>offset</key>
-                <string>{-20,-60}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,221},{180,110}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.188.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{944,590},{180,78}}</string>
-                <key>offset</key>
-                <string>{-20,-11}</string>
+                <string>{-10,-12}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{106,188},{180,78}}</string>
+                <string>{{65,123},{106,34}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.189.png</key>
+            <key>dragonBlack.540.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{370,268},{180,178}}</string>
+                <string>{{326,910},{106,30}}</string>
                 <key>offset</key>
-                <string>{-19,40}</string>
+                <string>{-10,-18}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,87},{180,178}}</string>
+                <string>{{65,131},{106,30}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.190.png</key>
+            <key>dragonBlack.541.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{762,420},{180,178}}</string>
+                <string>{{218,890},{106,48}}</string>
                 <key>offset</key>
-                <string>{-19,40}</string>
+                <string>{-10,-27}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,87},{180,178}}</string>
+                <string>{{65,131},{106,48}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.191.png</key>
+            <key>dragonBlack.542.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1138},{174,132}}</string>
+                <string>{{654,786},{106,72}}</string>
                 <key>offset</key>
-                <string>{-21,10}</string>
+                <string>{-10,-37}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,140},{174,132}}</string>
+                <string>{{65,129},{106,72}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.192.png</key>
+            <key>dragonBlack.543.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{514,1326},{162,84}}</string>
+                <string>{{2,688},{106,86}}</string>
                 <key>offset</key>
-                <string>{-23,-6}</string>
+                <string>{-10,-43}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{112,180},{162,84}}</string>
+                <string>{{65,128},{106,86}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.193.png</key>
+            <key>dragonBlack.544.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,1540},{138,94}}</string>
+                <string>{{110,678},{106,90}}</string>
                 <key>offset</key>
-                <string>{-19,-26}</string>
+                <string>{-10,-46}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{128,195},{138,94}}</string>
+                <string>{{65,129},{106,90}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.194.png</key>
+            <key>dragonBlack.545.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{902,1026},{118,160}}</string>
+                <string>{{220,640},{106,90}}</string>
                 <key>offset</key>
-                <string>{-17,-48}</string>
+                <string>{-10,-44}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{140,184},{118,160}}</string>
+                <string>{{65,127},{106,90}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.195.png</key>
+            <key>dragonBlack.546.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1532},{100,150}}</string>
+                <string>{{548,600},{106,84}}</string>
                 <key>offset</key>
-                <string>{-13,-35}</string>
+                <string>{-10,-42}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,128},{106,84}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.547.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{110,770},{106,80}}</string>
+                <key>offset</key>
+                <string>{-10,-40}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,128},{106,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.548.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{218,732},{106,80}}</string>
+                <key>offset</key>
+                <string>{-10,-39}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,127},{106,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.549.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,976},{104,78}}</string>
+                <key>offset</key>
+                <string>{-9,-39}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{67,128},{104,78}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.550.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{436,772},{106,76}}</string>
+                <key>offset</key>
+                <string>{-11,-39}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,129},{106,76}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.551.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,856},{106,74}}</string>
+                <key>offset</key>
+                <string>{-10,-38}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,129},{106,74}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.552.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,408},{108,70}}</string>
+                <key>offset</key>
+                <string>{-11,-37}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,130},{108,70}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.553.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{898,384},{108,68}}</string>
+                <key>offset</key>
+                <string>{-11,-36}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,130},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.554.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{332,386},{108,64}}</string>
+                <key>offset</key>
+                <string>{-11,-36}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,132},{108,64}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.555.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,424},{108,62}}</string>
+                <key>offset</key>
+                <string>{-11,-36}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,133},{108,62}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.556.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{898,454},{108,66}}</string>
+                <key>offset</key>
+                <string>{-12,-37}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,132},{108,66}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.557.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{686,392},{108,68}}</string>
+                <key>offset</key>
+                <string>{-12,-37}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,131},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.558.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{576,382},{108,68}}</string>
+                <key>offset</key>
+                <string>{-12,-35}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,129},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.559.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,480},{108,58}}</string>
+                <key>offset</key>
+                <string>{-12,-30}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,129},{108,58}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.560.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,540},{108,42}}</string>
+                <key>offset</key>
+                <string>{-12,-17}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,124},{108,42}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.561.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,488},{108,46}}</string>
+                <key>offset</key>
+                <string>{-12,-7}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,112},{108,46}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.562.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{356,232},{108,80}}</string>
+                <key>offset</key>
+                <string>{-12,10}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,78},{108,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.563.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{796,448},{106,100}}</string>
+                <key>offset</key>
+                <string>{-11,20}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{153,176},{100,150}}</string>
+                <string>{{64,58},{106,100}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.196.png</key>
+            <key>dragonBlack.564.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{336,1440},{98,154}}</string>
+                <string>{{878,590},{106,106}}</string>
                 <key>offset</key>
-                <string>{-6,-43}</string>
+                <string>{-11,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,51},{106,106}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.565.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{660,598},{106,106}}</string>
+                <key>offset</key>
+                <string>{-11,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,51},{106,106}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.614.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,226},{108,106}}</string>
+                <key>offset</key>
+                <string>{-11,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,51},{108,106}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.615.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{114,208},{108,106}}</string>
+                <key>offset</key>
+                <string>{-11,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,51},{108,106}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.616.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{332,502},{104,106}}</string>
+                <key>offset</key>
+                <string>{-9,24}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{161,182},{98,154}}</string>
+                <string>{{67,51},{104,106}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.197.png</key>
+            <key>dragonBlack.617.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{356,1210},{172,86}}</string>
+                <string>{{2,584},{102,106}}</string>
                 <key>offset</key>
-                <string>{-34,-31}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{96,204},{172,86}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.198.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{428,44},{184,114}}</string>
-                <key>offset</key>
-                <string>{-22,-34}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{102,193},{184,114}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.199.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{458,1624},{132,98}}</string>
-                <key>offset</key>
-                <string>{6,-54}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{156,221},{132,98}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.2.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{728,804},{178,52}}</string>
-                <key>offset</key>
-                <string>{-18,-27}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{109,217},{178,52}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.200.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{908,772},{114,118}}</string>
-                <key>offset</key>
-                <string>{5,-53}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{164,210},{114,118}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.201.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,1634},{134,134}}</string>
-                <key>offset</key>
-                <string>{-9,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{140,208},{134,134}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.202.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{902,892},{132,120}}</string>
-                <key>offset</key>
-                <string>{-8,-50}</string>
+                <string>{-8,24}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{142,206},{132,120}}</string>
+                <string>{{69,51},{102,106}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.203.png</key>
+            <key>dragonBlack.618.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1420},{162,110}}</string>
+                <string>{{872,804},{104,104}}</string>
                 <key>offset</key>
-                <string>{-20,-46}</string>
+                <string>{-9,23}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{115,207},{162,110}}</string>
+                <string>{{67,53},{104,104}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.204.png</key>
+            <key>dragonBlack.619.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{182,876},{178,116}}</string>
+                <string>{{868,910},{104,98}}</string>
                 <key>offset</key>
-                <string>{-24,-53}</string>
+                <string>{-10,19}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,211},{178,116}}</string>
+                <string>{{66,60},{104,98}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.205.png</key>
+            <key>dragonBlack.620.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{614,74},{182,112}}</string>
+                <string>{{434,918},{102,88}}</string>
                 <key>offset</key>
-                <string>{-22,12}</string>
+                <string>{-10,14}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,148},{182,112}}</string>
+                <string>{{67,70},{102,88}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.206.png</key>
+            <key>dragonBlack.621.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{580,242},{180,178}}</string>
+                <string>{{538,918},{102,76}}</string>
                 <key>offset</key>
-                <string>{-19,41}</string>
+                <string>{-11,8}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,86},{180,178}}</string>
+                <string>{{66,82},{102,76}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.207.png</key>
+            <key>dragonBlack.622.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{720,1034},{172,174}}</string>
+                <string>{{428,1008},{102,68}}</string>
                 <key>offset</key>
-                <string>{-15,38}</string>
+                <string>{-11,4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{66,90},{102,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.623.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{108,976},{104,62}}</string>
+                <key>offset</key>
+                <string>{-11,2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,95},{104,62}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.624.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{442,386},{108,56}}</string>
+                <key>offset</key>
+                <string>{-11,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,101},{108,56}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.625.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{332,452},{108,48}}</string>
+                <key>offset</key>
+                <string>{-10,-5}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,109},{108,48}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.626.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{552,452},{108,38}}</string>
+                <key>offset</key>
+                <string>{-10,-10}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,119},{108,38}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.627.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{662,462},{108,26}}</string>
+                <key>offset</key>
+                <string>{-10,-16}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,131},{108,26}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.628.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,528},{108,44}}</string>
+                <key>offset</key>
+                <string>{-11,-23}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,129},{108,44}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.629.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{686,322},{108,68}}</string>
+                <key>offset</key>
+                <string>{-11,-35}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,129},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.630.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{898,212},{108,84}}</string>
+                <key>offset</key>
+                <string>{-12,-43}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,129},{108,84}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.631.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{330,608},{106,90}}</string>
+                <key>offset</key>
+                <string>{-11,-46}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,129},{106,90}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.632.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{440,596},{106,90}}</string>
+                <key>offset</key>
+                <string>{-12,-45}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,128},{106,90}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.633.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{898,124},{108,86}}</string>
+                <key>offset</key>
+                <string>{-12,-43}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,128},{108,86}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.634.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{438,688},{106,82}}</string>
+                <key>offset</key>
+                <string>{-12,-40}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,127},{106,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.635.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{548,686},{106,82}}</string>
+                <key>offset</key>
+                <string>{-11,-40}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,127},{106,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.636.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{600,230},{108,80}}</string>
+                <key>offset</key>
+                <string>{-12,-40}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,128},{108,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.637.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{656,706},{106,78}}</string>
+                <key>offset</key>
+                <string>{-11,-40}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,129},{106,78}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.638.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{546,770},{106,76}}</string>
+                <key>offset</key>
+                <string>{-11,-39}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,129},{106,76}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.639.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{110,852},{106,74}}</string>
+                <key>offset</key>
+                <string>{-11,-39}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,130},{106,74}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.640.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{764,770},{106,72}}</string>
+                <key>offset</key>
+                <string>{-11,-38}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,130},{106,72}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.641.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,392},{108,70}}</string>
+                <key>offset</key>
+                <string>{-11,-37}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,130},{108,70}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.642.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{576,312},{108,68}}</string>
+                <key>offset</key>
+                <string>{-11,-37}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,131},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.643.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,352},{108,70}}</string>
+                <key>offset</key>
+                <string>{-12,-39}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,132},{108,70}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.644.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,316},{108,74}}</string>
+                <key>offset</key>
+                <string>{-11,-38}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,129},{108,74}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.645.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{218,814},{106,74}}</string>
+                <key>offset</key>
+                <string>{-11,-37}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,128},{106,74}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.646.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{544,848},{106,68}}</string>
+                <key>offset</key>
+                <string>{-11,-32}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,126},{106,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.647.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{326,858},{106,50}}</string>
+                <key>offset</key>
+                <string>{-11,-22}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,125},{106,50}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.648.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,932},{106,42}}</string>
+                <key>offset</key>
+                <string>{-10,-9}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,116},{106,42}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.649.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{434,850},{106,66}}</string>
+                <key>offset</key>
+                <string>{-10,4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,91},{106,66}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.650.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{440,502},{106,92}}</string>
+                <key>offset</key>
+                <string>{-10,17}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,65},{106,92}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.651.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{768,664},{106,104}}</string>
+                <key>offset</key>
+                <string>{-10,23}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,53},{106,104}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.652.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{770,556},{106,106}}</string>
+                <key>offset</key>
+                <string>{-10,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,51},{106,106}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.653.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{552,492},{106,106}}</string>
+                <key>offset</key>
+                <string>{-10,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,51},{106,106}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.654.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{218,940},{104,104}}</string>
+                <key>offset</key>
+                <string>{-10,23}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{66,53},{104,104}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.655.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{796,340},{106,100}}</string>
+                <key>offset</key>
+                <string>{-10,20}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{115,91},{172,174}}</string>
+                <string>{{65,58},{106,100}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.208.png</key>
+            <key>dragonBlack.656.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{536,1196},{172,128}}</string>
+                <string>{{652,860},{104,90}}</string>
                 <key>offset</key>
-                <string>{-18,15}</string>
+                <string>{-10,15}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{112,137},{172,128}}</string>
+                <string>{{66,68},{104,90}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.209.png</key>
+            <key>dragonBlack.657.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{728,708},{178,94}}</string>
+                <string>{{864,1010},{104,78}}</string>
                 <key>offset</key>
-                <string>{-18,-2}</string>
+                <string>{-10,9}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{109,171},{178,94}}</string>
+                <string>{{66,80},{104,78}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.210.png</key>
+            <key>dragonBlack.658.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{186,228},{182,44}}</string>
+                <string>{{538,996},{102,70}}</string>
                 <key>offset</key>
-                <string>{-17,-26}</string>
+                <string>{-9,4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,220},{182,44}}</string>
+                <string>{{68,89},{102,70}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.211.png</key>
+            <key>dragonBlack.659.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{548,688},{178,140}}</string>
+                <string>{{324,1026},{102,64}}</string>
                 <key>offset</key>
-                <string>{-19,-73}</string>
+                <string>{-9,1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,219},{178,140}}</string>
+                <string>{{68,95},{102,64}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.212.png</key>
+            <key>dragonBlack.660.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,748},{178,144}}</string>
+                <string>{{428,1078},{100,58}}</string>
                 <key>offset</key>
-                <string>{-20,-72}</string>
+                <string>{-8,-2}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,216},{178,144}}</string>
+                <string>{{70,101},{100,58}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.213.png</key>
+            <key>dragonBlack.661.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,448},{180,132}}</string>
+                <string>{{316,1092},{100,50}}</string>
                 <key>offset</key>
-                <string>{-20,-68}</string>
+                <string>{-8,-6}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{106,218},{180,132}}</string>
+                <string>{{70,109},{100,50}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.214.png</key>
+            <key>dragonBlack.662.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1012},{176,124}}</string>
+                <string>{{418,1138},{100,38}}</string>
                 <key>offset</key>
-                <string>{-18,-65}</string>
+                <string>{-8,-12}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{110,219},{176,124}}</string>
+                <string>{{70,121},{100,38}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.215.png</key>
+            <key>dragonBlack.663.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,222},{182,112}}</string>
+                <string>{{310,1144},{100,32}}</string>
                 <key>offset</key>
-                <string>{-20,-63}</string>
+                <string>{-8,-16}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{105,223},{182,112}}</string>
+                <string>{{70,128},{100,32}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.216.png</key>
+            <key>dragonBlack.664.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,510},{180,124}}</string>
+                <string>{{208,1138},{100,44}}</string>
                 <key>offset</key>
-                <string>{-19,-62}</string>
+                <string>{-8,-25}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,216},{180,124}}</string>
+                <string>{{70,131},{100,44}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.217.png</key>
+            <key>dragonBlack.665.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{946,412},{176,70}}</string>
+                <string>{{844,1090},{98,68}}</string>
                 <key>offset</key>
-                <string>{-17,-15}</string>
+                <string>{-8,-35}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{71,129},{98,68}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.666.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{744,1026},{98,84}}</string>
+                <key>offset</key>
+                <string>{-7,-43}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{72,129},{98,84}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.667.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{106,1096},{100,90}}</string>
+                <key>offset</key>
+                <string>{-8,-46}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{70,129},{100,90}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.668.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{214,1046},{100,90}}</string>
+                <key>offset</key>
+                <string>{-8,-46}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{70,129},{100,90}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.669.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1154},{100,88}}</string>
+                <key>offset</key>
+                <string>{-8,-43}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{70,127},{100,88}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.670.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{532,1068},{100,82}}</string>
+                <key>offset</key>
+                <string>{-8,-41}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{70,128},{100,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.671.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{324,942},{102,82}}</string>
+                <key>offset</key>
+                <string>{-8,-40}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{69,127},{102,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.672.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{758,944},{104,80}}</string>
+                <key>offset</key>
+                <string>{-9,-40}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{67,128},{104,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.673.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,776},{106,78}}</string>
+                <key>offset</key>
+                <string>{-10,-40}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,129},{106,78}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.674.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{820,232},{106,76}}</string>
+                <key>offset</key>
+                <string>{-10,-40}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{111,196},{176,70}}</string>
+                <string>{{65,130},{106,76}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.218.png</key>
+            <key>dragonBlack.675.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,702},{178,172}}</string>
+                <string>{{224,276},{108,74}}</string>
                 <key>offset</key>
-                <string>{-17,38}</string>
+                <string>{-11,-39}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{110,92},{178,172}}</string>
+                <string>{{63,130},{108,74}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.219.png</key>
+            <key>dragonBlack.676.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{724,858},{176,174}}</string>
+                <string>{{2,334},{108,72}}</string>
                 <key>offset</key>
-                <string>{-17,38}</string>
+                <string>{-11,-38}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{111,91},{176,174}}</string>
+                <string>{{63,130},{108,72}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.220.png</key>
+            <key>dragonBlack.677.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{180,1126},{174,132}}</string>
+                <string>{{334,314},{108,70}}</string>
                 <key>offset</key>
-                <string>{-16,16}</string>
+                <string>{-11,-37}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{113,134},{174,132}}</string>
+                <string>{{63,130},{108,70}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.221.png</key>
+            <key>dragonBlack.678.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{178,1260},{168,96}}</string>
+                <string>{{2,154},{110,70}}</string>
                 <key>offset</key>
-                <string>{-14,-4}</string>
+                <string>{-12,-35}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{118,172},{168,96}}</string>
+                <string>{{61,128},{110,70}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.222.png</key>
+            <key>dragonBlack.679.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{710,1272},{166,52}}</string>
+                <string>{{820,122},{108,76}}</string>
                 <key>offset</key>
-                <string>{-14,-28}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{119,218},{166,52}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.223.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{348,1298},{164,140}}</string>
-                <key>offset</key>
-                <string>{-13,-73}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{121,219},{164,140}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.224.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,1272},{166,146}}</string>
-                <key>offset</key>
-                <string>{-13,-73}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{120,216},{166,146}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.225.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{360,1074},{174,134}}</string>
-                <key>offset</key>
-                <string>{-16,-68}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{113,217},{174,134}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.226.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{184,452},{180,124}}</string>
-                <key>offset</key>
-                <string>{-18,-65}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{108,219},{180,124}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.227.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,102},{182,118}}</string>
-                <key>offset</key>
-                <string>{-19,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,216},{182,118}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.228.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{364,742},{178,134}}</string>
-                <key>offset</key>
-                <string>{-17,-56}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{110,205},{178,134}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.229.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{946,240},{170,74}}</string>
-                <key>offset</key>
-                <string>{-14,-12}</string>
+                <string>{-11,-35}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{117,191},{170,74}}</string>
+                <string>{{63,125},{108,76}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.230.png</key>
+            <key>dragonBlack.680.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{542,882},{168,176}}</string>
+                <string>{{490,230},{108,80}}</string>
                 <key>offset</key>
-                <string>{-13,40}</string>
+                <string>{-11,-35}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,123},{108,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.681.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{328,700},{106,80}}</string>
+                <key>offset</key>
+                <string>{-10,-33}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,121},{106,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.682.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{326,782},{106,74}}</string>
+                <key>offset</key>
+                <string>{-10,-28}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,119},{106,74}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.683.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{108,1040},{104,54}}</string>
+                <key>offset</key>
+                <string>{-9,-18}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{67,119},{104,54}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.684.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,900},{102,44}}</string>
+                <key>offset</key>
+                <string>{-8,-7}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{119,88},{168,176}}</string>
+                <string>{{69,113},{102,44}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.231.png</key>
+            <key>dragonBlack.685.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{212,50},{182,176}}</string>
+                <string>{{642,952},{102,70}}</string>
                 <key>offset</key>
-                <string>{-19,40}</string>
+                <string>{-8,6}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{106,88},{182,176}}</string>
+                <string>{{69,87},{102,70}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.236.png</key>
+            <key>dragonBlack.686.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,336},{180,172}}</string>
+                <string>{{2,1056},{102,96}}</string>
                 <key>offset</key>
-                <string>{-19,37}</string>
+                <string>{-8,19}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,93},{180,172}}</string>
+                <string>{{69,61},{102,96}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.237.png</key>
+            <key>dragonBlack.687.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{842,2},{182,180}}</string>
+                <string>{{112,574},{102,106}}</string>
                 <key>offset</key>
-                <string>{-20,35}</string>
+                <string>{-8,24}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{105,91},{182,180}}</string>
+                <string>{{69,51},{102,106}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.238.png</key>
+            <key>dragonBlack.688.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{678,1326},{158,140}}</string>
+                <string>{{222,536},{102,106}}</string>
                 <key>offset</key>
-                <string>{-17,-34}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{120,180},{158,140}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.239.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{514,1412},{158,100}}</string>
-                <key>offset</key>
-                <string>{-62,-46}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{75,212},{158,100}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.240.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{166,1464},{150,138}}</string>
-                <key>offset</key>
-                <string>{-39,-77}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{102,224},{150,138}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.241.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{170,1358},{164,104}}</string>
-                <key>offset</key>
-                <string>{-25,-48}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{109,212},{164,104}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.242.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{186,274},{180,176}}</string>
-                <key>offset</key>
-                <string>{-19,39}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{107,89},{180,176}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.243.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{764,240},{180,178}}</string>
-                <key>offset</key>
-                <string>{-19,36}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{107,91},{180,178}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.244.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{878,1300},{158,144}}</string>
-                <key>offset</key>
-                <string>{-21,-4}</string>
+                <string>{-8,24}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{116,148},{158,144}}</string>
+                <string>{{69,51},{102,106}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.245.png</key>
+            <key>dragonBlack.689.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{492,1514},{108,146}}</string>
+                <string>{{876,698},{104,106}}</string>
                 <key>offset</key>
-                <string>{-30,-18}</string>
+                <string>{-10,24}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{132,161},{108,146}}</string>
+                <string>{{66,51},{104,106}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.246.png</key>
+            <key>dragonBlack.690.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{896,1188},{110,126}}</string>
+                <string>{{246,168},{108,106}}</string>
                 <key>offset</key>
-                <string>{-22,-14}</string>
+                <string>{-11,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,51},{108,106}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.725.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{380,122},{108,108}}</string>
+                <key>offset</key>
+                <string>{-11,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,50},{108,108}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.726.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{662,490},{106,106}}</string>
+                <key>offset</key>
+                <string>{-11,21}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{64,54},{106,106}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.727.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{762,844},{104,98}}</string>
+                <key>offset</key>
+                <string>{-11,16}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,63},{104,98}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.728.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{642,1024},{100,86}}</string>
+                <key>offset</key>
+                <string>{-11,9}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{67,76},{100,86}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.729.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{732,1112},{94,86}}</string>
+                <key>offset</key>
+                <string>{-12,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{69,87},{94,86}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.730.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{944,1094},{78,88}}</string>
+                <key>offset</key>
+                <string>{-16,-10}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{73,94},{78,88}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.731.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{828,1194},{66,90}}</string>
+                <key>offset</key>
+                <string>{-18,-11}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{139,167},{110,126}}</string>
+                <string>{{77,94},{66,90}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.247.png</key>
+            <key>dragonBlack.732.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{292,1636},{94,126}}</string>
+                <string>{{616,1154},{64,88}}</string>
                 <key>offset</key>
-                <string>{-15,-6}</string>
+                <string>{-17,-10}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{154,159},{94,126}}</string>
+                <string>{{79,94},{64,88}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.248.png</key>
+            <key>dragonBlack.733.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,1604},{68,136}}</string>
+                <string>{{790,1262},{64,82}}</string>
+                <key>offset</key>
+                <string>{-16,-10}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{80,97},{64,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.734.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{208,1184},{66,78}}</string>
+                <key>offset</key>
+                <string>{-14,-9}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{81,98},{66,78}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.735.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{104,1240},{66,76}}</string>
+                <key>offset</key>
+                <string>{-13,-8}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{82,98},{66,76}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.736.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1302},{64,74}}</string>
+                <key>offset</key>
+                <string>{-11,-7}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{85,98},{64,74}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.737.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{182,1252},{62,74}}</string>
+                <key>offset</key>
+                <string>{-10,-6}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{87,97},{62,74}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.738.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1244},{56,76}}</string>
+                <key>offset</key>
+                <string>{-9,-3}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{91,93},{56,76}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.739.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{104,1188},{50,78}}</string>
+                <key>offset</key>
+                <string>{-8,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{95,90},{50,78}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.740.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{874,1262},{44,80}}</string>
+                <key>offset</key>
+                <string>{-7,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{99,87},{44,80}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.741.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{920,1270},{42,82}}</string>
+                <key>offset</key>
+                <string>{-4,2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{103,85},{42,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.742.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{920,1314},{38,82}}</string>
+                <key>offset</key>
+                <string>{-2,1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{107,86},{38,82}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.743.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{616,1220},{34,86}}</string>
+                <key>offset</key>
+                <string>{-2,1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{109,84},{34,86}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.744.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{706,1200},{30,88}}</string>
+                <key>offset</key>
+                <string>{-5,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{108,84},{30,88}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.745.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{828,1160},{32,94}}</string>
+                <key>offset</key>
+                <string>{-7,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{105,82},{32,94}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.746.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{986,590},{36,98}}</string>
+                <key>offset</key>
+                <string>{-7,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,81},{36,98}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.747.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{984,798},{38,100}}</string>
+                <key>offset</key>
+                <string>{-7,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{102,79},{38,100}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.748.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{634,1112},{40,96}}</string>
+                <key>offset</key>
+                <string>{-7,2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{101,78},{40,96}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.749.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{924,1184},{40,92}}</string>
                 <key>offset</key>
                 <string>{-7,3}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{175,145},{68,136}}</string>
+                <string>{{101,79},{40,92}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.249.png</key>
+            <key>dragonBlack.750.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{674,1468},{48,148}}</string>
+                <string>{{920,1226},{42,90}}</string>
                 <key>offset</key>
-                <string>{-8,0}</string>
+                <string>{-7,1}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{184,142},{48,148}}</string>
+                <string>{{100,82},{42,90}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.250.png</key>
+            <key>dragonBlack.751.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{710,1208},{62,166}}</string>
+                <string>{{974,1004},{48,88}}</string>
                 <key>offset</key>
-                <string>{-11,-3}</string>
+                <string>{-7,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{97,86},{48,88}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.752.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{704,1232},{64,84}}</string>
+                <key>offset</key>
+                <string>{-12,-4}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{174,136},{62,166}}</string>
+                <string>{{84,90},{64,84}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.251.png</key>
+            <key>dragonBlack.753.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{838,1460},{70,150}}</string>
+                <string>{{310,1178},{80,76}}</string>
                 <key>offset</key>
-                <string>{-12,3}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{169,138},{70,150}}</string>
-                <key>sourceSize</key>
-                <string>{432,432}</string>
-            </dict>
-            <key>dragonBlack.252.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{640,1518},{134,130}}</string>
-                <key>offset</key>
-                <string>{-32,-9}</string>
+                <string>{-19,-6}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{117,160},{134,130}}</string>
+                <string>{{69,96},{80,76}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.253.png</key>
+            <key>dragonBlack.754.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{638,2},{202,70}}</string>
+                <string>{{520,1152},{94,70}}</string>
                 <key>offset</key>
-                <string>{-34,-35}</string>
+                <string>{-23,-10}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{81,216},{202,70}}</string>
+                <string>{{58,103},{94,70}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.254.png</key>
+            <key>dragonBlack.755.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{428,2},{208,40}}</string>
+                <string>{{130,150},{114,56}}</string>
                 <key>offset</key>
-                <string>{-37,-49}</string>
+                <string>{-21,-16}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{75,245},{208,40}}</string>
+                <string>{{50,116},{114,56}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.255.png</key>
+            <key>dragonBlack.756.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,48},{208,52}}</string>
+                <string>{{258,122},{120,44}}</string>
                 <key>offset</key>
-                <string>{-38,-50}</string>
+                <string>{-20,-20}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{74,240},{208,52}}</string>
+                <string>{{48,126},{120,44}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.256.png</key>
+            <key>dragonBlack.757.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{212,44}}</string>
+                <string>{{898,36},{124,32}}</string>
                 <key>offset</key>
-                <string>{-37,-53}</string>
+                <string>{-21,-24}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{73,247},{212,44}}</string>
+                <string>{{45,136},{124,32}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.257.png</key>
+            <key>dragonBlack.758.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{216,2},{210,46}}</string>
+                <string>{{2,126},{126,26}}</string>
                 <key>offset</key>
-                <string>{-37,-53}</string>
+                <string>{-22,-27}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{74,246},{210,46}}</string>
+                <string>{{43,142},{126,26}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.3.png</key>
+            <key>dragonBlack.759.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{730,654},{180,52}}</string>
+                <string>{{898,98},{124,24}}</string>
                 <key>offset</key>
-                <string>{-18,-27}</string>
+                <string>{-22,-29}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,217},{180,52}}</string>
+                <string>{{44,145},{124,24}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.4.png</key>
+            <key>dragonBlack.760.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{544,830},{178,50}}</string>
+                <string>{{898,70},{124,26}}</string>
                 <key>offset</key>
-                <string>{-18,-28}</string>
+                <string>{-23,-30}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{109,219},{178,50}}</string>
+                <string>{{43,145},{124,26}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.5.png</key>
+            <key>dragonBlack.761.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{730,600},{180,52}}</string>
+                <string>{{898,2},{124,32}}</string>
                 <key>offset</key>
-                <string>{-18,-27}</string>
+                <string>{-23,-29}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,217},{180,52}}</string>
+                <string>{{43,141},{124,32}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.6.png</key>
+            <key>dragonBlack.762.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{396,214},{182,52}}</string>
+                <string>{{2,2},{126,32}}</string>
                 <key>offset</key>
-                <string>{-19,-27}</string>
+                <string>{-23,-29}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{106,217},{182,52}}</string>
+                <string>{{42,141},{126,32}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.7.png</key>
+            <key>dragonBlack.763.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{580,188},{182,52}}</string>
+                <string>{{770,92},{126,28}}</string>
                 <key>offset</key>
-                <string>{-19,-27}</string>
+                <string>{-22,-30}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{106,217},{182,52}}</string>
+                <string>{{43,144},{126,28}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.8.png</key>
+            <key>dragonBlack.764.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{798,186},{182,52}}</string>
+                <string>{{130,122},{126,26}}</string>
                 <key>offset</key>
-                <string>{-19,-27}</string>
+                <string>{-22,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{106,217},{182,52}}</string>
+                <string>{{43,146},{126,26}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dragonBlack.9.png</key>
+            <key>dragonBlack.765.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{396,160},{182,52}}</string>
+                <string>{{642,92},{126,28}}</string>
                 <key>offset</key>
-                <string>{-19,-27}</string>
+                <string>{-22,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{106,217},{182,52}}</string>
+                <string>{{43,145},{126,28}}</string>
                 <key>sourceSize</key>
-                <string>{432,432}</string>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.766.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{514,92},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.767.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{386,92},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-32}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,146},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.768.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{258,92},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-32}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,146},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.769.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,96},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-32}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,146},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.770.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,92},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-32}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,146},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.771.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{770,62},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-32}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,146},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.772.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{642,62},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-32}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,146},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.773.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{514,62},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-32}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,146},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.774.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{386,62},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.775.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{258,62},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.776.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,66},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.777.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,62},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.778.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{770,32},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.779.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{642,32},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.780.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{514,32},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.781.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{386,32},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.782.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{258,32},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.783.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,36},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.784.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,32},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.785.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{770,2},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.786.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{642,2},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.787.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{514,2},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.788.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{386,2},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.789.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{258,2},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dragonBlack.790.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,2},{126,28}}</string>
+                <key>offset</key>
+                <string>{-22,-31}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,145},{126,28}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -1119,7 +2354,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a654a0cfcf293e3801420b3a19ac6cdf:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:079a4573a37379ac5e766c4a716b9be9:1/1$</string>
             <key>textureFileName</key>
             <string>dragonBlackSheet.png</string>
         </dict>

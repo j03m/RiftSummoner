@@ -14,7 +14,7 @@ var ArenaGame = cc.Layer.extend({
 			this.background = new jc.Sprite();
 			this.background.layer = this;
             this.background.type = 'background';
-            this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', 'arena', undefined, undefined, 'background');
+            this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', {"name:":"arena", "type":'background'});
             this.background.centerOnScreen();
 			this.addChild(this.background);
 
@@ -24,13 +24,38 @@ var ArenaGame = cc.Layer.extend({
             //this.runScenario1();
             //this.runScenario2();
             //this.runScenario3();
-            this.runScenario11();
+            this.runScenario0();
             this.scheduleUpdate();
 			return true;
 		} else {
 			return false;
 		}
 	},
+    initScroll:function(){
+//      var size = new cc.Size();
+//      size.width = this
+//      cc.ScrollView.create(cc.Size())
+    },
+    runScenario0:function(){
+        this.getRandomSprite('goblin');
+        this.getRandomSprite('wizard');
+        this.getRandomSprite('spider');
+        this.getRandomSprite('snakeThing');
+        this.getRandomSprite('fireKnight');
+        this.getRandomSprite('troll');
+
+
+        this.getRandomSprite('wizard');
+        this.getRandomSprite('orge');
+        this.getRandomSprite('shellback');
+        this.getRandomSprite('scowerer');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('wizard');
+
+
+
+        this.arrange(this.sprites);
+    },
     runScenario1:function(){
         this.getRandomSprite('goldKnight');
         this.getRandomSprite('orc');
@@ -174,6 +199,32 @@ var ArenaGame = cc.Layer.extend({
         this.getRandomSprite('troll');
         this.arrange(this.sprites);
     },
+    runScenario13:function(){
+        this.getRandomSprite('orc');
+        this.getRandomSprite('dragonBlack');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('troll');
+        this.getRandomSprite('dragonBlack');
+        this.getRandomSprite('orge');
+
+        this.getRandomSprite('troll');
+        this.getRandomSprite('redGargoyle');
+        this.getRandomSprite('redGargoyle');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('troll');
+
+        this.arrange(this.sprites);
+    },
+    runScenario14:function(){
+        this.getRandomSprite('orc');
+        this.getRandomSprite('orge');
+        this.getRandomSprite('orc');
+        this.getRandomSprite('orge');
+        this.arrange(this.sprites);
+    },
+
+
 
     getRandomSprite:function(nameCreate){
         var sprite;
