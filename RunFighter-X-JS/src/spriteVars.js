@@ -291,13 +291,13 @@ var spriteDefs = {
 			"attack": {
 				"start": 440,
 				"end": 520,
-				"delay": 0.025,
+				"delay": 0.005,
 				"type": 1
 			},
 			"attack2": {
 				"start": 613,
 				"end": 796,
-				"delay": 0.025,
+				"delay": 0.005,
 				"type": 1
 			},
 			"dead": {
@@ -429,10 +429,10 @@ var spriteDefs = {
 			"speed": 15,
 			"damage": 100,
 			"actionDelays": {
-				"attack": 2
+				"attack": 1
 			},
 			"effectDelays": {
-				"attack": 0.5
+				"attack": 0.9
 			},
 			"targetRadius": -30
 		},
@@ -643,7 +643,7 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 250,
 			"speed": 150,
-			"damage": 80,
+			"damage": 65,
 			"actionDelays": {
 				"attack": 0.2
 			},

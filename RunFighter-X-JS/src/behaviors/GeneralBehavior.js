@@ -381,22 +381,15 @@ GeneralBehavior.prototype.handleDamage = function(dt){
 GeneralBehavior.prototype.handleFight = function(dt){
 
     //is my target alive?
-
-    if (!this.locked){
-        this.setState('idle', 'idle');
-        return;
-    }
-
-    if (!this.locked.isAlive()){
-        this.setState('idle', 'idle');
-        return;
-    }
-
     var state= this.getState();
-    var targetState = this.locked.getState();
-    if (targetState.brain == 'flee'){
-        //he's running away - follow
-        this.setState('move', 'move');
+    if (!this.locked && state.anim.indexOf('attack')==-1){
+        this.setState('idle', 'idle');
+        return;
+    }
+
+    if (!this.locked.isAlive() && state.anim.indexOf('attack')==-1){
+        this.setState('idle', 'idle');
+        return;
     }
 
     //get the action delay for attacking
@@ -408,6 +401,10 @@ GeneralBehavior.prototype.handleFight = function(dt){
 
     //if time is past the actiondelay and im not in another animation other than idle or damage
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1){
+        if (this.owner.name == 'orge'){
+            console.log('what?');
+        }
+
         this.setAttackAnim('fighting');
         this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
         this.lastAttack = 0;
@@ -438,8 +435,9 @@ GeneralBehavior.prototype.setAttackAnim = function(state){
 
 GeneralBehavior.prototype.handleIdle = function(dt){
     //lock on who-ever is closest
-    this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam);
-
+    if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){
+        this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam);
+    }
 
     if (this.locked){
         this.setState('move', 'move');
@@ -451,7 +449,7 @@ GeneralBehavior.prototype.handleMove = function(dt){
     var point = this.seekEnemy();
     if (point.x == 0 && point.y == 0){
         //arrived - attack
-        this.setAttackAnim('fighting');
+        this.setState('fighting', 'move'); //switch to fight, but keep animation the same
         return;
     }
     this.moveToward(point, dt);

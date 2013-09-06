@@ -38,7 +38,6 @@ var ExampleLayer = cc.Layer.extend({
 		} else {
             jc.log(['general'], 'defaulting to touch capabilities');
 			this.setTouchEnabled(true);
-
 		}
 	},
 	baddies: function(){

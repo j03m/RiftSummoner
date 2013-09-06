@@ -3,6 +3,12 @@ var arenaPlist = dirImg + "arena.plist";
 var bloodPlist = dirImg + "blood.plist";
 var shadowPlist = dirImg + "shadowSheet.plist";
 var shadowPng = dirImg + "shadowSheet.png";
+var carduiPlist = dirImg + "cardui.plist";
+var carduiPng = dirImg + "cardui.png";
+var editDeck = dirImg + "MainScene.ccbi";
+var battleFlagPlist = dirImg + "battleFlag.plist";
+var battleFlagPng = dirImg + "battleFlag.png";
+//var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
 var g_characterPlists = {};
 
@@ -14,8 +20,13 @@ var g_maingame = [
 	{src:arenaPlist},
     {src:bloodPlist},
     {src:shadowPlist},
-    {src:shadowPng}
-
+    {src:shadowPng},
+    {src:carduiPng},
+    {src:carduiPlist},
+    {src:editDeck},
+    {src:battleFlagPlist},
+    {src:battleFlagPng},
+	//{src:myfont}
 ];
 
 

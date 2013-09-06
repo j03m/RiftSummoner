@@ -1,4 +1,5 @@
-var jc = {};
+
+var jc = jc || {};
 var tracers = {
 	'general':0,
 	'touch':0,

@@ -10,8 +10,8 @@ var ArenaGame = cc.Layer.extend({
 	sprites: [],
     teams:{},
     init: function() {
-		if (this._super()) {							
-			this.background = new jc.Sprite();
+		if (this._super()) {
+            this.background = new jc.Sprite();
 			this.background.layer = this;
             this.background.type = 'background';
             this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', {"name:":"arena", "type":'background'});
@@ -38,19 +38,19 @@ var ArenaGame = cc.Layer.extend({
     },
     runScenario0:function(){
         this.getRandomSprite('goblin');
+        this.getRandomSprite('spider');
+        this.getRandomSprite('wizard');
+        this.getRandomSprite('snakeThing');
         this.getRandomSprite('wizard');
         this.getRandomSprite('spider');
-        this.getRandomSprite('snakeThing');
-        this.getRandomSprite('fireKnight');
-        this.getRandomSprite('troll');
 
 
-        this.getRandomSprite('wizard');
+        this.getRandomSprite('blueKnight');
         this.getRandomSprite('orge');
-        this.getRandomSprite('shellback');
-        this.getRandomSprite('scowerer');
+        this.getRandomSprite('fireKnight');
+        this.getRandomSprite('dragonRed');
+        this.getRandomSprite('dragonBlack');
         this.getRandomSprite('orc');
-        this.getRandomSprite('wizard');
 
 
 
@@ -306,8 +306,11 @@ ArenaGame.create = function() {
 };
 
 ArenaGame.scene = function() {
-	var scene = cc.Scene.create();
-	var layer = ArenaGame.create();
-	scene.addChild(layer);
-	return scene;
+	if (!jc.arenaScene){
+        jc.arenaScene = cc.Scene.create();
+        jc.arenaScene.layer = ArenaGame.create();
+        jc.arenaScene.addChild(jc.arenaScene.layer);
+    }
+    return jc.arenaScene;
+
 };

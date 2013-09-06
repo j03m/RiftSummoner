@@ -1,3 +1,4 @@
+var jc = jc || {};
 jc.AnimationTypeOnce=1;
 jc.AnimationTypeLoop=0;
 

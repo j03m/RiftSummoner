@@ -44,7 +44,8 @@ var MW = MW || {};
 			'../src/underscore-min.js',
             '../src/spriteVars.js',
             '../src/resource.js',
-			'../src/jocos2d-js/JCTrace.js',
+            '../src/jocos2d-js/JCTouchLayer.js',
+            '../src/jocos2d-js/JCTrace.js',
             '../src/jocos2d-js/JCGameObject.js',
 			'../src/jocos2d-js/JCSprite.js',
 			'../src/jocos2d-js/eventemitter2.js',
@@ -59,7 +60,9 @@ var MW = MW || {};
             '../src/behaviors/HealerBehavior.js',
             '../src/behaviors/TankBehavior.js',
             '../src/behaviors/BehaviorMap.js',
+            '../src/EditDeck.js',
             '../src/ArenaGame.js',
+            '../src/Main.js',
 			'gameHtml5.js'
     
         ]

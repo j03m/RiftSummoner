@@ -36,6 +36,6 @@ var cocos2dApp = cc.Application.extend({
 });
 
 
-var myApp = new cocos2dApp(ArenaGame.scene);
+var myApp = new cocos2dApp(MainGame.scene);
 
 
