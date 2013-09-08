@@ -1,9 +1,12 @@
 var jc = jc || {};
+jc.defaultTransitionTime = 0.25;
+jc.defaultFadeLevel = 140;
 jc.TouchLayer = cc.Layer.extend({
     touchTargets:[],
     init: function() {
         if (this._super()) {
-
+            this.winSize = cc.Director.getInstance().getWinSize();
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(nightmarePlist);
             this.wireInput();
 
             return true;
@@ -13,61 +16,212 @@ jc.TouchLayer = cc.Layer.extend({
     },
     wireInput: function(){
         if ('mouse' in sys.capabilities) {
-            jc.log(['general'], 'mouse capabilities detected');
             this.setMouseEnabled(true);
         } else {
-            jc.log(['general'], 'defaulting to touch capabilities');
             this.setTouchEnabled(true);
         }
     },
-    onTouchesBegan: function(touch, event,sprite) {
-        throw "child must implement";
+    onTouchesBegan: function(touch) {
+        this.hitSpriteTarget('began', touch);
     },
-    onTouchesMoved: function(touch, event,sprite) {
-        throw "child must implement";
+    onTouchesMoved: function(touch) {
+        this.hitSpriteTarget('moved', touch);
     },
-    onTouchesEnded: function(touch, event,sprite) {
-        throw "child must implement";
+    onTouchesEnded: function(touch) {
+        this.hitSpriteTarget('ended', touch);
     },
-    onMouseDown: function(event,sprite) {
-        throw "child must implement";
+    onMouseDown: function(event) {
+        this.onTouchesBegan(event);
     },
-    onMouseDragged: function(event,sprite) {
-        throw "child must implement";
+    onMouseDragged: function(event) {
+        this.onTouchesMoved(event);
     },
-    onMouseUp: function(event,sprite) {
-        throw "child must implement";
+    onMouseUp: function(event) {
+        this.onTouchesEnded(event);
     },
     onTouchCancelled: function(touch, event,sprite) {
-        throw "child must implement";
+
     },
-    wireChildren:function(){
-        for(var i=0;i<this.touchTargets.length;i++){
-            this.touchTargets[i].onTouchesBegan = this.spriteTouchesBegan.bind(this.touchTargets[i], this);
-            this.touchTargets[i].onTouchesMoved = this.spriteTouchesMoved.bind(this.touchTargets[i], this);
-            this.touchTargets[i].onTouchesEnded = this.spriteTouchesEnded.bind(this.touchTargets[i], this);
-            this.touchTargets[i].onMouseDown = this.spriteMouseDown.bind(this.touchTargets[i], this);
-            this.touchTargets[i].onMouseDragged = this.spriteMouseDragged.bind(this.touchTargets[i], this);
-            this.touchTargets[i].onMouseUp = this.spriteMouseUp.bind(this.touchTargets[i], this);
-            cc.Director.getInstance().getTouchDispatcher().addTargetedDelegate(this.touchTargets[i]);
+    targetTouchHandler: function(type, touch, sprites) {
+        throw "child must implement!"
+    },
+    hitSpriteTarget:function(type, touch, event){
+        touch = this.touchToPoint(touch);
+        var handled = [];
+        for (var i=0;i<this.touchTargets.length;i++){
+            var cs = this.touchTargets[i].getBoundingBox();
+            var tr = this.touchTargets[i].getTextureRect();
+            cs.with = tr.width;
+            cs.height= tr.height;
+            if (cc.rectContainsPoint(cs, touch)){
+                handled.push(this.touchTargets[i]);
+            }
+        }
+        this.targetTouchHandler(type, touch, handled);
+    },
+    touchToPoint:function(touch){
+        if (touch instanceof Array){
+            return touch[0].getLocation()
+        }else{
+            return touch.getLocation();
         }
     },
-    spriteTouchesBegan: function(touch, event, layer) {
-        layer.onTouchBegan(touch,event,this);
+    darken:function(){
+        if (!this.shade){
+            this.shade = cc.LayerColor.create(cc.c4(15, 15, 15, 255));
+        }
+        this.shade.setPosition(new cc.p(0.0,0.0));
+        this.addChild(this.shade);
+        this.shade.setOpacity(0);
+        this.reorderChild(this.shade,0);
+        this.fadeIn(this.shade, jc.defaultFadeLevel);
     },
-    spriteTouchesMoved: function(touch, event, layer) {
-        layer.onTouchMoved(touch,event,this);
+    undarken:function(){
+        this.fadeOut(this.shade);
     },
-    spriteTouchesEnded: function(touch, event, layer) {
-        layer.onTouchEnded(touch,event,this);
+    fadeIn:function(item, opacity , time){
+        if (!time){
+            time = jc.defaultTransitionTime;
+        }
+        if (!opacity){
+            opacity = jc.defaultFadeLevel;
+        }
+        if (!item){
+            item = this;
+        }
+
+        var actionFadeIn = cc.FadeTo.create(time,opacity);
+        item.runAction(actionFadeIn);
     },
-    spriteMouseDown: function(event, layer) {
-        layer.onMouseDown(event,this);
+    fadeOut:function(item, time){
+        if (!time){
+            time = jc.defaultTransitionTime;
+        }
+        if (!item){
+            item = this;
+        }
+        var actionFadeOut = cc.FadeTo.create(time,0);
+        item.runAction(actionFadeOut);
+
     },
-    spriteMouseDragged: function(event, layer) {
-        layer.onMouseDragged(event,this);
+    slide:function(item, from, to, time, nudge, when){
+        if (!time){
+            time = jc.defaultTransitionTime;
+        }
+        item.setPosition(from);
+        var moveAction = cc.MoveTo.create(time, to);
+        var nudgeAction;
+
+        //apply the inNudge first, then main move, then the out nudge
+        if (nudge){
+            var nudgePos = cc.pAdd(from, nudge); //apply inNudge to from
+            nudgeAction = cc.MoveTo.create(from, nudgePos);
+        }
+
+        if (nudgeAction && when == 'before'){
+            action = cc.Sequence.create(nudgeAction, moveAction);
+            item.runAction(action);
+        }else if (nudgeAction && when == 'after'){
+            action = cc.Sequence.create(moveAction, nudgeAction);
+            item.runAction(action);
+        }else if (nudgeAction){
+            throw "when var must be before or after";
+        }else{
+            item.runAction(moveAction);
+        }
+
+
     },
-    spriteMouseUp: function(event, layer) {
-        layer.onMouseUp(event,this);
+    slideInFromTop:function(item, time){
+        var itemRect = this.getCorrectRect(item);
+        var fromX = this.winSize.width/2;
+        var fromY = this.winSize.height+itemRect.height/2; //offscreen
+        var toX = fromX;
+        var toY = this.winSize.height - itemRect.height/2;
+        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time);
+    },
+    slideOutToTop:function(item, time){
+        var itemRect = this.getCorrectRect(item);
+        var toX = this.winSize.width/2;
+        var toY = this.winSize.height+itemRect.height/2; //offscreen
+        this.slide(item, item.getPosition(), cc.p(toX, toY), time);
+    },
+    slideInFromBottom:function(item, time){
+        var itemRect = this.getCorrectRect(item);
+        var fromX = this.winSize.width/2;
+        var fromY = 0 - itemRect.height; //offscreen bottom
+        var toX = fromX;
+        var toY = itemRect.height/2;
+        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time);
+    },
+    slideOutToBottom:function(item, time){
+        var itemRect = this.getCorrectRect(item);
+        var toX = this.winSize.width/2;
+        var toY = 0 - itemRect.height; //offscreen bottom
+        this.slide(item, item.getPosition(), cc.p(toX, toY), time);
+    },
+
+    slideInFromLeft:function(item, time){
+        var itemRect = this.getCorrectRect(item);
+        var fromX = (0 - itemRect.width); //offscreen left
+        var fromY = this.winSize.height/2;
+        var toX = itemRect.width/2;
+        var toY = fromY;
+        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time);
+    },
+    slideOutToLeft:function(item, time){
+        var itemRect = this.getCorrectRect(item);
+        var toX = (0 - itemRect.width); //offscreen left
+        var toY = this.winSize.height/2;
+        this.slide(item, item.getPosition(), cc.p(toX, toY), time);
+    },
+
+    slideInFromRight:function(item, time){
+        var itemRect = this.getCorrectRect(item);
+        var fromX = (this.winSize.width + itemRect.width); //offscreen left
+        var fromY = this.winSize.height/2;
+        var toX = this.winSize.width - itemRect.width/2;
+        var toY = fromY;
+        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time);
+    },
+    slideOutToRight:function(item, time){
+        var itemRect = this.getCorrectRect(item);
+        var toX = (this.winSize.width + itemRect.width); //offscreen left
+        var toY = this.winSize.height/2;
+        this.slide(item, item.getPosition(), cc.p(toX, toY), time);
+    },
+    getCorrectRect:function(item){
+        if (item instanceof jc.Sprite){
+            return item.getTextureRect();
+        }else{
+            return item.getContentSize();
+        }
+    },
+    generateSprite:function(nameCreate){
+        var sprite;
+        sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
+        return sprite;
+    },
+    pause:function () {
+        this.pauseSchedulerAndActions();
+        var selChildren = this.getChildren();
+        for (var i = 0; i < selChildren.length; i++) {
+            selChildren[i].pauseSchedulerAndActions();
+        }
+    },
+    resume:function () {
+        var selChildren = this.getChildren();
+        for (var i = 0; i < selChildren.length; i++) {
+            selChildren[i].resumeSchedulerAndActions();
+        }
+        this.resumeSchedulerAndActions();
+    },
+    makeWindow:function(size){
+        var windowSprite  = cc.Scale9Sprite.create();
+        windowSprite.initWithSpriteFrameName("window.png", cc.RectMake(45, 45, 350, 600));
+        windowSprite.setContentSize(size);
+        this.addChild(windowSprite);
+        return windowSprite;
     }
+
 });

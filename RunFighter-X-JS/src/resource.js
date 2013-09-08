@@ -8,6 +8,9 @@ var carduiPng = dirImg + "cardui.png";
 var editDeck = dirImg + "MainScene.ccbi";
 var battleFlagPlist = dirImg + "battleFlag.plist";
 var battleFlagPng = dirImg + "battleFlag.png";
+var nightmarePlist = dirImg + "nightmare.plist";
+var nightmarePng = dirImg + "nightmare.png";
+
 //var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
 var g_characterPlists = {};
@@ -26,6 +29,8 @@ var g_maingame = [
     {src:editDeck},
     {src:battleFlagPlist},
     {src:battleFlagPng},
+    {src:nightmarePlist},
+    {src:nightmarePng},
 	//{src:myfont}
 ];
 

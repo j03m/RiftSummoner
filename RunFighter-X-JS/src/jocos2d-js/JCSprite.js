@@ -31,7 +31,7 @@ jc.Sprite = cc.Sprite.extend({
 		cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
 		this.batch = cc.SpriteBatchNode.create(sheet);
         this.batch.retain();
-		var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame);
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame);
 
 		this.initWithSpriteFrame(frame);
         this.type = config.type;

@@ -133,7 +133,8 @@ cc.TableView = cc.ScrollView.extend({
                 index = offset.x / cellSize.width;
                 break;
             default:
-                index = offset.y / cellSize.height;
+                //index = offset.y / cellSize.height;
+                index = offset.x / cellSize.width;
                 break;
         }
         return index;
@@ -524,8 +525,10 @@ cc.TableView = cc.ScrollView.extend({
  */
 cc.TableView.create = function (dataSource, size, container) {
     var table = new cc.TableView();
+
     table.initWithViewSize(size, container);
     table.setDataSource(dataSource);
     table._updateContentSize();
+
     return table;
 };
