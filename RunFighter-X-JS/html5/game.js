@@ -45,6 +45,7 @@ var MW = MW || {};
             '../src/spriteVars.js',
             '../src/resource.js',
             '../src/jocos2d-js/JCTouchLayer.js',
+            '../src/jocos2d-js/JCScrollingLayer.js',
             '../src/jocos2d-js/JCTrace.js',
             '../src/jocos2d-js/JCGameObject.js',
 			'../src/jocos2d-js/JCSprite.js',

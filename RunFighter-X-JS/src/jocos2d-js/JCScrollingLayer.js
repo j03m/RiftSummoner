@@ -56,6 +56,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         }
     },
     fling:function(touch, sprites){
+        this.isMoving=false;
         if (this.scrollDistance == undefined){ //normal touch
             if (sprites[0]){
                 this.centerOn(sprites[0]);
@@ -69,7 +70,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         var pos = sprite.getPosition();
         var worldPos = this.convertToWorldSpaceAR(pos);
         var augment = this.midPoint - worldPos.x;
-        this.runEndingAdjustment(cc.p(augment/2,0));
+        this.runEndingAdjustment(cc.p(augment,0));
     },
     runEndingAdjustment:function(augment){
         var func = cc.CallFunc.create(this.raiseSelected.bind(this));
@@ -94,28 +95,31 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
                 this.scrollDistance.x = 3 * this.def.cellWidth;
             }
             this.setPosition(cc.pAdd(this.getPosition(), this.scrollDistance));
-            var SCROLL_DEACCEL_RATE = 0.75;
-            this.scrollDistance = cc.pMult(this.scrollDistance, SCROLL_DEACCEL_RATE);
-            if (Math.abs(this.scrollDistance.x)<=1){
-                this.doUpdate = false;
-                this.adjust();
+            if (!this.isMoving){
+                var SCROLL_DEACCEL_RATE = 0.75;
+                this.scrollDistance = cc.pMult(this.scrollDistance, SCROLL_DEACCEL_RATE);
+                if (Math.abs(this.scrollDistance.x)<=1){
+                    this.doUpdate = false;
+                    this.adjust();
+                }
+
+                //if first cell middle is past center line, stop, adjust to first cell middle on center line
+                //fix this:
+                var fsX = this.calcAbsolutePos(0).x;
+                if (fsX> this.midPoint){
+                    this.doUpdate = false;
+                    this.runEndingAdjustment(cc.p(this.midPoint-fsX , 0));
+                }
+
+                //if last sprite is past middle rect, stop adjust to last cell middle on center line
+                var lsX = this.calcAbsolutePos(this.sprites.length-1).x;
+                if (lsX < this.midPoint){
+                    this.doUpdate = false;
+                    this.runEndingAdjustment(cc.p(this.midPoint-lsX , 0));
+
+                }
             }
 
-            //if first cell middle is past center line, stop, adjust to first cell middle on center line
-            //fix this:
-            var fsX = this.calcAbsolutePos(0).x;
-            if (fsX> this.midPoint){
-                this.doUpdate = false;
-                this.runEndingAdjustment(cc.p(this.midPoint-fsX , 0));
-            }
-
-            //if last sprite is past middle rect, stop adjust to last cell middle on center line
-            var lsX = this.calcAbsolutePos(this.sprites.length-1).x;
-            if (lsX < this.midPoint){
-                this.doUpdate = false;
-                this.runEndingAdjustment(cc.p(this.midPoint-lsX , 0));
-
-            }
         }
     },
     calcAbsolutePos:function(position){
@@ -177,6 +181,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         var change = cc.p(moveDistance.x,0 );
         this.scrollDistance = change;
         this.doUpdate= true;
+        this.isMoving = true;
     }
 
 });
