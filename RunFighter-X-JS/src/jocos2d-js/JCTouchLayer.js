@@ -1,12 +1,18 @@
 var jc = jc || {};
 jc.defaultTransitionTime = 0.25;
 jc.defaultFadeLevel = 140;
+jc.defaultNudge = 10;
+jc.touchEnded = 'end';
+jc.touchBegan = 'began';
+jc.touchMoved = 'moved';
+jc.touchCancelled = 'cancel';
 jc.TouchLayer = cc.Layer.extend({
     touchTargets:[],
     init: function() {
         if (this._super()) {
             this.winSize = cc.Director.getInstance().getWinSize();
             cc.SpriteFrameCache.getInstance().addSpriteFrames(nightmarePlist);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(redlineContainerPlist);
             this.wireInput();
 
             return true;
@@ -22,13 +28,13 @@ jc.TouchLayer = cc.Layer.extend({
         }
     },
     onTouchesBegan: function(touch) {
-        this.hitSpriteTarget('began', touch);
+        this.hitSpriteTarget(jc.touchBegan, touch);
     },
     onTouchesMoved: function(touch) {
-        this.hitSpriteTarget('moved', touch);
+        this.hitSpriteTarget(jc.touchMoved, touch);
     },
     onTouchesEnded: function(touch) {
-        this.hitSpriteTarget('ended', touch);
+        this.hitSpriteTarget(jc.touchEnded, touch);
     },
     onMouseDown: function(event) {
         this.onTouchesBegan(event);
@@ -40,13 +46,16 @@ jc.TouchLayer = cc.Layer.extend({
         this.onTouchesEnded(event);
     },
     onTouchCancelled: function(touch, event,sprite) {
-
+        this.hitSpriteTarget(jc.touchCancelled, touch);
     },
     targetTouchHandler: function(type, touch, sprites) {
         throw "child must implement!"
     },
     hitSpriteTarget:function(type, touch, event){
         touch = this.touchToPoint(touch);
+        if (this.doConvert){
+            touch = this.convertToNodeSpace(touch);
+        }
         var handled = [];
         for (var i=0;i<this.touchTargets.length;i++){
             var cs = this.touchTargets[i].getBoundingBox();
@@ -69,9 +78,10 @@ jc.TouchLayer = cc.Layer.extend({
     darken:function(){
         if (!this.shade){
             this.shade = cc.LayerColor.create(cc.c4(15, 15, 15, 255));
+            this.addChild(this.shade);
         }
         this.shade.setPosition(new cc.p(0.0,0.0));
-        this.addChild(this.shade);
+
         this.shade.setOpacity(0);
         this.reorderChild(this.shade,0);
         this.fadeIn(this.shade, jc.defaultFadeLevel);
@@ -109,13 +119,17 @@ jc.TouchLayer = cc.Layer.extend({
             time = jc.defaultTransitionTime;
         }
         item.setPosition(from);
+        item.setVisible(true);
         var moveAction = cc.MoveTo.create(time, to);
         var nudgeAction;
 
         //apply the inNudge first, then main move, then the out nudge
-        if (nudge){
+        if (nudge && when=='before'){
             var nudgePos = cc.pAdd(from, nudge); //apply inNudge to from
-            nudgeAction = cc.MoveTo.create(from, nudgePos);
+            nudgeAction = cc.MoveTo.create(time/2, nudgePos);
+        }else if (nudge && when == 'after'){
+            var nudgePos = cc.pAdd(to, nudge); //apply inNudge to from
+            nudgeAction = cc.MoveTo.create(time/2, nudgePos);
         }
 
         if (nudgeAction && when == 'before'){
@@ -138,13 +152,13 @@ jc.TouchLayer = cc.Layer.extend({
         var fromY = this.winSize.height+itemRect.height/2; //offscreen
         var toX = fromX;
         var toY = this.winSize.height - itemRect.height/2;
-        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time);
+        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge), 'after');
     },
     slideOutToTop:function(item, time){
         var itemRect = this.getCorrectRect(item);
         var toX = this.winSize.width/2;
         var toY = this.winSize.height+itemRect.height/2; //offscreen
-        this.slide(item, item.getPosition(), cc.p(toX, toY), time);
+        this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge * -1), 'before');
     },
     slideInFromBottom:function(item, time){
         var itemRect = this.getCorrectRect(item);
@@ -152,28 +166,27 @@ jc.TouchLayer = cc.Layer.extend({
         var fromY = 0 - itemRect.height; //offscreen bottom
         var toX = fromX;
         var toY = itemRect.height/2;
-        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time);
+        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge * -1), 'after');
     },
     slideOutToBottom:function(item, time){
         var itemRect = this.getCorrectRect(item);
         var toX = this.winSize.width/2;
         var toY = 0 - itemRect.height; //offscreen bottom
-        this.slide(item, item.getPosition(), cc.p(toX, toY), time);
+        this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge), 'before');
     },
-
     slideInFromLeft:function(item, time){
         var itemRect = this.getCorrectRect(item);
         var fromX = (0 - itemRect.width); //offscreen left
         var fromY = this.winSize.height/2;
         var toX = itemRect.width/2;
         var toY = fromY;
-        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time);
+        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(jc.defaultNudge * -1,0), 'after');
     },
     slideOutToLeft:function(item, time){
         var itemRect = this.getCorrectRect(item);
         var toX = (0 - itemRect.width); //offscreen left
         var toY = this.winSize.height/2;
-        this.slide(item, item.getPosition(), cc.p(toX, toY), time);
+        this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(jc.defaultNudge,0), 'before');
     },
 
     slideInFromRight:function(item, time){
@@ -182,13 +195,13 @@ jc.TouchLayer = cc.Layer.extend({
         var fromY = this.winSize.height/2;
         var toX = this.winSize.width - itemRect.width/2;
         var toY = fromY;
-        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time);
+        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(jc.defaultNudge,0), 'after');
     },
     slideOutToRight:function(item, time){
         var itemRect = this.getCorrectRect(item);
         var toX = (this.winSize.width + itemRect.width); //offscreen left
         var toY = this.winSize.height/2;
-        this.slide(item, item.getPosition(), cc.p(toX, toY), time);
+        this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(jc.defaultNudge * -1,0), 'before');
     },
     getCorrectRect:function(item){
         if (item instanceof jc.Sprite){
@@ -216,11 +229,25 @@ jc.TouchLayer = cc.Layer.extend({
         }
         this.resumeSchedulerAndActions();
     },
-    makeWindow:function(size){
+    centerPoint:function(){
+        return cc.p(this.getContentSize().width * this.getAnchorPoint().x,
+            this.getContentSize().height * this.getAnchorPoint().y);
+    },
+    centerPointOffset:function(point){
+            return cc.pAdd(this.centerPoint(),point);
+    },
+    makeWindow:function(size, spriteName, rect){
+        if (!spriteName){
+            spriteName = "window.png";
+        }
+        if (!rect){
+            rect = cc.RectMake(45, 45, 350, 600)
+        }
         var windowSprite  = cc.Scale9Sprite.create();
-        windowSprite.initWithSpriteFrameName("window.png", cc.RectMake(45, 45, 350, 600));
+        windowSprite.initWithSpriteFrameName(spriteName, rect);
         windowSprite.setContentSize(size);
         this.addChild(windowSprite);
+        windowSprite.setVisible(false);
         return windowSprite;
     }
 

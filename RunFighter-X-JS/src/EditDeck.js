@@ -2,37 +2,55 @@ var playerBlob = {
     id:1,
     grid:[1],
     myguys:[
-        {   "name":"goblin",
-            "status":"alive"
-        },
-        {   "name":"goblin",
-            "status":"alive"
-        },
-        {   "name":"goblin",
-            "status":"down"
-        },
-        {   "name":"blueKnight",
-            "status":"alive"
-        },
-        {   "name":"goldKnight",
-            "status":"alive"
-        }]
+//        {   "name":"goblin",
+//            "status":"alive"
+//        },
+//        {   "name":"dragonRed",
+//            "status":"alive"
+//        },
+//        {   "name":"orge",
+//            "status":"down"
+//        },
+//        {   "name":"blueKnight",
+//            "status":"alive"
+//        },
+//        {   "name":"goldKnight",
+//            "status":"alive"
+//        },
+//        {   "name":"goblin",
+//            "status":"alive"
+//        },
+//        {   "name":"dragonRed",
+//            "status":"alive"
+//        },
+//        {   "name":"orge",
+//            "status":"down"
+//        },
+//        {   "name":"blueKnight",
+//            "status":"alive"
+//        },
+//        {   "name":"goldKnight",
+//            "status":"alive"
+//        }
+]
 
 }
 
 
 
-
-var CustomTableViewCell = cc.TableViewCell.extend({
-    draw:function (ctx) {
-        this._super(ctx);
-    }
-});
+//todo: initial cell position
+//todo: no repeat
+//todo: max cells?
+//todo: add frame + glow on selected card
+//todo: select, populate card
+//todo: select, okay button on card edits blob
 
 var EditDeck = jc.TouchLayer.extend({
     deck:[],
     cards:{},
     touchTargets:[],
+    cellWidth:140,
+    cells:20,
     init: function() {
         if (this._super()) {
             var sprites = this.getChildren();
@@ -44,117 +62,101 @@ var EditDeck = jc.TouchLayer.extend({
                 }
             }
             this.wireInput();
-            this.bottomWindow = this.makeWindow(cc.size(150,150));
-            this.slideInFromBottom(this.bottomWindow);
-            this.topWindow = this.makeWindow(cc.size(150,150));
-            this.slideInFromTop(this.topWindow);
-            this.leftWindow = this.makeWindow(cc.size(150,150));
-            this.slideInFromLeft(this.leftWindow);
-            this.rightWindow = this.makeWindow(cc.size(150,150));
-            this.slideInFromRight(this.rightWindow);
+            this.scrollHeight = this.winSize.height/3;
+            this.windowSprite = this.makeWindow(cc.size(450,250), "window.png"); //default rect
+            this.scrollBarSprite = this.makeWindow(cc.size(this.winSize.width*1.2, this.scrollHeight), "window.png");
+            this.tableView = new jc.ScrollingLayer();
+            this.tableView.init({
+                sprites:this.getDisplaySprites(),
+                cellWidth:this.cellWidth,
+                selectionCallback:this.selectionCallback.bind(this)
+            });
+            this.reorderChild(this.tableView, 2);
+            this.tableView.setVisible(false);
+            this.addChild(this.tableView);
+            this.tableView.setContentSize(this.winSize.width, 200);
+
+            this.backButton = new cc.Sprite();
+            this.backButton.initWithSpriteFrameName("back.png");
+            this.addChild(this.backButton);
+            this.backButton.setVisible(false);
+
+            this.reorderChild(this.backButton, 3);
+            this.adornWithSkulls(this.windowSprite);
+            this.reorderChild(this.windowSprite, 2);
+            this.reorderChild(this.scrollBarSprite, 1);
+            this.enableCardClicks();
 
             return true;
         } else {
             return false;
         }
     },
+    selectionCallback: function(index, sprite){
+        console.log("Cell Selection:" + index);
+    },
+    adornWithSkulls: function(sprite){
+        var header = cc.Sprite.create();
+        var size = sprite.getContentSize();
+        header.initWithSpriteFrameName("windowSkull.png")
+        var headerSize = header.getContentSize();
+        sprite.addChild(header);
+        header.setPosition(cc.p(size.width/2,size.height-headerSize.height/4));
+    },
     targetTouchHandler: function(type, touch, sprites) {
-        if (sprites.length!=0){
+        if (!this.allowCardClicks){
+            return;
+        }
+
+        if (type == jc.touchMoved){
+            return;
+        }
+        console.log(type);
+        if (sprites.length!=0 && type == jc.touchEnded){
             this.showTable(sprites[0]);
-        }else{
-            this.slideOutToRight(this.rightWindow);
-            this.slideOutToLeft(this.leftWindow);
-            this.slideOutToTop(this.topWindow);
-            this.slideOutToBottom(this.bottomWindow);
         }
     },
     showTable: function(sprite){
-        if (!this.tableView){
-            //drop a background on this
-            //# of cells is how many dudes I have
-            //show idle dude in cell - meh
-            //touch a dude, table closes, dude goes into card, persist
-            this.darken();
-            this.tableView = cc.TableView.create(this, cc.size(this.winSize.width, this.winSize.height/3));
-            this.tableView.setDirection(cc.SCROLLVIEW_DIRECTION_HORIZONTAL);
+        this.darken();
+        var pos = this.tableView.getPosition();
+        this.slide(this.tableView, cc.p(pos.x,0),cc.p(pos.x, this.scrollBarSprite.getContentSize().height/2));
+        this.tableView.setInitialPos();
 
-            this.tableView.setDelegate(this);
-            this.addChild(this.tableView);
-            this.tableView.reloadData();
-            this.reorderChild(this.tableView, 1);
-        }
-        this.slide(this.tableView, cc.p(0,0),cc.p(0, (this.winSize.height / 2) - 150));
-        if (!this.windowSprite){
-            this.windowSprite = this.makeWindow(cc.Size(20,20));
-        }
+        this.slideInFromBottom(this.scrollBarSprite);
         this.slideInFromTop(this.windowSprite);
+        this.disableCardClicks();
 
     },
-
-    tableCellTouched:function (table, cell) {
-
+    disableCardClicks: function(){
+        this.allowCardClicks = false;
     },
-
-    cellSizeForTable:function (table) {
-        return cc.size(80, 80);
+    enableCardClicks: function(){
+        this.allowCardClicks = true;
     },
+    getDisplaySprites: function(){
+        var returnme = [];
 
-    tableCellAtIndex:function (table, idx) {
-        //var strValue = idx.toFixed(0);
-        var cell = table.dequeueCell();
-        var label;
-        if (!cell) {
-            cell = new CustomTableViewCell();
-            //todo:load sprite with spinner, avoid load at front
-            var entry = playerBlob.myguys[idx];
-            console.log("idx:"+idx + " name:" + entry.name);
-            var sprite = this.generateSprite(entry.name);
-            if (entry.status == 'alive'){
-                sprite.setState('idle');
-            }else{
-                sprite.setState('dead');
-            }
-            sprite.setAnchorPoint(cc.p(0.5,0.5));
-            sprite.setPosition(cc.p(100, 50));
-            cell.addChild(sprite);
-
-//            label = cc.LabelTTF.create(strValue, "Helvetica", 20.0);
-//            label.setPosition(cc.p(0,0));
-//            label.setAnchorPoint(cc.p(0,0));
-//            label.setTag(123);
-//            cell.addChild(label);
-        } else {
-//            label = cell.getChildByTag(123);
-//            label.setString(strValue);
+//        for(var i=0;i<playerBlob.myguys.length;i++){
+//            var entry = playerBlob.myguys[i];
+//            var sprite = this.generateSprite(entry.name);
+//            if (entry.status == 'alive'){
+//                sprite.setState('idle');
+//            }else{
+//                sprite.setState('dead');
+//            }
+//            returnme.push(sprite);
+//        }
+        returnme = returnme.concat(this.getEmptyCells(this.cells - playerBlob.myguys.length));
+        return returnme;
+    } ,
+    getEmptyCells:function(number){
+        var returnme=[];
+        for(var i =0;i<number;i++){
+            var sprite = new cc.Sprite();
+            sprite.initWithSpriteFrameName("plus.png");
+            returnme.push(sprite);
         }
-
-        return cell;
-    },
-
-    numberOfCellsInTableView:function (table) {
-        if (!this.unitCount){
-            this.unitCount = playerBlob.myguys.length;
-        }
-        return this.unitCount;
-    },
-    scrollViewDidScroll:function (view) {
-
-        //whoever is in cell X on screen gets highlight
-        //do cell highlight
-
-        //grab sprite,
-        //place in card
-        //slide down window
-        if (!this.windowSprite){
-            var size = cc.size(200,200);
-            this.windowSprite = this.makeWindow(size);
-            //get character ccbi
-            //plug in values
-        }
-        this.slideInFromTop(this.windowSprite);
-
-    },
-    scrollViewDidZoom:function (view) {
+        return returnme;
     }
 });
 
@@ -183,3 +185,18 @@ EditDeck.scene = function() {
     return jc.editDeckScene;
 };
 
+//            label = cc.LabelTTF.create(strValue, "Helvetica", 20.0);
+//            label.setPosition(cc.p(0,0));
+//            label.setAnchorPoint(cc.p(0,0));
+//            label.setTag(123);
+//            cell.addChild(label);
+
+//testing
+//            this.bottomWindow = this.makeWindow(cc.size(150,150));
+//            this.slideInFromBottom(this.bottomWindow);
+//            this.topWindow = this.makeWindow(cc.size(150,150));
+//            this.slideInFromTop(this.topWindow);
+//            this.leftWindow = this.makeWindow(cc.size(150,150));
+//            this.slideInFromLeft(this.leftWindow);
+//            this.rightWindow = this.makeWindow(cc.size(150,150));
+//            this.slideInFromRight(this.rightWindow);

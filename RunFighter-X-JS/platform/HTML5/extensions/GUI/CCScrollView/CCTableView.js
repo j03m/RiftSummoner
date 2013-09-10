@@ -226,7 +226,7 @@ cc.TableView = cc.ScrollView.extend({
         //this._indices.erase(cell.getIdx());
         this._indices.removeObject(cell.getIdx());
 
-        cell.reset();
+       // cell.reset();
         if (cell.getParent() == this.getContainer()) {
             this.getContainer().removeChild(cell, true);
         }
@@ -386,7 +386,7 @@ cc.TableView = cc.ScrollView.extend({
         for (var i = 0; i < this._cellsUsed.count(); i++) {
             var cell = this._cellsUsed.objectAtIndex(i);
             this._cellsFreed.addObject(cell);
-            cell.reset();
+            //cell.reset();
             if (cell.getParent() == this.getContainer()) {
                 this.getContainer().removeChild(cell, true);
             }

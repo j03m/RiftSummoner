@@ -152,6 +152,7 @@ cc.ScrollView = cc.Layer.extend({
             }
 
             this._container.setPosition(offset);
+
             if (this._delegate != null && this._delegate.scrollViewDidScroll) {
                 this._delegate.scrollViewDidScroll(this);
             }
@@ -372,6 +373,7 @@ cc.ScrollView = cc.Layer.extend({
 
         if (this._touches.length == 1) { // scrolling
             this._touchPoint = this.convertTouchToNodeSpace(touch);
+            this.initialTouch = this._touchPoint;
             this._touchMoved = false;
             this._dragging = true; //dragging started
             this._scrollDistance = cc.p(0.0, 0.0);
@@ -439,6 +441,7 @@ cc.ScrollView = cc.Layer.extend({
 
                 this._scrollDistance = moveDistance;
                 this.setContentOffset(cc.p(newX, newY));
+
             }
         } else if (this._touches.length == 2 && !this._dragging) {
             var len = cc.pDistance(this._container.convertTouchToNodeSpace(this._touches[0]),
@@ -451,8 +454,47 @@ cc.ScrollView = cc.Layer.extend({
         if (!this.isVisible())
             return;
 
+        //todo: correction should be modified to take velocity of the move into account. Larger velocity, the less you need
+        //to complete. But this feels good for now.
         if (this._touches.length == 1 && this._touchMoved)
             this.schedule(this._deaccelerateScrolling);
+
+        var newPoint = this.convertTouchToNodeSpace(touch);
+        var moveDistance = cc.pSub(newPoint, this.initialTouch);
+
+        //once this is set, we need to think about fitting to cell
+        //the amount we've moved is equivalent to N cells of distance. So, lets handle that first.
+        var cellsMoved = moveDistance.x/70;
+
+        //now, we only care about the portion of the move that does not cover a whole cell
+        var remainder = cellsMoved % 1;
+        var remAbs = Math.abs(remainder);
+
+        //if in the end of our we have moved < 1/2 a cell, slide back this distance
+        var correction;
+        if (remAbs <= 0.5){
+            console.log("remainder: " + remainder);
+            correction = remainder * 70 * -1;
+            console.log("correction: " + correction);
+            var action = cc.MoveBy.create(jc.defaultTransitionTime/2, cc.p(correction, 0));
+            this._container.runAction(action);
+
+
+        }else{ //if the remainder is > half a cell we finish out the move
+            var finish;
+            if (remainder < 0){
+                finish = -1 - remainder;
+            }else{
+                finish = 1 - remainder;
+            }
+            correction = finish * 70;
+            console.log("remainder: " + remainder);
+            console.log("correction: " + correction);
+            var action = cc.MoveBy.create(jc.defaultTransitionTime/2, cc.p(correction, 0));
+            this._container.runAction(action);
+        }
+
+
 
         this._touches.length = 0;
         this._dragging = false;
