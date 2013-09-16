@@ -14,7 +14,8 @@ jc.TouchLayer = cc.Layer.extend({
             cc.SpriteFrameCache.getInstance().addSpriteFrames(nightmarePlist);
             cc.SpriteFrameCache.getInstance().addSpriteFrames(redlineContainerPlist);
             this.wireInput();
-
+            this.superDraw = this.draw;
+            this.draw = this.childDraw;
             return true;
         } else {
             return false;
@@ -249,6 +250,9 @@ jc.TouchLayer = cc.Layer.extend({
         this.addChild(windowSprite);
         windowSprite.setVisible(false);
         return windowSprite;
+    },
+    childDraw:function(){
+        this.superDraw();
+        //todo: reserve for later
     }
-
 });

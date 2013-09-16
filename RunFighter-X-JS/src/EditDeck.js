@@ -2,45 +2,45 @@ var playerBlob = {
     id:1,
     grid:[1],
     myguys:[
-//        {   "name":"goblin",
-//            "status":"alive"
-//        },
-//        {   "name":"dragonRed",
-//            "status":"alive"
-//        },
-//        {   "name":"orge",
-//            "status":"down"
-//        },
-//        {   "name":"blueKnight",
-//            "status":"alive"
-//        },
-//        {   "name":"goldKnight",
-//            "status":"alive"
-//        },
-//        {   "name":"goblin",
-//            "status":"alive"
-//        },
-//        {   "name":"dragonRed",
-//            "status":"alive"
-//        },
-//        {   "name":"orge",
-//            "status":"down"
-//        },
-//        {   "name":"blueKnight",
-//            "status":"alive"
-//        },
-//        {   "name":"goldKnight",
-//            "status":"alive"
-//        }
+        {   "name":"goblin",
+            "status":"alive"
+        },
+        {   "name":"dragonRed",
+            "status":"alive"
+        },
+        {   "name":"orge",
+            "status":"down"
+        },
+        {   "name":"blueKnight",
+            "status":"alive"
+        },
+        {   "name":"goldKnight",
+            "status":"alive"
+        },
+        {   "name":"goblin",
+            "status":"alive"
+        },
+        {   "name":"dragonRed",
+            "status":"alive"
+        },
+        {   "name":"orge",
+            "status":"down"
+        },
+        {   "name":"blueKnight",
+            "status":"alive"
+        },
+        {   "name":"goldKnight",
+            "status":"alive"
+        }
 ]
 
 }
 
 
 
-//todo: initial cell position
-//todo: no repeat
-//todo: max cells?
+
+
+
 //todo: add frame + glow on selected card
 //todo: select, populate card
 //todo: select, okay button on card edits blob
@@ -86,14 +86,53 @@ var EditDeck = jc.TouchLayer.extend({
             this.reorderChild(this.windowSprite, 2);
             this.reorderChild(this.scrollBarSprite, 1);
             this.enableCardClicks();
+            this.createCardLayer();
 
             return true;
         } else {
             return false;
         }
     },
+    createCardLayer: function(){
+        if (!this.cardLayer){
+            this.cardLayer = new CardLayer();
+            this.cardLayer.init();
+            this.addChild(this.cardLayer);
+            this.cardLayer.setVisible(false);
+            this.reorderChild(this.cardLayer, 3);
+            this.cardLayer.setDoneCallback(this.done.bind(this));
+
+        }
+    },
+    close: function(){
+        this.hideTable();
+    },
+    done: function(){
+        this.hideTable();
+        this.nextEntry = playerBlob.myguys[this.lastIndex];
+        //todo: modify blob, store state
+        this.displayNewCard();
+    },
+    displayNewCard:function(){
+        var portraitSprite = jc.getMiniPortraitRect(this.nextEntry);
+        var contentSize = this.selectedSprite.getContentSize();
+        this.selectedSprite.addChild(portraitSprite);
+        portraitSprite.setPosition(cc.p(contentSize.width/2, contentSize.height/2));
+
+        //var f2 =  cc.FadeIn.create(jc.defaultTransitionTime/4, 255);
+        //this.selectedSprite.runAction(f2);
+        //this.selectedSprite.setContentSize(size);
+    },
     selectionCallback: function(index, sprite){
-        console.log("Cell Selection:" + index);
+        //if the index of what was raised is inside of my active dudes - show them
+        if (index < playerBlob.myguys.length){
+            this.cardLayer.swapCharacter(playerBlob.myguys[index]);
+        }else{
+            //else take me to the slots
+
+        }
+        this.lastIndex = index;
+
     },
     adornWithSkulls: function(sprite){
         var header = cc.Sprite.create();
@@ -111,8 +150,8 @@ var EditDeck = jc.TouchLayer.extend({
         if (type == jc.touchMoved){
             return;
         }
-        console.log(type);
         if (sprites.length!=0 && type == jc.touchEnded){
+            this.selectedSprite = sprites[0];
             this.showTable(sprites[0]);
         }
     },
@@ -124,7 +163,19 @@ var EditDeck = jc.TouchLayer.extend({
 
         this.slideInFromBottom(this.scrollBarSprite);
         this.slideInFromTop(this.windowSprite);
+        this.slideInFromTop(this.cardLayer);
         this.disableCardClicks();
+
+    },
+    hideTable: function(sprite){
+        this.undarken();
+        var pos = this.tableView.getPosition();
+        this.slide(this.tableView, cc.p(pos.x, this.scrollBarSprite.getContentSize().height/2),cc.p(pos.x,-1000));
+
+        this.slideOutToBottom(this.scrollBarSprite);
+        this.slideOutToTop(this.windowSprite);
+        this.slideOutToTop(this.cardLayer);
+        this.enableCardClicks();
 
     },
     disableCardClicks: function(){
@@ -135,6 +186,8 @@ var EditDeck = jc.TouchLayer.extend({
     },
     getDisplaySprites: function(){
         var returnme = [];
+        //todo: add characters who are not already selected
+
 
 //        for(var i=0;i<playerBlob.myguys.length;i++){
 //            var entry = playerBlob.myguys[i];
@@ -174,7 +227,7 @@ EditDeck.scene = function() {
     if (!jc.editDeckScene){
         jc.editDeckScene = cc.Scene.create();
         cc.BuilderReader.setResolutionScale(1);
-        jc.editDeckScene.layer = cc.BuilderReader.load("EditDeck.ccbi");
+        jc.editDeckScene.layer = cc.BuilderReader.load(EditDeckCCBI);
         var editDeck = new EditDeck();
         var finalScene = jc.inherit(editDeck,jc.editDeckScene.layer);
         jc.editDeckScene.layer = finalScene;
@@ -185,7 +238,7 @@ EditDeck.scene = function() {
     return jc.editDeckScene;
 };
 
-//            label = cc.LabelTTF.create(strValue, "Helvetica", 20.0);
+//            label = cc.LabelTTF.create(strValue, "Helveticac", 20.0);
 //            label.setPosition(cc.p(0,0));
 //            label.setAnchorPoint(cc.p(0,0));
 //            label.setTag(123);

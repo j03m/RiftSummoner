@@ -5,14 +5,15 @@ var shadowPlist = dirImg + "shadowSheet.plist";
 var shadowPng = dirImg + "shadowSheet.png";
 var carduiPlist = dirImg + "cardui.plist";
 var carduiPng = dirImg + "cardui.png";
-var editDeck = dirImg + "MainScene.ccbi";
+var EditDeckCCBI = dirImg + "EditDeck.ccbi";
 var battleFlagPlist = dirImg + "battleFlag.plist";
 var battleFlagPng = dirImg + "battleFlag.png";
 var nightmarePlist = dirImg + "nightmare.plist";
 var nightmarePng = dirImg + "nightmare.png";
 var redlineContainerPlist = dirImg + "redLineContainer.plist";
 var redlineContainerPng = dirImg + "redlineContainer.png";
-
+var portraitsPlist = dirImg + "portraits.plist";
+var portraitsPng = dirImg + "portraits.png";
 //var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
 var g_characterPlists = {};
@@ -28,13 +29,15 @@ var g_maingame = [
     {src:shadowPng},
     {src:carduiPng},
     {src:carduiPlist},
-    {src:editDeck},
+    {src:EditDeckCCBI},
     {src:battleFlagPlist},
     {src:battleFlagPng},
     {src:nightmarePlist},
     {src:nightmarePng},
     {src:redlineContainerPlist},
     {src:redlineContainerPng},
+    {src:portraitsPlist},
+    {src:portraitsPng}
 
     //{src:myfont}
 ];

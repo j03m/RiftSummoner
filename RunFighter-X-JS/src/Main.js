@@ -15,7 +15,7 @@ var MainGame = cc.Layer.extend({
     changeScene:function(key){
         switch(key){
             case 'editdeck':
-                var transition = cc.TransitionSlideInR.create(0.2,EditDeck.scene());
+                var transition = cc.TransitionSlideInR.create(0.2,ArenaGame.scene());
                 cc.Director.getInstance().replaceScene(transition);
                 break;
             case 'arena':

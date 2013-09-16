@@ -1,97 +1,16 @@
-arena:
-Get render pipeline fixed*
-Set up and test correct radius and delays for each char
-Figure out hands
-    Set up borders
-    Manage deck page - random gen 25 (5 rows of 5) - 5 clicks to replace (temporary)
-    Intro gliff - ready, fight
-    Particle portal - dudes walk through
-
-Shadows
-Flying creature ai
-
-bug: why no particle???
-* outsource particle - implement blood splat
-* outsource particle - implement blood pool
-* outsource particle - heal effect
-
-implement flying tank
-implement range tank
-implement missles
-
-implement particles
-implement special powers for different units???
-implement backend event gen
-implement playback
-implement figure radius (power radius)
-implement waves
-implement wave particle
-implment y axis sort
-implement damage on frame
-fix blood
-
-
-
-intro comic (check)
-landing
-	play -> to map
-	facebook -> connect (maybe)
-map - kik pic - scrollable, candy crush style
-	click any unlocked level
-	onclick -> preplay
-
-preplay 
-	show level, challenges, stars, [get help - facebook or kik it]	
-	play -> manage team
-
-manage team
-	rows of characters, frontier style, wave 1, wave 2
-	drag and drop cards
-	tap card - manage card
-	empty slot -> slot
-	done button -> to battle
-
-manage card
-	kingdom rush card
-	sell card
-	train card - kingdom rush rip
-	revive
-
-to battle
-	battle runs on server, generates outcome, stores
-	play battle	
-	handle outcome
-		victory -> unlock
-		defeat -> defeat
-
-defeat
-	power up -> slot
-	restart - preplay
-	quit - map
-
-unlock
-	reward presentation
-	coins
-	cards
-	gems
-
-gethelp
-	select friends, they can send you slot tokens
-
-manage deck
-	arrange
-	sell - coins
-	level - frontier 
-	
-slot machine
-	pu
-	
-
-
-
-
-******** other games
-pegged - friend game clone
-spark - tinder clone w/ location
-tips - upload a video of yourself, get tips
+//Landing page - copy frontier rush
+//map page - copy CC
+    //launch battle or review cards
+//pre-battle
+//edit deck
+//card layer
+    //todo: add button 'add' and add close 'x'
+//battle
+//battle goes to outcome
+    //replay
+//outcome goes to map
+//review cards
+    //level up
+    //sell
+//slot machine
 

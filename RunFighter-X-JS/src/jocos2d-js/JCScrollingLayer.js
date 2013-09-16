@@ -90,6 +90,12 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     },
     update:function(dt){
         if (this.doUpdate){
+            if (!this.scrollDistance){
+                this.doUpdate = false;
+                return;
+            }
+
+
             if (this.scrollDistance.x/this.def.cellWidth > 3){
                 //cap this
                 this.scrollDistance.x = 3 * this.def.cellWidth;
@@ -108,6 +114,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
                 var fsX = this.calcAbsolutePos(0).x;
                 if (fsX> this.midPoint){
                     this.doUpdate = false;
+                    this.isMoving = false;
                     this.runEndingAdjustment(cc.p(this.midPoint-fsX , 0));
                 }
 
@@ -115,6 +122,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
                 var lsX = this.calcAbsolutePos(this.sprites.length-1).x;
                 if (lsX < this.midPoint){
                     this.doUpdate = false;
+                    this.isMoving = false;
                     this.runEndingAdjustment(cc.p(this.midPoint-lsX , 0));
 
                 }

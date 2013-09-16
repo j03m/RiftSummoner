@@ -6,7 +6,7 @@ Consts.intro=2;
 Consts.dead=3;
 Consts.powerup=4;
 
-var ArenaGame = cc.Layer.extend({
+var ArenaGame = jc.TouchLayer.extend({
 	sprites: [],
     teams:{},
     init: function() {

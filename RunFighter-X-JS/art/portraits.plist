@@ -4,57 +4,70 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>back.png</key>
+            <key>btn_mon_goblinWizard.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{40,64},{36,36}}</string>
+                <string>{{259,2},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{36,36}}</string>
+                <string>{{0,0},{128,128}}</string>
                 <key>sourceSize</key>
-                <string>{36,36}</string>
+                <string>{128,128}</string>
             </dict>
-            <key>deckFrame.png</key>
+            <key>btn_mon_orcWrrior.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{40,60}}</string>
+                <string>{{2,284},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{40,60}}</string>
+                <string>{{0,0},{128,128}}</string>
                 <key>sourceSize</key>
-                <string>{40,60}</string>
+                <string>{128,128}</string>
             </dict>
-            <key>ex.png</key>
+            <key>btn_mon_orgeHitter.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,2},{36,35}}</string>
+                <string>{{129,2},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{36,35}}</string>
+                <string>{{0,0},{128,128}}</string>
                 <key>sourceSize</key>
-                <string>{36,35}</string>
+                <string>{128,128}</string>
             </dict>
-            <key>plus.png</key>
+            <key>btn_mon_trolCurer.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,64},{36,36}}</string>
+                <string>{{2,154},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{36,36}}</string>
+                <string>{{0,0},{128,128}}</string>
                 <key>sourceSize</key>
-                <string>{36,36}</string>
+                <string>{128,128}</string>
+            </dict>
+            <key>crunch-portrait.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{125,150}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{125,150}}</string>
+                <key>sourceSize</key>
+                <string>{125,150}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -62,13 +75,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>cardui.png</string>
+            <string>portraits.png</string>
             <key>size</key>
-            <string>{128,128}</string>
+            <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:61ac506afa487117aa74f201ace9588a:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:1f762055eab1ecc2c7b7561520e9ffea:1/1$</string>
             <key>textureFileName</key>
-            <string>cardui.png</string>
+            <string>portraits.png</string>
         </dict>
     </dict>
 </plist>
