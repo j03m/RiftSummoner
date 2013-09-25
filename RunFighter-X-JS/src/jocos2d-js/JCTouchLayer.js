@@ -11,8 +11,6 @@ jc.TouchLayer = cc.Layer.extend({
     init: function() {
         if (this._super()) {
             this.winSize = cc.Director.getInstance().getWinSize();
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(nightmarePlist);
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(redlineContainerPlist);
             this.wireInput();
             this.superDraw = this.draw;
             this.draw = this.childDraw;
@@ -152,7 +150,7 @@ jc.TouchLayer = cc.Layer.extend({
         var fromX = this.winSize.width/2;
         var fromY = this.winSize.height+itemRect.height/2; //offscreen
         var toX = fromX;
-        var toY = this.winSize.height - itemRect.height/2;
+        var toY = this.winSize.height - ((itemRect.height/2)+ jc.defaultNudge);
         this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge), 'after');
     },
     slideOutToTop:function(item, time){
@@ -166,7 +164,7 @@ jc.TouchLayer = cc.Layer.extend({
         var fromX = this.winSize.width/2;
         var fromY = 0 - itemRect.height; //offscreen bottom
         var toX = fromX;
-        var toY = itemRect.height/2;
+        var toY = itemRect.height/2 + jc.defaultNudge;;
         this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge * -1), 'after');
     },
     slideOutToBottom:function(item, time){
@@ -179,7 +177,7 @@ jc.TouchLayer = cc.Layer.extend({
         var itemRect = this.getCorrectRect(item);
         var fromX = (0 - itemRect.width); //offscreen left
         var fromY = this.winSize.height/2;
-        var toX = itemRect.width/2;
+        var toX = (itemRect.width/2) + jc.defaultNudge;
         var toY = fromY;
         this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(jc.defaultNudge * -1,0), 'after');
     },
@@ -194,7 +192,7 @@ jc.TouchLayer = cc.Layer.extend({
         var itemRect = this.getCorrectRect(item);
         var fromX = (this.winSize.width + itemRect.width); //offscreen left
         var fromY = this.winSize.height/2;
-        var toX = this.winSize.width - itemRect.width/2;
+        var toX = this.winSize.width - ((itemRect.width/2) + jc.defaultNudge);
         var toY = fromY;
         this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(jc.defaultNudge,0), 'after');
     },
@@ -247,7 +245,6 @@ jc.TouchLayer = cc.Layer.extend({
         var windowSprite  = cc.Scale9Sprite.create();
         windowSprite.initWithSpriteFrameName(spriteName, rect);
         windowSprite.setContentSize(size);
-        this.addChild(windowSprite);
         windowSprite.setVisible(false);
         return windowSprite;
     },
