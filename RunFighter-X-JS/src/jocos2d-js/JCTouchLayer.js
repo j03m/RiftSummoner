@@ -58,9 +58,13 @@ jc.TouchLayer = cc.Layer.extend({
         var handled = [];
         for (var i=0;i<this.touchTargets.length;i++){
             var cs = this.touchTargets[i].getBoundingBox();
-            var tr = this.touchTargets[i].getTextureRect();
-            cs.with = tr.width;
-            cs.height= tr.height;
+            var tr;
+            if (this.touchTargets[i].getTextureRect){
+                tr = this.touchTargets[i].getTextureRect();
+                cs.with = tr.width;
+                cs.height= tr.height;
+            }
+
             if (cc.rectContainsPoint(cs, touch)){
                 handled.push(this.touchTargets[i]);
             }
@@ -145,13 +149,16 @@ jc.TouchLayer = cc.Layer.extend({
 
 
     },
-    slideInFromTop:function(item, time){
+    slideInFromTop:function(item, time, to){
         var itemRect = this.getCorrectRect(item);
         var fromX = this.winSize.width/2;
         var fromY = this.winSize.height+itemRect.height/2; //offscreen
-        var toX = fromX;
-        var toY = this.winSize.height - ((itemRect.height/2)+ jc.defaultNudge);
-        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge), 'after');
+        if (!to){
+            var toX = fromX;
+            var toY = this.winSize.height - ((itemRect.height/2)+ jc.defaultNudge);
+            to = cc.p(toX, toY);
+        }
+        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(0,jc.defaultNudge), 'after');
     },
     slideOutToTop:function(item, time){
         var itemRect = this.getCorrectRect(item);
@@ -159,13 +166,16 @@ jc.TouchLayer = cc.Layer.extend({
         var toY = this.winSize.height+itemRect.height/2; //offscreen
         this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge * -1), 'before');
     },
-    slideInFromBottom:function(item, time){
+    slideInFromBottom:function(item, time, to){
         var itemRect = this.getCorrectRect(item);
         var fromX = this.winSize.width/2;
         var fromY = 0 - itemRect.height; //offscreen bottom
-        var toX = fromX;
-        var toY = itemRect.height/2 + jc.defaultNudge;;
-        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge * -1), 'after');
+        if (!to){
+            var toX = fromX;
+            var toY = itemRect.height/2 + jc.defaultNudge;;
+            to = cc.p(toX, toY);
+        }
+        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(0,jc.defaultNudge * -1), 'after');
     },
     slideOutToBottom:function(item, time){
         var itemRect = this.getCorrectRect(item);
@@ -177,9 +187,12 @@ jc.TouchLayer = cc.Layer.extend({
         var itemRect = this.getCorrectRect(item);
         var fromX = (0 - itemRect.width); //offscreen left
         var fromY = this.winSize.height/2;
-        var toX = (itemRect.width/2) + jc.defaultNudge;
-        var toY = fromY;
-        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(jc.defaultNudge * -1,0), 'after');
+        if (!to){
+            var toX = (itemRect.width/2) + jc.defaultNudge;
+            var toY = fromY;
+            to = cc.p(toX, toY);
+        }
+        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(jc.defaultNudge * -1,0), 'after');
     },
     slideOutToLeft:function(item, time){
         var itemRect = this.getCorrectRect(item);
@@ -192,9 +205,12 @@ jc.TouchLayer = cc.Layer.extend({
         var itemRect = this.getCorrectRect(item);
         var fromX = (this.winSize.width + itemRect.width); //offscreen left
         var fromY = this.winSize.height/2;
-        var toX = this.winSize.width - ((itemRect.width/2) + jc.defaultNudge);
-        var toY = fromY;
-        this.slide(item, cc.p(fromX,fromY), cc.p(toX, toY), time, cc.p(jc.defaultNudge,0), 'after');
+        if (!to){
+            var toX = this.winSize.width - ((itemRect.width/2) + jc.defaultNudge);
+            var toY = fromY;
+            to = cc.p(toX, toY);
+        }
+        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(jc.defaultNudge,0), 'after');
     },
     slideOutToRight:function(item, time){
         var itemRect = this.getCorrectRect(item);
