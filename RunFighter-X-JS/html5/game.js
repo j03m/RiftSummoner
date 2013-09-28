@@ -44,6 +44,7 @@ var MW = MW || {};
 			'../src/underscore-min.js',
             '../src/spriteVars.js',
             '../src/resource.js',
+            '../src/jocos2d-js/JCLayerManager.js',
             '../src/jocos2d-js/JCCompositeButton.js',
             '../src/jocos2d-js/JCTouchLayer.js',
             '../src/jocos2d-js/JcUiElements.js',

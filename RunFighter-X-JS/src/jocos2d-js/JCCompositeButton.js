@@ -4,9 +4,6 @@ jc.CompositeButton = cc.Sprite.extend({
         if (!def){
             throw "Must supply a definition";
         }
-        if (!onTouch){
-            throw "Must supply delegate for touch.";
-        }
         if (!def.main){
             throw "Must supply main button state.";
         }
@@ -40,7 +37,7 @@ jc.CompositeButton = cc.Sprite.extend({
     },
     onExit: function(){
         if ('mouse' in sys.capabilities) {
-            cc.Director.getInstance().getMouseDispatcher().removeDelegate(this);
+            cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
         } else {
             cc.Director.getInstance().getTouchDispatcher().removeDelegate(this);
         }
@@ -76,7 +73,9 @@ jc.CompositeButton = cc.Sprite.extend({
         if(this.frameCheck(touch)){
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(this.def.main);
             this.setDisplayFrame(frame);
-            this.onTouch();
+            if (this.onTouch){
+                this.onTouch();
+            }
         }
     },
     onMouseDown: function(event) {
@@ -84,5 +83,9 @@ jc.CompositeButton = cc.Sprite.extend({
     },
     onMouseUp: function(event) {
         this.onTouchEnded(event);
+    },
+    setTouchDelegate:function(inFunc){
+        this.onTouch = inFunc;
     }
+
 });

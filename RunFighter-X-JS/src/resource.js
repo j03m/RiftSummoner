@@ -5,8 +5,8 @@ var shadowPlist = dirImg + "shadowSheet.plist";
 var shadowPng = dirImg + "shadowSheet.png";
 var carduiPlist = dirImg + "cardui.plist";
 var carduiPng = dirImg + "cardui.png";
-var portraitsPlist = dirImg + "portraits.plist";
-var portraitsPng = dirImg + "portraits.png";
+var portraitsPlist = dirImg + "portraits-hd.plist";
+var portraitsPng = dirImg + "portraits-hd.png";
 var windowPlist = dirImg + "windows.plist";
 var windowPng = dirImg + "windows.png";
 //var myfont = dirImg + "georgiab.ttf";
@@ -26,6 +26,7 @@ var g_maingame = [
     {src:carduiPlist},
     {src:portraitsPlist},
     {src:portraitsPng},
+
     {src:windowPlist},
     {src:windowPng}
     //{src:myfont}

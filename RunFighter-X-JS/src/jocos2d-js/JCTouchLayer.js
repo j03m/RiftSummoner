@@ -11,41 +11,63 @@ jc.TouchLayer = cc.Layer.extend({
     init: function() {
         if (this._super()) {
             this.winSize = cc.Director.getInstance().getWinSize();
-            this.wireInput();
             this.superDraw = this.draw;
             this.draw = this.childDraw;
+            this.superOnEnter = this.onEnter;
+            this.onEnter = this.childOnEnter;
+            this.superOnExit = this.onExit;
+            this.onExit = this.childOnExit;
             return true;
         } else {
             return false;
         }
     },
-    wireInput: function(){
+    childOnEnter:function(){
+        this.superOnEnter();
+        this.wireInput(true);
+        this.onShow();
+    },
+    childOnExit:function(){
+        this.superOnExit();
+        this.wireInput(false)
+        this.onHide();
+    },
+    onShow:function(){},
+    onHide:function(){},
+    wireInput: function(val){
         if ('mouse' in sys.capabilities) {
-            this.setMouseEnabled(true);
+            this.setMouseEnabled(val);
         } else {
-            this.setTouchEnabled(true);
+            this.setTouchEnabled(val);
         }
     },
     onTouchesBegan: function(touch) {
         this.hitSpriteTarget(jc.touchBegan, touch);
+        return true;
     },
     onTouchesMoved: function(touch) {
         this.hitSpriteTarget(jc.touchMoved, touch);
+        return true;
     },
     onTouchesEnded: function(touch) {
         this.hitSpriteTarget(jc.touchEnded, touch);
+        return true;
     },
     onMouseDown: function(event) {
         this.onTouchesBegan(event);
+        return true;
     },
     onMouseDragged: function(event) {
         this.onTouchesMoved(event);
+        return true;
     },
     onMouseUp: function(event) {
         this.onTouchesEnded(event);
+        return true;
     },
     onTouchCancelled: function(touch, event,sprite) {
         this.hitSpriteTarget(jc.touchCancelled, touch);
+        return true;
     },
     targetTouchHandler: function(type, touch, sprites) {
         throw "child must implement!"
@@ -69,7 +91,10 @@ jc.TouchLayer = cc.Layer.extend({
                 handled.push(this.touchTargets[i]);
             }
         }
-        this.targetTouchHandler(type, touch, handled);
+        //if something of note was touched, raise it
+        if (handled.length>0 && !this.isPaused){
+            this.targetTouchHandler(type, touch, handled);
+        }
     },
     touchToPoint:function(touch){
         if (touch instanceof Array){
@@ -183,7 +208,7 @@ jc.TouchLayer = cc.Layer.extend({
         var toY = 0 - itemRect.height; //offscreen bottom
         this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge), 'before');
     },
-    slideInFromLeft:function(item, time){
+    slideInFromLeft:function(item, time,to){
         var itemRect = this.getCorrectRect(item);
         var fromX = (0 - itemRect.width); //offscreen left
         var fromY = this.winSize.height/2;
@@ -201,7 +226,7 @@ jc.TouchLayer = cc.Layer.extend({
         this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(jc.defaultNudge,0), 'before');
     },
 
-    slideInFromRight:function(item, time){
+    slideInFromRight:function(item, time,to){
         var itemRect = this.getCorrectRect(item);
         var fromX = (this.winSize.width + itemRect.width); //offscreen left
         var fromY = this.winSize.height/2;
@@ -231,18 +256,20 @@ jc.TouchLayer = cc.Layer.extend({
         return sprite;
     },
     pause:function () {
-        this.pauseSchedulerAndActions();
-        var selChildren = this.getChildren();
-        for (var i = 0; i < selChildren.length; i++) {
-            selChildren[i].pauseSchedulerAndActions();
-        }
+//        this.pauseSchedulerAndActions();
+//        var selChildren = this.getChildren();
+//        for (var i = 0; i < selChildren.length; i++) {
+//            selChildren[i].pauseSchedulerAndActions();
+//        }
+        this.isPaused = true;
     },
     resume:function () {
-        var selChildren = this.getChildren();
-        for (var i = 0; i < selChildren.length; i++) {
-            selChildren[i].resumeSchedulerAndActions();
-        }
-        this.resumeSchedulerAndActions();
+//        var selChildren = this.getChildren();
+//        for (var i = 0; i < selChildren.length; i++) {
+//            selChildren[i].resumeSchedulerAndActions();
+//        }
+//        this.resumeSchedulerAndActions();
+        this.isPaused = false;
     },
     centerPoint:function(){
         return cc.p(this.getContentSize().width * this.getAnchorPoint().x,
@@ -253,7 +280,7 @@ jc.TouchLayer = cc.Layer.extend({
     },
     makeWindow:function(size, spriteName, rect){
         if (!spriteName){
-            spriteName = "window.png";
+            throw "A window needs a sprite backdrop and a scale9 rect";
         }
         if (!rect){
             rect = cc.RectMake(45, 45, 350, 600)
@@ -267,5 +294,30 @@ jc.TouchLayer = cc.Layer.extend({
     childDraw:function(){
         this.superDraw();
         //todo: reserve for later
+    },
+    drawBorder:function(sprite, color, width){
+        var position = sprite.getPosition();
+        var rect = sprite.getTextureRect();
+        if (!this.drawNode){
+            this.drawNode = cc.DrawNode.create();
+            this.addChild(this.drawNode);
+        }
+
+        position.x = position.x - rect.width/2;
+        position.y = position.y - rect.height/2;
+        this.drawNode.setPosition(position);
+
+        var fill = cc.c4f(0,0,0,0);
+        var border = color;
+
+        this.drawNode.clear();
+        this.drawRect(this.drawNode, rect, fill, border,width);
+
+    },
+    drawRect:function(poly, rect, fill, border, borderWidth){
+        var height = rect.height;
+        var width = rect.width;
+        var vertices = [cc.p(0, 0), cc.p(0, height), cc.p(width, height), cc.p(width, 0)];
+        poly.drawPoly(vertices, fill, borderWidth, border);
     }
 });

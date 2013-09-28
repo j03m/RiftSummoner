@@ -5,16 +5,21 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             this.def = definition;
             this.sprites = this.def.sprites;
             this.doConvert = true;
+
+            var h=0;
             for(var i=0;i<this.sprites.length;i++){
                 this.touchTargets.push(this.sprites[i]);
                 this.addChild(this.sprites[i]);
                 var x = ((this.def.cellWidth/2) * i) + this.def.cellWidth;
                 this.sprites[i].setPosition(cc.p(x,0));
+                if (this.sprites[i].getTextureRect().height >h){
+                    h =  this.sprites[i].getTextureRect().height;
+                }
                 this.reorderChild(this.sprites[i],3);
             }
-
-            this.midPoint = this.winSize.width/2;
-
+            var w = this.sprites.length*this.def.cellWidth;
+            this.midPoint = this.getParent().getContentSize().width/2;
+            this.setContentSize(cc.size(w,h));
             //adjust my position so that center line is a sprite.
 //
 //            this.selected = cc.Scale9Sprite.create();
@@ -25,6 +30,9 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
 //            this.selected.setPosition(this.sprites[0].getPosition());
             this.doUpdate = false;
             this.scheduleUpdate();
+            var center = this.def.startOn | 0;
+            this.centerOn(this.sprites[center]);
+
             return true;
         } else {
             return false;
@@ -39,6 +47,10 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     targetTouchHandler: function(type, touch, sprites) {
         if (!this.isVisible()){
             return;
+        }
+
+        if (this.drawNode){
+            this.drawNode.clear();
         }
 
         if (type == jc.touchBegan){
@@ -68,7 +80,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     },
     centerOn: function(sprite){
         var pos = sprite.getPosition();
-        var worldPos = this.convertToWorldSpaceAR(pos);
+        var worldPos = this.convertToWorldSpace(pos);
         var augment = this.midPoint - worldPos.x;
         this.runEndingAdjustment(cc.p(augment,0));
     },
@@ -84,9 +96,15 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             var bb = sprite.getBoundingBox();
             bb.origin = this.convertToWorldSpace(bb.origin);
             if (cc.rectContainsPoint(bb, cc.p(this.midPoint, bb.origin.y))){
+                this.applyHighlight(sprite);
                 this.def.selectionCallback(i, sprite);
             }
         }
+    },
+    applyHighlight:function(sprite){
+        //todo: layer a nicer sprite
+        var color = cc.c4f(255.0/255.0, 255.0/255.0, 0.0/255.0, 1.0);
+        this.drawBorder(sprite,color,2);
     },
     update:function(dt){
         if (this.doUpdate){
@@ -108,32 +126,33 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
                     this.doUpdate = false;
                     this.adjust();
                 }
-
-                //if first cell middle is past center line, stop, adjust to first cell middle on center line
-                //fix this:
-                var fsX = this.calcAbsolutePos(0).x;
-                if (fsX> this.midPoint){
-                    this.doUpdate = false;
-                    this.isMoving = false;
-                    this.runEndingAdjustment(cc.p(this.midPoint-fsX , 0));
-                }
-
-                //if last sprite is past middle rect, stop adjust to last cell middle on center line
-                var lsX = this.calcAbsolutePos(this.sprites.length-1).x;
-                if (lsX < this.midPoint){
-                    this.doUpdate = false;
-                    this.isMoving = false;
-                    this.runEndingAdjustment(cc.p(this.midPoint-lsX , 0));
-
-                }
             }
+
+            //if first cell middle is past center line, stop, adjust to first cell middle on center line
+            //fix this:
+            var fsX = this.calcAbsolutePos(0).x;
+            if (fsX> this.midPoint){
+                this.doUpdate = false;
+                this.isMoving = false;
+                this.runEndingAdjustment(cc.p(this.midPoint-fsX , 0));
+            }
+
+            //if last sprite is past middle rect, stop adjust to last cell middle on center line
+            var lsX = this.calcAbsolutePos(this.sprites.length-1).x;
+            if (lsX < this.midPoint){
+                this.doUpdate = false;
+                this.isMoving = false;
+                this.runEndingAdjustment(cc.p(this.midPoint-lsX , 0));
+
+            }
+
 
         }
     },
     calcAbsolutePos:function(position){
 //        var pos = this.getPosition().x; //abs position of layer;
 //        pos+=position*this.def.cellWidth/2 + this.def.cellWidth/2;
-          return this.convertToWorldSpaceAR(this.sprites[position].getPosition());
+          return this.convertToWorldSpace(this.sprites[position].getPosition());
     },
     adjust:function(){
         var min=-1;

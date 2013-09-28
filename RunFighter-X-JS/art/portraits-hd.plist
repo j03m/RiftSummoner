@@ -7,67 +7,67 @@
             <key>btn_mon_goblinWizard.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{133,2},{64,64}}</string>
+                <string>{{259,2},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,64}}</string>
+                <string>{{0,0},{128,128}}</string>
                 <key>sourceSize</key>
-                <string>{64,64}</string>
+                <string>{128,128}</string>
             </dict>
             <key>btn_mon_orcWrrior.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,145},{64,64}}</string>
+                <string>{{2,284},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,64}}</string>
+                <string>{{0,0},{128,128}}</string>
                 <key>sourceSize</key>
-                <string>{64,64}</string>
+                <string>{128,128}</string>
             </dict>
             <key>btn_mon_orgeHitter.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{67,2},{64,64}}</string>
+                <string>{{129,2},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,64}}</string>
+                <string>{{0,0},{128,128}}</string>
                 <key>sourceSize</key>
-                <string>{64,64}</string>
+                <string>{128,128}</string>
             </dict>
             <key>btn_mon_trolCurer.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,79},{64,64}}</string>
+                <string>{{2,154},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,64}}</string>
+                <string>{{0,0},{128,128}}</string>
                 <key>sourceSize</key>
-                <string>{64,64}</string>
+                <string>{128,128}</string>
             </dict>
             <key>crunch-portrait.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{63,75}}</string>
+                <string>{{2,2},{125,150}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{63,75}}</string>
+                <string>{{0,0},{125,150}}</string>
                 <key>sourceSize</key>
-                <string>{63,75}</string>
+                <string>{125,150}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -75,13 +75,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>portraits.png</string>
+            <string>portraits-hd.png</string>
             <key>size</key>
-            <string>{256,256}</string>
+            <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c08f8efe268a783de5f75787f0958fb7:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:6e4d455d867f1e3addf4b0dd51df9370:1/1$</string>
             <key>textureFileName</key>
-            <string>portraits.png</string>
+            <string>portraits-hd.png</string>
         </dict>
     </dict>
 </plist>
