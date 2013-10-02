@@ -9,6 +9,9 @@ var portraitsPlist = dirImg + "portraits-hd.plist";
 var portraitsPng = dirImg + "portraits-hd.png";
 var windowPlist = dirImg + "windows.plist";
 var windowPng = dirImg + "windows.png";
+var shrine1Png = dirImg + "shrine1.png";
+var shrine2Png = dirImg + "shrine2.png";
+var mapTmx = dirImg + "map.tmx";
 //var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
 var g_characterPlists = {};
@@ -28,7 +31,10 @@ var g_maingame = [
     {src:portraitsPng},
 
     {src:windowPlist},
-    {src:windowPng}
+    {src:windowPng},
+    {src:shrine1Png},
+    {src:shrine2Png},
+    {src:mapTmx},
     //{src:myfont}
 ];
 

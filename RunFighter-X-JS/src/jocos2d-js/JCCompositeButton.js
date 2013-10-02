@@ -42,7 +42,7 @@ jc.CompositeButton = cc.Sprite.extend({
             cc.Director.getInstance().getTouchDispatcher().removeDelegate(this);
         }
     },
-    onTouchBegan: function(touch) {
+    onTouchesBegan: function(touch) {
         if(this.frameCheck(touch)){
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(this.def.pressed);
             this.setDisplayFrame(frame);
@@ -58,34 +58,47 @@ jc.CompositeButton = cc.Sprite.extend({
 
     },
     getTouchLocation:function (touch) {
-        var touchLocation = touch.getLocation();                      // Get the touch position
-        touchLocation = this.getParent().convertToNodeSpace(touchLocation);  // Convert to the node space of this class
+        var touchLocation = this.getParent().convertToNodeSpace(touch);  // Convert to the node space of this class
 
         return touchLocation;
     },
     isTouchInside:function (touch) {
+        //todo: these touches not registering on mobile - debug with safari
+        if (touch instanceof Array){
+            touch= touch[0].getLocation()
+        }else{
+            touch= touch.getLocation();
+        }
+
         return cc.rectContainsPoint(this.getBoundingBox(), this.getTouchLocation(touch));
     },
-    onTouchMoved: function(touch) {
+    onTouchesMoved: function(touch) {
 
     },
-    onTouchEnded: function(touch) {
+    onTouchesEnded: function(touch) {
         if(this.frameCheck(touch)){
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(this.def.main);
             this.setDisplayFrame(frame);
-            if (this.onTouch){
+            if (this.onTouch && !this.paused){
                 this.onTouch();
             }
         }
     },
     onMouseDown: function(event) {
-        this.onTouchBegan(event);
+        this.onTouchesBegan(event);
     },
     onMouseUp: function(event) {
-        this.onTouchEnded(event);
+        this.onTouchesEnded(event);
     },
     setTouchDelegate:function(inFunc){
         this.onTouch = inFunc;
+    },
+    pause:function(){
+        this.paused = true;
+    },
+    resume:function(){
+        this.paused = false;
     }
+
 
 });

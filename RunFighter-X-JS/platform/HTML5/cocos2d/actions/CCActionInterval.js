@@ -787,6 +787,9 @@ cc.MoveTo = cc.ActionInterval.extend(/** @lends cc.MoveTo# */{
      * @return {Boolean}
      */
     initWithDuration:function (duration, position) {
+        if (position.x == undefined || position.y==undefined){
+            throw "Position is not a point";
+        }
         if (cc.ActionInterval.prototype.initWithDuration.call(this, duration)) {
             this._endPosition = position;
             return true;

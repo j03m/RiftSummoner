@@ -1,4 +1,4 @@
-var playerBlob = {
+jc.playerBlob = {
     id:1,
     grid:[1],
     myguys:[
@@ -31,6 +31,7 @@ var EditDeck = jc.UiElementsLayer.extend({
     cellWidth:140,
     cells:20,
     cardLayer:undefined,
+    playMap:{},
     init: function(playerBlob) {
 
         if (this._super()) {
@@ -55,17 +56,24 @@ var EditDeck = jc.UiElementsLayer.extend({
             this.touchedSprite.addChild(this.touchedSprite.portrait);
             this.scaleTo(this.touchedSprite.portrait, this.touchedSprite);
             this.centerThis(this.touchedSprite.portrait, this.touchedSprite);
+            this.playMap[this.touchedSprite.name] = index;
         }
     },
     selectionCancelled:function(){
          this.touchedSprite = undefined;
     },
     onDone:function(){
-        //todo: transition to battle
-
+        if (!this.isPaused){
+            //todo: transition to battle
+            jc.editDeckResult = this.playMap;
+            jc.mainScene.layer.changeScene('arena');
+        }
     },
     onCancel:function(){
-        //todo: transition to map
+        if (!this.isPaused){
+            //todo: transition to map
+
+        }
     },
     targetTouchHandler:function(type, touch, sprites){
         if (type == jc.touchEnded){
@@ -153,7 +161,7 @@ EditDeck.scene = function() {
         jc.editDeckScene = cc.Scene.create();
         jc.editDeckScene.layer = new EditDeck();
         jc.editDeckScene.addChild(jc.editDeckScene.layer);
-        jc.editDeckScene.layer.init(playerBlob); //todo: must come from remote
+        jc.editDeckScene.layer.init(jc.playerBlob); //todo: must come from remote
 
     }
     return jc.editDeckScene;

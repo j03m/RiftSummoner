@@ -153,7 +153,7 @@ var ExampleLayer = cc.Layer.extend({
 	},
 	hero: function(){
 		//make ryu
-		var size = cc.Director.getInstance().getWinSize();;
+		var size = cc.Director.getInstance().getWinSize();
 		this.ryu = new jc.Sprite();
 		this.ryu.initWithPlist(ryuPlist, ryuSheet, 'stance00.png', 'ryu');
 		var idle = {

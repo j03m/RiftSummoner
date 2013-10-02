@@ -61,56 +61,86 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
     },
     done: function(){
         //transition windows out
+        this.runningType = 'out';
         for(var i =0; i< this.windowConfigs.length; i++){
             var windowConfig = this.windowConfigs[i];
             if (windowConfig.config.transitionOut){
-                this.doTransitionOut(windowConfig);
+                this.doTransitionOut(windowConfig, this.onTransitionComplete.bind(this));
             }else{
                 windowConfig.window.setVisible(false);
+                this.onTransitionComplete();
             }
         }
+    },
+    onTransitionComplete:function(){
+        this.incTransition();
+        this.checkTransitionsDone()
+    },
+    incTransition:function(){
+        if (!this.transitions){
+            this.transitions=0;
+        }
+        this.transitions++;
+    },
+    checkTransitionsDone:function(){
+        if (this.transitions == this.windowConfigs.length){
+            this.transitions = 0;
+            if (this.runningType == 'out'){
+                this.outTransitionsComplete();
+            }else{
+                this.inTransitionsComplete();
+            }
+        }
+    },
+    outTransitionsComplete:function(){
+
+    },
+    inTransitionsComplete:function(){
+
     },
     start: function(){
         //transition windows in
+        this.runningType = 'in';
         for(var i =0; i< this.windowConfigs.length; i++){
             var windowConfig = this.windowConfigs[i];
             if (windowConfig.config.transitionIn){
-                this.doTransitionIn(windowConfig);
+                this.doTransitionIn(windowConfig,this.onTransitionComplete.bind(this));
             }else{
                 windowConfig.window.setPosition(windowConfig.position);
                 windowConfig.window.setVisible(true);
+                this.onTransitionComplete();
             }
         }
     },
-    doTransitionIn:function(windowConfig){
+    doTransitionIn:function(windowConfig, doneDelegate){
         switch(windowConfig.config.transitionIn){
             case 'right':
-                this.slideInFromRight(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position);
+                this.slideInFromRight(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position,doneDelegate);
                 break;
             case 'left':
-                this.slideInFromLeft(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position);
+                this.slideInFromLeft(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position,doneDelegate);
                 break;
             case 'top':
-                this.slideInFromTop(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position);
+                this.slideInFromTop(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position,doneDelegate);
                 break;
             case 'bottom':
-                this.slideInFromBottom(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position);
+                this.slideInFromBottom(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position,doneDelegate);
                 break;
         }
     },
-    doTransitionOut:function(windowConfig){
+    doTransitionOut:function(windowConfig, doneDelegate){
         switch(windowConfig.config.transitionOut){
             case 'right':
-                this.slideOutToRight(windowConfig.window, windowConfig.config.transitionOutTime, windowConfig.position);
+                this.slideOutToRight(windowConfig.window, windowConfig.config.transitionOutTime, undefined,doneDelegate);
                 break;
             case 'left':
-                this.slideOutToLeft(windowConfig.window, windowConfig.config.transitionOutTime, windowConfig.position);
+                this.slideOutToLeft(windowConfig.window, windowConfig.config.transitionOutTime, undefined,doneDelegate);
                 break;
             case 'top':
-                this.slideOutToTop(windowConfig.window, windowConfig.config.transitionOutTime, windowConfig.position);
+                this.slideOutToTop(windowConfig.window, windowConfig.config.transitionOutTime, undefined,doneDelegate);
                 break;
             case 'bottom':
-                this.slideOutToBottom(windowConfig.window, windowConfig.config.transitionOutTime, windowConfig.position);
+                this.slideOutToBottom(windowConfig.window, windowConfig.config.transitionOutTime, undefined,doneDelegate);
                 break;
         }
     },
@@ -239,7 +269,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
 
             //keep track
             parent.addChild(window);
-            window.name=name;
+            window.name=name+i;
             this[name]=window;
 
 

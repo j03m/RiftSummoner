@@ -22,6 +22,9 @@ jc.TouchLayer = cc.Layer.extend({
             return false;
         }
     },
+    bubbleAllTouches:function(val){
+        this.bubbleAll = val;
+    },
     childOnEnter:function(){
         this.superOnEnter();
         this.wireInput(true);
@@ -43,31 +46,31 @@ jc.TouchLayer = cc.Layer.extend({
     },
     onTouchesBegan: function(touch) {
         this.hitSpriteTarget(jc.touchBegan, touch);
-        return true;
+        return false;
     },
     onTouchesMoved: function(touch) {
         this.hitSpriteTarget(jc.touchMoved, touch);
-        return true;
+        return false;
     },
     onTouchesEnded: function(touch) {
         this.hitSpriteTarget(jc.touchEnded, touch);
-        return true;
+        return false;
     },
     onMouseDown: function(event) {
         this.onTouchesBegan(event);
-        return true;
+        return false;
     },
     onMouseDragged: function(event) {
         this.onTouchesMoved(event);
-        return true;
+        return false;
     },
     onMouseUp: function(event) {
         this.onTouchesEnded(event);
-        return true;
+        return false;
     },
     onTouchCancelled: function(touch, event,sprite) {
         this.hitSpriteTarget(jc.touchCancelled, touch);
-        return true;
+        return false;
     },
     targetTouchHandler: function(type, touch, sprites) {
         throw "child must implement!"
@@ -92,7 +95,7 @@ jc.TouchLayer = cc.Layer.extend({
             }
         }
         //if something of note was touched, raise it
-        if (handled.length>0 && !this.isPaused){
+        if ((handled.length>0 || this.bubbleAll) && !this.isPaused){
             this.targetTouchHandler(type, touch, handled);
         }
     },
@@ -142,7 +145,7 @@ jc.TouchLayer = cc.Layer.extend({
         item.runAction(actionFadeOut);
 
     },
-    slide:function(item, from, to, time, nudge, when){
+    slide:function(item, from, to, time, nudge, when, doneDelegate){
         if (!time){
             time = jc.defaultTransitionTime;
         }
@@ -150,6 +153,11 @@ jc.TouchLayer = cc.Layer.extend({
         item.setVisible(true);
         var moveAction = cc.MoveTo.create(time, to);
         var nudgeAction;
+
+        if (!doneDelegate){
+            doneDelegate = function(){};
+        }
+        var callFunc = cc.CallFunc.create(doneDelegate);
 
         //apply the inNudge first, then main move, then the out nudge
         if (nudge && when=='before'){
@@ -161,20 +169,21 @@ jc.TouchLayer = cc.Layer.extend({
         }
 
         if (nudgeAction && when == 'before'){
-            action = cc.Sequence.create(nudgeAction, moveAction);
+            action = cc.Sequence.create(nudgeAction, moveAction, callFunc);
             item.runAction(action);
         }else if (nudgeAction && when == 'after'){
-            action = cc.Sequence.create(moveAction, nudgeAction);
+            action = cc.Sequence.create(moveAction, nudgeAction, callFunc);
             item.runAction(action);
         }else if (nudgeAction){
             throw "when var must be before or after";
         }else{
+            action = cc.Sequence.create(moveAction, callFunc);
             item.runAction(moveAction);
         }
 
 
     },
-    slideInFromTop:function(item, time, to){
+    slideInFromTop:function(item, time, to,doneDelegate){
         var itemRect = this.getCorrectRect(item);
         var fromX = this.winSize.width/2;
         var fromY = this.winSize.height+itemRect.height/2; //offscreen
@@ -183,15 +192,19 @@ jc.TouchLayer = cc.Layer.extend({
             var toY = this.winSize.height - ((itemRect.height/2)+ jc.defaultNudge);
             to = cc.p(toX, toY);
         }
-        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(0,jc.defaultNudge), 'after');
+        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(0,jc.defaultNudge), 'after',doneDelegate);
     },
-    slideOutToTop:function(item, time){
+    slideOutToTop:function(item, time,to,doneDelegate){
         var itemRect = this.getCorrectRect(item);
-        var toX = this.winSize.width/2;
-        var toY = this.winSize.height+itemRect.height/2; //offscreen
-        this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge * -1), 'before');
+        if (!to){
+            var toX = this.winSize.width/2;
+            var toY = this.winSize.height+itemRect.height/2; //offscreen
+            to = cc.p(toX,toY);
+        }
+
+        this.slide(item, item.getPosition(), to, time, cc.p(0,jc.defaultNudge * -1), 'before',doneDelegate);
     },
-    slideInFromBottom:function(item, time, to){
+    slideInFromBottom:function(item, time, to,doneDelegate){
         var itemRect = this.getCorrectRect(item);
         var fromX = this.winSize.width/2;
         var fromY = 0 - itemRect.height; //offscreen bottom
@@ -200,15 +213,18 @@ jc.TouchLayer = cc.Layer.extend({
             var toY = itemRect.height/2 + jc.defaultNudge;;
             to = cc.p(toX, toY);
         }
-        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(0,jc.defaultNudge * -1), 'after');
+        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(0,jc.defaultNudge * -1), 'after',doneDelegate);
     },
-    slideOutToBottom:function(item, time){
+    slideOutToBottom:function(item, time, to, doneDelegate){
         var itemRect = this.getCorrectRect(item);
-        var toX = this.winSize.width/2;
-        var toY = 0 - itemRect.height; //offscreen bottom
-        this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(0,jc.defaultNudge), 'before');
+        if (!to){
+            var toX = this.winSize.width/2;
+            var toY = 0 - itemRect.height; //offscreen bottom
+            to = cc.p(toX,toY);
+        }
+        this.slide(item, item.getPosition(), to, time, cc.p(0,jc.defaultNudge), 'before',doneDelegate);
     },
-    slideInFromLeft:function(item, time,to){
+    slideInFromLeft:function(item, time,to,doneDelegate){
         var itemRect = this.getCorrectRect(item);
         var fromX = (0 - itemRect.width); //offscreen left
         var fromY = this.winSize.height/2;
@@ -217,16 +233,20 @@ jc.TouchLayer = cc.Layer.extend({
             var toY = fromY;
             to = cc.p(toX, toY);
         }
-        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(jc.defaultNudge * -1,0), 'after');
+        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(jc.defaultNudge * -1,0), 'after',doneDelegate);
     },
-    slideOutToLeft:function(item, time){
+    slideOutToLeft:function(item, time, to, doneDelegate){
         var itemRect = this.getCorrectRect(item);
-        var toX = (0 - itemRect.width); //offscreen left
-        var toY = this.winSize.height/2;
-        this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(jc.defaultNudge,0), 'before');
+        if (!to){
+            var toX = (0 - itemRect.width); //offscreen left
+            var toY = this.winSize.height/2;
+            to = cc.p(toX,toY);
+        }
+
+        this.slide(item, item.getPosition(), to, time, cc.p(jc.defaultNudge,0), 'before',doneDelegate);
     },
 
-    slideInFromRight:function(item, time,to){
+    slideInFromRight:function(item, time,to,doneDelegate){
         var itemRect = this.getCorrectRect(item);
         var fromX = (this.winSize.width + itemRect.width); //offscreen left
         var fromY = this.winSize.height/2;
@@ -235,13 +255,16 @@ jc.TouchLayer = cc.Layer.extend({
             var toY = fromY;
             to = cc.p(toX, toY);
         }
-        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(jc.defaultNudge,0), 'after');
+        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(jc.defaultNudge,0), 'after',doneDelegate);
     },
-    slideOutToRight:function(item, time){
+    slideOutToRight:function(item, time,to,doneDelegate){
         var itemRect = this.getCorrectRect(item);
-        var toX = (this.winSize.width + itemRect.width); //offscreen left
-        var toY = this.winSize.height/2;
-        this.slide(item, item.getPosition(), cc.p(toX, toY), time, cc.p(jc.defaultNudge * -1,0), 'before');
+        if (!to){
+            var toX = (this.winSize.width + itemRect.width); //offscreen left
+            var toY = this.winSize.height/2;
+            to = cc.p(toX, toY);
+        }
+        this.slide(item, item.getPosition(), to, time, cc.p(jc.defaultNudge * -1,0), 'before',doneDelegate);
     },
     getCorrectRect:function(item){
         if (item instanceof jc.Sprite){
@@ -256,19 +279,9 @@ jc.TouchLayer = cc.Layer.extend({
         return sprite;
     },
     pause:function () {
-//        this.pauseSchedulerAndActions();
-//        var selChildren = this.getChildren();
-//        for (var i = 0; i < selChildren.length; i++) {
-//            selChildren[i].pauseSchedulerAndActions();
-//        }
         this.isPaused = true;
     },
     resume:function () {
-//        var selChildren = this.getChildren();
-//        for (var i = 0; i < selChildren.length; i++) {
-//            selChildren[i].resumeSchedulerAndActions();
-//        }
-//        this.resumeSchedulerAndActions();
         this.isPaused = false;
     },
     centerPoint:function(){

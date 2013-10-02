@@ -7,266 +7,134 @@ Consts.dead=3;
 Consts.powerup=4;
 
 var ArenaGame = jc.TouchLayer.extend({
-	sprites: [],
+	teamASprites: [],
+    teamBSprites: [],
+    sprites:[],
     teams:{},
     init: function() {
 		if (this._super()) {
-            this.background = new jc.Sprite();
-			this.background.layer = this;
-            this.background.type = 'background';
-            this.background.initWithPlist(arenaPlist, arenaSheet, 'Colosseum_02.png', {"name:":"arena", "type":'background'});
-            this.background.centerOnScreen();
+
+            //todo: change this cc sprite, not need for jcsprite here, kinda dumb
+            this.background = cc.Sprite.create(shrine1Png);
 			this.addChild(this.background);
 
+            this.worldSize = this.background.getContentSize();
             this.reorderChild(this.background,  (cc.Director.getInstance().getWinSize().height+10) * -1);
+            this.setViewpointCenter(cc.p(this.worldSize.width/2, this.worldSize.height/2));
             this.teams['a'] = [];
             this.teams['b'] = [];
-            //this.runScenario1();
-            //this.runScenario2();
-            //this.runScenario3();
-            this.runScenario0();
+            this.bubbleAllTouches(true);
+
+            //sequence
+                //pan to team a start
+
+                //add each team member
+                //pan to team b start
+                //add each team member
+                //pan to center
+                //fight
+                //put constant zoom to fit in update
+
             this.scheduleUpdate();
 			return true;
 		} else {
 			return false;
 		}
 	},
-    initScroll:function(){
-//      var size = new cc.Size();
-//      size.width = this
-//      cc.ScrollView.create(cc.Size())
+    onShow:function(){
+        if(!jc.editDeckResult){
+            this.runScenario0();
+        }else{
+            this.runMetaDataScenario();
+        }
+    },
+    runMetaDataScenario:function(){
+        for(var entry in jc.editDeckResult){
+            var name = jc.playerBlob.myguys[jc.editDeckResult[entry]].name;
+            this.teamASprites.push(name);
+        }
+        this.teamBSprites.push('blueKnight');
+        this.teamBSprites.push('orge');
+        this.teamBSprites.push('fireKnight');
+        this.teamBSprites.push('dragonRed');
+        this.teamBSprites.push('dragonBlack');
+        this.teamBSprites.push('orc');
+        this.arrange();
     },
     runScenario0:function(){
-        this.getRandomSprite('goblin');
-        this.getRandomSprite('spider');
-        this.getRandomSprite('wizard');
-        this.getRandomSprite('snakeThing');
-        this.getRandomSprite('wizard');
-        this.getRandomSprite('spider');
+        this.teamASprites.push('goblin');
+        this.teamASprites.push('spider');
+        this.teamASprites.push('wizard');
+        this.teamASprites.push('snakeThing');
+        this.teamASprites.push('wizard');
+        this.teamASprites.push('spider');
 
-
-        this.getRandomSprite('blueKnight');
-        this.getRandomSprite('orge');
-        this.getRandomSprite('fireKnight');
-        this.getRandomSprite('dragonRed');
-        this.getRandomSprite('dragonBlack');
-        this.getRandomSprite('orc');
-
-
-
-        this.arrange(this.sprites);
+        this.teamBSprites.push('blueKnight');
+        this.teamBSprites.push('orge');
+        this.teamBSprites.push('fireKnight');
+        this.teamBSprites.push('dragonRed');
+        this.teamBSprites.push('dragonBlack');
+        this.teamBSprites.push('orc');
+        this.arrange();
     },
-    runScenario1:function(){
-        this.getRandomSprite('goldKnight');
-        this.getRandomSprite('orc');
-        this.arrange(this.sprites);
-    },
-    runScenario2:function(){
-        this.getRandomSprite('goldKnight');
-        this.getRandomSprite('orc');
-        this.arrange(this.sprites);
-        //now set orc (sprite #2) into the middle of the screen
-        this.sprites[1].centerOnScreen();
-        this.sprites[1].updateHealthBarPos();
-        var base = this.sprites[1].getBasePosition();
-        //set me to his right
-        this.sprites[0].setBasePosition(cc.p(base.x + 100, base.y+100));
-
-    },
-    runScenario3:function(){
-        this.getRandomSprite('goldKnight');
-        this.getRandomSprite('forestElf');
-        this.arrange(this.sprites);
-    },
-    runScenario4:function(){
-        this.getRandomSprite('goldKnight');
-        this.getRandomSprite('forestElf');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('voidElf');
-        this.arrange(this.sprites);
-    },
-    runScenario4:function(){
-        this.getRandomSprite('goldKnight');
-        this.getRandomSprite('forestElf');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('dragonRed');
-
-
-        this.getRandomSprite('blueKnight');
-        this.getRandomSprite('redGargoyle');
-        this.getRandomSprite('orge');
-        this.getRandomSprite('voidElf');
-
-        this.arrange(this.sprites);
-    },
-    runScenario5:function(){
-        this.getRandomSprite('orc');
-        this.getRandomSprite('troll');
-        this.arrange(this.sprites);
-    },
-    runScenario6:function(){
-        this.getRandomSprite('orc');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('troll');
-
-        this.getRandomSprite('orc');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('troll');
-        this.arrange(this.sprites);
-    },
-    runScenario7:function(){
-        this.getRandomSprite('orc');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('voidElf');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('orge');
-
-
-        this.getRandomSprite('orge');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('goldKnight');
-
-        this.arrange(this.sprites);
-    },
-    runScenario8:function(){
-        this.getRandomSprite('orc');
-        this.getRandomSprite('shellback');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('shellback');
-        this.getRandomSprite('orge');
-
-        this.getRandomSprite('troll');
-        this.getRandomSprite('orge');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('troll');
-
-        this.arrange(this.sprites);
-    },
-    runScenario9:function(){
-        //todo: unbalanced, shellbacks should be like troll killing missles
-        this.getRandomSprite('shellback');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('shellback');
-
-        this.getRandomSprite('troll');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('shellback');
-        this.arrange(this.sprites);
-    },
-    runScenario10:function(){
-        //todo: unbalanced, shellbacks should be like troll killing missles
-        this.getRandomSprite('spider');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('orc');
-
-        this.getRandomSprite('orc');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('orc');
-        this.arrange(this.sprites);
-    },
-    runScenario11:function(){
-        this.getRandomSprite('orc');
-        this.getRandomSprite('shellback');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('shellback');
-        this.getRandomSprite('orge');
-
-        this.getRandomSprite('troll');
-        this.getRandomSprite('orge');
-        this.getRandomSprite('spider');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('troll');
-
-        this.arrange(this.sprites);
-    },
-    runScenario12:function(){
-        this.getRandomSprite('forestElf');
-        this.getRandomSprite('forestElf');
-        this.getRandomSprite('forestElf');
-
-
-        this.getRandomSprite('troll');
-        this.getRandomSprite('spider');
-        this.getRandomSprite('troll');
-        this.arrange(this.sprites);
-    },
-    runScenario13:function(){
-        this.getRandomSprite('orc');
-        this.getRandomSprite('dragonBlack');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('troll');
-        this.getRandomSprite('dragonBlack');
-        this.getRandomSprite('orge');
-
-        this.getRandomSprite('troll');
-        this.getRandomSprite('redGargoyle');
-        this.getRandomSprite('redGargoyle');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('troll');
-
-        this.arrange(this.sprites);
-    },
-    runScenario14:function(){
-        this.getRandomSprite('orc');
-        this.getRandomSprite('orge');
-        this.getRandomSprite('orc');
-        this.getRandomSprite('orge');
-        this.arrange(this.sprites);
-    },
-
-
-
-    getRandomSprite:function(nameCreate){
+    getSprite:function(nameCreate){
         var sprite;
         sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
         sprite.setState('idle');
 		this.addChild(sprite.batch);
 		this.addChild(sprite);
         sprite.layer = this;
-        this.sprites.push(sprite);
+        return sprite;
 	},
-    arrange:function(sprites){
+    setViewpointCenter:function(point){
+        var centerPoint = cc.p(this.worldSize.width/2, this.worldSize.height/2);
+        var viewPoint = cc.pSub(centerPoint, point);
+
+        if(point.x < centerPoint.x){
+            viewPoint.x = 0;
+        }
+
+        if(point.y < centerPoint.y){
+            viewPoint.y = 0;
+        }
+
+        // while zoomed out, don't adjust the viewpoint
+        this.setPosition(viewPoint);
+
+
+    },
+    arrange:function(){
         //get random position on the bottom portion of the screen
-        var size = cc.Director.getInstance().getWinSize();
+        var size = this.worldSize;
         var teamAX = size.width/4;
         var teamAY = size.height/8;
         var teamBX = size.width - teamAX;
-
-        for (var i =0; i<sprites.length/2;i++){
-            sprites[i].setBasePosition(cc.p(teamAX,teamAY*(i+1)));
-            sprites[i].homeTeam = this.teams['a'];
-            sprites[i].enemyTeam = this.teams['b'];
-            this.teams['a'].push(sprites[i]);
+        var sprite;
+        for (var i =0; i<this.teamASprites.length;i++){
+            sprite = this.getSprite(this.teamASprites[i]);
+            var worldPosition = cc.p(teamAX,teamAY*(i+1));
+            var screenPosition = this.convertToNodeSpace(worldPosition);
+            sprite.setBasePosition(screenPosition);
+            sprite.homeTeam = this.teams['a'];
+            sprite.enemyTeam = this.teams['b'];
+            sprite.team = 'a';
+            this.teams['a'].push(sprite);
+            this.touchTargets.push(sprite);
         }
 
-        var count =0;
-        for (var i =sprites.length/2; i<sprites.length;i++){
-            sprites[i].setBasePosition(cc.p(teamBX,teamAY*(count+1)));
-            sprites[i].setFlipX(true);
-            sprites[i].homeTeam = this.teams['b'];
-            sprites[i].enemyTeam = this.teams['a'];
-            this.teams['b'].push(sprites[i]);
-            count++;
+
+        for (var i =0; i<this.teamBSprites.length;i++){
+            sprite = this.getSprite(this.teamBSprites[i]);
+            sprite.setBasePosition(cc.p(teamBX,teamAY*(i+1)));
+            sprite.setFlipX(true);
+            sprite.homeTeam = this.teams['b'];
+            sprite.enemyTeam = this.teams['a'];
+            sprite.team = 'b';
+            this.teams['b'].push(sprite);
+            this.touchTargets.push(sprite);
         }
 
-        for (var i =0; i<sprites.length/2;i++){
-            sprites[i].team = 'a';
-        }
-
-        for (var i =sprites.length/2; i<sprites.length;i++){
-            sprites[i].team = 'b';
-        }
-
+        this.sprites = this.teams['a'].concat(this.teams['b']);
 
     },
     update:function (dt){
@@ -289,8 +157,20 @@ var ArenaGame = jc.TouchLayer.extend({
         pos.y+=offset;
         return pos;
 
+    },
+    targetTouchHandler:function(type, touch,sprites){
+
+        var point = this.convertToNodeSpace(touch);
+        this.setViewpointCenter(point);
     }
-    //todo: sort sprites by y pos, draw in order
+
+
+    //assume the board is 3x as wide as before - rerender backdrop
+    //team x starts left, team y starts right
+    //game starts totally zoomed out on full scene
+    //determine where the left most and right most charactgers are, zoom in or out until they are just visible
+    //can I make a new widescreen camera in maya for the arena collosseum
+
 
 
 });

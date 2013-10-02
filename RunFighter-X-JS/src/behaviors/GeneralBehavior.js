@@ -141,7 +141,7 @@ GeneralBehavior.prototype.isUnlocked = function(target){
 //lock onto the closest bad guy but use the check function for exceptions
 GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
     var currentlyLocked = undefined;
-    var winSize = cc.Director.getInstance().getWinSize()
+    var winSize = this.getWorldSize();
     var minDistance = winSize.width;
     for (var i =0; i< team.length; i++){
         var sprite = team[i];
@@ -282,9 +282,11 @@ GeneralBehavior.prototype.getRandomFleePosition = function(){
     return this.clamp(destination);
 
 }
-
+GeneralBehavior.prototype.getWorldSize=function(){
+    return this.owner.layer.worldSize;
+}
 GeneralBehavior.prototype.clamp=function(point){
-    var winSize = cc.Director.getInstance().getWinSize();
+    var winSize = this.getWorldSize();
     var mySize = this.owner.getTextureRect();
     var rightLimit = winSize.width - mySize.width;
     var leftLimit = mySize.width;

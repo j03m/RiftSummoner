@@ -1,8 +1,10 @@
+var jc = jc || {};
 var LayerManager = function(){
     this.layers = [];
 }
 
 LayerManager.prototype.push = function(layer){
+    layer.resume();
     if (this.currentLayer){
         this.currentLayer.darken();
         this.currentLayer.pause();
@@ -29,5 +31,5 @@ LayerManager.prototype.pop = function(){
     this.currentLayer.resume();
 }
 
-var jc = jc || {};
+
 jc.layerManager = new LayerManager();

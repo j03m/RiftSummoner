@@ -12,10 +12,10 @@ var MainGame = cc.Layer.extend({
             return false;
         }
     },
-    changeScene:function(key){
+    changeScene:function(key, metaData){         //todo: change to layer manager
         switch(key){
             case 'editdeck':
-                var transition = cc.TransitionSlideInR.create(0.2,EditDeck.scene());
+                var transition = cc.TransitionSlideInR.create(0.2,PanZoomTest.scene());
                 cc.Director.getInstance().replaceScene(transition);
                 break;
             case 'arena':

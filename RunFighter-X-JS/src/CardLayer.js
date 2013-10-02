@@ -48,11 +48,18 @@ var CardLayer = jc.UiElementsLayer.extend({
         this.raiseSelected(this.lastIndex);
         this.slide(this.tableView, this.tableView.getPosition(), cc.p(0,-1000));
         this.done(); //transition everyone out
-        jc.layerManager.pop();
 
+
+    },
+    outTransitionsComplete:function(){
+        jc.layerManager.pop();
     },
     onCancel:function(){
         this.raiseCancel();
+        this.slide(this.tableView, this.tableView.getPosition(), cc.p(0,-1000));
+        this.done(); //transition everyone out
+        jc.layerManager.pop();
+
     },
     selectionCallback: function(index, sprite){
         //todo: should be a global character list
