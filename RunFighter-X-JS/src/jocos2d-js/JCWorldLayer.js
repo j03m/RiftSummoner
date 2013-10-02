@@ -19,24 +19,23 @@ jc.WorldLayer = jc.TouchLayer.extend({
             return false;
         }
     },
-    panToWorldPoint:function(point, rate, doneCallback){
+    panToWorldPoint:function(point, scale, rate, doneCallback){
         var converted = this.convertToViewCenter(point)
-        var action = jc.moveActionWithCallback(converted, rate, doneCallback);
-        action.retain();
-        this.runAction(action);
+        this.doScale(scale, converted, rate, doneCallback);
     },
     fullZoomOut:function(rate, done){
-        this.panToWorldPoint(cc.p(this.worldSize.width/2, this.worldSize.height/2),jc.defaultTransitionTime,function(){});
         var scale = this.getScale(this.worldSize.width,this.worldSize.height);
-        this.doScale(scale, rate, done);
+        var converted = this.convertToViewCenter(cc.p(this.worldSize.width/2, this.worldSize.height/2));
+        var action = jc.PanAndZoom.create(rate, converted, scale.x, scale.y );
+        this.runActionWithCallback(action, done);
     },
     fitTo:function(width,height,rate, done){
         var scale = this.getScale(width,height);
-        this.doScale(scale, rate, done);
+        this.doScale(scale, this.getPosition(), rate, done);
     },
-    doScale:function(scale, rate, callback){
-        var action = cc.ScaleTo.create(rate, scale.x, scale.y);
-        this.runAction(jc.actionWithCallback(action, callback));
+    doScale:function(scale, pos, rate, callback){
+        var action = jc.PanAndZoom.create(rate, pos , scale.x, scale.y );
+        this.runActionWithCallback(action, callback);
     },
     getScale:function(width,height){
         var scaleX = this.winSize.width/width;

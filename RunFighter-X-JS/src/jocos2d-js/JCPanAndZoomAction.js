@@ -4,11 +4,13 @@ jc.PanAndZoom = cc.ActionInterval.extend(/** @lends cc.PanAndZoom# */{
      * @param {cc.Point} position
      * @return {Boolean}
      */
-    initWithDuration:function (duration, position, scaleX, scaleY) {
+    initWithDuration:function (duration, position, sx, sy) {
         if (position.x == undefined || position.y==undefined){
             throw "Position is not a point";
         }
         if (cc.ActionInterval.prototype.initWithDuration.call(this, duration)) {
+            position.x = position.x*sx;
+            position.y = position.y*sy;
             this._endPosition = position;
             this._endScaleX = sx;
             this._endScaleY = (sy != null) ? sy : sx;
@@ -73,6 +75,6 @@ jc.PanAndZoom.create = function (duration, position, scaleX, scaleY) {
     var go = new jc.PanAndZoom();
     go.initWithDuration(duration, position, scaleX, scaleY);
 
-    return moveTo;
+    return go;
 };
 

@@ -332,5 +332,11 @@ jc.TouchLayer = cc.Layer.extend({
         var width = rect.width;
         var vertices = [cc.p(0, 0), cc.p(0, height), cc.p(width, height), cc.p(width, 0)];
         poly.drawPoly(vertices, fill, borderWidth, border);
+    },
+    runActionWithCallback: function(action, callback){
+        var callbackAction = cc.CallFunc.create(callback);
+        var seq = cc.Sequence.create(action, callbackAction);
+        this.runAction(seq);
     }
+
 });

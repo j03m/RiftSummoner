@@ -1,7 +1,7 @@
 var PanZoomTest = jc.WorldLayer.extend({
     init: function() {
         if (this._super(shrine1Png)) {
-           // this.setViewCenter(cc.p(0,0));
+            this.setViewCenter(cc.p(this.worldSize.width/2,this.worldSize.height));
             return true;
         } else {
             return false;
@@ -11,13 +11,15 @@ var PanZoomTest = jc.WorldLayer.extend({
         if (type == jc.touchEnded){
             this.fullZoomOut(1,function(){
                 console.log(" ZOOM OUT DONE! ")
-                this.panToWorldPoint(cc.p(this.worldSize.width,this.worldSize.height), jc.defaultTransitionTime, function(){
-                    console.log(" PAN DONE! ");
-                }.bind(this));
-                this.fitTo(this.worldSize.width/4, this.worldSize.height/4,jc.defaultTransitionTime, function(){
-                    console.log(" ZOOM IN DONE! ");
-                    this.panToWorldPoint(cc.p(0,0), jc.defaultTransitionTime, function(){  });
-                }.bind(this));
+//                this.panToWorldPoint(cc.p(this.worldSize.width,this.worldSize.height), jc.defaultTransitionTime, function(){
+//                    console.log(" PAN DONE! ");
+//                }.bind(this));
+//                this.fitTo(this.worldSize.width/4, this.worldSize.height/4,jc.defaultTransitionTime, function(){
+//                    console.log(" ZOOM IN DONE! ");
+//                    this.panToWorldPoint(cc.p(0,0), jc.defaultTransitionTime, function(){  });
+//                }.bind(this));
+                this.fitTo(this.worldSize.width/4, this.worldSize.height/4, jc.defaultTransitionTime, function(){});
+
             }.bind(this));
         }
 
