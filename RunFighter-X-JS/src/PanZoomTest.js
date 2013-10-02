@@ -9,7 +9,7 @@ var PanZoomTest = jc.WorldLayer.extend({
     },
     targetTouchHandler:function(type){
         if (type == jc.touchEnded){
-            this.fullZoomOut(1,function(){
+            this.fullZoomOut(jc.defaultTransitionTime,function(){
                 console.log(" ZOOM OUT DONE! ")
 //                this.panToWorldPoint(cc.p(this.worldSize.width,this.worldSize.height), jc.defaultTransitionTime, function(){
 //                    console.log(" PAN DONE! ");
@@ -18,7 +18,10 @@ var PanZoomTest = jc.WorldLayer.extend({
 //                    console.log(" ZOOM IN DONE! ");
 //                    this.panToWorldPoint(cc.p(0,0), jc.defaultTransitionTime, function(){  });
 //                }.bind(this));
-                this.fitTo(this.worldSize.width/4, this.worldSize.height/4, jc.defaultTransitionTime, function(){});
+                this.fitTo(this.worldSize.width/4, this.worldSize.height/4, jc.defaultTransitionTime, function(){
+                    this.panToWorldPoint(cc.p(20,20),this.getScaleOne(), jc.defaultTransitionTime,function(){});
+
+                }.bind(this));
 
             }.bind(this));
         }

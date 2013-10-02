@@ -43,6 +43,9 @@ jc.WorldLayer = jc.TouchLayer.extend({
         return {"x":scaleX, "y":scaleY};
 
     },
+    getScaleOne:function(){
+        return {"x":1, "y":1};
+    },
     convertToViewCenter:function(point){
         jc.cap(point, this.worldBoundary);
         var pointAug = cc.pMult(point, -1);
