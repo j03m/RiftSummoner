@@ -100,18 +100,19 @@ var EditDeck = jc.UiElementsLayer.extend({
                 "gridCells":{
                     "isGroup":true,
                     "type":"grid",
-                    "cols":5,
+                    "cols":3,
                     "cell":7,
                     "anchor":['bottom'],
                     "padding":{
-                        "top":-35
+                        "top":-35,
+                        "left":35
                     },
                     "itemPadding":{
-                        "left":5,
+                        "left":10,
                         "top":5
                     },
                     "size":{ "width":90, "height":90},
-                    "itemSize":{ "width":15, "height":20},
+                    "itemSize":{ "width":15, "height":15},
                     "input":true,
                     "members":[
                         {
@@ -121,31 +122,30 @@ var EditDeck = jc.UiElementsLayer.extend({
                             "sprite":"frame 20.png"
                         }
                     ],
-                    "membersTotal":15
+                    "membersTotal":12
                 },
-                "bottomButtons":{
+                "doneCancel":{
                     "isGroup":true,
                     "type":"line",
                     "cell":2,
                     "size":{ "width":33, "height":10},
                     "anchor":['right'],
                     "padding":{
-                        "left":10
+                        "left":80,
+                        "top":20
                     },
                     "members":[
                         {
                             "type":"button",
-                            "main":"wood blank.png",
-                            "pressed":"black wood.png",
-                            "touchDelegateName":"onDone",
-                            "text":"done"
+                            "main":"check.png",
+                            "pressed":"check1.png",
+                            "touchDelegateName":"onDone"
                         },
                         {
                             "type":"button",
-                            "main":"wood blank.png",
-                            "pressed":"black wood.png",
-                            "touchDelegateName":"onCancel",
-                            "text":"cancel"
+                            "main":"close.png",
+                            "pressed":"close1.png",
+                            "touchDelegateName":"onCancel"
                         }
                     ]
                 }

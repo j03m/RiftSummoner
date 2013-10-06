@@ -1,29 +1,28 @@
 var PanZoomTest = jc.WorldLayer.extend({
     init: function() {
         if (this._super(shrine1Png)) {
-            this.setViewCenter(cc.p(this.worldSize.width/2,this.worldSize.height));
+            this.firstTouch = true;
             return true;
         } else {
             return false;
         }
     },
-    targetTouchHandler:function(type){
-        if (type == jc.touchEnded){
-            this.fullZoomOut(jc.defaultTransitionTime,function(){
-                console.log(" ZOOM OUT DONE! ")
-//                this.panToWorldPoint(cc.p(this.worldSize.width,this.worldSize.height), jc.defaultTransitionTime, function(){
-//                    console.log(" PAN DONE! ");
-//                }.bind(this));
-//                this.fitTo(this.worldSize.width/4, this.worldSize.height/4,jc.defaultTransitionTime, function(){
-//                    console.log(" ZOOM IN DONE! ");
-//                    this.panToWorldPoint(cc.p(0,0), jc.defaultTransitionTime, function(){  });
-//                }.bind(this));
-                this.fitTo(this.worldSize.width/4, this.worldSize.height/4, jc.defaultTransitionTime, function(){
-                    this.panToWorldPoint(cc.p(20,20),this.getScaleOne(), jc.defaultTransitionTime,function(){});
-
-                }.bind(this));
-
-            }.bind(this));
+    targetTouchHandler:function(type, touch){
+        if (type == jc.touchEnded && this.firstTouch){
+            //this.fullZoomOut(jc.defaultTransitionTime,function(){
+//            this.panToWorldPoint(cc.p(900,900), this.getScale8x(), jc.defaultTransitionTime, function(){
+//               this.firstTouch = false;
+//            }.bind(this));
+        }else if (type == jc.touchEnded && !this.firstTouch){
+            console.log(touch);
+            var world = this.screenToWorld(touch);
+            console.log(world);
+            var screen = this.worldToScreen(world)
+            console.log(screen);
+            //screen to world
+//            var world = this.screenToWorld(touch)
+//            console.log(world);
+//            console.log(this.worldToScreen(world))
         }
 
     }

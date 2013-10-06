@@ -152,8 +152,8 @@ var spriteDefs = {
 	"forestElf": {
 		"name": "forestElf",
 		"gameProperties": {
-			"MaxHP": 200,
-			"damage": 10,
+			"MaxHP": 100,
+			"damage": 20,
 			"speed": 55,
 			"actionDelays": {
 				"attack": 0.5
@@ -248,8 +248,8 @@ var spriteDefs = {
 	"goldElf": {
 		"name": "goldElf",
 		"gameProperties": {
-			"MaxHP": 200,
-			"damage": 10,
+			"MaxHP": 100,
+			"damage": 20,
 			"speed": 55,
 			"actionDelays": {
 				"attack": 0.5
@@ -687,7 +687,7 @@ var spriteDefs = {
 			"MaxHP": 100,
 			"speed": 100,
 			"damage": 10,
-			"heal": 25,
+			"heal": 100,
 			"actionDelays": {
 				"attack": 1,
 				"heal": 1
@@ -748,8 +748,8 @@ var spriteDefs = {
 	"voidElf": {
 		"name": "voidElf",
 		"gameProperties": {
-			"MaxHP": 200,
-			"damage": 10,
+			"MaxHP": 100,
+			"damage": 20,
 			"speed": 55,
 			"actionDelays": {
 				"attack": 0.5

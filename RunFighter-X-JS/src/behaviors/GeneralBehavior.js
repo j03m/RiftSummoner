@@ -66,6 +66,19 @@ GeneralBehavior.prototype.withinRadius = function(toPoint){
     return this.withinThisRadius(toPoint, this.owner.getTargetRadius(), this.owner.getTargetRadiusY()/8);
 }
 
+GeneralBehavior.prototype.whosCloser = function(first, second){
+    var vector1 = this.getVectorTo(first.getBasePosition(), this.owner.getBasePosition());
+    var vector2 =  this.getVectorTo(second.getBasePosition(), this.owner.getBasePosition());
+    if (vector2.distance < vector1.distance){
+        return -1;
+    }
+    if (vector1.distance < vector2.distance){
+        return 1;
+    }
+    return 0;
+
+}
+
 GeneralBehavior.prototype.withinThisRadius = function(toPoint, xRad, yRad){
     var feet = this.owner.getBasePosition();
     var vector = this.getVectorTo(toPoint, feet);
@@ -337,7 +350,7 @@ GeneralBehavior.prototype.hitLogic = function(){
         this.locked.behavior.setState('dead', 'dead');
     }else{
         this.locked.behavior.damager = this.owner;
-        this.locked.behavior.setState('damage', undefined); //damage shouldn't interupt whatever is happening.
+        //this.locked.behavior.setState('damage', undefined); //damage shouldn't interupt whatever is happening.
     }
 
 }
@@ -370,11 +383,11 @@ GeneralBehavior.prototype.handleState = function(dt){
 
 GeneralBehavior.prototype.handleDamage = function(dt){
 
-    if (this.damager && this.damager.isAlive() && this.damager != this.locked){
-        this.setState('idle', 'idle'); //give us a chance to decide to attack the damager, or someone else nearby
-    }else{
-        this.resume();
-    }
+//    if (this.damager && this.damager.isAlive() && this.damager != this.locked){
+//        this.resume();
+//    }else{
+//        this.resume();
+//    }
 
 
     //otherwise do nothing and recheck
@@ -385,12 +398,12 @@ GeneralBehavior.prototype.handleFight = function(dt){
     //is my target alive?
     var state= this.getState();
     if (!this.locked && state.anim.indexOf('attack')==-1){
-        this.setState('idle', 'idle');
+        this.setState('idle', state.anim);
         return;
     }
 
     if (!this.locked.isAlive() && state.anim.indexOf('attack')==-1){
-        this.setState('idle', 'idle');
+        this.setState('idle', state.anim);
         return;
     }
 
@@ -403,10 +416,6 @@ GeneralBehavior.prototype.handleFight = function(dt){
 
     //if time is past the actiondelay and im not in another animation other than idle or damage
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1){
-        if (this.owner.name == 'orge'){
-            console.log('what?');
-        }
-
         this.setAttackAnim('fighting');
         this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
         this.lastAttack = 0;
@@ -437,6 +446,23 @@ GeneralBehavior.prototype.setAttackAnim = function(state){
 
 GeneralBehavior.prototype.handleIdle = function(dt){
     //lock on who-ever is closest
+    if (this.locked && this.damager && this.locked!=this.damager){ //if im being attacked and I'm locked, and they are not the same person
+        var closer = this.whosCloser(this.locked, this.damager);
+        if (closer == 1){
+            this.damager = undefined; //stop worrying about damage, stay on target
+        }
+
+        if (closer == -1){ //switch targets
+            this.locked = this.damager;
+            this.damager = undefined;
+        }
+
+        if (closer == 0){
+            //don't change anything for now, but check again later.
+        }
+
+    }
+
     if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){
         this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam);
     }

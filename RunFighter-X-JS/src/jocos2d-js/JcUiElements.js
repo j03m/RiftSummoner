@@ -217,6 +217,10 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 throw "supplied:" + config.touchDelegateName + " for button click but it doesn't exist.";
             }
             window.initWithDefinition(config,this[config.touchDelegateName].bind(this));
+            if (config.scale){
+                window.setScaleX(config.scale/100);
+                window.setScaleY(config.scale/100);
+            }
         }
         return window;
     },
@@ -236,7 +240,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         }
     },
     initGrid:function(name,config, parent, rows, cols){
-        var total = config.membersTotal | config.members.length;
+        var total = config.membersTotal || config.members.length;
         var size = parent.getContentSize();
         var itemSize;
         if (config.itemSize){

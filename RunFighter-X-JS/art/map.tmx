@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="6" height="6" tilewidth="155" tileheight="155">
- <tileset firstgid="1" name="shrine1" tilewidth="150" tileheight="150">
+ <tileset firstgid="1" name="map" tilewidth="150" tileheight="150">
   <image source="shrine1.png" width="900" height="900"/>
- </tileset>
- <tileset firstgid="37" name="shrine2" tilewidth="150" tileheight="150">
-  <image source="shrine2.png" width="900" height="900"/>
  </tileset>
  <layer name="Tile Layer 1" width="6" height="6">
   <data encoding="base64" compression="zlib">
-   eJwtwzkOgkAAAMAlkUMEBTnERhrfQCWHjfz/R0zhJBOFECY/noxNTM08m3uxsPTqzcrau42tnb0PB58urm5+fTk6///cfXsA20wEGQ==
+   eJwNw4kSQlAAAMAnlChypCRH8f/faHdmoxDCydjE1LMXM6/mFt68W1r5sLaxtfNp78u3gx9Hv07OLq7+/Lu5ewCEYAKb
   </data>
  </layer>
 </map>

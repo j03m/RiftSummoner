@@ -9,12 +9,12 @@ jc.PanAndZoom = cc.ActionInterval.extend(/** @lends cc.PanAndZoom# */{
             throw "Position is not a point";
         }
         if (cc.ActionInterval.prototype.initWithDuration.call(this, duration)) {
-            if (sx >1 ){
-                sx = 1;
-            }
-            if (sy>1){
-                sy = 1;
-            }
+//            if (sx >1 ){
+//                sx = 1;
+//            }
+//            if (sy>1){
+//                sy = 1;
+//            }
             position.x = position.x*sx;
             position.y = position.y*sy;
             this._endPosition = position;

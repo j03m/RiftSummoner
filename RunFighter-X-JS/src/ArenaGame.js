@@ -38,37 +38,73 @@ var ArenaGame = jc.WorldLayer.extend({
             this.teamASprites.push(name);
         }
 
-        this.teamAFormation = jc.formations["4x3"];
+        this.teamAFormation = jc.formations["4x4x4"];
 
 
-        this.teamBSprites.push('blueKnight');
-        this.teamBSprites.push('orge');
-        this.teamBSprites.push('fireKnight');
-        this.teamBSprites.push('dragonRed');
-        this.teamBSprites.push('dragonBlack');
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('goldElf');
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('goldElf');
+
         this.teamBSprites.push('orc');
-        this.teamBSprites.push('wizard');
-        this.teamBFormation = jc.formations["4x3"];
+        this.teamBSprites.push('orc');
+        this.teamBSprites.push('orc');
+        this.teamBSprites.push('orc');
+
+        this.teamBSprites.push('orc');
+        this.teamBSprites.push('shadowKnight');
+        this.teamBSprites.push('orge');
+        this.teamBSprites.push('orge');
+        this.teamBFormation = jc.formations["4x4x4"];
         this.setUp();
     },
     runScenario0:function(){
-        this.teamASprites.push('goblin');
-        this.teamASprites.push('spider');
-        this.teamASprites.push('wizard');
-        this.teamASprites.push('snakeThing');
-        this.teamASprites.push('wizard');
-        this.teamASprites.push('spider');
-        this.teamASprites.push('orc');
-        this.teamAFormation = jc.formations["4x3"];
 
-        this.teamBSprites.push('blueKnight');
+
+        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('shadowKnight');
+
+        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('shadowKnight');
+
+        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('shadowKnight');
+
+        this.teamAFormation = jc.formations["4x4x4"];
+
+
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('goldElf');
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('goldElf');
+
+        this.teamBSprites.push('orc');
+        this.teamBSprites.push('orc');
+        this.teamBSprites.push('orc');
+        this.teamBSprites.push('orc');
+
+        this.teamBSprites.push('orc');
         this.teamBSprites.push('orge');
-        this.teamBSprites.push('fireKnight');
-        this.teamBSprites.push('dragonRed');
-        this.teamBSprites.push('dragonBlack');
-        this.teamBSprites.push('orc');
-        this.teamBSprites.push('orc');
-        this.teamBFormation = jc.formations["4x3"];
+        this.teamBSprites.push('orge');
+        this.teamBSprites.push('orge');
+
+
+
+        this.teamBFormation = jc.formations["4x4x4"];
+
+
+//        this.teamASprites.push('fireKnight');
+//        this.teamBSprites.push('shadowKnight');
+//
+//        this.teamBFormation = jc.formations["4x3"];
+//        this.teamAFormation = jc.formations["4x3"];
+
         this.setUp();
     },
     getSprite:function(nameCreate){
@@ -168,47 +204,73 @@ var ArenaGame = jc.WorldLayer.extend({
     update:function (dt){
         //pulse each sprite
         var minX=this.worldSize.width;
-        var maxX=this.worldSize.width*-1;
+        var maxX=0;
         var minY=this.worldSize.height;
-        var maxY=this.worldSize.height*-1;
+        var maxY=0;
+        var shouldScale = false;
         if (this.started){
             for (var i =0; i<this.sprites.length;i++){
-                var position = this.sprites[i].getPosition();
-                var worldPos = this.screenToWorld(position);
-                if (worldPos.x > maxX){
-                    maxX = position.x;
-                }
+                if (this.sprites[i].isAlive() && this.sprites[i].isVisible()){
+                    var position = this.sprites[i].getPosition(); //where am i in the layer
+                    var shouldScale = true;
+                    var tr = this.sprites[i].getTextureRect();
+                    var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
+                    var worldPos = this.screenToWorld(nodePos); //where is that in the world?
+                    var compareMaxX = worldPos.x+tr.width;
+                    var compareMinX = worldPos.x-tr.width;
+                    var compareMaxY = worldPos.y+tr.height;
+                    var compareMinY = worldPos.y-tr.height;
+                    if (compareMaxX > maxX){
+                        maxX = compareMaxX;
+                    }
 
-                if (worldPos.x < minX){
-                    minX = position.x;
-                }
+                    if (compareMinX < minX){
+                        minX = compareMinX;
+                    }
 
-                if (worldPos.y > maxY){
-                    maxY = position.y;
-                }
+                    if (compareMaxY > maxY){
+                        maxY = compareMaxY;
+                    }
 
-                if (worldPos.y < minY){
-                    minY = position.y;
+                    if (compareMinY < minY){
+                        minY = compareMinY;
+                    }
                 }
-
                 this.sprites[i].think(dt);
             }
+            var scaleLimit = 50;
+            if (!this.scaleGate && shouldScale){
 
-            if (!this.scaleGate){
-                this.scaleGate = true;
+
                 var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
-                var nodeMid = this.convertToItemPosition(characterMid);
                 var scale = this.getScale(maxX-minX, maxY-minY);
-                this.panToWorldPoint(nodeMid, scale, jc.defaultTransitionTime, function(){
-                    this.scaleGate = false;
-                }.bind(this));
+
+                //todo: based on characterMid, select camera 1-9
+                //todo: based on scale, select right scale ratio
+
+                //smooth
+                if (!this.lastPan){
+                    this.lastPan = characterMid;
+                    var diff = cc.p(scaleLimit+1,scaleLimit+1);
+                }else{
+                    var diff = cc.pSub(this.lastPan, characterMid);
+                }
+                if (Math.abs(diff.x) > scaleLimit || Math.abs(diff.y)>scaleLimit){
+
+                    this.lastPan = characterMid;
+                    this.scaleGate = true;
+                    this.panToWorldPoint(characterMid, scale, jc.defaultTransitionTime, function(){
+                        this.scaleGate = false;
+                    }.bind(this));
+                }
+
             }
         }
     },
     doBlood:function(sprite){
-        var flower = cc.ParticleSystem.create(bloodPlist);
-        this.addChild( flower );
-        flower.setPosition( this.getRandomBloodSpot(sprite));
+//        var flower = cc.ParticleSystem.create(bloodPlist);
+//        this.addChild( flower );
+//        flower.setPosition( this.getRandomBloodSpot(sprite));
     },
     getRandomBloodSpot:function(sprite){
         var pos = sprite.getPosition();    //explicity use getPosition, not getBasePoisition here
