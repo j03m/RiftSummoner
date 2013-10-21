@@ -14,11 +14,6 @@ var DefenderBehavior = function(sprite){
 
 DefenderBehavior.prototype.handleSeek = function(dt){
 
-    if (!this.support){
-        this.setState('idle', 'idle');
-        return;
-    }
-
     //glade would not approve :(
     if (this.support && this.support.behavior.damager && this.support.behavior.damager.isAlive()){
         this.locked = this.support.behavior.damager;
@@ -32,9 +27,12 @@ DefenderBehavior.prototype.handleSeek = function(dt){
         return;
     }
 
-    if(!this.targetWithinSeekRadius(this.support)){
-        this.setState('move', 'move');
+    if (this.support){
+        if(!this.targetWithinSeekRadius(this.support)){
+            this.setState('move', 'move');
+        }
     }
+
 
 }
 

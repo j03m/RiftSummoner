@@ -1,3 +1,8 @@
+
+//get blob from redis
+//persist blob
+
+
 var CardLayer = jc.UiElementsLayer.extend({
     cells:50,
     cellWidth:undefined,
@@ -15,7 +20,7 @@ var CardLayer = jc.UiElementsLayer.extend({
             });
 
             this.name = "CardLayer";
-            this.initFromConfig(this.windowConfig);
+            this.initFromConfig(CardLayerConf.windowConfig);
             this.raiseSelected = selectDelegate;
             this.raiseCancel = cancelDelegate;
             return true;
@@ -89,8 +94,28 @@ var CardLayer = jc.UiElementsLayer.extend({
         this.char.setDisplayFrame(frame);
         var f2 =  cc.FadeIn.create(jc.defaultTransitionTime/4, 255);
         this.char.runAction(f2);
+        this.updateStats(this.nextEntry);
+
     },
-    updateStats:function(){
+    updateStats:function(entry){
+        this.labelNameValue.setString(spriteDefs[entry.name].formalName);
+        this.labelNameValue.setContentSize(this.labelNameValue.getTexture().getContentSize());
+        this.labelDamageValue.setString(spriteDefs[entry.name].gameProperties.damage);
+        this.labelLifeValue.setString(spriteDefs[entry.name].gameProperties.MaxHP);
+        this.labelSpeedValue.setString(spriteDefs[entry.name].gameProperties.speed);
+        var rad = spriteDefs[entry.name].gameProperties.targetRadius;
+        if (rad < 0){
+            rad = "Hand to Hand";
+        }
+        this.labelRangeValue.setString(rad);
+        var type = jc.getUnitType(spriteDefs[entry.name].unitType).title;
+        var element = jc.getElementType(spriteDefs[entry.name].elementType);
+
+        this.labelUnitTypeValue.setString(type);
+        this.labelElementTypeValue.setString(element);
+        this.labelSpecialValue.setString(spriteDefs[entry.name].special);
+
+
 
     },
     getDisplaySprites: function(){
@@ -99,12 +124,11 @@ var CardLayer = jc.UiElementsLayer.extend({
             var sprite = new cc.Sprite();
             sprite.initWithSpriteFrameName("lock.png");
             var pic = jc.getCharacterPortrait(this.playerBlob.myguys[i]);
-            var picSprite = new cc.Sprite();
-            picSprite.initWithSpriteFrameName(pic);
-            sprite.addChild(picSprite);
-            this.scaleTo(picSprite, sprite);
-            this.centerThis(picSprite, sprite);
-
+            sprite.pic = new cc.Sprite();
+            sprite.pic.initWithSpriteFrameName(pic);
+            sprite.addChild(sprite.pic);
+            this.scaleTo(sprite.pic, sprite);
+            this.centerThis(sprite.pic, sprite);
             returnme.push(sprite);
         }
 
@@ -125,123 +149,279 @@ var CardLayer = jc.UiElementsLayer.extend({
     },
     targetTouchHandler:function(type, touch, sprites){
 
-    },
-    windowConfig:{
-        "scrollFrame":{
-            "cell":1,
-            "type":"scale9",
-            "anchor":['left'],
-            "transitionIn":"bottom",
-            "transitionOut":"bottom",
-            "size":{ "width":100, "height":20},
-            "scaleRect":jc.UiConf.frame19Rect,
-            "sprite":"frame 19.png",
-            "padding":{
-                "top":7
-            },
-            "z":0
+    }
+});
+
+
+
+var CardLayerConf={};
+CardLayerConf.font = "Helvetica";
+CardLayerConf.fontSize = 12.0;
+CardLayerConf.color = cc.c4f(255.0/255.0, 255.0/255.0, 255.0/255.0, 1.0);
+CardLayerConf.labelWidth = 75;
+CardLayerConf.labelValueWidth = 175;
+CardLayerConf.labelHeight = 15;
+
+CardLayerConf.windowConfig={
+    "scrollFrame":{
+        "cell":1,
+        "type":"scale9",
+        "anchor":['left'],
+        "transitionIn":"bottom",
+        "transitionOut":"bottom",
+        "size":{ "width":100, "height":20},
+        "scaleRect":jc.UiConf.frame19Rect,
+        "sprite":"frame 19.png",
+        "padding":{
+            "top":7
         },
-        "portraitFrame":{
-            "cell":7,
-            "anchor":['top','left'],
-            "type":"scale9",
-            "transitionIn":"right",
-            "transitionOut":"right",
-            "scaleRect":jc.UiConf.frame19Rect,
-            "size":{ "width":100, "height":80},
-            "sprite":"frame 19.png",
-            "padding":{
-              "left":-7
+        "z":0
+    },
+    "portraitFrame":{
+        "cell":7,
+        "anchor":['top','left'],
+        "type":"scale9",
+        "transitionIn":"right",
+        "transitionOut":"right",
+        "scaleRect":jc.UiConf.frame19Rect,
+        "size":{ "width":100, "height":80},
+        "sprite":"frame 19.png",
+        "padding":{
+            "left":-7
+        },
+        "kids":{
+            "decor":{
+                "cell":7,
+                "anchor":['top','left'],
+                "type":"sprite",
+                "transitionIn":"top",
+                "transitionOut":"top",
+                "sprite":"decor.png",
+                "padding":{
+                    "left":-50
+                },
+                "z":5,
+                "scale":70
             },
-            "kids":{
-                "decor":{
-                    "cell":7,
-                    "anchor":['top','left'],
-                    "type":"sprite",
-                    "transitionIn":"top",
-                    "transitionOut":"top",
-                    "sprite":"decor.png",
-                    "padding":{
-                        "left":-30
-                    },
-                    "z":5,
-                    "scale":70
-                },
-                "portraitWindow":{
-                    "cell":7,
-                    "anchor":['top', 'left'],
-                    "type":"scale9",
-                    "transitionIn":"top",
-                    "transitionOut":"top",
-                    "size":{"width":45, "height":70},
-                    "scaleRect":jc.UiConf.frame20Rect,
-                    "sprite":"frame 20.png",
-                    "padding":{
-                        "top":40,
-                        "left":35
-                    }
-                },
-                "stats":{
-                    "isGroup":true,
-                    "type":"stack",
-                    "cell":9,
-                    "size":{ "width":33, "height":10},
-                    "anchor":['left'],
-                    "padding":{
-                        "top":30,
-                        "left":-30
-                    },
-                    "members":[
-                        {
-                            "type":"sprite",
-                            "sprite":"sl 1.png"
-                        },
-                        {
-                            "type":"sprite",
-                            "sprite":"sl2.png"
-
-                        },
-                        {
-                            "type":"sprite",
-                            "sprite":"sl3.png"
-
-                        },
-                        {
-                            "type":"sprite",
-                            "sprite":"sl4.png"
-
-                        }
-                    ]
-                },
-                "doneCancel":{
-                    "isGroup":true,
-                    "type":"line",
-                    "cell":2,
-                    "size":{ "width":33, "height":10},
-                    "anchor":['right'],
-                    "padding":{
-                        "left":80,
-                        "top":0
-                    },
-                    "members":[
-                        {
-                            "type":"button",
-                            "main":"check.png",
-                            "pressed":"check1.png",
-                            "touchDelegateName":"onDone"
-                        },
-                        {
-                            "type":"button",
-                            "main":"close.png",
-                            "pressed":"close1.png",
-                            "touchDelegateName":"onCancel"
-                        }
-                    ]
+            "portraitWindow":{
+                "cell":7,
+                "anchor":['top', 'left'],
+                "type":"scale9",
+                "transitionIn":"top",
+                "transitionOut":"top",
+                "size":{"width":35, "height":60},
+                "scaleRect":jc.UiConf.frame20Rect,
+                "sprite":"frame 20.png",
+                "padding":{
+                    "top":40,
+                    "left":35
                 }
+            },
+            "stats":{
+                "isGroup":true,
+                "type":"grid",
+                "cell":8,
+                "cols":2,
+                "size":{ "width":33, "height":CardLayerConf.labelHeight},
+                "padding":{
+                    "top":10,
+                    "left":5
+
+                },
+                "members":[
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"lableName",
+                        "text":"Name:",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelNameValue",
+                        "text":"Joe is cool",
+                        "width":CardLayerConf.labelValueWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelDamage",
+                        "text":"Damage:",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelDamageValue",
+                        "text":"10",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelLife",
+                        "text":"Life:",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelLifeValue",
+                        "text":"10",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelSpeed",
+                        "text":"Speed:",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelSpeedValue",
+                        "text":"10",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelRange",
+                        "text":"Range:",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelRangeValue",
+                        "text":"10",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelUnitType",
+                        "text":"Unit Type:",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelUnitTypeValue",
+                        "text":"10",
+                        "width":CardLayerConf.labelValueWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelElementType",
+                        "text":"Element:",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelElementTypeValue",
+                        "text":"10",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelSpecial",
+                        "text":"Special:",
+                        "width":CardLayerConf.labelWidth,
+                        "height":CardLayerConf.labelHeight
+                    },
+                    {
+                        "type":"label",
+                        "font":CardLayerConf.font,
+                        "fontSize":CardLayerConf.fontSize,
+                        "color":CardLayerConf.color,
+                        "name":"labelSpecialValue",
+                        "text":"10",
+                        "width":CardLayerConf.labelValueWidth,
+                        "height":CardLayerConf.labelHeight
+                    }
+
+
+
+                ]
+            },
+            "doneCancel":{
+                "isGroup":true,
+                "type":"line",
+                "cell":2,
+                "size":{ "width":33, "height":CardLayerConf.labelHeight},
+                "anchor":['right'],
+                "padding":{
+                    "left":80,
+                    "top":0
+                },
+                "members":[
+                    {
+                        "type":"button",
+                        "main":"check.png",
+                        "pressed":"check1.png",
+                        "touchDelegateName":"onDone"
+                    },
+                    {
+                        "type":"button",
+                        "main":"close.png",
+                        "pressed":"close1.png",
+                        "touchDelegateName":"onCancel"
+                    }
+                ]
             }
         }
     }
-});
+}
 
 jc.getCharacterPortrait=function(entry){
     //TODO: Mod to correct portrait - alive vs hurt based on state
@@ -260,6 +440,8 @@ jc.getCharacterPortrait=function(entry){
     }
 
 }
+
+
 
 
 

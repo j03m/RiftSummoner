@@ -50,6 +50,7 @@ HealerBehavior.prototype.handleHealerIdle = function(dt){
 
         if (this.support.gameObject.hp>0 && this.support.gameObject.hp < this.support.gameObject.MaxHP){
             //needs a heal.
+            var state = this.getState();
             this.setState('healing', 'attack');
         }
 
@@ -90,6 +91,11 @@ HealerBehavior.prototype.handleHeal = function(dt){
         return;
     }
 
+    if (this.support.gameObject.hp >= this.support.gameObject.MaxHP){
+        //does not needs a heal.
+        this.setState('idle', 'idle');
+    }
+
     //get the action delay for attacking
     var actionDelay = this.owner.gameObject.actionDelays['heal'];
     var damageDelay = this.owner.gameObject.effectDelays['heal'];
@@ -110,11 +116,11 @@ HealerBehavior.prototype.handleHeal = function(dt){
     //if time is past the actiondelay and im not in another animation other than idle or damage
     if (this.lastHeal >= actionDelay && state.anim != 'attack'){
         this.owner.scheduleOnce(this.healLogic.bind(this), damageDelay);
-        this.setState('idle', 'attack');
+        this.setState('healing', 'attack');
         this.lastHeal = 0;
     }else{
         this.lastHeal+=dt;
-        this.setState('idle', state.anim);
+        this.setState('healing', state.anim);
 
     }
 }

@@ -3,22 +3,23 @@ jc.playerBlob = {
     grid:[1],
     myguys:[
         {   "name":"wizard",
-            "status":"alive"
+            "number":3
         },
         {   "name":"orc",
-            "status":"alive"
+            "number":4
         },
         {   "name":"orge",
-            "status":"down"
+            "number":1
+
         },
         {   "name":"troll",
-            "status":"alive"
+            "number":1
         },
         {   "name":"goldKnight",
-            "status":"alive"
+            "number":1
         },
         {   "name":"goblin",
-            "status":"alive"
+            "number":1
         }
 ]
 
@@ -167,7 +168,7 @@ EditDeck.scene = function() {
     return jc.editDeckScene;
 };
 
-//            label = cc.LabelTTF.create(strValue, "Helveticac", 20.0);
+//            label = cc.LabelTTF.create(strValue, "Helvetica", 20.0);
 //            label.setPosition(cc.p(0,0));
 //            label.setAnchorPoint(cc.p(0,0));
 //            label.setTag(123);

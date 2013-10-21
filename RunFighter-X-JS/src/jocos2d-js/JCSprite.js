@@ -246,7 +246,7 @@ jc.Sprite = cc.Sprite.extend({
         if (this.animations[this.state].callback){
             call = this.animations[this.state].callback;
         }
-        this.setState(this.nextState);
+        //this.setState(this.nextState);
         if (call){
             call(this.nextState);
         }
@@ -451,6 +451,10 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
 
     //get details for sprite def
     var character = allDefs[def];
+
+    if (!character){
+        throw "Character not found: " + def;
+    }
 
     //make a sprite
     var sprite = new jc.Sprite();

@@ -221,10 +221,18 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 window.setScaleX(config.scale/100);
                 window.setScaleY(config.scale/100);
             }
+        }else if (config.type == "label"){
+            //var strInfo = arg[0] + "", fontName, fontSize, dimensions, hAlignment, vAlignment;
+            var lblSize = cc.size(config.width, config.height);
+            window = cc.LabelTTF.create(config.text, config.font, config.fontSize, lblSize, cc.TEXT_ALIGNMENT_LEFT);
+            window.setColor(config.color);
         }
         return window;
     },
     initFromGroupConfig:function(name, config, parent){
+        if (!config.members){
+            return;
+        }
         var total = config.membersTotal | config.members.length;
 
         switch(config.type){
@@ -273,8 +281,14 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
 
             //keep track
             parent.addChild(window);
-            window.name=name+i;
-            this[name]=window;
+            var instanceName;
+            if (!member.name){
+                instanceName = name+i;
+            }else{
+                instanceName = member.name;
+            }
+            window.name=instanceName;
+            this[instanceName]=window;
 
 
             if (config.input){
@@ -291,6 +305,10 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 }
             }
             var gridPos = cc.p(x,y);
+
+            if (member.type == 'label'){
+                gridPos.x+=window.getContentSize().width/2;
+            }
 
             this.windowConfigs.push({"window":window, "config":member, "position":gridPos});
 

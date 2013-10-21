@@ -1,4 +1,10 @@
 TO BETA:
+
+maya -
+    set camera
+    set texture
+    render
+
 Landing page - copy frontier rush
 Backdrop
 loading door close/open
@@ -11,6 +17,22 @@ missiles + effects
 	fire - scale up/down
 	bomb - sprite
 	blood - particle
+	asset pipe fixed
+    fireball (different colors)
+    explosion
+    poison
+    arrow
+    burning
+    txt
+    healing
+    dragon fire
+    area radius
+    arrow
+    background
+    ui - style based on my wireframes
+    	window
+    colored shadows (red vs blue)
+
 
 formations and start positions
 	formation swipe to change

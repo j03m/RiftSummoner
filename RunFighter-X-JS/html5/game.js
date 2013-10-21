@@ -71,6 +71,7 @@ var MW = MW || {};
             '../src/CardLayer.js',
             '../src/EditDeck.js',
             '../src/ArenaGame.js',
+            '../src/AnimationTest.js',
             '../src/Main.js',
 			'gameHtml5.js'
     

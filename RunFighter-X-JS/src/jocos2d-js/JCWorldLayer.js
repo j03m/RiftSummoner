@@ -19,7 +19,8 @@ jc.WorldLayer = jc.TouchLayer.extend({
             var scaleX = 0;
             var aspectRatio = this.winSize.width/this.winSize.height;
             this.scaleTable = [];
-            var i = 1.0;
+            var i = 1;
+            var inc = 0.2;
             while(scaleX <= 1){
                 var myScaleX = 0;
                 scaleX = parseFloat((this.winSize.width/(this.worldSize.width/i)).toFixed(2));
@@ -31,7 +32,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
                 }
 
                 this.scaleTable.push({x:myScaleX, y:myScaleX/aspectRatio});
-                i+=1;
+                i+=inc;
             }
             //this.scaleTable.push({x:1, y:1}); //make sure 1:1 is in there
             return true;
@@ -44,7 +45,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
         console.log("Scale:" + JSON.stringify(scale));
         var okScale = this.getClosestCorrectScale(scale);
         console.log("Corrected Scale:" + JSON.stringify(okScale));
-        this.doScale(scale, converted, rate, doneCallback);
+        this.doScale(okScale, converted, rate, doneCallback);
     },
     fullZoomOut:function(rate, done){
         var scale = this.getScaleWorld();
@@ -60,7 +61,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
     },
     getClosestCorrectScale:function(scale){
         //don't allow a zoom further in than 1
-        var minEntry;
+        var minEntry=undefined;
         //loop through the "allow scale aspects"
         for(var i =0; i<this.scaleTable.length; i++){
             var entry = this.scaleTable[i];
@@ -78,6 +79,10 @@ jc.WorldLayer = jc.TouchLayer.extend({
                     }
                 }
             }
+        }
+
+        if (!minEntry){
+            minEntry = this.scaleTable[this.scaleTable.length-1]; //max zoom in
         }
         return minEntry;   //return
     },

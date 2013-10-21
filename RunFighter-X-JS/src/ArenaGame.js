@@ -61,41 +61,17 @@ var ArenaGame = jc.WorldLayer.extend({
     runScenario0:function(){
 
 
-        this.teamASprites.push('shadowKnight');
-        this.teamASprites.push('shadowKnight');
-        this.teamASprites.push('shadowKnight');
-        this.teamASprites.push('shadowKnight');
-        this.teamASprites.push('shadowKnight');
-        this.teamASprites.push('shadowKnight');
+        this.teamASprites.push('elementalStone');
+        //this.teamASprites.push('troll');
 
-        this.teamASprites.push('shadowKnight');
-        this.teamASprites.push('shadowKnight');
 
-        this.teamASprites.push('shadowKnight');
-        this.teamASprites.push('shadowKnight');
-        this.teamASprites.push('shadowKnight');
-        this.teamASprites.push('shadowKnight');
+
 
         this.teamAFormation = jc.formations["4x4x4"];
 
 
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('goldElf');
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('goldElf');
-
-        this.teamBSprites.push('orc');
-        this.teamBSprites.push('orc');
-        this.teamBSprites.push('orc');
-        this.teamBSprites.push('orc');
-
-        this.teamBSprites.push('orc');
-        this.teamBSprites.push('orge');
-        this.teamBSprites.push('orge');
-        this.teamBSprites.push('orge');
-
-
-
+        this.teamBSprites.push('elementalStone');
+        this.teamBSprites.push('troll');
         this.teamBFormation = jc.formations["4x4x4"];
 
 
@@ -216,10 +192,10 @@ var ArenaGame = jc.WorldLayer.extend({
                     var tr = this.sprites[i].getTextureRect();
                     var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
                     var worldPos = this.screenToWorld(nodePos); //where is that in the world?
-                    var compareMaxX = worldPos.x+tr.width;
-                    var compareMinX = worldPos.x-tr.width;
-                    var compareMaxY = worldPos.y+tr.height;
-                    var compareMinY = worldPos.y-tr.height;
+                    var compareMaxX = worldPos.x+(tr.width*2);
+                    var compareMinX = worldPos.x-tr.width*2;
+                    var compareMaxY = worldPos.y+tr.height*2;
+                    var compareMinY = worldPos.y-tr.height*2;
                     if (compareMaxX > maxX){
                         maxX = compareMaxX;
                     }
@@ -256,7 +232,6 @@ var ArenaGame = jc.WorldLayer.extend({
                     var diff = cc.pSub(this.lastPan, characterMid);
                 }
                 if (Math.abs(diff.x) > scaleLimit || Math.abs(diff.y)>scaleLimit){
-
                     this.lastPan = characterMid;
                     this.scaleGate = true;
                     this.panToWorldPoint(characterMid, scale, jc.defaultTransitionTime, function(){
