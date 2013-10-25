@@ -654,7 +654,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
-			"MaxHP": 400,
+			"MaxHP": 200,
 			"speed": 70,
 			"damage": 25,
 			"actionDelays": {
@@ -676,7 +676,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
-			"MaxHP": 600,
+			"MaxHP": 300,
 			"speed": 80,
 			"damage": 35,
 			"actionDelays": {
@@ -698,7 +698,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
-			"MaxHP": 600,
+			"MaxHP": 200,
 			"speed": 80,
 			"damage": 35,
 			"actionDelays": {
@@ -720,7 +720,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
-			"MaxHP": 300,
+			"MaxHP": 250,
 			"speed": 70,
 			"damage": 25,
 			"actionDelays": {
@@ -867,9 +867,9 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 300,
-			"speed": 40,
-			"damage": 25,
+			"MaxHP": 400,
+			"speed": 55,
+			"damage": 50,
 			"actionDelays": {
 				"attack": 0.2
 			},
@@ -1027,7 +1027,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.01
 			},
-			"targetRadius": -5
+			"targetRadius": 0
 		},
 		"animations": {
 			"move": {
@@ -1055,7 +1055,7 @@ var spriteDefs = {
 				"type": 1
 			}
 		},
-		"behavior": "tank"
+		"behavior": "flanker"
 	},
 	"shadowKnight": {
 		"name": "shadowKnight",
@@ -1095,7 +1095,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.01
 			},
-			"targetRadius": -5
+			"targetRadius": 0
 		},
 		"animations": {
 			"move": {
@@ -1123,7 +1123,7 @@ var spriteDefs = {
 				"type": 1
 			}
 		},
-		"behavior": "tank"
+		"behavior": "flanker"
 	},
 	"snakeThing": {
 		"name": "snakeThing",
@@ -1231,8 +1231,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 100,
 			"speed": 100,
-			"damage": 500,
-			"heal": 500,
+			"damage": 10,
+			"heal": 50,
 			"actionDelays": {
 				"attack": 0.5,
 				"heal": 0.5
@@ -1322,13 +1322,14 @@ var spriteDefs = {
 			"MaxHP": 100,
 			"speed": 50,
 			"damage": 50,
+			"missile": "greenbullet",
 			"actionDelays": {
 				"attack": 0.05
 			},
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 200
+			"targetRadius": 400
 		},
 		"baseOffset": {
 			"x": 0,

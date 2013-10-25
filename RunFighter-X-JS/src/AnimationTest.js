@@ -10,11 +10,15 @@ var AnimationTest = jc.TouchLayer.extend({
 
     init: function() {
         if (this._super()) {
-
-            this.sprite = jc.Sprite.spriteGenerator(spriteDefs, "blueKnight", this);
+//            this.sprite = jc.Sprite.spriteGenerator(spriteDefs, "blueKnight", this);
+//            this.addChild(this.sprite);
+//            this.sprite.setBasePosition(cc.p(this.winSize.width/2, this.winSize.height/2));
+//            this.sprite.setState('attack');
+            this.sprite = jc.makeSpriteWithPlist(greenBulletPlist, greenBulletPng, "greenbullet.7.png");
+            this.sprite.setPosition(cc.p(this.winSize.width/2, this.winSize.height/2));
+            this.sprite.setVisible(true);
             this.addChild(this.sprite);
-            this.sprite.setBasePosition(cc.p(this.winSize.width/2, this.winSize.height/2));
-            this.sprite.setState('attack');
+            this.sprite.runAction(jc.makeAnimationFromRange('greenbullet', missileConfig['greenbullet']));
             this.bubbleAllTouches(true);
             return true;
         } else {
@@ -22,7 +26,7 @@ var AnimationTest = jc.TouchLayer.extend({
         }
     },
     targetTouchHandler:function(type, touch, sprites){
-        this.sprite.setState('attack2');
+//        this.sprite.setState('attack2');
     }
 });
 

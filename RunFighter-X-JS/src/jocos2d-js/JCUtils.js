@@ -23,6 +23,43 @@ jc.cap = function(point, rect){
     }
 }
 
+jc.makeSpriteWithPlist = function(plist, png, startFrame){
+    var sprite = new cc.Sprite();
+    cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
+    cc.SpriteBatchNode.create(png);
+    //todo change to size of sprite
+    var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(startFrame);
+    sprite.initWithSpriteFrame(frame);
+    return sprite;
+}
+
+jc.makeAnimationFromRange = function(name, config){
+
+    //animate it
+    var frames = [];
+    var first =1;
+    if (config.first){
+        first = config.first;
+    }
+
+    for(var i =first;i<=config.frames;i++){
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(name + "." + i + ".png");
+        frames.push(frame);
+    }
+
+    //reverse
+    if (config.rev){
+        for(var i =config.frames;i>=first;i--){
+            var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(name + "." + i + ".png");
+            frames.push(frame);
+        }
+    }
+
+
+    var animation = cc.Animation.create(frames, config.delay);
+    return cc.RepeatForever.create(cc.Animate.create(animation));
+}
+
 jc.unitTypes = {
     "airGeneral":{
         "val":0,

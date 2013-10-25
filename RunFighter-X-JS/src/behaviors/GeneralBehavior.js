@@ -333,8 +333,13 @@ GeneralBehavior.prototype.healLogic = function(){
         return;
     }
 
-    //todo: implement me this.owner.layer.doHealParticle(this.locked);
-    this.support.gameObject.hp+= this.owner.gameObject.heal;
+
+    if (this.support.gameObject.hp + this.owner.gameObject.heal< this.support.gameObject.MaxHP){
+        this.support.gameObject.hp+= this.owner.gameObject.heal;
+    }else{
+        this.support.gameObject.hp= this.owner.gameObject.MaxHP;
+    }
+
 }
 
 

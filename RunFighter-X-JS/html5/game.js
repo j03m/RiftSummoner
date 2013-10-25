@@ -44,6 +44,8 @@ var MW = MW || {};
 			'../src/underscore-min.js',
             '../src/spriteVars.js',
             '../src/resource.js',
+            '../src/missileConfig.js',
+            '../src/effectsConfig.js',
             '../src/jocos2d-js/JCUtils.js',
             '../src/jocos2d-js/JCPanAndZoomAction.js',
             '../src/jocos2d-js/JCLayerManager.js',

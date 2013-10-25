@@ -12,6 +12,8 @@ var windowPng = dirImg + "windows.png";
 var shrine1Png = dirImg + "shrine1.png";
 var shrine2Png = dirImg + "shrine2.png";
 var mapTmx = dirImg + "map.tmx";
+var greenBulletPng = dirImg + "greenbullet.png"
+var greenBulletPlist = dirImg + "greenbullet.plist"
 //var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
 var g_characterPlists = {};
@@ -34,7 +36,9 @@ var g_maingame = [
     {src:windowPng},
     {src:shrine1Png},
     {src:shrine2Png},
-    {src:mapTmx},
+    {src:greenBulletPlist},
+    {src:greenBulletPng},
+
     //{src:myfont}
 ];
 

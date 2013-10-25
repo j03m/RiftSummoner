@@ -61,17 +61,21 @@ var ArenaGame = jc.WorldLayer.extend({
     runScenario0:function(){
 
 
-        this.teamASprites.push('elementalStone');
-        //this.teamASprites.push('troll');
+
+        this.teamASprites.push('wizard');
 
 
 
 
         this.teamAFormation = jc.formations["4x4x4"];
 
+        this.teamBSprites.push('orge');
 
-        this.teamBSprites.push('elementalStone');
-        this.teamBSprites.push('troll');
+
+
+
+
+
         this.teamBFormation = jc.formations["4x4x4"];
 
 
@@ -196,20 +200,26 @@ var ArenaGame = jc.WorldLayer.extend({
                     var compareMinX = worldPos.x-tr.width*2;
                     var compareMaxY = worldPos.y+tr.height*2;
                     var compareMinY = worldPos.y-tr.height*2;
+
+
                     if (compareMaxX > maxX){
                         maxX = compareMaxX;
+                        //cosole.log("MaxX:"+this.sprites[i].name);
                     }
 
                     if (compareMinX < minX){
                         minX = compareMinX;
+                        //cosole.log("MinX:"+this.sprites[i].name);
                     }
 
                     if (compareMaxY > maxY){
                         maxY = compareMaxY;
+                        //cosole.log("MaxY:"+this.sprites[i].name);
                     }
 
                     if (compareMinY < minY){
                         minY = compareMinY;
+                        //cosole.log("MinY:"+this.sprites[i].name);
                     }
                 }
                 this.sprites[i].think(dt);
@@ -233,7 +243,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
                 if (Math.abs(diff.x) > scaleLimit || Math.abs(diff.y)>scaleLimit){
                     this.lastPan = characterMid;
-                    this.scaleGate = true;
+
                     this.panToWorldPoint(characterMid, scale, jc.defaultTransitionTime, function(){
                         this.scaleGate = false;
                     }.bind(this));

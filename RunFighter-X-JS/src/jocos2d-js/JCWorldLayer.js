@@ -68,13 +68,13 @@ jc.WorldLayer = jc.TouchLayer.extend({
             //if an entry in our array, is > then what we've supplied, then it is a candidate for use
             //because we don't want to zoom in far enough to clip anyone, but we want to zoom in as close as we can
             //to what was supplied, without messing up the aspect
-            if (entry.x >= scale.x && entry.y >= scale.y){
+            if (entry.x <= scale.x && entry.y <= scale.y){
                 if (!minEntry){
                     minEntry = entry;
                 }else{
                     //if this entry is smaller then what we have as our min, but still bigger then what was supplied
                     //capture it
-                    if (entry.x < minEntry.x && entry.y < minEntry.y){
+                    if (entry.x > minEntry.x && entry.y > minEntry.y){
                         minEntry = entry;
                     }
                 }
