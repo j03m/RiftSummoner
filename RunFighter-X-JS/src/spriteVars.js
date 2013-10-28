@@ -4,10 +4,11 @@ var spriteDefs = {
 		"formalName": "Void Demon",
 		"details": "An winged creature from the void. It possesses a devastating air to ground dive and weak magic range abilities for other air units.",
 		"elementType": 0,
-		"unitType": 0,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 200,
+			"movementType": 0,
+			"targets": 2,
 			"speed": 100,
 			"damage": 25,
 			"vsAirDamage": 5,
@@ -28,19 +29,30 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of water, this unit also heals any units nearby.",
 		"elementType": 1,
 		"unitType": 3,
-		"special": "Healing Radius",
+		"special": "healingRadius",
+		"effect": "blueRadius",
 		"gameProperties": {
 			"MaxHP": 500,
+			"movementType": 1,
+			"targets": 1,
 			"speed": 20,
-			"damage": 160,
+			"damage": 250,
 			"actionDelays": {
-				"attack": 1
+				"attack": 0.05
 			},
 			"effectDelays": {
 				"attack": 0.05
 			},
 			"targetRadius": 0,
-			"seekRadius": 25
+			"seekRadius": 25,
+			"heal": 30
+		},
+		"powers": {
+			"healingRadius": {
+				"heal": 20,
+				"cooldown": 2000,
+				"radius": 200
+			}
 		},
 		"inherit": "knight"
 	},
@@ -53,25 +65,25 @@ var spriteDefs = {
 			"move": {
 				"start": 529,
 				"end": 565,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
 				"start": 614,
 				"end": 690,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			},
 			"dead": {
 				"start": 725,
 				"end": 790,
-				"delay": 0.1,
+				"delay": 0.02,
 				"type": 1
 			},
 			"idle": {
 				"start": 529,
 				"end": 565,
-				"delay": 0.1,
+				"delay": 0.02,
 				"type": 0
 			}
 		},
@@ -87,6 +99,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 500,
 			"speed": 200,
+			"movementType": 0,
+			"targets": 1,
 			"damage": 100,
 			"actionDelays": {
 				"attack": 1
@@ -110,6 +124,8 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"speed": 150,
 			"damage": 100,
+			"movementType": 0,
+			"targets": 1,
 			"actionDelays": {
 				"attack": 1
 			},
@@ -175,6 +191,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 1000,
 			"speed": 50,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 25,
 			"actionDelays": {
 				"attack": 0.5
@@ -197,6 +215,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 700,
 			"speed": 50,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 25,
 			"actionDelays": {
 				"attack": 0.5
@@ -220,6 +240,8 @@ var spriteDefs = {
 			"MaxHP": 700,
 			"speed": 50,
 			"damage": 25,
+			"movementType": 1,
+			"targets": 1,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -242,6 +264,8 @@ var spriteDefs = {
 			"MaxHP": 700,
 			"speed": 50,
 			"damage": 35,
+			"movementType": 1,
+			"targets": 1,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -264,6 +288,8 @@ var spriteDefs = {
 			"MaxHP": 700,
 			"speed": 50,
 			"damage": 25,
+			"movementType": 1,
+			"targets": 1,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -362,6 +388,8 @@ var spriteDefs = {
 			"MaxHP": 600,
 			"speed": 20,
 			"damage": 250,
+			"movementType": 1,
+			"targets": 1,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -384,6 +412,8 @@ var spriteDefs = {
 			"MaxHP": 1700,
 			"speed": 20,
 			"damage": 100,
+			"movementType": 1,
+			"targets": 1,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -406,6 +436,8 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"speed": 50,
 			"damage": 75,
+			"movementType": 1,
+			"targets": 2,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -428,6 +460,8 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"speed": 50,
 			"damage": 75,
+			"movementType": 1,
+			"targets": 2,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -482,6 +516,8 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"speed": 20,
 			"damage": 160,
+			"movementType": 1,
+			"targets": 1,
 			"actionDelays": {
 				"attack": 1
 			},
@@ -503,6 +539,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 100,
 			"damage": 25,
+			"movementType": 1,
+			"targets": 2,
 			"poisonDamage": 10,
 			"speed": 55,
 			"actionDelays": {
@@ -562,6 +600,8 @@ var spriteDefs = {
 		"special": "Splash Damage",
 		"gameProperties": {
 			"MaxHP": 50,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 80,
 			"splashDamage": 20,
 			"splashRadius": 40,
@@ -656,6 +696,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 200,
 			"speed": 70,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 25,
 			"actionDelays": {
 				"attack": 0.5
@@ -678,6 +720,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 300,
 			"speed": 80,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 35,
 			"actionDelays": {
 				"attack": 0.5
@@ -700,6 +744,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 200,
 			"speed": 80,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 35,
 			"actionDelays": {
 				"attack": 0.5
@@ -722,6 +768,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 250,
 			"speed": 70,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 25,
 			"actionDelays": {
 				"attack": 0.5
@@ -743,6 +791,8 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 200,
+			"movementType": 1,
+			"targets": 2,
 			"damage": 35,
 			"speed": 55,
 			"actionDelays": {
@@ -766,6 +816,8 @@ var spriteDefs = {
 			"MaxHP": 1000,
 			"speed": 20,
 			"damage": 160,
+			"movementType": 1,
+			"targets": 1,
 			"actionDelays": {
 				"attack": 1
 			},
@@ -869,6 +921,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 400,
 			"speed": 55,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 50,
 			"actionDelays": {
 				"attack": 0.2
@@ -934,6 +988,8 @@ var spriteDefs = {
 		"special": "None",
 		"targetRadius": 75,
 		"gameProperties": {
+			"movementType": 1,
+			"targets": 1,
 			"MaxHP": 1500,
 			"speed": 15,
 			"damage": 100,
@@ -998,6 +1054,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 200,
 			"speed": 100,
+			"movementType": 0,
+			"targets": 2,
 			"damage": 15,
 			"splashDamage": 5,
 			"actionDelays": {
@@ -1019,6 +1077,8 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 10,
+			"movementType": 1,
+			"targets": 1,
 			"speed": 200,
 			"damage": 25,
 			"actionDelays": {
@@ -1067,6 +1127,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 500,
 			"speed": 20,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 160,
 			"actionDelays": {
 				"attack": 1
@@ -1087,6 +1149,8 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 150,
+			"movementType": 1,
+			"targets": 1,
 			"speed": 200,
 			"damage": 25,
 			"actionDelays": {
@@ -1135,6 +1199,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 150,
 			"speed": 80,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 45,
 			"actionDelays": {
 				"attack": 0.2
@@ -1183,6 +1249,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 100,
 			"speed": 200,
+			"movementType": 1,
+			"targets": 1,
 			"damage": 55,
 			"actionDelays": {
 				"attack": 0.2
@@ -1231,6 +1299,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 100,
 			"speed": 100,
+			"movementType": 1,
+			"targets": 2,
 			"damage": 10,
 			"heal": 50,
 			"actionDelays": {
@@ -1300,6 +1370,8 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 200,
 			"damage": 45,
+			"movementType": 1,
+			"targets": 2,
 			"speed": 55,
 			"actionDelays": {
 				"attack": 0.5
@@ -1320,6 +1392,8 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 100,
+			"movementType": 1,
+			"targets": 2,
 			"speed": 50,
 			"damage": 50,
 			"missile": "greenbullet",

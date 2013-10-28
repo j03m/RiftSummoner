@@ -82,6 +82,7 @@ DefenderBehavior.prototype.defendThink = function(dt){
         case 'damage':this.handleDefenderDamage(dt);
             break;
     }
+    this.afterEffects();
 }
 
 DefenderBehavior.prototype.handleDefenderIdle = function(dt){

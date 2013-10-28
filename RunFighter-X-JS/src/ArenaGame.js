@@ -60,21 +60,39 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     runScenario0:function(){
 
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
 
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
 
-        this.teamASprites.push('wizard');
-
-
-
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
 
         this.teamAFormation = jc.formations["4x4x4"];
 
-        this.teamBSprites.push('orge');
 
 
+        this.teamBSprites.push('wizard');
+        this.teamBSprites.push('wizard');
+        this.teamBSprites.push('wizard');
+        this.teamBSprites.push('wizard');
 
+        this.teamBSprites.push('wizard');
+        this.teamBSprites.push('wizard');
+        this.teamBSprites.push('wizard');
+        this.teamBSprites.push('wizard');
 
-
+        this.teamBSprites.push('dragonBlack');
+        this.teamBSprites.push('dragonRed');
+        this.teamBSprites.push('redGargoyle');
+        this.teamBSprites.push('blackGargoyle');
 
         this.teamBFormation = jc.formations["4x4x4"];
 
@@ -224,7 +242,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
                 this.sprites[i].think(dt);
             }
-            var scaleLimit = 50;
+            var scaleLimit = 100;
             if (!this.scaleGate && shouldScale){
 
 

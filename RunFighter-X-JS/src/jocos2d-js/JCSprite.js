@@ -31,6 +31,7 @@ jc.Sprite = cc.Sprite.extend({
 		cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
 		this.batch = cc.SpriteBatchNode.create(sheet);
         this.batch.retain();
+        this.effects = [];
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame);
 
 		this.initWithSpriteFrame(frame);
@@ -82,6 +83,7 @@ jc.Sprite = cc.Sprite.extend({
         this.shadow.initWithSpriteFrame(frame);
         this.shadow.setScaleX(0.5);
         this.layer.addChild(this.shadow);
+        this.layer.reorderChild(this.shadow, (cc.Director.getInstance().getWinSize().height+9) * -1);
         this.updateShadowPosition();
     },
     initHealthBar:function(){
@@ -91,15 +93,21 @@ jc.Sprite = cc.Sprite.extend({
         this.updateHealthBarPos();
     },
 	cleanUp: function(){
-		this.stopAction(this.currentMove);
-		this.currentMove.release();
-		this.currentMove = undefined;
-		this.stopAction(this.animations[this.state].action);
+		if (this.currentMove){
+            this.stopAction(this.currentMove);
+            this.currentMove.release();
+            this.currentMove = undefined;
+        }
+
+        this.stopAction(this.animations[this.state].action);
 		this.state = -1;
-		for(var i =0; i<this.animations.length; i++){
+        this.layer.removeChild(this.shadow);
+        this.layer.removeChild(this.healthBar);
+        for(var i =0; i<this.animations.length; i++){
 			this.animations[i].action.release();
 		}
         this.batch.release();
+
 	},
 	addDef: function(entry) {
 		if (entry.nameFormat==undefined){
@@ -182,17 +190,15 @@ jc.Sprite = cc.Sprite.extend({
     getBasePosition:function(){
         //get the position of this sprite, push the y coord down to the base (feet)
         var point = this.getPosition();
-        var content = this.getContentSize();
-        var box = this.getTextureRect();
+        var box = this.getContentSize();
         point.y -= box.height/2;
         return point;
     },
     setBasePosition:function(point){
-        var box = this.getTextureRect();
-        var origY = point.y;
+        var box = this.getContentSize();
         point.y += box.height/2;
         this.setPosition(point);
-        this.layer.reorderChild(this, origY*-1);
+        this.layer.reorderChild(this, point.y*-1);
         this.updateHealthBarPos();
         this.updateShadowPosition();
     },
@@ -304,6 +310,11 @@ jc.Sprite = cc.Sprite.extend({
             this.runAction(startMe.action);
         }
 
+        if (this.type!='background'){
+            this.updateHealthBarPos();
+            this.updateShadowPosition();
+        }
+
 	},
 	centerOnScreen:function(){
 		var size = cc.Director.getInstance().getWinSize();
@@ -391,24 +402,21 @@ jc.Sprite = cc.Sprite.extend({
     updateHealthBarPos:function(){
         if (this.type != 'background'){
             var myPos = this.getBasePosition();
-            var myRect = this.getTextureRect();
-            myPos.y+=myRect.height;
-            myPos.x-=(myRect.width/4);
+            var tr = this.getTextureRect();
+            myPos.y += tr.height + 10;
+            myPos.x -= this.HealthBarWidth/2;
             this.healthBar.setPosition(myPos);
+
         }
     },
     updateShadowPosition:function(){
         if (this.type!='background'){
-//            var pos = this.getPosition();
-//            var offset = this.baseOffset;
-//            var rect = this.getTextureRect();
-//            pos.y -= rect.height/2;
-//            pos.y += offset.y;
-//            pos.x += offset.x;
-//
-//            this.shadow.setPosition(pos);
-//            this.layer.reorderChild(this.shadow, (cc.Director.getInstance().getWinSize().height+9) * -1);
+            var pos = this.getBasePosition();
+            var cs = this.getContentSize();
 
+            pos.y += 5;
+            pos.x = (pos.x - cs.width) + 250;
+            this.shadow.setPosition(pos);
         }
     }
 });
@@ -509,7 +517,18 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
 
     }
 
-
+    //create an effect sprite and attach it if it exists.
+    if (character.effect){
+        var effectConfig = effectsConfig[character.effect];
+        var effect = jc.makeSpriteWithPlist(effectConfig.plist, effectConfig.png, effectConfig.start);
+        var effectAnimation = jc.makeAnimationFromRange(character.effect, effectConfig );
+        effect.setVisible(true);
+        sprite.addChild(effect);
+        var cs = sprite.getContentSize();
+        effect.setPosition(cc.p(cs.width/2,cs.height/2));
+        jc.setEffectPosition(effect, sprite, effectConfig);
+        effect.runAction(effectAnimation);
+    }
 
     //return the sprite;
     return sprite;

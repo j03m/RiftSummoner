@@ -1,9 +1,9 @@
 var missileConfig = {
                      "greenbullet":{
-                         "png":greenBulletPng,
-                         "plist":greenBulletPlist,
+                         "png":"art/greenbullet.png",
+                         "plist":"art/greenbullet.plist",
                          "start":"greenbullet.1.png",
-                         "effect":"energyExplosion",
+                         "effect":"greenBang",
                          "frames":27,
                          "delay":0.02 ,
                          "first":9

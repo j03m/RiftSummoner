@@ -57,45 +57,67 @@ jc.makeAnimationFromRange = function(name, config){
 
 
     var animation = cc.Animation.create(frames, config.delay);
-    return cc.RepeatForever.create(cc.Animate.create(animation));
-}
-
-jc.unitTypes = {
-    "airGeneral":{
-        "val":0,
-        "title":"Versatile Air Unit",
-        "desc":"Arial unit that attacks enemy air and ground units."
-    },
-    "air2Air":{
-        "val":1,
-        "title":"Air to Air Unit",
-        "desc":"Arial unit that attacks only other enemy air."
-    },
-    "air2Ground":{
-        "val":2,
-        "title":"Air to Ground Unit",
-        "desc":"Arial unit that has air to ground attack capabilities."
-    },
-    "ground2Ground":{
-        "val":3,
-        "title":"Ground to Ground Unit",
-        "desc":"Grounded unit that attacks other ground units."
-    },
-    "groundGeneral":{
-        "val":4,
-        "title":"Versatile Ground Unit",
-        "desc":"Grounded unit that attacks ground and air units."
+    if (!config.times){
+        return cc.RepeatForever.create(cc.Animate.create(animation));
+    }else{
+        return cc.Repeat.create(cc.Animate.create(animation), config.times);
     }
+
 }
 
-jc.getUnitType = function(id){
-    for(var type in jc.unitTypes){
-        if (jc.unitTypes[type].val == id){
-            return jc.unitTypes[type];
+jc.playEffect = function(name, where, z, layer){
+    var config = effectsConfig[name];
+    var effect = jc.makeSpriteWithPlist(config.plist, config.png, config.start);
+    var effectAnimation = jc.makeAnimationFromRange(name, config );
+    effect.setPosition(where);
+    effect.setVisible(true);
+    layer.addChild(effect);
+    layer.reorderChild(effect,z);
+    var onDone = cc.CallFunc.create(function(){
+        layer.removeChild(effect);
+    }.bind(this));
+    var action = cc.Sequence.create(effectAnimation, onDone);
+    effect.runAction(action);
+}
+
+
+jc.setEffectPosition = function(effect, parent, config){
+    var placement = config.placement;
+    var effectPos = effect.getPosition();
+    var tr = parent.getTextureRect();
+
+    if (placement){
+        if (placement == 'bottom') {
+            effectPos.y -= tr.height;
+            effect.setPosition(effectPos);
+        }else if (placement == 'center'){
+            effectPos.y -= tr.height/2;
+            effect.setPosition(effectPos);
+        }else{
+            throw "Unknown effect placement.";
         }
     }
+
+    if (config.offset){
+        var newPos = cc.pAdd(effectPos, config.offset);
+        effect.setPosition(newPos);
+    }
+
+    parent.reorderChild(effect, -1);
+
+
 }
 
+jc.movementType = {
+    "air":0,
+    "ground":1
+}
+
+jc.targetType = {
+    "air":0,
+    "ground":1,
+    "both":2,
+}
 
 jc.elementTypes = {
     "void":0,

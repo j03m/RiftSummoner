@@ -51,15 +51,13 @@ GeneralBehavior.prototype.init = function(sprite){
     this.owner = sprite;
 }
 
-//find a random opposing badguy
-GeneralBehavior.prototype.lockOnAny = function(){
-    var sprite = jc.randomNum(0, this.owner.enemyTeam.length-1);
-    this.locked = this.owner.enemyTeam[sprite];
-    return sprite;
-}
 
 GeneralBehavior.prototype.targetWithinRadius = function(target){
     return this.withinRadius(target.getBasePosition());
+}
+
+GeneralBehavior.prototype.targetWithinVariableRadius = function(radius, target){
+    return this.withinThisRadius(target.getBasePosition(), radius, radius);
 }
 
 GeneralBehavior.prototype.withinRadius = function(toPoint){
@@ -158,7 +156,7 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
     var minDistance = winSize.width;
     for (var i =0; i< team.length; i++){
         var sprite = team[i];
-        if (sprite.isAlive()){
+        if (sprite.isAlive() && this.canTarget(sprite)){
             var vector = this.getVectorTo(sprite.getBasePosition(), this.owner.getBasePosition());
             if (vector.distance < minDistance){
                 if (checkFunc != undefined){
@@ -176,6 +174,33 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
 
     return currentlyLocked;
 }
+
+GeneralBehavior.prototype.canTarget = function(sprite){
+    if (sprite.gameObject.movementType == this.owner.gameObject.targets || this.owner.gameObject.targets == jc.targetType.both ){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+GeneralBehavior.prototype.allPassCheck = function(checkFunc, team){
+    var success = [];
+    for (var i =0; i< team.length; i++){
+        var sprite = team[i];
+        if (sprite.isAlive() && sprite != this.owner){
+            if (checkFunc(sprite)){
+                success.push(sprite);
+            }
+        }
+    }
+    return success;
+}
+
+GeneralBehavior.prototype.allFriendsWithinRadius = function(radius){
+    return this.allPassCheck(this.targetWithinVariableRadius.bind(this, radius), this.owner.homeTeam);
+}
+
+
 GeneralBehavior.prototype.seekEnemy = function(){
     if (!this.locked){
         throw "invalid state, character must be locked to seek.";
@@ -328,20 +353,25 @@ GeneralBehavior.prototype.healLogic = function(){
     if (!this.support){
         return;
     }
-    //can't heal a dead guy or full hp
-    if (this.support.gameObject.hp<0 || this.support.gameObject.hp >= this.support.gameObject.MaxHP){
-        return;
-    }
 
-
-    if (this.support.gameObject.hp + this.owner.gameObject.heal< this.support.gameObject.MaxHP){
-        this.support.gameObject.hp+= this.owner.gameObject.heal;
-    }else{
-        this.support.gameObject.hp= this.owner.gameObject.MaxHP;
-    }
+    GeneralBehavior.heal(this.owner, this.support, this.owner.gameObject.heal);
 
 }
 
+GeneralBehavior.heal = function(healer, target, value){
+    //can't heal a dead guy or full hp
+    if (target.gameObject.hp<0 || target.gameObject.hp >= target.gameObject.MaxHP){
+        return false;
+    }
+
+    if (target.gameObject.hp + value < target.gameObject.MaxHP){
+        target.gameObject.hp+= value;
+    }else{
+        target.gameObject.hp= target.gameObject.MaxHP;
+    }
+
+    return true;
+}
 
 GeneralBehavior.prototype.hitLogic = function(){
     if (!this.locked){
@@ -384,6 +414,7 @@ GeneralBehavior.prototype.handleState = function(dt){
         case 'damage':this.handleDamage(dt);
             break;
     }
+    this.afterEffects();
 }
 
 GeneralBehavior.prototype.handleDamage = function(dt){
@@ -504,3 +535,40 @@ GeneralBehavior.prototype.separate = function(){
     }
     return steering;
 }
+
+GeneralBehavior.prototype.doPower = function(power){
+    var powerFunc = powerConfig[power.name].bind(this);
+    if (powerFunc){
+        if (!this.cooldowns){
+            this.cooldowns= {};
+        }
+        if (!this.cooldowns[power.name]){
+            this.cooldowns[power.name] = {};
+            this.cooldowns[power.name].last = Date.now();
+            powerFunc(this.owner.name);
+        }else if ( Date.now() - this.cooldowns[power.name].last  > power.cooldown) {
+            this.cooldowns[power.name].last = Date.now();
+            powerFunc(this.owner.name);
+        }
+    }else{
+        throw "unrecognized power - " + power;
+    }
+}
+
+GeneralBehavior.prototype.afterEffects = function(){
+    //apply my power
+    if (!this.owner.isAlive()){
+        return; //no need
+    }
+    var config = spriteDefs[this.owner.name];
+    var powers = config.powers;
+    for(var power in powers){
+        powers[power].name = power;
+        this.doPower(powers[power]);
+    }
+
+    //apply anything effecting me
+    for (var i =0;i<this.owner.effects.length;i++){
+        this.doPower(this.owner.effects[i]);
+    }
+};

@@ -4,6 +4,7 @@ var RangeBehavior =  function(sprite){
 
     this.handleIdle = this.handleRangeIdle;
     this.handleFight = this.handleRangeFight;
+    this.withinRadius= this.withinRangeRadius;
 
 }
 
@@ -44,20 +45,19 @@ RangeBehavior.prototype.doMissile = function(){
 
     //make missile sprite
     var missleName = this.owner.gameObject.missile;
+
     var missileType = missileConfig[this.owner.gameObject.missile];
     var missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
-    var missileAnimation = jc.makeAnimationFromRange(missileType.frames, missileType.delay,missleName );
+    var missileAnimation = jc.makeAnimationFromRange(missleName, missileType );
 
     //start it in front of me
     this.owner.layer.addChild(missile);
     var ownerPos = this.owner.getBasePosition();
-    var ownerRect = this.owner.getTextureRect();
-    if (this.owner.isFlippedX()){
-        ownerPos.x-=ownerRect.width/2;
-    }else{
-        ownerPos.x+=ownerRect.width/2;
+    if (missileType.offset){
+        ownerPos = cc.pAdd(ownerPos, missileType.offset);
     }
-    ownerPos.y += ownerRect.height/2;
+
+
     missile.setFlipX(this.owner.isFlippedX());
 
     //adjust if needed
@@ -71,10 +71,15 @@ RangeBehavior.prototype.doMissile = function(){
     missile.runAction(missileAnimation);
 
     //move it to the target at damageDelay speed
-    //when done, tell target to play effect
-    //and destroy the sprite
-    //this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
+    var moveTo = cc.MoveTo.create(damageDelay, this.locked.getPosition());
+    var callback = cc.CallFunc.create(function(){
+        this.hitLogic();
+        this.owner.layer.removeChild(missile);
+        jc.playEffect(missileType.effect, this.locked.getPosition(),this.locked.getZOrder(), this.owner.layer);
 
+    }.bind(this));
+    var seq = cc.Sequence.create(moveTo, callback);
+    missile.runAction(seq);
 
 }
 
@@ -88,7 +93,9 @@ RangeBehavior.prototype.handleRangeIdle = function(dt){
 
 }
 
-
+RangeBehavior.prototype.withinRangeRadius = function(toPoint){
+    return this.withinThisRadius(toPoint, this.owner.getTargetRadius(), this.owner.getTargetRadius());
+}
 
 
 

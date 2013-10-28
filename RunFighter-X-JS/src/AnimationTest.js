@@ -7,23 +7,59 @@ Consts.dead=3;
 Consts.powerup=4;
 
 var AnimationTest = jc.TouchLayer.extend({
-
+    character:"dwarvenKnightLife",
+    //effect:"heal",
+    //missile:"greenbullet",
     init: function() {
+
         if (this._super()) {
-//            this.sprite = jc.Sprite.spriteGenerator(spriteDefs, "blueKnight", this);
-//            this.addChild(this.sprite);
-//            this.sprite.setBasePosition(cc.p(this.winSize.width/2, this.winSize.height/2));
-//            this.sprite.setState('attack');
-            this.sprite = jc.makeSpriteWithPlist(greenBulletPlist, greenBulletPng, "greenbullet.7.png");
-            this.sprite.setPosition(cc.p(this.winSize.width/2, this.winSize.height/2));
-            this.sprite.setVisible(true);
-            this.addChild(this.sprite);
-            this.sprite.runAction(jc.makeAnimationFromRange('greenbullet', missileConfig['greenbullet']));
+            this.go();
             this.bubbleAllTouches(true);
             return true;
         } else {
             return false;
         }
+    },
+    go:function(){
+        if (this.sprite){
+            this.removeChild(this.sprite);
+            this.sprite.cleanUp();
+            this.sprite = undefined;
+        }
+        if (this.character){
+            this.makeChar(this.character);
+        }else if (this.effect){
+            this.makeEffect(this.effect);
+        }else if (this.missile){
+            this.makeMissile(this.missile);
+        }else{
+            throw "must set character, missile or effect"
+        }
+    },
+    makeChar:function(){
+        this.sprite = jc.Sprite.spriteGenerator(spriteDefs,this.character, this);
+        this.addChild(this.sprite);
+        this.sprite.setBasePosition(cc.p(this.winSize.width/2, this.winSize.height/2));
+        this.sprite.setState('idle');
+
+    },
+    makeIt:function(it, inConfig){
+        var config = inConfig;
+        this.sprite = jc.makeSpriteWithPlist(config.plist, config.png, config.start);
+        this.sprite.setPosition(cc.p(this.winSize.width/2, this.winSize.height/2));
+        this.sprite.setVisible(true);
+        this.addChild(this.sprite);
+
+
+        var action = jc.makeAnimationFromRange(it, config);
+        this.sprite.runAction(action);
+
+    },
+    makeEffect:function(){
+        this.makeIt(this.effect, effectsConfig[this.effect]);
+    },
+    makeMissile:function(){
+        this.makeIt(this.missile, missileConfig[this.missile]);
     },
     targetTouchHandler:function(type, touch, sprites){
 //        this.sprite.setState('attack2');
@@ -45,6 +81,7 @@ AnimationTest.scene = function() {
     var scene = cc.Scene.create();
     var layer = AnimationTest.create();
     scene.addChild(layer);
+    jc.animationTest = layer;
     return scene;
 
 };

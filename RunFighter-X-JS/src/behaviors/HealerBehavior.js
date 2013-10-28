@@ -31,6 +31,8 @@ HealerBehavior.prototype.healThink = function(dt){
         case 'damage':this.handleDamage(dt);
             break;
     }
+
+    this.afterEffects();
 }
 
 

@@ -11,13 +11,14 @@ var windowPlist = dirImg + "windows.plist";
 var windowPng = dirImg + "windows.png";
 var shrine1Png = dirImg + "shrine1.png";
 var shrine2Png = dirImg + "shrine2.png";
-var mapTmx = dirImg + "map.tmx";
-var greenBulletPng = dirImg + "greenbullet.png"
-var greenBulletPlist = dirImg + "greenbullet.plist"
+
+
+
 //var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
 var g_characterPlists = {};
 
+var g_effectPngs = {};
 
 
 var g_maingame = [
@@ -35,11 +36,7 @@ var g_maingame = [
     {src:windowPlist},
     {src:windowPng},
     {src:shrine1Png},
-    {src:shrine2Png},
-    {src:greenBulletPlist},
-    {src:greenBulletPng},
-
-    //{src:myfont}
+    {src:shrine2Png}
 ];
 
 
@@ -50,4 +47,14 @@ for (var entry in spriteDefs ){
         g_maingame.push({src:g_characterPngs[entry]});
         g_maingame.push({src:g_characterPlists[entry]});
     }
+}
+
+for (var entry in missileConfig){
+    g_maingame.push({src:missileConfig[entry].png});
+    g_maingame.push({src:missileConfig[entry].plist});
+}
+
+for (var entry in effectsConfig){
+    g_maingame.push({src:effectsConfig[entry].png});
+    g_maingame.push({src:effectsConfig[entry].plist});
 }
