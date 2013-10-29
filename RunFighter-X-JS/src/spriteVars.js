@@ -3,7 +3,7 @@ var spriteDefs = {
 		"name": "blackGargoyle",
 		"formalName": "Void Demon",
 		"details": "An winged creature from the void. It possesses a devastating air to ground dive and weak magic range abilities for other air units.",
-		"elementType": 0,
+		"elementType": "void",
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 200,
@@ -27,9 +27,8 @@ var spriteDefs = {
 		"name": "blueKnight",
 		"formalName": "Elemental Knight - Water",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of water, this unit also heals any units nearby.",
-		"elementType": 1,
+		"elementType": "water",
 		"unitType": 3,
-		"special": "healingRadius",
 		"effect": "blueRadius",
 		"gameProperties": {
 			"MaxHP": 500,
@@ -50,7 +49,7 @@ var spriteDefs = {
 		"powers": {
 			"healingRadius": {
 				"heal": 20,
-				"cooldown": 2000,
+				"interval": 2,
 				"radius": 200
 			}
 		},
@@ -87,26 +86,27 @@ var spriteDefs = {
 				"type": 0
 			}
 		},
-		"behavior": "tank"
+		"behavior": "range"
 	},
 	"dragonBlack": {
 		"name": "dragonBlack",
 		"formalName": "Void Dragon",
 		"details": "These small dragons are aerial terrors doing massive damage to ground units below but they have a difficulty targeting other air born units.",
-		"elementType": 0,
+		"elementType": "void",
 		"unitType": 1,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 200,
+			"MaxHP": 700,
+			"speed": 250,
 			"movementType": 0,
+			"missile": "greenbullet",
 			"targets": 1,
-			"damage": 100,
+			"damage": 300,
 			"actionDelays": {
 				"attack": 1
 			},
 			"effectDelays": {
-				"attack": 0.01
+				"attack": 1
 			},
 			"targetRadius": 25,
 			"seekRadius": 25
@@ -117,20 +117,32 @@ var spriteDefs = {
 		"name": "dragonRed",
 		"formalName": "Fire Dragon",
 		"details": "These small dragons are aerial terrors doing massive damage to ground units below but they have a difficulty targeting other air born units. Fire Dragons do additional burning damage after each attack and splash damage to units around it. ",
-		"elementType": 2,
+		"elementType": "fire",
 		"unitType": 2,
 		"special": "Burn Damage, Splash Damage",
+		"damageMods": {
+			"splashDamage": {
+				"damage": 50,
+				"radius": 100
+			},
+			"burn": {
+				"damage": 10,
+				"duration": 1,
+				"interval": 10
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 500,
 			"speed": 150,
 			"damage": 100,
+			"missile": "greenbullet",
 			"movementType": 0,
 			"targets": 1,
 			"actionDelays": {
 				"attack": 1
 			},
 			"effectDelays": {
-				"attack": 0.01
+				"attack": 1
 			},
 			"targetRadius": 25,
 			"seekRadius": 25
@@ -185,11 +197,10 @@ var spriteDefs = {
 		"name": "dwarvenKnightEarth",
 		"formalName": "Dwarven Knight - Earth",
 		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with earth magic, this dwarf has additional health.",
-		"elementType": 3,
+		"elementType": "earth",
 		"unitType": 3,
-		"special": "Burn Damage",
 		"gameProperties": {
-			"MaxHP": 1000,
+			"MaxHP": 1300,
 			"speed": 50,
 			"movementType": 1,
 			"targets": 1,
@@ -208,16 +219,18 @@ var spriteDefs = {
 	"dwarvenKnightFire": {
 		"name": "dwarvenKnightFire",
 		"formalName": "Dwarven Knight - Fire",
-		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with fire magic, this dwarf does additional burn damage to targets.",
-		"elementType": 3,
+		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with fire magic, this dwarf is immune completely immune to fire and explosive based attacks.",
+		"elementType": "fire",
 		"unitType": 3,
-		"special": "Burn Damage",
 		"gameProperties": {
 			"MaxHP": 700,
 			"speed": 50,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 25,
+			"defense": {
+				"fire": 100
+			},
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -232,16 +245,18 @@ var spriteDefs = {
 	"dwarvenKnightLife": {
 		"name": "dwarvenKnightLife",
 		"formalName": "Dwarven Knight - Life",
-		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with life magic, this dwarf does additional poison damage to targets.",
-		"elementType": 3,
+		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with life magic, this dwarf is immune to poison.",
+		"elementType": "life",
 		"unitType": 3,
-		"special": "Burn Damage",
 		"gameProperties": {
 			"MaxHP": 700,
 			"speed": 50,
 			"damage": 25,
 			"movementType": 1,
 			"targets": 1,
+			"defense": {
+				"life": 100
+			},
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -256,8 +271,8 @@ var spriteDefs = {
 	"dwarvenKnightVoid": {
 		"name": "dwarvenKnightVoid",
 		"formalName": "Dwarven Knight - Void",
-		"details": "Dwarven Knights are known for being very difficult to kill. His armor embued with void magic.",
-		"elementType": 3,
+		"details": "Dwarven Knights are known for being very difficult to kill. His armor embued with void magic, this dwarf is immune to vampiric powers.",
+		"elementType": "void",
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
@@ -266,6 +281,9 @@ var spriteDefs = {
 			"damage": 35,
 			"movementType": 1,
 			"targets": 1,
+			"defense": {
+				"void": 100
+			},
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -281,9 +299,14 @@ var spriteDefs = {
 		"name": "dwarvenKnightWater",
 		"formalName": "Dwarven Knight - Water",
 		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with water magic, this dwarf regenerates.",
-		"elementType": 3,
+		"elementType": "water",
 		"unitType": 3,
-		"special": "Burn Damage",
+		"powers": {
+			"regeneration": {
+				"heal": 100,
+				"interval": 1
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 700,
 			"speed": 50,
@@ -381,9 +404,15 @@ var spriteDefs = {
 		"name": "elementalFire",
 		"formalName": "Fire Elemental",
 		"details": "Extraordinarily powerful, but slow moving. Heavy additional burn damage inflicted.",
-		"elementType": 3,
+		"elementType": "fire",
 		"unitType": 3,
-		"special": "None",
+		"damageMods": {
+			"burn": {
+				"damage": 50,
+				"duration": 5,
+				"interval": 0.5
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 600,
 			"speed": 20,
@@ -405,7 +434,7 @@ var spriteDefs = {
 		"name": "elementalStone",
 		"formalName": "Stone Elemental",
 		"details": "Extraordinarily powerful, but slow moving.",
-		"elementType": 3,
+		"elementType": "earth",
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
@@ -429,7 +458,7 @@ var spriteDefs = {
 		"name": "elementalWater",
 		"formalName": "Water Elemental",
 		"details": "Fast elemental creatures that fire at range. Water elementals have regenerative abilities.",
-		"elementType": 3,
+		"elementType": "water",
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
@@ -453,7 +482,7 @@ var spriteDefs = {
 		"name": "elementalWind",
 		"formalName": "Wind Elemental",
 		"details": "Fast elemental creatures that fire at range. Wind elementals have knock back capability.",
-		"elementType": 3,
+		"elementType": "air",
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
@@ -509,7 +538,7 @@ var spriteDefs = {
 		"name": "fireKnight",
 		"formalName": "Elemental Knight - Fire",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of fire, this unit deals additional burn damage to its targets.",
-		"elementType": 3,
+		"elementType": "fire",
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
@@ -533,7 +562,7 @@ var spriteDefs = {
 		"name": "forestElf",
 		"formalName": "Forest Elf",
 		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Forest Elves deal poison damage with each arrow.",
-		"elementType": 3,
+		"elementType": "life",
 		"unitType": 4,
 		"special": "Poison",
 		"gameProperties": {
@@ -595,7 +624,7 @@ var spriteDefs = {
 		"name": "goblin",
 		"formalName": "Goblin Demolition Expert",
 		"details": "Goblin demolition experts hurl explosives at enemies. While they don't have an impressive range, they can inflict massive damage on groups of ground enemies at a time.",
-		"elementType": 4,
+		"elementType": "fire",
 		"unitType": 3,
 		"special": "Splash Damage",
 		"gameProperties": {
@@ -690,7 +719,7 @@ var spriteDefs = {
 		"name": "goblinKnightBile",
 		"formalName": "Goblin Knight - Plains",
 		"details": "Goblin Knights are fast and do reasonable damage. Plains goblins are immune to poisons.",
-		"elementType": 3,
+		"elementType": "none",
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
@@ -714,7 +743,7 @@ var spriteDefs = {
 		"name": "goblinKnightBlood",
 		"formalName": "Goblin Knight - Blood",
 		"details": "Goblin Knights are fast and do reasonable damage. These blood goblins are tougher, faster then their cousins.",
-		"elementType": 3,
+		"elementType": "none",
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
@@ -738,7 +767,7 @@ var spriteDefs = {
 		"name": "goblinKnightFire",
 		"formalName": "Goblin Knight - Fire",
 		"details": "Goblin Knights are fast and do reasonable damage. These fire goblins live near magma in deep caves are resist burning damage.",
-		"elementType": 3,
+		"elementType": "fire",
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
@@ -762,7 +791,7 @@ var spriteDefs = {
 		"name": "goblinKnightNormal",
 		"formalName": "Goblin Knight",
 		"details": "Goblin Knights are fast and do reasonable damage..",
-		"elementType": 3,
+		"elementType": "none",
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
@@ -786,7 +815,7 @@ var spriteDefs = {
 		"name": "goldElf",
 		"formalName": "Plains Elf",
 		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
-		"elementType": 5,
+		"elementType": "earth",
 		"unitType": 4,
 		"special": "None",
 		"gameProperties": {
@@ -809,7 +838,7 @@ var spriteDefs = {
 		"name": "goldKnight",
 		"formalName": "Elemental Knight - Earth",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of earth, this unit has almost 2x the health of other elemental knights.",
-		"elementType": 5,
+		"elementType": "earth",
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
@@ -915,7 +944,7 @@ var spriteDefs = {
 		"name": "orc",
 		"formalName": "Orc Warrior",
 		"details": "Orcs are fast, fierce attackers. What they lack in heavy armor, they make up for in pure tenacity.",
-		"elementType": 4,
+		"elementType": "none",
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
@@ -1048,7 +1077,7 @@ var spriteDefs = {
 		"name": "redGargoyle",
 		"formalName": "Void Demon",
 		"details": "An winged creature embued with elemental fire. It possesses a devastating air to ground dive and weak magic range abilities for other air units. Fire Demons deal splash and burn damage around their targets.",
-		"elementType": 0,
+		"elementType": "fire",
 		"unitType": 0,
 		"special": "Splash Damage, Burn Damage",
 		"gameProperties": {
@@ -1072,7 +1101,7 @@ var spriteDefs = {
 		"name": "scowerer",
 		"formalName": "Void Scavenger",
 		"details": "Weak, dog-like creatures that quickly attack the weakest target they can find.",
-		"elementType": 0,
+		"elementType": "none",
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
@@ -1121,7 +1150,7 @@ var spriteDefs = {
 		"name": "shadowKnight",
 		"formalName": "Elemental Knight - Void",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
-		"elementType": 0,
+		"elementType": "void",
 		"unitType": 3,
 		"special": "Vampirism",
 		"gameProperties": {
@@ -1143,8 +1172,8 @@ var spriteDefs = {
 	"shellback": {
 		"name": "shellback",
 		"formalName": "Shellback Raider",
-		"details": "Heavily armored and fast, shell backs are mindless attack animals. This one is trained to lock onto and kill weaker archers and healers.",
-		"elementType": 3,
+		"details": "Heavily armored and fast, shellbacks are mindless attack animals. This one is trained to lock onto and kill weaker archers and healers.",
+		"elementType": "none",
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
@@ -1193,7 +1222,7 @@ var spriteDefs = {
 		"name": "snakeThing",
 		"formalName": "Serpent Guardian",
 		"details": "Heavily armored and fast, serpent guardians were once summoned to the defense of powerful mages. When summoned, the guardian will attach itself to a range or support unit and guard it until death.",
-		"elementType": 4,
+		"elementType": "none",
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
@@ -1243,7 +1272,7 @@ var spriteDefs = {
 		"name": "spider",
 		"formalName": "Arachnon Guardian",
 		"details": "These guardians will choose and defend a target to death dealing heavy damage from their bladed legs and injecting enemies with poison. They do not however, have much armor and are easily killed.",
-		"elementType": 3,
+		"elementType": "life",
 		"unitType": 3,
 		"special": "Poison",
 		"gameProperties": {
@@ -1293,7 +1322,7 @@ var spriteDefs = {
 		"name": "troll",
 		"formalName": "Goblin Cleric",
 		"details": "These small goblins are expert in healing magic. They will stay back, supporting your warriors and healing them in battle.",
-		"elementType": 4,
+		"elementType": "none",
 		"unitType": 3,
 		"special": "Healing",
 		"gameProperties": {
@@ -1364,7 +1393,7 @@ var spriteDefs = {
 		"name": "voidElf",
 		"formalName": "Dark Elf",
 		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the deadliest arrows of all the elves.",
-		"elementType": 0,
+		"elementType": "void",
 		"unitType": 4,
 		"special": "None",
 		"gameProperties": {
@@ -1387,7 +1416,7 @@ var spriteDefs = {
 		"name": "wizard",
 		"formalName": "Goblin Wizard",
 		"details": "These goblins are masters of destructive magic and can do serious damage at an impressive range.",
-		"elementType": 4,
+		"elementType": "none",
 		"unitType": 4,
 		"special": "None",
 		"gameProperties": {

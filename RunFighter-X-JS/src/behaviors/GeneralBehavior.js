@@ -60,6 +60,12 @@ GeneralBehavior.prototype.targetWithinVariableRadius = function(radius, target){
     return this.withinThisRadius(target.getBasePosition(), radius, radius);
 }
 
+
+GeneralBehavior.prototype.targetWithinVariableRadiusAndLocation = function(radius, point, target){
+    return this.withinThisRadiusOf(target.getBasePosition(), point, radius, radius);
+}
+
+
 GeneralBehavior.prototype.withinRadius = function(toPoint){
     return this.withinThisRadius(toPoint, this.owner.getTargetRadius(), this.owner.getTargetRadiusY()/8);
 }
@@ -75,6 +81,14 @@ GeneralBehavior.prototype.whosCloser = function(first, second){
     }
     return 0;
 
+}
+GeneralBehavior.prototype.withinThisRadiusOf = function(fromPoint, toPoint, xRad, yRad){
+    var vector = this.getVectorTo(toPoint, fromPoint);
+    if (vector.xd <= xRad && vector.yd <= yRad){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 GeneralBehavior.prototype.withinThisRadius = function(toPoint, xRad, yRad){
@@ -198,6 +212,15 @@ GeneralBehavior.prototype.allPassCheck = function(checkFunc, team){
 
 GeneralBehavior.prototype.allFriendsWithinRadius = function(radius){
     return this.allPassCheck(this.targetWithinVariableRadius.bind(this, radius), this.owner.homeTeam);
+}
+
+
+GeneralBehavior.prototype.allFoesWithinRadius = function(radius){
+    return this.allPassCheck(this.targetWithinVariableRadius.bind(this, radius), this.owner.enemyTeam);
+}
+
+GeneralBehavior.prototype.allFoesWithinRadiusOfPoint = function(radius, point){
+    return this.allPassCheck(this.targetWithinVariableRadiusAndLocation.bind(this, radius, point), this.owner.enemyTeam);
 }
 
 
@@ -377,17 +400,59 @@ GeneralBehavior.prototype.hitLogic = function(){
     if (!this.locked){
         return;
     }
-    if (this.locked.gameObject.hp>0){
-        this.locked.gameObject.hp-=this.owner.gameObject.damage;
+
+    //apply damage to the target
+    GeneralBehavior.applyDamage(this.locked, this.owner, this.owner.gameObject.damage);
+
+    //if the character in question has damageMod effects, we need to do them here
+    this.damageEffects();
+}
+
+GeneralBehavior.prototype.damageEffects = function(){
+    var config = spriteDefs[this.owner.name];
+    var powers = config.damageMods;
+    for(var power in powers){
+        powers[power].name = power;
+        this.doDamageMod(powers[power]);
     }
-    this.owner.layer.doBlood(this.locked);
-    if (this.locked.gameObject.hp <=0){
-        this.locked.behavior.setState('dead', 'dead');
-    }else{
-        this.locked.behavior.damager = this.owner;
-        //this.locked.behavior.setState('damage', undefined); //damage shouldn't interupt whatever is happening.
+};
+
+GeneralBehavior.prototype.doDamageMod=function(power){
+    var powerFunc = powerConfig[power.name].bind(this);
+    powerFunc(this.owner.name); //one time
+}
+
+GeneralBehavior.applyDamage = function(target, attacker, amount){
+
+    var attackDef = spriteDefs[attacker.name];
+
+    //apply elemental defenses
+    if (target.gameObject.defense){
+        for(var element in target.gameObject.defense){
+            if (element = attackDef.elementType){
+                var reduction = amount * (target.gameObject.defense[element]/100);
+                amount -=reduction;
+                if (amount<0){
+                    amount = 0;
+                }
+            }
+        }
     }
 
+
+    if (target.gameObject.hp>0){
+        target.gameObject.hp-=amount;
+        if (target.gameObject.hp <=0){
+            target.behavior.setState('dead', 'dead');
+        }else{
+            if (attacker){
+                target.behavior.damager = attacker;
+            }
+        }
+        return true;
+    }else{
+        return false;
+    }
 }
 
 GeneralBehavior.prototype.think = function(dt){
@@ -538,21 +603,7 @@ GeneralBehavior.prototype.separate = function(){
 
 GeneralBehavior.prototype.doPower = function(power){
     var powerFunc = powerConfig[power.name].bind(this);
-    if (powerFunc){
-        if (!this.cooldowns){
-            this.cooldowns= {};
-        }
-        if (!this.cooldowns[power.name]){
-            this.cooldowns[power.name] = {};
-            this.cooldowns[power.name].last = Date.now();
-            powerFunc(this.owner.name);
-        }else if ( Date.now() - this.cooldowns[power.name].last  > power.cooldown) {
-            this.cooldowns[power.name].last = Date.now();
-            powerFunc(this.owner.name);
-        }
-    }else{
-        throw "unrecognized power - " + power;
-    }
+    powerFunc(this.owner.name);
 }
 
 GeneralBehavior.prototype.afterEffects = function(){
@@ -560,15 +611,78 @@ GeneralBehavior.prototype.afterEffects = function(){
     if (!this.owner.isAlive()){
         return; //no need
     }
+//    var config = spriteDefs[this.owner.name];
+//    var powers = config.powers;
+//    for(var power in powers){
+//        powers[power].name = power;
+//        this.doPower(powers[power]);
+//    }
+//
+//    //removes effects that have expired
+//    var effect;
+//    for (var effectName in this.owner.effects){
+//        effect = this.owner.effects[effectName];
+//        if (effect.total > effect.duration){
+//            this.removeEffects(effect);
+//            delete this.owner.effects[effectName]
+//        }
+//    }
+//
+//    //apply anything still effecting me
+//    for (var effectName in this.owner.effects){
+//        effect = this.owner.effects[effectName];
+//        this.applyEffects(effect);
+//    }
+
+    if (!this.scheduledPowers){
+        this.scheduledPowers = {};
+    }
     var config = spriteDefs[this.owner.name];
     var powers = config.powers;
+    //llp through powers
     for(var power in powers){
-        powers[power].name = power;
-        this.doPower(powers[power]);
+        //if it's not scheduled
+        if (!this.scheduledPowers[power]){
+            //create a bound function with the power
+            powers[power].name = power;
+            var powerFunc = this.doPower.bind(this, powers[power]);
+            //schedule it
+            this.owner.schedule(powerFunc, powers[power].interval);
+            //mark it as scheduled
+            this.scheduledPowers[power] = powers[power];
+        }
     }
 
-    //apply anything effecting me
-    for (var i =0;i<this.owner.effects.length;i++){
-        this.doPower(this.owner.effects[i]);
+    if (!this.scheduledEffects){
+        this.scheduledEffects = {};
     }
+    //for each effect on the user
+    for (var effectName in this.owner.effects){
+        //get the effect
+        var effect = this.owner.effects[effectName];
+        if (!this.scheduledEffects[effectName]){
+            var effectFunc = this.applyEffects.bind(this, effect);
+            var removeEffectFunc = this.removeEffects.bind(this, effect, effectFunc, effectName);
+            this.owner.schedule(effectFunc, effect.interval, effect.duration/effect.interval);
+            if (effect.duration){
+                this.owner.schedule(removeEffectFunc, effect.duration, 1);
+            }
+            this.scheduledEffects[effectName] = effect;
+        }
+    }
+
+
+
 };
+
+GeneralBehavior.prototype.removeEffects = function(effect, effectFunc, effectName){
+    var func = powerConfig[effect.name + "-remove"].bind(this);
+    func(effect);
+    this.unschedule(effectFunc);
+    this.scheduledEffects[effectName] = undefined;
+}
+
+GeneralBehavior.prototype.applyEffects = function(effect){
+    var func = powerConfig[effect.name + "-apply"].bind(this);
+    func(effect);
+}

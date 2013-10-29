@@ -3,6 +3,7 @@ var effectsConfig = {
         "png":"art/greenBang.png",
         "plist":"art/greenBang.plist",
         "start":"greenBang.1.png",
+        "placement":"center",
         "frames":28,
         "delay":0.02,
         "times":1

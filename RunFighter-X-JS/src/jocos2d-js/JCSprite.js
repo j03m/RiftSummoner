@@ -31,7 +31,7 @@ jc.Sprite = cc.Sprite.extend({
 		cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
 		this.batch = cc.SpriteBatchNode.create(sheet);
         this.batch.retain();
-        this.effects = [];
+        this.effects = {};
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame);
 
 		this.initWithSpriteFrame(frame);
@@ -259,6 +259,10 @@ jc.Sprite = cc.Sprite.extend({
 	},
     getState:function(){
         return this.state;
+    },
+    addEffect:function(effect){
+
+        this.effects[effect.name]= effect;
     },
 	setState:function(state, callback){
         if (!state){

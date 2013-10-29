@@ -65,11 +65,11 @@ jc.makeAnimationFromRange = function(name, config){
 
 }
 
-jc.playEffect = function(name, where, z, layer){
+jc.playEffect = function(name, target, z, layer){
     var config = effectsConfig[name];
     var effect = jc.makeSpriteWithPlist(config.plist, config.png, config.start);
     var effectAnimation = jc.makeAnimationFromRange(name, config );
-    effect.setPosition(where);
+    jc.setEffectPosition(effect, target, config);
     effect.setVisible(true);
     layer.addChild(effect);
     layer.reorderChild(effect,z);
@@ -78,21 +78,24 @@ jc.playEffect = function(name, where, z, layer){
     }.bind(this));
     var action = cc.Sequence.create(effectAnimation, onDone);
     effect.runAction(action);
+    return effect;
 }
 
 
 jc.setEffectPosition = function(effect, parent, config){
     var placement = config.placement;
     var effectPos = effect.getPosition();
+    var base = parent.getBasePosition();
     var tr = parent.getTextureRect();
+    var etr = effect.getTextureRect();
 
     if (placement){
         if (placement == 'bottom') {
-            effectPos.y -= tr.height;
-            effect.setPosition(effectPos);
+            base.y += etr.height/2;
+            effect.setPosition(base);
         }else if (placement == 'center'){
-            effectPos.y -= tr.height/2;
-            effect.setPosition(effectPos);
+            base.y -= tr.height/2;
+            effect.setPosition(base);
         }else{
             throw "Unknown effect placement.";
         }
@@ -102,9 +105,6 @@ jc.setEffectPosition = function(effect, parent, config){
         var newPos = cc.pAdd(effectPos, config.offset);
         effect.setPosition(newPos);
     }
-
-    parent.reorderChild(effect, -1);
-
 
 }
 
@@ -125,7 +125,10 @@ jc.elementTypes = {
     "fire":2,
     "life":3,
     "none":4,
-    "earth":5
+    "earth":5,
+    "air":7
+
+
 }
 
 jc.getElementType = function(id){
@@ -136,7 +139,11 @@ jc.getElementType = function(id){
     }
 }
 
-
+jc.checkPower = function(charName, powerName){
+    if (!spriteDefs[charName] && !spriteDefs[charName].powers && !spriteDefs[charName].powers[powerName]){
+        throw "cannot find " + powerName + " power def for character:" + charName;
+    }
+}
 
 
 

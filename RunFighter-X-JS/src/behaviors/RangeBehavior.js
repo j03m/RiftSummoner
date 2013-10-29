@@ -60,13 +60,6 @@ RangeBehavior.prototype.doMissile = function(){
 
     missile.setFlipX(this.owner.isFlippedX());
 
-    //adjust if needed
-    var missleAdjustment = this.owner.gameObject.missleAdjust;
-    if (missleAdjustment){
-        ownerPos.x += missleAdjustment.x;
-        ownerPos.y += missleAdjustment.y;
-    }
-
     missile.setPosition(ownerPos);
     missile.runAction(missileAnimation);
 
