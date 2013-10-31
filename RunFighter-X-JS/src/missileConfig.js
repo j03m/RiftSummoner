@@ -6,7 +6,8 @@ var missileConfig = {
                          "effect":"greenBang",
                          "frames":27,
                          "delay":0.02 ,
-                         "first":9
+                         "first":9,
+                         "speed":400
                      }
 }
 

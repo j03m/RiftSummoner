@@ -42,9 +42,9 @@ jc.WorldLayer = jc.TouchLayer.extend({
     },
     panToWorldPoint:function(point, scale, rate, doneCallback){
         var converted = this.convertToLayerPosition(point)
-        console.log("Scale:" + JSON.stringify(scale));
+        //console.log("Scale:" + JSON.stringify(scale));
         var okScale = this.getClosestCorrectScale(scale);
-        console.log("Corrected Scale:" + JSON.stringify(okScale));
+        //console.log("Corrected Scale:" + JSON.stringify(okScale));
         this.doScale(okScale, converted, rate, doneCallback);
     },
     fullZoomOut:function(rate, done){

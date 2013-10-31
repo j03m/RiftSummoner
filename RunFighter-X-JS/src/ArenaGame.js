@@ -51,20 +51,25 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamBSprites.push('orc');
         this.teamBSprites.push('orc');
 
-        this.teamBSprites.push('orc');
-        this.teamBSprites.push('shadowKnight');
-        this.teamBSprites.push('orge');
-        this.teamBSprites.push('orge');
+        this.teamBSprites.push('troll');
+        this.teamBSprites.push('wizard');
+        this.teamBSprites.push('wizard');
+        this.teamBSprites.push('troll');
         this.teamBFormation = jc.formations["4x4x4"];
         this.setUp();
     },
     runScenario0:function(){
 
-        this.teamASprites.push('elementalFire');
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
+        this.teamASprites.push('orc');
+
+
 
         this.teamAFormation = jc.formations["4x4x4"];
 
-        this.teamBSprites.push('dwarvenKnightFire');
+        //this.teamBSprites.push('elementalWind');
+        this.teamBSprites.push('shadowKnight');
 
 
 

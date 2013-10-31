@@ -14,6 +14,11 @@ HealerBehavior.prototype.healThink = function(dt){
         return;
     }
 
+    if (!this.owner.isAlive()){
+        this.owner.unscheduleAllCallbacks();
+    }
+
+
     switch(state.brain){
         case 'idle':this.handleHealerIdle(dt);
             break;

@@ -119,7 +119,6 @@ var spriteDefs = {
 		"details": "These small dragons are aerial terrors doing massive damage to ground units below but they have a difficulty targeting other air born units. Fire Dragons do additional burning damage after each attack and splash damage to units around it. ",
 		"elementType": "fire",
 		"unitType": 2,
-		"special": "Burn Damage, Splash Damage",
 		"damageMods": {
 			"splashDamage": {
 				"damage": 50,
@@ -127,8 +126,8 @@ var spriteDefs = {
 			},
 			"burn": {
 				"damage": 10,
-				"duration": 1,
-				"interval": 10
+				"duration": 5,
+				"interval": 0.25
 			}
 		},
 		"gameProperties": {
@@ -139,7 +138,7 @@ var spriteDefs = {
 			"movementType": 0,
 			"targets": 1,
 			"actionDelays": {
-				"attack": 1
+				"attack": 5
 			},
 			"effectDelays": {
 				"attack": 1
@@ -379,12 +378,6 @@ var spriteDefs = {
 				"delay": 0.025,
 				"type": 1
 			},
-			"attack2": {
-				"start": 201,
-				"end": 260,
-				"delay": 0.025,
-				"type": 1
-			},
 			"idle": {
 				"start": 1,
 				"end": 75,
@@ -461,6 +454,12 @@ var spriteDefs = {
 		"elementType": "water",
 		"unitType": 3,
 		"special": "None",
+		"powers": {
+			"regeneration": {
+				"heal": 100,
+				"interval": 1
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 500,
 			"speed": 50,
@@ -468,10 +467,10 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 2,
 			"actionDelays": {
-				"attack": 0.5
+				"attack": 2
 			},
 			"effectDelays": {
-				"attack": 0.05
+				"attack": 1
 			},
 			"targetRadius": 250,
 			"seekRadius": 25
@@ -484,18 +483,22 @@ var spriteDefs = {
 		"details": "Fast elemental creatures that fire at range. Wind elementals have knock back capability.",
 		"elementType": "air",
 		"unitType": 3,
-		"special": "None",
+		"damageMods": {
+			"knockback": {
+				"distance": 15
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 500,
 			"speed": 50,
-			"damage": 75,
+			"damage": 50,
 			"movementType": 1,
 			"targets": 2,
 			"actionDelays": {
-				"attack": 0.5
+				"attack": 2
 			},
 			"effectDelays": {
-				"attack": 0.05
+				"attack": 1
 			},
 			"targetRadius": 250,
 			"seekRadius": 25
@@ -540,7 +543,13 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of fire, this unit deals additional burn damage to its targets.",
 		"elementType": "fire",
 		"unitType": 3,
-		"special": "Burn Damage",
+		"damageMods": {
+			"burn": {
+				"damage": 50,
+				"duration": 5,
+				"interval": 0.5
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 500,
 			"speed": 20,
@@ -564,7 +573,13 @@ var spriteDefs = {
 		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Forest Elves deal poison damage with each arrow.",
 		"elementType": "life",
 		"unitType": 4,
-		"special": "Poison",
+		"damageMods": {
+			"poison": {
+				"damage": 50,
+				"duration": 5,
+				"interval": 0.5
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 100,
 			"damage": 25,
@@ -627,13 +642,17 @@ var spriteDefs = {
 		"elementType": "fire",
 		"unitType": 3,
 		"special": "Splash Damage",
+		"damageMods": {
+			"splashDamage": {
+				"damage": 25,
+				"radius": 50
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 50,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 80,
-			"splashDamage": 20,
-			"splashRadius": 40,
 			"speed": 55,
 			"actionDelays": {
 				"attack": 0.5
@@ -718,13 +737,13 @@ var spriteDefs = {
 	"goblinKnightBile": {
 		"name": "goblinKnightBile",
 		"formalName": "Goblin Knight - Plains",
-		"details": "Goblin Knights are fast and do reasonable damage. Plains goblins are immune to poisons.",
+		"details": "Goblin Knights are fast and do reasonable damage. Plains goblins are incredibly fast runners.",
 		"elementType": "none",
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
 			"MaxHP": 200,
-			"speed": 70,
+			"speed": 120,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 25,
@@ -747,7 +766,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
-			"MaxHP": 300,
+			"MaxHP": 500,
 			"speed": 80,
 			"movementType": 1,
 			"targets": 1,
@@ -775,6 +794,9 @@ var spriteDefs = {
 			"speed": 80,
 			"movementType": 1,
 			"targets": 1,
+			"defense": {
+				"fire": 100
+			},
 			"damage": 35,
 			"actionDelays": {
 				"attack": 0.5
@@ -1152,7 +1174,14 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
 		"elementType": "void",
 		"unitType": 3,
-		"special": "Vampirism",
+		"effect": "blueRadius",
+		"powers": {
+			"vampireRadius": {
+				"damage": 20,
+				"radius": 100,
+				"interval": 1
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 500,
 			"speed": 20,

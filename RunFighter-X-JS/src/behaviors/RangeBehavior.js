@@ -25,6 +25,7 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
 
     //get the action delay for attacking
     var actionDelay = this.owner.gameObject.actionDelays['attack'];
+    var effectDelay = this.owner.gameObject.effectDelays['attack'];
 
     if (this.lastAttack==undefined){
         this.lastAttack = actionDelay;
@@ -33,7 +34,8 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
     //if time is past the actiondelay and im not in another animation other than idle or damage
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1){
         this.setAttackAnim('fighting');
-        this.doMissile();
+        console.log("missile scheduled");
+        this.owner.scheduleOnce(this.doMissile.bind(this),effectDelay);
         this.lastAttack = 0;
     }else{
         this.lastAttack+=dt;
@@ -41,18 +43,32 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
 }
 
 RangeBehavior.prototype.doMissile = function(){
-    var damageDelay = this.owner.gameObject.effectDelays['attack'];
 
     //make missile sprite
-    var missleName = this.owner.gameObject.missile;
+    console.log("missile sent");
+    var missileName = this.owner.gameObject.missile;
+    if (!missileName){
+        missileName = "greenbullet"; //todo temp, remove
+    }
 
-    var missileType = missileConfig[this.owner.gameObject.missile];
+    var missileType = missileConfig[missileName];
+    var vector = this.getVectorTo(this.locked.getBasePosition(), this.owner.getBasePosition());
+    var timeToImpact = vector.distance/missileType.speed;
     var missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
-    var missileAnimation = jc.makeAnimationFromRange(missleName, missileType );
+    var missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
 
     //start it in front of me
     this.owner.layer.addChild(missile);
     var ownerPos = this.owner.getBasePosition();
+    var tr = this.owner.getTextureRect();
+    if (this.owner.isFlippedX()){
+        ownerPos.x -=tr.width/2;
+    }else{
+        ownerPos.x +=tr.width/2;
+    }
+
+    ownerPos.y += tr.height/2;
+
     if (missileType.offset){
         ownerPos = cc.pAdd(ownerPos, missileType.offset);
     }
@@ -64,11 +80,14 @@ RangeBehavior.prototype.doMissile = function(){
     missile.runAction(missileAnimation);
 
     //move it to the target at damageDelay speed
-    var moveTo = cc.MoveTo.create(damageDelay, this.locked.getPosition());
+    var moveTo = cc.MoveTo.create(timeToImpact, this.locked.getPosition());
     var callback = cc.CallFunc.create(function(){
         this.hitLogic();
         this.owner.layer.removeChild(missile);
-        jc.playEffect(missileType.effect, this.locked.getPosition(),this.locked.getZOrder(), this.owner.layer);
+        if (this.locked){
+            jc.playEffect(missileType.effect, this.locked,this.locked.getZOrder(), this.owner.layer);
+        }
+
 
     }.bind(this));
     var seq = cc.Sequence.create(moveTo, callback);

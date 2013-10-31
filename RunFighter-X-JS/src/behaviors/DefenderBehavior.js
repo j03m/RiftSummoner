@@ -63,7 +63,12 @@ DefenderBehavior.prototype.defendThink = function(dt){
     var state= this.getState();
     if (!this.owner.isAlive() && state.brain!='dead'){
         this.setState('dead','dead');
+        this.owner.unscheduleAllCallbacks();
         return;
+    }
+
+    if (!this.owner.isAlive()){
+        this.owner.unscheduleAllCallbacks();
     }
 
     switch(state.brain){

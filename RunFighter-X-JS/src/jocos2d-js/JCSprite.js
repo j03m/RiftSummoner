@@ -337,17 +337,13 @@ jc.Sprite = cc.Sprite.extend({
         this.behavior.think(dt);
     },
     customDraw:function(){
-        this.drawShadow();
+
         this.superDraw();
         if (this.debug){
             this.drawBorders();
         }
         this.drawHealthBar();
 
-    },
-    drawShadow:function(){
-       // todo: fix shadow pos
-       // this.shadow.draw();
     },
     drawBorders:function(){
 
@@ -419,7 +415,12 @@ jc.Sprite = cc.Sprite.extend({
             var cs = this.getContentSize();
 
             pos.y += 5;
-            pos.x = (pos.x - cs.width) + 250;
+            if (!this.isFlippedX()){
+                pos.x = (pos.x - cs.width) + 250;
+            }else{
+                pos.x = (pos.x - cs.width) + 270;
+            }
+
             this.shadow.setPosition(pos);
         }
     }
@@ -530,7 +531,7 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
         sprite.addChild(effect);
         var cs = sprite.getContentSize();
         effect.setPosition(cc.p(cs.width/2,cs.height/2));
-        jc.setEffectPosition(effect, sprite, effectConfig);
+        jc.setChildEffectPosition(effect, sprite, effectConfig);
         effect.runAction(effectAnimation);
     }
 

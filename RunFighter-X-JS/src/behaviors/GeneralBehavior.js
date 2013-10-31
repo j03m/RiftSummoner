@@ -21,7 +21,7 @@ GeneralBehavior.prototype.resume = function(){
 }
 
 //sets a state
-GeneralBehavior.prototype.setState = function(brainState, animationState){
+GeneralBehavior.prototype.setState = function(brainState, animationState, callback){
     this.lastBrain = this.brainState;
     this.lastAnim = this.animationState;
     if (brainState){
@@ -35,6 +35,9 @@ GeneralBehavior.prototype.setState = function(brainState, animationState){
             }else{
                 this.animationState = newState;
                 this.owner.setState(this.animationState);
+            }
+            if (callback){
+                callback();
             }
         }.bind(this));
     }
@@ -305,9 +308,10 @@ GeneralBehavior.prototype.seek = function(toPoint){
     var vector = this.getVectorTo(toPoint, myFeet);
 
 
-    var speed = 0;
-    speed = this.owner.gameObject.speed;
-
+    var speed = this.owner.gameObject.speed;
+    if (!speed){
+        throw "Character: " + this.owner.name + " speed not defined.";
+    }
 
     return cc.pMult(cc.pNormalize(vector.direction), speed);
 }
@@ -465,9 +469,12 @@ GeneralBehavior.prototype.handleState = function(dt){
     var state= this.getState();
     if (!this.owner.isAlive() && state.brain!='dead'){
         this.setState('dead','dead');
+        this.owner.unscheduleAllCallbacks();
         return;
     }
-
+    if (!this.owner.isAlive()){
+        this.owner.unscheduleAllCallbacks();
+    }
 
     switch(state.brain){
         case 'idle':this.handleIdle(dt);
@@ -517,7 +524,14 @@ GeneralBehavior.prototype.handleFight = function(dt){
 
     //if time is past the actiondelay and im not in another animation other than idle or damage
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1){
-        this.setAttackAnim('fighting');
+        this.setAttackAnim('fighting', function(){
+            var point = this.seekEnemy();
+            if (point.x != 0 || point.y != 0){
+                //out of range, they fled or we got knocked back
+                this.setState('move', 'move');
+                return;
+            }
+        }.bind(this));
         this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
         this.lastAttack = 0;
     }else{
@@ -525,7 +539,7 @@ GeneralBehavior.prototype.handleFight = function(dt){
     }
 }
 
-GeneralBehavior.prototype.setAttackAnim = function(state){
+GeneralBehavior.prototype.setAttackAnim = function(state, callback){
     if (this.attackSequence==undefined){
         this.attackSequence = 1;
     }
@@ -536,10 +550,10 @@ GeneralBehavior.prototype.setAttackAnim = function(state){
     }else{
         var nextAttack = 'attack'+this.attackSequence;
         if (this.owner.animations[nextAttack]){
-            this.setState(state, nextAttack);
+            this.setState(state, nextAttack, callback);
         }else{
             this.attackSequence = 0;
-            this.setState(state, 'attack');
+            this.setState(state, 'attack', callback);
         }
     }
     this.attackSequence++;
@@ -663,9 +677,9 @@ GeneralBehavior.prototype.afterEffects = function(){
         if (!this.scheduledEffects[effectName]){
             var effectFunc = this.applyEffects.bind(this, effect);
             var removeEffectFunc = this.removeEffects.bind(this, effect, effectFunc, effectName);
-            this.owner.schedule(effectFunc, effect.interval, effect.duration/effect.interval);
+            this.owner.schedule(effectFunc, effect.interval, (effect.duration/effect.interval)-1);
             if (effect.duration){
-                this.owner.schedule(removeEffectFunc, effect.duration, 1);
+                this.owner.scheduleOnce(removeEffectFunc, effect.duration);
             }
             this.scheduledEffects[effectName] = effect;
         }

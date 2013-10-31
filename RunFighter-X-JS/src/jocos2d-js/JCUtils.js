@@ -81,6 +81,33 @@ jc.playEffect = function(name, target, z, layer){
     return effect;
 }
 
+jc.setChildEffectPosition = function(effect, parent, config){
+    var placement = config.placement;
+    var effectPos = effect.getPosition();
+    var cs = parent.getContentSize();
+    var tr = parent.getTextureRect();
+    var etr = effect.getTextureRect();
+
+    if (placement){
+        if (placement == 'bottom') {
+            effectPos.y -= cs.height/2;
+            effect.setPosition(effectPos);
+        }else if (placement == 'center'){
+            effectPos.y -= cs.height/2; //move to botton
+            effectPos.y += tr.height/2; //move up to middle of texture
+            effect.setPosition(effectPos);
+        }else{
+            throw "Unknown effect placement.";
+        }
+    }
+
+    if (config.offset){
+        var newPos = cc.pAdd(effectPos, config.offset);
+        effect.setPosition(newPos);
+    }
+
+}
+
 
 jc.setEffectPosition = function(effect, parent, config){
     var placement = config.placement;
@@ -91,10 +118,9 @@ jc.setEffectPosition = function(effect, parent, config){
 
     if (placement){
         if (placement == 'bottom') {
-            base.y += etr.height/2;
             effect.setPosition(base);
         }else if (placement == 'center'){
-            base.y -= tr.height/2;
+            base.y += tr.height/2;
             effect.setPosition(base);
         }else{
             throw "Unknown effect placement.";
@@ -106,6 +132,30 @@ jc.setEffectPosition = function(effect, parent, config){
         effect.setPosition(newPos);
     }
 
+}
+
+jc.genericPower = function(name, value, bObj){
+    jc.checkPower(value, name);
+    var config = spriteDefs[value].damageMods[name];
+    var effect = {};
+    effect = _.extend(effect, config); //add all props in config to effect
+    effect.name = name;
+    effect.origin = bObj.owner;
+    bObj.locked.addEffect(effect);
+}
+jc.genericPowerApply = function(effectData, effectName, varName,bObj){
+    //examine the effect config and apply burning to the victim
+    if (GeneralBehavior.applyDamage(bObj.owner, effectData.origin, effectData.damage)){
+        if (!bObj.owner[varName]){
+            bObj.owner[varName] = jc.playEffect(effectName, bObj.owner, bObj.owner.getZOrder(), bObj.owner.layer);
+        }
+    }
+}
+jc.genericPowerRemove = function(varName,bObj){
+    if (!bObj.owner[varName]){
+        bObj.owner.layer.removeChild(bObj.owner[varName]);
+    }
+    bObj.owner[varName] = undefined;
 }
 
 jc.movementType = {

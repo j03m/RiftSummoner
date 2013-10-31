@@ -15,6 +15,29 @@ var powerConfig = {
             }
         }
     },
+    "vampireRadius":function(value){
+
+        jc.checkPower(value, "vampireRadius");
+
+        var config = spriteDefs[value].powers["vampireRadius"];
+        //get all allies in range
+        var foes = this.allFoesWithinRadius(config.radius);
+
+        //damage them and heal me this amount
+        var heal = 0;
+        for(var i =0;i<foes.length;i++){
+            if (GeneralBehavior.applyDamage( foes[i], this.owner, config.damage)){
+                jc.playEffect("greenBang", foes[i], foes[i].getZOrder(), this.owner.layer);
+                heal+=config.damage;
+            }
+        }
+        if (heal!=0){
+            if (GeneralBehavior.heal(this.owner, this.owner, heal)){
+                jc.playEffect("heal", this.owner, this.owner.getZOrder(), this.owner.layer);
+            }
+        }
+
+    },
     "regeneration":function(value){
         jc.checkPower(value, "regeneration");
         var config = spriteDefs[value].powers["regeneration"];
@@ -33,28 +56,34 @@ var powerConfig = {
             }
         }
     },
+    "knockback":function(value){
+        jc.checkPower(value, "knockback");
+        var config = spriteDefs[value].damageMods["knockback"];
+        var distance = config.distance;
+        if (this.owner.isFlippedX()){
+            distance*=-1;
+        }
+        var targetPos = this.locked.getBasePosition();
+        targetPos.x+=distance;
+        this.locked.setBasePosition(targetPos);
+    },
     "burn":function(value){
-        jc.checkPower(value, "burn");
-        var config = spriteDefs[value].damageMods["burn"];
-        var effect = {};
-        effect = _.extend(effect, config); //add all props in config to effect
-        effect.name = "burn";
-        effect.origin = this.owner;
-        this.locked.addEffect(effect);
+        jc.genericPower("burn", value, this);
     },
     "burn-apply":function(effectData){
-        //examine the effect config and apply burning to the victim
-        if (GeneralBehavior.applyDamage(this.owner, effectData.origin, effectData.damage)){
-            if (!this.owner.burnEffect){
-                this.owner.burnEffect = jc.playEffect("greenBang", this.owner, this.owner.getZOrder(), this.owner.layer);
-            }
-        }
+        jc.genericPowerApply(effectData, "greenBang", "burnEffect", this);
     },
-    "burn-remove":function(effectData){
-        if (!this.owner.burnEffect){
-            this.owner.layer.removeChild(this.owner.burnEffect);
-        }
-        this.owner.burnEffect = undefined;
+    "burn-remove":function(){
+        jc.genericPowerRemove("burnEffect", this);
+    },
+    "poison":function(value){
+        jc.genericPower("poison", value, this);
+    },
+    "poison-apply":function(effectData){
+        jc.genericPowerApply(effectData, "greenBang", "poisonEffect", this);
+    },
+    "poison-remove":function(){
+        jc.genericPowerRemove("poisonEffect", this)
     }
 
 }
