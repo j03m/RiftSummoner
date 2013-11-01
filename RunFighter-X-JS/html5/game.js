@@ -75,6 +75,7 @@ var MW = MW || {};
             '../src/EditDeck.js',
             '../src/ArenaGame.js',
             '../src/AnimationTest.js',
+            '../src/Loading.js',
             '../src/Main.js',
 			'gameHtml5.js'
     

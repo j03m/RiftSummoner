@@ -2,7 +2,11 @@
 //var transition = cc.TransitionSlideInR.create(EditDeck.scene, 2);
 //cc.Director.getInstance().replaceScene(transition);
 //return;
-
+Array.prototype.pushUnique = function(value){
+    if (this.indexOf(value)==-1){
+        this.push(value);
+    }
+}
 var MainGame = cc.Layer.extend({
     state: 0,
     init: function() {
@@ -12,19 +16,105 @@ var MainGame = cc.Layer.extend({
             return false;
         }
     },
-    changeScene:function(key, metaData){         //todo: change to layer manager
+    changeScene:function(key, assets, data){         //todo: change to layer manager
+
+
         switch(key){
             case 'editdeck':
                 //var transition = cc.TransitionSlideInR.create(0.2,ArenaGame.scene());
                 cc.Director.getInstance().replaceScene(ArenaGame.scene());
                 break;
+            case 'arena-pre':
+                ArenaGame.scene();
+                jc.arenaScene.data=data;
+                cc.Director.getInstance().replaceScene(Loading.scene(assets, 'arena'));
+                break;
             case 'arena':
-                cc.Director.getInstance().replaceScene(ArenaGame.scene());
+
+                cc.Director.getInstance().replaceScene(jc.arenaScene);
                 break;
         }
     },
     onEnter:function(){
-        this.changeScene('editdeck');
+        //fight config
+        var fightConfig = {
+            teamA:[
+                "blueKnight",
+                "goblin",
+                "wizard",
+                "shadowKnight"
+            ],
+            teamAFormation:"4x4x4a",
+            teamB:[
+                "goblin",
+                "wizard",
+                "elementalFire"
+            ],
+            teamBFormation:"4x4x4b"
+        };
+
+        //def - effect
+        //def - gameObject - missile
+        //missile - effect
+        //powers - powerAnimationsRequired
+       var assets = [];
+       for (var i=0;i<fightConfig.teamA.length;i++){
+           var name = fightConfig.teamA[i];
+           this.addAssetChain(assets, name);
+       }
+
+       for (var i=0;i<fightConfig.teamB.length;i++){
+           var name = fightConfig.teamB[i];
+           this.addAssetChain(assets, name);
+       }
+
+       //transform
+       for (var i =0;i<assets.length;i++){
+            assets[i] = {src:assets[i]};
+       }
+
+       this.changeScene('arena-pre',assets, fightConfig);
+
+    },
+    addAssetChain:function(assetAry, name){
+        assetAry.pushUnique(g_characterPlists[name]);
+        assetAry.pushUnique(g_characterPngs[name]);
+        if (spriteDefs[name].effect){
+
+            assetAry.pushUnique(g_characterPlists[spriteDefs[name].effect]);
+            assetAry.pushUnique(g_characterPngs[spriteDefs[name].effect]);
+        }
+
+        if (spriteDefs[name].gameProperties.missile){
+            assetAry.pushUnique(g_characterPlists[spriteDefs[name].gameProperties.missile]);
+            assetAry.pushUnique(g_characterPngs[spriteDefs[name].gameProperties.missile]);
+        }
+
+        if (spriteDefs[name].powers){
+            var powers = spriteDefs[name].powers;
+            for(var power in powers){
+                var animations = powerAnimationsRequired[power];
+                for (var i =0;i<animations.length;i++){
+                    assetAry.pushUnique(g_characterPlists[animations[i]]);
+                    assetAry.pushUnique(g_characterPngs[animations[i]]);
+
+                }
+            }
+
+        }
+
+        if (spriteDefs[name].damageMods){
+            var powers = spriteDefs[name].damageMods;
+            for(var power in powers){
+                var animations = powerAnimationsRequired[power];
+                for (var i =0;i<animations.length;i++){
+                    assetAry.pushUnique(g_characterPlists[animations[i]]);
+                    assetAry.pushUnique(g_characterPngs[animations[i]]);
+
+                }
+            }
+        }
+
     }
 
 });

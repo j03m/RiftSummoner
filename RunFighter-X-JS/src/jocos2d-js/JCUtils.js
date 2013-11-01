@@ -68,18 +68,35 @@ jc.makeAnimationFromRange = function(name, config){
 jc.playEffect = function(name, target, z, layer){
 
     var config = effectsConfig[name];
-    var effect = jc.makeSpriteWithPlist(config.plist, config.png, config.start);
-    var effectAnimation = jc.makeAnimationFromRange(name, config );
+
+    if (!target.effectAnimations){
+        target.effectAnimations = {};
+    }
+
+    if (!target.effectAnimations[name]){
+        target.effectAnimations[name] = {
+                                            "sprite":jc.makeSpriteWithPlist(config.plist, config.png, config.start),
+                                            "animation":jc.makeAnimationFromRange(name, config )
+        };
+    }
+    if (target.effectAnimations[name].playing){
+        return; //don't play if it's already playing on me
+    }
+
+    var effect = target.effectAnimations[name].sprite;
+    var effectAnimation = target.effectAnimations[name].animation;
     jc.setEffectPosition(effect, target, config);
     effect.setVisible(true);
     layer.addChild(effect);
     layer.reorderChild(effect,z);
     var onDone = cc.CallFunc.create(function(){
         layer.removeChild(effect);
+        target.effectAnimations[name].playing =false;
     }.bind(this));
     var action = cc.Sequence.create(effectAnimation, onDone);
+    target.effectAnimations[name].playing =true;
     effect.runAction(action);
-    return effect;
+
 }
 
 jc.setChildEffectPosition = function(effect, parent, config){

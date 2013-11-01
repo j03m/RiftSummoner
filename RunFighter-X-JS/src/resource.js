@@ -13,13 +13,14 @@ var windowPng = dirImg + "windows.png";
 //var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
 var g_characterPlists = {};
+var g_characterAssets = [];
 
 var g_effectPngs = {};
 
-
+//core resources
 var g_maingame = [
     //image
-	{src:arenaSheet},
+    {src:arenaSheet},
     {src:shadowPlist},
     {src:shadowPng},
     {src:carduiPng},
@@ -35,17 +36,15 @@ for (var entry in spriteDefs ){
     if (!spriteDefs[entry].parentOnly && spriteDefs[entry].name){
         g_characterPngs[entry] = dirImg + entry + 'Sheet.png';
         g_characterPlists[entry] = dirImg + entry + 'Sheet.plist';
-        g_maingame.push({src:g_characterPngs[entry]});
-        g_maingame.push({src:g_characterPlists[entry]});
     }
 }
 
 for (var entry in missileConfig){
-    g_maingame.push({src:missileConfig[entry].png});
-    g_maingame.push({src:missileConfig[entry].plist});
+    g_characterPngs[entry] = missileConfig[entry].png;
+    g_characterPlists[entry] = missileConfig[entry].plist;
 }
 
 for (var entry in effectsConfig){
-    g_maingame.push({src:effectsConfig[entry].png});
-    g_maingame.push({src:effectsConfig[entry].plist});
+    g_characterPngs[entry] = effectsConfig[entry].png;
+    g_characterPlists[entry] = effectsConfig[entry].plist;
 }

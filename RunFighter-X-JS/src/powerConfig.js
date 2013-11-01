@@ -1,4 +1,17 @@
 //Every function in here expects to be bound to an instance of GeneralBehavior, or something that extends it!
+var powerAnimationsRequired = {
+    "healingRadius":["heal"],
+    "vampireRadius":["greenBang","heal"],
+    "regeneration":['heal'],
+    "splashDamage":['greenBang'],
+    "vampireDistro":["greenBang","heal"],
+    "vampireDrain":["greenBang","heal"],
+    "knockBack":["greenBang"],
+    "burn":["greenBang"],
+    "poison":["greenBang"]
+
+}
+
 var powerConfig = {
     "healingRadius":function(value){
 
@@ -96,6 +109,7 @@ var powerConfig = {
         var targetPos = this.locked.getBasePosition();
         targetPos.x+=distance;
         this.locked.setBasePosition(targetPos);
+        jc.playEffect("greenBang", this.locked, this.locked.getZOrder(), this.owner.layer);
     },
     "burn":function(value){
         jc.genericPower("burn", value, this);

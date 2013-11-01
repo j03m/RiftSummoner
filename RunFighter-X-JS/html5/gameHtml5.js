@@ -31,6 +31,11 @@ var cocos2dApp = cc.Application.extend({
         cc.LoaderScene.preload(g_maingame, function () {
             director.replaceScene(new this.startScene());
         }, this);
+
+        cc.Loader.preloadAsync(g_characterAssets, function(){
+            console.log("***ASYNC LOAD DONE");
+        },this);
+
         return true;
     }
 });

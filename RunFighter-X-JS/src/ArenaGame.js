@@ -26,36 +26,19 @@ var ArenaGame = jc.WorldLayer.extend({
 		}
 	},
     onShow:function(){
-        if(!jc.editDeckResult){
+        if(!jc.arenaScene.data){
             this.runScenario0();
         }else{
-            this.runMetaDataScenario();
+            this.runScenario();
         }
     },
-    runMetaDataScenario:function(){
-        for(var entry in jc.editDeckResult){
-            var name = jc.playerBlob.myguys[jc.editDeckResult[entry]].name;
-            this.teamASprites.push(name);
-        }
+    runScenario:function(){
 
-        this.teamAFormation = jc.formations["4x4x4"];
+        this.teamASprites = jc.arenaScene.data.teamA;
+        this.teamAFormation = jc.formations[jc.arenaScene.data.teamAFormation];
+        this.teamBSprites = jc.arenaScene.data.teamB;
+        this.teamBFormation = jc.formations[jc.arenaScene.data.teamBFormation];
 
-
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('goldElf');
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('goldElf');
-
-        this.teamBSprites.push('orc');
-        this.teamBSprites.push('orc');
-        this.teamBSprites.push('orc');
-        this.teamBSprites.push('orc');
-
-        this.teamBSprites.push('troll');
-        this.teamBSprites.push('wizard');
-        this.teamBSprites.push('wizard');
-        this.teamBSprites.push('troll');
-        this.teamBFormation = jc.formations["4x4x4"];
         this.setUp();
     },
     runScenario0:function(){
