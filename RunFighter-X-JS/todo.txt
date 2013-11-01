@@ -1,9 +1,33 @@
+Buglist -
+
+    *Missiles need to start at the characters attacking edge
+    *Missiles need a set velocity, right now they slow down when the character gets close.
+    *Tanks need to assess if they are still close enough to the target (per knockback)
+    Characters need to face who they are attacking
+    The players characters need some sort of indicator, green or red arrows above heads?
+    *adjust shadows right for flipx
+
+    *clip rect?
+    *remove missile + effects - check perf on phone
+    *if better, cache one missile + effect per soldier
+    *do the same for heals
+    *For area heals, cache the effects once tehy are applied.
+
+
+
+    mod cocos2d loading screen to your background
+    loading logic: Load core assets
+    show landing (placeholder)
+    pre-arena - show loader
+
+    *start loading asyc
+    *game battle preroll - what we have, what is loaded, whats not loaded, load sync whatever is not loaded
+
+
+    modify
+
 TO BETA:
 
-maya -
-    set camera
-    set texture
-    render
 
 Landing page - copy frontier rush
 Backdrop
