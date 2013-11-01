@@ -9,15 +9,7 @@ var HealerBehavior =  function(sprite){
 HealerBehavior.prototype.healThink = function(dt){
 
     var state= this.getState();
-    if (!this.owner.isAlive() && state.brain!='dead'){
-        this.setState('dead','dead');
-        return;
-    }
-
-    if (!this.owner.isAlive()){
-        this.owner.unscheduleAllCallbacks();
-    }
-
+    this.handleDeath();
 
     switch(state.brain){
         case 'idle':this.handleHealerIdle(dt);

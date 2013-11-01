@@ -6,7 +6,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
             this.backDrop = cc.Sprite.create(worldMap);
             this.addChild(this.backDrop);
             this.backDrop.setPosition(this.winSize.width/2, this.winSize.height/2);
-            this.reorderChild(this.backDrop,  -99999999);
+            this.reorderChild(this.backDrop,  -24);
             this.worldSize = this.backDrop.getContentSize();
             var x = this.worldSize.width/2;
             var y = this.worldSize.height/2;

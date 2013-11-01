@@ -66,6 +66,7 @@ jc.makeAnimationFromRange = function(name, config){
 }
 
 jc.playEffect = function(name, target, z, layer){
+
     var config = effectsConfig[name];
     var effect = jc.makeSpriteWithPlist(config.plist, config.png, config.start);
     var effectAnimation = jc.makeAnimationFromRange(name, config );
@@ -190,9 +191,18 @@ jc.getElementType = function(id){
 }
 
 jc.checkPower = function(charName, powerName){
-    if (!spriteDefs[charName] && !spriteDefs[charName].powers && !spriteDefs[charName].powers[powerName]){
-        throw "cannot find " + powerName + " power def for character:" + charName;
-    }
+
+}
+
+jc.insideEllipse = function(major, minor, point, center){
+    //http://math.stackexchange.com/questions/76457/check-if-a-point-is-within-an-ellipse
+    var xDiff = point.x - center.x;
+    var yDiff = point.y - center.y;
+    var majorSq = major*major;
+    var minorSq = minor*minor;
+
+    var final = ((xDiff*xDiff)/majorSq) + ((yDiff*yDiff)/minorSq);
+    return final <1;
 }
 
 
@@ -211,21 +221,34 @@ jc.formations = {
         {"x":75,"y":600},
 
     ],
-    "4x4x4":[
-        {"x":225,"y":225},
-        {"x":225,"y":375},
-        {"x":225,"y":525},
-        {"x":225,"y":675},
-        {"x":150,"y":225},
-        {"x":150,"y":375},
-        {"x":150,"y":525},
-        {"x":150,"y":675},
-        {"x":75,"y":225},
-        {"x":75,"y":375},
-        {"x":75,"y":525},
-        {"x":75,"y":675},
+    "4x4x4a":[
+        {"x":800,"y":400},
+        {"x":800,"y":500},
+        {"x":800,"y":600},
+        {"x":800,"y":700},
+        {"x":700,"y":400},
+        {"x":700,"y":500},
+        {"x":700,"y":600},
+        {"x":700,"y":700},
+        {"x":550,"y":400},
+        {"x":550,"y":500},
+        {"x":550,"y":600},
+        {"x":550,"y":700},
+    ],
 
+    "4x4x4b":[
+        {"x":1100,"y":400},
+        {"x":1100,"y":500},
+        {"x":1100,"y":600},
+        {"x":1100,"y":700},
+        {"x":1200,"y":400},
+        {"x":1200,"y":500},
+        {"x":1200,"y":600},
+        {"x":1200,"y":700},
+        {"x":1350,"y":400},
+        {"x":1350,"y":500},
+        {"x":1350,"y":600},
+        {"x":1350,"y":700},
     ]
-
 
 };

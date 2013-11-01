@@ -71,6 +71,13 @@ jc.Sprite = cc.Sprite.extend({
 
 		return this;
 	},
+    die:function(){
+        this.imdeadman=true;
+        this.layer.removeChild(this);
+        this.layer.removeChild(this.shadow);
+        this.layer.removeChild(this.healthBar);
+        this.cleanUp();
+    },
     disableHealthBar:function(){
         this.hideHealthbar = true;
     },
@@ -99,7 +106,7 @@ jc.Sprite = cc.Sprite.extend({
             this.currentMove = undefined;
         }
 
-        this.stopAction(this.animations[this.state].action);
+        //this.stopAction(this.animations[this.state].action);
 		this.state = -1;
         this.layer.removeChild(this.shadow);
         this.layer.removeChild(this.healthBar);
@@ -337,13 +344,13 @@ jc.Sprite = cc.Sprite.extend({
         this.behavior.think(dt);
     },
     customDraw:function(){
-
-        this.superDraw();
-        if (this.debug){
-            this.drawBorders();
+        if (!this.imdeadman){
+            this.superDraw();
+            if (this.debug){
+                this.drawBorders();
+            }
+            this.drawHealthBar();
         }
-        this.drawHealthBar();
-
     },
     drawBorders:function(){
 

@@ -234,11 +234,21 @@ GeneralBehavior.prototype.seekEnemy = function(){
 
     var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
 
+    //if the place im trying to go is outside of the elipse, send me to center.
+    //this sort of blows.
+    if (this.owner.gameObject.movementType == jc.movementType.ground){
+        var center = cc.p(this.owner.layer.winSize.width/2, this.owner.layer.winSize.height/2);
+        if (!jc.insideEllipse(500,200, attackPosition,center)){
+            attackPosition = center;
+        }
+    }
+
     return this.seek(attackPosition);
 }
 
 
 GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target){
+
 
     if (!target){
         return this.owner.getBasePosition();
@@ -334,9 +344,9 @@ GeneralBehavior.prototype.moveToward = function(point, dt){
     // Update position based on velocity
 //    var separate = this.separate();
 //    var point = cc.pAdd(separate, point);
+
     var newPosition = cc.pAdd(this.owner.getBasePosition(), cc.pMult(point, dt));
     this.owner.setBasePosition(newPosition);
-
 }
 
 GeneralBehavior.prototype.getRandomFleePosition = function(){
@@ -465,17 +475,40 @@ GeneralBehavior.prototype.think = function(dt){
 
 }
 
-GeneralBehavior.prototype.handleState = function(dt){
-    var state= this.getState();
-    if (!this.owner.isAlive() && state.brain!='dead'){
-        this.setState('dead','dead');
-        this.owner.unscheduleAllCallbacks();
-        return;
-    }
-    if (!this.owner.isAlive()){
-        this.owner.unscheduleAllCallbacks();
+GeneralBehavior.prototype.handleDeath = function(){
+
+
+    if (!this.callbacksDisabled){
+        var state= this.getState();
+        if (!this.owner.isAlive() && state.brain!='dead'){
+            this.setState('dead','dead');
+            this.owner.unscheduleAllCallbacks();
+            return;
+        }
+        if (!this.owner.isAlive()){
+            this.owner.unscheduleAllCallbacks();
+            this.callbacksDisabled = 1;
+        }
+    }else{
+        if (this.callbacksDisabled == 1){
+            this.owner.scheduleOnce(this.deadForGood.bind(this), 3);
+            this.callbacksDisabled++;
+        }
+
     }
 
+}
+
+GeneralBehavior.prototype.deadForGood = function(){
+    this.owner.die();
+//    this.homeTeam = _.reject(this.homeTeam, function(member){
+//        return member == this.owner;
+//    });
+}
+
+GeneralBehavior.prototype.handleState = function(dt){
+    this.handleDeath();
+    var state= this.getState();
     switch(state.brain){
         case 'idle':this.handleIdle(dt);
             break;

@@ -56,6 +56,36 @@ var powerConfig = {
             }
         }
     },
+    "vampireDistro":function(value){
+        jc.checkPower(value, "vampireDistro");
+        var config = spriteDefs[value].damageMods["vampireDistro"];
+        var allies = this.owner.homeTeam;
+        if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
+            jc.playEffect("greenBang", this.locked, this.locked.getZOrder(), this.owner.layer);
+        }
+
+        for(var i=0;i<allies.length;i++){
+            if (allies[i]!= this.owner){
+                if (GeneralBehavior.heal(this.owner, allies[i],config.heal)){
+                    jc.playEffect("heal", allies[i], allies[i].getZOrder(), this.owner.layer);
+                }
+
+            }
+        }
+    },
+    "vampireDrain":function(value){
+        jc.checkPower(value, "vampireDrain");
+        var config = spriteDefs[value].damageMods["vampireDrain"];
+        if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
+            jc.playEffect("greenBang", this.locked, this.locked.getZOrder(), this.owner.layer);
+        }
+
+        if (GeneralBehavior.heal(this.owner, this.owner, config.heal)){
+            jc.playEffect("heal", this.owner, this.owner.getZOrder(), this.owner.layer);
+        }
+
+
+    },
     "knockback":function(value){
         jc.checkPower(value, "knockback");
         var config = spriteDefs[value].damageMods["knockback"];

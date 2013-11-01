@@ -61,15 +61,7 @@ DefenderBehavior.prototype.handleDefenderDamage = function(dt){
 DefenderBehavior.prototype.defendThink = function(dt){
 
     var state= this.getState();
-    if (!this.owner.isAlive() && state.brain!='dead'){
-        this.setState('dead','dead');
-        this.owner.unscheduleAllCallbacks();
-        return;
-    }
-
-    if (!this.owner.isAlive()){
-        this.owner.unscheduleAllCallbacks();
-    }
+    this.handleDeath();
 
     switch(state.brain){
         case 'idle':this.handleDefenderIdle(dt);

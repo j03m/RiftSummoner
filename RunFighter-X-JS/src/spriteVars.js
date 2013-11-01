@@ -270,10 +270,15 @@ var spriteDefs = {
 	"dwarvenKnightVoid": {
 		"name": "dwarvenKnightVoid",
 		"formalName": "Dwarven Knight - Void",
-		"details": "Dwarven Knights are known for being very difficult to kill. His armor embued with void magic, this dwarf is immune to vampiric powers.",
+		"details": "Dwarven Knights are known for being very difficult to kill. His armor embued with void magic, this dwarf is immune to vampiric powers and has its own.",
 		"elementType": "void",
 		"unitType": 3,
-		"special": "Burn Damage",
+		"damageMods": {
+			"vampireDrain": {
+				"heal": 20,
+				"damage": 20
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 700,
 			"speed": 50,
@@ -1304,6 +1309,13 @@ var spriteDefs = {
 		"elementType": "life",
 		"unitType": 3,
 		"special": "Poison",
+		"powers": {
+			"poison": {
+				"damage": 50,
+				"duration": 5,
+				"interval": 0.5
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 100,
 			"speed": 200,
@@ -1421,10 +1433,15 @@ var spriteDefs = {
 	"voidElf": {
 		"name": "voidElf",
 		"formalName": "Dark Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the deadliest arrows of all the elves.",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the magic arrows that steal life from targets and give it to allies.",
 		"elementType": "void",
 		"unitType": 4,
-		"special": "None",
+		"damageMods": {
+			"vampireDistro": {
+				"heal": 20,
+				"damage": 20
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 200,
 			"damage": 45,

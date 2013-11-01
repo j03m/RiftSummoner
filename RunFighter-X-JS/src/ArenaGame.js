@@ -13,7 +13,7 @@ var ArenaGame = jc.WorldLayer.extend({
     teams:{},
 
     init: function() {
-		if (this._super(shrine1Png)) {
+		if (this._super(arenaSheet)) {
 
             this.teams['a'] = [];
             this.teams['b'] = [];
@@ -60,20 +60,45 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     runScenario0:function(){
 
-        this.teamASprites.push('orc');
-        this.teamASprites.push('orc');
-        this.teamASprites.push('orc');
+        this.teamASprites.push('orge');
+        this.teamASprites.push('orge');
+        this.teamASprites.push('orge');
+        this.teamASprites.push('orge');
+
+        this.teamASprites.push('orge');
+        this.teamASprites.push('blueKnight');
+        this.teamASprites.push('blueKnight');
+        this.teamASprites.push('orge');
+
+        this.teamASprites.push('voidElf');
+        this.teamASprites.push('forestElf');
+        this.teamASprites.push('voidElf');
+        this.teamASprites.push('forestElf');
 
 
 
-        this.teamAFormation = jc.formations["4x4x4"];
+        this.teamAFormation = jc.formations["4x4x4a"];
 
         //this.teamBSprites.push('elementalWind');
-        this.teamBSprites.push('shadowKnight');
+
+        this.teamBSprites.push('elementalStone');
+        this.teamBSprites.push('elementalStone');
+        this.teamBSprites.push('elementalStone');
+        this.teamBSprites.push('elementalStone');
+
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('voidElf');
+
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('voidElf');
+        this.teamBSprites.push('voidElf');
 
 
 
-        this.teamBFormation = jc.formations["4x4x4"];
+        this.teamBFormation = jc.formations["4x4x4b"];
 
 
 //        this.teamASprites.push('fireKnight');
@@ -126,32 +151,6 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     present:function(){
 
-        //pan and zoom to the center of team territory
-        var teamALine = cc.p(this.teamATerritory, this.worldSize.height/2);
-        var teamBLine = cc.p(this.teamBTerritory, this.worldSize.height/2);
-//        this.panToWorldPoint(teamALine,this.getScale(this.teamATerritory,this.worldSize.height/2), jc.defaultTransitionTime, function(){
-//            //add sprites, arrange in formation
-//            for(var i =0; i<this.teams['a'].length; i++){
-//                var sprite = this.teams['a'][i];
-//                var position = this.teamAFormation[i];
-//                sprite.setBasePosition(position);
-//                sprite.setVisible(true);
-//            }
-//            this.panToWorldPoint(teamBLine, this.getScale(), jc.defaultTransitionTime,function(){
-//                for(var i =0; i<this.teams['b'].length; i++){
-//                    var sprite = this.teams['b'][i];
-//                    var position = cc.p(this.teamBFormation[i].x, this.teamBFormation[i].y);
-//                    position.x += this.winSize.width/2;
-//                    sprite.setBasePosition(position);
-//                    sprite.setVisible(true);
-//                }
-//                this.fullZoomOut(jc.defaultTransitionTime,function(){
-//                      this.started = true;
-//                });
-//            }.bind(this));
-//        }.bind(this));
-
-
         this.fullZoomOut(jc.defaultTransitionTime,function(){
             //add sprites, arrange in formation
             for(var i =0; i<this.teams['a'].length; i++){
@@ -166,7 +165,7 @@ var ArenaGame = jc.WorldLayer.extend({
             for(var i =0; i<this.teams['b'].length; i++){
                 var sprite = this.teams['b'][i];
                 var worldPos = cc.p(this.teamBFormation[i].x, this.teamBFormation[i].y);
-                worldPos.x += this.worldSize.width/2;
+
 
                 var nodePos = this.convertToItemPosition(worldPos);
                 sprite.setBasePosition(nodePos);

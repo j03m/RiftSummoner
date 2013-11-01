@@ -34,7 +34,6 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
     //if time is past the actiondelay and im not in another animation other than idle or damage
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1){
         this.setAttackAnim('fighting');
-        console.log("missile scheduled");
         this.owner.scheduleOnce(this.doMissile.bind(this),effectDelay);
         this.lastAttack = 0;
     }else{
@@ -45,53 +44,62 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
 RangeBehavior.prototype.doMissile = function(){
 
     //make missile sprite
-    console.log("missile sent");
-    var missileName = this.owner.gameObject.missile;
-    if (!missileName){
-        missileName = "greenbullet"; //todo temp, remove
-    }
+    if (!this.firing){ //do missile
 
-    var missileType = missileConfig[missileName];
-    var vector = this.getVectorTo(this.locked.getBasePosition(), this.owner.getBasePosition());
-    var timeToImpact = vector.distance/missileType.speed;
-    var missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
-    var missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
+        this.firing = true;
+        var missileName = this.owner.gameObject.missile;
+        if (!missileName){
+            missileName = "greenbullet"; //todo temp, remove
+        }
 
-    //start it in front of me
-    this.owner.layer.addChild(missile);
-    var ownerPos = this.owner.getBasePosition();
-    var tr = this.owner.getTextureRect();
-    if (this.owner.isFlippedX()){
-        ownerPos.x -=tr.width/2;
-    }else{
-        ownerPos.x +=tr.width/2;
-    }
+        var missileType = missileConfig[missileName];
+        var vector = this.getVectorTo(this.locked.getBasePosition(), this.owner.getBasePosition());
+        var timeToImpact = vector.distance/missileType.speed;
+        if (!this.missile){
+            this.missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
+            this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
 
-    ownerPos.y += tr.height/2;
+        }
 
-    if (missileType.offset){
-        ownerPos = cc.pAdd(ownerPos, missileType.offset);
-    }
+        this.owner.layer.addChild(this.missile);
+        var ownerPos = this.owner.getBasePosition();
+        var tr = this.owner.getTextureRect();
+        if (this.owner.isFlippedX()){
+            ownerPos.x -=tr.width/2;
+        }else{
+            ownerPos.x +=tr.width/2;
+        }
 
+        ownerPos.y += tr.height/2;
 
-    missile.setFlipX(this.owner.isFlippedX());
-
-    missile.setPosition(ownerPos);
-    missile.runAction(missileAnimation);
-
-    //move it to the target at damageDelay speed
-    var moveTo = cc.MoveTo.create(timeToImpact, this.locked.getPosition());
-    var callback = cc.CallFunc.create(function(){
-        this.hitLogic();
-        this.owner.layer.removeChild(missile);
-        if (this.locked){
-            jc.playEffect(missileType.effect, this.locked,this.locked.getZOrder(), this.owner.layer);
+        if (missileType.offset){
+            ownerPos = cc.pAdd(ownerPos, missileType.offset);
         }
 
 
-    }.bind(this));
-    var seq = cc.Sequence.create(moveTo, callback);
-    missile.runAction(seq);
+        this.missile.setFlipX(this.owner.isFlippedX());
+
+        this.missile.setPosition(ownerPos);
+        this.missile.runAction(this.missileAnimation);
+
+        //move it to the target at damageDelay speed
+        var moveTo = cc.MoveTo.create(timeToImpact, this.locked.getPosition());
+        var callback = cc.CallFunc.create(function(){
+            this.hitLogic();
+            this.owner.layer.removeChild(this.missile);
+            this.firing = false;
+            if (this.locked){
+                jc.playEffect(missileType.effect, this.locked,this.locked.getZOrder(), this.owner.layer);
+            }
+
+
+        }.bind(this));
+        var seq = cc.Sequence.create(moveTo, callback);
+        this.missile.runAction(seq);
+
+    }else{
+        this.hitLogic();
+    }
 
 }
 

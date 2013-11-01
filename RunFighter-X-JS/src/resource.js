@@ -1,6 +1,4 @@
 var arenaSheet = dirImg + "arena.png";
-var arenaPlist = dirImg + "arena.plist";
-var bloodPlist = dirImg + "blood.plist";
 var shadowPlist = dirImg + "shadowSheet.plist";
 var shadowPng = dirImg + "shadowSheet.png";
 var carduiPlist = dirImg + "cardui.plist";
@@ -9,8 +7,6 @@ var portraitsPlist = dirImg + "portraits-hd.plist";
 var portraitsPng = dirImg + "portraits-hd.png";
 var windowPlist = dirImg + "windows.plist";
 var windowPng = dirImg + "windows.png";
-var shrine1Png = dirImg + "shrine1.png";
-var shrine2Png = dirImg + "shrine2.png";
 
 
 
@@ -24,19 +20,14 @@ var g_effectPngs = {};
 var g_maingame = [
     //image
 	{src:arenaSheet},
-	{src:arenaPlist},
-    {src:bloodPlist},
     {src:shadowPlist},
     {src:shadowPng},
     {src:carduiPng},
     {src:carduiPlist},
     {src:portraitsPlist},
     {src:portraitsPng},
-
     {src:windowPlist},
     {src:windowPng},
-    {src:shrine1Png},
-    {src:shrine2Png}
 ];
 
 
