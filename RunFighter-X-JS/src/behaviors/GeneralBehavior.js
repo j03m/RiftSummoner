@@ -431,6 +431,16 @@ GeneralBehavior.prototype.damageEffects = function(){
     }
 };
 
+
+GeneralBehavior.prototype.deathEffects = function(){
+    var config = spriteDefs[this.owner.name];
+    var powers = config.deathMods;
+    for(var power in powers){
+        powers[power].name = power;
+        this.doDamageMod(powers[power]);
+    }
+};
+
 GeneralBehavior.prototype.doDamageMod=function(power){
     var powerFunc = powerConfig[power.name].bind(this);
     powerFunc(this.owner.name); //one time
@@ -477,16 +487,15 @@ GeneralBehavior.prototype.think = function(dt){
 
 GeneralBehavior.prototype.handleDeath = function(){
 
-
     if (!this.callbacksDisabled){
         var state= this.getState();
         if (!this.owner.isAlive() && state.brain!='dead'){
             this.setState('dead','dead');
-            this.owner.unscheduleAllCallbacks();
-            return;
         }
+
         if (!this.owner.isAlive()){
             this.owner.unscheduleAllCallbacks();
+            this.deathEffects();
             this.callbacksDisabled = 1;
         }
     }else{

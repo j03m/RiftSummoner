@@ -8,7 +8,9 @@ var powerAnimationsRequired = {
     "vampireDrain":["greenBang","heal"],
     "knockBack":["greenBang"],
     "burn":["greenBang"],
-    "poison":["greenBang"]
+    "poison":["greenBang"],
+    "explodePoison":["greenBang"],
+    "explodeFire":["greenBang"]
 
 }
 
@@ -61,6 +63,10 @@ var powerConfig = {
     "splashDamage":function(value){
         jc.checkPower(value, "splashDamage");
         var config = spriteDefs[value].damageMods["splashDamage"];
+
+        //initial explosion
+        jc.playEffect("greenBang", this.locked, this.locked.getZOrder(), this.owner.layer);
+
         var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.locked.getBasePosition());
         //damage them
         for(var i=0;i<foes.length;i++){
@@ -69,6 +75,35 @@ var powerConfig = {
             }
         }
     },
+    "explodeFire":function(value){
+        var config = spriteDefs[value].deathMods["explodeFire"];
+        var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.owner.getBasePosition());
+
+        //initial explosion
+        jc.playEffect("greenBang", this.locked, this.locked.getZOrder(), this.owner.layer);
+
+        //damage them
+        for(var i=0;i<foes.length;i++){
+            if (GeneralBehavior.applyDamage(foes[i], this.owner, config.damage)){
+                jc.genericPower('burn', value, this.owner, foes[i], config.burn)
+            }
+        }
+    },
+    "explodePoison":function(value){
+        var config = spriteDefs[value].deathMods["explodePoison"];
+        var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.owner.getBasePosition());
+
+        //initial explosion
+        jc.playEffect("greenBang", this.owner, this.owner.getZOrder(), this.owner.layer);
+
+        //damage them
+        for(var i=0;i<foes.length;i++){
+            if (GeneralBehavior.applyDamage(foes[i], this.owner, config.damage)){
+                jc.genericPower('poison', value, this.owner, foes[i], config.poison)
+            }
+        }
+    },
+
     "vampireDistro":function(value){
         jc.checkPower(value, "vampireDistro");
         var config = spriteDefs[value].damageMods["vampireDistro"];
@@ -112,7 +147,7 @@ var powerConfig = {
         jc.playEffect("greenBang", this.locked, this.locked.getZOrder(), this.owner.layer);
     },
     "burn":function(value){
-        jc.genericPower("burn", value, this);
+        jc.genericPower("burn", value, this.owner, this.locked);
     },
     "burn-apply":function(effectData){
         jc.genericPowerApply(effectData, "greenBang", "burnEffect", this);
@@ -121,7 +156,7 @@ var powerConfig = {
         jc.genericPowerRemove("burnEffect", this);
     },
     "poison":function(value){
-        jc.genericPower("poison", value, this);
+        jc.genericPower("poison", value, this.owner, this.locked);
     },
     "poison-apply":function(effectData){
         jc.genericPowerApply(effectData, "greenBang", "poisonEffect", this);

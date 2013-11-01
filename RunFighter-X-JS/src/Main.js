@@ -3,6 +3,9 @@
 //cc.Director.getInstance().replaceScene(transition);
 //return;
 Array.prototype.pushUnique = function(value){
+    if (!value){
+        throw "Attempting to load undefined value.";
+    }
     if (this.indexOf(value)==-1){
         this.push(value);
     }
@@ -39,16 +42,33 @@ var MainGame = cc.Layer.extend({
         //fight config
         var fightConfig = {
             teamA:[
-                "blueKnight",
                 "goblin",
-                "wizard",
-                "shadowKnight"
+                "goblin",
+                "goblin",
+                "goblin",
+                "goblin",
+                "goblin",
+                "goblin",
+                "goblin",
+                "goblin",
+                "goblin"
+
             ],
             teamAFormation:"4x4x4a",
             teamB:[
-                "goblin",
-                "wizard",
-                "elementalFire"
+                "orc",
+                "orc",
+                "orc",
+                "orc",
+                "orc",
+                "orc",
+                "orc",
+                "orc",
+                "orc",
+                "orc",
+                "orc",
+                "orc"
+
             ],
             teamBFormation:"4x4x4b"
         };
@@ -105,6 +125,18 @@ var MainGame = cc.Layer.extend({
 
         if (spriteDefs[name].damageMods){
             var powers = spriteDefs[name].damageMods;
+            for(var power in powers){
+                var animations = powerAnimationsRequired[power];
+                for (var i =0;i<animations.length;i++){
+                    assetAry.pushUnique(g_characterPlists[animations[i]]);
+                    assetAry.pushUnique(g_characterPngs[animations[i]]);
+
+                }
+            }
+        }
+
+        if (spriteDefs[name].deathMods){
+            var powers = spriteDefs[name].deathMods;
             for(var power in powers){
                 var animations = powerAnimationsRequired[power];
                 for (var i =0;i<animations.length;i++){

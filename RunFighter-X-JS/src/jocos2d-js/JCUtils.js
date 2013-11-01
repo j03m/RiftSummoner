@@ -152,15 +152,17 @@ jc.setEffectPosition = function(effect, parent, config){
 
 }
 
-jc.genericPower = function(name, value, bObj){
-    jc.checkPower(value, name);
-    var config = spriteDefs[value].damageMods[name];
+jc.genericPower = function(name, value, attacker, target, config){
+    if (!config){
+        config = spriteDefs[value].damageMods[name];
+    }
     var effect = {};
     effect = _.extend(effect, config); //add all props in config to effect
     effect.name = name;
-    effect.origin = bObj.owner;
-    bObj.locked.addEffect(effect);
+    effect.origin = attacker;
+    target.addEffect(effect);
 }
+
 jc.genericPowerApply = function(effectData, effectName, varName,bObj){
     //examine the effect config and apply burning to the victim
     if (GeneralBehavior.applyDamage(bObj.owner, effectData.origin, effectData.damage)){

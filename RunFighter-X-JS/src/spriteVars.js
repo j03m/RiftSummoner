@@ -653,10 +653,22 @@ var spriteDefs = {
 				"radius": 50
 			}
 		},
+		"deathMods": {
+			"explodeFire": {
+				"damage": 25,
+				"radius": 50,
+				"burn": {
+					"damage": 50,
+					"duration": 5,
+					"interval": 0.5
+				}
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 50,
 			"movementType": 1,
 			"targets": 1,
+			"missile": "greenbullet",
 			"damage": 80,
 			"speed": 55,
 			"actionDelays": {
@@ -665,7 +677,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 200
+			"targetRadius": 75
 		},
 		"animations": {
 			"move": {
@@ -1127,10 +1139,21 @@ var spriteDefs = {
 	"scowerer": {
 		"name": "scowerer",
 		"formalName": "Void Scavenger",
-		"details": "Weak, dog-like creatures that quickly attack the weakest target they can find.",
-		"elementType": "none",
+		"details": "Weak, dog-like creatures that quickly attack the weakest target they can find. When killed the scowerer will burst a poison acid on anyone nearby.",
+		"elementType": "life",
 		"unitType": 3,
 		"special": "None",
+		"deathMods": {
+			"explodePoison": {
+				"damage": 100,
+				"radius": 75,
+				"poison": {
+					"damage": 50,
+					"duration": 5,
+					"interval": 0.5
+				}
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 10,
 			"movementType": 1,
