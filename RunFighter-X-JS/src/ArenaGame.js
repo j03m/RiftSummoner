@@ -134,7 +134,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     present:function(){
 
-        this.fullZoomOut(jc.defaultTransitionTime,function(){
+        //this.fullZoomOut(jc.defaultTransitionTime,function(){
             //add sprites, arrange in formation
             for(var i =0; i<this.teams['a'].length; i++){
                 var sprite = this.teams['a'][i];
@@ -157,7 +157,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.started = true;
             }
 
-        }.bind(this));
+        //}.bind(this));
 
     },
     update:function (dt){
@@ -247,20 +247,9 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     targetTouchHandler:function(type, touch,sprites){
-        if (type == jc.touchEnded){
-            //this.panToWorldPoint(cc.p(0,0), this.getScaleOne(), jc.defaultTransitionTime, function(){});
-            this.panToWorldPoint(cc.p(0,0),this.getScaleOne(), jc.defaultTransitionTime, function(){ });
-        }
+
+
     }
-
-
-    //assume the board is 3x as wide as before - rerender backdrop
-    //team x starts left, team y starts right
-    //game starts totally zoomed out on full scene
-    //determine where the left most and right most charactgers are, zoom in or out until they are just visible
-    //can I make a new widescreen camera in maya for the arena collosseum
-
-
 
 });
 

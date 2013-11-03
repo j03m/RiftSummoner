@@ -32,9 +32,9 @@ var cocos2dApp = cc.Application.extend({
             director.replaceScene(new this.startScene());
         }, this);
 
-        cc.Loader.preloadAsync(g_characterAssets, function(){
-            console.log("***ASYNC LOAD DONE");
-        },this);
+//        cc.Loader.preloadAsync(g_characterAssets, function(){
+//            console.log("***ASYNC LOAD DONE");
+//        },this);
 
         return true;
     }
