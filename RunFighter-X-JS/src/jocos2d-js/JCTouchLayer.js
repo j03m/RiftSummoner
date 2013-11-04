@@ -7,7 +7,6 @@ jc.touchBegan = 'began';
 jc.touchMoved = 'moved';
 jc.touchCancelled = 'cancel';
 jc.TouchLayer = cc.Layer.extend({
-    touchTargets:[],
     init: function() {
         if (this._super()) {
             this.winSize = cc.Director.getInstance().getWinSize();
@@ -17,6 +16,7 @@ jc.TouchLayer = cc.Layer.extend({
             this.onEnter = this.childOnEnter;
             this.superOnExit = this.onExit;
             this.onExit = this.childOnExit;
+            this.touchTargets=[];
             return true;
         } else {
             return false;
@@ -29,6 +29,14 @@ jc.TouchLayer = cc.Layer.extend({
         this.superOnEnter();
         this.wireInput(true);
         this.onShow();
+    },
+    hackOn:function(){
+        this.wireInput(true);
+        this.onShow();
+    },
+    hackOff:function(){
+        this.wireInput(false)
+        this.onHide();
     },
     childOnExit:function(){
         this.superOnExit();

@@ -33,6 +33,54 @@ jc.makeSpriteWithPlist = function(plist, png, startFrame){
     return sprite;
 }
 
+jc.shade = function(item){
+    if (!item.shade){
+        item.shade = cc.LayerColor.create(cc.c4(15, 15, 15, 255));
+        item.getParent().addChild(item.shade);
+    }
+    var pos = item.getPosition();
+    var size = item.getBoundingBox().size;
+    pos.x -= size.width/2;
+    pos.y -= size.height/2;
+    item.shade.setPosition(pos);
+    item.shade.setContentSize(size);
+
+    item.shade.setOpacity(0);
+    item.getParent().reorderChild(item.shade,0);
+    jc.fadeIn(item.shade, jc.defaultFadeLevel);
+
+}
+
+jc.unshade = function(item){
+    jc.fadeOut(item.shade);
+}
+
+jc.fadeIn= function(item, opacity , time){
+    if (!time){
+        time = jc.defaultTransitionTime;
+    }
+    if (!opacity){
+        opacity = jc.defaultFadeLevel;
+    }
+    if (!item){
+        item = this;
+    }
+
+    var actionFadeIn = cc.FadeTo.create(time,opacity);
+    item.runAction(actionFadeIn);
+},
+jc.fadeOut=function(item, time){
+    if (!time){
+        time = jc.defaultTransitionTime;
+    }
+    if (!item){
+        item = this;
+    }
+    var actionFadeOut = cc.FadeTo.create(time,0);
+    item.runAction(actionFadeOut);
+
+}
+
 jc.makeAnimationFromRange = function(name, config){
 
     //animate it

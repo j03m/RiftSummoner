@@ -13,14 +13,6 @@ jc.PowerTile = jc.CompositeButton.extend({
         this.addChild(this.border, 10);
         this.border.setPosition(this.borderPos); //wtf is wrong with cocos positioning
 
-        this.borderSelect = new cc.Sprite();
-        this.borderSelect.initWithSpriteFrameName("Border3.png");
-        this.addChild(this.borderSelect, 10);
-        this.borderSelect.setPosition(this.borderPos)
-        this.borderSelect.setVisible(false);
-
-
-
         this.onTouchesBegan = function(){}; //not needed
         this.scheduleUpdate();
 
@@ -34,14 +26,26 @@ jc.PowerTile = jc.CompositeButton.extend({
         this.setDisplayFrame(frame);
 
     },
-    onTouch:function(){
+    setSelected:function(){
         //apply the touched border sprite
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("Border3.png");
+        this.border.setDisplayFrame(frame);
+
+    },
+    setUnselected:function(){
+        //apply the touched border sprite
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("Border5.png");
+        this.border.setDisplayFrame(frame);
+    },
+    onTouch:function(){
+        //get config
 
         //play power effect
 
         //gray out
+        jc.shade(this);
 
-        //schedule update
+        //schedule update for cooldown
     },
     update:function(dt){
         //slowly ungrayify

@@ -1,11 +1,15 @@
 var PowerHud = jc.UiElementsLayer.extend({
     tiles:3,
     init:function(powers, gameLayer){
+        this.name = "powerHud";
         if (this._super()) {
             this.initFromConfig(PowerHud.windowConfig);
+
             var len = this.tiles>powers.length?powers.length:this.tiles;
             for(var i=0;i<len;i++){
-                this["tile"+i].initFromName(powers[i]);
+                var name = "tile"+i;
+                this[name].initFromName(powers[i]);
+                this.touchTargets.push(this[name]);
             }
             this.game = gameLayer;
             return true;
@@ -14,7 +18,19 @@ var PowerHud = jc.UiElementsLayer.extend({
         }
     },
     targetTouchHandler: function(type, touch, sprites) {
-        //do nothing here
+        if (type == jc.touchEnded){
+            if (sprites[0]){
+                sprites[0].setSelected();
+                for (var i=0;i<this.tiles;i++){
+                    if (this["tile"+i]!=sprites[0]){
+                        this["tile"+i].setUnselected();
+                    }
+                }
+            }
+        }
+    },
+    onShow:function(){
+        console.log("onshow");
     }
 });
 

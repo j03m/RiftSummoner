@@ -15,12 +15,13 @@ var ArenaGame = jc.WorldLayer.extend({
     teamBPowers:undefined,
 
     init: function() {
-		if (this._super(arenaSheet)) {
-
+        this.name = "Arena";
+        if (this._super(arenaSheet)) {
             this.teams['a'] = [];
             this.teams['b'] = [];
             this.teamATerritory=this.worldSize.width/4;
             this.teamBTerritory=this.worldSize.width;
+
             this.scheduleUpdate();
 			return true;
 		} else {
@@ -162,7 +163,15 @@ var ArenaGame = jc.WorldLayer.extend({
 
         this.powerLayer.init(powers);
 
+        this.powerLayer.inTransitionsComplete = function(){
+            this.powerLayer.hackOn();
+        }.bind(this);
+
         this.powerLayer.start();
+
+
+
+
     },
     presentTeam:function(team, formation, point, callback){
             this.placeNextCharacter(team, formation, callback);
