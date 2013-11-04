@@ -29,6 +29,15 @@ var effectsConfig = {
         "delay":0.02,
         "placement":"bottom",
         "times":1,
+    },
+    "teleport":{
+        "png":"art/teleport.png",
+        "plist":"art/teleport.plist",
+        "start":"teleport.1.png",
+        "frames":14,
+        "delay":0.02,
+        "placement":"base2base",
+        "times":1,
     }
 }
 

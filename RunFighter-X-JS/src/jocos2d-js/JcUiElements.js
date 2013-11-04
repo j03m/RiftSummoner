@@ -226,6 +226,9 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             var lblSize = cc.size(config.width, config.height);
             window = cc.LabelTTF.create(config.text, config.font, config.fontSize, lblSize, cc.TEXT_ALIGNMENT_LEFT);
             window.setColor(config.color);
+        }else if (config.type == 'tile'){
+            window = new jc.PowerTile();
+            window.initTile();
         }
         return window;
     },
@@ -272,11 +275,24 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             var window = this.makeWindowByType(member, itemSize);
             if (x==-1 && y==-1){
                 if (!itemSize){
-                    itemSize = window.getTextureRect().size; //buttons and sprites set their own sizes
+                    itemSize = window.getBoundingBox().size; //buttons and sprites set their own sizes
                 }
                 var position = this.getAnchorPosition(config, itemSize, parent);
                 x = position.x;
                 y = position.y;
+                if (config.itemPadding){
+                    if (config.itemPadding.all){
+                        y-=config.itemPadding.all;
+                        x+=config.itemPadding.all;
+                    }else{
+                        if (config.itemPadding.top){
+                            y-=config.itemPadding.top;
+                        }
+                        if (config.itemPadding.left){
+                            x+=config.itemPadding.left;
+                        }
+                    }
+                }
             }
 
             //keep track
@@ -297,7 +313,6 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             if (config.itemPadding){
                 if (config.itemPadding.all){
                     x+=config.itemPadding.all;
-
                 }else{
                     if (config.itemPadding.left){
                         x+=config.itemPadding.left;
@@ -320,7 +335,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 y-=itemSize.height;
                 if (config.itemPadding){
                     if (config.itemPadding.all){
-                        y+=config.itemPadding.all;
+                        y-=config.itemPadding.all;
                     }else{
                         if (config.itemPadding.top){
                             y-=config.itemPadding.top;

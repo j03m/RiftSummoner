@@ -7,7 +7,8 @@ var portraitsPlist = dirImg + "portraits-hd.plist";
 var portraitsPng = dirImg + "portraits-hd.png";
 var windowPlist = dirImg + "windows.plist";
 var windowPng = dirImg + "windows.png";
-
+var powerTilesPng= dirImg + "powerTiles.png";
+var powerTilesPlist= dirImg + "powerTiles.plist";
 
 
 //var myfont = dirImg + "georgiab.ttf";
@@ -17,7 +18,7 @@ var g_characterAssets = [];
 
 var g_effectPngs = {};
 
-//core resources
+//core resources - need these to launch ui, loader, etc
 var g_maingame = [
     //image
     {src:arenaSheet},
@@ -30,6 +31,18 @@ var g_maingame = [
     {src:windowPlist},
     {src:windowPng},
 ];
+
+//core character resources and effects - stuff we need for battles
+var g_battleStuff =[
+    {src:effectsConfig['teleport'].png},
+    {src:effectsConfig['teleport'].plist},
+    {src:powerTilesPlist},
+    {src:powerTilesPng}
+
+]
+
+
+
 
 
 for (var entry in spriteDefs ){

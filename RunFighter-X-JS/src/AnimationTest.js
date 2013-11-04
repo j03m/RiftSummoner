@@ -7,14 +7,21 @@ Consts.dead=3;
 Consts.powerup=4;
 
 var AnimationTest = jc.TouchLayer.extend({
-    character:"dwarvenKnightLife",
-    //effect:"heal",
+    //character:"dwarvenKnightLife",
+    effect:"teleport",
     //missile:"greenbullet",
     init: function() {
 
         if (this._super()) {
-            this.go();
-            this.bubbleAllTouches(true);
+            if (AnimationTest.loaded){
+                this.go();
+                this.bubbleAllTouches(true);
+            }else{
+                AnimationTest.loaded = true;
+                var assets = [{"src":g_characterPlists[this.effect]}, {"src":g_characterPngs[this.effect]}];
+                cc.Director.getInstance().replaceScene(Loading.scene(assets, 'animationTest'));
+            }
+
             return true;
         } else {
             return false;
@@ -23,7 +30,10 @@ var AnimationTest = jc.TouchLayer.extend({
     go:function(){
         if (this.sprite){
             this.removeChild(this.sprite);
-            this.sprite.cleanUp();
+            if (this.sprite.cleanUp){
+                this.sprite.cleanUp();
+            }
+
             this.sprite = undefined;
         }
         if (this.character){
@@ -62,7 +72,7 @@ var AnimationTest = jc.TouchLayer.extend({
         this.makeIt(this.missile, missileConfig[this.missile]);
     },
     targetTouchHandler:function(type, touch, sprites){
-//        this.sprite.setState('attack2');
+        this.go();
     }
 });
 

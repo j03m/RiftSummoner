@@ -140,6 +140,13 @@ jc.setEffectPosition = function(effect, parent, config){
         }else if (placement == 'center'){
             base.y += tr.height/2;
             effect.setPosition(base);
+        }else if (placement == 'top'){
+            base.y -= tr.height/2;
+            effect.setPosition(base);
+        }else if (placement == 'base2base'){
+            base.y += etr.height;
+            effect.setPosition(base);
+
         }else{
             throw "Unknown effect placement.";
         }
@@ -171,6 +178,9 @@ jc.genericPowerApply = function(effectData, effectName, varName,bObj){
         }
     }
 }
+
+
+
 jc.genericPowerRemove = function(varName,bObj){
     if (!bObj.owner[varName]){
         bObj.owner.layer.removeChild(bObj.owner[varName]);

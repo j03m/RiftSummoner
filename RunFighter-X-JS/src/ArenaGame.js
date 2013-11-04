@@ -11,6 +11,8 @@ var ArenaGame = jc.WorldLayer.extend({
     teamBSprites: [],
     sprites:[],
     teams:{},
+    teamAPowers:undefined,
+    teamBPowers:undefined,
 
     init: function() {
 		if (this._super(arenaSheet)) {
@@ -38,7 +40,8 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamAFormation = jc.formations[jc.arenaScene.data.teamAFormation];
         this.teamBSprites = jc.arenaScene.data.teamB;
         this.teamBFormation = jc.formations[jc.arenaScene.data.teamBFormation];
-
+        this.teamAPowers = jc.arenaScene.data.teamAPowers;
+        this.teamBPowers = jc.arenaScene.data.teamBPowers;
         this.setUp();
     },
     runScenario0:function(){
@@ -134,31 +137,63 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     present:function(){
 
-        //this.fullZoomOut(jc.defaultTransitionTime,function(){
-            //add sprites, arrange in formation
-            for(var i =0; i<this.teams['a'].length; i++){
-                var sprite = this.teams['a'][i];
-                var worldPos = this.teamAFormation[i];
-                var nodePos = this.convertToItemPosition(worldPos);
-                sprite.setBasePosition(nodePos);
-                //sprite.setBasePosition(this.convertToItemPosition(cc.p(0, 0)));
-                sprite.setVisible(true);
+        this.presentTeam(this.teams['a'], this.teamAFormation, cc.p(this.worldSize.width/4, this.worldSize.height/2), function(){
+            this.presentTeam(this.teams['b'], this.teamBFormation, cc.p((this.worldSize.width/4)*3, this.worldSize.height/2), function(){
+                this.presentHud(this.teamAPowers, function(){
+                    this.started = true;
+                });
+
+            }.bind(this));
+        }.bind(this));
+
+    },
+    presentHud:function(){
+        this.panToWorldPoint(this.worldMidPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
+            this.placePowerTokens(this.teamAPowers);
+        }.bind(this));
+    },
+    placePowerTokens:function(powers){
+
+        //create power layer
+        this.powerLayer = new PowerHud();
+
+        //place layer  add to scene
+        jc.arenaScene.addChild(this.powerLayer, this.getZOrder()+1);
+
+        this.powerLayer.init(powers);
+
+        this.powerLayer.start();
+    },
+    presentTeam:function(team, formation, point, callback){
+            this.placeNextCharacter(team, formation, callback);
+    },
+    placeNextCharacter:function(team, formation, callback){
+        if (this.nextChar==undefined){
+            this.nextChar = 0;
+        }
+        this.placeCharacter(team[this.nextChar], formation[this.nextChar], function(){
+            this.nextChar++;
+            if (this.nextChar>=team.length){
+                this.nextChar = undefined
+                callback();
+            }else{
+                this.placeNextCharacter(team, formation, callback);
             }
-
-            for(var i =0; i<this.teams['b'].length; i++){
-                var sprite = this.teams['b'][i];
-                var worldPos = cc.p(this.teamBFormation[i].x, this.teamBFormation[i].y);
+        }.bind(this));
 
 
-                var nodePos = this.convertToItemPosition(worldPos);
-                sprite.setBasePosition(nodePos);
-                //sprite.setBasePosition(this.convertToItemPosition(cc.p(this.worldSize.width/2, this.worldSize.height/2)));
-                sprite.setVisible(true);
-                this.started = true;
-            }
-
-        //}.bind(this));
-
+    },
+    placeCharacter:function(sprite, formationPoint, done){
+            this.scheduleOnce(function(){
+                this.panToWorldPoint(formationPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
+                    var worldPos = formationPoint;
+                    var nodePos = this.convertToItemPosition(worldPos);
+                    sprite.setBasePosition(nodePos);
+                    sprite.setVisible(true);
+                    jc.playEffect("teleport", sprite, sprite.getZOrder(), this);
+                    done();
+                }.bind(this));
+            }, 0.001);
     },
     update:function (dt){
         //pulse each sprite
@@ -203,12 +238,13 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
                 this.sprites[i].think(dt);
             }
-            var scaleLimit = 100;
+            var scaleLimit = 25;
             if (!this.scaleGate && shouldScale){
 
 
                 var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
-                var scale = this.getScale(maxX-minX, maxY-minY);
+                var scale = this.getOkayScale(maxX-minX, maxY-minY);
+                console.log(JSON.stringify(scale));
 
                 //todo: based on characterMid, select camera 1-9
                 //todo: based on scale, select right scale ratio

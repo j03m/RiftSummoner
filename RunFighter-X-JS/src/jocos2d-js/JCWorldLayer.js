@@ -17,7 +17,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
             this.bubbleAllTouches(true);
             this.worldScale = {x:this.winSize.width/this.worldSize.width, y:this.winSize.height/this.worldSize.height};
             var scaleX = 0;
-            var aspectRatio = this.winSize.width/this.winSize.height;
+            this.aspectRatio = this.winSize.width/this.winSize.height;
             this.scaleTable = [];
             var i = 1;
             var inc = 0.2;
@@ -31,7 +31,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
                     myScaleX = scaleX;
                 }
 
-                this.scaleTable.push({x:myScaleX, y:myScaleX/aspectRatio});
+                this.scaleTable.push({x:myScaleX, y:myScaleX/this.aspectRatio});
                 i+=inc;
             }
             //this.scaleTable.push({x:1, y:1}); //make sure 1:1 is in there
@@ -40,12 +40,25 @@ jc.WorldLayer = jc.TouchLayer.extend({
             return false;
         }
     },
+    getOkayScale:function(width,height){
+        var okayHeight = width/this.aspectRatio;
+        if (okayHeight >= height){
+            return this.getScale(width,okayHeight);
+        }else{
+            while(okayHeight<height){
+                width+=10;
+                okayHeight = width/this.aspectRatio;
+            }
+            return this.getScale(width,okayHeight);
+        }
+
+    },
     panToWorldPoint:function(point, scale, rate, doneCallback){
         var converted = this.convertToLayerPosition(point)
         //console.log("Scale:" + JSON.stringify(scale));
-        var okScale = this.getClosestCorrectScale(scale);
+        //Svar okScale = this.getClosestCorrectScale(scale);
         //console.log("Corrected Scale:" + JSON.stringify(okScale));
-        this.doScale(okScale, converted, rate, doneCallback);
+        this.doScale(scale, converted, rate, doneCallback);
     },
     fullZoomOut:function(rate, done){
         var scale = this.getScaleWorld();
@@ -88,6 +101,12 @@ jc.WorldLayer = jc.TouchLayer.extend({
     },
     getScale:function(width,height){
         var scale = {x:this.winSize.width/width, y:this.winSize.height/height};
+        if (scale.x > 1){
+            scale.x = 1;
+        }
+        if (scale.y > 1){
+            scale.y=1;
+        }
         return scale;
 
     },

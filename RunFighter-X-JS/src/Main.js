@@ -33,17 +33,22 @@ var MainGame = cc.Layer.extend({
                 cc.Director.getInstance().replaceScene(Loading.scene(assets, 'arena'));
                 break;
             case 'arena':
-
                 cc.Director.getInstance().replaceScene(jc.arenaScene);
                 break;
+
+            case 'animationTest':
+                cc.Director.getInstance().replaceScene(AnimationTest.scene());
+                break;
+
+
         }
     },
     onEnter:function(){
         //fight config
         var fightConfig = {
             teamA:[
-                "goblin",
-                "goblin",
+                "orge",
+                "orge",
                 "goblin",
                 "goblin",
                 "goblin",
@@ -70,42 +75,56 @@ var MainGame = cc.Layer.extend({
                 "orc"
 
             ],
-            teamBFormation:"4x4x4b"
+            teamBFormation:"4x4x4b",
+            teamAPowers:['poisonCloud', 'healing'],
+            teamBPowers:['lightningBolt', 'fireBall'],
+            offense:'a'
         };
 
         //def - effect
         //def - gameObject - missile
         //missile - effect
         //powers - powerAnimationsRequired
-       var assets = [];
-       for (var i=0;i<fightConfig.teamA.length;i++){
-           var name = fightConfig.teamA[i];
-           this.addAssetChain(assets, name);
-       }
-
-       for (var i=0;i<fightConfig.teamB.length;i++){
-           var name = fightConfig.teamB[i];
-           this.addAssetChain(assets, name);
-       }
-
-       //transform
-       for (var i =0;i<assets.length;i++){
-            assets[i] = {src:assets[i]};
-       }
+       var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB);
 
        this.changeScene('arena-pre',assets, fightConfig);
 
+
+    },
+    makeAssetDictionary:function(teamA, teamB){
+        var assets = [];
+        for (var i=0;i<teamA.length;i++){
+            var name = teamA[i];
+            this.addAssetChain(assets, name);
+        }
+
+        for (var i=0;i<teamB.length;i++){
+            var name = teamB[i];
+            this.addAssetChain(assets, name);
+        }
+
+        //transform
+        for (var i =0;i<assets.length;i++){
+            assets[i] = {src:assets[i]};
+        }
+
+        for (var i=0;i<g_battleStuff.length;i++){
+            assets.push(g_battleStuff[i]);
+        }
+
+        return assets;
     },
     addAssetChain:function(assetAry, name){
         assetAry.pushUnique(g_characterPlists[name]);
         assetAry.pushUnique(g_characterPngs[name]);
+
         if (spriteDefs[name].effect){
 
             assetAry.pushUnique(g_characterPlists[spriteDefs[name].effect]);
             assetAry.pushUnique(g_characterPngs[spriteDefs[name].effect]);
         }
 
-        if (spriteDefs[name].gameProperties.missile){
+        if (spriteDefs[name].gameProperties && spriteDefs[name].gameProperties.missile){
             assetAry.pushUnique(g_characterPlists[spriteDefs[name].gameProperties.missile]);
             assetAry.pushUnique(g_characterPngs[spriteDefs[name].gameProperties.missile]);
         }

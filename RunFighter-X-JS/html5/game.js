@@ -45,12 +45,14 @@ var MW = MW || {};
             '../src/spriteVars.js',
             '../src/missileConfig.js',
             '../src/effectsConfig.js',
+            '../src/powerTileConfig.js',
             '../src/powerConfig.js',
             '../src/resource.js',
             '../src/jocos2d-js/JCUtils.js',
             '../src/jocos2d-js/JCPanAndZoomAction.js',
             '../src/jocos2d-js/JCLayerManager.js',
             '../src/jocos2d-js/JCCompositeButton.js',
+            '../src/jocos2d-js/JCPowerTile.js',
             '../src/jocos2d-js/JCTouchLayer.js',
             '../src/jocos2d-js/JcUiElements.js',
             '../src/jocos2d-js/JCScrollingLayer.js',
@@ -77,6 +79,7 @@ var MW = MW || {};
             '../src/AnimationTest.js',
             '../src/Loading.js',
             '../src/Main.js',
+            '../src/PowerHud.js',
 			'gameHtml5.js'
     
         ]
