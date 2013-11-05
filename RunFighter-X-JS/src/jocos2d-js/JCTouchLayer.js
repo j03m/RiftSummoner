@@ -47,38 +47,47 @@ jc.TouchLayer = cc.Layer.extend({
     onHide:function(){},
     wireInput: function(val){
         if ('mouse' in sys.capabilities) {
-            this.setMouseEnabled(val);
+            if (val){
+                cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 1);
+            }else{
+                cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
+            }
         } else {
-            this.setTouchEnabled(val);
+            if (val){
+                cc.Director.getInstance().getTouchDispatcher().addTargetedDelegate(this, 1, true);
+            }else{
+                cc.Director.getInstance().getTouchDispatcher().removeDelegate(this);
+            }
+
         }
     },
     onTouchesBegan: function(touch) {
-        this.hitSpriteTarget(jc.touchBegan, touch);
-        return false;
+        return this.hitSpriteTarget(jc.touchBegan, touch);
+
     },
     onTouchesMoved: function(touch) {
-        this.hitSpriteTarget(jc.touchMoved, touch);
-        return false;
+        return this.hitSpriteTarget(jc.touchMoved, touch);
+
     },
     onTouchesEnded: function(touch) {
-        this.hitSpriteTarget(jc.touchEnded, touch);
-        return false;
+        return this.hitSpriteTarget(jc.touchEnded, touch);
+
     },
     onMouseDown: function(event) {
-        this.onTouchesBegan(event);
-        return false;
+        return this.onTouchesBegan(event);
+
     },
     onMouseDragged: function(event) {
-        this.onTouchesMoved(event);
-        return false;
+        return this.onTouchesMoved(event);
+
     },
     onMouseUp: function(event) {
-        this.onTouchesEnded(event);
-        return false;
+        return this.onTouchesEnded(event);
+
     },
     onTouchCancelled: function(touch, event,sprite) {
-        this.hitSpriteTarget(jc.touchCancelled, touch);
-        return false;
+        return this.hitSpriteTarget(jc.touchCancelled, touch);
+
     },
     targetTouchHandler: function(type, touch, sprites) {
         throw "child must implement!"
@@ -105,7 +114,9 @@ jc.TouchLayer = cc.Layer.extend({
         //if something of note was touched, raise it
         if ((handled.length>0 || this.bubbleAll) && !this.isPaused){
             this.targetTouchHandler(type, touch, handled);
+            return true;
         }
+        return false;
     },
     touchToPoint:function(touch){
         if (touch instanceof Array){

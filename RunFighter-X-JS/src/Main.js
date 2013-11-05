@@ -49,30 +49,25 @@ var MainGame = cc.Layer.extend({
             teamA:[
                 "orge",
                 "orge",
-                "goblin",
-                "goblin",
-                "goblin",
-                "goblin",
-                "goblin",
-                "goblin",
-                "goblin",
-                "goblin"
-
+                "blueKnight",
+                "orc",
+                "dwarvenKnightFire",
+                "goblinKnightBlood",
+                "dwarvenKnightWater",
+                "elementalFire",
+                "elementalStone"
             ],
             teamAFormation:"4x4x4a",
             teamB:[
+                "orge",
+                "orge",
+                "blueKnight",
                 "orc",
-                "orc",
-                "orc",
-                "orc",
-                "orc",
-                "orc",
-                "orc",
-                "orc",
-                "orc",
-                "orc",
-                "orc",
-                "orc"
+                "dwarvenKnightFire",
+                "goblinKnightBlood",
+                "dwarvenKnightWater",
+                "elementalFire",
+                "elementalStone"
 
             ],
             teamBFormation:"4x4x4b",

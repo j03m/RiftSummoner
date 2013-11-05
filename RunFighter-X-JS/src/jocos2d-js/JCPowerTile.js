@@ -1,6 +1,7 @@
 jc.PowerTile = jc.CompositeButton.extend({
     tileSize:cc.size(50,50),
     borderPos: cc.p(130,130), //wtf is wrong with cocos positioning
+    coolCheck: 0.05,
     initTile:function(){
         //make sprite from empty tile and border
         cc.SpriteFrameCache.getInstance().addSpriteFrames(powerTilesPlist);
@@ -14,16 +15,19 @@ jc.PowerTile = jc.CompositeButton.extend({
         this.border.setPosition(this.borderPos); //wtf is wrong with cocos positioning
 
         this.onTouchesBegan = function(){}; //not needed
-        this.scheduleUpdate();
+
 
     },
-    initFromName:function(name){
+    initFromName:function(name, parentLayer){
         if (!name){
             return;
         }
+        this.parentLayer = parentLayer;
+        this.name = name;
         cc.SpriteFrameCache.getInstance().addSpriteFrames(powerTiles[name].plist);
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(powerTiles[name].icon);
         this.setDisplayFrame(frame);
+        this.on=true;
 
     },
     setSelected:function(){
@@ -38,25 +42,69 @@ jc.PowerTile = jc.CompositeButton.extend({
         this.border.setDisplayFrame(frame);
     },
     onTouch:function(){
+        //if I'm cooling down, just exit
+        if (this.cooling){
+            return;
+        }
+
+        this.cooling = true;
+
+        var shadeOp = 225;
+
+
         //get config
+        var config = powerTiles[this.name];
+        this.executed = Date.now();
+        var func = globalPowers[config['offense']].bind(this);
+        if (config.type == "direct"){
+            jc.arenaScene.layer.nextTouchDo(function(touch, sprites){
+                func(touch, sprites);
+                jc.shade(this, shadeOp);
+                this.parentLayer.scheduleThisOnce(this.doCoolDown.bind(this),this.coolCheck);
+            }.bind(this));
 
-        //play power effect
+        }else if (config.type == "global"){
+            func();
+            jc.shade(this, shadeOp);
+            this.parentLayer.scheduleThisOnce(this.doCoolDown.bind(this),this.coolCheck);
+        }else{
+            throw "Unknown power type.";
+        }
 
-        //gray out
-        jc.shade(this);
-
-        //schedule update for cooldown
+        return false;
     },
-    update:function(dt){
-        //slowly ungrayify
+    doCoolDown:function(){
+        var config = powerTiles[this.name];
+        var time = Date.now() - this.executed;
 
-        //flash when available
+        var ratio = time/config.cooldown;
+        if (ratio >=1){
+            this.shade.setContentSize(cc.size(this.tileSize.width, this.tileSize.height));
+            this.cooling = false;
+            jc.unshade(this);
+        }else{
+            //reduce height of this.shade by the percent of the cooldown that has passed
+            var size = this.shade.getBoundingBox().size;
+            size.height = this.tileSize.height - (this.tileSize.height* ratio);
+            this.shade.setContentSize(size);
+            this.parentLayer.scheduleThisOnce(this.doCoolDown.bind(this),this.coolCheck);
+
+        }
+
+
+
+
+
     },
     onTouchesEnded: function(touch) {
         if(this.frameCheck(touch)){
             if (this.onTouch && !this.paused){
                 this.onTouch();
+
             }
+            return true;
+        }else{
+            return false;
         }
     }
 

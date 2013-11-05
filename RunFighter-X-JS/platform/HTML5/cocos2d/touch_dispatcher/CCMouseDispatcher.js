@@ -463,51 +463,55 @@ cc.MouseDispatcher = cc.Class.extend({
     mouseHandle:function (mouseObj, event, index) {
         for (var i = 0; i < this._mouseDelegateHandlers.length; i++) {
             var handler = this._mouseDelegateHandlers[i];
-
+            var res = false;
             switch (index) {
                 case cc.MOUSE_DOWN:
                     if (mouseObj.getButton() == cc.MOUSE_RIGHTBUTTON) {
                         if (handler.getDelegate().onRightMouseDown)
-                            handler.getDelegate().onRightMouseDown(mouseObj);
+                            res =handler.getDelegate().onRightMouseDown(mouseObj);
                     } else {
 	                   if (handler.getDelegate().onMouseDown)
-	                       handler.getDelegate().onMouseDown(mouseObj);
+                           res =handler.getDelegate().onMouseDown(mouseObj);
                      }
                     break;
                 case cc.MOUSE_UP:
                     if (mouseObj.getButton() == cc.MOUSE_RIGHTBUTTON) {
                         if (handler.getDelegate().onRightMouseUp)
-                            handler.getDelegate().onRightMouseUp(mouseObj);
+                            res =handler.getDelegate().onRightMouseUp(mouseObj);
                     } else {
                         if (handler.getDelegate().onMouseUp)
-                            handler.getDelegate().onMouseUp(mouseObj);
+                            res = handler.getDelegate().onMouseUp(mouseObj);
                     }
                     break;
                 case cc.MOUSE_MOVED:
                     if (this._mousePressed) {                        
                         if (handler.getDelegate().onMouseDragged)
-                            handler.getDelegate().onMouseDragged(mouseObj);
+                            res =handler.getDelegate().onMouseDragged(mouseObj);
                     } else if (this._rightMousePressed) {
                         if (handler.getDelegate().onRightMouseDragged)
-                            handler.getDelegate().onRightMouseDragged(mouseObj);
+                            res =handler.getDelegate().onRightMouseDragged(mouseObj);
                     } else {
                         if (handler.getDelegate().onMouseMoved)
-                            handler.getDelegate().onMouseMoved(mouseObj);
+                            res =handler.getDelegate().onMouseMoved(mouseObj);
                     }
                     break;
                 case cc.MOUSE_ENTERED:
                     if (handler.getDelegate().onMouseEntered)
-                        handler.getDelegate().onMouseEntered(mouseObj);
+                        res =handler.getDelegate().onMouseEntered(mouseObj);
                     break;
                 case cc.MOUSE_EXITED:
                     if (handler.getDelegate().onMouseExited)
-                        handler.getDelegate().onMouseExited(mouseObj);
+                        res =handler.getDelegate().onMouseExited(mouseObj);
                     break;
                 case cc.SCROLL_WHEEL:
                     if (handler.getDelegate().onScrollWheel)
-                        handler.getDelegate().onScrollWheel(mouseObj);
+                        res =handler.getDelegate().onScrollWheel(mouseObj);
                     break;
             }
+            if (res){
+                return;
+            }
+
         }
     }
 });

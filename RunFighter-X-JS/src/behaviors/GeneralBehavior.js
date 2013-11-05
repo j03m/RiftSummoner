@@ -446,14 +446,21 @@ GeneralBehavior.prototype.doDamageMod=function(power){
     powerFunc(this.owner.name); //one time
 }
 
-GeneralBehavior.applyDamage = function(target, attacker, amount){
+GeneralBehavior.applyDamage = function(target, attacker, amount, elementType){
 
-    var attackDef = spriteDefs[attacker.name];
+    if (!elementType && !attacker){
+        throw "must supply an attacker or an elementType";
+    }
+
+    if (!elementType){
+        var attackDef = spriteDefs[attacker.name];
+        elementType = attackDef.elementType;
+    }
 
     //apply elemental defenses
     if (target.gameObject.defense){
         for(var element in target.gameObject.defense){
-            if (element = attackDef.elementType){
+            if (element == elementType){
                 var reduction = amount * (target.gameObject.defense[element]/100);
                 amount -=reduction;
                 if (amount<0){
@@ -463,7 +470,11 @@ GeneralBehavior.applyDamage = function(target, attacker, amount){
         }
     }
 
+    GeneralBehavior.applyGenericDamage(target, attacker, amount)
 
+}
+
+GeneralBehavior.applyGenericDamage = function(target, attacker, amount){
     if (target.gameObject.hp>0){
         target.gameObject.hp-=amount;
         if (target.gameObject.hp <=0){

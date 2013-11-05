@@ -13,15 +13,12 @@ var ArenaGame = jc.WorldLayer.extend({
     teams:{},
     teamAPowers:undefined,
     teamBPowers:undefined,
-
+    presentationSpeed:0.2,
     init: function() {
         this.name = "Arena";
         if (this._super(arenaSheet)) {
             this.teams['a'] = [];
             this.teams['b'] = [];
-            this.teamATerritory=this.worldSize.width/4;
-            this.teamBTerritory=this.worldSize.width;
-
             this.scheduleUpdate();
 			return true;
 		} else {
@@ -72,28 +69,15 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamBSprites.push('elementalStone');
         this.teamBSprites.push('elementalStone');
         this.teamBSprites.push('elementalStone');
-
         this.teamBSprites.push('voidElf');
         this.teamBSprites.push('voidElf');
         this.teamBSprites.push('voidElf');
         this.teamBSprites.push('voidElf');
-
         this.teamBSprites.push('voidElf');
         this.teamBSprites.push('voidElf');
         this.teamBSprites.push('voidElf');
         this.teamBSprites.push('voidElf');
-
-
-
         this.teamBFormation = jc.formations["4x4x4b"];
-
-
-//        this.teamASprites.push('fireKnight');
-//        this.teamBSprites.push('shadowKnight');
-//
-//        this.teamBFormation = jc.formations["4x3"];
-//        this.teamAFormation = jc.formations["4x3"];
-
         this.setUp();
     },
     getSprite:function(nameCreate){
@@ -142,18 +126,22 @@ var ArenaGame = jc.WorldLayer.extend({
             this.presentTeam(this.teams['b'], this.teamBFormation, cc.p((this.worldSize.width/4)*3, this.worldSize.height/2), function(){
                 this.presentHud(this.teamAPowers, function(){
                     this.started = true;
-                });
+                }.bind(this));
 
             }.bind(this));
         }.bind(this));
 
     },
-    presentHud:function(){
+    nextTouchDo:function(action){
+        this.nextTouchAction = action;
+    },
+    presentHud:function(powers, callback){
         this.panToWorldPoint(this.worldMidPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
-            this.placePowerTokens(this.teamAPowers);
+            this.placePowerTokens(powers, callback);
+
         }.bind(this));
     },
-    placePowerTokens:function(powers){
+    placePowerTokens:function(powers, callback){
 
         //create power layer
         this.powerLayer = new PowerHud();
@@ -165,12 +153,10 @@ var ArenaGame = jc.WorldLayer.extend({
 
         this.powerLayer.inTransitionsComplete = function(){
             this.powerLayer.hackOn();
+            callback();
         }.bind(this);
 
         this.powerLayer.start();
-
-
-
 
     },
     presentTeam:function(team, formation, point, callback){
@@ -199,10 +185,10 @@ var ArenaGame = jc.WorldLayer.extend({
                     var nodePos = this.convertToItemPosition(worldPos);
                     sprite.setBasePosition(nodePos);
                     sprite.setVisible(true);
-                    jc.playEffect("teleport", sprite, sprite.getZOrder(), this);
+                    jc.playEffectOnTarget("teleport", sprite, sprite.getZOrder(), this);
                     done();
                 }.bind(this));
-            }, 0.001);
+            }, this.presentationSpeed);
     },
     update:function (dt){
         //pulse each sprite
@@ -253,7 +239,6 @@ var ArenaGame = jc.WorldLayer.extend({
 
                 var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
                 var scale = this.getOkayScale(maxX-minX, maxY-minY);
-                console.log(JSON.stringify(scale));
 
                 //todo: based on characterMid, select camera 1-9
                 //todo: based on scale, select right scale ratio
@@ -292,8 +277,12 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     targetTouchHandler:function(type, touch,sprites){
-
-
+        if (type == jc.touchEnded){
+            if (this.nextTouchAction){
+                this.nextTouchAction(touch, sprites);
+                this.nextTouchAction = undefined;
+            }
+        }
     }
 
 });

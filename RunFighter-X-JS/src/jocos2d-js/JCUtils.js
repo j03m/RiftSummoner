@@ -33,7 +33,7 @@ jc.makeSpriteWithPlist = function(plist, png, startFrame){
     return sprite;
 }
 
-jc.shade = function(item){
+jc.shade = function(item, op){
     if (!item.shade){
         item.shade = cc.LayerColor.create(cc.c4(15, 15, 15, 255));
         item.getParent().addChild(item.shade);
@@ -47,7 +47,10 @@ jc.shade = function(item){
 
     item.shade.setOpacity(0);
     item.getParent().reorderChild(item.shade,0);
-    jc.fadeIn(item.shade, jc.defaultFadeLevel);
+    if (op == undefined){
+        op = jc.defaultFadeLevel
+    }
+    jc.fadeIn(item.shade, op);
 
 }
 
@@ -113,7 +116,7 @@ jc.makeAnimationFromRange = function(name, config){
 
 }
 
-jc.playEffect = function(name, target, z, layer){
+jc.playEffectOnTarget = function(name, target, z, layer){
 
     var config = effectsConfig[name];
 
@@ -147,6 +150,23 @@ jc.playEffect = function(name, target, z, layer){
 
 }
 
+jc.playEffectAtLocation = function(name, location, z, layer){
+
+    var config = effectsConfig[name];
+    var effect = jc.makeSpriteWithPlist(config.plist, config.png, config.start);
+    var effectAnimation = jc.makeAnimationFromRange(name, config );
+    effect.setPosition(location);
+    effect.setVisible(true);
+    layer.addChild(effect);
+    layer.reorderChild(effect,z);
+    var onDone = cc.CallFunc.create(function(){
+        layer.removeChild(effect);
+    }.bind(this));
+    var action = cc.Sequence.create(effectAnimation, onDone);
+    effect.runAction(action);
+
+}
+
 jc.setChildEffectPosition = function(effect, parent, config){
     var placement = config.placement;
     var effectPos = effect.getPosition();
@@ -173,7 +193,6 @@ jc.setChildEffectPosition = function(effect, parent, config){
     }
 
 }
-
 
 jc.setEffectPosition = function(effect, parent, config){
     var placement = config.placement;
@@ -207,20 +226,25 @@ jc.setEffectPosition = function(effect, parent, config){
 
 }
 
-jc.genericPower = function(name, value, attacker, target, config){
+jc.genericPower = function(name, value, attacker, target, config, element){
     if (!config){
         config = spriteDefs[value].damageMods[name];
     }
     var effect = {};
     effect = _.extend(effect, config); //add all props in config to effect
     effect.name = name;
-    effect.origin = attacker;
+    if (attacker){
+        effect.origin = attacker;
+    }else{
+        effect.element = element;
+    }
+
     target.addEffect(effect);
 }
 
 jc.genericPowerApply = function(effectData, effectName, varName,bObj){
     //examine the effect config and apply burning to the victim
-    if (GeneralBehavior.applyDamage(bObj.owner, effectData.origin, effectData.damage)){
+    if (GeneralBehavior.applyDamage(bObj.owner, effectData.origin, effectData.damage, effectData.element)){
         if (!bObj.owner[varName]){
             bObj.owner[varName] = jc.playEffect(effectName, bObj.owner, bObj.owner.getZOrder(), bObj.owner.layer);
         }

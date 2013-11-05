@@ -89,7 +89,7 @@ RangeBehavior.prototype.doMissile = function(){
             this.owner.layer.removeChild(this.missile);
             this.firing = false;
             if (this.locked){
-                jc.playEffect(missileType.effect, this.locked,this.locked.getZOrder(), this.owner.layer);
+                jc.playEffectOnTarget(missileType.effect, this.locked,this.locked.getZOrder(), this.owner.layer);
             }
 
 

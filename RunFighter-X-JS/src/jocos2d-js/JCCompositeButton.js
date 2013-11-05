@@ -27,6 +27,7 @@ jc.CompositeButton = cc.Sprite.extend({
             var size = this.getContentSize();
             this.label.setPosition(cc.p(size.width/2, size.height/2));
         }
+        this.scheduleUpdate();
     },
     onEnter: function(){
         if ('mouse' in sys.capabilities) {
@@ -46,6 +47,9 @@ jc.CompositeButton = cc.Sprite.extend({
         if(this.frameCheck(touch)){
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(this.def.pressed);
             this.setDisplayFrame(frame);
+            return true;
+        }else{
+            return false
         }
     },
     frameCheck:function(touch){
@@ -73,7 +77,7 @@ jc.CompositeButton = cc.Sprite.extend({
         return cc.rectContainsPoint(this.getBoundingBox(), this.getTouchLocation(touch));
     },
     onTouchesMoved: function(touch) {
-
+        return false;
     },
     onTouchesEnded: function(touch) {
         if(this.frameCheck(touch)){
@@ -82,13 +86,16 @@ jc.CompositeButton = cc.Sprite.extend({
             if (this.onTouch && !this.paused){
                 this.onTouch();
             }
+            return true;
+        }else{
+            return false;
         }
     },
     onMouseDown: function(event) {
-        this.onTouchesBegan(event);
+        return this.onTouchesBegan(event);
     },
     onMouseUp: function(event) {
-        this.onTouchesEnded(event);
+        return this.onTouchesEnded(event);
     },
     setTouchDelegate:function(inFunc){
         this.onTouch = inFunc;
