@@ -116,7 +116,7 @@ jc.makeAnimationFromRange = function(name, config){
 
 }
 
-jc.playEffectOnTarget = function(name, target, z, layer){
+jc.playEffectOnTarget = function(name, target, layer, child){
 
     var config = effectsConfig[name];
 
@@ -134,19 +134,45 @@ jc.playEffectOnTarget = function(name, target, z, layer){
         return; //don't play if it's already playing on me
     }
 
+    var parent;
+    if (child){
+        parent = target;
+    }else{
+        parent = layer;
+    }
+
     var effect = target.effectAnimations[name].sprite;
     var effectAnimation = target.effectAnimations[name].animation;
-    jc.setEffectPosition(effect, target, config);
     effect.setVisible(true);
-    layer.addChild(effect);
-    layer.reorderChild(effect,z);
-    var onDone = cc.CallFunc.create(function(){
-        layer.removeChild(effect);
-        target.effectAnimations[name].playing =false;
-    }.bind(this));
-    var action = cc.Sequence.create(effectAnimation, onDone);
-    target.effectAnimations[name].playing =true;
-    effect.runAction(action);
+    parent.addChild(effect);
+
+    if (child){
+        jc.setChildEffectPosition(effect, target, config);
+    }else{
+        jc.setEffectPosition(effect, target, config);
+    }
+
+
+    if (config.zorder == "behind"){
+        parent.reorderChild(effect,target.getZOrder()-1);
+    }else{
+        parent.reorderChild(effect,target.getZOrder()+1);
+    }
+
+    if (config.times){
+        var onDone = cc.CallFunc.create(function(){
+
+            parent.removeChild(effect);
+            target.effectAnimations[name].playing =false;
+        }.bind(this));
+
+        var action = cc.Sequence.create(effectAnimation, onDone);
+        target.effectAnimations[name].playing =true;
+        effect.runAction(action);
+    }else{
+        effect.runAction(effectAnimation);
+    }
+
 
 }
 
@@ -159,29 +185,46 @@ jc.playEffectAtLocation = function(name, location, z, layer){
     effect.setVisible(true);
     layer.addChild(effect);
     layer.reorderChild(effect,z);
-    var onDone = cc.CallFunc.create(function(){
-        layer.removeChild(effect);
-    }.bind(this));
-    var action = cc.Sequence.create(effectAnimation, onDone);
-    effect.runAction(action);
+    if (config.times){
+        var onDone = cc.CallFunc.create(function(){
+            layer.removeChild(effect);
+        }.bind(this));
+        var action = cc.Sequence.create(effectAnimation, onDone);
+        effect.runAction(action);
+    }else{
+        effect.runAction(effectAnimation);
+    }
 
 }
 
 jc.setChildEffectPosition = function(effect, parent, config){
     var placement = config.placement;
     var effectPos = effect.getPosition();
+    var base = parent.getBasePosition();
     var cs = parent.getContentSize();
     var tr = parent.getTextureRect();
-    var etr = effect.getTextureRect();
+    var etr = effect.getContentSize();
 
     if (placement){
         if (placement == 'bottom') {
             effectPos.y -= cs.height/2;
+            effectPos.y += etr.height/2;
+            effectPos.y -= tr.height;
+            effectPos.x += cs.width/2;
+
             effect.setPosition(effectPos);
         }else if (placement == 'center'){
-            effectPos.y -= cs.height/2; //move to botton
+            effectPos.x += cs.width/2;
+            effectPos.y -= cs.height/2; //move to bottom
             effectPos.y += tr.height/2; //move up to middle of texture
             effect.setPosition(effectPos);
+        }
+        else if (placement == 'base2base'){
+            effectPos.x += cs.width/2;
+            effectPos.y -= cs.height/2;
+            effectPos.y += etr.height;
+            effect.setPosition(effectPos);
+
         }else{
             throw "Unknown effect placement.";
         }
@@ -203,6 +246,7 @@ jc.setEffectPosition = function(effect, parent, config){
 
     if (placement){
         if (placement == 'bottom') {
+            base.y += etr.height/2;
             effect.setPosition(base);
         }else if (placement == 'center'){
             base.y += tr.height/2;

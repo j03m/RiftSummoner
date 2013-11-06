@@ -47,27 +47,35 @@ var MainGame = cc.Layer.extend({
         //fight config
         var fightConfig = {
             teamA:[
-                "orge",
-                "orge",
-                "blueKnight",
                 "orc",
-                "dwarvenKnightFire",
                 "goblinKnightBlood",
-                "dwarvenKnightWater",
-                "elementalFire",
-                "elementalStone"
+                "orc",
+                "orc",
+
+                "orc",
+                "orc",
+                "orc",
+                "orc",
+
+                "orc",
+                "orc",
+
+
             ],
             teamAFormation:"4x4x4a",
             teamB:[
-                "orge",
-                "orge",
-                "blueKnight",
                 "orc",
+                "orc",
+                "orc",
+                "orc",
+
                 "dwarvenKnightFire",
-                "goblinKnightBlood",
-                "dwarvenKnightWater",
-                "elementalFire",
-                "elementalStone"
+                "dwarvenKnightFire",
+                "dwarvenKnightFire",
+                "dwarvenKnightFire",
+
+                "wizard",
+                "wizard"
 
             ],
             teamBFormation:"4x4x4b",
@@ -122,6 +130,13 @@ var MainGame = cc.Layer.extend({
         if (spriteDefs[name].gameProperties && spriteDefs[name].gameProperties.missile){
             assetAry.pushUnique(g_characterPlists[spriteDefs[name].gameProperties.missile]);
             assetAry.pushUnique(g_characterPngs[spriteDefs[name].gameProperties.missile]);
+
+            //missiles, have effects - we need to add the missile effect here.
+            var bulletConfig = missileConfig[spriteDefs[name].gameProperties.missile];
+            if (bulletConfig.effect){
+                assetAry.pushUnique(g_characterPlists[bulletConfig.effect]);
+                assetAry.pushUnique(g_characterPngs[bulletConfig.effect]);
+            }
         }
 
         if (spriteDefs[name].powers){

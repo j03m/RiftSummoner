@@ -7,18 +7,43 @@ Consts.dead=3;
 Consts.powerup=4;
 
 var AnimationTest = jc.TouchLayer.extend({
-    //character:"dwarvenKnightLife",
-    effect:"teleport",
+    character:"dwarvenKnightWater",
+    effect:"heal",
     //missile:"greenbullet",
     init: function() {
 
         if (this._super()) {
             if (AnimationTest.loaded){
                 this.go();
+                jc.playEffectOnTarget(this.effect, this.sprite, this, false);
                 this.bubbleAllTouches(true);
             }else{
                 AnimationTest.loaded = true;
-                var assets = [{"src":g_characterPlists[this.effect]}, {"src":g_characterPngs[this.effect]}];
+                var assets = [];
+                if (this.character){
+                    jc.mainScene.layer.addAssetChain(assets, this.character);
+                }
+
+                if (this.effect){
+                    assets.pushUnique(g_characterPlists[this.effect]);
+                    assets.pushUnique(g_characterPngs[this.effect]);
+
+                }
+
+                if (this.missile){
+                    assets.pushUnique(g_characterPlists[this.missile]);
+                    assets.pushUnique(g_characterPngs[this.missile]);
+                }
+
+
+                //transform
+                for (var i =0;i<assets.length;i++){
+                    assets[i] = {src:assets[i]};
+                }
+
+                for (var i=0;i<g_battleStuff.length;i++){
+                    assets.push(g_battleStuff[i]);
+                }
                 cc.Director.getInstance().replaceScene(Loading.scene(assets, 'animationTest'));
             }
 

@@ -12,8 +12,9 @@ var effectsConfig = {
         "png":"art/blueRadius.png",
         "plist":"art/blueRadius.plist",
         "start":"blueRadius.1.png",
-        "frames":47,
-        "delay":0.02,
+        "frames":23,
+        "delay":0.1,
+        "zorder":"behind",
         "placement":"bottom",
         "offset":{
             "x":-5,
@@ -26,9 +27,9 @@ var effectsConfig = {
         "plist":"art/heal.plist",
         "start":"heal.5.png",
         "frames":17,
-        "delay":0.02,
+        "delay":0.05,
         "placement":"bottom",
-        "times":1,
+        "times":5,
     },
     "teleport":{
         "png":"art/teleport.png",

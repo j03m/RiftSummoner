@@ -70,7 +70,7 @@ GeneralBehavior.prototype.targetWithinVariableRadiusAndLocation = function(radiu
 
 
 GeneralBehavior.prototype.withinRadius = function(toPoint){
-    return this.withinThisRadius(toPoint, this.owner.getTargetRadius(), this.owner.getTargetRadiusY()/8);
+    return this.withinThisRadius(toPoint, this.owner.getTargetRadius(), this.owner.getTargetRadiusY());
 }
 
 GeneralBehavior.prototype.whosCloser = function(first, second){
@@ -233,12 +233,13 @@ GeneralBehavior.prototype.seekEnemy = function(){
     }
 
     var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
+    attackPosition = this.adjustFlock(attackPosition);
 
     //if the place im trying to go is outside of the elipse, send me to center.
     //this sort of blows.
     if (this.owner.gameObject.movementType == jc.movementType.ground){
         var center = cc.p(this.owner.layer.winSize.width/2, this.owner.layer.winSize.height/2);
-        if (!jc.insideEllipse(500,200, attackPosition,center)){
+        if (!jc.insideEllipse(600,300, attackPosition,center)){
             attackPosition = center;
         }
     }
@@ -299,7 +300,28 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
         this.owner.setFlipX(!target.isFlippedX())
     }
 
+
     return supportPos;
+}
+
+GeneralBehavior.prototype.adjustFlock = function(toPoint){
+    var friends = this.allFriendsWithinRadius(10);
+    var pos = this.owner.getBasePosition();
+    if (friends.length!=0){
+        for (var i =0; i<friends.length;i++){
+            //if we're locked onto the same person
+            var diff = Math.abs(friends[i].getBasePosition().y-pos.y);
+
+            if (diff<10 && this.owner.flockedOff !=friends[i]){
+                //adjust my seek position by 10px y north
+                friends[i].flockedOff = this.owner;
+                toPoint.y+=25;
+                break;
+            }
+        }
+    }
+    return toPoint;
+
 }
 
 GeneralBehavior.prototype.seek = function(toPoint){
@@ -307,7 +329,6 @@ GeneralBehavior.prototype.seek = function(toPoint){
     if (!this.owner){
         throw "Owning game object required";
     }
-
 
     if (this.withinRadius(toPoint)){
         return cc.p(0,0);
@@ -323,7 +344,10 @@ GeneralBehavior.prototype.seek = function(toPoint){
         throw "Character: " + this.owner.name + " speed not defined.";
     }
 
-    return cc.pMult(cc.pNormalize(vector.direction), speed);
+    var raw = cc.pMult(cc.pNormalize(vector.direction), speed);
+
+
+    return raw;
 }
 
 

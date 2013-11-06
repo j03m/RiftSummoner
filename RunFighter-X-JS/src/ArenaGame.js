@@ -185,7 +185,7 @@ var ArenaGame = jc.WorldLayer.extend({
                     var nodePos = this.convertToItemPosition(worldPos);
                     sprite.setBasePosition(nodePos);
                     sprite.setVisible(true);
-                    jc.playEffectOnTarget("teleport", sprite, sprite.getZOrder(), this);
+                    jc.playEffectOnTarget("teleport", sprite, this);
                     done();
                 }.bind(this));
             }, this.presentationSpeed);
@@ -233,7 +233,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
                 this.sprites[i].think(dt);
             }
-            var scaleLimit = 25;
+            var scaleLimit = 50;
             if (!this.scaleGate && shouldScale){
 
 

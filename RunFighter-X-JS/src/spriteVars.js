@@ -42,7 +42,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25,
 			"heal": 30
 		},
@@ -151,7 +151,7 @@ var spriteDefs = {
 	"dwarvenKnight": {
 		"name": "dwarvenKnight",
 		"parentOnly": true,
-		"targetRadius": 0,
+		"targetRadius": 20,
 		"animations": {
 			"move": {
 				"start": 70,
@@ -210,7 +210,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "dwarvenKnight"
@@ -236,7 +236,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "dwarvenKnight"
@@ -262,7 +262,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "dwarvenKnight"
@@ -294,7 +294,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "dwarvenKnight"
@@ -323,7 +323,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "dwarvenKnight"
@@ -331,7 +331,7 @@ var spriteDefs = {
 	"elemental1": {
 		"name": "elemental1",
 		"parentOnly": true,
-		"targetRadius": 0,
+		"targetRadius": 20,
 		"animations": {
 			"move": {
 				"start": 81,
@@ -369,7 +369,7 @@ var spriteDefs = {
 	"elemental2": {
 		"name": "elemental2",
 		"parentOnly": true,
-		"targetRadius": 0,
+		"targetRadius": 20,
 		"animations": {
 			"move": {
 				"start": 91,
@@ -423,7 +423,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "elemental1"
@@ -447,7 +447,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "elemental1"
@@ -567,7 +567,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "knight"
@@ -710,7 +710,7 @@ var spriteDefs = {
 	"goblinKnight": {
 		"name": "goblinKnight",
 		"parentOnly": true,
-		"targetRadius": 0,
+		"targetRadius": 20,
 		"animations": {
 			"move": {
 				"start": 70,
@@ -770,7 +770,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "goblinKnight"
@@ -794,7 +794,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "goblinKnight"
@@ -821,7 +821,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "goblinKnight"
@@ -845,7 +845,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 25
 		},
 		"inherit": "goblinKnight"
@@ -892,7 +892,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": -25
+			"targetRadius": 25
 		},
 		"inherit": "knight"
 	},
@@ -998,7 +998,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": -20
+			"targetRadius": 20
 		},
 		"baseOffset": {
 			"x": -20,
@@ -1067,7 +1067,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.9
 			},
-			"targetRadius": -30
+			"targetRadius": 30
 		},
 		"startFrame": 1,
 		"endFrame": 48,
@@ -1166,7 +1166,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.01
 			},
-			"targetRadius": 0
+			"targetRadius": 20
 		},
 		"animations": {
 			"move": {
@@ -1222,7 +1222,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": -25
+			"targetRadius": 25
 		},
 		"inherit": "knight"
 	},
@@ -1245,7 +1245,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.01
 			},
-			"targetRadius": 0
+			"targetRadius": 20
 		},
 		"animations": {
 			"move": {
@@ -1294,7 +1294,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 150
 		},
 		"animations": {
@@ -1351,7 +1351,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 0,
+			"targetRadius": 20,
 			"seekRadius": 150
 		},
 		"animations": {

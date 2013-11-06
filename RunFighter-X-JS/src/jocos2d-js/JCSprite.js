@@ -186,10 +186,10 @@ jc.Sprite = cc.Sprite.extend({
         }
     },
     getTargetRadius:function(){
-        return this.gameObject.targetRadius + this.getTextureRect().width/2;
+        return this.gameObject.targetRadius;
     },
     getTargetRadiusY:function(){
-        return this.gameObject.targetRadius + this.getTextureRect().height/2;
+        return this.gameObject.targetRadius/4;
     },
     getSeekRadius: function(){
         return this.gameObject.seekRadius;
@@ -531,15 +531,7 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
 
     //create an effect sprite and attach it if it exists.
     if (character.effect){
-        var effectConfig = effectsConfig[character.effect];
-        var effect = jc.makeSpriteWithPlist(effectConfig.plist, effectConfig.png, effectConfig.start);
-        var effectAnimation = jc.makeAnimationFromRange(character.effect, effectConfig );
-        effect.setVisible(true);
-        sprite.addChild(effect);
-        var cs = sprite.getContentSize();
-        effect.setPosition(cc.p(cs.width/2,cs.height/2));
-        jc.setChildEffectPosition(effect, sprite, effectConfig);
-        effect.runAction(effectAnimation);
+        jc.playEffectOnTarget(character.effect, sprite, layer, true);
     }
 
     //return the sprite;
