@@ -235,6 +235,15 @@ GeneralBehavior.prototype.seekEnemy = function(){
     var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
     attackPosition = this.adjustFlock(attackPosition);
 
+    //apply a position augment if it's there - usually for flying animals to be far off their targets
+    if (this.owner.gameObject.flightAug){
+        if (!this.owner.isFlippedX()){
+            this.owner.gameObject.flightAug.x*=-1;
+        }
+        attackPosition = cc.pAdd(attackPosition, this.owner.gameObject.flightAug);
+    }
+
+
     //if the place im trying to go is outside of the elipse, send me to center.
     //this sort of blows.
     if (this.owner.gameObject.movementType == jc.movementType.ground){
@@ -492,6 +501,11 @@ GeneralBehavior.applyDamage = function(target, attacker, amount, elementType){
                 }
             }
         }
+    }
+
+    //apply flank bonus
+    if (target.behavior.locked != attacker && attacker.behaviorType != "range"){
+        amount += amount * 0.2;
     }
 
     GeneralBehavior.applyGenericDamage(target, attacker, amount)

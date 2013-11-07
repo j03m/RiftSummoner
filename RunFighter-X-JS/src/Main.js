@@ -47,36 +47,13 @@ var MainGame = cc.Layer.extend({
         //fight config
         var fightConfig = {
             teamA:[
-                "orc",
-                "goblinKnightBlood",
-                "orc",
-                "orc",
-
-                "orc",
-                "orc",
-                "orc",
-                "orc",
-
-                "orc",
-                "orc",
+                "orge",
 
 
             ],
             teamAFormation:"4x4x4a",
             teamB:[
-                "orc",
-                "orc",
-                "orc",
-                "orc",
-
-                "dwarvenKnightFire",
-                "dwarvenKnightFire",
-                "dwarvenKnightFire",
-                "dwarvenKnightFire",
-
-                "wizard",
-                "wizard"
-
+                "dragonRed"
             ],
             teamBFormation:"4x4x4b",
             teamAPowers:['poisonCloud', 'healing'],

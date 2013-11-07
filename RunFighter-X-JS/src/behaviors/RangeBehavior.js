@@ -76,6 +76,10 @@ RangeBehavior.prototype.doMissile = function(){
             ownerPos = cc.pAdd(ownerPos, missileType.offset);
         }
 
+        if (this.owner.gameObject.missileOffset){
+            ownerPos = cc.pAdd(ownerPos, this.owner.gameObject.missileOffset);
+        }
+
 
         this.missile.setFlipX(this.owner.isFlippedX());
 
@@ -83,7 +87,15 @@ RangeBehavior.prototype.doMissile = function(){
         this.missile.runAction(this.missileAnimation);
 
         //move it to the target at damageDelay speed
-        var moveTo = cc.MoveTo.create(timeToImpact, this.locked.getPosition());
+        var targetPos;
+        if (this.owner.gameObject.missleTarget == "base"){
+            targetPos = this.locked.getBasePosition()
+        }else{
+            targetPos = this.locked.getPosition()
+        }
+
+
+        var moveTo = cc.MoveTo.create(timeToImpact, targetPos);
         var callback = cc.CallFunc.create(function(){
             this.hitLogic();
             this.owner.layer.removeChild(this.missile);

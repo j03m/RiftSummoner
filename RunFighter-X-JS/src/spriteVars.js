@@ -35,7 +35,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"speed": 20,
-			"damage": 250,
+			"damage": 160,
 			"actionDelays": {
 				"attack": 0.05
 			},
@@ -64,13 +64,13 @@ var spriteDefs = {
 			"move": {
 				"start": 529,
 				"end": 565,
-				"delay": 0.02,
+				"delay": 0.035,
 				"type": 0
 			},
 			"attack": {
 				"start": 614,
 				"end": 690,
-				"delay": 0.02,
+				"delay": 0.035,
 				"type": 1
 			},
 			"dead": {
@@ -82,7 +82,7 @@ var spriteDefs = {
 			"idle": {
 				"start": 529,
 				"end": 565,
-				"delay": 0.02,
+				"delay": 0.035,
 				"type": 0
 			}
 		},
@@ -100,6 +100,11 @@ var spriteDefs = {
 			"speed": 250,
 			"movementType": 0,
 			"missile": "greenbullet",
+			"missileOffset": {
+				"x": 0,
+				"y": 10
+			},
+			"missleTarget": "base",
 			"targets": 1,
 			"damage": 300,
 			"actionDelays": {
@@ -108,7 +113,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 1
 			},
-			"targetRadius": 25,
+			"targetRadius": 100,
 			"seekRadius": 25
 		},
 		"inherit": "dragon"
@@ -135,6 +140,15 @@ var spriteDefs = {
 			"speed": 150,
 			"damage": 100,
 			"missile": "greenbullet",
+			"missileOffset": {
+				"x": 0,
+				"y": 10
+			},
+			"flightAug": {
+				"x": 25,
+				"y": 100
+			},
+			"missleTarget": "base",
 			"movementType": 0,
 			"targets": 1,
 			"actionDelays": {
@@ -143,7 +157,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 1
 			},
-			"targetRadius": 25,
+			"targetRadius": 100,
 			"seekRadius": 25
 		},
 		"inherit": "dragon"
@@ -156,7 +170,7 @@ var spriteDefs = {
 			"move": {
 				"start": 70,
 				"end": 93,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -180,13 +194,13 @@ var spriteDefs = {
 			"idle": {
 				"start": 1,
 				"end": 60,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
 				"start": 300,
 				"end": 370,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		},
@@ -336,7 +350,7 @@ var spriteDefs = {
 			"move": {
 				"start": 81,
 				"end": 128,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -354,13 +368,13 @@ var spriteDefs = {
 			"idle": {
 				"start": 1,
 				"end": 72,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
 				"start": 261,
 				"end": 296,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		},
@@ -374,7 +388,7 @@ var spriteDefs = {
 			"move": {
 				"start": 91,
 				"end": 126,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -386,13 +400,13 @@ var spriteDefs = {
 			"idle": {
 				"start": 1,
 				"end": 75,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
 				"start": 271,
 				"end": 330,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		},
@@ -518,7 +532,7 @@ var spriteDefs = {
 			"move": {
 				"start": 730,
 				"end": 741,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -530,13 +544,13 @@ var spriteDefs = {
 			"idle": {
 				"start": 1263,
 				"end": 1358,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
 				"start": 862,
 				"end": 910,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		},
@@ -683,7 +697,7 @@ var spriteDefs = {
 			"move": {
 				"start": 80,
 				"end": 90,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -695,13 +709,13 @@ var spriteDefs = {
 			"idle": {
 				"start": 1,
 				"end": 60,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
 				"start": 450,
 				"end": 550,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		},
@@ -715,7 +729,7 @@ var spriteDefs = {
 			"move": {
 				"start": 70,
 				"end": 93,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -739,13 +753,13 @@ var spriteDefs = {
 			"idle": {
 				"start": 1,
 				"end": 60,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
 				"start": 300,
 				"end": 370,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		},
@@ -904,7 +918,7 @@ var spriteDefs = {
 			"move": {
 				"start": 11,
 				"end": 80,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -922,13 +936,13 @@ var spriteDefs = {
 			"dead": {
 				"start": 1120,
 				"end": 1259,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			},
 			"idle": {
 				"start": 1380,
 				"end": 1460,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			}
 		},
@@ -944,37 +958,37 @@ var spriteDefs = {
 			"move": {
 				"start": 145,
 				"end": 167,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
 				"start": 1,
 				"end": 24,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			},
 			"attack2": {
 				"start": 25,
 				"end": 48,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			},
 			"idle": {
 				"start": 121,
 				"end": 137,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"damage": {
 				"start": 49,
 				"end": 60,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			},
 			"dead": {
 				"start": 72,
 				"end": 120,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		}
@@ -1029,7 +1043,7 @@ var spriteDefs = {
 			"idle": {
 				"start": 193,
 				"end": 209,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"damage": {
@@ -1060,7 +1074,7 @@ var spriteDefs = {
 			"targets": 1,
 			"MaxHP": 1500,
 			"speed": 15,
-			"damage": 100,
+			"damage": 200,
 			"actionDelays": {
 				"attack": 1
 			},
@@ -1076,37 +1090,37 @@ var spriteDefs = {
 			"move": {
 				"start": 241,
 				"end": 265,
-				"delay": 0.1,
+				"delay": 0.06,
 				"type": 0
 			},
 			"attack": {
 				"start": 1,
 				"end": 37,
-				"delay": 0.05,
+				"delay": 0.04,
 				"type": 1
 			},
 			"attack2": {
 				"start": 48,
 				"end": 84,
-				"delay": 0.05,
+				"delay": 0.04,
 				"type": 1
 			},
 			"idle": {
 				"start": 193,
 				"end": 240,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"damage": {
 				"start": 96,
 				"end": 108,
-				"delay": 0.05,
+				"delay": 0.04,
 				"type": 1
 			},
 			"dead": {
 				"start": 144,
 				"end": 192,
-				"delay": 0.05,
+				"delay": 0.06,
 				"type": 1
 			}
 		},
@@ -1251,7 +1265,7 @@ var spriteDefs = {
 			"move": {
 				"start": 70,
 				"end": 88,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -1263,13 +1277,13 @@ var spriteDefs = {
 			"idle": {
 				"start": 91,
 				"end": 131,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
 				"start": 283,
 				"end": 340,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		},
@@ -1301,7 +1315,7 @@ var spriteDefs = {
 			"move": {
 				"start": 53,
 				"end": 84,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -1313,13 +1327,13 @@ var spriteDefs = {
 			"idle": {
 				"start": 10,
 				"end": 45,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
 				"start": 275,
 				"end": 315,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		},
@@ -1358,7 +1372,7 @@ var spriteDefs = {
 			"move": {
 				"start": 164,
 				"end": 189,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
@@ -1370,13 +1384,13 @@ var spriteDefs = {
 			"idle": {
 				"start": 1,
 				"end": 32,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
 				"start": 332,
 				"end": 400,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			}
 		},
@@ -1423,19 +1437,19 @@ var spriteDefs = {
 			"attack": {
 				"start": 1,
 				"end": 24,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			},
 			"attack2": {
 				"start": 48,
 				"end": 73,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			},
 			"idle": {
 				"start": 193,
 				"end": 209,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"damage": {
@@ -1520,19 +1534,19 @@ var spriteDefs = {
 			"attack": {
 				"start": 1,
 				"end": 40,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			},
 			"attack2": {
 				"start": 48,
 				"end": 80,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 1
 			},
 			"idle": {
 				"start": 193,
 				"end": 209,
-				"delay": 0.05,
+				"delay": 0.02,
 				"type": 0
 			},
 			"damage": {

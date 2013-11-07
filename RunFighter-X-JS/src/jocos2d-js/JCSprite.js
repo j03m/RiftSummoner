@@ -428,6 +428,10 @@ jc.Sprite = cc.Sprite.extend({
                 pos.x = (pos.x - cs.width) + 270;
             }
 
+            if (this.gameObject && this.gameObject.flightAug){
+                pos.y-= this.gameObject.flightAug.y/2; //for flight, shadow should be further away
+            }
+
             this.shadow.setPosition(pos);
         }
     }
