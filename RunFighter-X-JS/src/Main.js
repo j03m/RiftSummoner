@@ -23,9 +23,8 @@ var MainGame = cc.Layer.extend({
 
 
         switch(key){
-            case 'editdeck':
-                //var transition = cc.TransitionSlideInR.create(0.2,ArenaGame.scene());
-                cc.Director.getInstance().replaceScene(ArenaGame.scene());
+            case 'selectTeam':
+                cc.Director.getInstance().replaceScene(SelectTeam.scene());
                 break;
             case 'arena-pre':
                 ArenaGame.scene();
@@ -47,9 +46,7 @@ var MainGame = cc.Layer.extend({
         //fight config
         var fightConfig = {
             teamA:[
-                "orge",
-
-
+                "orge"
             ],
             teamAFormation:"4x4x4a",
             teamB:[
@@ -66,8 +63,8 @@ var MainGame = cc.Layer.extend({
         //missile - effect
         //powers - powerAnimationsRequired
        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB);
-
        this.changeScene('arena-pre',assets, fightConfig);
+       //this.changeScene('selectTeam');
 
 
     },

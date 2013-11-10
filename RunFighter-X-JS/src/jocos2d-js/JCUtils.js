@@ -200,7 +200,6 @@ jc.playEffectAtLocation = function(name, location, z, layer){
 jc.setChildEffectPosition = function(effect, parent, config){
     var placement = config.placement;
     var effectPos = effect.getPosition();
-    var base = parent.getBasePosition();
     var cs = parent.getContentSize();
     var tr = parent.getTextureRect();
     var etr = effect.getContentSize();
@@ -212,18 +211,15 @@ jc.setChildEffectPosition = function(effect, parent, config){
             effectPos.y -= tr.height;
             effectPos.x += cs.width/2;
 
-            effect.setPosition(effectPos);
         }else if (placement == 'center'){
             effectPos.x += cs.width/2;
             effectPos.y -= cs.height/2; //move to bottom
             effectPos.y += tr.height/2; //move up to middle of texture
-            effect.setPosition(effectPos);
         }
         else if (placement == 'base2base'){
             effectPos.x += cs.width/2;
             effectPos.y -= cs.height/2;
             effectPos.y += etr.height;
-            effect.setPosition(effectPos);
 
         }else{
             throw "Unknown effect placement.";
@@ -233,13 +229,14 @@ jc.setChildEffectPosition = function(effect, parent, config){
     if (config.offset){
         var newPos = cc.pAdd(effectPos, config.offset);
         effect.setPosition(newPos);
+    }else{
+        effect.setPosition(effectPos);
     }
 
 }
 
 jc.setEffectPosition = function(effect, parent, config){
     var placement = config.placement;
-    var effectPos = effect.getPosition();
     var base = parent.getBasePosition();
     var tr = parent.getTextureRect();
     var etr = effect.getTextureRect();
@@ -247,25 +244,22 @@ jc.setEffectPosition = function(effect, parent, config){
     if (placement){
         if (placement == 'bottom') {
             base.y += etr.height/2;
-            effect.setPosition(base);
         }else if (placement == 'center'){
             base.y += tr.height/2;
-            effect.setPosition(base);
         }else if (placement == 'top'){
-            base.y -= tr.height/2;
             effect.setPosition(base);
         }else if (placement == 'base2base'){
             base.y += etr.height;
-            effect.setPosition(base);
-
         }else{
             throw "Unknown effect placement.";
         }
     }
 
     if (config.offset){
-        var newPos = cc.pAdd(effectPos, config.offset);
+        var newPos = cc.pAdd(base, config.offset);
         effect.setPosition(newPos);
+    }else{
+        effect.setPosition(base);
     }
 
 }

@@ -3,6 +3,8 @@ var PowerHud = jc.UiElementsLayer.extend({
     init:function(powers){
         this.name = "powerHud";
         if (this._super()) {
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(powerTilesPlist);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(windowPlist);
             this.initFromConfig(PowerHud.windowConfig);
 
             var len = this.tiles>powers.length?powers.length:this.tiles;

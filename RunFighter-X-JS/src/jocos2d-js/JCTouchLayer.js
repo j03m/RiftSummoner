@@ -9,6 +9,7 @@ jc.touchCancelled = 'cancel';
 jc.TouchLayer = cc.Layer.extend({
     init: function() {
         if (this._super()) {
+
             this.winSize = cc.Director.getInstance().getWinSize();
             this.superDraw = this.draw;
             this.draw = this.childDraw;

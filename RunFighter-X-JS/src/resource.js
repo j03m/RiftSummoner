@@ -1,15 +1,12 @@
 var arenaSheet = dirImg + "arena.png";
 var shadowPlist = dirImg + "shadowSheet.plist";
 var shadowPng = dirImg + "shadowSheet.png";
-var carduiPlist = dirImg + "cardui.plist";
-var carduiPng = dirImg + "cardui.png";
-var portraitsPlist = dirImg + "portraits-hd.plist";
-var portraitsPng = dirImg + "portraits-hd.png";
-var windowPlist = dirImg + "windows.plist";
-var windowPng = dirImg + "windows.png";
 var powerTilesPng= dirImg + "powerTiles.png";
 var powerTilesPlist= dirImg + "powerTiles.plist";
-
+var selectTeamUI = dirImg + "selectTeam.plist";
+var selectTeamUIPng = dirImg + "selectTeam.png";
+var windowPng = dirImg + "windows.png";
+var windowPlist = dirImg + "windows.plist";
 
 //var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
@@ -24,12 +21,11 @@ var g_maingame = [
     {src:arenaSheet},
     {src:shadowPlist},
     {src:shadowPng},
-    {src:carduiPng},
-    {src:carduiPlist},
-    {src:portraitsPlist},
-    {src:portraitsPng},
+    {src:selectTeamUI},
+    {src:selectTeamUIPng},
     {src:windowPlist},
-    {src:windowPng},
+    {src:windowPng}
+
 ];
 
 //core character resources and effects - stuff we need for battles

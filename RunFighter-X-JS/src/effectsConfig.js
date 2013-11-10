@@ -8,6 +8,19 @@ var effectsConfig = {
         "delay":0.02,
         "times":1
     },
+    "explosion":{
+        "png":"art/explosion.png",
+        "plist":"art/explosion.plist",
+        "start":"explosion.1.png",
+        "placement":"bottom",
+        "frames":27,
+        "delay":0.01,
+        "offset":{
+            "x":50,
+            "y":50
+        },
+        "times":1
+    },
     "blueRadius":{
         "png":"art/blueRadius.png",
         "plist":"art/blueRadius.plist",

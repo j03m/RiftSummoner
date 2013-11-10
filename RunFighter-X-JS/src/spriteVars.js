@@ -139,7 +139,7 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"speed": 150,
 			"damage": 100,
-			"missile": "greenbullet",
+			"missile": "fireball",
 			"missileOffset": {
 				"x": 0,
 				"y": 10

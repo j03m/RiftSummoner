@@ -47,12 +47,6 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
     },
     init: function() {
         if (this._super()) {
-            //show some ui as tests
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(windowPlist);
-            //test config
-            //this.initFromConfig(this.windowConfig);
-            //this.start();
-
             this.windowConfigs = [];
             return true;
         }else{

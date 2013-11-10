@@ -3,8 +3,6 @@ jc.PowerTile = jc.CompositeButton.extend({
     borderPos: cc.p(130,130), //wtf is wrong with cocos positioning
     coolCheck: 0.05,
     initTile:function(){
-        //make sprite from empty tile and border
-        cc.SpriteFrameCache.getInstance().addSpriteFrames(powerTilesPlist);
         this.initWithSpriteFrameName("EmptyIcon.png");
         var cs = this.getContentSize();
         this.setScale(this.tileSize.width/cs.width, this.tileSize.height/cs.height);
