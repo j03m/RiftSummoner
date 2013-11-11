@@ -139,7 +139,7 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"speed": 150,
 			"damage": 100,
-			"missile": "fireball",
+			"missile": "greenbullet",
 			"missileOffset": {
 				"x": 0,
 				"y": 10
@@ -152,7 +152,7 @@ var spriteDefs = {
 			"movementType": 0,
 			"targets": 1,
 			"actionDelays": {
-				"attack": 5
+				"attack": 50
 			},
 			"effectDelays": {
 				"attack": 1
@@ -604,6 +604,7 @@ var spriteDefs = {
 			"damage": 25,
 			"movementType": 1,
 			"targets": 2,
+			"missile": "greenbullet",
 			"poisonDamage": 10,
 			"speed": 55,
 			"actionDelays": {

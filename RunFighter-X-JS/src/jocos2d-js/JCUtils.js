@@ -153,10 +153,13 @@ jc.playEffectOnTarget = function(name, target, layer, child){
     }
 
 
-    if (config.zorder == "behind"){
+    if (config.zorder == "behind" && !child){
         parent.reorderChild(effect,target.getZOrder()-1);
-    }else{
-        parent.reorderChild(effect,target.getZOrder()+1);
+    }else if (config.zorder == "behind" && child) {
+        parent.reorderChild(effect,-1);
+    }
+    else{
+        parent.reorderChild(effect,target.getZOrder());
     }
 
     if (config.times){
@@ -167,12 +170,14 @@ jc.playEffectOnTarget = function(name, target, layer, child){
         }.bind(this));
 
         var action = cc.Sequence.create(effectAnimation, onDone);
-        target.effectAnimations[name].playing =true;
         effect.runAction(action);
     }else{
         effect.runAction(effectAnimation);
     }
 
+    target.effectAnimations[name].playing =true;
+
+    return effect;
 
 }
 
@@ -206,15 +211,11 @@ jc.setChildEffectPosition = function(effect, parent, config){
 
     if (placement){
         if (placement == 'bottom') {
-            effectPos.y -= cs.height/2;
-            effectPos.y += etr.height/2;
-            effectPos.y -= tr.height;
+            effectPos.y += etr.height/2; //up to feet
             effectPos.x += cs.width/2;
-
         }else if (placement == 'center'){
             effectPos.x += cs.width/2;
-            effectPos.y -= cs.height/2; //move to bottom
-            effectPos.y += tr.height/2; //move up to middle of texture
+            effectPos.y += etr.height;
         }
         else if (placement == 'base2base'){
             effectPos.x += cs.width/2;
@@ -284,18 +285,16 @@ jc.genericPowerApply = function(effectData, effectName, varName,bObj){
     //examine the effect config and apply burning to the victim
     if (GeneralBehavior.applyDamage(bObj.owner, effectData.origin, effectData.damage, effectData.element)){
         if (!bObj.owner[varName]){
-            bObj.owner[varName] = jc.playEffect(effectName, bObj.owner, bObj.owner.getZOrder(), bObj.owner.layer);
+            bObj.owner[varName] = jc.playEffectOnTarget(effectName, bObj.owner, bObj.owner.getZOrder(), bObj.owner.layer, true);
         }
     }
 }
 
-
-
 jc.genericPowerRemove = function(varName,bObj){
-    if (!bObj.owner[varName]){
-        bObj.owner.layer.removeChild(bObj.owner[varName]);
+    if (bObj.owner[varName]){
+        bObj.owner.removeChild(bObj.owner[varName]);
     }
-    bObj.owner[varName] = undefined;
+    delete bObj.owner[varName];
 }
 
 jc.movementType = {

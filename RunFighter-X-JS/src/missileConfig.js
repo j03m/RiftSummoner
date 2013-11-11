@@ -15,8 +15,8 @@ var missileConfig = {
                         "start":"fireball.1.png",
                         "effect":"explosion",
                         "frames":10,
-                        "delay":0.05 ,
-                        "speed":200
+                        "delay":0.01,
+                        "speed":500
                     },
 }
 

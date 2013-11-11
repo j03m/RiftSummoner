@@ -7,8 +7,8 @@ Consts.dead=3;
 Consts.powerup=4;
 
 var AnimationTest = jc.TouchLayer.extend({
-    character:"dwarvenKnightWater",
-    effect:"heal",
+    //character:"dwarvenKnightWater",
+    effect:"fire",
     //missile:"greenbullet",
     init: function() {
 

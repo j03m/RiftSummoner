@@ -271,6 +271,9 @@ jc.Sprite = cc.Sprite.extend({
 
         this.effects[effect.name]= effect;
     },
+    removeEffect:function(effect){
+        delete this.effects[effect];
+    },
 	setState:function(state, callback){
         if (!state){
             throw "Undefined state passed to setState";

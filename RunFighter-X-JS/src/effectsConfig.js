@@ -13,10 +13,11 @@ var effectsConfig = {
         "plist":"art/explosion.plist",
         "start":"explosion.1.png",
         "placement":"bottom",
+        "zorder":"behind",
         "frames":27,
         "delay":0.01,
         "offset":{
-            "x":50,
+            "x":0,
             "y":50
         },
         "times":1
@@ -52,6 +53,27 @@ var effectsConfig = {
         "delay":0.02,
         "placement":"base2base",
         "times":1,
+    },
+    "fire":{
+        "png":"art/fire.png",
+        "plist":"art/fire.plist",
+        "start":"fire.1.png",
+        "frames":44,
+        "delay":0.02,
+        "placement":"base2base",
+        "zorder":"behind",
+    },
+    "poison":{
+        "png":"art/poison.png",
+        "plist":"art/poison.plist",
+        "start":"poison.1.png",
+        "frames":50,
+        "delay":0.02,
+//        "offset":{
+//            "x":0,
+//            "y":100
+//        },
+        "placement":"bottom",
     }
 }
 

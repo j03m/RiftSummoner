@@ -46,11 +46,15 @@ var MainGame = cc.Layer.extend({
         //fight config
         var fightConfig = {
             teamA:[
-                "orge"
+                "dragonRed",
+
+
             ],
             teamAFormation:"4x4x4a",
             teamB:[
-                "dragonRed"
+                "orge",
+
+
             ],
             teamBFormation:"4x4x4b",
             teamAPowers:['poisonCloud', 'healing'],
@@ -64,7 +68,7 @@ var MainGame = cc.Layer.extend({
         //powers - powerAnimationsRequired
        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB);
        this.changeScene('arena-pre',assets, fightConfig);
-       //this.changeScene('selectTeam');
+      //this.changeScene('animationTest');
 
 
     },

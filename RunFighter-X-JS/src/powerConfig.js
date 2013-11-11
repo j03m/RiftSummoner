@@ -3,12 +3,12 @@ var powerAnimationsRequired = {
     "healingRadius":["heal"],
     "vampireRadius":["greenBang","heal"],
     "regeneration":['heal'],
-    "splashDamage":['greenBang'],
+    "splashDamage":['explosion'],
     "vampireDistro":["greenBang","heal"],
     "vampireDrain":["greenBang","heal"],
     "knockBack":["greenBang"],
-    "burn":["greenBang"],
-    "poison":["greenBang"],
+    "burn":["fire"],
+    "poison":["poison"],
     "explodePoison":["greenBang"],
     "explodeFire":["greenBang"]
 
@@ -65,13 +65,13 @@ var powerConfig = {
         var config = spriteDefs[value].damageMods["splashDamage"];
 
         //initial explosion
-        jc.playEffectOnTarget("greenBang", this.locked, this.owner.layer);
+        jc.playEffectOnTarget("explosion", this.locked, this.owner.layer);
 
         var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.locked.getBasePosition());
         //damage them
         for(var i=0;i<foes.length;i++){
             if (GeneralBehavior.applyDamage(foes[i], this.owner, config.damage)){
-                jc.playEffectOnTarget("greenBang", foes[i], this.owner.layer);
+              //  jc.playEffectOnTarget("fire", foes[i], this.owner.layer);
             }
         }
     },
@@ -80,12 +80,12 @@ var powerConfig = {
         var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.owner.getBasePosition());
 
         //initial explosion
-        jc.playEffectOnTarget("greenBang", this.locked, this.owner.layer);
+        jc.playEffectOnTarget("explosion", this.locked, this.owner.layer);
 
         //damage them
         for(var i=0;i<foes.length;i++){
             if (GeneralBehavior.applyDamage(foes[i], this.owner, config.damage)){
-                jc.genericPower('burn', value, this.owner, foes[i], config.burn)
+               jc.genericPower('fire', value, this.owner, foes[i], config.burn)
             }
         }
     },
@@ -150,18 +150,40 @@ var powerConfig = {
         jc.genericPower("burn", value, this.owner, this.locked);
     },
     "burn-apply":function(effectData){
-        jc.genericPowerApply(effectData, "greenBang", "burnEffect", this);
+        var fillColor = new cc.Color3B();
+        fillColor.r = 255;
+        fillColor.b = 0;
+        fillColor.g = 0;
+        this.owner.setColor(fillColor);
+        jc.genericPowerApply(effectData, "fire", "burnEffect", this);
     },
     "burn-remove":function(){
+        var fillColor = new cc.Color3B();
+        fillColor.r = 0;
+        fillColor.b = 255;
+        fillColor.g = 0;
+        this.owner.setColor(fillColor);
+
+
         jc.genericPowerRemove("burnEffect", this);
     },
     "poison":function(value){
         jc.genericPower("poison", value, this.owner, this.locked);
     },
     "poison-apply":function(effectData){
-        jc.genericPowerApply(effectData, "greenBang", "poisonEffect", this);
+        var fillColor = new cc.Color3B();
+        fillColor.r = 0;
+        fillColor.b = 0;
+        fillColor.g = 255;
+        this.owner.setColor(fillColor);
+        jc.genericPowerApply(effectData, "poison", "poisonEffect", this);
     },
     "poison-remove":function(){
+        var fillColor = new cc.Color3B();
+        fillColor.r = 255;
+        fillColor.b = 255;
+        fillColor.g = 255;
+        this.owner.setColor(fillColor);
         jc.genericPowerRemove("poisonEffect", this)
     }
 

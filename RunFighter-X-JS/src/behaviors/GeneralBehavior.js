@@ -508,7 +508,7 @@ GeneralBehavior.applyDamage = function(target, attacker, amount, elementType){
         amount += amount * 0.2;
     }
 
-    GeneralBehavior.applyGenericDamage(target, attacker, amount)
+   return  GeneralBehavior.applyGenericDamage(target, attacker, amount)
 
 }
 
@@ -768,7 +768,7 @@ GeneralBehavior.prototype.afterEffects = function(){
         if (!this.scheduledEffects[effectName]){
             var effectFunc = this.applyEffects.bind(this, effect);
             var removeEffectFunc = this.removeEffects.bind(this, effect, effectFunc, effectName);
-            this.owner.schedule(effectFunc, effect.interval, (effect.duration/effect.interval)-1);
+            this.owner.schedule(effectFunc, effect.interval, (effect.duration/effect.interval)-1, undefined);
             if (effect.duration){
                 this.owner.scheduleOnce(removeEffectFunc, effect.duration);
             }
@@ -784,7 +784,9 @@ GeneralBehavior.prototype.removeEffects = function(effect, effectFunc, effectNam
     var func = powerConfig[effect.name + "-remove"].bind(this);
     func(effect);
     this.unschedule(effectFunc);
+    this.owner.removeEffect(effectName);
     this.scheduledEffects[effectName] = undefined;
+
 }
 
 GeneralBehavior.prototype.applyEffects = function(effect){
