@@ -59,7 +59,19 @@ var globalPowers = {
         var behavior = jc.arenaScene.layer.teams['a'][0].behavior;
         var foes = behavior.allFoesWithinRadiusOfPoint(150, touch);
 
-        jc.playEffectAtLocation("greenBang", touch , 1, jc.arenaScene.layer);
+        var effect = jc.playEffectAtLocation("explosion", touch , 1, jc.arenaScene.layer);
+
+        //this function doesn't position us correctly, we need to add to it
+        var pos = effect.getPosition();
+        var tr = effect.getTextureRect();
+        pos.y += tr.height;
+        effect.setPosition(pos);
+
+        var fillColor = new cc.Color3B();
+        fillColor.r = 0;
+        fillColor.b = 0;
+        fillColor.g = 255;
+        effect.setColor (fillColor);
 
         //damage them
         for(var i=0;i<foes.length;i++){

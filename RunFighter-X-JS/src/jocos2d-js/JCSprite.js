@@ -268,7 +268,6 @@ jc.Sprite = cc.Sprite.extend({
         return this.state;
     },
     addEffect:function(effect){
-
         this.effects[effect.name]= effect;
     },
     removeEffect:function(effect){

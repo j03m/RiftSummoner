@@ -185,7 +185,10 @@ jc.playEffectAtLocation = function(name, location, z, layer){
 
     var config = effectsConfig[name];
     var effect = jc.makeSpriteWithPlist(config.plist, config.png, config.start);
+    var etr = effect.getTextureRect();
     var effectAnimation = jc.makeAnimationFromRange(name, config );
+    //adjust location so we center ourselves on it...?
+
     effect.setPosition(location);
     effect.setVisible(true);
     layer.addChild(effect);
@@ -199,12 +202,13 @@ jc.playEffectAtLocation = function(name, location, z, layer){
     }else{
         effect.runAction(effectAnimation);
     }
+    return effect;
 
 }
 
 jc.setChildEffectPosition = function(effect, parent, config){
     var placement = config.placement;
-    var effectPos = effect.getPosition();
+    var effectPos = cc.p(0,0);
     var cs = parent.getContentSize();
     var tr = parent.getTextureRect();
     var etr = effect.getContentSize();
@@ -290,11 +294,12 @@ jc.genericPowerApply = function(effectData, effectName, varName,bObj){
     }
 }
 
-jc.genericPowerRemove = function(varName,bObj){
+jc.genericPowerRemove = function(varName,effectName, bObj){
     if (bObj.owner[varName]){
         bObj.owner.removeChild(bObj.owner[varName]);
     }
     delete bObj.owner[varName];
+    bObj.owner.effectAnimations[effectName].playing = false;
 }
 
 jc.movementType = {

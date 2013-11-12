@@ -9,8 +9,9 @@ var powerAnimationsRequired = {
     "knockBack":["greenBang"],
     "burn":["fire"],
     "poison":["poison"],
-    "explodePoison":["greenBang"],
-    "explodeFire":["greenBang"]
+    "explodePoison":["explosion"],
+    "poisonCloud":["explosion", "poison"],
+    "explodeFire":["explosion"]
 
 }
 
@@ -92,7 +93,12 @@ var powerConfig = {
     "explodePoison":function(value){
         var config = spriteDefs[value].deathMods["explodePoison"];
         //initial explosion
-        jc.playEffectOnTarget("greenBang", this.locked, this.owner.layer);
+        var effect = jc.playEffectOnTarget("explosion", this.locked, this.owner.layer);
+        var fillColor = new cc.Color3B();
+        fillColor.r = 0;
+        fillColor.b = 0;
+        fillColor.g = 255;
+        effect.setColor (fillColor);
 
         var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.locked.getBasePosition());
 
@@ -159,13 +165,11 @@ var powerConfig = {
     },
     "burn-remove":function(){
         var fillColor = new cc.Color3B();
-        fillColor.r = 0;
+        fillColor.r = 255;
         fillColor.b = 255;
-        fillColor.g = 0;
+        fillColor.g = 255;
         this.owner.setColor(fillColor);
-
-
-        jc.genericPowerRemove("burnEffect", this);
+        jc.genericPowerRemove("burnEffect", "fire", this);
     },
     "poison":function(value){
         jc.genericPower("poison", value, this.owner, this.locked);
@@ -184,7 +188,7 @@ var powerConfig = {
         fillColor.b = 255;
         fillColor.g = 255;
         this.owner.setColor(fillColor);
-        jc.genericPowerRemove("poisonEffect", this)
+        jc.genericPowerRemove("poisonEffect", "poison", this)
     }
 
 }

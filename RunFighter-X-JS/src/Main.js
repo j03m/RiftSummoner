@@ -46,15 +46,11 @@ var MainGame = cc.Layer.extend({
         //fight config
         var fightConfig = {
             teamA:[
-                "dragonRed",
-
-
+                "dragonRed"
             ],
             teamAFormation:"4x4x4a",
             teamB:[
-                "orge",
-
-
+                "orge"
             ],
             teamBFormation:"4x4x4b",
             teamAPowers:['poisonCloud', 'healing'],
@@ -66,13 +62,13 @@ var MainGame = cc.Layer.extend({
         //def - gameObject - missile
         //missile - effect
         //powers - powerAnimationsRequired
-       var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB);
+       var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
        this.changeScene('arena-pre',assets, fightConfig);
       //this.changeScene('animationTest');
 
 
     },
-    makeAssetDictionary:function(teamA, teamB){
+    makeAssetDictionary:function(teamA, teamB, teamAPowers, teamBPowers){
         var assets = [];
         for (var i=0;i<teamA.length;i++){
             var name = teamA[i];
@@ -84,6 +80,17 @@ var MainGame = cc.Layer.extend({
             this.addAssetChain(assets, name);
         }
 
+        for (var i=0;i<teamAPowers.length;i++){
+            var name = teamAPowers[i];
+            this.addPowerAssets(assets, name);
+        }
+
+        for (var i=0;i<teamAPowers.length;i++){
+            var name = teamAPowers[i];
+            this.addPowerAssets(assets, name);
+        }
+
+
         //transform
         for (var i =0;i<assets.length;i++){
             assets[i] = {src:assets[i]};
@@ -94,6 +101,17 @@ var MainGame = cc.Layer.extend({
         }
 
         return assets;
+    },
+    addPowerAssets:function(assetAry, name){
+
+        var animations = powerAnimationsRequired[name];
+        if (animations){
+            for (var i =0;i<animations.length;i++){
+                assetAry.pushUnique(g_characterPlists[animations[i]]);
+                assetAry.pushUnique(g_characterPngs[animations[i]]);
+
+            }
+        }
     },
     addAssetChain:function(assetAry, name){
         assetAry.pushUnique(g_characterPlists[name]);

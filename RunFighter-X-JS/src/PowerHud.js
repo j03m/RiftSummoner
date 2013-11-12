@@ -23,16 +23,17 @@ var PowerHud = jc.UiElementsLayer.extend({
         this.scheduleOnce(method, delay);
     },
     targetTouchHandler: function(type, touch, sprites) {
-        if (type == jc.touchEnded){
-            if (sprites[0] && sprites[0].on){
-                sprites[0].setSelected();
-                for (var i=0;i<this.tiles;i++){
-                    if (this["tile"+i]!=sprites[0]){
-                        this["tile"+i].setUnselected();
+            if (sprites){
+                if (sprites[0] && sprites[0].on){
+                    sprites[0].setSelected();
+                    for (var i=0;i<this.tiles;i++){
+                        if (this["tile"+i]!=sprites[0]){
+                            this["tile"+i].setUnselected();
+                        }
                     }
                 }
             }
-        }
+
     },
     onShow:function(){
         console.log("onshow");

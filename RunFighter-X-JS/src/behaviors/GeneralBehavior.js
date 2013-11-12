@@ -768,7 +768,7 @@ GeneralBehavior.prototype.afterEffects = function(){
         if (!this.scheduledEffects[effectName]){
             var effectFunc = this.applyEffects.bind(this, effect);
             var removeEffectFunc = this.removeEffects.bind(this, effect, effectFunc, effectName);
-            this.owner.schedule(effectFunc, effect.interval, (effect.duration/effect.interval)-1, undefined);
+            this.owner.schedule(effectFunc, effect.interval, (effect.duration/effect.interval)-2, undefined);
             if (effect.duration){
                 this.owner.scheduleOnce(removeEffectFunc, effect.duration);
             }

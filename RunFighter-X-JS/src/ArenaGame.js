@@ -279,7 +279,8 @@ var ArenaGame = jc.WorldLayer.extend({
     targetTouchHandler:function(type, touch,sprites){
         if (type == jc.touchEnded){
             if (this.nextTouchAction){
-                this.nextTouchAction(touch, sprites);
+                var nodePos = this.convertToNodeSpace(touch);
+                this.nextTouchAction(nodePos, sprites);
                 this.nextTouchAction = undefined;
             }
         }
