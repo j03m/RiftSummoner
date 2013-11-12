@@ -82,6 +82,8 @@ cc.Browser = {};
         cc.__renderDoesnotSupport = true;
     }
 
+    cc.Browser.supportWebGL = false;
+
     // check if browser supports Web Audio
     cc.Browser.supportWebAudio = (function(){
         // check Web Audio's context

@@ -36,17 +36,25 @@ Buglist -
 
     *implement flank from battleheart
 
-    *implement flash from battleheart on power usages
+
 
     *fix bug where if a character is outside of the ellipse, the need to move into the ellipse asap
 
 
-    powers don't work on mobile
+
     *powers don't get selected on click
     *power animations seem to render in the wrong spot
-    power need bigger presentation
     *power effects don't animate the second application
+    powers don't work on mobile
+    power need bigger presentation - lightning flash, larger animation
+    normal hits should have a sparkle ala battle heart
 
+
+
+    selectTeam
+	    Locked Icon - hero images
+	    pressed state for "fight" and "arrows"
+	    Empty Icon - hero images
 
 
 

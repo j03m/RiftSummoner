@@ -7,7 +7,7 @@
             <key>buttonFight.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1540,2},{332,183}}</string>
+                <string>{{3590,2},{332,183}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>closeButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1874,2},{169,164}}</string>
+                <string>{{3924,2},{169,164}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>descriptionWindow.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1540,414},{663,231}}</string>
+                <string>{{3590,414},{663,231}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>formationFrame.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,3078},{712,614}}</string>
+                <string>{{2,2052},{712,614}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>formationNameFrame.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1922,531},{576,122}}</string>
+                <string>{{3972,531},{576,122}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>genericBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{2048,1536}}</string>
+                <string>{{2052,2},{2048,1536}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>leftArrowFormationName.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1773,531},{147,143}}</string>
+                <string>{{3823,531},{147,143}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>portraitSmall.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1540,187},{233,225}}</string>
+                <string>{{3590,187},{233,225}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>portraitSmallSelected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1775,313},{233,216}}</string>
+                <string>{{3825,313},{233,216}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>rightArrowFormationName.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1874,168},{147,143}}</string>
+                <string>{{3924,168},{147,143}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -134,18 +134,18 @@
                 <key>sourceSize</key>
                 <string>{147,143}</string>
             </dict>
-            <key>selectTeamScreen.png</key>
+            <key>selectTeamScreenS.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2052},{1024,768}}</string>
+                <string>{{2,2},{2048,1536}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{1024,768}}</string>
+                <string>{{0,0},{2048,1536}}</string>
                 <key>sourceSize</key>
-                <string>{1024,768}</string>
+                <string>{2048,1536}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -155,9 +155,9 @@
             <key>realTextureFileName</key>
             <string>selectTeam-ipadhd.png</string>
             <key>size</key>
-            <string>{2048,4096}</string>
+            <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:1bc77e650dbd929a4f22adeeb4f2bf8d:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:b41ba66e355c7ac6461233ea1ba7f2f8:1/1$</string>
             <key>textureFileName</key>
             <string>selectTeam-ipadhd.png</string>
         </dict>

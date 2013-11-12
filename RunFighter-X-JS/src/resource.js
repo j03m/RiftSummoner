@@ -5,6 +5,9 @@ var powerTilesPng= dirImg + "powerTiles.png";
 var powerTilesPlist= dirImg + "powerTiles.plist";
 var selectTeamUI = dirImg + "selectTeam.plist";
 var selectTeamUIPng = dirImg + "selectTeam.png";
+var editTeamUI = dirImg + "editTeam.plist";
+var editTeamUIPng = dirImg + "editTeam.png";
+
 var windowPng = dirImg + "windows.png";
 var windowPlist = dirImg + "windows.plist";
 
@@ -23,6 +26,8 @@ var g_maingame = [
     {src:shadowPng},
     {src:selectTeamUI},
     {src:selectTeamUIPng},
+    {src:editTeamUI},
+    {src:editTeamUIPng},
     {src:windowPlist},
     {src:windowPng}
 

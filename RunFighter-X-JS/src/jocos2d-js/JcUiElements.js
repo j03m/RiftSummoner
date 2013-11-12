@@ -248,16 +248,20 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         var total = config.membersTotal || config.members.length;
         var size = parent.getContentSize();
         var itemSize;
+        var lastSize;
+        var itemSizeHardSet = false;
         if (config.itemSize){
             var itemWidth = size.width * config.itemSize.width/100;
             var itemHeight = size.height* config.itemSize.height/100;
             itemSize = cc.size(itemWidth, itemHeight);
+            itemSizeHardSet = true;
         }
 
         var x = -1;
         var y = -1;
         var rowCount=0;
         var colCount=0;
+        var initialPosition;
         for(var i =0;i<total;i++){
             var member;
             if (config.membersTotal){
@@ -267,26 +271,36 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             }
 
             var window = this.makeWindowByType(member, itemSize);
+            var elementSize = window.getBoundingBox().size;
+            if (!itemSizeHardSet){
+                itemSize = elementSize; //buttons and sprites set their own sizes
+            }
+
             if (x==-1 && y==-1){
-                if (!itemSize){
-                    itemSize = window.getBoundingBox().size; //buttons and sprites set their own sizes
-                }
-                var position = this.getAnchorPosition(config, itemSize, parent);
-                x = position.x;
-                y = position.y;
-                if (config.itemPadding){
-                    if (config.itemPadding.all){
-                        y-=config.itemPadding.all;
-                        x+=config.itemPadding.all;
-                    }else{
-                        if (config.itemPadding.top){
-                            y-=config.itemPadding.top;
-                        }
-                        if (config.itemPadding.left){
-                            x+=config.itemPadding.left;
-                        }
-                    }
-                }
+                initialPosition = this.getAnchorPosition(config, itemSize, parent);
+                x = initialPosition.x;
+                y = initialPosition.y;
+//                if (config.itemPadding){
+//                    if (config.itemPadding.all){
+//                        y-=config.itemPadding.all;
+//                        x+=config.itemPadding.all;
+//                    }else{
+//                        if (config.itemPadding.top){
+//                            y-=config.itemPadding.top;
+//                        }
+//                        if (config.itemPadding.left){
+//                            x+=config.itemPadding.left;
+//                        }
+//                    }
+//                }
+            }else if (colCount!=0){
+                //the last pass, we moved x from the previous elements center, to where our center should be.
+                //however, this assumes we're the same size as the previous element
+                //if we are not, we'll overlap them. So here, we also need to apply some logic that moves us further if we're larger then the
+                //last element;
+                //if (lastSize.width < itemSize.width){
+                    x+=itemSize.width/2;
+                //}
             }
 
             //keep track
@@ -321,11 +335,12 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
 
             this.windowConfigs.push({"window":window, "config":member, "position":gridPos});
 
+
             //augment position for the next cell
             colCount++;
             if (colCount>=cols){
                 rowCount++;
-                x=position.x;
+                x=initialPosition.x;
                 y-=itemSize.height;
                 if (config.itemPadding){
                     if (config.itemPadding.all){
@@ -338,7 +353,9 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 }
                 colCount = 0;
             }else{
-                x+=itemSize.width;
+                //move from my center, to the next center
+                x+=itemSize.width/2;
+                lastSize = itemSize;
             }
 
         }

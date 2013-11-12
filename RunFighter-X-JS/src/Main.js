@@ -26,6 +26,9 @@ var MainGame = cc.Layer.extend({
             case 'selectTeam':
                 cc.Director.getInstance().replaceScene(SelectTeam.scene());
                 break;
+            case 'editTeam':
+                cc.Director.getInstance().replaceScene(EditTeam.scene());
+                break;
             case 'arena-pre':
                 ArenaGame.scene();
                 jc.arenaScene.data=data;
@@ -63,8 +66,8 @@ var MainGame = cc.Layer.extend({
         //missile - effect
         //powers - powerAnimationsRequired
        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
-       this.changeScene('arena-pre',assets, fightConfig);
-      //this.changeScene('animationTest');
+       //this.changeScene('arena-pre',assets, fightConfig);
+       this.changeScene('editTeam');
 
 
     },

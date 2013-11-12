@@ -48,19 +48,130 @@ var SelectTeam = jc.UiElementsLayer.extend({
             return false;
         }
     },
+    previousFormation:function(){
+        console.log("previous");
+    },
+    nextFormation:function(){
+        console.log("next");
+    },
+    fightStart:function(){
+        console.log("fight");
+    },
+    close:function(){
+        console.log("close");
+    },
+    targetTouchHandler: function(type, touch, sprites) {
+        console.log(sprites[0].name);
+    },
     windowConfig:{
         "mainFrame":{
             "cell":5,
             "type":"sprite",
             "transitionIn":"top",
             "transitionOut":"top",
-            "scaleRect":jc.UiConf.frame19Rect,
             "sprite":"genericBackground.png",
-            "padding":{
-                "top":12,
-                "left":2
+            "kids":{
+                "closeButton":{
+                    "cell":9,
+                    "anchor":['center', 'right'],
+                    "padding":{
+                        "top":-15,
+                        "left":0
+                    },
+                    "type":"button",
+                    "main":"closeButton.png",
+                    "pressed":"closeButton.png",
+                    "touchDelegateName":"close"
+
+                },
+                "gridCells":{
+                    "isGroup":true,
+                    "type":"grid",
+                    "cols":4,
+                    "cell":7,
+                    "anchor":['bottom'],
+                    "padding":{
+                        "top":-35,
+                        "left":-25
+                    },
+                    "itemPadding":{
+                        "top":3,
+                        "left":4
+                    },
+
+                    "input":true,
+                    "members":[
+                        {
+                            "type":"sprite",
+                            "input":true,
+                            "sprite":"portraitSmall.png"
+                        }
+                    ],
+                    "membersTotal":20
+                },
+                "formation":{
+                    "cell":6,
+                    "anchor":['right','top'],
+                    "padding":{
+                        "top":-67,
+                        "left":-27
+                    },
+                    "type":"sprite",
+                    "sprite":"formationFrame.png"
+                },
+                "description":{
+                    "cell":3,
+                    "anchor":['top'],
+                    "padding":{
+                        "top":-40,
+                        "left":-30
+                    },
+                    "type":"sprite",
+                    "sprite":"descriptionWindow.png"
+                },
+                "formationSelect":{
+                    "isGroup":true,
+                    "type":"line",
+                    "cell":3,
+                    "anchor":['left', 'top'],
+                    "padding":{
+                        "top":20,
+                        "left":-50
+                    },
+
+                    "members":[
+                        {
+                            "type":"button",
+                            "main":"leftArrowFormationName.png",
+                            "pressed":"leftArrowFormationName.png",
+                            "touchDelegateName":"previousFormation"
+                        },
+                        {
+                            "type":"sprite",
+                            "sprite":"formationNameFrame.png"
+                        },
+                        {
+                            "type":"button",
+                            "main":"rightArrowFormationName.png",
+                            "pressed":"rightArrowFormationName.png",
+                            "touchDelegateName":"nextFormation"
+                        }
+                    ]
+                },
+                "fightButton":{
+                    "cell":3,
+                    "anchor":['center'],
+                    "padding":{
+                        "top":20,
+                        "left":-30
+                    },
+                    "type":"button",
+                    "main":"buttonFight.png",
+                    "pressed":"buttonFight.png",
+                    "touchDelegateName":"fightStart"
+                },
             }
-        }
+        },
     }
 });
 

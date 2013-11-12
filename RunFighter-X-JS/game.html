@@ -60,7 +60,10 @@
       setTimeout(function() { window.scrollTo(0,1); }, 10);
     }
 
-
+    var canvas=document.getElementById('gameCanvas' );
+    var ctx = canvas.getContext("2d");
+    canvas.width = 480 * window.devicePixelRatio;
+    canvas.height = 320 * window.devicePixelRatio;
 
 </script>
 </body>
