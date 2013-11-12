@@ -87,6 +87,10 @@ jc.fadeOut=function(item, time){
 jc.makeAnimationFromRange = function(name, config){
 
     //animate it
+    if (config.name){
+        name = config.name;
+    }
+
     var frames = [];
     var first =1;
     if (config.first){
@@ -112,6 +116,19 @@ jc.makeAnimationFromRange = function(name, config){
         return cc.RepeatForever.create(cc.Animate.create(animation));
     }else{
         return cc.Repeat.create(cc.Animate.create(animation), config.times);
+    }
+
+}
+
+jc.playTintedEffectOnTarget = function(name, target, layer, child, r, g, b){
+    var effect = jc.playEffectOnTarget(name, target, layer, child);
+    if (effect){
+        var fillColor = new cc.Color3B();
+        fillColor.r =r;
+        fillColor.b = b;
+        fillColor.g = g;
+        effect.setColor(fillColor);
+        return effect;
     }
 
 }

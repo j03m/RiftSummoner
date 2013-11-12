@@ -46,7 +46,7 @@ var MainGame = cc.Layer.extend({
         //fight config
         var fightConfig = {
             teamA:[
-                "dragonRed"
+                "voidElf"
             ],
             teamAFormation:"4x4x4a",
             teamB:[
@@ -91,13 +91,18 @@ var MainGame = cc.Layer.extend({
         }
 
 
+        assets.pushUnique(g_characterPlists["greenbullet"]);
+        assets.pushUnique(g_characterPngs["greenbullet"]);
+        assets.pushUnique(g_characterPlists["greenBang"]);
+        assets.pushUnique(g_characterPngs["greenBang"]);
+
         //transform
         for (var i =0;i<assets.length;i++){
             assets[i] = {src:assets[i]};
         }
 
         for (var i=0;i<g_battleStuff.length;i++){
-            assets.push(g_battleStuff[i]);
+            assets.pushUnique(g_battleStuff[i]);
         }
 
         return assets;

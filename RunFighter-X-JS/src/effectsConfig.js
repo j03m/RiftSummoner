@@ -63,6 +63,17 @@ var effectsConfig = {
         "placement":"base2base",
         "zorder":"behind",
     },
+    "fireLoop":{
+        "name":"fire",
+        "png":"art/fire.png",
+        "plist":"art/fire.plist",
+        "start":"fire.1.png",
+        "frames":44,
+        "delay":0.02,
+        "placement":"base2base",
+        "zorder":"behind",
+        "times":15,
+    },
     "poison":{
         "png":"art/poison.png",
         "plist":"art/poison.plist",
