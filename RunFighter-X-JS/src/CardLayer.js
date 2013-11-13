@@ -441,6 +441,24 @@ jc.getCharacterPortrait=function(entry){
 
 }
 
+jc.getCharacterCard=function(entry){
+    //TODO: Mod to correct portrait - alive vs hurt based on state
+    //todo implement me
+    switch(entry.name){
+        case "orc":
+            return "btn_mon_orcWrrior.png";
+        case "orge":
+            return "btn_mon_orgeHitter.png";
+        case "troll":
+            return "btn_mon_trolCurer.png";
+        case "wizard":
+            return "btn_mon_goblinWizard.png";
+        default:
+            return "crunch-portrait.png";
+    }
+
+}
+
 
 
 
