@@ -62,28 +62,28 @@ jc.TouchLayer = cc.Layer.extend({
 
         }
     },
-    onTouchesBegan: function(touch) {
+    onTouchBegan: function(touch) {
         return this.hitSpriteTarget(jc.touchBegan, touch);
 
     },
-    onTouchesMoved: function(touch) {
+    onTouchMoved: function(touch) {
         return this.hitSpriteTarget(jc.touchMoved, touch);
 
     },
-    onTouchesEnded: function(touch) {
+    onTouchEnded: function(touch) {
         return this.hitSpriteTarget(jc.touchEnded, touch);
 
     },
     onMouseDown: function(event) {
-        return this.onTouchesBegan(event);
+        return this.onTouchBegan(event);
 
     },
     onMouseDragged: function(event) {
-        return this.onTouchesMoved(event);
+        return this.onTouchMoved(event);
 
     },
     onMouseUp: function(event) {
-        return this.onTouchesEnded(event);
+        return this.onTouchEnded(event);
 
     },
     onTouchCancelled: function(touch, event,sprite) {
@@ -114,8 +114,7 @@ jc.TouchLayer = cc.Layer.extend({
         }
         //if something of note was touched, raise it
         if ((handled.length>0 || this.bubbleAll) && !this.isPaused){
-            this.targetTouchHandler(type, touch, handled);
-            return true;
+            return this.targetTouchHandler(type, touch, handled);
         }
         return false;
     },

@@ -27,6 +27,7 @@ jc.makeSpriteWithPlist = function(plist, png, startFrame){
     var sprite = new cc.Sprite();
     cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
     cc.SpriteBatchNode.create(png);
+
     //todo change to size of sprite
     var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(startFrame);
     sprite.initWithSpriteFrame(frame);
@@ -128,9 +129,9 @@ jc.playTintedEffectOnTarget = function(name, target, layer, child, r, g, b){
         fillColor.b = b;
         fillColor.g = g;
         effect.setColor(fillColor);
-        return effect;
     }
 
+    return effect;
 }
 
 jc.playEffectOnTarget = function(name, target, layer, child){
@@ -147,6 +148,8 @@ jc.playEffectOnTarget = function(name, target, layer, child){
                                             "animation":jc.makeAnimationFromRange(name, config )
         };
     }
+
+
     if (target.effectAnimations[name].playing){
         return; //don't play if it's already playing on me
     }
@@ -181,7 +184,6 @@ jc.playEffectOnTarget = function(name, target, layer, child){
 
     if (config.times){
         var onDone = cc.CallFunc.create(function(){
-
             parent.removeChild(effect);
             target.effectAnimations[name].playing =false;
         }.bind(this));
@@ -338,8 +340,6 @@ jc.elementTypes = {
     "none":4,
     "earth":5,
     "air":7
-
-
 }
 
 jc.getElementType = function(id){

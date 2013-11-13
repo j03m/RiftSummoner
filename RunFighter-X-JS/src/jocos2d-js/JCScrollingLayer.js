@@ -5,7 +5,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             this.def = definition;
             this.sprites = this.def.sprites;
             this.doConvert = true;
-
+            this.name = "JCScrollingLayer";
             var h=0;
             for(var i=0;i<this.sprites.length;i++){
                 this.touchTargets.push(this.sprites[i]);
@@ -18,8 +18,9 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
                 this.reorderChild(this.sprites[i],3);
             }
             var w = this.sprites.length*this.def.cellWidth;
-            this.midPoint = this.getParent().getContentSize().width/2;
+            this.midPoint = this.def.width/2;
             this.setContentSize(cc.size(w,h));
+            //this.setContentSize(this.getParent().getContentSize());
             //adjust my position so that center line is a sprite.
 //
 //            this.selected = cc.Scale9Sprite.create();
@@ -38,11 +39,13 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             return false;
         }
     },
-    setInitialPos: function(){
+    setInitialPos: function(val){
       if (!this.initialized){
           this.initialized = true;
-          this.centerOn(this.sprites[0]);
-      }//else assume a saved pos
+          this.centerOn(this.sprites[val]);
+      }else{
+          this.centerOn(this.sprites[val]);
+      }
     },
     targetTouchHandler: function(type, touch, sprites) {
         if (!this.isVisible()){

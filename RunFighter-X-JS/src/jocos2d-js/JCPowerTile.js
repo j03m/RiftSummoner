@@ -12,7 +12,8 @@ jc.PowerTile = jc.CompositeButton.extend({
         this.addChild(this.border, 10);
         this.border.setPosition(this.borderPos); //wtf is wrong with cocos positioning
 
-        this.onTouchesBegan = function(){}; //not needed
+        this.onTouchBegan = this.touchBeganOverride;
+        this.onTouchEnded = this.touchEndedOverride;
 
 
     },
@@ -45,10 +46,15 @@ jc.PowerTile = jc.CompositeButton.extend({
             return;
         }
 
+        if (!this.on){
+            return;
+        }
+
         this.cooling = true;
 
         var shadeOp = 225;
 
+        this.parentLayer.setSelected(this);
 
         //get config
         var config = powerTiles[this.name];
@@ -94,7 +100,12 @@ jc.PowerTile = jc.CompositeButton.extend({
 
 
     },
-    onTouchesEnded: function(touch) {
+    touchBeganOverride: function(touch){
+        if(this.frameCheck(touch)){
+            return true;
+        }
+    },
+    touchEndedOverride: function(touch) {
         if(this.frameCheck(touch)){
             if (this.onTouch && !this.paused){
                 this.onTouch();

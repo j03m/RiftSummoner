@@ -43,7 +43,6 @@ var EditDeck = jc.UiElementsLayer.extend({
             this.cardLayer.init(this.playerBlob, this.selectionMade.bind(this), this.selectionCancelled.bind(this));
             jc.layerManager.push(this);
             this.name = "EditDeck";
-
             return true;
         } else {
             return false;

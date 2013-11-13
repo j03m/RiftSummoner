@@ -504,8 +504,10 @@ GeneralBehavior.applyDamage = function(target, attacker, amount, elementType){
     }
 
     //apply flank bonus
-    if (target.behavior.locked != attacker && attacker.behaviorType != "range"){
-        amount += amount * 0.2;
+    if (attacker){
+        if (target.behavior.locked != attacker && attacker.behaviorType != "range"){
+            amount += amount * 0.2;
+        }
     }
 
    return  GeneralBehavior.applyGenericDamage(target, attacker, amount)

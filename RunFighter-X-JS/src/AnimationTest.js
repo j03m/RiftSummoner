@@ -98,6 +98,7 @@ var AnimationTest = jc.TouchLayer.extend({
     },
     targetTouchHandler:function(type, touch, sprites){
         this.go();
+        return true;
     }
 });
 

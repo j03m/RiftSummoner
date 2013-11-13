@@ -29,26 +29,82 @@ var EditTeam = jc.UiElementsLayer.extend({
     deck:[],
     cards:{},
     touchTargets:[],
-    cellWidth:140,
+    cellWidth:120,
     cells:20,
     cardLayer:undefined,
     playMap:{},
     init: function() {
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(editTeamUI);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(portraitsPlist);
             this.initFromConfig(this.windowConfig);
-            this.start();
             this.playerBlob = jc.playerBlob;
             jc.layerManager.push(this);
             this.name = "EditTeam";
+
 
             return true;
         } else {
             return false;
         }
     },
+    onShow:function(){
+        this.start();
+        if (!this.tableView){
+            this.tableView = new jc.ScrollingLayer();
+            this["characterPortraitsFrame"].addChild(this.tableView);
+            var sprites = this.getDisplaySprites();
+            this.tableView.init({
+                sprites:sprites,
+                cellWidth:this.cellWidth,
+                selectionCallback:this.selectionCallback.bind(this),
+                width:this.winSize.width
+            });
+
+
+            var pos = this.tableView.getPosition();
+            pos.y+=28;
+            this.tableView.setPosition(pos);
+
+
+            this.reorderChild(this.tableView, 3);
+            this.tableView.hackOn();
+            this.tableView.setInitialPos(5);
+
+        }
+    },
+    getDisplaySprites: function(){
+        var returnme = [];
+        for(var i=0;i<jc.playerBlob.myguys.length;i++){
+            var sprite = new cc.Sprite();
+            sprite.initWithSpriteFrameName("characterPortraitFrame.png");
+            var pic = jc.getCharacterPortrait(this.playerBlob.myguys[i]);
+            sprite.pic = new cc.Sprite();
+            sprite.pic.initWithSpriteFrameName(pic);
+            sprite.addChild(sprite.pic);
+            this.scaleTo(sprite.pic, sprite);
+            this.centerThis(sprite.pic, sprite);
+            returnme.push(sprite);
+        }
+
+       // returnme = returnme.concat(this.getEmptyCells(this.cells - this.playerBlob.myguys.length));
+        return returnme;
+    },
+    getEmptyCells:function(number){
+        var returnme=[];
+        for(var i =0;i<number;i++){
+            var sprite = new cc.Sprite();
+            sprite.initWithSpriteFrameName("characterPortraitFrame.png");
+            if (!this.cellWidth){
+                this.cellWidth = sprite.getTextureRect().width + 100;
+            }
+            returnme.push(sprite);
+        }
+        return returnme;
+    },
     targetTouchHandler: function(type, touch, sprites) {
         console.log(sprites[0].name);
+        return false;
     },
     "trainPower": function(){
         console.log("trainPower");
@@ -56,14 +112,41 @@ var EditTeam = jc.UiElementsLayer.extend({
     "doneButton": function(){
         console.log("done");
     },
+    selectionCallback:function(){
+        console.log("scoll select");
+    },
+    previousChar:function(){
+        console.log("scroll button left");
+        this.tableView.setInitialPos(4);
+    },
+    nextChar:function(){
+        console.log("scroll button right");
+        this.tableView.setInitialPos(6);
+    },
+    close:function(){
+        console.log("close");
+    },
     windowConfig:{
         "mainFrame":{
             "cell":5,
             "type":"sprite",
             "transitionIn":"top",
             "transitionOut":"top",
-            "sprite":"selectEditTeamScreenS.png",
+            "sprite":"genericBackground.png",
             "kids":{
+                "closeButton":{
+                    "cell":9,
+                    "anchor":['center', 'right'],
+                    "padding":{
+                        "top":-15,
+                        "left":0
+                    },
+                    "type":"button",
+                    "main":"closeButton.png",
+                    "pressed":"closeButtonPressed.png",
+                    "touchDelegateName":"close"
+
+                },
                 "statsFrame":{
                     "cell":4,
                     "anchor":['center', 'right'],
@@ -143,7 +226,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                 "trainButton":{
                     "type":"button",
                     "main":"buttonTrain.png",
-                    "pressed":"buttonTrain.png",
+                    "pressed":"buttonTrainPressed.png",
                     "touchDelegateName":"trainPower",
                     "cell":6,
                     "anchor":['right', 'bottom'],
@@ -155,7 +238,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                 "doneButton":{
                     "type":"button",
                     "main":"buttonDone.png",
-                    "pressed":"buttonDone.png",
+                    "pressed":"buttonDonePressed.png",
                     "touchDelegateName":"doneButton",
                     "cell":3,
                     "anchor":['center'],
@@ -163,8 +246,41 @@ var EditTeam = jc.UiElementsLayer.extend({
                         "top":23,
                         "left":5
                     }
+                },
+                "characterPortraitsFrame":{
+                    "type":"sprite",
+                    "sprite":"characterPortraitsFrame.png",
+                    "cell":2,
+                    "anchor":['top'],
+                    "padding":{
+                        "top":2,
+                        "left":0
+                    }
+                },
+                "characterPortraitsLeft":{
+                    "type":"button",
+                    "main":"characterPortraitsButtonLeft.png",
+                    "pressed":"characterPortraitsButtonLeftPressed.png",
+                    "touchDelegateName":"previousChar",
+                    "cell":1,
+                    "anchor":['top', 'left'],
+                    "padding":{
+                        "top":2,
+                        "left":0
+                    }
+                },
+                "characterPortraitsRight":{
+                    "type":"button",
+                    "main":"characterPortraitsButtonRight.png",
+                    "pressed":"characterPortraitsButtonRightPressed.png",
+                    "touchDelegateName":"nextChar",
+                    "cell":3,
+                    "anchor":['top', 'right'],
+                    "padding":{
+                        "top":2,
+                        "left":0
+                    }
                 }
-
             }
         },
     }

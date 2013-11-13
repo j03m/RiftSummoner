@@ -62,6 +62,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
     },
     targetTouchHandler: function(type, touch, sprites) {
         console.log(sprites[0].name);
+        return false;
     },
     windowConfig:{
         "mainFrame":{

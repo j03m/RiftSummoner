@@ -33,7 +33,7 @@ jc.CompositeButton = cc.Sprite.extend({
         if ('mouse' in sys.capabilities) {
             cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 0);
         } else {
-            cc.Director.getInstance().getTouchDispatcher().addStandardDelegate(this, 0);
+            cc.Director.getInstance().getTouchDispatcher().addTargetedDelegate(this, 0, true);
         }
     },
     onExit: function(){
@@ -43,7 +43,7 @@ jc.CompositeButton = cc.Sprite.extend({
             cc.Director.getInstance().getTouchDispatcher().removeDelegate(this);
         }
     },
-    onTouchesBegan: function(touch) {
+    onTouchBegan: function(touch) {
         if(this.frameCheck(touch)){
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(this.def.pressed);
             this.setDisplayFrame(frame);
@@ -76,10 +76,10 @@ jc.CompositeButton = cc.Sprite.extend({
 
         return cc.rectContainsPoint(this.getBoundingBox(), this.getTouchLocation(touch));
     },
-    onTouchesMoved: function(touch) {
+    onTouchMoved: function(touch) {
         return false;
     },
-    onTouchesEnded: function(touch) {
+    onTouchEnded: function(touch) {
         if(this.frameCheck(touch)){
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(this.def.main);
             this.setDisplayFrame(frame);
@@ -92,10 +92,10 @@ jc.CompositeButton = cc.Sprite.extend({
         }
     },
     onMouseDown: function(event) {
-        return this.onTouchesBegan(event);
+        return this.onTouchBegan(event);
     },
     onMouseUp: function(event) {
-        return this.onTouchesEnded(event);
+        return this.onTouchEnded(event);
     },
     setTouchDelegate:function(inFunc){
         this.onTouch = inFunc;

@@ -11,6 +11,10 @@ var editTeamUIPng = dirImg + "editTeam.png";
 var windowPng = dirImg + "windows.png";
 var windowPlist = dirImg + "windows.plist";
 
+var portraitsPng = dirImg + "portraits.png";
+var portraitsPlist = dirImg + "portraits.plist";
+
+
 //var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
 var g_characterPlists = {};
@@ -29,7 +33,10 @@ var g_maingame = [
     {src:editTeamUI},
     {src:editTeamUIPng},
     {src:windowPlist},
-    {src:windowPng}
+    {src:windowPng},
+    {src:portraitsPlist},
+    {src:portraitsPng}
+
 
 ];
 

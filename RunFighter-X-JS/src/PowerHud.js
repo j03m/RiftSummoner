@@ -2,6 +2,7 @@ var PowerHud = jc.UiElementsLayer.extend({
     tiles:3,
     init:function(powers){
         this.name = "powerHud";
+        this.myTiles = [];
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(powerTilesPlist);
             cc.SpriteFrameCache.getInstance().addSpriteFrames(windowPlist);
@@ -11,7 +12,7 @@ var PowerHud = jc.UiElementsLayer.extend({
             for(var i=0;i<len;i++){
                 var name = "tile"+i;
                 this[name].initFromName(powers[i], this);
-                this.touchTargets.push(this[name]);
+                this.myTiles.push(this[name]);
             }
 
             return true;
@@ -19,21 +20,19 @@ var PowerHud = jc.UiElementsLayer.extend({
             return false;
         }
     },
+    setSelected:function(tile){
+        for (var i=0;i<this.tiles;i++){
+            if (this["tile"+i]!=tile){
+                this["tile"+i].setUnselected();
+            }
+        }
+        tile.setSelected();
+    },
     scheduleThisOnce:function(method,delay){
         this.scheduleOnce(method, delay);
     },
     targetTouchHandler: function(type, touch, sprites) {
-            if (sprites){
-                if (sprites[0] && sprites[0].on){
-                    sprites[0].setSelected();
-                    for (var i=0;i<this.tiles;i++){
-                        if (this["tile"+i]!=sprites[0]){
-                            this["tile"+i].setUnselected();
-                        }
-                    }
-                }
-            }
-
+        return false; //the tiles are swallowing touches, so this should never get called.
     },
     onShow:function(){
         console.log("onshow");

@@ -49,11 +49,14 @@ var MainGame = cc.Layer.extend({
         //fight config
         var fightConfig = {
             teamA:[
-                "voidElf"
+                "orge",
+                "forestElf",
             ],
             teamAFormation:"4x4x4a",
             teamB:[
-                "orge"
+                "forestElf",
+                "orge",
+
             ],
             teamBFormation:"4x4x4b",
             teamAPowers:['poisonCloud', 'healing'],
