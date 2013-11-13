@@ -14,6 +14,8 @@ var windowPlist = dirImg + "windows.plist";
 var portraitsPng = dirImg + "portraits.png";
 var portraitsPlist = dirImg + "portraits.plist";
 
+var cardsPng1 = dirImg + "cards.png";
+var cardsPlist1 = dirImg + "cards.plist";
 
 //var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
@@ -35,9 +37,9 @@ var g_maingame = [
     {src:windowPlist},
     {src:windowPng},
     {src:portraitsPlist},
-    {src:portraitsPng}
-
-
+    {src:portraitsPng},
+    {src:cardsPng1},
+    {src:cardsPlist1}
 ];
 
 //core character resources and effects - stuff we need for battles
@@ -45,7 +47,7 @@ var g_battleStuff =[
     {src:effectsConfig['teleport'].png},
     {src:effectsConfig['teleport'].plist},
     {src:powerTilesPlist},
-    {src:powerTilesPng}
+    {src:powerTilesPng},
 
 ]
 

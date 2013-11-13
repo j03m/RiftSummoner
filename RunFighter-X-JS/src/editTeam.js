@@ -113,7 +113,10 @@ var EditTeam = jc.UiElementsLayer.extend({
         console.log("done");
     },
     selectionCallback:function(){
-        console.log("scoll select");
+        //index of card
+        //get card image from jc.getCharacterCard
+        //fade in/fade out card
+        //update labels
     },
     previousChar:function(){
         console.log("scroll button left");
