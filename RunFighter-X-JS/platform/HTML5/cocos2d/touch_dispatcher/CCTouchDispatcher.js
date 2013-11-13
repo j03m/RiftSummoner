@@ -392,7 +392,7 @@ cc.TouchDispatcher = cc.Class.extend(/** @lends cc.TouchDispatcher# */ {
         //
         // process standard handlers 2nd
         //
-        if (standardHandlersCount > 0) {
+        if (standardHandlersCount > 0 && mutableTouches.length != 0) {
             for (i = 0; i < this._standardHandlers.length; i++) {
                 handler = this._standardHandlers[i];
 

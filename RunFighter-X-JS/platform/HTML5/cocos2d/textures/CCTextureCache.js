@@ -158,8 +158,10 @@ cc.TextureCacheCanvas = cc.Class.extend(/** @lends cc.TextureCacheCanvas# */{
                 key = this._generalTextureKey();
         }
 
-        if (!this._textureColorsCache.hasOwnProperty(key))
+        if (!this._textureColorsCache.hasOwnProperty(key)) {
             this._textureColorsCache[key] = cc.generateTextureCacheForColor(texture);
+        }
+
         return this._textureColorsCache[key];
     },
 

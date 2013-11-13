@@ -45,16 +45,27 @@ Buglist -
     *powers don't get selected on click
     *power animations seem to render in the wrong spot
     *power effects don't animate the second application
-    powers don't work on mobile
+    **powers don't work on mobile
+    *PowerHud doesn't set selected because tile swallows touch.
+    *Tile needs to delegate back to hud. No more multiple touches
+
     power need bigger presentation - lightning flash, larger animation
     normal hits should have a sparkle ala battle heart
 
+    select portrait
+        place card
+        update stats
+        done closes and places character
+        close closes, no place
+        transition from layer to layer (select team)
+        select portrait updates portrait frame
+        create portrait render (sized for frames)
+        create card render - sized for frame
 
 
-    selectTeam
-	    Locked Icon - hero images
-	    pressed state for "fight" and "arrows"
-	    Empty Icon - hero images
+    BUG - Tinting hangs app - tinting creates 4 canvases for texture cache every frame. Was using 10% of cpu.
+
+
 
 
 
