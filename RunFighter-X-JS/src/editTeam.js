@@ -1,30 +1,3 @@
-jc.playerBlob = {
-    id:1,
-    grid:[1],
-    myguys:[
-        {   "name":"wizard",
-            "number":3
-        },
-        {   "name":"orc",
-            "number":4
-        },
-        {   "name":"orge",
-            "number":1
-
-        },
-        {   "name":"troll",
-            "number":1
-        },
-        {   "name":"goldKnight",
-            "number":1
-        },
-        {   "name":"goblin",
-            "number":1
-        }
-    ]
-
-}
-
 var EditTeam = jc.UiElementsLayer.extend({
     deck:[],
     cards:{},
@@ -36,9 +9,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     init: function() {
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(editTeamUI);
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(portraitsPlist);
             this.initFromConfig(this.windowConfig);
-            this.playerBlob = jc.playerBlob;
             jc.layerManager.push(this);
             this.name = "EditTeam";
 
@@ -53,42 +24,44 @@ var EditTeam = jc.UiElementsLayer.extend({
         if (!this.tableView){
             this.tableView = new jc.ScrollingLayer();
             this["characterPortraitsFrame"].addChild(this.tableView);
-            var sprites = this.getDisplaySprites();
+            var scrollData = this.getDisplaySpritesAndMetaData();
             this.tableView.init({
-                sprites:sprites,
+                sprites:scrollData.sprites,
+                metaData:scrollData.ids,
                 cellWidth:this.cellWidth,
                 selectionCallback:this.selectionCallback.bind(this),
                 width:this.winSize.width
             });
 
-
             var pos = this.tableView.getPosition();
             pos.y+=28;
             this.tableView.setPosition(pos);
-
-
             this.reorderChild(this.tableView, 3);
             this.tableView.hackOn();
-            this.tableView.setInitialPos(5);
-
+            //this.tableView.setIndex(0);
         }
     },
-    getDisplaySprites: function(){
-        var returnme = [];
-        for(var i=0;i<jc.playerBlob.myguys.length;i++){
-            var sprite = new cc.Sprite();
-            sprite.initWithSpriteFrameName("characterPortraitFrame.png");
-            var pic = jc.getCharacterPortrait(this.playerBlob.myguys[i]);
-            sprite.pic = new cc.Sprite();
-            sprite.pic.initWithSpriteFrameName(pic);
-            sprite.addChild(sprite.pic);
-            this.scaleTo(sprite.pic, sprite);
-            this.centerThis(sprite.pic, sprite);
-            returnme.push(sprite);
-        }
+    makeScrollSprites: function(names){
+       return _.map(names, function(name){
+            return this.makeScrollSprite(name);
+       }.bind(this));
 
-       // returnme = returnme.concat(this.getEmptyCells(this.cells - this.playerBlob.myguys.length));
-        return returnme;
+    },
+    makeScrollSprite: function(name){
+        var sprite = new cc.Sprite();
+        sprite.initWithSpriteFrameName("characterPortraitFrame.png");
+        sprite.pic = jc.getCharacterPortrait(name, sprite.getContentSize());
+        sprite.addChild(sprite.pic);
+        this.scaleTo(sprite.pic, sprite);
+        this.centerThis(sprite.pic, sprite);
+        return sprite;
+    },
+    getDisplaySpritesAndMetaData: function(){
+        var characters = hotr.blobOperations.getCharacterIdsAndTypes();
+        var names = _.pluck(characters, 'name');
+        var ids = _.pluck(characters, 'id');
+        var sprites = this.makeScrollSprites(names);
+        return {ids:ids, sprites:sprites};
     },
     getEmptyCells:function(number){
         var returnme=[];
@@ -112,19 +85,43 @@ var EditTeam = jc.UiElementsLayer.extend({
     "doneButton": function(){
         console.log("done");
     },
-    selectionCallback:function(){
-        //index of card
+    selectionCallback:function(index, sprite, data){
+        //index of card, data = character id
+        var characterEntry = hotr.blobOperations.getEntryWithId(data);
+
         //get card image from jc.getCharacterCard
+        var card = jc.getCharacterCard(characterEntry.name);
+
+        //put this card sprite in the frame
+        this.swapCharacterCard(card);
+
         //fade in/fade out card
         //update labels
     },
+    swapCharacterCard:function(card){
+        if (this.statsFrame.card){
+            jc.fadeOut(this.statsFrame.card, jc.defaultTransitionTime/4, function(){
+                this.removeChild(this.statsFrame.card);
+                doFadeIn.bind(this)();
+            }.bind(this));
+        }else{
+            doFadeIn.bind(this)();
+        }
+
+        function doFadeIn(){
+            this.statsFrame.card = card;
+            card.setOpacity(0);
+            this.addChild(card);
+            var pos = this.statsFrame.getPosition();
+            card.setPosition(cc.p(185,pos.y));
+            jc.fadeIn(this.statsFrame.card, 255, jc.defaultTransitionTime/4);
+        }
+    },
     previousChar:function(){
-        console.log("scroll button left");
-        this.tableView.setInitialPos(4);
+        this.tableView.left();
     },
     nextChar:function(){
-        console.log("scroll button right");
-        this.tableView.setInitialPos(6);
+        this.tableView.right();
     },
     close:function(){
         console.log("close");
@@ -288,7 +285,6 @@ var EditTeam = jc.UiElementsLayer.extend({
         },
     }
 });
-
 
 
 EditTeam.scene = function() {

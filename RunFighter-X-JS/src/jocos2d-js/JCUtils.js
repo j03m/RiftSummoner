@@ -59,7 +59,7 @@ jc.unshade = function(item){
     jc.fadeOut(item.shade);
 }
 
-jc.fadeIn= function(item, opacity , time){
+jc.fadeIn= function(item, opacity , time, action){
     if (!time){
         time = jc.defaultTransitionTime;
     }
@@ -71,17 +71,33 @@ jc.fadeIn= function(item, opacity , time){
     }
 
     var actionFadeIn = cc.FadeTo.create(time,opacity);
-    item.runAction(actionFadeIn);
-},
-jc.fadeOut=function(item, time){
+    if (action){
+        var func = cc.CallFunc.create(action);
+        var seq = cc.Sequence.create(actionFadeIn, func);
+        item.runAction(seq);
+    }else{
+        item.runAction(actionFadeIn);
+    }
+}
+
+jc.fadeOut=function(item, time, action){
     if (!time){
         time = jc.defaultTransitionTime;
     }
     if (!item){
         item = this;
     }
+
     var actionFadeOut = cc.FadeTo.create(time,0);
-    item.runAction(actionFadeOut);
+    if (action){
+        var func = cc.CallFunc.create(action);
+        var seq = cc.Sequence.create(actionFadeOut, func);
+        item.runAction(seq);
+    }else{
+        item.runAction(actionFadeOut);
+    }
+
+
 
 }
 
@@ -365,6 +381,63 @@ jc.insideEllipse = function(major, minor, point, center){
     return final <1;
 }
 
+jc.getCharacterPortrait = function(name, size){
+    var card =  jc.getCharacterCard(name);
+    return card; //todo - revisit - this code is broken
+    return jc.portraitFromCard(name, card,size);
+}
+
+jc.getCharacterCardFrame = function(name){
+    var frame = name+".pic.png";
+    var indexNumber = spriteDefs[name].cardIndex;
+    if (indexNumber == undefined){
+        indexNumber = 0;
+    }
+
+    cc.SpriteFrameCache.getInstance().addSpriteFrames(cardsPlists[indexNumber]);
+    cc.SpriteBatchNode.create(cardsPngs[indexNumber]);
+
+    return cc.SpriteFrameCache.getInstance().getSpriteFrame(frame);
+}
+
+jc.getCorrectPortraitPosition = function(position){
+    //portraits coords are ipadhd
+    //for now, just scale to iphone 3.
+    //todo: add scale for device
+    var newPos = cc.p(position.x, position.y);
+    var augx = newPos.x*0.234375;
+    var augy = newPos.y*0.234375;
+    newPos.x=augx;
+    newPos.y=augy;
+    return newPos;
+}
+
+jc.portraitFromCard = function(name,card, size){
+    var capturePos = jc.getCorrectPortraitPosition(spriteDefs[name].portraitXy);
+    if (!capturePos){
+        var cardSize = card.getContentSize();
+        capturePos = cc.p(cardSize.width/2,cardSize.height/2);
+    }
+    var tr = card.getTextureRect();
+    var cs = card.getContentSize();
+    var widthDiff = cs.width - tr.width;
+    var heightDiff = cs.height - tr.height;
+    capturePos.x-=widthDiff;
+    capturePos.y-=heightDiff;
+    var rect = cc.RectMake(capturePos.x, capturePos.y,size.width,size.height);
+    card.setTextureRect(rect);
+    card.setContentSize(size);
+    return card;
+}
+
+jc.getCharacterCard = function(name){
+    var frame = name+".pic.png";
+    var indexNumber = spriteDefs[name].cardIndex;
+    if (indexNumber == undefined){
+        indexNumber = 0;
+    }
+    return jc.makeSpriteWithPlist(cardsPlists[indexNumber], cardsPngs[indexNumber], frame);
+}
 
 
 

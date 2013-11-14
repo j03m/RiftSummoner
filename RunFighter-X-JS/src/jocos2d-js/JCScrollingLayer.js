@@ -4,6 +4,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         if (this._super()) {
             this.def = definition;
             this.sprites = this.def.sprites;
+            this.metaData = this.def.metaData;
             this.doConvert = true;
             this.name = "JCScrollingLayer";
             var h=0;
@@ -20,32 +21,32 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             var w = this.sprites.length*this.def.cellWidth;
             this.midPoint = this.def.width/2;
             this.setContentSize(cc.size(w,h));
-            //this.setContentSize(this.getParent().getContentSize());
-            //adjust my position so that center line is a sprite.
-//
-//            this.selected = cc.Scale9Sprite.create();
-//            this.selected.initWithSpriteFrameName("buttonHover.png", cc.RectMake(10,10,200,40));
-//            this.selected.setContentSize(cc.size(100,100));
-//            this.addChild(this.selected);
-//            this.reorderChild(this.selected,3);
-//            this.selected.setPosition(this.sprites[0].getPosition());
+
             this.doUpdate = false;
             this.scheduleUpdate();
             var center = this.def.startOn | 0;
-            this.centerOn(this.sprites[center]);
+            this.setIndex(center);
 
             return true;
         } else {
             return false;
         }
     },
-    setInitialPos: function(val){
-      if (!this.initialized){
-          this.initialized = true;
-          this.centerOn(this.sprites[val]);
-      }else{
-          this.centerOn(this.sprites[val]);
-      }
+    setIndex: function(val){
+        this.selectedIndex = val;
+        this.centerOn(this.sprites[val]);
+    },
+    left:function(){
+        if (this.selectedIndex!=0){
+            var next = this.selectedIndex-1;
+            this.setIndex(next);
+        }
+    },
+    right:function(){
+        if (this.selectedIndex<this.sprites.length-1){
+            var next = this.selectedIndex+1;
+            this.setIndex(next);
+        }
     },
     targetTouchHandler: function(type, touch, sprites) {
         if (!this.isVisible()){
@@ -74,7 +75,8 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         this.isMoving=false;
         if (this.scrollDistance == undefined){ //normal touch
             if (sprites[0]){
-                this.centerOn(sprites[0]);
+                var selected = this.sprites.indexOf(sprites[0]);
+                this.setIndex(selected);
             }
         }else{
             this.doUpdate = true;
@@ -96,11 +98,12 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     raiseSelected:function(){
         for(var i =0;i<this.sprites.length;i++){ //todo: change to math based
             var sprite = this.sprites[i];
+            var data = this.metaData[i];
             var bb = sprite.getBoundingBox();
             bb.origin = this.convertToWorldSpace(bb.origin);
             if (cc.rectContainsPoint(bb, cc.p(this.midPoint, bb.origin.y))){
                 this.applyHighlight(sprite);
-                this.def.selectionCallback(i, sprite);
+                this.def.selectionCallback(i, sprite, data);
             }
         }
     },
@@ -153,8 +156,6 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         }
     },
     calcAbsolutePos:function(position){
-//        var pos = this.getPosition().x; //abs position of layer;
-//        pos+=position*this.def.cellWidth/2 + this.def.cellWidth/2;
           return this.convertToWorldSpace(this.sprites[position].getPosition());
     },
     adjust:function(){
@@ -167,43 +168,16 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             var diff = Math.abs(bb.origin.x - this.midPoint);
             if (min==-1 || min>diff){
                 min = diff;
-                closest = sprite;
+                closest = i;
             }
             if (cc.rectContainsPoint(bb, cc.p(this.midPoint, bb.origin.y))){
-                this.centerOn(sprite);
+                this.setIndex(i);
                 return;
             }
         }
 
         //if no one is on the rect, move the closest
-        this.centerOn(closest);
-
-//        var moveDistance = cc.pSub(this.lastTouch, this.initialTouch);
-//
-//        //once this is set, we need to think about fitting to cell
-//        //the amount we've moved is equivalent to N cells of distance. So, lets handle that first.
-//        var cellsMoved = moveDistance.x/this.def.cellWidth;
-//
-//        //now, we only care about the portion of the move that does not cover a whole cell
-//        var remainder = cellsMoved % 1;
-//        var remAbs = Math.abs(remainder);
-//
-//        //if in the end of our we have moved < 1/2 a cell, slide back this distance
-//        var correction;
-//        if (remAbs <= 0.5){
-//            correction = remainder/2 * this.def.cellWidth * -1;
-//            this.runEndingAdjustment(cc.p(correction, 0));
-//        }else{ //if the remainder is > half a cell we finish out the move
-//            var finish;
-//            if (remainder < 0){
-//                finish = -1 - remainder/2;
-//            }else{
-//                finish = 1 - remainder/2;
-//            }
-//            correction = finish * this.def.cellWidth;
-//            this.runEndingAdjustment( cc.p(correction, 0));
-//        }
-
+        this.setIndex(closest);
     },
     scroll:function(touch){
         var bb = this.getBoundingBox();

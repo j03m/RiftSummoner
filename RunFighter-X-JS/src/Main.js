@@ -26,6 +26,9 @@ var MainGame = cc.Layer.extend({
             case 'selectTeam':
                 cc.Director.getInstance().replaceScene(SelectTeam.scene());
                 break;
+            case 'editTeam-pre':
+                cc.Director.getInstance().replaceScene(Loading.scene(assets, 'editTeam'));
+                break;
             case 'editTeam':
                 cc.Director.getInstance().replaceScene(EditTeam.scene());
                 break;
@@ -69,10 +72,32 @@ var MainGame = cc.Layer.extend({
         //missile - effect
         //powers - powerAnimationsRequired
        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
-       //this.changeScene('arena-pre',assets, fightConfig);
-       this.changeScene('editTeam');
+       var cardAssets = this.makeCardDictionary();
+       this.changeScene('editTeam-pre', cardAssets);
 
 
+    },
+    makeCardDictionary:function(){
+        var names = hotr.blobOperations.getCharacterNames();
+        var assets = [];
+        _.map(names, function(name){
+            var data = this.getCardAssets(name);
+            assets.pushUnique(data.cardPng);
+            assets.pushUnique(data.cardPlist);
+        }.bind(this));
+        for (var i =0;i<assets.length;i++){
+            assets[i] = {src:assets[i]};
+        }
+        return assets;
+    },
+    getCardAssets:function(name){
+        var cardIndex = spriteDefs[name].cardIndex;
+        if (cardIndex == undefined){
+            cardIndex = 0;
+        }
+        return {    cardPng:cardsPngs[cardIndex],
+                    cardPlist:cardsPlists[cardIndex]
+        };
     },
     makeAssetDictionary:function(teamA, teamB, teamAPowers, teamBPowers){
         var assets = [];

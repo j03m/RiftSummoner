@@ -139,7 +139,7 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"speed": 150,
 			"damage": 100,
-			"missile": "greenbullet",
+			"missile": "fireball",
 			"missileOffset": {
 				"x": 0,
 				"y": 10
@@ -152,7 +152,7 @@ var spriteDefs = {
 			"movementType": 0,
 			"targets": 1,
 			"actionDelays": {
-				"attack": 50
+				"attack": 5
 			},
 			"effectDelays": {
 				"attack": 1
@@ -657,6 +657,11 @@ var spriteDefs = {
 	},
 	"goblin": {
 		"name": "goblin",
+		"cardIndex": 0,
+		"portraitXy": {
+			"x": 181,
+			"y": 72
+		},
 		"formalName": "Goblin Demolition Expert",
 		"details": "Goblin demolition experts hurl explosives at enemies. While they don't have an impressive range, they can inflict massive damage on groups of ground enemies at a time.",
 		"elementType": "fire",
@@ -792,6 +797,11 @@ var spriteDefs = {
 	},
 	"goblinKnightBlood": {
 		"name": "goblinKnightBlood",
+		"cardIndex": 0,
+		"portraitXy": {
+			"x": 186,
+			"y": 265
+		},
 		"formalName": "Goblin Knight - Blood",
 		"details": "Goblin Knights are fast and do reasonable damage. These blood goblins are tougher, faster then their cousins.",
 		"elementType": "none",
@@ -1065,6 +1075,11 @@ var spriteDefs = {
 	"orge": {
 		"name": "orge",
 		"formalName": "Orge",
+		"cardIndex": 0,
+		"portraitXy": {
+			"x": 233,
+			"y": 113
+		},
 		"details": "Orge are massive, powerful creatures. Though they are slow movers, you do not want to be at the wrong end of their weapons.",
 		"elementType": 4,
 		"unitType": 3,

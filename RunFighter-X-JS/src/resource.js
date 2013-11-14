@@ -11,22 +11,17 @@ var editTeamUIPng = dirImg + "editTeam.png";
 var windowPng = dirImg + "windows.png";
 var windowPlist = dirImg + "windows.plist";
 
-var portraitsPng = dirImg + "portraits.png";
-var portraitsPlist = dirImg + "portraits.plist";
+var cardsPngs = [dirImg + "cards.png"];
+var cardsPlists = [dirImg + "cards.plist"];
+var portraitPlists = [dirImg + "portraits.plist"];
+var portraitPngs = [dirImg + "portraits.png"];
 
-var cardsPng1 = dirImg + "cards.png";
-var cardsPlist1 = dirImg + "cards.plist";
-
-//var myfont = dirImg + "georgiab.ttf";
 var g_characterPngs = {};
 var g_characterPlists = {};
-var g_characterAssets = [];
 
-var g_effectPngs = {};
 
 //core resources - need these to launch ui, loader, etc
 var g_maingame = [
-    //image
     {src:arenaSheet},
     {src:shadowPlist},
     {src:shadowPng},
@@ -35,11 +30,7 @@ var g_maingame = [
     {src:editTeamUI},
     {src:editTeamUIPng},
     {src:windowPlist},
-    {src:windowPng},
-    {src:portraitsPlist},
-    {src:portraitsPng},
-    {src:cardsPng1},
-    {src:cardsPlist1}
+    {src:windowPng}
 ];
 
 //core character resources and effects - stuff we need for battles

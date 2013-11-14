@@ -1,30 +1,3 @@
-jc.playerBlob = {
-    id:1,
-    grid:[1],
-    myguys:[
-        {   "name":"wizard",
-            "number":3
-        },
-        {   "name":"orc",
-            "number":4
-        },
-        {   "name":"orge",
-            "number":1
-
-        },
-        {   "name":"troll",
-            "number":1
-        },
-        {   "name":"goldKnight",
-            "number":1
-        },
-        {   "name":"goblin",
-            "number":1
-        }
-]
-
-}
-
 var EditDeck = jc.UiElementsLayer.extend({
     deck:[],
     cards:{},
