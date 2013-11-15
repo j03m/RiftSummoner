@@ -4,7 +4,7 @@ hotr.scratchBoard = {};
 
 hotr.blobOperations.getBlob = function(callback){
     blobApi.getBlob(function(data){
-        jc.playerBlob = data;
+        hotr.playerBlob = data;
         callback();
     });
 }

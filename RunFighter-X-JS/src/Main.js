@@ -50,15 +50,21 @@ var MainGame = cc.Layer.extend({
     selectEditTeamPre: function(){
         this.showLoader({
             "assets":undefined,
-            "assetCall":function(callback){
+            "assetFunc":function(callback){
                 hotr.blobOperations.getBlob(function(){
                     var cardAssets = this.makeCardDictionary();
                     callback(cardAssets);
-                })
-
-            },
+                }.bind(this))
+            }.bind(this),
             "nextScene":'selectTeam',
-            "apiCalls":[]
+            "apiCalls":[
+                function(callback){
+                    hotr.blobOperations.getBlob(function(){
+                        console.log("aoi done");
+                        callback();
+                    })
+                },
+            ]
         });
     },
     onEnter:function(){

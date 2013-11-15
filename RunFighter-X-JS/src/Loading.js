@@ -3,7 +3,7 @@ var Loading = jc.UiElementsLayer.extend({
 
         this.assets = config.assets;
         this.nextScene = config.nextScene;
-        this.apis = config.apis;
+        this.apiCalls = config.apiCalls;
         this.assetFunc = config.assetFunc;
 
 
@@ -23,7 +23,7 @@ var Loading = jc.UiElementsLayer.extend({
         this.addChild(this.spinner);
         this.spinner.setPosition(cc.p((this.winSize.width/2)-1, (this.winSize.height/2)+26));
         this.startLoading();
-        this.schedule(this.checkPercent);
+
     },
     startLoading:function(){
 
@@ -35,10 +35,10 @@ var Loading = jc.UiElementsLayer.extend({
         }else if (this.assetFunc){
             this.totalItemsToLoad++;
         }
-        if (this.apis){
-            this.totalItemsToLoad +=this.apis.length;
+        if (this.apiCalls){
+            this.totalItemsToLoad +=this.apiCalls.length;
         }
-        this.schedule.checkPercent();
+
 
         //before anything we need to get the assetFunc out of the way
         if (this.assetFunc){
@@ -51,52 +51,42 @@ var Loading = jc.UiElementsLayer.extend({
                 }
                 this.totalItemsToLoad+=assets.length;
                 this.startLoadingAssets();
-            })
+            }.bind(this))
         }else{
             this.startLoadingAssets();
         }
 
         //if there
-        if (this.apis){
-            this.startLoadingApis();
+        if (this.apiCalls){
+            this.startLoadingapiCalls();
         }
+
+        this.schedule(this.checkPercent);
     },
     startLoadingAssets:function(){
         cc.Loader.preload(this.assets, function(){
-            jc.log(['loader'],"assets done");
+            this.ccLoaderDone = true;
         }.bind(this));
     },
-    startLoadingApis:function(){
+    startLoadingapiCalls:function(){
         var q = async.queue(function(task,callback){
             task.action(callback);
-        },2);
+        }.bind(this),2);
 
-        for (var i =0;i<this.apis.length;i++){
-            q.push({"name":i, "action":this.apis[i]}, function(err){
+        for (var i =0;i<this.apiCalls.length;i++){
+            q.push({"name":i, "action":this.apiCalls[i]}, function(err){
                 this.totalItemsCompleted++;
-            });
+            }.bind(this));
         }
 
         q.drain= function(){
-            jc.log(['loader'],"apis done");
-        }
+            jc.log(['loader'],"apiCalls done");
+        }.bind(this);
     },
-    raiseComplete:function(val){
-        if (!this.completedTasks){
-            this.completedTasks = {};
-        }
-        this.completedTasks[val] = 1;
-        if (this.completedTasks['assets']==1 && this.completedTasks['api']==1){
-            hotr.changeScene(this.nextScene);
-        }
-
-        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader20.png");
-        this.spinner.setDisplayFrame(frame);
+    raiseComplete:function(){
         this.done();
         this.unschedule(this.checkPercent);
-        this.scheduleOnce(function(){
-            this.raiseComplete("assets");
-        }.bind(this));
+        hotr.changeScene(this.nextScene);
 
     },
     checkPercent:function(){
@@ -108,21 +98,46 @@ var Loading = jc.UiElementsLayer.extend({
             //first, what is the asset loader at?
             var loader = cc.Loader.getInstance();
 
-            var percent = loader.getPercentage();
 
-            //turn the loader percentage into a value
+            //ccLoader is a bit of a piece, so - we need to patch it up with some stuff...
+            //first if it finished, it will report getPercentage lower than 100 forever. so we track that
+            var percent = 0;
+            if (this.ccLoaderDone==true){
+                percent = 100;
+            }else{
+                percent = loader.getPercentage(); //it will also go over, so patch that down
+                if (percent> 100){
+                    percent = 100;
+                }
+            }
+
+            //turn the loader percentage into a value representing the # of assets
             var totalAssets = (percent*this.assets.length)/100;
 
+            //what does that represent?
+            var tempDoneCount = totalAssets + this.totalItemsCompleted;
 
-            var part = Math.floor(val * parts/100);
+            //now convert that back to a percentage
+            var percentDone = Math.floor((tempDoneCount/this.totalItemsToLoad) * 100);
+
+
+            //calculate
+            var part = Math.floor(percentDone * parts/100);
             if (part < 1){
                 part = 1;
             }
-            if (part > total){
+            if (part > parts){
                 part = parts;
             }
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader"+part+".png");
             this.spinner.setDisplayFrame(frame)
+
+            if (tempDoneCount >= this.totalItemsToLoad){
+                var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader20.png");
+                this.spinner.setDisplayFrame(frame);
+                this.scheduleOnce(this.raiseComplete.bind(this));
+
+            }
         }
     },
     windowConfig:{
