@@ -44,7 +44,7 @@ var AnimationTest = jc.TouchLayer.extend({
                 for (var i=0;i<g_battleStuff.length;i++){
                     assets.push(g_battleStuff[i]);
                 }
-                cc.Director.getInstance().replaceScene(Loading.scene(assets, 'animationTest'));
+                cc.Director.getInstance().replaceScene(Loading.scene(assets, undefined, 'animationTest'));
             }
 
             return true;

@@ -41,7 +41,9 @@ var MW = MW || {};
         engineDir:'platform/HTML5/cocos2d/',
         appFiles:[
 			'pathsHtml5.js',
+            '../zerver/blobApi.js',
 			'../src/underscore-min.js',
+            '../src/async.js',
             '../src/spriteVars.js',
             '../src/missileConfig.js',
             '../src/effectsConfig.js',

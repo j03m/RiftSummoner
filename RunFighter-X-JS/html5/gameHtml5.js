@@ -30,11 +30,17 @@ var cocos2dApp = cc.Application.extend({
         //load resources
         cc.LoaderScene.preload(g_maingame, function () {
             director.replaceScene(new this.startScene());
+
+//            hotr.asyncLoader = new cc.Loader();
+//            hotr.asyncLoader.setAsync(true);
+//            hotr.asyncLoader.initWithResources(g_everything, function(){
+//                console.log("***ASYNC LOAD DONE");
+//            }, this);
         }, this);
 
-//        cc.Loader.preloadAsync(g_characterAssets, function(){
-//            console.log("***ASYNC LOAD DONE");
-//        },this);
+
+
+
 
         return true;
     }

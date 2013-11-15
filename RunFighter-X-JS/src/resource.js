@@ -18,6 +18,7 @@ var g_characterPngs = {};
 var g_characterPlists = {};
 
 
+
 //core resources - need these to launch ui, loader, etc
 var g_maingame = [
     {src:arenaSheet},
@@ -41,10 +42,6 @@ var g_battleStuff =[
 
 ]
 
-
-
-
-
 for (var entry in spriteDefs ){
     if (!spriteDefs[entry].parentOnly && spriteDefs[entry].name){
         g_characterPngs[entry] = dirImg + entry + 'Sheet.png';
@@ -61,3 +58,8 @@ for (var entry in effectsConfig){
     g_characterPngs[entry] = effectsConfig[entry].png;
     g_characterPlists[entry] = effectsConfig[entry].plist;
 }
+
+var g_everything = [];
+g_everything = g_everything.concat(_.map(g_characterPngs, function(item){ return {src:item};}));
+g_everything = g_everything.concat(_.map(g_characterPlists, function(item){ return {src:item};}));
+g_everything = g_everything.concat(_.map(g_battleStuff, function(item){ return item;}));

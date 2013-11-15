@@ -40,16 +40,26 @@ var MainGame = cc.Layer.extend({
 
         }
     },
-    showLoader:function(assets, nextScene){
+    showLoader:function(config){
         var layer = new Loading();
         var runningScene = cc.Director.getInstance().getRunningScene();
         runningScene.addChild(layer);
-        layer.init(assets, nextScene);
+        layer.init(config);
 
     },
     selectEditTeamPre: function(){
-        var cardAssets = this.makeCardDictionary();
-        this.showLoader(cardAssets, 'selectTeam');
+        this.showLoader({
+            "assets":undefined,
+            "assetCall":function(callback){
+                hotr.blobOperations.getBlob(function(){
+                    var cardAssets = this.makeCardDictionary();
+                    callback(cardAssets);
+                })
+
+            },
+            "nextScene":'selectTeam',
+            "apiCalls":[]
+        });
     },
     onEnter:function(){
         //fight config
