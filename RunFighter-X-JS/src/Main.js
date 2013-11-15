@@ -48,23 +48,34 @@ var MainGame = cc.Layer.extend({
 
     },
     selectEditTeamPre: function(){
-        this.showLoader({
-            "assets":undefined,
+
+//        var testLoader =             {
+//            "assets":[{src:g_characterPngs['blueKnight']}],
+//            "assetFunc":function(callback){
+//                hotr.blobOperations.getBlob(function(){
+//                    var cardAssets = this.makeCardDictionary();
+//                    callback(cardAssets);
+//                }.bind(this))
+//            }.bind(this),
+//            "nextScene":'selectTeam',
+//            "apiCalls":[
+//                function(callback){
+//                    hotr.blobOperations.getBlob(function(){
+//                        console.log("aoi done");
+//                        callback();
+//                    })
+//                },
+//            ]
+//        }
+
+        this.showLoader(            {
             "assetFunc":function(callback){
                 hotr.blobOperations.getBlob(function(){
                     var cardAssets = this.makeCardDictionary();
                     callback(cardAssets);
                 }.bind(this))
             }.bind(this),
-            "nextScene":'selectTeam',
-            "apiCalls":[
-                function(callback){
-                    hotr.blobOperations.getBlob(function(){
-                        console.log("aoi done");
-                        callback();
-                    })
-                },
-            ]
+            "nextScene":'selectTeam'
         });
     },
     onEnter:function(){
@@ -163,7 +174,6 @@ var MainGame = cc.Layer.extend({
             for (var i =0;i<animations.length;i++){
                 assetAry.pushUnique(g_characterPlists[animations[i]]);
                 assetAry.pushUnique(g_characterPngs[animations[i]]);
-
             }
         }
     },
