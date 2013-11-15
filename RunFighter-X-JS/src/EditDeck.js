@@ -39,7 +39,7 @@ var EditDeck = jc.UiElementsLayer.extend({
         if (!this.isPaused){
             //todo: transition to battle
             jc.editDeckResult = this.playMap;
-            jc.mainScene.layer.changeScene('arena');
+            hotr.changeScene('arena');
         }
     },
     onCancel:function(){

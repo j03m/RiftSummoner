@@ -53,12 +53,13 @@ Buglist -
     normal hits should have a sparkle ala battle heart
 
     select portrait
-        place card
+        *place card
         update stats
         done closes and places character
         close closes, no place
         transition from layer to layer (select team)
-        select portrait updates portrait frame
+        *select portrait updates portrait frame
+        loading layer should close over the current scene and open over the next sene - changes to main
         create portrait render (sized for frames)
         create card render - sized for frame
 

@@ -26,19 +26,11 @@ var MainGame = cc.Layer.extend({
             case 'selectTeam':
                 cc.Director.getInstance().replaceScene(SelectTeam.scene());
                 break;
-            case 'editTeam-pre':
-                cc.Director.getInstance().replaceScene(Loading.scene(assets, 'editTeam'));
-                break;
             case 'editTeam':
                 cc.Director.getInstance().replaceScene(EditTeam.scene());
                 break;
-            case 'arena-pre':
-                ArenaGame.scene();
-                jc.arenaScene.data=data;
-                cc.Director.getInstance().replaceScene(Loading.scene(assets, 'arena'));
-                break;
             case 'arena':
-                cc.Director.getInstance().replaceScene(jc.arenaScene);
+                cc.Director.getInstance().replaceScene(hotr.arenaScene);
                 break;
 
             case 'animationTest':
@@ -47,6 +39,17 @@ var MainGame = cc.Layer.extend({
 
 
         }
+    },
+    showLoader:function(assets, nextScene){
+        var layer = new Loading();
+        var runningScene = cc.Director.getInstance().getRunningScene();
+        runningScene.addChild(layer);
+        layer.init(assets, nextScene);
+
+    },
+    selectEditTeamPre: function(){
+        var cardAssets = this.makeCardDictionary();
+        this.showLoader(cardAssets, 'selectTeam');
     },
     onEnter:function(){
         //fight config
@@ -72,10 +75,9 @@ var MainGame = cc.Layer.extend({
         //missile - effect
         //powers - powerAnimationsRequired
        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
-       var cardAssets = this.makeCardDictionary();
-       this.changeScene('editTeam-pre', cardAssets);
 
-
+       //this.changeScene('selectTeam');
+        this.selectEditTeamPre();
     },
     makeCardDictionary:function(){
         var names = hotr.blobOperations.getCharacterNames();
@@ -212,6 +214,7 @@ var MainGame = cc.Layer.extend({
 
 });
 
+var hotr = hotr || {};
 MainGame.create = function() {
     var ml = new MainGame();
     if (ml && ml.init()) {
@@ -223,10 +226,14 @@ MainGame.create = function() {
 };
 
 MainGame.scene = function() {
-    if (!jc.mainScene){
-        jc.mainScene = cc.Scene.create();
-        jc.mainScene.layer = MainGame.create();
-        jc.mainScene.addChild(jc.mainScene.layer );
+    if (!hotr.mainScene){
+        hotr.mainScene = cc.Scene.create();
+        hotr.mainScene.layer = MainGame.create();
+        hotr.mainScene.addChild(hotr.mainScene.layer );
     }
-    return jc.mainScene;
+    hotr.changeScene = hotr.mainScene.layer.changeScene.bind(hotr.mainScene.layer);
+    return hotr.mainScene;
 };
+
+
+

@@ -26,7 +26,7 @@ var ArenaGame = jc.WorldLayer.extend({
 		}
 	},
     onShow:function(){
-        if(!jc.arenaScene.data){
+        if(!hotr.arenaScene.data){
             this.runScenario0();
         }else{
             this.runScenario();
@@ -34,12 +34,12 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     runScenario:function(){
 
-        this.teamASprites = jc.arenaScene.data.teamA;
-        this.teamAFormation = jc.formations[jc.arenaScene.data.teamAFormation];
-        this.teamBSprites = jc.arenaScene.data.teamB;
-        this.teamBFormation = jc.formations[jc.arenaScene.data.teamBFormation];
-        this.teamAPowers = jc.arenaScene.data.teamAPowers;
-        this.teamBPowers = jc.arenaScene.data.teamBPowers;
+        this.teamASprites = hotr.arenaScene.data.teamA;
+        this.teamAFormation = jc.formations[hotr.arenaScene.data.teamAFormation];
+        this.teamBSprites = hotr.arenaScene.data.teamB;
+        this.teamBFormation = jc.formations[hotr.arenaScene.data.teamBFormation];
+        this.teamAPowers = hotr.arenaScene.data.teamAPowers;
+        this.teamBPowers = hotr.arenaScene.data.teamBPowers;
         this.setUp();
     },
     runScenario0:function(){
@@ -147,7 +147,7 @@ var ArenaGame = jc.WorldLayer.extend({
         this.powerLayer = new PowerHud();
 
         //place layer  add to scene
-        jc.arenaScene.addChild(this.powerLayer, this.getZOrder()+1);
+        hotr.arenaScene.addChild(this.powerLayer, this.getZOrder()+1);
 
         this.powerLayer.init(powers);
 
@@ -300,11 +300,11 @@ ArenaGame.create = function() {
 };
 
 ArenaGame.scene = function() {
-	if (!jc.arenaScene){
-        jc.arenaScene = cc.Scene.create();
-        jc.arenaScene.layer = ArenaGame.create();
-        jc.arenaScene.addChild(jc.arenaScene.layer);
+	if (!hotr.arenaScene){
+        hotr.arenaScene = cc.Scene.create();
+        hotr.arenaScene.layer = ArenaGame.create();
+        hotr.arenaScene.addChild(hotr.arenaScene.layer);
     }
-    return jc.arenaScene;
+    return hotr.arenaScene;
 
 };

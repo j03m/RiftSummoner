@@ -21,7 +21,7 @@ var AnimationTest = jc.TouchLayer.extend({
                 AnimationTest.loaded = true;
                 var assets = [];
                 if (this.character){
-                    jc.mainScene.layer.addAssetChain(assets, this.character);
+                    hotr.mainScene.layer.addAssetChain(assets, this.character);
                 }
 
                 if (this.effect){

@@ -3,18 +3,16 @@ var shadowPlist = dirImg + "shadowSheet.plist";
 var shadowPng = dirImg + "shadowSheet.png";
 var powerTilesPng= dirImg + "powerTiles.png";
 var powerTilesPlist= dirImg + "powerTiles.plist";
-var selectTeamUI = dirImg + "selectTeam.plist";
-var selectTeamUIPng = dirImg + "selectTeam.png";
-var editTeamUI = dirImg + "editTeam.plist";
-var editTeamUIPng = dirImg + "editTeam.png";
 
 var windowPng = dirImg + "windows.png";
 var windowPlist = dirImg + "windows.plist";
 
 var cardsPngs = [dirImg + "cards.png"];
 var cardsPlists = [dirImg + "cards.plist"];
-var portraitPlists = [dirImg + "portraits.plist"];
-var portraitPngs = [dirImg + "portraits.png"];
+var loadingPng = dirImg + "loading.png";
+var loadingPlist = dirImg + "loading.plist";
+var uiPng = dirImg + "uiElements.png";
+var uiPlist = dirImg + "uiElements.plist";
 
 var g_characterPngs = {};
 var g_characterPlists = {};
@@ -25,12 +23,13 @@ var g_maingame = [
     {src:arenaSheet},
     {src:shadowPlist},
     {src:shadowPng},
-    {src:selectTeamUI},
-    {src:selectTeamUIPng},
-    {src:editTeamUI},
-    {src:editTeamUIPng},
     {src:windowPlist},
-    {src:windowPng}
+    {src:windowPng},
+    {src:loadingPlist},
+    {src:loadingPng},
+    {src:uiPlist},
+    {src:uiPng}
+
 ];
 
 //core character resources and effects - stuff we need for battles

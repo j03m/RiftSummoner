@@ -1,30 +1,3 @@
-jc.playerBlob = {
-    id:1,
-    grid:[1],
-    myguys:[
-        {   "name":"wizard",
-            "number":3
-        },
-        {   "name":"orc",
-            "number":4
-        },
-        {   "name":"orge",
-            "number":1
-
-        },
-        {   "name":"troll",
-            "number":1
-        },
-        {   "name":"goldKnight",
-            "number":1
-        },
-        {   "name":"goblin",
-            "number":1
-        }
-    ]
-
-}
-
 var SelectTeam = jc.UiElementsLayer.extend({
     deck:[],
     cards:{},
@@ -35,18 +8,30 @@ var SelectTeam = jc.UiElementsLayer.extend({
     playMap:{},
     init: function() {
         if (this._super()) {
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(selectTeamUI);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
             this.initFromConfig(this.windowConfig);
-            this.start();
-            this.playerBlob = jc.playerBlob;
-
-            jc.layerManager.push(this);
+            this.highlight = jc.makeSpriteWithPlist(uiPlist, uiPng, "portraitSmallSelected.png");
+            this.highlight.setVisible(false);
+            this.addChild(this.highlight);
             this.name = "SelectTeam";
+            jc.layerManager.pushLayer(this);
+            this.start();
+
+            //if blob formation is not set
+            //use it
+            //else autopop with light logic (range back most, tank front most, anyone else middle)
+            //save blob formation
+            //if selected character is not null
+            //place that character into the cell
+            //update blob formation
 
             return true;
         } else {
             return false;
         }
+    },
+    onShow:function(){
+        console.log("show");
     },
     previousFormation:function(){
         console.log("previous");
@@ -55,14 +40,33 @@ var SelectTeam = jc.UiElementsLayer.extend({
         console.log("next");
     },
     fightStart:function(){
+        //transition to loading
+        //sync blob (loader needs to handle this as well )
+        //load scene
         console.log("fight");
     },
     close:function(){
         console.log("close");
     },
     targetTouchHandler: function(type, touch, sprites) {
-        console.log(sprites[0].name);
-        return false;
+        if (sprites[0]){
+
+            if (type == jc.touchEnded){
+                //on grid cell touch
+                //place highlight border
+                this.highlight.setVisible(true);
+                var pos = sprites[0].getPosition();
+                pos.y-=10;
+                this.highlight.setPosition(pos);
+                this.reorderChild(this.highlight, sprites[0].getZOrder()+1);
+                //put cell # into scratchboard
+                hotr.scratchBoard.currentCell = sprites[0].name;
+                jc.layerManager.pushLayer(EditTeam.getInstance(),10);
+
+            }
+
+            return true;
+        }
     },
     windowConfig:{
         "mainFrame":{
@@ -105,10 +109,10 @@ var SelectTeam = jc.UiElementsLayer.extend({
                         {
                             "type":"sprite",
                             "input":true,
-                            "sprite":"portraitSmall.png"
+                            "sprite":"portraitSmallDarkBackground.png"
                         }
                     ],
-                    "membersTotal":20
+                    "membersTotal":12
                 },
                 "formation":{
                     "cell":6,
@@ -179,13 +183,13 @@ var SelectTeam = jc.UiElementsLayer.extend({
 
 
 SelectTeam.scene = function() {
-    if (!jc.selectTeamScene){
-        jc.selectTeamScene = cc.Scene.create();
-        jc.selectTeamScene.layer = new SelectTeam();
-        jc.selectTeamScene.addChild(jc.selectTeamScene.layer);
-        jc.selectTeamScene.layer.init();
+    if (!hotr.selectTeamScene){
+        hotr.selectTeamScene = cc.Scene.create();
+        hotr.selectTeamScene.layer = new SelectTeam();
+        hotr.selectTeamScene.addChild(hotr.selectTeamScene.layer);
+        hotr.selectTeamScene.layer.init();
 
     }
-    return jc.selectTeamScene;
+    return hotr.selectTeamScene;
 };
 

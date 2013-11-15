@@ -80,6 +80,24 @@ jc.fadeIn= function(item, opacity , time, action){
     }
 }
 
+//expects to be bound to cocos2d layer
+jc.swapFade = function(swapOut, swapIn){
+    if (swapOut){
+        jc.fadeOut(swapOut, jc.defaultTransitionTime/4, function(){
+            this.removeChild(swapOut);
+            doFadeIn.bind(this)();
+        }.bind(this));
+    }else{
+        doFadeIn.bind(this)();
+    }
+
+    function doFadeIn(){
+        swapIn.setOpacity(0);
+        this.addChild(swapIn);
+        jc.fadeIn(swapIn, 255, jc.defaultTransitionTime/4);
+    }
+}
+
 jc.fadeOut=function(item, time, action){
     if (!time){
         time = jc.defaultTransitionTime;

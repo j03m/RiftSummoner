@@ -48,6 +48,7 @@ var MW = MW || {};
             '../src/powerTileConfig.js',
             '../src/powerConfig.js',
             '../src/resource.js',
+            '../src/blobOperations.js',
             '../src/jocos2d-js/JCUtils.js',
             '../src/jocos2d-js/JCPanAndZoomAction.js',
             '../src/jocos2d-js/JCLayerManager.js',

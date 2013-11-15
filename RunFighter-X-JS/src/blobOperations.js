@@ -1,5 +1,6 @@
 var hotr = hotr || {};
 hotr.blobOperations = {};
+hotr.scratchBoard = {};
 hotr.playerBlob = {
     id:1,
     myguys:[
@@ -43,5 +44,4 @@ hotr.blobOperations.getCharacterIdsAndTypes = function(){
 hotr.blobOperations.getCharacterNames = function(){
     return _.pluck(hotr.playerBlob.myguys, 'name');
 }
-
 

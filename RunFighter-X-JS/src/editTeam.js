@@ -8,12 +8,9 @@ var EditTeam = jc.UiElementsLayer.extend({
     playMap:{},
     init: function() {
         if (this._super()) {
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(editTeamUI);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
             this.initFromConfig(this.windowConfig);
-            jc.layerManager.push(this);
             this.name = "EditTeam";
-
-
             return true;
         } else {
             return false;
@@ -38,8 +35,17 @@ var EditTeam = jc.UiElementsLayer.extend({
             this.tableView.setPosition(pos);
             this.reorderChild(this.tableView, 3);
             this.tableView.hackOn();
-            //this.tableView.setIndex(0);
+            this.tableView.setIndex(1);
         }
+    },
+    inTransitionsComplete:function(){
+        if (this.statsFrame.card){
+            jc.fadeIn(this.statsFrame.card, 255);
+        }
+    },
+    outTransitionsComplete:function(){
+        hotr.scratchBoard.selectedCharacter = this.tableView.selectedIndex;
+        jc.layerManager.popLayer();
     },
     makeScrollSprites: function(names){
        return _.map(names, function(name){
@@ -83,7 +89,8 @@ var EditTeam = jc.UiElementsLayer.extend({
         console.log("trainPower");
     },
     "doneButton": function(){
-        console.log("done");
+        this.done();
+        jc.fadeOut(this.statsFrame.card,1);
     },
     selectionCallback:function(index, sprite, data){
         //index of card, data = character id
@@ -99,23 +106,11 @@ var EditTeam = jc.UiElementsLayer.extend({
         //update labels
     },
     swapCharacterCard:function(card){
-        if (this.statsFrame.card){
-            jc.fadeOut(this.statsFrame.card, jc.defaultTransitionTime/4, function(){
-                this.removeChild(this.statsFrame.card);
-                doFadeIn.bind(this)();
-            }.bind(this));
-        }else{
-            doFadeIn.bind(this)();
-        }
-
-        function doFadeIn(){
-            this.statsFrame.card = card;
-            card.setOpacity(0);
-            this.addChild(card);
-            var pos = this.statsFrame.getPosition();
-            card.setPosition(cc.p(185,pos.y));
-            jc.fadeIn(this.statsFrame.card, 255, jc.defaultTransitionTime/4);
-        }
+        var pos = this.statsFrame.getPosition();
+        card.setPosition(cc.p(185,pos.y));
+        var swapFade = jc.swapFade.bind(this);
+        swapFade(this.statsFrame.card, card);
+        this.statsFrame.card = card;
     },
     previousChar:function(){
         this.tableView.left();
@@ -287,14 +282,11 @@ var EditTeam = jc.UiElementsLayer.extend({
 });
 
 
-EditTeam.scene = function() {
-    if (!jc.editTeamScene){
-        jc.editTeamScene = cc.Scene.create();
-        jc.editTeamScene.layer = new EditTeam();
-        jc.editTeamScene.addChild(jc.editTeamScene.layer);
-        jc.editTeamScene.layer.init();
-
+EditTeam.getInstance = function() {
+    if (!hotr.editTeam){
+        hotr.editTeam = new EditTeam();
+        hotr.editTeam.init();
     }
-    return jc.editTeamScene;
+    return hotr.editTeam;
 };
 

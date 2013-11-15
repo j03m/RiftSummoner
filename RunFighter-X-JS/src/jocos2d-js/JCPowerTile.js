@@ -61,7 +61,7 @@ jc.PowerTile = jc.CompositeButton.extend({
         this.executed = Date.now();
         var func = globalPowers[config['offense']].bind(this);
         if (config.type == "direct"){
-            jc.arenaScene.layer.nextTouchDo(function(touch, sprites){
+            hotr.arenaScene.layer.nextTouchDo(function(touch, sprites){
                 func(touch, sprites);
                 jc.shade(this, shadeOp);
                 this.parentLayer.scheduleThisOnce(this.doCoolDown.bind(this),this.coolCheck);

@@ -478,6 +478,9 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         var pos = this.getAnchorPosition({"cell":5}, centerMe, centerOn);
         centerMe.setPosition(pos);
     },
+    centerThisPeer:function(centerMe, centerOn){
+        centerMe.setPosition(centerOn.getPosition());
+    },
     scaleTo:function(scaleMe, toMe){
         var currentSize = scaleMe.getContentSize();
         var toSize = toMe.getContentSize();
