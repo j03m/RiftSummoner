@@ -20,6 +20,36 @@ var tempBlob = {
             "name":"goblinKnightBlood",
             "id":"id3",
             "data":{}
+        },
+        {
+            "name":"orge",
+            "id":"id4",
+            "data":{}
+        },
+        {
+            "name":"goblin",
+            "id":"id5",
+            "data":{}
+        },
+        {
+            "name":"goblinKnightBlood",
+            "id":"id6",
+            "data":{}
+        },
+        {
+            "name":"orge",
+            "id":"id7",
+            "data":{}
+        },
+        {
+            "name":"goblin",
+            "id":"id8",
+            "data":{}
+        },
+        {
+            "name":"goblinKnightBlood",
+            "id":"id9",
+            "data":{}
         }
     ],
     "coins":100,
@@ -27,5 +57,7 @@ var tempBlob = {
 }
 
 exports.getBlob = function(callback){
+    console.log("Call made");
+    console.log(JSON.stringify(tempBlob));
     callback(tempBlob);
 }
