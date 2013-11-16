@@ -6,6 +6,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
     cells:20,
     cardLayer:undefined,
     playMap:{},
+    cellPrefix:"gridCells",
     init: function() {
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
@@ -31,7 +32,57 @@ var SelectTeam = jc.UiElementsLayer.extend({
         }
     },
     onShow:function(){
-        console.log("show");
+        if (hotr.scratchBoard.selectedCharacter!=undefined && hotr.scratchBoard.currentCell!=undefined){
+            var id = hotr.blobOperations.indexToId(hotr.scratchBoard.selectedCharacter);
+            var cell = parseInt(hotr.scratchBoard.currentCell.replace(this.cellPrefix, ""));
+            this.removeExistingVisual(id, cell);
+            this.doSelectionData(id, cell);
+            this.doSelectionVisual(id, cell);
+            hotr.scratchBoard.selectedCharacter = undefined;
+            hotr.scratchBoard.currentCell = undefined;
+        }
+    },
+    removeExistingVisual:function(id,cell){
+        var oldCell = hotr.blobOperations.getCurrentFormationPosition(id);
+        if (oldCell != -1){
+            var cellName = this.cellPrefix + oldCell;
+            jc.fadeOut(this[cellName].pic);
+        }
+    },
+    doSelectionVisual:function(id, cell){
+        var characterEntry = hotr.blobOperations.getEntryWithId(id);
+
+        //get card image from jc.getCharacterCard
+        var card = jc.getCharacterCard(characterEntry.name);
+
+        //scale it to size
+        this.scaleTo(card,this[hotr.scratchBoard.currentCell]);
+
+        //center on selected cell
+        this.centerThisPeer(card, this[hotr.scratchBoard.currentCell]);
+
+        //if one is there, hide it
+        if (this[hotr.scratchBoard.currentCell].pic){
+            jc.swapFade.bind(this)(this[hotr.scratchBoard.currentCell].pic, card);
+        }else{ //otherwise show it
+            this.addChild(card);
+            jc.fadeIn(card, 255);
+        }
+
+        //set it
+        this[hotr.scratchBoard.currentCell].pic=card;
+
+        //reorder it
+        this.reorderChild(card,this[hotr.scratchBoard.currentCell].getZOrder());
+
+        //add a border if it's not there
+        if (!this[hotr.scratchBoard.currentCell].border) {
+            this[hotr.scratchBoard.currentCell].border = jc.makeSpriteWithPlist(uiPlist, uiPng, "portraitSmall.png");
+            this.reorderChild(this[hotr.scratchBoard.currentCell].border, this[hotr.scratchBoard.currentCell].pic.getZOrder()+1);
+        }
+    },
+    doSelectionData:function(id, cell){
+        hotr.blobOperations.placeCharacterFormation(id, cell);
     },
     previousFormation:function(){
         console.log("previous");

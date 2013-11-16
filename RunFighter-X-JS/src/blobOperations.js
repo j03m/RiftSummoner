@@ -1,12 +1,38 @@
 var hotr = hotr || {};
 hotr.blobOperations = {};
 hotr.scratchBoard = {};
-
+hotr.formationSize = 12;
 hotr.blobOperations.getBlob = function(callback){
     blobApi.getBlob(function(data){
         hotr.playerBlob = data;
         callback();
     });
+}
+
+hotr.blobOperations.indexToId = function(index){
+    hotr.blobOperations.validate();
+    return hotr.playerBlob.myguys[index].id;
+}
+
+hotr.blobOperations.getCurrentFormationPosition = function(id){
+    hotr.blobOperations.validate();
+    if (!hotr.playerBlob.formation){
+        return -1;
+    }else{
+        return hotr.playerBlob.formation.indexOf(id);
+    }
+}
+
+hotr.blobOperations.placeCharacterFormation = function(id, cell){
+    hotr.blobOperations.validate();
+    if (!hotr.playerBlob.formation){
+        hotr.playerBlob.formation = [hotr.formationSize];
+    }
+    var index = hotr.playerBlob.formation.indexOf(id);
+    if (index!=-1){
+        hotr.playerBlob.formation[index]=undefined;
+    }
+    hotr.playerBlob.formation[cell]=id;
 }
 
 hotr.blobOperations.validate= function(){

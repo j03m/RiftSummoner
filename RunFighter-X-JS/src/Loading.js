@@ -102,17 +102,22 @@ var Loading = jc.UiElementsLayer.extend({
             //ccLoader is a bit of a piece, so - we need to patch it up with some stuff...
             //first if it finished, it will report getPercentage lower than 100 forever. so we track that
             var percent = 0;
-            if (this.ccLoaderDone==true){
-                percent = 100;
-            }else{
-                percent = loader.getPercentage(); //it will also go over, so patch that down
-                if (percent> 100){
+            var totalAssets = 0;
+            if (this.assets){
+                if (this.ccLoaderDone==true){
                     percent = 100;
+                }else{
+                    percent = loader.getPercentage(); //it will also go over, so patch that down
+                    if (percent> 100){
+                        percent = 100;
+                    }
                 }
+                //turn the loader percentage into a value representing the # of assets
+                totalAssets = (percent*this.assets.length)/100;
+            }else{
+                totalAssets = 0;
             }
 
-            //turn the loader percentage into a value representing the # of assets
-            var totalAssets = (percent*this.assets.length)/100;
 
             //what does that represent?
             var tempDoneCount = totalAssets + this.totalItemsCompleted;

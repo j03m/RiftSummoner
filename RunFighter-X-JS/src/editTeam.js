@@ -35,7 +35,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             this.tableView.setPosition(pos);
             this.reorderChild(this.tableView, 3);
             this.tableView.hackOn();
-            this.tableView.setIndex(1);
+            this.tableView.setIndex(0);
         }
     },
     inTransitionsComplete:function(){
@@ -44,7 +44,6 @@ var EditTeam = jc.UiElementsLayer.extend({
         }
     },
     outTransitionsComplete:function(){
-        hotr.scratchBoard.selectedCharacter = this.tableView.selectedIndex;
         jc.layerManager.popLayer();
     },
     makeScrollSprites: function(names){
@@ -89,8 +88,8 @@ var EditTeam = jc.UiElementsLayer.extend({
         console.log("trainPower");
     },
     "doneButton": function(){
-        this.done();
-        jc.fadeOut(this.statsFrame.card,1);
+        hotr.scratchBoard.selectedCharacter = this.tableView.selectedIndex;
+        this.close();
     },
     selectionCallback:function(index, sprite, data){
         //index of card, data = character id
@@ -119,7 +118,8 @@ var EditTeam = jc.UiElementsLayer.extend({
         this.tableView.right();
     },
     close:function(){
-        console.log("close");
+        this.done();
+        jc.fadeOut(this.statsFrame.card,1);
     },
     windowConfig:{
         "mainFrame":{
