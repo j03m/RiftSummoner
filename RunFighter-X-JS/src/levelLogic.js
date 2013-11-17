@@ -1,8 +1,41 @@
 var hotr = hotr || {};
 hotr.levelLogic = {};
 
+var temp =  [
+    {
+        "name":"orge",
+        "id":"id1",
+        "data":{}
+    },
+    {
+        "name":"blueKnight",
+        "id":"id2",
+        "data":{}
+    },
+    {
+        "name":"wizard",
+        "id":"id3",
+        "data":{}
+    },
+    {
+        "name":"dwarvenKnightWater",
+        "id":"id4",
+        "data":{}
+    },
+    {
+        "name":"dwarvenKnightEarth",
+        "id":"id5",
+        "data":{}
+    },
+    {
+        "name":"goblinKnightNormal",
+        "data":{}
+    }]
+
+
+
 hotr.levelLogic.getTeamForLevel = function(level){
-    return hotr.blobOperations.getTeam();
+    return temp;
 }
 
 hotr.levelLogic.getFormationForLevel = function(level){
