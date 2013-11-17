@@ -32,7 +32,6 @@ var MainGame = cc.Layer.extend({
             case 'arena':
                 cc.Director.getInstance().replaceScene(hotr.arenaScene);
                 break;
-
             case 'animationTest':
                 cc.Director.getInstance().replaceScene(AnimationTest.scene());
                 break;
@@ -78,32 +77,36 @@ var MainGame = cc.Layer.extend({
             "nextScene":'selectTeam'
         });
     },
-    onEnter:function(){
+    arenaPre:function(){
+        //todo: what level, get team
         //fight config
-        var fightConfig = {
-            teamA:[
-                "orge",
-                "forestElf",
-            ],
-            teamAFormation:"4x4x4a",
-            teamB:[
-                "forestElf",
-                "orge",
+        ArenaGame.scene();
+        var teamA = hotr.blobOperations.getTeam();
+        var level = hotr.blobOperations.getLevel();
+        var teamAFormation = hotr.blobOperations.getFormation();
+        var teamAPowers = hotr.blobOperations.getPowers();
+        var teamB = hotr.levelLogic.getTeamForLevel(level);
+        var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
+        var teamBPowers = hotr.levelLogic.getPowers();
 
-            ],
-            teamBFormation:"4x4x4b",
-            teamAPowers:['poisonCloud', 'healing'],
-            teamBPowers:['lightningBolt', 'fireBall'],
+        var fightConfig = {
+            teamA:teamA,
+            teamAFormation:teamAFormation,
+            teamB:teamB,
+            teamBFormation:teamBFormation,
+            teamAPowers:teamAPowers,
+            teamBPowers:teamBPowers,
             offense:'a'
         };
 
-        //def - effect
-        //def - gameObject - missile
-        //missile - effect
-        //powers - powerAnimationsRequired
-       var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
-
-       //this.changeScene('selectTeam');
+        hotr.arenaScene.data = fightConfig;
+        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
+        this.showLoader(            {
+            "assets":assets,
+            "nextScene":'arena'
+        });
+    },
+    onEnter:function(){
         this.selectEditTeamPre();
     },
     makeCardDictionary:function(){
@@ -131,13 +134,18 @@ var MainGame = cc.Layer.extend({
     makeAssetDictionary:function(teamA, teamB, teamAPowers, teamBPowers){
         var assets = [];
         for (var i=0;i<teamA.length;i++){
-            var name = teamA[i];
-            this.addAssetChain(assets, name);
+            if (teamA[i]){
+                var name = teamA[i].name;
+                this.addAssetChain(assets, name);
+            }
+
         }
 
         for (var i=0;i<teamB.length;i++){
-            var name = teamB[i];
-            this.addAssetChain(assets, name);
+            if (teamB[i]){
+                var name = teamB[i].name;
+                this.addAssetChain(assets, name);
+            }
         }
 
         for (var i=0;i<teamAPowers.length;i++){

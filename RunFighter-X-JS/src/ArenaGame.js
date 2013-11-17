@@ -93,27 +93,36 @@ var ArenaGame = jc.WorldLayer.extend({
     setUp:function(){
         var sprite;
 
+        //todo refactor these loops into 1 func
         for (var i =0; i<this.teamASprites.length;i++){
-            sprite = this.getSprite(this.teamASprites[i]);
-            sprite.homeTeam = this.teams['a'];
-            sprite.enemyTeam = this.teams['b'];
-            sprite.team = 'a';
-            sprite.setVisible(false);
-            this.teams['a'].push(sprite);
-            this.touchTargets.push(sprite);
+            if (this.teamASprites[i])
+            {
+                sprite = this.getSprite(this.teamASprites[i].name);
+                //todo: augment sprite using data fetched via the id
+                sprite.homeTeam = this.teams['a'];
+                sprite.enemyTeam = this.teams['b'];
+                sprite.team = 'a';
+                sprite.setVisible(false);
+                this.teams['a'].push(sprite);
+                this.touchTargets.push(sprite);
+            }
 
         }
 
 
         for (var i =0; i<this.teamBSprites.length;i++){
-            sprite = this.getSprite(this.teamBSprites[i]);
-            sprite.setFlipX(true);
-            sprite.homeTeam = this.teams['b'];
-            sprite.enemyTeam = this.teams['a'];
-            sprite.team = 'b';
-            sprite.setVisible(false);
-            this.teams['b'].push(sprite);
-            this.touchTargets.push(sprite);
+            if (this.teamASprites[i])
+            {
+                sprite = this.getSprite(this.teamBSprites[i].name);
+                //todo: augment sprite using data fetched via the id
+                sprite.setFlipX(true);
+                sprite.homeTeam = this.teams['b'];
+                sprite.enemyTeam = this.teams['a'];
+                sprite.team = 'b';
+                sprite.setVisible(false);
+                this.teams['b'].push(sprite);
+                this.touchTargets.push(sprite);
+            }
         }
         this.sprites = this.teams['a'].concat(this.teams['b']);
 
@@ -121,7 +130,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     present:function(){
-
+        //todo modify this to use teamASprites to know what formation slots are actually filled
         this.presentTeam(this.teams['a'], this.teamAFormation, cc.p(this.worldSize.width/4, this.worldSize.height/2), function(){
             this.presentTeam(this.teams['b'], this.teamBFormation, cc.p((this.worldSize.width/4)*3, this.worldSize.height/2), function(){
                 this.presentHud(this.teamAPowers, function(){

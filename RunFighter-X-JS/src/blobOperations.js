@@ -9,6 +9,38 @@ hotr.blobOperations.getBlob = function(callback){
     });
 }
 
+hotr.blobOperations.getFormation = function(){
+    return "4x4x4a";
+}
+
+hotr.blobOperations.getTeam = function(){
+    var characterMap = {};
+    _.each(hotr.playerBlob.myguys, function(character){
+        characterMap[character.id] = character;
+    });
+
+
+    var formation = hotr.playerBlob.formation;
+    var team = [formation.length];
+    for (var i=0;i<formation.length; i++){
+        if (formation[i]!=undefined){
+            team[i]=characterMap[formation[i]];
+        }
+    }
+    return team;
+
+}
+
+hotr.blobOperations.getLevel = function(){
+    //todo implement me
+    return 0;
+}
+
+hotr.blobOperations.getPowers = function(){
+    //todo implement me
+    return ['poisonCloud', 'healing'];
+}
+
 hotr.blobOperations.indexToId = function(index){
     hotr.blobOperations.validate();
     return hotr.playerBlob.myguys[index].id;

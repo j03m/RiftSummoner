@@ -55,14 +55,32 @@ Buglist -
     select portrait
         *place card
         update stats
-        done closes and places character
-        close closes, no place
-        transition from layer to layer (select team)
+        *done closes and places characters
+        *close closes, no place
+        *transition from layer to layer (select team)
         *select portrait updates portrait frame
-        loading layer should close over the current scene and open over the next sene - changes to main
-        create portrait render (sized for frames)
-        create card render - sized for frame
+        *loading layer should close over the current scene and open over the next sene - changes to main
+        *create portrait render (sized for frames)
+        *create card render - sized for frame
 
+        initial blob
+        first team
+        categorization of cards (rank by power - select 3 for < N power at random)
+        ftue?
+
+
+
+
+
+        Size cards and fix bugs with face shot
+        "Fight" button takes you to the arena
+        Kik integration
+        "Kik" button next to fight - kiks to friend a
+        Friend a selects team - battle
+        Award Coins + Stones
+        Friend b gets the replay
+        Award Coins + Stones
+        Friend b can also kik next battle
 
     BUG - Tinting hangs app - tinting creates 4 canvases for texture cache every frame. Was using 10% of cpu.
 

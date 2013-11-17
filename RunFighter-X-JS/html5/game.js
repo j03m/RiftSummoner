@@ -51,6 +51,7 @@ var MW = MW || {};
             '../src/powerConfig.js',
             '../src/resource.js',
             '../src/blobOperations.js',
+            '../src/levelLogic.js',
             '../src/jocos2d-js/JCUtils.js',
             '../src/jocos2d-js/JCPanAndZoomAction.js',
             '../src/jocos2d-js/JCLayerManager.js',

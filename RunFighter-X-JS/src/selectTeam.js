@@ -91,10 +91,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
         console.log("next");
     },
     fightStart:function(){
-        //transition to loading
-        //sync blob (loader needs to handle this as well )
-        //load scene
-        console.log("fight");
+        hotr.mainScene.layer.arenaPre();
     },
     close:function(){
         console.log("close");
