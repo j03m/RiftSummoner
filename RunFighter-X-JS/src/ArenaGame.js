@@ -111,7 +111,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
 
         for (var i =0; i<this.teamBSprites.length;i++){
-            if (this.teamASprites[i])
+            if (this.teamBSprites[i])
             {
                 sprite = this.getSprite(this.teamBSprites[i].name);
                 //todo: augment sprite using data fetched via the id
@@ -175,6 +175,7 @@ var ArenaGame = jc.WorldLayer.extend({
         if (this.nextChar==undefined){
             this.nextChar = 0;
         }
+
         this.placeCharacter(team[this.nextChar], formation[this.nextChar], function(){
             this.nextChar++;
             if (this.nextChar>=team.length){
