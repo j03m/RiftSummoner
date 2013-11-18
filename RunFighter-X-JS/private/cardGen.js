@@ -11,7 +11,8 @@ exports.generateCards = function(stones, cards, callback){
         });
     }
     async.parallel(calls, function(err, res){
-        callback(res);
+        callback(err, res);
+        callback(err, res);
     })
 }
 
@@ -52,7 +53,7 @@ var generateCard = function(stones, callback){
 
 
         cryptoInt(chars.length-1, function(err, result){
-            callback(chars[result]);
+            callback(err, chars[result]);
         });
     });
 

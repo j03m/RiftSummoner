@@ -2,8 +2,9 @@ var hotr = hotr || {};
 hotr.blobOperations = {};
 hotr.scratchBoard = {};
 hotr.formationSize = 12;
+hotr.blobTokenLocalStoreKey = "x1xBlobTokenx1x";
 hotr.blobOperations.getBlob = function(callback){
-    blobApi.getBlob(function(data){
+    blobApi.getBlob(hotr.blobOperations.getBlobToken(),function(data){
         hotr.playerBlob = data;
         callback();
     });
@@ -29,6 +30,18 @@ hotr.blobOperations.getTeam = function(){
     }
     return team;
 
+}
+
+hotr.blobOperations.getBlobToken = function(signedData, token, host, callback){
+    blobApi.getBlobToken(signedData, token, host, callback);
+}
+
+hotr.blobOperations.setBlobToken = function(token){
+    sys.localStorage[hotr.blobTokenLocalStoreKey] = token;
+}
+
+hotr.blobOperations.getBlobToken = function(){
+    return sys.localStorage[hotr.blobTokenLocalStoreKey];
 }
 
 hotr.blobOperations.getLevel = function(){

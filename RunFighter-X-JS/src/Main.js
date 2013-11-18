@@ -107,7 +107,28 @@ var MainGame = cc.Layer.extend({
         });
     },
     onEnter:function(){
-        this.selectEditTeamPre();
+        //
+        if (!cards.kik.hasPermission()){
+         cards.kik.getAnonymousUser(function(token){
+            this.startGame(token);
+         }.bind(this));
+        }
+    },
+    startGame:function(value, type){
+
+        //get signed data from kik
+        //if !cached blob token
+        if (!hotr.hasToken()){
+            cards.kik.anonymousSign(value, function (signedData, token, host) {
+                //send these to us, for blobtoken
+                hotr.blobOperations.getBlobToken(signedData, token, host, function(token){
+                    hotr.blobOperations.cacheToken(token); //token lives for 24 hrs?
+                    this.selectEditTeamPre();
+                });
+            });
+        }else{
+            this.selectEditTeamPre();
+        }
     },
     makeCardDictionary:function(){
         var names = hotr.blobOperations.getCharacterNames();
