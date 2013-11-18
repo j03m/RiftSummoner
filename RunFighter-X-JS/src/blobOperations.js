@@ -2,9 +2,18 @@ var hotr = hotr || {};
 hotr.blobOperations = {};
 hotr.scratchBoard = {};
 hotr.formationSize = 12;
-hotr.blobTokenLocalStoreKey = "x1xBlobTokenx1x";
+hotr.authTokenLocalStoreKey = "x1xauthTokenx1x";
 hotr.blobOperations.getBlob = function(callback){
-    blobApi.getBlob(hotr.blobOperations.getBlobToken(),function(data){
+    var authToken = hotr.blobOperations.getAuthToken().token;
+    if (!authToken){
+        throw "No authToken available in local storage, auth didnt occur or something has gone wobbly.";
+    }
+
+    if (!authToken.token){
+        throw "AuthToken is available in local storage, but is in an unknown format.";
+    }
+
+    blobApi.getBlob(authToken.token,function(data){
         hotr.playerBlob = data;
         callback();
     });
@@ -32,16 +41,26 @@ hotr.blobOperations.getTeam = function(){
 
 }
 
-hotr.blobOperations.getBlobToken = function(signedData, token, host, callback){
-    blobApi.getBlobToken(signedData, token, host, callback);
+hotr.blobOperations.getAuthToken = function(signedData, token, host, callback){
+    blobApi.getAuthToken(signedData, token, host, callback);
 }
 
-hotr.blobOperations.setBlobToken = function(token){
-    sys.localStorage[hotr.blobTokenLocalStoreKey] = token;
+hotr.blobOperations.setauthToken = function(token){
+    sys.localStorage[hotr.authTokenLocalStoreKey] = token;
 }
 
-hotr.blobOperations.getBlobToken = function(){
-    return sys.localStorage[hotr.blobTokenLocalStoreKey];
+hotr.blobOperations.getAuthToken = function(){
+    return sys.localStorage[hotr.authTokenLocalStoreKey];
+}
+
+hotr.blobOperations.hasToken = function(){
+    var token = hotr.blobOperations.getAuthToken();
+    if (!token){
+        return false;
+    }
+    if (token.expires - Date.now() < 0){
+        return false; //token expired
+    }
 }
 
 hotr.blobOperations.getLevel = function(){

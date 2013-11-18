@@ -118,11 +118,11 @@ var MainGame = cc.Layer.extend({
 
         //get signed data from kik
         //if !cached blob token
-        if (!hotr.hasToken()){
+        if (!hotr.blobOperations.hasToken()){
             cards.kik.anonymousSign(value, function (signedData, token, host) {
                 //send these to us, for blobtoken
                 hotr.blobOperations.getBlobToken(signedData, token, host, function(token){
-                    hotr.blobOperations.cacheToken(token); //token lives for 24 hrs?
+                    hotr.blobOperations.setBlobToken(token);
                     this.selectEditTeamPre();
                 });
             });

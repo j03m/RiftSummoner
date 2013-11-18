@@ -6,6 +6,7 @@ var redis = require("redis"),
     client = redis.createClient();
 
 var sessionTTL = 24*60*60;
+var sessionTTLMS = sessionTTL*1000;
 var sessionNameSpace = "hotr:session:";
 var blobNameSpace = "hotr:blob:";
 
@@ -57,7 +58,7 @@ exports.getBlobToken = function(signedData, token, host, callback){
                 if (replies[0]!="Ok" && replies[1]!=1){
                     throw "Failed to set session token in Redis: " + JSON.stringify(replies);
                 }else{
-                    callback(sessionToken);
+                    callback({token:sessionToken, expires:Date.now()+sessionTTLMS});
                 }
             });
         }
