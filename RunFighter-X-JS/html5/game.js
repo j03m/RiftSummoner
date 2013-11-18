@@ -40,7 +40,8 @@ var MW = MW || {};
         tag:'gameCanvas', //the dom element to run cocos2d on
         engineDir:'platform/HTML5/cocos2d/',
         appFiles:[
-			'pathsHtml5.js',
+			'http://cdn.kik.com/cards/0/cards.js', //
+            'pathsHtml5.js',
             '../zerver/blobApi.js',
 			'../src/underscore-min.js',
             '../src/async.js',
