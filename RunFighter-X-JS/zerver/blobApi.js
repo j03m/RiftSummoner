@@ -14,7 +14,6 @@ exports.saveBlob =  function(callback){
     callback('Hello from Zerver');
 }
 
-
 exports.getBlob = function(token, callback){
 
     //get usertoken from session token

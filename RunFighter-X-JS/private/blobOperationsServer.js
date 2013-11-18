@@ -1,4 +1,4 @@
-var cardGen = require('cardGen.js').generateCards;
+var cardGen = require('./cardGen.js').generateCards;
 
 
 var tempBlob = {
