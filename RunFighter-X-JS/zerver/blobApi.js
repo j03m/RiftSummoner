@@ -56,7 +56,13 @@ var tempBlob = {
     "stones":5
 }
 
+
 exports.getBlob = function(callback){
+
+    //does my userid exist?
+
+
+
     console.log("Call made");
     console.log(JSON.stringify(tempBlob));
     callback(tempBlob);

@@ -1077,8 +1077,8 @@ var spriteDefs = {
 		"formalName": "Orge",
 		"cardIndex": 0,
 		"portraitXy": {
-			"x": 233,
-			"y": 113
+			"x": 241,
+			"y": 122
 		},
 		"details": "Orge are massive, powerful creatures. Though they are slow movers, you do not want to be at the wrong end of their weapons.",
 		"elementType": 4,
