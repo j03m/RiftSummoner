@@ -1,5 +1,5 @@
 var cards = require('kik-cards');
-var blobStorage = require('../blobOperationsServer.js');
+var blobStorage = require('../private/blobOperationsServer.js');
 
 //todo: update to use ring + pass off read failures
 var redis = require("redis"),
