@@ -110,6 +110,9 @@ hotr.blobOperations.indexToId = function(index){
 
 hotr.blobOperations.getFormationOrder = function(){
     hotr.blobOperations.validate();
+    if (!hotr.playerBlob.formation){
+        hotr.playerBlob.formation=[];
+    }
     return hotr.playerBlob.formation;
 }
 
