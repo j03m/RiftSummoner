@@ -27,7 +27,7 @@ var effectsConfig = {
         "plist":"art/blueRadius.plist",
         "start":"blueRadius.1.png",
         "frames":23,
-        "delay":0.1,
+        "delay":0.05,
         "zorder":"behind",
         "placement":"bottom",
         "offset":{

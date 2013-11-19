@@ -99,11 +99,11 @@ var ArenaGame = jc.WorldLayer.extend({
             {
                 sprite = this.getSprite(this.teamASprites[i].name);
                 //todo: augment sprite using data fetched via the id
-                sprite.homeTeam = this.teams['a'];
-                sprite.enemyTeam = this.teams['b'];
+                sprite.homeTeam = this.getTeam.bind(this,'a');
+                sprite.enemyTeam = this.getTeam.bind(this, 'b');
                 sprite.team = 'a';
                 sprite.setVisible(false);
-                this.teams['a'].push(sprite);
+                this.teams['a'][i]=sprite;
                 this.touchTargets.push(sprite);
             }
 
@@ -116,27 +116,37 @@ var ArenaGame = jc.WorldLayer.extend({
                 sprite = this.getSprite(this.teamBSprites[i].name);
                 //todo: augment sprite using data fetched via the id
                 sprite.setFlipX(true);
-                sprite.homeTeam = this.teams['b'];
-                sprite.enemyTeam = this.teams['a'];
+                sprite.homeTeam = this.getTeam.bind(this,'b');
+                sprite.enemyTeam = this.getTeam.bind(this, 'a');
                 sprite.team = 'b';
                 sprite.setVisible(false);
-                this.teams['b'].push(sprite);
+                this.teams['b'][i]=sprite;
                 this.touchTargets.push(sprite);
             }
         }
-        this.sprites = this.teams['a'].concat(this.teams['b']);
 
-        this.present();
+        this.present(function(){
+            function goodSprite(sprite){
+                return sprite!=undefined;
+            }
+            this.teams['a']=_.filter(this.teams['a'],goodSprite);
+            this.teams['b']=_.filter(this.teams['b'],goodSprite);
+            this.sprites = this.teams['a'].concat(this.teams['b']);
+
+            this.started=true;
+        }.bind(this));
 
     },
-    present:function(){
+    getTeam:function(who){
+        return this.teams[who];
+    },
+    present:function(cb){
         //todo modify this to use teamASprites to know what formation slots are actually filled
         this.presentTeam(this.teams['a'], this.teamAFormation, cc.p(this.worldSize.width/4, this.worldSize.height/2), function(){
             this.presentTeam(this.teams['b'], this.teamBFormation, cc.p((this.worldSize.width/4)*3, this.worldSize.height/2), function(){
                 this.presentHud(this.teamAPowers, function(){
-                    this.started = true;
+                    cb();
                 }.bind(this));
-
             }.bind(this));
         }.bind(this));
 
@@ -189,16 +199,21 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     placeCharacter:function(sprite, formationPoint, done){
-            this.scheduleOnce(function(){
-                this.panToWorldPoint(formationPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
-                    var worldPos = formationPoint;
-                    var nodePos = this.convertToItemPosition(worldPos);
-                    sprite.setBasePosition(nodePos);
-                    sprite.setVisible(true);
-                    jc.playEffectOnTarget("teleport", sprite, this);
-                    done();
-                }.bind(this));
-            }, this.presentationSpeed);
+            if (sprite){
+                this.scheduleOnce(function(){
+                    this.panToWorldPoint(formationPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
+                        var worldPos = formationPoint;
+                        var nodePos = this.convertToItemPosition(worldPos);
+                        sprite.setBasePosition(nodePos);
+                        sprite.setVisible(true);
+                        jc.playEffectOnTarget("teleport", sprite, this);
+                        done();
+                    }.bind(this));
+                }, this.presentationSpeed);
+            }
+            else{
+                done();
+            }
     },
     update:function (dt){
         //pulse each sprite

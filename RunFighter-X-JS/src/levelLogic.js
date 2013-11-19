@@ -3,27 +3,27 @@ hotr.levelLogic = {};
 
 var temp =  [
     {
-        "name":"orge",
+        "name":"goblinKnightNormal",
         "id":"id1",
         "data":{}
     },
     {
-        "name":"blueKnight",
+        "name":"goblinKnightNormal",
         "id":"id2",
         "data":{}
     },
     {
-        "name":"wizard",
+        "name":"goblinKnightNormal",
         "id":"id3",
         "data":{}
     },
     {
-        "name":"dwarvenKnightWater",
+        "name":"goblinKnightNormal",
         "id":"id4",
         "data":{}
     },
     {
-        "name":"dwarvenKnightEarth",
+        "name":"goblinKnightNormal",
         "id":"id5",
         "data":{}
     },

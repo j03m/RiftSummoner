@@ -42,6 +42,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     this.doSelectionVisual(formationOrder[i], cell, this.cellPrefix+i);
                 }
             }
+            this.first = true;
         }else if (hotr.scratchBoard.selectedCharacter!=undefined && hotr.scratchBoard.currentCell!=undefined){
             var id = hotr.blobOperations.indexToId(hotr.scratchBoard.selectedCharacter);
             var cell = parseInt(hotr.scratchBoard.currentCell.replace(this.cellPrefix, ""));

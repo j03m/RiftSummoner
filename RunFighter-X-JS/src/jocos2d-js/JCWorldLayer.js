@@ -123,7 +123,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
         return this.getScale(this.worldSize.width/16, this.worldSize.height/16);
     },
     getScaleWorld:function(){
-        return this.getScale(this.worldSize.width, this.worldSize.height);
+        return this.getScale(this.worldSize.width *0.9, this.worldSize.height*0.9);
     },
     convertToLayerPosition:function(point){
         jc.cap(point, this.worldBoundary);

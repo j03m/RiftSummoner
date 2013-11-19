@@ -116,20 +116,20 @@ GeneralBehavior.prototype.targetWithinSeekRadius = function(target){
 
 //find an enemy that that is within my attack radius
 GeneralBehavior.prototype.lockOnEnemyInRadius = function(){
-    return this.lockOnClosest(this.targetWithinSeekRadius.bind(this), this.owner.enemyTeam);
+    return this.lockOnClosest(this.targetWithinSeekRadius.bind(this), this.owner.enemyTeam());
 }
 
 //call lock on closest, but pass isUnlocked to check if anyone is locked on already, if so pass and check the next.
 GeneralBehavior.prototype.lockOnClosestUnlocked = function(){
-    return this.lockOnClosest(this.isUnlocked.bind(this), this.owner.enemyTeam);
+    return this.lockOnClosest(this.isUnlocked.bind(this), this.owner.enemyTeam());
 }
 
 GeneralBehavior.prototype.lockOnClosestFriendlyNonTank = function(){
-    return this.lockOnClosest(this.is.bind(this, ['healer', 'range']), this.owner.homeTeam);
+    return this.lockOnClosest(this.is.bind(this, ['healer', 'range']), this.owner.homeTeam());
 }
 
 GeneralBehavior.prototype.lockOnClosestNonTank = function(){
-    return this.lockOnClosest(this.is.bind(this, ['healer', 'range']), this.owner.enemyTeam);
+    return this.lockOnClosest(this.is.bind(this, ['healer', 'range']), this.owner.enemyTeam());
 }
 
 GeneralBehavior.prototype.isNot = function(nots,target){
@@ -149,13 +149,13 @@ GeneralBehavior.prototype.is = function(iss,target){
 }
 
 GeneralBehavior.prototype.getClosestFriendToSupport = function(){
-    return this.lockOnClosest(this.is.bind(this, ['tank', 'range']), this.owner.homeTeam);
+    return this.lockOnClosest(this.is.bind(this, ['tank', 'range']), this.owner.homeTeam());
 }
 
-//loops through all hometeam sprites and checks to see if any of them are locked onto the target
+//loops through all homeTeam() sprites and checks to see if any of them are locked onto the target
 GeneralBehavior.prototype.isUnlocked = function(target){
-    for (var i =0; i< this.owner.homeTeam.length; i++){
-        var sprite = this.owner.homeTeam[i];
+    for (var i =0; i< this.owner.homeTeam().length; i++){
+        var sprite = this.owner.homeTeam()[i];
         if (sprite!=this.owner){
             //check locked
             if (sprite.behavior.locked == target){
@@ -214,16 +214,16 @@ GeneralBehavior.prototype.allPassCheck = function(checkFunc, team){
 }
 
 GeneralBehavior.prototype.allFriendsWithinRadius = function(radius){
-    return this.allPassCheck(this.targetWithinVariableRadius.bind(this, radius), this.owner.homeTeam);
+    return this.allPassCheck(this.targetWithinVariableRadius.bind(this, radius), this.owner.homeTeam());
 }
 
 
 GeneralBehavior.prototype.allFoesWithinRadius = function(radius){
-    return this.allPassCheck(this.targetWithinVariableRadius.bind(this, radius), this.owner.enemyTeam);
+    return this.allPassCheck(this.targetWithinVariableRadius.bind(this, radius), this.owner.enemyTeam());
 }
 
 GeneralBehavior.prototype.allFoesWithinRadiusOfPoint = function(radius, point){
-    return this.allPassCheck(this.targetWithinVariableRadiusAndLocation.bind(this, radius, point), this.owner.enemyTeam);
+    return this.allPassCheck(this.targetWithinVariableRadiusAndLocation.bind(this, radius, point), this.owner.enemyTeam());
 }
 
 
@@ -561,7 +561,7 @@ GeneralBehavior.prototype.handleDeath = function(){
 
 GeneralBehavior.prototype.deadForGood = function(){
     this.owner.die();
-//    this.homeTeam = _.reject(this.homeTeam, function(member){
+//    this.homeTeam() = _.reject(this.homeTeam(), function(member){
 //        return member == this.owner;
 //    });
 }
@@ -672,7 +672,7 @@ GeneralBehavior.prototype.handleIdle = function(dt){
     }
 
     if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){
-        this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam);
+        this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam());
     }
 
     if (this.locked){
@@ -693,7 +693,7 @@ GeneralBehavior.prototype.handleMove = function(dt){
 
 GeneralBehavior.prototype.separate = function(){
     var steering = cc.p(0,0);
-    var myTeam = this.owner.homeTeam;
+    var myTeam = this.owner.homeTeam();
     for (var i =0; i< myTeam.length; i++) {
         if (myTeam[i] != this.owner){
             var ally = myTeam[i];

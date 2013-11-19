@@ -31,10 +31,13 @@ hotr.blobOperations.getTeam = function(){
     });
 
     var formation = hotr.playerBlob.formation;
-    var team = [formation.length];
+    var team = [];
     for (var i=0;i<formation.length; i++){
         if (formation[i]!=undefined){
-            team[i]=characterMap[formation[i]];
+            if (characterMap[formation[i]]){       //no invalid ids
+                team[i]=characterMap[formation[i]];
+            }
+
         }
     }
     return team;
@@ -121,14 +124,24 @@ hotr.blobOperations.getCurrentFormationPosition = function(id){
 
 hotr.blobOperations.placeCharacterFormation = function(id, cell){
     hotr.blobOperations.validate();
+    var characterMap = {};
+    _.each(hotr.playerBlob.myguys, function(character){
+        characterMap[character.id] = character;
+    });
+
     if (!hotr.playerBlob.formation){
-        hotr.playerBlob.formation = [hotr.formationSize];
+        hotr.playerBlob.formation = [];
     }
     var index = hotr.playerBlob.formation.indexOf(id);
     if (index!=-1){
         hotr.playerBlob.formation[index]=undefined;
     }
-    hotr.playerBlob.formation[cell]=id;
+    if (characterMap[id]){ //no illegal ids
+        hotr.playerBlob.formation[cell]=id;
+    }else{
+        throw "Id: " + id + " not valid for player";
+    }
+
 }
 
 hotr.blobOperations.validate= function(){

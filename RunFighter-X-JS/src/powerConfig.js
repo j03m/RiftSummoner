@@ -113,7 +113,7 @@ var powerConfig = {
     "vampireDistro":function(value){
         jc.checkPower(value, "vampireDistro");
         var config = spriteDefs[value].damageMods["vampireDistro"];
-        var allies = this.owner.homeTeam;
+        var allies = this.owner.homeTeam();
         if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
             jc.playTintedEffectOnTarget("fireLoop", this.locked, this.owner.layer, true, 255,0,255);
         }
