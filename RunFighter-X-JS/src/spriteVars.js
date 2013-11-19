@@ -503,7 +503,7 @@ var spriteDefs = {
 		"elementType": "air",
 		"unitType": 3,
 		"damageMods": {
-			"knockback": {
+			"knockBack": {
 				"distance": 15
 			}
 		},

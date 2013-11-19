@@ -1,6 +1,7 @@
 var async = require('async');
 var characterTiers = require('./characterTiers.js').charTiers;
 var cryptoInt = require('./random.js').cryptoInt;
+var uuid = require('node-uuid');
 var stoneValue = 5;
 
 exports.generateCards = function(stones, cards, callback){
@@ -12,8 +13,7 @@ exports.generateCards = function(stones, cards, callback){
     }
     async.parallel(calls, function(err, res){
         callback(err, res);
-        callback(err, res);
-    })
+    });
 }
 
 exports.generateCard  = generateCard;
@@ -53,7 +53,8 @@ var generateCard = function(stones, callback){
 
 
         cryptoInt(chars.length-1, function(err, result){
-            callback(err, chars[result]);
+            var card = {name:chars[result].name, id:uuid.v4()};
+            callback(err, card);
         });
     });
 

@@ -32,7 +32,7 @@ var effectsConfig = {
         "placement":"bottom",
         "offset":{
             "x":-5,
-            "y":5
+            "y":-110
         }
 
     },

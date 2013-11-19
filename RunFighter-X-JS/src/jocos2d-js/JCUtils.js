@@ -200,13 +200,6 @@ jc.playEffectOnTarget = function(name, target, layer, child){
     effect.setVisible(true);
     parent.addChild(effect);
 
-    if (child){
-        jc.setChildEffectPosition(effect, target, config);
-    }else{
-        jc.setEffectPosition(effect, target, config);
-    }
-
-
     if (config.zorder == "behind" && !child){
         parent.reorderChild(effect,target.getZOrder()-1);
     }else if (config.zorder == "behind" && child) {
@@ -215,6 +208,15 @@ jc.playEffectOnTarget = function(name, target, layer, child){
     else{
         parent.reorderChild(effect,target.getZOrder());
     }
+
+    if (child){
+        jc.setChildEffectPosition(effect, target, config);
+    }else{
+        jc.setEffectPosition(effect, target, config);
+    }
+
+
+
 
     if (config.times){
         var onDone = cc.CallFunc.create(function(){
@@ -270,6 +272,11 @@ jc.setChildEffectPosition = function(effect, parent, config){
         if (placement == 'bottom') {
             effectPos.y += etr.height/2; //up to feet
             effectPos.x += cs.width/2;
+        }else if (placement=='ground'){
+            effectPos.y += etr.height/2; //up to feet
+            effectPos.x += cs.width/2;
+            parent.reorderChild(effect,jc.groundEffectZOrder);
+
         }else if (placement == 'center'){
             effectPos.x += cs.width/2;
             effectPos.y += etr.height;
@@ -449,16 +456,14 @@ jc.portraitFromCard = function(name,card, size){
 }
 
 jc.getCharacterCard = function(name){
-    var frame = name+".pic.png";
+    var frame = name+"" +
+        "_pose.png";
     var indexNumber = spriteDefs[name].cardIndex;
     if (indexNumber == undefined){
         indexNumber = 0;
     }
     return jc.makeSpriteWithPlist(cardsPlists[indexNumber], cardsPngs[indexNumber], frame);
 }
-
-
-
 
 
 jc.formations = {
@@ -503,3 +508,8 @@ jc.formations = {
     ]
 
 };
+
+
+jc.backDropZOrder = -99999999;
+jc.shadowZOrder = -99999998;
+jc.groundEffectZOrder = -99999997;

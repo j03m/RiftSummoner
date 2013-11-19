@@ -90,7 +90,7 @@ jc.Sprite = cc.Sprite.extend({
         this.shadow.initWithSpriteFrame(frame);
         this.shadow.setScaleX(0.5);
         this.layer.addChild(this.shadow);
-        this.layer.reorderChild(this.shadow, (cc.Director.getInstance().getWinSize().height+9) * -1);
+        this.layer.reorderChild(this.shadow, jc.shadowZOrder);
         this.updateShadowPosition();
     },
     initHealthBar:function(){

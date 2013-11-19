@@ -10,6 +10,7 @@ Array.prototype.pushUnique = function(value){
         this.push(value);
     }
 }
+
 var MainGame = cc.Layer.extend({
     state: 0,
     init: function() {
@@ -67,13 +68,8 @@ var MainGame = cc.Layer.extend({
 //            ]
 //        }
 
-        this.showLoader(            {
-            "assetFunc":function(callback){
-                hotr.blobOperations.getBlob(function(){
-                    var cardAssets = this.makeCardDictionary();
-                    callback(cardAssets);
-                }.bind(this))
-            }.bind(this),
+        this.showLoader({
+            "assets":this.makeCardDictionary(),
             "nextScene":'selectTeam'
         });
     },
@@ -103,32 +99,58 @@ var MainGame = cc.Layer.extend({
         var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
         this.showLoader(            {
             "assets":assets,
+            "apiCalls":[
+                function(callback){
+                    hotr.blobOperations.saveBlob(function(){
+                        callback();
+                    });
+                }
+            ],
             "nextScene":'arena'
         });
     },
     onEnter:function(){
-        //
-        if (!cards.kik.hasPermission()){
          cards.kik.getAnonymousUser(function(token){
             this.startGame(token);
          }.bind(this));
-        }
     },
     startGame:function(value, type){
 
         //get signed data from kik
         //if !cached blob token
-        if (!hotr.blobOperations.hasToken()){
-            cards.kik.anonymousSign(value, function (signedData, token, host) {
-                //send these to us, for blobtoken
-                hotr.blobOperations.getBlobToken(signedData, token, host, function(token){
-                    hotr.blobOperations.setBlobToken(token);
-                    this.selectEditTeamPre();
-                });
-            });
+        var hasPlayed = hotr.blobOperations.hasPlayed();
+        var hasToken = hotr.blobOperations.hasToken();
+
+        //if I have an auth token, I don't care, just go.
+        if (hasToken){
+            this.initGame();
+        }else if (hasPlayed) { //if I don't ahve a token, well - have I played? If so, don't create a user for me, just get a token and go
+            this.authorizeAndInitGame();
         }else{
-            this.selectEditTeamPre();
+            //I sort of look like a new player, take me through the new player flow
+            this.authorizeNewPlayer();
         }
+    },
+    authorizeNewPlayer:function(){
+        cards.kik.anonymousSign({"signme":true}, function (signedData, token, host) {
+            //send these to us, for authtoken
+            hotr.blobOperations.createNewPlayer(signedData, token, host, function(){
+                this.selectEditTeamPre();
+            }.bind(this));
+        }.bind(this));
+    },
+    authorizeAndInitGame:function(){
+        cards.kik.anonymousSign({"signme":true}, function (signedData, token, host) {
+            //send these to us, for authtoken
+            hotr.blobOperations.getNewAuthTokenAndBlob(signedData, token, host, function(){
+                this.selectEditTeamPre();
+            }.bind(this));
+        }.bind(this));
+    },
+    initGame:function(callback){
+        hotr.blobOperations.getBlob(function(){
+            this.selectEditTeamPre();
+        });
     },
     makeCardDictionary:function(){
         var names = hotr.blobOperations.getCharacterNames();

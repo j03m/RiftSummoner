@@ -29,6 +29,65 @@
 var MW = MW || {};
 
 
+var hotrSrc = [
+    'pathsHtml5.js',
+    '../zerver/blobApi.js',
+    '../src/underscore-min.js',
+    '../src/async.js',
+    '../src/spriteVars.js',
+    '../src/missileConfig.js',
+    '../src/effectsConfig.js',
+    '../src/powerTileConfig.js',
+    '../src/powerConfig.js',
+    '../src/resource.js',
+    '../src/blobOperations.js',
+    '../src/levelLogic.js',
+    '../src/jocos2d-js/JCUtils.js',
+    '../src/jocos2d-js/JCLocalStorage.js',
+    '../src/jocos2d-js/JCPanAndZoomAction.js',
+    '../src/jocos2d-js/JCLayerManager.js',
+    '../src/jocos2d-js/JCCompositeButton.js',
+    '../src/jocos2d-js/JCPowerTile.js',
+    '../src/jocos2d-js/JCTouchLayer.js',
+    '../src/jocos2d-js/JcUiElements.js',
+    '../src/jocos2d-js/JCScrollingLayer.js',
+    '../src/jocos2d-js/JCWorldLayer.js',
+    '../src/jocos2d-js/JCTrace.js',
+    '../src/jocos2d-js/JCGameObject.js',
+    '../src/jocos2d-js/JCSprite.js',
+    '../src/jocos2d-js/eventemitter2.js',
+    '../src/jocos2d-js/xmlhttp.js',
+    '../src/jocos2d-js/RequestManager.js',
+    '../src/sha256.js',
+    '../src/TouchId.js',
+    '../src/behaviors/GeneralBehavior.js',
+    '../src/behaviors/RangeBehavior.js',
+    '../src/behaviors/DefenderBehavior.js',
+    '../src/behaviors/FlankerBehavior.js',
+    '../src/behaviors/HealerBehavior.js',
+    '../src/behaviors/TankBehavior.js',
+    '../src/behaviors/BehaviorMap.js',
+    '../src/PanZoomTest.js',
+    '../src/CardLayer.js',
+    '../src/EditDeck.js',
+    '../src/selectTeam.js',
+    '../src/editTeam.js',
+    '../src/ArenaGame.js',
+    '../src/AnimationTest.js',
+    '../src/Loading.js',
+    '../src/Main.js',
+    '../src/PowerHud.js',
+    'gameHtml5.js'
+]
+
+window.localStorage.clear();
+
+if (hotrConfig.browserDev){
+    hotrSrc.unshift('../src/kikMocks.js')
+}else{
+    hotrSrc.unshift('http://cdn.kik.com/cards/0/cards.js')
+}
+
 
 (function () {
     var d = document;
@@ -39,57 +98,7 @@ var MW = MW || {};
         frameRate:60,
         tag:'gameCanvas', //the dom element to run cocos2d on
         engineDir:'platform/HTML5/cocos2d/',
-        appFiles:[
-			'http://cdn.kik.com/cards/0/cards.js', //
-            'pathsHtml5.js',
-            '../zerver/blobApi.js',
-			'../src/underscore-min.js',
-            '../src/async.js',
-            '../src/spriteVars.js',
-            '../src/missileConfig.js',
-            '../src/effectsConfig.js',
-            '../src/powerTileConfig.js',
-            '../src/powerConfig.js',
-            '../src/resource.js',
-            '../src/blobOperations.js',
-            '../src/levelLogic.js',
-            '../src/jocos2d-js/JCUtils.js',
-            '../src/jocos2d-js/JCPanAndZoomAction.js',
-            '../src/jocos2d-js/JCLayerManager.js',
-            '../src/jocos2d-js/JCCompositeButton.js',
-            '../src/jocos2d-js/JCPowerTile.js',
-            '../src/jocos2d-js/JCTouchLayer.js',
-            '../src/jocos2d-js/JcUiElements.js',
-            '../src/jocos2d-js/JCScrollingLayer.js',
-            '../src/jocos2d-js/JCWorldLayer.js',
-            '../src/jocos2d-js/JCTrace.js',
-            '../src/jocos2d-js/JCGameObject.js',
-			'../src/jocos2d-js/JCSprite.js',
-			'../src/jocos2d-js/eventemitter2.js',
-			'../src/jocos2d-js/xmlhttp.js',
-			'../src/jocos2d-js/RequestManager.js',
-            '../src/sha256.js',
-            '../src/TouchId.js',
-            '../src/behaviors/GeneralBehavior.js',
-            '../src/behaviors/RangeBehavior.js',
-            '../src/behaviors/DefenderBehavior.js',
-            '../src/behaviors/FlankerBehavior.js',
-            '../src/behaviors/HealerBehavior.js',
-            '../src/behaviors/TankBehavior.js',
-            '../src/behaviors/BehaviorMap.js',
-            '../src/PanZoomTest.js',
-            '../src/CardLayer.js',
-            '../src/EditDeck.js',
-            '../src/selectTeam.js',
-            '../src/editTeam.js',
-            '../src/ArenaGame.js',
-            '../src/AnimationTest.js',
-            '../src/Loading.js',
-            '../src/Main.js',
-            '../src/PowerHud.js',
-			'gameHtml5.js'
-    
-        ]
+        appFiles:hotrSrc
     };
 
     if(!d.createElement('canvas').getContext){

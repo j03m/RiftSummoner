@@ -63,13 +63,6 @@ Buglist -
         *create portrait render (sized for frames)
         *create card render - sized for frame
 
-        initial blob
-        first team
-        categorization of cards (rank by power - select 3 for < N power at random)
-        ftue?
-
-
-
 
 
         Size cards and fix bugs with face shot
@@ -85,7 +78,7 @@ Buglist -
     BUG - Tinting hangs app - tinting creates 4 canvases for texture cache every frame. Was using 10% of cpu.
 
 
-
+    getBlob -
 
 
 TO BETA:

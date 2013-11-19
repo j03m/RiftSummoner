@@ -3,19 +3,20 @@ hotr.blobOperations = {};
 hotr.scratchBoard = {};
 hotr.formationSize = 12;
 hotr.authTokenLocalStoreKey = "x1xauthTokenx1x";
+hotr.haveSeenLocalStoreKey = "x1xhaveseenx1x";
 hotr.blobOperations.getBlob = function(callback){
-    var authToken = hotr.blobOperations.getAuthToken().token;
-    if (!authToken){
-        throw "No authToken available in local storage, auth didnt occur or something has gone wobbly.";
-    }
-
-    if (!authToken.token){
-        throw "AuthToken is available in local storage, but is in an unknown format.";
-    }
-
-    blobApi.getBlob(authToken.token,function(data){
+    var authToken = hotr.blobOperations.getCachedAuthToken()
+    blobApi.getBlob(authToken.token,function(err, data){
         hotr.playerBlob = data;
         callback();
+    });
+}
+
+hotr.blobOperations.saveBlob = function(callback){
+    var authToken = hotr.blobOperations.getCachedAuthToken()
+    hotr.playerBlob.version++;
+    blobApi.saveBlob(authToken.token, hotr.playerBlob, function(err, res){
+        callback(err, res);
     });
 }
 
@@ -29,7 +30,6 @@ hotr.blobOperations.getTeam = function(){
         characterMap[character.id] = character;
     });
 
-
     var formation = hotr.playerBlob.formation;
     var team = [formation.length];
     for (var i=0;i<formation.length; i++){
@@ -38,29 +38,56 @@ hotr.blobOperations.getTeam = function(){
         }
     }
     return team;
-
 }
 
-hotr.blobOperations.getAuthToken = function(signedData, token, host, callback){
-    blobApi.getAuthToken(signedData, token, host, callback);
+hotr.blobOperations.createNewPlayer = function(signedData, userToken, host, callback){
+    blobApi.createNewPlayer(signedData, userToken, host, function(blob, token){
+        hotr.playerBlob = blob;
+        hotr.blobOperations.setAuthToken(token);
+        hotr.blobOperations.setHasPlayed();
+        callback();
+    });
 }
 
-hotr.blobOperations.setauthToken = function(token){
-    sys.localStorage[hotr.authTokenLocalStoreKey] = token;
+hotr.blobOperations.getNewAuthTokenAndBlob = function(signedData, userToken, host, callback){
+    blobApi.getNewAuthTokenAndBlob(signedData, userToken, host, function(){
+        hotr.playerBlob = blob;
+        hotr.setAuthToken(token);
+        callback();
+    });
 }
 
-hotr.blobOperations.getAuthToken = function(){
-    return sys.localStorage[hotr.authTokenLocalStoreKey];
+
+
+hotr.blobOperations.getNewAuthToken = function(signedData, userToken, host, callback){
+    blobApi.getAuthToken(signedData, userToken, host, callback);
+}
+
+hotr.blobOperations.setAuthToken = function(token){
+    jc.setLocalStorage(hotr.authTokenLocalStoreKey, token);
+}
+
+hotr.blobOperations.getCachedAuthToken = function(){
+    return jc.getLocalStorage(hotr.authTokenLocalStoreKey);
 }
 
 hotr.blobOperations.hasToken = function(){
-    var token = hotr.blobOperations.getAuthToken();
+    var token = hotr.blobOperations.getCachedAuthToken();
     if (!token){
         return false;
     }
     if (token.expires - Date.now() < 0){
         return false; //token expired
     }
+}
+
+
+hotr.blobOperations.hasPlayed = function(){
+    return jc.getLocalStorage(hotr.haveSeenLocalStoreKey)!=undefined;
+}
+
+hotr.blobOperations.setHasPlayed=function(){
+    jc.setLocalStorage(hotr.haveSeenLocalStoreKey, {"haveSeenMe":true});
 }
 
 hotr.blobOperations.getLevel = function(){
@@ -76,6 +103,11 @@ hotr.blobOperations.getPowers = function(){
 hotr.blobOperations.indexToId = function(index){
     hotr.blobOperations.validate();
     return hotr.playerBlob.myguys[index].id;
+}
+
+hotr.blobOperations.getFormationOrder = function(){
+    hotr.blobOperations.validate();
+    return hotr.playerBlob.formation;
 }
 
 hotr.blobOperations.getCurrentFormationPosition = function(id){
