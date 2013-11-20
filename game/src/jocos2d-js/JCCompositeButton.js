@@ -33,14 +33,14 @@ jc.CompositeButton = cc.Sprite.extend({
         if ('mouse' in sys.capabilities) {
             cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 0);
         } else {
-            cc.Director.getInstance().getTouchDispatcher().addTargetedDelegate(this, 0, true);
+            cc.Director.getInstance().getTouchDispatcher().registerTargetedDelegate(this, 0, true);
         }
     },
     onExit: function(){
         if ('mouse' in sys.capabilities) {
             cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
         } else {
-            cc.Director.getInstance().getTouchDispatcher().removeDelegate(this);
+            cc.Director.getInstance().getTouchDispatcher().unregisterTouchDelegate(this);
         }
     },
     onTouchBegan: function(touch) {
