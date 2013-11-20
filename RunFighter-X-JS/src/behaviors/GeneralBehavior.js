@@ -291,22 +291,22 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
 
     //if I am to face the character and I am in front of them, I need to be the opposite flipx
     if (facing == 'facing' && position == 'front'){
-        this.owner.setFlipX(!target.isFlippedX())
+        this.owner.setFlippedX(!target.isFlippedX())
     }
 
     //if I am to face the character and i am behind them I need to be the same flipx
     if (facing == 'facing' && position == 'behind'){
-        this.owner.setFlipX(target.isFlippedX())
+        this.owner.setFlippedX(target.isFlippedX())
     }
 
     //if I am NOT to face the character and i am front of them I need to be same flipx
     if (facing == 'away' && position == 'font'){
-        this.owner.setFlipX(target.isFlippedX())
+        this.owner.setFlippedX(target.isFlippedX())
     }
 
     //if I am NOT to face the character and i am behind them of them I need to be opposite flipx
     if (facing == 'away' && position == 'behind'){
-        this.owner.setFlipX(!target.isFlippedX())
+        this.owner.setFlippedX(!target.isFlippedX())
     }
 
 

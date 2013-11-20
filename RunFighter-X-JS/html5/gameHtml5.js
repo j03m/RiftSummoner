@@ -1,7 +1,3 @@
-// Needed for HTML5
-
-
-
 var cocos2dApp = cc.Application.extend({
     config:document['ccConfig'],
     ctor:function (scene) {
@@ -28,6 +24,7 @@ var cocos2dApp = cc.Application.extend({
         director.setAnimationInterval(1.0 / this.config.frameRate);
 
         //load resources
+        console.log
         cc.LoaderScene.preload(g_maingame, function () {
             director.replaceScene(new this.startScene());
 
@@ -46,8 +43,8 @@ var cocos2dApp = cc.Application.extend({
     }
 });
 
-var myApp = new cocos2dApp(MainGame.scene);
 
+var myApp = new cocos2dApp(MainGame.scene);
 
 window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
     console.log("Error occured: " + errorMsg);
@@ -55,3 +52,5 @@ window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
     console.log("line:" + lineNumber);
     return false;
 }
+
+

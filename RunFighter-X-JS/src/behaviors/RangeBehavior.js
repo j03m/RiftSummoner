@@ -81,7 +81,7 @@ RangeBehavior.prototype.doMissile = function(){
         }
 
 
-        this.missile.setFlipX(this.owner.isFlippedX());
+        this.missile.setFlippedX(this.owner.isFlippedX());
 
         this.missile.setPosition(ownerPos);
         this.missile.runAction(this.missileAnimation);

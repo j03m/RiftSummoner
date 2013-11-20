@@ -76,9 +76,20 @@ Buglist -
         Friend b can also kik next battle
 
     BUG - Tinting hangs app - tinting creates 4 canvases for texture cache every frame. Was using 10% of cpu.
+    BUG - localstorage does not work on amazon or localhost, but works on facebook
+
+    ***
+    get cocos2dhtml single engine file working
+    make hotr.min.js out of src dir
+    fixed shared code issues
+    make deploy script dir
+    push assets to s3
+    travis-ci
+    ssl?
+    ***
+    kik integration issue
 
 
-    getBlob -
 
 
 TO BETA:

@@ -115,7 +115,7 @@ var ArenaGame = jc.WorldLayer.extend({
             {
                 sprite = this.getSprite(this.teamBSprites[i].name);
                 //todo: augment sprite using data fetched via the id
-                sprite.setFlipX(true);
+                sprite.setFlippedX(true);
                 sprite.homeTeam = this.getTeam.bind(this,'b');
                 sprite.enemyTeam = this.getTeam.bind(this, 'a');
                 sprite.team = 'b';

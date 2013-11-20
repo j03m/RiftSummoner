@@ -1,3 +1,4 @@
+
 var BehaviorMap = {
     'tank':TankBehavior
     ,'range':RangeBehavior

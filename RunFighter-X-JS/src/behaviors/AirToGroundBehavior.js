@@ -1,3 +1,4 @@
+
 var AirToGroundBehavior = function(sprite){
     _.extend(this, new GeneralBehavior());
     this.handleTankIdle = this.handleIdle;
