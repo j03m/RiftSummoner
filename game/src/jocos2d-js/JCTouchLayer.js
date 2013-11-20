@@ -55,7 +55,7 @@ jc.TouchLayer = cc.Layer.extend({
             }
         } else {
             if (val){
-                cc.Director.getInstance().getTouchDispatcher().addTargetedDelegate(this, 1, true);
+                cc.Director.getInstance().getTouchDispatcher().registerTargetedDelegate(this, 1, true);
             }else{
                 cc.Director.getInstance().getTouchDispatcher().removeDelegate(this);
             }
