@@ -1,8 +1,0 @@
-//
-// Prefix header for all source files of the 'RunFighter-X-JS' target in the 'RunFighter-X-JS' project
-//
-
-#ifdef __OBJC__
-	#import <Foundation/Foundation.h>
-	#import <UIKit/UIKit.h>
-#endif
