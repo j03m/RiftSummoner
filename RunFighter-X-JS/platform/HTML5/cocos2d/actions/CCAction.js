@@ -48,6 +48,11 @@ cc.Action = cc.Class.extend(/** @lends cc.Action# */{
     _tag:cc.ACTION_TAG_INVALID,
 
     //**************Public Functions***********
+    ctor:function () {
+        this._originalTarget = null;
+        this._target = null;
+        this._tag = cc.ACTION_TAG_INVALID;
+    },
     /**
      * @return {String}
      */
@@ -57,19 +62,23 @@ cc.Action = cc.Class.extend(/** @lends cc.Action# */{
 
     /**
      * to copy object with deep copy.
-     * @param {object} zone
-     * @return {object}
-     */
-    copyWithZone:function (zone) {
-        return this.copy();
-    },
-
-    /**
-     * to copy object with deep copy.
+     * @deprecated
      * @return {object}
      */
     copy:function () {
         return cc.clone(this);
+    },
+
+    /**
+     * returns a clone of action
+     * @return {cc.Action}
+     */
+    clone:function () {
+        var action = new cc.Action();
+        action._originalTarget = null;
+        action._target = null;
+        action._tag = this._tag;
+        return action;
     },
 
     /**
@@ -202,6 +211,11 @@ cc.FiniteTimeAction = cc.Action.extend(/** @lends cc.FiniteTimeAction# */{
     //! duration in seconds
     _duration:0,
 
+    ctor:function () {
+        cc.Action.prototype.ctor.call(this);
+        this._duration = 0;
+    },
+
     /** get duration in seconds of the action
      *
      * @return {Number}
@@ -225,9 +239,15 @@ cc.FiniteTimeAction = cc.Action.extend(/** @lends cc.FiniteTimeAction# */{
     reverse:function () {
         cc.log("cocos2d: FiniteTimeAction#reverse: Implement me");
         return null;
+    },
+
+    /**
+     *
+     */
+    clone:function () {
+        return new cc.FiniteTimeAction();
     }
 });
-
 
 /**
  * Changes the speed of an action, making it take longer (speed>1)
@@ -240,6 +260,12 @@ cc.FiniteTimeAction = cc.Action.extend(/** @lends cc.FiniteTimeAction# */{
 cc.Speed = cc.Action.extend(/** @lends cc.Speed# */{
     _speed:0.0,
     _innerAction:null,
+
+    ctor:function () {
+        cc.Action.prototype.ctor.call(this);
+        this._speed = 0;
+        this._innerAction = null;
+    },
 
     /**
      * @return {Number}
@@ -265,6 +291,16 @@ cc.Speed = cc.Action.extend(/** @lends cc.Speed# */{
         this._innerAction = action;
         this._speed = speed;
         return true;
+    },
+
+    /**
+     * returns a clone of action
+     * @returns {cc.Speed}
+     */
+    clone:function () {
+        var action = new cc.Speed();
+        action.initWithAction(this._innerAction.clone(), this._speed);
+        return action;
     },
 
     /**
@@ -330,9 +366,8 @@ cc.Speed = cc.Action.extend(/** @lends cc.Speed# */{
  */
 cc.Speed.create = function (action, speed) {
     var ret = new cc.Speed();
-    if (ret && ret.initWithAction(action, speed)) {
+    if (ret && ret.initWithAction(action, speed))
         return ret;
-    }
     return null;
 };
 
@@ -348,97 +383,6 @@ cc.Speed.create = function (action, speed) {
  * @extends cc.Action
  */
 cc.Follow = cc.Action.extend(/** @lends cc.Follow# */{
-    /**
-     * @return {Boolean}
-     */
-    isBoundarySet:function () {
-        return this._boundarySet;
-    },
-
-    /** alter behavior - turn on/off boundary
-     * @param {Boolean} value
-     */
-    setBoudarySet:function (value) {
-        this._boundarySet = value;
-    },
-
-    /** initializes the action
-     * initializes the action with a set boundary
-     * @param {cc.Node} followedNode
-     * @param {cc.Rect} rect
-     * @return {Boolean}
-     */
-    initWithTarget:function (followedNode, rect) {
-        cc.Assert(followedNode != null, "");
-
-        rect = rect || cc.RectZero();
-        this._followedNode = followedNode;
-
-        this._boundarySet = !cc.rectEqualToRect(rect, cc.RectZero());
-
-        this._boundaryFullyCovered = false;
-
-        var winSize = cc.Director.getInstance().getWinSize();
-        this._fullScreenSize = cc.p(winSize.width, winSize.height);
-        this._halfScreenSize = cc.pMult(this._fullScreenSize, 0.5);
-
-        if (this._boundarySet) {
-            this.leftBoundary = -((rect.x + rect.width) - this._fullScreenSize.x);
-            this.rightBoundary = -rect.x;
-            this.topBoundary = -rect.y;
-            this.bottomBoundary = -((rect.y + rect.height) - this._fullScreenSize.y);
-
-            if (this.rightBoundary < this.leftBoundary) {
-                // screen width is larger than world's boundary width
-                //set both in the middle of the world
-                this.rightBoundary = this.leftBoundary = (this.leftBoundary + this.rightBoundary) / 2;
-            }
-            if (this.topBoundary < this.bottomBoundary) {
-                // screen width is larger than world's boundary width
-                //set both in the middle of the world
-                this.topBoundary = this.bottomBoundary = (this.topBoundary + this.bottomBoundary) / 2;
-            }
-
-            if ((this.topBoundary == this.bottomBoundary) && (this.leftBoundary == this.rightBoundary)) {
-                this._boundaryFullyCovered = true;
-            }
-        }
-        return true;
-    },
-
-    /**
-     * @param {Number} dt
-     */
-    step:function (dt) {
-        if (this._boundarySet) {
-            // whole map fits inside a single screen, no need to modify the position - unless map boundaries are increased
-            if (this._boundaryFullyCovered)
-                return;
-
-            var tempPos = cc.pSub(this._halfScreenSize, this._followedNode.getPosition());
-
-            this._target.setPosition(cc.p(cc.clampf(tempPos.x, this.leftBoundary, this.rightBoundary),
-                cc.clampf(tempPos.y, this.bottomBoundary, this.topBoundary)));
-        } else {
-            this._target.setPosition(cc.pSub(this._halfScreenSize, this._followedNode.getPosition()));
-        }
-    },
-
-    /**
-     * @return {Boolean}
-     */
-    isDone:function () {
-        return ( !this._followedNode.isRunning() );
-    },
-
-    /**
-     * Stop the action.
-     */
-    stop:function () {
-        this._target = null;
-        cc.Action.prototype.stop.call(this);
-    },
-
     // node to follow
     _followedNode:null,
     // whether camera should be limited to certain area
@@ -464,7 +408,126 @@ cc.Follow = cc.Action.extend(/** @lends cc.Follow# */{
     /** world bottomBoundary
      * @Type {Number}
      */
-    bottomBoundary:0.0
+    bottomBoundary:0.0,
+    _worldRect:null,
+
+    ctor:function () {
+        cc.Action.prototype.ctor.call(this);
+        this._followedNode = null;
+        this._boundarySet = false;
+
+        this._boundaryFullyCovered = false;
+        this._halfScreenSize = null;
+        this._fullScreenSize = null;
+
+        this.leftBoundary = 0.0;
+        this.rightBoundary = 0.0;
+        this.topBoundary = 0.0;
+        this.bottomBoundary = 0.0;
+        this._worldRect = cc.RectZero();
+    },
+
+    clone:function () {
+        var action = new cc.Follow();
+        var locRect = this._worldRect;
+        var rect = new cc.Rect(locRect.x, locRect.y, locRect.width, locRect.height);
+        action.initWithTarget(this._followedNode, rect);
+        return action;
+    },
+
+    /**
+     * @return {Boolean}
+     */
+    isBoundarySet:function () {
+        return this._boundarySet;
+    },
+
+    /** alter behavior - turn on/off boundary
+     * @param {Boolean} value
+     */
+    setBoudarySet:function (value) {
+        this._boundarySet = value;
+    },
+
+    /** initializes the action
+     * initializes the action with a set boundary
+     * @param {cc.Node} followedNode
+     * @param {cc.Rect} [rect=]
+     * @return {Boolean}
+     */
+    initWithTarget:function (followedNode, rect) {
+        cc.Assert(followedNode != null, "");
+
+        rect = rect || cc.RectZero();
+        this._followedNode = followedNode;
+        this._worldRect = rect;
+
+        this._boundarySet = !cc._rectEqualToZero(rect);
+
+        this._boundaryFullyCovered = false;
+
+        var winSize = cc.Director.getInstance().getWinSize();
+        this._fullScreenSize = cc.p(winSize.width, winSize.height);
+        this._halfScreenSize = cc.pMult(this._fullScreenSize, 0.5);
+
+        if (this._boundarySet) {
+            this.leftBoundary = -((rect.x + rect.width) - this._fullScreenSize.x);
+            this.rightBoundary = -rect.x;
+            this.topBoundary = -rect.y;
+            this.bottomBoundary = -((rect.y + rect.height) - this._fullScreenSize.y);
+
+            if (this.rightBoundary < this.leftBoundary) {
+                // screen width is larger than world's boundary width
+                //set both in the middle of the world
+                this.rightBoundary = this.leftBoundary = (this.leftBoundary + this.rightBoundary) / 2;
+            }
+            if (this.topBoundary < this.bottomBoundary) {
+                // screen width is larger than world's boundary width
+                //set both in the middle of the world
+                this.topBoundary = this.bottomBoundary = (this.topBoundary + this.bottomBoundary) / 2;
+            }
+
+            if ((this.topBoundary == this.bottomBoundary) && (this.leftBoundary == this.rightBoundary))
+                this._boundaryFullyCovered = true;
+        }
+        return true;
+    },
+
+    /**
+     * @param {Number} dt
+     */
+    step:function (dt) {
+        var tempPosX = this._followedNode.getPositionX();
+        var tempPosY = this._followedNode.getPositionY();
+        tempPosX = this._halfScreenSize.x - tempPosX;
+        tempPosY = this._halfScreenSize.y - tempPosY;
+
+        if (this._boundarySet) {
+            // whole map fits inside a single screen, no need to modify the position - unless map boundaries are increased
+            if (this._boundaryFullyCovered)
+                return;
+
+            this._target.setPosition(cc.clampf(tempPosX, this.leftBoundary, this.rightBoundary),
+                cc.clampf(tempPosY, this.bottomBoundary, this.topBoundary));
+        } else {
+            this._target.setPosition(tempPosX, tempPosY);
+        }
+    },
+
+    /**
+     * @return {Boolean}
+     */
+    isDone:function () {
+        return ( !this._followedNode.isRunning() );
+    },
+
+    /**
+     * Stop the action.
+     */
+    stop:function () {
+        this._target = null;
+        cc.Action.prototype.stop.call(this);
+    }
 });
 /** creates the action with a set boundary <br/>
  * creates the action with no boundary set
@@ -486,11 +549,9 @@ cc.Follow = cc.Action.extend(/** @lends cc.Follow# */{
 cc.Follow.create = function (followedNode, rect) {
     rect = rect || new cc.RectZero();
     var ret = new cc.Follow();
-    if (rect != null && ret && ret.initWithTarget(followedNode, rect)) {
+    if (rect != null && ret && ret.initWithTarget(followedNode, rect))
         return ret;
-    }
-    else if (ret && ret.initWithTarget(followedNode)) {
+    else if (ret && ret.initWithTarget(followedNode))
         return ret;
-    }
     return null;
 };

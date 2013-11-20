@@ -27,6 +27,9 @@
 (function () {
     var engine = [
         'platform/CCClass.js',
+        'cocoa/CCGeometry.js',
+        'platform/Sys.js',
+        'platform/CCConfig.js',
         'platform/miniFramework.js',
         'platform/CCCommon.js',
         'platform/ZipUtils.js',
@@ -35,12 +38,9 @@
         'platform/CCMacro.js',
         'platform/CCFileUtils.js',
         'platform/CCTypes.js',
-		'platform/CCAccelerometer.js',
+        'platform/CCAccelerometer.js',
         'platform/zlib.min.js',
         'platform/CCEGLView.js',
-        'cocoa/CCGeometry.js',
-        'platform/Sys.js',
-        'platform/CCConfig.js',
         'platform/CCImage.js',
         'kazmath/utility.js',
         'kazmath/vec2.js',
@@ -64,6 +64,8 @@
         'support/CCTGAlib.js',
         'support/CCPNGReader.js',
         'support/CCTIFFReader.js',
+        'support/component/CCComponent.js',
+        'support/component/CCComponentContainer.js',
         'shaders/CCShaders.js',
         'shaders/CCShaderCache.js',
         'shaders/CCGLProgram.js',
@@ -92,6 +94,7 @@
         'actions/CCActionTiledGrid.js',
         'actions/CCActionCatmullRom.js',
         'actions/CCActionPageTurn3D.js',
+        'actions/CCActionTween.js',
         'layers_scenes_transitions_nodes/CCScene.js',
         'layers_scenes_transitions_nodes/CCLayer.js',
         'layers_scenes_transitions_nodes/CCTransition.js',
@@ -107,7 +110,6 @@
         'label_nodes/CCLabelTTF.js',
         'label_nodes/CCLabelBMFont.js',
         'particle_nodes/CCParticleSystem.js',
-        'particle_nodes/CCParticleSystemQuad.js',
         'particle_nodes/CCParticleExamples.js',
         'particle_nodes/CCParticleBatchNode.js',
         'touch_dispatcher/CCTouchDelegateProtocol.js',
@@ -154,6 +156,8 @@
             '../extensions/GUI/CCControlExtension/CCControlColourPicker.js',
             '../extensions/GUI/CCControlExtension/CCControlSlider.js',
             '../extensions/GUI/CCControlExtension/CCControlSwitch.js',
+            '../extensions/GUI/CCControlExtension/CCControlStepper.js',
+            '../extensions/GUI/CCControlExtension/CCControlPotentiometer.js',
             '../extensions/GUI/CCScrollView/CCScrollView.js',
             '../extensions/GUI/CCScrollView/CCSorting.js',
             '../extensions/GUI/CCScrollView/CCTableView.js',
@@ -168,7 +172,50 @@
             '../extensions/CCBReader/CCBSequence.js',
             '../extensions/CCBReader/CCBRelativePositioning.js',
             '../extensions/CCBReader/CCBAnimationManager.js',
-            '../extensions/CCEditBox.js'
+            '../extensions/CCEditBox.js',
+            '../extensions/CocoStudio/Armature/utils/CCArmatureDefine.js',
+            '../extensions/CocoStudio/Armature/utils/CCDataReaderHelper.js',
+            '../extensions/CocoStudio/Armature/utils/CCSpriteFrameCacheHelper.js',
+            '../extensions/CocoStudio/Armature/utils/CCTransformHelp.js',
+            '../extensions/CocoStudio/Armature/utils/CCTweenFunction.js',
+            '../extensions/CocoStudio/Armature/utils/CCUtilMath.js',
+            '../extensions/CocoStudio/Armature/utils/CSArmatureDataManager.js',
+            '../extensions/CocoStudio/Armature/datas/CCDatas.js',
+            '../extensions/CocoStudio/Armature/display/CCBatchNode.js',
+            '../extensions/CocoStudio/Armature/display/CCDecorativeDisplay.js',
+            '../extensions/CocoStudio/Armature/display/CCDisplayFactory.js',
+            '../extensions/CocoStudio/Armature/display/CCDisplayManager.js',
+            '../extensions/CocoStudio/Armature/display/CCSkin.js',
+            '../extensions/CocoStudio/Armature/animation/CCProcessBase.js',
+            '../extensions/CocoStudio/Armature/animation/CCArmatureAnimation.js',
+            '../extensions/CocoStudio/Armature/animation/CCTween.js',
+            '../extensions/CocoStudio/Armature/physics/CCColliderDetector.js',
+            '../extensions/CocoStudio/Armature/CCArmature.js',
+            '../extensions/CocoStudio/Armature/CCBone.js'
+
+        ]);
+    }
+
+    if (c.loadPluginx != null && c.loadPluginx == true) {
+        engine = engine.concat([
+            //protocols
+            '../extensions/PluginX/protocols/Config.js',
+            '../extensions/PluginX/protocols/PluginUtils.js',
+            '../extensions/PluginX/protocols/PluginProtocol.js',
+            '../extensions/PluginX/protocols/ProtocolSocial.js',
+            //'../extensions/PluginX/protocols/ProtocolAds.js',
+            //'../extensions/PluginX/protocols/ProtocolAnalytics.js',
+            //'../extensions/PluginX/protocols/ProtocolIAP.js',
+            '../extensions/PluginX/protocols/PluginFactory.js',
+            '../extensions/PluginX/protocols/PluginManager.js',
+
+            //plugins
+            '../extensions/PluginX/plugins/SocialWeibo.js',
+            '../extensions/PluginX/plugins/SocialQQWeibo.js',
+            '../extensions/PluginX/plugins/SocialQzone.js',
+            '../extensions/PluginX/plugins/SocialTwitter.js',
+            '../extensions/PluginX/plugins/SocialFacebook.js'
+            //'../extensions/PluginX/plugins/AdsGoogle.js'
         ]);
     }
 
@@ -198,23 +245,47 @@
 
     }
 
+    var loadJsImg = document.getElementById("cocos2d_loadJsImg");
+    if(!loadJsImg){
+        loadJsImg = new Image();
+        loadJsImg.src = "data:image/gif;base64,R0lGODlhEAAQALMNAD8/P7+/vyoqKlVVVX9/fxUVFUBAQGBgYMDAwC8vL5CQkP///wAAAP///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAANACwAAAAAEAAQAAAEO5DJSau9OOvNex0IMnDIsiCkiW6g6BmKYlBFkhSUEgQKlQCARG6nEBwOgl+QApMdCIRD7YZ5RjlGpCUCACH5BAUAAA0ALAAAAgAOAA4AAAQ6kLGB0JA4M7QW0hrngRllkYyhKAYqKUGguAws0ypLS8JxCLQDgXAIDg+FRKIA6v0SAECCBpXSkstMBAAh+QQFAAANACwAAAAACgAQAAAEOJDJORAac6K1kDSKYmydpASBUl0mqmRfaGTCcQgwcxDEke+9XO2WkxQSiUIuAQAkls0n7JgsWq8RACH5BAUAAA0ALAAAAAAOAA4AAAQ6kMlplDIzTxWC0oxwHALnDQgySAdBHNWFLAvCukc215JIZihVIZEogDIJACBxnCSXTcmwGK1ar1hrBAAh+QQFAAANACwAAAAAEAAKAAAEN5DJKc4RM+tDyNFTkSQF5xmKYmQJACTVpQSBwrpJNteZSGYoFWjIGCAQA2IGsVgglBOmEyoxIiMAIfkEBQAADQAsAgAAAA4ADgAABDmQSVZSKjPPBEDSGucJxyGA1XUQxAFma/tOpDlnhqIYN6MEAUXvF+zldrMBAjHoIRYLhBMqvSmZkggAIfkEBQAADQAsBgAAAAoAEAAABDeQyUmrnSWlYhMASfeFVbZdjHAcgnUQxOHCcqWylKEohqUEAYVkgEAMfkEJYrFA6HhKJsJCNFoiACH5BAUAAA0ALAIAAgAOAA4AAAQ3kMlJq704611SKloCAEk4lln3DQgyUMJxCBKyLAh1EMRR3wiDQmHY9SQslyIQUMRmlmVTIyRaIgA7";
+
+        var canvasNode = document.getElementById(c.tag);
+        canvasNode.style.backgroundColor = "black";
+        canvasNode.parentNode.appendChild(loadJsImg);
+        
+        var canvasStyle = getComputedStyle?getComputedStyle(canvasNode):canvasNode.currentStyle;
+        loadJsImg.style.left = canvasNode.offsetLeft + (parseFloat(canvasStyle.width) - loadJsImg.width)/2 + "px";
+        loadJsImg.style.top = canvasNode.offsetTop + (parseFloat(canvasStyle.height) - loadJsImg.height)/2 + "px";
+        loadJsImg.style.position = "absolute";
+    }
+    
+    var updateLoading = function(p){
+        if(p>=1) {
+            loadJsImg.parentNode.removeChild(loadJsImg);
+        }
+    };
+
     var loaded = 0;
     var que = engine.concat(c.appFiles);
-//    que.push('main.js');
+    que.push('main.js');
+
     if (navigator.userAgent.indexOf("Trident/5") > -1) {
         //ie9
-        this.serial = -1;
+        var i = -1;
         var loadNext = function () {
-            var s = this.serial + 1;
-            if (s < que.length) {
+            i++;
+            if (i < que.length) {
                 var f = d.createElement('script');
-                f.src = que[s];
-                f.serial = s;
-                f.onload = loadNext;
+                f.src = que[i];
+                f.addEventListener('load',function(){
+                    loadNext();
+                    updateLoading(loaded / que.length);
+                    this.removeEventListener('load', arguments.callee, false);
+                },false);
                 d.body.appendChild(f);
-                p = s / (que.length - 1);
-                //TODO: code for updating progress bar
             }
+            updateLoading(i / (que.length - 1));
         };
         loadNext();
     }
@@ -223,14 +294,12 @@
             var s = d.createElement('script');
             s.async = false;
             s.src = f;
-            s.onload = function () {
+            s.addEventListener('load',function(){
                 loaded++;
-                p = loaded / que.length;
-                //TODO: code for updating progress bar
-            };
+                updateLoading(loaded / que.length);
+                this.removeEventListener('load', arguments.callee, false);
+            },false);
             d.body.appendChild(s);
-            que[i] = s;
-
         });
     }
 })();

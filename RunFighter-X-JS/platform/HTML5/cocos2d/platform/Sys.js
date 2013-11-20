@@ -42,7 +42,7 @@ try{
 */
 Object.defineProperties(sys,
 {
-	"capabilities" : {
+	capabilities : {
 		get : function(){
 			var capabilities = {"canvas":true};
 
@@ -51,7 +51,7 @@ Object.defineProperties(sys,
             if(cc.Browser.supportWebGL)
                 capabilities["opengl"] = true;
 
-			if( 'ontouchstart' in document.documentElement )
+			if( 'ontouchstart' in document.documentElement  || window.navigator.msPointerEnabled)
 				capabilities["touches"] = true;
 
 			else if( 'onmouseup' in document.documentElement )
@@ -68,7 +68,7 @@ Object.defineProperties(sys,
 		enumerable : true,
 		configurable : true
 	},
-	"os" : {
+	os : {
 		get : function() {
 			var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/i) ? true : false );
 			var isAndroid = navigator.userAgent.match(/android/i) || navigator.platform.match(/android/i) ? true : false;
@@ -90,14 +90,14 @@ Object.defineProperties(sys,
 		enumerable : true,
 		configurable : true
 	},
-	"platform" : {
+	platform : {
 		get : function(){
 			return "browser";
 		},
 		enumerable : true,
 		configurable : true
 	},
-	"version" : {
+	version : {
 		get : function(){
 			return cc.ENGINE_VERSION;
 		},

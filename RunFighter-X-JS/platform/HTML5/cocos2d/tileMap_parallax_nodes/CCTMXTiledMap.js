@@ -55,7 +55,7 @@ cc.TMX_ORIENTATION_ISO = 2;
  *
  * <p>Features: <br />
  * - Each tile will be treated as an cc.Sprite<br />
- * - The sprites are created on demand. They will be created only when you call "layer.tileAt(position)" <br />
+ * - The sprites are created on demand. They will be created only when you call "layer.getTileAt(position)" <br />
  * - Each tile can be rotated / moved / scaled / tinted / "opacitied", since each tile is a cc.Sprite<br />
  * - Tiles can be added/removed in runtime<br />
  * - The z-order of the tiles can be modified in runtime<br />
@@ -111,9 +111,13 @@ cc.TMXTiledMap = cc.Node.extend(/** @lends cc.TMXTiledMap# */{
     _tileProperties:null,
 
     ctor:function(){
-        this._super();
+        cc.Node.prototype.ctor.call(this);
         this._mapSize = cc.SizeZero();
         this._tileSize = cc.SizeZero();
+        this._properties = null;
+        this._objectGroups = null;
+        this._mapOrientation = null;
+        this._TMXLayers = null;
 
         this._tileProperties = [];
     },

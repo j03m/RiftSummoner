@@ -94,8 +94,8 @@ cc.WEBGL = 1;
 cc.drawingUtil = null;
 
 /**
- * main Canvas 2D Context of game engine
- * @type CanvasContext
+ * main Canvas 2D/3D Context of game engine
+ * @type CanvasRenderingContext2D|WebGLRenderingContext
  */
 cc.renderContext = null;
 
@@ -208,11 +208,12 @@ cc.setup = function (el, width, height) {
         cc.renderContext = cc.webglContext = cc.create3DContext(cc.canvas,{'stencil': true, 'preserveDrawingBuffer': true, 'alpha': false });
     if(cc.renderContext){
         cc.renderContextType = cc.WEBGL;
-        window.gl = cc.renderContext;
+        window.gl = cc.renderContext; // global variable declared in CCMacro.js
         cc.drawingUtil = new cc.DrawingPrimitiveWebGL(cc.renderContext);
         cc.TextureCache.getInstance()._initializingRenderer();
     } else {
         cc.renderContext = cc.canvas.getContext("2d");
+        cc.mainRenderContextBackup = cc.renderContext;
         cc.renderContextType = cc.CANVAS;
         cc.renderContext.translate(0, cc.canvas.height);
         cc.drawingUtil = new cc.DrawingPrimitiveCanvas(cc.renderContext);
@@ -226,16 +227,10 @@ cc.setup = function (el, width, height) {
 
     cc.setContextMenuEnable(false);
 
-    //binding window size
-    /*
-     cc.canvas.addEventListener("resize", function () {
-     if (!cc.firstRun) {
-     cc.Director.getInstance().addRegionToDirtyRegion(cc.rect(0, 0, cc.canvas.width, cc.canvas.height));
-     }
-     }, true);
-     */
-    if(cc.Browser.isMobile)
+    if(cc.Browser.isMobile){
         cc._addUserSelectStatus();
+        cc._addBottomTag();
+    }
 
     var hidden, visibilityChange;
     if (typeof document.hidden !== "undefined") {
@@ -275,30 +270,12 @@ cc._addUserSelectStatus = function(){
         +"-webkit-tap-highlight-color:rgba(0,0,0,0);}";
 };
 
-cc.bindingRendererClass = function(renderType){
-     if(renderType === cc.WEBGL){
-         cc.Node = cc.NodeWebGL;
-         cc.Sprite = cc.SpriteWebGL;
-         cc.SpriteBatchNode = cc.SpriteBatchNodeWebGL;
-         cc.TextureCache = cc.TextureCacheWebGL;
-         cc.ProgressTimer = cc.ProgressTimerWebGL;
-         cc.AtlasNode = cc.AtlasNodeWebGL;
-         cc.LabelTTF = cc.LabelTTFWebGL;
-         cc.LayerColor = cc.LayerColorWebGL;
-         cc.DrawNode = cc.DrawNodeWebGL;
-         cc.LabelAtlas = cc.LabelAtlasWebGL;
-     } else {
-         cc.Node = cc.NodeCanvas;
-         cc.Sprite = cc.SpriteCanvas;
-         cc.SpriteBatchNode = cc.SpriteBatchNodeCanvas;
-         cc.TextureCache = cc.TextureCacheCanvas;
-         cc.ProgressTimer = cc.ProgressTimerCanvas;
-         cc.AtlasNode = cc.AtlasNodeCanvas;
-         cc.LabelTTF = cc.LabelTTFCanvas;
-         cc.LayerColor = cc.LayerColorCanvas;
-         cc.DrawNode = cc.DrawNodeCanvas;
-         cc.LabelAtlas = cc.LabelAtlasCanvas;
-     }
+cc._addBottomTag = function () {
+    var bottom = document.createElement("div");
+    bottom.id = "bottom";
+    bottom.style.border = bottom.style.margin = bottom.style.padding = bottom.style.height = bottom.style.lineHeight = bottom.style.fontSize = "0px";
+    document.body.appendChild(bottom);
+    window.location.href="#bottom";
 };
 
 cc._isContextMenuEnable = false;
@@ -367,17 +344,17 @@ cc.Application = cc.Class.extend(/** @lends cc.Application# */{
         if (!this.applicationDidFinishLaunching())
             return 0;
 
-        var callback;
-        if (window.requestAnimFrame && this._animationInterval == 1 / 60) {
+        var callback, director = cc.Director.getInstance(), w = window;
+        if (w.requestAnimFrame && this._animationInterval == 1 / 60) {
             callback = function () {
-                cc.Director.getInstance().mainLoop();
-                window.requestAnimFrame(callback);
+                director.mainLoop();
+                w.requestAnimFrame(callback);
             };
-            cc.log(window.requestAnimFrame);
-            window.requestAnimFrame(callback);
+            //cc.log(window.requestAnimFrame);
+            w.requestAnimFrame(callback);
         } else {
             callback = function () {
-                cc.Director.getInstance().mainLoop();
+                director.mainLoop();
             };
             setInterval(callback, this._animationInterval * 1000);
         }
@@ -426,6 +403,27 @@ cc.Application.getCurrentLanguage = function () {
             break;
         case "ru":
             ret = cc.LANGUAGE_RUSSIAN;
+            break;
+        case "ko":
+            ret = cc.LANGUAGE_KOREAN;
+            break;
+        case "ja":
+            ret = cc.LANGUAGE_JAPANESE;
+            break;
+        case "hu":
+            ret = cc.LANGUAGE_HUNGARIAN;
+            break;
+        case "pt":
+            ret = cc.LANGUAGE_PORTUGUESE;
+            break;
+        case "ar":
+            ret = cc.LANGUAGE_ARABIC;
+            break;
+        case "no":
+            ret = cc.LANGUAGE_NORWEGIAN;
+            break;
+        case "pl":
+            ret = cc.LANGUAGE_POLISH;
             break;
     }
 

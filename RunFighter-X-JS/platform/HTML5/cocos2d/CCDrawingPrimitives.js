@@ -55,7 +55,7 @@ cc.DrawingPrimitive = cc.Class.extend(/** @lends cc.DrawingPrimitive# */{
 
     /**
      * returns render context of drawing primitive
-     * @return {CanvasContext}
+     * @return {CanvasRenderingContext2D}
      */
     getRenderContext:function () {
         return this._renderContext;
@@ -63,7 +63,7 @@ cc.DrawingPrimitive = cc.Class.extend(/** @lends cc.DrawingPrimitive# */{
 
     /**
      * Constructor
-     * @param {CanvasContext} renderContext
+     * @param {CanvasRenderingContext2D} renderContext
      */
     ctor:function (renderContext) {
         this._renderContext = renderContext;
@@ -172,7 +172,7 @@ cc.DrawingPrimitive = cc.Class.extend(/** @lends cc.DrawingPrimitive# */{
 
     /**
      * draw a catmull rom line
-     * @param {cc.PointArray} points
+     * @param {Array} points
      * @param {Number} segments
      */
     drawCatmullRom:function (points, segments) {
@@ -181,7 +181,7 @@ cc.DrawingPrimitive = cc.Class.extend(/** @lends cc.DrawingPrimitive# */{
 
     /**
      * draw a cardinal spline path
-     * @param {cc.PointArray} config
+     * @param {Array} config
      * @param {Number} tension
      * @param {Number} segments
      */
@@ -200,6 +200,7 @@ cc.DrawingPrimitiveCanvas = cc.DrawingPrimitive.extend(/** @lends cc.DrawingPrim
      * draws a point given x and y coordinate measured in points
      * @override
      * @param {cc.Point} point
+     * @param {Number} size
      */
     drawPoint:function (point, size) {
         if (!size) {
@@ -217,6 +218,7 @@ cc.DrawingPrimitiveCanvas = cc.DrawingPrimitive.extend(/** @lends cc.DrawingPrim
      * @override
      * @param {Array} points point of array
      * @param {Number} numberOfPoints
+     * @param {Number} size
      */
     drawPoints:function (points, numberOfPoints, size) {
         if (points == null) {
@@ -397,7 +399,7 @@ cc.DrawingPrimitiveCanvas = cc.DrawingPrimitive.extend(/** @lends cc.DrawingPrim
     /**
      * draw a CatmullRom curve
      * @override
-     * @param {cc.PointArray} points
+     * @param {Array} points
      * @param {Number} segments
      */
     drawCatmullRom:function (points, segments) {
@@ -407,7 +409,7 @@ cc.DrawingPrimitiveCanvas = cc.DrawingPrimitive.extend(/** @lends cc.DrawingPrim
     /**
      * draw a cardinal spline path
      * @override
-     * @param {cc.PointArray} config
+     * @param {Array} config
      * @param {Number} tension
      * @param {Number} segments
      */
@@ -473,7 +475,7 @@ cc.DrawingPrimitiveCanvas = cc.DrawingPrimitive.extend(/** @lends cc.DrawingPrim
 
     /**
      * draw a star
-     * @param {CanvasContext} ctx canvas context
+     * @param {CanvasRenderingContext2D} ctx canvas context
      * @param {Number} radius
      * @param {cc.Color3B|cc.Color4B|cc.Color4F} color
      */
@@ -513,7 +515,7 @@ cc.DrawingPrimitiveCanvas = cc.DrawingPrimitive.extend(/** @lends cc.DrawingPrim
 
     /**
      * draw a color ball
-     * @param {CanvasContext} ctx canvas context
+     * @param {CanvasRenderingContext2D} ctx canvas context
      * @param {Number} radius
      * @param {cc.Color3B|cc.Color4B|cc.Color4F} color
      */
@@ -551,8 +553,8 @@ cc.DrawingPrimitiveCanvas = cc.DrawingPrimitive.extend(/** @lends cc.DrawingPrim
     /**
      * set the drawing color with 4 unsigned bytes
      * @param {Number} r red value (0 to 255)
-     * @param {Number} r green value (0 to 255)
-     * @param {Number} r blue value (0 to 255)
+     * @param {Number} g green value (0 to 255)
+     * @param {Number} b blue value (0 to 255)
      * @param {Number} a Alpha value (0 to 255)
      */
     setDrawColor4B:function (r, g, b, a) {
@@ -563,8 +565,8 @@ cc.DrawingPrimitiveCanvas = cc.DrawingPrimitive.extend(/** @lends cc.DrawingPrim
     /**
      * set the drawing color with 4 floats
      * @param {Number} r red value (0 to 1)
-     * @param {Number} r green value (0 to 1)
-     * @param {Number} r blue value (0 to 1)
+     * @param {Number} g green value (0 to 1)
+     * @param {Number} b blue value (0 to 1)
      * @param {Number} a Alpha value (0 to 1)
      */
     setDrawColor4F:function (r, g, b, a) {
@@ -608,7 +610,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
         if (!ctx instanceof  WebGLRenderingContext)
             throw "Can't initialise DrawingPrimitiveWebGL. context need is WebGLRenderingContext";
 
-        this._super(ctx);
+        cc.DrawingPrimitive.prototype.ctor.call(this, ctx);
         this._color = new cc.Color4F(1.0, 1.0, 1.0, 1.0);
     },
 
@@ -653,6 +655,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
         glContext.vertexAttribPointer(cc.VERTEX_ATTRIB_POSITION, 2, glContext.FLOAT, false, 0, 0);
 
         glContext.drawArrays(glContext.POINTS, 0, 1);
+        glContext.deleteBuffer(pointBuffer);
 
         cc.INCREMENT_GL_DRAWS(1);
     },
@@ -681,6 +684,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
         glContext.vertexAttribPointer(cc.VERTEX_ATTRIB_POSITION, 2, glContext.FLOAT, false, 0, 0);
 
         glContext.drawArrays(glContext.POINTS, 0, points.length);
+        glContext.deleteBuffer(pointBuffer);
 
         cc.INCREMENT_GL_DRAWS(1);
     },
@@ -714,6 +718,8 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
         glContext.vertexAttribPointer(cc.VERTEX_ATTRIB_POSITION, 2, glContext.FLOAT, false, 0, 0);
 
         glContext.drawArrays(glContext.LINES, 0, 2);
+        glContext.deleteBuffer(pointBuffer);
+
         cc.INCREMENT_GL_DRAWS(1);
     },
 
@@ -747,7 +753,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
     },
 
     /**
-     * draws a poligon given a pointer to cc.Point coordiantes and the number of vertices measured in points.
+     * draws a polygon given a pointer to cc.Point coordiantes and the number of vertices measured in points.
      * @param {Array} vertices a pointer to cc.Point coordiantes
      * @param {Number} numOfVertices the number of vertices measured in points
      * @param {Boolean} closePolygon The polygon can be closed or open
@@ -770,6 +776,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
             glContext.drawArrays(glContext.LINE_LOOP, 0, vertices.length);
         else
             glContext.drawArrays(glContext.LINE_STRIP, 0, vertices.length);
+        glContext.deleteBuffer(pointBuffer);
 
         cc.INCREMENT_GL_DRAWS(1);
     },
@@ -796,6 +803,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
         glContext.bufferData(glContext.ARRAY_BUFFER, this._pointsToTypeArray(poli), glContext.STATIC_DRAW);
         glContext.vertexAttribPointer(cc.VERTEX_ATTRIB_POSITION, 2, glContext.FLOAT, false, 0, 0);
         glContext.drawArrays(glContext.TRIANGLE_FAN, 0, poli.length);
+        glContext.deleteBuffer(pointBuffer);
 
         cc.INCREMENT_GL_DRAWS(1);
     },
@@ -844,6 +852,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
         glContext.vertexAttribPointer(cc.VERTEX_ATTRIB_POSITION, 2, glContext.FLOAT, false, 0, 0);
 
         glContext.drawArrays(glContext.LINE_STRIP, 0, segments + additionalSegment);
+        glContext.deleteBuffer(pointBuffer);
 
         cc.INCREMENT_GL_DRAWS(1);
     },
@@ -881,6 +890,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
         glContext.vertexAttribPointer(cc.VERTEX_ATTRIB_POSITION, 2, glContext.FLOAT, false, 0, 0);
 
         glContext.drawArrays(glContext.LINE_STRIP, 0, segments + 1);
+        glContext.deleteBuffer(pointBuffer);
 
         cc.INCREMENT_GL_DRAWS(1);
     },
@@ -918,6 +928,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
         glContext.bufferData(glContext.ARRAY_BUFFER, vertices, glContext.STATIC_DRAW);
         glContext.vertexAttribPointer(cc.VERTEX_ATTRIB_POSITION, 2, glContext.FLOAT, false, 0, 0);
         glContext.drawArrays(glContext.LINE_STRIP, 0, segments + 1);
+        glContext.deleteBuffer(pointBuffer);
 
         cc.INCREMENT_GL_DRAWS(1);
     },
@@ -977,6 +988,7 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
         glContext.bufferData(glContext.ARRAY_BUFFER, vertices, glContext.STATIC_DRAW);
         glContext.vertexAttribPointer(cc.VERTEX_ATTRIB_POSITION, 2, glContext.FLOAT, false, 0, 0);
         glContext.drawArrays(glContext.LINE_STRIP, 0, segments + 1);
+        glContext.deleteBuffer(pointBuffer);
 
         cc.INCREMENT_GL_DRAWS(1);
     },
@@ -984,8 +996,8 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
     /**
      * set the drawing color with 4 unsigned bytes
      * @param {Number} r red value (0 to 255)
-     * @param {Number} r green value (0 to 255)
-     * @param {Number} r blue value (0 to 255)
+     * @param {Number} g green value (0 to 255)
+     * @param {Number} b blue value (0 to 255)
      * @param {Number} a Alpha value (0 to 255)
      */
     setDrawColor4B:function (r, g, b, a) {
@@ -998,8 +1010,8 @@ cc.DrawingPrimitiveWebGL = cc.DrawingPrimitive.extend({
     /**
      * set the drawing color with 4 floats
      * @param {Number} r red value (0 to 1)
-     * @param {Number} r green value (0 to 1)
-     * @param {Number} r blue value (0 to 1)
+     * @param {Number} g green value (0 to 1)
+     * @param {Number} b blue value (0 to 1)
      * @param {Number} a Alpha value (0 to 1)
      */
     setDrawColor4F:function (r, g, b, a) {

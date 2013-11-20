@@ -33,6 +33,12 @@ cc.ShakyTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.ShakyTiles3D# */{
     _randRange:0,
     _shakeZ:false,
 
+    ctor:function () {
+        cc.GridAction.prototype.ctor.call(this);
+        this._randRange = 0;
+        this._shakeZ = false;
+    },
+
     /**
      * initializes the action with a range, whether or not to shake Z vertices, a grid size, and duration
      * @param {Number} duration
@@ -42,7 +48,7 @@ cc.ShakyTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.ShakyTiles3D# */{
      * @return {Boolean}
      */
     initWithDuration:function (duration, gridSize, range, shakeZ) {
-        if (this._super(duration, gridSize)) {
+        if (cc.TiledGrid3DAction.prototype.initWithDuration.call(this, duration, gridSize)) {
             this._randRange = range;
             this._shakeZ = shakeZ;
             return true;
@@ -51,30 +57,34 @@ cc.ShakyTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.ShakyTiles3D# */{
     },
 
     update:function (time) {
-        for (var i = 0; i < this._gridSize.width; ++i) {
-            for (var j = 0; j < this._gridSize.height; ++j) {
-                var coords = this.originalTile(cc.p(i, j));
+        var locGridSize = this._gridSize, locRandRange = this._randRange;
+        var locPos = cc.p(0, 0);
+        for (var i = 0; i < locGridSize.width; ++i) {
+            for (var j = 0; j < locGridSize.height; ++j) {
+                locPos.x = i;
+                locPos.y = j;
+                var coords = this.originalTile(locPos);
 
                 // X
-                coords.bl.x += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                coords.br.x += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                coords.tl.x += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                coords.tr.x += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
+                coords.bl.x += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                coords.br.x += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                coords.tl.x += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                coords.tr.x += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
 
                 // Y
-                coords.bl.y += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                coords.br.y += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                coords.tl.y += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                coords.tr.y += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
+                coords.bl.y += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                coords.br.y += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                coords.tl.y += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                coords.tr.y += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
 
                 if (this._shakeZ) {
-                    coords.bl.z += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                    coords.br.z += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                    coords.tl.z += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                    coords.tr.z += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
+                    coords.bl.z += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                    coords.br.z += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                    coords.tl.z += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                    coords.tr.z += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
                 }
 
-                this.setTile(cc.p(i, j), coords);
+                this.setTile(locPos, coords);
             }
         }
     }
@@ -104,6 +114,13 @@ cc.ShatteredTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.ShatteredTiles3D
     _once:false,
     _shatterZ:false,
 
+    ctor:function () {
+        cc.GridAction.prototype.ctor.call(this);
+        this._randRange = 0;
+        this._shakeZ = false;
+        this._once = false;
+    },
+
     /**
      * initializes the action with a range, whether or not to shatter Z vertices, a grid size and duration
      * @param {Number} duration
@@ -113,7 +130,7 @@ cc.ShatteredTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.ShatteredTiles3D
      * @return {Boolean}
      */
     initWithDuration:function (duration, gridSize, range, shatterZ) {
-        if (this._super(duration, gridSize)) {
+        if (cc.TiledGrid3DAction.prototype.initWithDuration.call(this, duration, gridSize)) {
             this._once = false;
             this._randRange = range;
             this._shatterZ = shatterZ;
@@ -124,29 +141,33 @@ cc.ShatteredTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.ShatteredTiles3D
 
     update:function (time) {
         if (this._once === false) {
-            for (var i = 0; i < this._gridSize.width; ++i) {
-                for (var j = 0; j < this._gridSize.height; ++j) {
-                    var coords = this.originalTile(cc.p(i, j));
+            var locGridSize = this._gridSize, locRandRange = this._randRange;
+            var coords, locPos = cc.p(0, 0);
+            for (var i = 0; i < locGridSize.width; ++i) {
+                for (var j = 0; j < locGridSize.height; ++j) {
+                    locPos.x = i;
+                    locPos.y = j;
+                    coords = this.originalTile(locPos);
 
                     // X
-                    coords.bl.x += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                    coords.br.x += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                    coords.tl.x += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                    coords.tr.x += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
+                    coords.bl.x += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                    coords.br.x += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                    coords.tl.x += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                    coords.tr.x += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
 
                     // Y
-                    coords.bl.y += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                    coords.br.y += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                    coords.tl.y += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                    coords.tr.y += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
+                    coords.bl.y += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                    coords.br.y += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                    coords.tl.y += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                    coords.tr.y += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
 
                     if (this._shatterZ) {
-                        coords.bl.z += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                        coords.br.z += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                        coords.tl.z += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
-                        coords.tr.z += ( cc.rand() % (this._randRange * 2) ) - this._randRange;
+                        coords.bl.z += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                        coords.br.z += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                        coords.tl.z += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
+                        coords.tr.z += ( cc.rand() % (locRandRange * 2) ) - locRandRange;
                     }
-                    this.setTile(cc.p(i, j), coords);
+                    this.setTile(locPos, coords);
                 }
             }
             this._once = true;
@@ -172,9 +193,9 @@ cc.ShatteredTiles3D.create = function (duration, gridSize, range, shatterZ) {
  * A Tile composed of position, startPosition and delta
  * @Class
  * @constructor
- * @param {cc.Point} position
- * @param {cc.Point} startPosition
- * @param {cc.Size} delta
+ * @param {cc.Point} [position=cc.Point_ZERO]
+ * @param {cc.Point} [startPosition=cc.Point_ZERO]
+ * @param {cc.Size} [delta=cc.Point_ZERO]
  */
 cc.Tile = function (position, startPosition, delta) {
     this.position = position || cc.POINT_ZERO;
@@ -194,8 +215,11 @@ cc.ShuffleTiles = cc.TiledGrid3DAction.extend(/** @lends cc.ShuffleTiles# */{
     _tiles:null,
 
     ctor:function () {
+        cc.GridAction.prototype.ctor.call(this);
         this._tilesOrder = [];
         this._tiles = [];
+        this._seed = 0;
+        this._tilesCount = 0;
     },
 
     /**
@@ -206,7 +230,7 @@ cc.ShuffleTiles = cc.TiledGrid3DAction.extend(/** @lends cc.ShuffleTiles# */{
      * @return {Boolean}
      */
     initWithDuration:function (duration, gridSize, seed) {
-        if (this._super(duration, gridSize)) {
+        if (cc.TiledGrid3DAction.prototype.initWithDuration.call(this, duration, gridSize)) {
             this._seed = seed;
             this._tilesOrder = null;
             this._tiles = null;
@@ -234,9 +258,10 @@ cc.ShuffleTiles = cc.TiledGrid3DAction.extend(/** @lends cc.ShuffleTiles# */{
      * @param {cc.Size} pos
      */
     getDelta:function (pos) {
-        var idx = pos.width * this._gridSize.height + pos.height;
-        return cc.SizeMake(((this._tilesOrder[idx] / this._gridSize.height) - pos.width),
-            ((this._tilesOrder[idx] % this._gridSize.height) - pos.height));
+        var locGridSize = this._gridSize;
+        var idx = pos.width * locGridSize.height + pos.height;
+        return cc.size(((this._tilesOrder[idx] / locGridSize.height) - pos.width),
+            ((this._tilesOrder[idx] % locGridSize.height) - pos.height));
     },
 
     /**
@@ -248,17 +273,18 @@ cc.ShuffleTiles = cc.TiledGrid3DAction.extend(/** @lends cc.ShuffleTiles# */{
         var coords = this.originalTile(pos);
 
         var step = this._target.getGrid().getStep();
-        coords.bl.x += (tile.position.x * step.x);
-        coords.bl.y += (tile.position.y * step.y);
+        var locPosition = tile.position;
+        coords.bl.x += (locPosition.x * step.x);
+        coords.bl.y += (locPosition.y * step.y);
 
-        coords.br.x += (tile.position.x * step.x);
-        coords.br.y += (tile.position.y * step.y);
+        coords.br.x += (locPosition.x * step.x);
+        coords.br.y += (locPosition.y * step.y);
 
-        coords.tl.x += (tile.position.x * step.x);
-        coords.tl.y += (tile.position.y * step.y);
+        coords.tl.x += (locPosition.x * step.x);
+        coords.tl.y += (locPosition.y * step.y);
 
-        coords.tr.x += (tile.position.x * step.x);
-        coords.tr.y += (tile.position.y * step.y);
+        coords.tr.x += (locPosition.x * step.x);
+        coords.tr.y += (locPosition.y * step.y);
 
         this.setTile(pos, coords);
     },
@@ -268,9 +294,10 @@ cc.ShuffleTiles = cc.TiledGrid3DAction.extend(/** @lends cc.ShuffleTiles# */{
      * @param {cc.Node} target
      */
     startWithTarget:function (target) {
-        this._super(target);
+        cc.TiledGrid3DAction.prototype.startWithTarget.call(this, target);
+        var locGridSize = this._gridSize;
 
-        this._tilesCount = this._gridSize.width * this._gridSize.height;
+        this._tilesCount = locGridSize.width * locGridSize.height;
         this._tilesOrder = [];
 
         /**
@@ -282,26 +309,31 @@ cc.ShuffleTiles = cc.TiledGrid3DAction.extend(/** @lends cc.ShuffleTiles# */{
 
         this.shuffle(this._tilesOrder, this._tilesCount);
 
-        this._tiles = [];
+        var locTiles = [];
         var tileIndex = 0;
-        for (var i = 0; i < this._gridSize.width; ++i) {
-            for (var j = 0; j < this._gridSize.height; ++j) {
-                this._tiles[tileIndex] = new cc.Tile();
-                this._tiles[tileIndex].position = cc.p(i, j);
-                this._tiles[tileIndex].startPosition = cc.p(i, j);
-                this._tiles[tileIndex].delta = this.getDelta(cc.SizeMake(i, j));
+        for (var i = 0; i < locGridSize.width; ++i) {
+            for (var j = 0; j < locGridSize.height; ++j) {
+                locTiles[tileIndex] = new cc.Tile();
+                locTiles[tileIndex].position = cc.p(i, j);
+                locTiles[tileIndex].startPosition = cc.p(i, j);
+                locTiles[tileIndex].delta = this.getDelta(cc.size(i, j));
                 ++tileIndex;
             }
         }
+        this._tiles = locTiles;
     },
 
     update:function (time) {
-        var tileIndex = 0;
-        for (var i = 0; i < this._gridSize.width; ++i) {
-            for (var j = 0; j < this._gridSize.height; ++j) {
-                var selTile = this._tiles[tileIndex];
-                selTile.position = cc.pMult(cc.p(selTile.delta.width, selTile.delta.height), time);
-                this.placeTile(cc.p(i, j), selTile);
+        var tileIndex = 0, locGridSize = this._gridSize, locTiles = this._tiles;
+        var selTile, locPos = cc.p(0, 0);
+        for (var i = 0; i < locGridSize.width; ++i) {
+            for (var j = 0; j < locGridSize.height; ++j) {
+                locPos.x = i;
+                locPos.y = j;
+                selTile = locTiles[tileIndex];
+                selTile.position.x = selTile.delta.width * time;
+                selTile.position.y = selTile.delta.height * time;
+                this.placeTile(locPos, selTile);
                 ++tileIndex;
             }
         }
@@ -332,11 +364,11 @@ cc.FadeOutTRTiles = cc.TiledGrid3DAction.extend(/** @lends cc.FadeOutTRTiles# */
      * @param {Number} time
      */
     testFunc:function (pos, time) {
-        var n = cc.pMult(cc.p(this._gridSize.width, this._gridSize.height), time);
-        if ((n.x + n.y) == 0.0)
+        var locX = this._gridSize.width * time;
+        var locY = this._gridSize.height * time;
+        if ((locX + locY) == 0.0)
             return 1.0;
-
-        return Math.pow((pos.width + pos.height) / (n.x + n.y), 6);
+        return Math.pow((pos.width + pos.height) / (locX + locY), 6);
     },
 
     /**
@@ -380,15 +412,21 @@ cc.FadeOutTRTiles = cc.TiledGrid3DAction.extend(/** @lends cc.FadeOutTRTiles# */
     },
 
     update:function (time) {
-        for (var i = 0; i < this._gridSize.width; ++i) {
-            for (var j = 0; j < this._gridSize.height; ++j) {
-                var distance = this.testFunc(cc.SizeMake(i, j), time);
+        var locGridSize = this._gridSize;
+        var locPos = cc.p(0, 0), locSize = cc.size(0, 0), distance;
+        for (var i = 0; i < locGridSize.width; ++i) {
+            for (var j = 0; j < locGridSize.height; ++j) {
+                locPos.x = i;
+                locPos.y = j;
+                locSize.width = i;
+                locSize.height = j;
+                distance = this.testFunc(locSize, time);
                 if (distance == 0)
-                    this.turnOffTile(cc.p(i, j));
+                    this.turnOffTile(locPos);
                 else if (distance < 1)
-                    this.transformTile(cc.p(i, j), distance);
+                    this.transformTile(locPos, distance);
                 else
-                    this.turnOnTile(cc.p(i, j));
+                    this.turnOnTile(locPos);
             }
         }
     }
@@ -417,11 +455,12 @@ cc.FadeOutBLTiles = cc.FadeOutTRTiles.extend(/** @lends cc.FadeOutBLTiles# */{
      * @param {Number} time
      */
     testFunc:function (pos, time) {
-        var n = cc.pMult(cc.p(this._gridSize.width, this._gridSize.height), (1.0 - time));
+        var locX = this._gridSize.width * (1.0 - time);
+        var locY = this._gridSize.height * (1.0 - time);
         if ((pos.width + pos.height) == 0)
             return 1.0;
 
-        return Math.pow((n.x + n.y) / (pos.width + pos.height), 6);
+        return Math.pow((locX + locY) / (pos.width + pos.height), 6);
     }
 });
 
@@ -444,11 +483,10 @@ cc.FadeOutBLTiles.create = function (duration, gridSize) {
  */
 cc.FadeOutUpTiles = cc.FadeOutTRTiles.extend(/** @lends cc.FadeOutUpTiles# */{
     testFunc:function (pos, time) {
-        var n = cc.pMult(cc.p(this._gridSize.width, this._gridSize.height), time);
-        if (n.y == 0.0)
+        var locY = this._gridSize.height * time;
+        if (locY == 0.0)
             return 1.0;
-
-        return Math.pow(pos.height / n.y, 6);
+        return Math.pow(pos.height / locY, 6);
     },
 
     transformTile:function (pos, distance) {
@@ -483,11 +521,10 @@ cc.FadeOutUpTiles.create = function (duration, gridSize) {
  */
 cc.FadeOutDownTiles = cc.FadeOutUpTiles.extend(/** @lends cc.FadeOutDownTiles# */{
     testFunc:function (pos, time) {
-        var n = cc.pMult(cc.p(this._gridSize.width, this._gridSize.height), (1.0 - time));
+        var locY = this._gridSize.height * (1.0 - time);
         if (pos.height == 0)
             return 1.0;
-
-        return Math.pow(n.y / pos.height, 6);
+        return Math.pow(locY / pos.height, 6);
     }
 });
 
@@ -516,7 +553,10 @@ cc.TurnOffTiles = cc.TiledGrid3DAction.extend(/** @lends cc.TurnOffTiles# */{
     _tilesOrder:null,
 
     ctor:function () {
+        cc.GridAction.prototype.ctor.call(this);
         this._tilesOrder = [];
+        this._seed = null;
+        this._tilesCount = 0;
     },
 
     /** initializes the action with a random seed, the grid size and the duration
@@ -526,7 +566,7 @@ cc.TurnOffTiles = cc.TiledGrid3DAction.extend(/** @lends cc.TurnOffTiles# */{
      * @return {Boolean}
      */
     initWithDuration:function (duration, gridSize, seed) {
-        if (this._super(duration, gridSize)) {
+        if (cc.TiledGrid3DAction.prototype.initWithDuration.call(this, duration, gridSize)) {
             this._seed = seed;
             this._tilesOrder = null;
             return true;
@@ -565,14 +605,13 @@ cc.TurnOffTiles = cc.TiledGrid3DAction.extend(/** @lends cc.TurnOffTiles# */{
      * @param {cc.Node} target
      */
     startWithTarget:function (target) {
-        this._super(target);
+        cc.TiledGrid3DAction.prototype.startWithTarget.call(this, target);
 
         this._tilesCount = this._gridSize.width * this._gridSize.height;
-        this._tilesOrder = [];
-
+        var locTilesOrder = [];
         for (var i = 0; i < this._tilesCount; ++i)
-            this._tilesOrder[i] = i;
-
+            locTilesOrder[i] = i;
+        this._tilesOrder = locTilesOrder;
         this.shuffle(this._tilesOrder, this._tilesCount);
     },
 
@@ -580,10 +619,12 @@ cc.TurnOffTiles = cc.TiledGrid3DAction.extend(/** @lends cc.TurnOffTiles# */{
      * @param {Number} time
      */
     update:function (time) {
-        var l = 0 | (time * this._tilesCount);
+        var l = 0 | (time * this._tilesCount), locGridSize = this._gridSize;
+        var t,tilePos = cc.p(0,0);
         for (var i = 0; i < this._tilesCount; i++) {
-            var t = this._tilesOrder[i];
-            var tilePos = cc.p(0 | (t / this._gridSize.height), t % (0 | this._gridSize.height));
+            t = this._tilesOrder[i];
+            tilePos.x = 0 | (t / locGridSize.height);
+            tilePos.y = t % (0 | locGridSize.height);
             if (i < l)
                 this.turnOffTile(tilePos);
             else
@@ -596,12 +637,12 @@ cc.TurnOffTiles = cc.TiledGrid3DAction.extend(/** @lends cc.TurnOffTiles# */{
  * creates the action with a random seed, the grid size and the duration
  * @param {Number} duration
  * @param {cc.Size} gridSize
- * @param {Number|Null} seed
+ * @param {Number|Null} [seed=0]
  * @return {cc.TurnOffTiles}
  * @example
  * // example
  * // turnOffTiles without seed
- * var toff = cc.TurnOffTiles.create(this._duration, cc.size(x, y), );
+ * var toff = cc.TurnOffTiles.create(this._duration, cc.size(x, y));
  *
  * // turnOffTiles with seed
  * var toff = cc.TurnOffTiles.create(this._duration, cc.size(x, y), 0);
@@ -622,6 +663,13 @@ cc.WavesTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.WavesTiles3D# */{
     _waves:0,
     _amplitude:0,
     _amplitudeRate:0,
+
+    ctor:function () {
+        cc.GridAction.prototype.ctor.call(this);
+        this._waves = 0;
+        this._amplitude = 0;
+        this._amplitudeRate = 0;
+    },
 
     /**
      * get amplitude of waves
@@ -664,7 +712,7 @@ cc.WavesTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.WavesTiles3D# */{
      * @return {Boolean}
      */
     initWithDuration:function (duration, gridSize, waves, amplitude) {
-        if (this._super(duration, gridSize)) {
+        if (cc.TiledGrid3DAction.prototype.initWithDuration.call(this, duration, gridSize)) {
             this._waves = waves;
             this._amplitude = amplitude;
             this._amplitudeRate = 1.0;
@@ -674,15 +722,19 @@ cc.WavesTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.WavesTiles3D# */{
     },
 
     update:function (time) {
-        for (var i = 0; i < this._gridSize.width; i++) {
-            for (var j = 0; j < this._gridSize.height; j++) {
-                var coords = this.originalTile(cc.p(i, j));
-                coords.bl.z = (Math.sin(time * Math.PI * this._waves * 2 +
-                    (coords.bl.y + coords.bl.x) * 0.01) * this._amplitude * this._amplitudeRate);
+        var locGridSize = this._gridSize, locWaves = this._waves, locAmplitude = this._amplitude, locAmplitudeRate = this._amplitudeRate;
+        var locPos = cc.p(0, 0), coords;
+        for (var i = 0; i < locGridSize.width; i++) {
+            for (var j = 0; j < locGridSize.height; j++) {
+                locPos.x = i;
+                locPos.y = j;
+                coords = this.originalTile(locPos);
+                coords.bl.z = (Math.sin(time * Math.PI * locWaves * 2 +
+                    (coords.bl.y + coords.bl.x) * 0.01) * locAmplitude * locAmplitudeRate);
                 coords.br.z = coords.bl.z;
                 coords.tl.z = coords.bl.z;
                 coords.tr.z = coords.bl.z;
-                this.setTile(cc.p(i, j), coords);
+                this.setTile(locPos, coords);
             }
         }
     }
@@ -694,7 +746,7 @@ cc.WavesTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.WavesTiles3D# */{
  * @param {cc.Size} gridSize
  * @param {Number} waves
  * @param {Number} amplitude
- * @return {cc.FadeOutDownTiles}
+ * @return {cc.WavesTiles3D}
  */
 cc.WavesTiles3D.create = function (duration, gridSize, waves, amplitude) {
     var action = new cc.WavesTiles3D();
@@ -711,6 +763,13 @@ cc.JumpTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.JumpTiles3D# */{
     _jumps:0,
     _amplitude:0,
     _amplitudeRate:0,
+
+    ctor:function () {
+        cc.GridAction.prototype.ctor.call(this);
+        this._jumps = 0;
+        this._amplitude = 0;
+        this._amplitudeRate = 0;
+    },
 
     /**
      * get amplitude of the sin
@@ -752,7 +811,7 @@ cc.JumpTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.JumpTiles3D# */{
      * @param {Number} amplitude
      */
     initWithDuration:function (duration, gridSize, numberOfJumps, amplitude) {
-        if (this._super(duration, gridSize)) {
+        if (cc.TiledGrid3DAction.prototype.initWithDuration.call(this, duration, gridSize)) {
             this._jumps = numberOfJumps;
             this._amplitude = amplitude;
             this._amplitudeRate = 1.0;
@@ -765,9 +824,16 @@ cc.JumpTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.JumpTiles3D# */{
         var sinz = (Math.sin(Math.PI * time * this._jumps * 2) * this._amplitude * this._amplitudeRate );
         var sinz2 = (Math.sin(Math.PI * (time * this._jumps * 2 + 1)) * this._amplitude * this._amplitudeRate );
 
-        for (var i = 0; i < this._gridSize.width; i++) {
-            for (var j = 0; j < this._gridSize.height; j++) {
-                var coords = this.originalTile(cc.p(i, j));
+        var locGridSize = this._gridSize;
+        var locGrid = this._target.getGrid();
+        var coords, locPos = cc.p(0, 0);
+        for (var i = 0; i < locGridSize.width; i++) {
+            for (var j = 0; j < locGridSize.height; j++) {
+                locPos.x = i;
+                locPos.y = j;
+                //hack for html5
+                //var coords = this.originalTile(cc.p(i, j));
+                coords = locGrid.originalTile(locPos);
 
                 if (((i + j) % 2) == 0) {
                     coords.bl.z += sinz;
@@ -780,8 +846,9 @@ cc.JumpTiles3D = cc.TiledGrid3DAction.extend(/** @lends cc.JumpTiles3D# */{
                     coords.tl.z += sinz2;
                     coords.tr.z += sinz2;
                 }
-
-                this.setTile(cc.p(i, j), coords);
+                //hack for html5
+                //this.setTile(cc.p(i, j), coords);
+                locGrid.setTile(locPos, coords);
             }
         }
     }
@@ -810,6 +877,12 @@ cc.SplitRows = cc.TiledGrid3DAction.extend(/** @lends cc.SplitRows# */{
     _rows:0,
     _winSize:null,
 
+    ctor:function () {
+        cc.GridAction.prototype.ctor.call(this);
+        this._rows = 0;
+        this._winSize = null;
+    },
+
     /**
      * initializes the action with the number of rows to split and the duration
      * @param {Number} duration
@@ -818,29 +891,31 @@ cc.SplitRows = cc.TiledGrid3DAction.extend(/** @lends cc.SplitRows# */{
      */
     initWithDuration:function (duration, rows) {
         this._rows = rows;
-
-        return this._super(duration, cc.SizeMake(1, this._rows));
+        return cc.TiledGrid3DAction.prototype.initWithDuration.call(this, duration, cc.size(1, rows));
     },
 
     update:function (time) {
-        for (var j = 0; j < this._gridSize.height; ++j) {
-            var coords = this.originalTile(cc.p(0, j));
-            var direction = 1;
+        var locGridSize = this._gridSize, locWinSizeWidth = this._winSize.width;
+        var coords, direction, locPos = cc.p(0, 0);
+        for (var j = 0; j < locGridSize.height; ++j) {
+            locPos.y = j;
+            coords = this.originalTile(locPos);
+            direction = 1;
 
             if ((j % 2 ) == 0)
                 direction = -1;
 
-            coords.bl.x += direction * this._winSize.width * time;
-            coords.br.x += direction * this._winSize.width * time;
-            coords.tl.x += direction * this._winSize.width * time;
-            coords.tr.x += direction * this._winSize.width * time;
+            coords.bl.x += direction * locWinSizeWidth * time;
+            coords.br.x += direction * locWinSizeWidth * time;
+            coords.tl.x += direction * locWinSizeWidth * time;
+            coords.tr.x += direction * locWinSizeWidth * time;
 
-            this.setTile(cc.p(0, j), coords);
+            this.setTile(locPos, coords);
         }
     },
 
     startWithTarget:function (target) {
-        this._super(target);
+        cc.TiledGrid3DAction.prototype.startWithTarget.call(this, target);
         this._winSize = cc.Director.getInstance().getWinSizeInPixels();
     }
 });
@@ -866,6 +941,11 @@ cc.SplitCols = cc.TiledGrid3DAction.extend(/** @lends cc.SplitCols# */{
     _cols:0,
     _winSize:null,
 
+    ctor:function () {
+        cc.GridAction.prototype.ctor.call(this);
+        this._cols = 0;
+        this._winSize = null;
+    },
     /**
      * initializes the action with the number of columns to split and the duration
      * @param {Number} duration
@@ -874,36 +954,42 @@ cc.SplitCols = cc.TiledGrid3DAction.extend(/** @lends cc.SplitCols# */{
      */
     initWithDuration:function (duration, cols) {
         this._cols = cols;
-        return this._super(duration, cc.SizeMake(this._cols, 1));
+        return cc.TiledGrid3DAction.prototype.initWithDuration.call(this, duration, cc.size(cols, 1));
     },
 
     update:function (time) {
-        for (var i = 0; i < this._gridSize.width; ++i) {
-            var coords = this.originalTile(cc.p(i, 0));
-            var direction = 1;
+        var locGridSizeWidth = this._gridSize.width, locWinSizeHeight = this._winSize.height;
+        var coords, direction, locPos = cc.p(0, 0);
+        for (var i = 0; i < locGridSizeWidth; ++i) {
+            locPos.x = i;
+            coords = this.originalTile(locPos);
+            direction = 1;
 
             if ((i % 2 ) == 0)
                 direction = -1;
 
-            coords.bl.y += direction * this._winSize.height * time;
-            coords.br.y += direction * this._winSize.height * time;
-            coords.tl.y += direction * this._winSize.height * time;
-            coords.tr.y += direction * this._winSize.height * time;
+            coords.bl.y += direction * locWinSizeHeight * time;
+            coords.br.y += direction * locWinSizeHeight * time;
+            coords.tl.y += direction * locWinSizeHeight * time;
+            coords.tr.y += direction * locWinSizeHeight * time;
 
-            this.setTile(cc.p(i, 0), coords);
+            this.setTile(locPos, coords);
         }
     },
 
+    /**
+     * @param {cc.Node} target
+     */
     startWithTarget:function (target) {
-        this._super(target);
+        cc.TiledGrid3DAction.prototype.startWithTarget.call(this, target);
         this._winSize = cc.Director.getInstance().getWinSizeInPixels();
     }
 });
 
 /**
- *
- * @param duration
- * @param cols
+ * creates the action with the number of columns to split and the duration
+ * @param {Number} duration
+ * @param {Number} cols
  * @return {cc.SplitCols}
  */
 cc.SplitCols.create = function (duration, cols) {
@@ -911,4 +997,3 @@ cc.SplitCols.create = function (duration, cols) {
     action.initWithDuration(duration, cols);
     return action;
 };
-

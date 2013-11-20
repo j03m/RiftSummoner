@@ -138,10 +138,18 @@ cc.SpriteFrameCache = cc.Class.extend(/** @lends cc.SpriteFrameCache# */{
 
                 if(cc.renderContextType === cc.CANVAS && spriteFrame.isRotated()){
                     //clip to canvas
-                    var tempTexture = cc.cutRotateImageToCanvas(spriteFrame.getTexture(), spriteFrame.getRect());
-                    var rect = spriteFrame.getRect();
-                    spriteFrame.setRect(cc.rect(0, 0, rect.width, rect.height));
-                    spriteFrame.setTexture(tempTexture);
+                    var locTexture = spriteFrame.getTexture();
+                    if(locTexture.isLoaded()){
+                        var tempElement = spriteFrame.getTexture().getHtmlElementObj();
+                        tempElement = cc.cutRotateImageToCanvas(tempElement, spriteFrame.getRect());
+                        var tempTexture = new cc.Texture2D();
+                        tempTexture.initWithElement(tempElement);
+                        tempTexture.handleLoadedTexture();
+                        spriteFrame.setTexture(tempTexture);
+
+                        var rect = spriteFrame.getRect();
+                        spriteFrame.setRect(cc.rect(0, 0, rect.width, rect.height));
+                    }
                 }
 
                 // add sprite frame
@@ -153,8 +161,10 @@ cc.SpriteFrameCache = cc.Class.extend(/** @lends cc.SpriteFrameCache# */{
     /**
      * Adds multiple Sprite Frames from a json file. A texture will be loaded automatically.
      * @param {object} jsonData
+     * @deprecated
      */
     addSpriteFramesWithJson:function (jsonData) {
+        cc.log("addSpriteFramesWithJson is deprecated, because Json format doesn't support on JSB. Use XML format instead");
         var dict = jsonData;
         var texturePath = "";
 
@@ -187,8 +197,9 @@ cc.SpriteFrameCache = cc.Class.extend(/** @lends cc.SpriteFrameCache# */{
      * cc.SpriteFrameCache.getInstance().addSpriteFrames(s_grossiniPlist);
      */
     addSpriteFrames:function (plist, texture) {
-        var fullPath = cc.FileUtils.getInstance().fullPathForFilename(plist);
-        var dict = cc.FileUtils.getInstance().dictionaryWithContentsOfFileThreadSafe(fullPath);
+        var fileUtils = cc.FileUtils.getInstance();
+        var fullPath = fileUtils.fullPathForFilename(plist);
+        var dict = fileUtils.dictionaryWithContentsOfFileThreadSafe(fullPath);
 
         switch (arguments.length) {
             case 1:
@@ -202,7 +213,7 @@ cc.SpriteFrameCache = cc.Class.extend(/** @lends cc.SpriteFrameCache# */{
                     }
                     if (texturePath != "") {
                         // build texture path relative to plist file
-                        texturePath = cc.FileUtils.getInstance().fullPathFromRelativeFile(texturePath, plist);
+                        texturePath = fileUtils.fullPathFromRelativeFile(texturePath, plist);
                     } else {
                         // build texture path by replacing file extension
                         texturePath = plist;
@@ -224,7 +235,8 @@ cc.SpriteFrameCache = cc.Class.extend(/** @lends cc.SpriteFrameCache# */{
                 }
                 break;
             case 2:
-                if ((texture instanceof cc.Texture2D) || (texture instanceof HTMLImageElement) || (texture instanceof HTMLCanvasElement)) {
+                //if ((texture instanceof cc.Texture2D) || (texture instanceof HTMLImageElement) || (texture instanceof HTMLCanvasElement)) {
+                if (texture instanceof cc.Texture2D) {
                     /** Adds multiple Sprite Frames from a plist file. The texture will be associated with the created sprite frames. */
                     this._addSpriteFramesWithDictionary(dict, texture);
                 } else {
@@ -304,8 +316,9 @@ cc.SpriteFrameCache = cc.Class.extend(/** @lends cc.SpriteFrameCache# */{
      * @param {String} plist plist filename
      */
     removeSpriteFramesFromFile:function (plist) {
-        var path = cc.FileUtils.getInstance().fullPathFromRelativePath(plist);
-        var dict = cc.FileUtils.getInstance().dictionaryWithContentsOfFileThreadSafe(path);
+        var fileUtils = cc.FileUtils.getInstance();
+        var path = fileUtils.fullPathForFilename(plist);
+        var dict = fileUtils.dictionaryWithContentsOfFileThreadSafe(path);
 
         this._removeSpriteFramesFromDictionary(dict);
 
