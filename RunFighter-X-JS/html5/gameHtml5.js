@@ -46,7 +46,12 @@ var cocos2dApp = cc.Application.extend({
     }
 });
 
-
 var myApp = new cocos2dApp(MainGame.scene);
 
 
+window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
+    console.log("Error occured: " + errorMsg);
+    console.log("url:" + url);
+    console.log("line:" + lineNumber);
+    return false;
+}
