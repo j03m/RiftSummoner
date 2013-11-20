@@ -1,0 +1,35 @@
+{
+  "name": "hotr",
+  "version": "0.0.1",
+  "description": "my game",
+  "main": "cocos2d-html5.min.js",
+  "dependencies": {
+    "assert": "~0.4.9",
+    "async": "~0.2.9",
+    "canvas": "~1.0.1",
+    "connect": "~2.7.11",
+    "express": "~3.4.4",
+    "formidable": "~1.0.13",
+    "hiredis": "~0.1.15",
+    "kik-cards": "~0.1.1",
+    "mkdirp": "~0.3.5",
+    "node-gyp": "~0.9.1",
+    "node-uuid": "~1.4.1",
+    "redis": "~0.9.0",
+    "request": "~2.20.0",
+    "requirejs": "~2.1.9",
+    "socket.io": "~0.9.16",
+    "underscore": "~1.5.2",
+    "vows": "~0.7.0",
+    "uglify-js": "~2.4.3",
+    "zerver": "~0.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "none",
+    "start": "node server.js"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD"
+}
