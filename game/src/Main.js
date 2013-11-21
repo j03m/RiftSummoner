@@ -138,7 +138,7 @@ var MainGame = cc.Layer.extend({
     },
     authorizeNewPlayer:function(){
         jc.log(['mainLayer'], "authorizeNewPlayer");
-        cards.kik.anonymousSign({"signme":true}, function (signedData, token, host) {
+        cards.kik.anonymousSign("signme", function (signedData, token, host) {
             //send these to us, for authtoken
             jc.log(['mainLayer'], "anonymousSign");
             jc.log(['mainLayer'], "signedData:" + JSON.stringify(signedData));

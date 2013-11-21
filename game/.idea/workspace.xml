@@ -184,6 +184,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="cards.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cards.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2952" column="23" selection-start="87482" selection-end="87495" vertical-scroll-proportion="-2.3181818">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="dev.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -211,10 +220,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="13" selection-start="3603" selection-end="3603" vertical-scroll-proportion="-6.16">
+            <state line="142" column="47" selection-start="4889" selection-end="4889" vertical-scroll-proportion="0.5851319">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -222,10 +231,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JCTrace.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JCTrace.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCTrace.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="14" selection-start="258" selection-end="267" vertical-scroll-proportion="0.52747256">
+            <state line="17" column="14" selection-start="258" selection-end="267" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -235,15 +244,6 @@
         <entry file="file://$PROJECT_DIR$/node_modules/kik-cards/kik-cards.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kik.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/kik-cards/lib/kik.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -259,7 +259,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/resource.js" />
         <option value="$PROJECT_DIR$/html5/game.js" />
         <option value="$PROJECT_DIR$/src/blobOperations.js" />
         <option value="$PROJECT_DIR$/hotr.min.js" />
@@ -270,11 +269,12 @@
         <option value="$PROJECT_DIR$/src/ArenaGame.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCScrollingLayer.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCTrace.js" />
-        <option value="$PROJECT_DIR$/src/Main.js" />
         <option value="$PROJECT_DIR$/zerver/blobApi.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/html5/gameProd.js" />
         <option value="$PROJECT_DIR$/html5/gameHtml5.js" />
+        <option value="$PROJECT_DIR$/src/cards.js" />
+        <option value="$PROJECT_DIR$/src/Main.js" />
       </list>
     </option>
   </component>
@@ -704,13 +704,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCScrollingLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="33" selection-start="1333" selection-end="1333" vertical-scroll-proportion="-4.098039">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/blobOperationsServer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -749,13 +742,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/kik-cards/lib/kik.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/kik-cards/kik-cards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -802,19 +788,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.js">
+    <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCTrace.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="13" selection-start="3603" selection-end="3603" vertical-scroll-proportion="-6.16">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="17" column="14" selection-start="258" selection-end="267" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCTrace.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/kik-cards/kik-cards.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="14" selection-start="258" selection-end="267" vertical-scroll-proportion="0.52747256">
+        <state line="2" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2952" column="23" selection-start="87482" selection-end="87495" vertical-scroll-proportion="-2.3181818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="47" selection-start="4889" selection-end="4889" vertical-scroll-proportion="0.5851319">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
