@@ -1,4 +1,4 @@
-var kikcards = require('kik-cards');
+var kikcards = require('kik-cards').kik;
 var kikMock = require('../private/kikServerMock.js');
 var blobLogic = require('../private/blobOperationsServer.js');
 var config = require('../html5/config.js').hotrConfig;

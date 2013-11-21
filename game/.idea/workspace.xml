@@ -65,7 +65,7 @@
     <file path="/Loading.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384548425602" ignored="false" />
     <file path="/JcUiElements.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384483460257" ignored="false" />
     <file path="/JCLayerManager.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384489036600" ignored="false" />
-    <file path="/blobApi.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385054451401" ignored="false" />
+    <file path="/blobApi.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385054587948" ignored="false" />
     <file path="/CCLoader.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384532606253" ignored="false" />
     <file path="/JCRequestLite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384535144829" ignored="false" />
     <file path="/levelLogic.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384665980586" ignored="false" />
@@ -157,15 +157,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ArenaGame.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ArenaGame.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="48" selection-start="2808" selection-end="2808" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -186,15 +177,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JCScrollingLayer.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCScrollingLayer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="33" selection-start="1333" selection-end="1333" vertical-scroll-proportion="-4.098039">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html5/config.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -207,7 +189,25 @@
       <file leaf-file-name="blobApi.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="28" selection-start="437" selection-end="437" vertical-scroll-proportion="0.47511312">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kik-cards.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/kik-cards/kik-cards.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kik.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/kik-cards/lib/kik.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -690,20 +690,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/html5/gameProd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="27" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kikClientMock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="42" selection-start="267" selection-end="267" vertical-scroll-proportion="-3.8235295">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="9" selection-start="565" selection-end="676" vertical-scroll-proportion="-13.75">
@@ -797,9 +783,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/kik-cards/lib/kik.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/kik-cards/kik-cards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="28" selection-start="437" selection-end="437" vertical-scroll-proportion="0.47511312">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
