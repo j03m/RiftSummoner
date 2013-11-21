@@ -1,3 +1,6 @@
+var dirImg = "art/";
+var dirMusic = "sounds/";
+
 var arenaSheet = dirImg + "arena.png";
 var shadowPlist = dirImg + "shadowSheet.plist";
 var shadowPng = dirImg + "shadowSheet.png";

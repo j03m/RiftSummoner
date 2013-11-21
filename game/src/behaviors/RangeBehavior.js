@@ -91,7 +91,9 @@ RangeBehavior.prototype.doMissile = function(){
         if (this.owner.gameObject.missleTarget == "base"){
             targetPos = this.locked.getBasePosition()
         }else{
-            targetPos = this.locked.getPosition()
+            targetPos = this.locked.getBasePosition();
+            var targetTr = this.locked.getTextureRect();
+            targetPos.y += targetTr.height/2;
         }
 
 
@@ -117,7 +119,7 @@ RangeBehavior.prototype.doMissile = function(){
 
 RangeBehavior.prototype.handleRangeIdle = function(dt){
     //always lock on who-ever is closest
-    this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam);
+    this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam());
 
     if (this.locked){
         this.setState('move', 'move');

@@ -53,9 +53,9 @@ hotr.blobOperations.createNewPlayer = function(signedData, userToken, host, call
 }
 
 hotr.blobOperations.getNewAuthTokenAndBlob = function(signedData, userToken, host, callback){
-    blobApi.getNewAuthTokenAndBlob(signedData, userToken, host, function(){
+    blobApi.getNewAuthTokenAndBlob(signedData, userToken, host, function(authToken, blob){
         hotr.playerBlob = blob;
-        hotr.setAuthToken(token);
+        hotr.blobOperations.setAuthToken(authToken);
         callback();
     });
 }

@@ -1,26 +1,11 @@
-
-var dirImg = "art/";
-var dirMusic = "sounds/";
-
-var MW = MW || {};
-
-
-var hotrSrc = [
-    '../zerver/blobApi.js',
-    '../hotr.min.js',
-    'gameHtml5.js'
-]
-
-window.localStorage.clear();
-
-if (hotrConfig.browserDev){
-    hotrSrc.unshift('../src/kikClientMock.js')
-}else{
-    hotrSrc.unshift('http://cdn.kik.com/cards/0/cards.js')
-}
+cards.ready(function(){
+    var hotrSrc = [
+        '../zerver/blobApi.js',
+        '../hotr.min.js',
+        'gameHtml5.js'
+    ]
 
 
-(function () {
     var d = document;
     var c = {
         COCOS2D_DEBUG:2, //0 to turn debug off, 1 for basic debug, and 2 for full debug
@@ -65,4 +50,6 @@ if (hotrConfig.browserDev){
         s.id = 'cocos2d-html5';
         //else if single file specified, load singlefile
     });
-})();
+
+
+});
