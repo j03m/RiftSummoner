@@ -30,7 +30,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         }
     },
     setIndex: function(val){
-        console.log("set on: "+val);
+        //console.log("set on: "+val);
         this.doUpdate = false;
         this.centerOn(this.sprites[val]);
 
@@ -57,27 +57,27 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         }
 
         if (type == jc.touchBegan){
-            console.log("touchbegan");
+            //console.log("touchbegan");
             this.initialTouch = touch;
             this.scrollDistance = undefined;
         }
 
         if (type == jc.touchEnded && this.initialTouch){
-            console.log("touchend");
+            //console.log("touchend");
             this.fling(touch, sprites);
         }
 
         if (type == jc.touchMoved && this.initialTouch){
-            console.log("touchmove");
+            //console.log("touchmove");
             this.scroll(touch);
         }
         return true;
     },
     fling:function(touch, sprites){
         this.isMoving=false;
-        console.log("fling");
+        //console.log("fling");
         if (this.scrollDistance == undefined){ //normal touch
-            console.log("fling touch");
+            //console.log("fling touch");
             if (sprites[0]){
                 var selected = this.sprites.indexOf(sprites[0]);
                 this.setIndex(selected);
@@ -96,7 +96,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             this.doUpdate = false;
             this.isMoving = false;
             this.setIndex(0);
-            console.log("edge");
+            //console.log("edge");
             return true;
         }
 
@@ -107,7 +107,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             this.isMoving = false;
             this.setIndex(this.sprites.length-1);
             //this.runEndingAdjustment(cc.p(this.midPoint-lsX , 0));
-            console.log("edge2");
+            //console.log("edge2");
             return true;
         }
         return false;
@@ -116,13 +116,13 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         var pos = sprite.getPosition();
         var worldPos = this.convertToWorldSpace(pos);
         var augment = this.midPoint - worldPos.x;
-        console.log("Center needs:" + augment);
+        //console.log("Center needs:" + augment);
         this.runEndingAdjustment(cc.p(augment,0));
     },
     runEndingAdjustment:function(augment){
         if (!this.endAdjustmentRunning){
             this.endAdjustmentRunning = true;
-            console.log("runEndingAdjustment:" + this.doUpdate);
+            //console.log("runEndingAdjustment:" + this.doUpdate);
             var func = cc.CallFunc.create(this.raiseSelected.bind(this));
             var action = cc.MoveBy.create(jc.defaultTransitionTime/2, augment);
             var seq = cc.Sequence.create(action, func);
@@ -131,7 +131,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
 
     },
     raiseSelected:function(){
-        console.log("raiseSelected:" + this.doUpdate);
+        //console.log("raiseSelected:" + this.doUpdate);
         this.endAdjustmentRunning = false;
         for(var i =0;i<this.sprites.length;i++){ //todo: change to math based
             var sprite = this.sprites[i];
@@ -144,7 +144,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
                     this.selectedIndex = i;
                     this.def.selectionCallback(i, sprite, data);
                 }
-                console.log("Found:"+i);
+                //console.log("Found:"+i);
                 return;
             }
         }
@@ -159,7 +159,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     },
     update:function(dt){
         if (this.doUpdate){
-            console.log("updating");
+            //console.log("updating");
             if (!this.scrollDistance){
                 this.doUpdate = false;
                 return;
@@ -189,7 +189,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     adjust:function(){
         var min=-1;
         var closest;
-        console.log("adjust");
+        //console.log("adjust");
         for(var i =0;i<this.sprites.length;i++){ //todo: change to math based
             var sprite = this.sprites[i];
             var bb = sprite.getBoundingBox();
@@ -209,7 +209,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         this.setIndex(closest);
     },
     scroll:function(touch){
-        console.log("scroll");
+        //console.log("scroll");
         var bb = this.getBoundingBox();
         var moveDistance = cc.pSub(touch, this.initialTouch);
         var change = cc.p(moveDistance.x,0 );

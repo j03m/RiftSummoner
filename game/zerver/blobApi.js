@@ -35,7 +35,13 @@ exports.saveBlob =  function(authToken, blob, callback){
 
 exports.createNewPlayer = function(signedData, userToken, host, callback){
     //first, check if this player actually exists, if I have a blob for this player, throw an exception
+    console.log("pre-kik-verify")
     kikcards.verify(signedData, userToken, host, function(err, res){
+        console.log("post-kik-verify");
+        console.log("data:" + JSON.stringify(signedData));
+        console.log("userToken:" + JSON.stringify(userToken));
+        console.log("host:" + JSON.stringify(host));
+
         if (err){
             throw "Kik verification failed: " + err;
         }else{

@@ -14,7 +14,8 @@ var tracers = {
 	'memory':0,
 	'tests':0,
 	'requestManager':0,
-    'gameplay':0
+    'gameplay':0 ,
+    'mainLayer':1
 };
 
 jc.log = function(categories, msg){

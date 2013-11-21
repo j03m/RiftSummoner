@@ -93,7 +93,7 @@ var ArenaGame = jc.WorldLayer.extend({
     setUp:function(){
         var sprite;
 
-        //todo refactor these loops into 1 func
+        //todo refactor these loops into 1 funcN
         for (var i =0; i<this.teamASprites.length;i++){
             if (this.teamASprites[i])
             {

@@ -110,8 +110,10 @@ var MainGame = cc.Layer.extend({
         });
     },
     onEnter:function(){
+         jc.log(['mainLayer'], "main starting")
          cards.kik.getAnonymousUser(function(token){
-            this.startGame(token);
+             jc.log(['mainLayer'], "getAnonymousUser:" + token);
+             this.startGame(token);
          }.bind(this));
     },
     startGame:function(value, type){
@@ -123,17 +125,25 @@ var MainGame = cc.Layer.extend({
 
         //if I have an auth token, I don't care, just go.
         if (hasToken){
+            jc.log(['mainLayer'], "hasToken");
             this.initGame();
         }else if (hasPlayed) { //if I don't ahve a token, well - have I played? If so, don't create a user for me, just get a token and go
+            jc.log(['mainLayer'], "hasPlayed");
             this.authorizeAndInitGame();
         }else{
             //I sort of look like a new player, take me through the new player flow
+            jc.log(['mainLayer'], "newPlayer");
             this.authorizeNewPlayer();
         }
     },
     authorizeNewPlayer:function(){
+        jc.log(['mainLayer'], "authorizeNewPlayer");
         cards.kik.anonymousSign({"signme":true}, function (signedData, token, host) {
             //send these to us, for authtoken
+            jc.log(['mainLayer'], "anonymousSign");
+            jc.log(['mainLayer'], "signedData:" + JSON.stringify(signedData));
+            jc.log(['mainLayer'], "token:" + JSON.stringify(token));
+            jc.log(['mainLayer'], "token:" + JSON.stringify(host));
             hotr.blobOperations.createNewPlayer(signedData, token, host, function(){
                 this.selectEditTeamPre();
             }.bind(this));
