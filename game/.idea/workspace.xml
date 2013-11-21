@@ -88,7 +88,7 @@
     <file path="/app.build.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384963871218" ignored="false" />
     <file path="/kikClientMock.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385051353722" ignored="false" />
     <file path="/gameProd.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385052162620" ignored="false" />
-    <file path="/index.html" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385052634446" ignored="false" />
+    <file path="/index.html" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385055006942" ignored="false" />
     <file path="/server.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385048830476" ignored="false" />
     <file path="/dev.html" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385052382745" ignored="false" />
     <file path="/RangeBehavior.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385052815473" ignored="false" />
@@ -157,21 +157,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="33" selection-start="5300" selection-end="5300" vertical-scroll-proportion="-13.36">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="blobOperationsServer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/blobOperationsServer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="36" selection-start="761" selection-end="761" vertical-scroll-proportion="0.5336427">
               <folding />
             </state>
           </provider>
@@ -186,10 +184,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blobApi.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="blobApi.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="57" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.6945701">
+            <state line="86" column="57" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameHtml5.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html5/gameHtml5.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -240,15 +247,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JCTrace.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCTrace.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="14" selection-start="258" selection-end="267" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -268,13 +266,13 @@
         <option value="$PROJECT_DIR$/html5/config.js" />
         <option value="$PROJECT_DIR$/src/kikClientMock.js" />
         <option value="$PROJECT_DIR$/dev.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/behaviors/RangeBehavior.js" />
         <option value="$PROJECT_DIR$/src/ArenaGame.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCScrollingLayer.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCTrace.js" />
         <option value="$PROJECT_DIR$/src/Main.js" />
         <option value="$PROJECT_DIR$/zerver/blobApi.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -690,20 +688,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="9" selection-start="565" selection-end="676" vertical-scroll-proportion="-13.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="50" selection-start="806" selection-end="806" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="12" selection-start="2265" selection-end="2265" vertical-scroll-proportion="0.0">
@@ -799,7 +783,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="57" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.6945701">
+        <state line="86" column="57" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html5/gameHtml5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="36" selection-start="761" selection-end="761" vertical-scroll-proportion="0.5336427">
           <folding />
         </state>
       </provider>

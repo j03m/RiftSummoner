@@ -19,9 +19,12 @@
 <script src="http://cdn.kik.com/cards/0/cards.js"></script>
 <script src="src/kikClientMock.js"></script>
 <script>
+  console.log("kik check");
   if (!cards.kik){
+    alert("no kik, whats up?!?!?!");
     cards = mckCards; //auto shim in the mock
   }else{
+    console.log("kik, no mock");
     cards.browser.setOrientationLock('landscape');
   }
 </script>
