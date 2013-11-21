@@ -2,7 +2,7 @@ var kikcards = require('kik-cards');
 var kikMock = require('../private/kikServerMock.js');
 var blobLogic = require('../private/blobOperationsServer.js');
 var config = require('../html5/config.js').hotrConfig;
-if (config.browserDev){
+if (!config.prod){
     kikcards = kikMock.cardApi;
 }
 
