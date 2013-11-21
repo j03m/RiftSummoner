@@ -55,11 +55,11 @@ var hotrSrc = [
 
 window.localStorage.clear();
 
-if (hotrConfig.browserDev){
+//if (hotrConfig.browserDev){
     hotrSrc.unshift('../src/kikClientMock.js')
-}else{
+//}else{
     hotrSrc.unshift('http://cdn.kik.com/cards/0/cards.js')
-}
+//}
 
 
 (function () {

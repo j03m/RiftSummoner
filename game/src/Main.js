@@ -110,7 +110,7 @@ var MainGame = cc.Layer.extend({
         });
     },
     onEnter:function(){
-         cards.kik.getAnonymousUser(function(token){
+         yards.kik.getAnonymousUser(function(token){
             this.startGame(token);
          }.bind(this));
     },
@@ -132,7 +132,7 @@ var MainGame = cc.Layer.extend({
         }
     },
     authorizeNewPlayer:function(){
-        cards.kik.anonymousSign({"signme":true}, function (signedData, token, host) {
+        yards.kik.anonymousSign({"signme":true}, function (signedData, token, host) {
             //send these to us, for authtoken
             hotr.blobOperations.createNewPlayer(signedData, token, host, function(){
                 this.selectEditTeamPre();
@@ -140,7 +140,7 @@ var MainGame = cc.Layer.extend({
         }.bind(this));
     },
     authorizeAndInitGame:function(){
-        cards.kik.anonymousSign({"signme":true}, function (signedData, token, host) {
+        yards.kik.anonymousSign({"signme":true}, function (signedData, token, host) {
             //send these to us, for authtoken
             hotr.blobOperations.getNewAuthTokenAndBlob(signedData, token, host, function(){
                 this.selectEditTeamPre();
