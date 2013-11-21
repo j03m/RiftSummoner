@@ -6,7 +6,7 @@ cards.ready(function(){
     ]
 
     if (!cards.kik){
-        alert("no kik, whats up?!?!?!");
+        console.log("no kik mock");
         cards = mckCards; //auto shim in the mock
     }else{
         console.log("kik, no mock");
