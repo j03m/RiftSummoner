@@ -23,12 +23,12 @@ var temp =  [
         "data":{}
     },
     {
-        "name":"goblinKnightNormal",
+        "name":"spider",
         "id":"id5",
         "data":{}
     },
     {
-        "name":"goblinKnightNormal",
+        "name":"wizard",
         "data":{}
     }]
 
