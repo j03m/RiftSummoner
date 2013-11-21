@@ -5,6 +5,13 @@ cards.ready(function(){
         'gameHtml5.js'
     ]
 
+    if (!cards.kik){
+        alert("no kik, whats up?!?!?!");
+        cards = mckCards; //auto shim in the mock
+    }else{
+        console.log("kik, no mock");
+        cards.browser.setOrientationLock('landscape');
+    }
 
     var d = document;
     var c = {
