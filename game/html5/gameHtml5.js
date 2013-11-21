@@ -28,6 +28,7 @@ var cocos2dApp = cc.Application.extend({
         //load resources
         console.log("LoaderScene");
         cc.LoaderScene.preload(g_maingame, function () {
+            console.log("StartScene");
             director.replaceScene(new this.startScene());
 
 //            hotr.asyncLoader = new cc.Loader();
