@@ -35,13 +35,14 @@ exports.saveBlob =  function(authToken, blob, callback){
 
 exports.createNewPlayer = function(signedData, userToken, host, callback){
     //first, check if this player actually exists, if I have a blob for this player, throw an exception
-    console.log("pre-kik-verify")
+    console.log("pre-kik-verify");
+    console.log("post-kik-verify");
+    console.log("data:" + JSON.stringify(signedData));
+    console.log("userToken:" + JSON.stringify(userToken));
+    console.log("host:" + JSON.stringify(host));
     kikcards.verify(signedData, userToken, host, function(err, res){
-        console.log("post-kik-verify");
-        console.log("data:" + JSON.stringify(signedData));
-        console.log("userToken:" + JSON.stringify(userToken));
-        console.log("host:" + JSON.stringify(host));
-
+        console.log("kik verification err: " + err);
+        console.log("kik verification response: " + res);
         if (err){
             throw "Kik verification failed: " + err;
         }else{
@@ -76,7 +77,14 @@ exports.createNewPlayer = function(signedData, userToken, host, callback){
 }
 
 exports.getNewAuthTokenAndBlob = function(signedData, userToken, host, callback){
+    console.log("getNewAuthTokenAndBlob - pre-kik-verify");
+    console.log("post-kik-verify");
+    console.log("data:" + JSON.stringify(signedData));
+    console.log("userToken:" + JSON.stringify(userToken));
+    console.log("host:" + JSON.stringify(host));
     kikcards.verify(signedData, userToken, host, function(err, res){
+        console.log("kik verification err: " + err);
+        console.log("kik verification response: " + res);
         if (err){
             throw "Kik verification failed: " + err;
         }else{

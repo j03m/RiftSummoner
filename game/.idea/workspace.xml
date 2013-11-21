@@ -65,7 +65,7 @@
     <file path="/Loading.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384548425602" ignored="false" />
     <file path="/JcUiElements.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384483460257" ignored="false" />
     <file path="/JCLayerManager.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384489036600" ignored="false" />
-    <file path="/blobApi.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385054587948" ignored="false" />
+    <file path="/blobApi.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385054873973" ignored="false" />
     <file path="/CCLoader.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384532606253" ignored="false" />
     <file path="/JCRequestLite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384535144829" ignored="false" />
     <file path="/levelLogic.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384665980586" ignored="false" />
@@ -189,7 +189,7 @@
       <file leaf-file-name="blobApi.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="86" column="57" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.6945701">
               <folding />
             </state>
           </provider>
@@ -673,12 +673,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/zerver/blobApi.js</url>
-          <line>78</line>
+          <line>79</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/zerver/blobApi.js</url>
-          <line>98</line>
+          <line>100</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
@@ -799,7 +799,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="86" column="57" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.6945701">
           <folding />
         </state>
       </provider>
