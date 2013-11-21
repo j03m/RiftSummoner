@@ -5,12 +5,15 @@ cards.ready(function(){
         'gameHtml5.js'
     ]
 
+    var kik;
     if (!cards.kik){
         console.log("no kik mock");
         cards = mckCards; //auto shim in the mock
+        kik = false;
     }else{
         console.log("kik, no mock");
         cards.browser.setOrientationLock('landscape');
+        kik = true;
     }
 
     var d = document;
@@ -35,7 +38,7 @@ cards.ready(function(){
     }
 
 
-    window.addEventListener('DOMContentLoaded', function () {
+    function runGame () {
         //first load engine file if specified
         var s = d.createElement('script');
         /*********Delete this section if you have packed all files into one*******/
@@ -56,7 +59,15 @@ cards.ready(function(){
         document.ccConfig = c;
         s.id = 'cocos2d-html5';
         //else if single file specified, load singlefile
-    });
+     };
+
+    if (kik){
+        runGame();
+    }else{
+        window.addEventListener('DOMContentLoaded', runGame);
+    }
+
+
 
 
 });
