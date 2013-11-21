@@ -144,7 +144,7 @@ var MainGame = cc.Layer.extend({
             jc.log(['mainLayer'], "anonymousSign");
             jc.log(['mainLayer'], "signedData:" + JSON.stringify(signedData));
             jc.log(['mainLayer'], "token:" + JSON.stringify(token));
-            jc.log(['mainLayer'], "token:" + JSON.stringify(host));
+            jc.log(['mainLayer'], "host:" + JSON.stringify(host));
             hotr.blobOperations.createNewPlayer(signedData, token, host, function(){
                 this.selectEditTeamPre();
             }.bind(this));
