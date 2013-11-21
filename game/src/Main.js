@@ -13,6 +13,7 @@ Array.prototype.pushUnique = function(value){
 
 var MainGame = cc.Layer.extend({
     state: 0,
+    signThis:"yoyoyoyoyosignthissonsignitsignitsignit",
     init: function() {
         if (this._super()) {
             return true;
@@ -138,7 +139,7 @@ var MainGame = cc.Layer.extend({
     },
     authorizeNewPlayer:function(){
         jc.log(['mainLayer'], "authorizeNewPlayer");
-        cards.kik.anonymousSign("signme", function (signedData, token, host) {
+        cards.kik.anonymousSign(this.signThis, function (signedData, token, host) {
             //send these to us, for authtoken
             jc.log(['mainLayer'], "anonymousSign");
             jc.log(['mainLayer'], "signedData:" + JSON.stringify(signedData));
@@ -150,7 +151,7 @@ var MainGame = cc.Layer.extend({
         }.bind(this));
     },
     authorizeAndInitGame:function(){
-        cards.kik.anonymousSign({"signme":true}, function (signedData, token, host) {
+        cards.kik.anonymousSign(this.signThis, function (signedData, token, host) {
             //send these to us, for authtoken
             hotr.blobOperations.getNewAuthTokenAndBlob(signedData, token, host, function(){
                 this.selectEditTeamPre();
