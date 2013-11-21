@@ -6,6 +6,7 @@ var MW = MW || {};
 
 
 var hotrSrc = [
+    '../src/kikClientMock.js',
     '../zerver/blobApi.js',
     '../src/underscore-min.js',
     '../src/async.js',
@@ -56,9 +57,9 @@ var hotrSrc = [
 window.localStorage.clear();
 
 //if (hotrConfig.browserDev){
-    hotrSrc.unshift('../src/kikClientMock.js')
+//    hotrSrc.unshift('../src/kikClientMock.js')
 //}else{
-    hotrSrc.unshift('http://cdn.kik.com/cards/0/cards.js')
+//    hotrSrc.unshift('http://cdn.kik.com/cards/0/cards.js')
 //}
 
 
