@@ -112,8 +112,8 @@ var MainGame = cc.Layer.extend({
     },
     onEnter:function(){
          jc.log(['mainLayer'], "main starting")
-         cards.kik.getAnonymousUser(function(token){
-             jc.log(['mainLayer'], "getAnonymousUser:" + token);
+         cards.kik.getUser(function(token){
+             jc.log(['mainLayer'], "getUser:" + token);
              this.startGame(token);
          }.bind(this));
     },
@@ -139,9 +139,9 @@ var MainGame = cc.Layer.extend({
     },
     authorizeNewPlayer:function(){
         jc.log(['mainLayer'], "authorizeNewPlayer");
-        cards.kik.anonymousSign(this.signThis, function (signedData, token, host) {
+        cards.kik.sign(this.signThis, function (signedData, token, host) {
             //send these to us, for authtoken
-            jc.log(['mainLayer'], "anonymousSign");
+            jc.log(['mainLayer'], "sign");
             jc.log(['mainLayer'], "signedData:" + JSON.stringify(signedData));
             jc.log(['mainLayer'], "token:" + JSON.stringify(token));
             jc.log(['mainLayer'], "host:" + JSON.stringify(host));
@@ -151,7 +151,7 @@ var MainGame = cc.Layer.extend({
         }.bind(this));
     },
     authorizeAndInitGame:function(){
-        cards.kik.anonymousSign(this.signThis, function (signedData, token, host) {
+        cards.kik.sign(this.signThis, function (signedData, token, host) {
             //send these to us, for authtoken
             hotr.blobOperations.getNewAuthTokenAndBlob(signedData, token, host, function(){
                 this.selectEditTeamPre();

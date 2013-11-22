@@ -1,10 +1,10 @@
 var mckCards = {};
 mckCards.kik = {};
-mckCards.kik.getAnonymousUser = function(cb){
+mckCards.kik.getUser = function(cb){
     cb('joeiscool1');
 }
 
-mckCards.kik.anonymousSign = function(value, cb){
+mckCards.kik.sign = function(value, cb){
     cb("hihihihi1", "yabbo yaboo yaboo6", "mrmgue4uandwho");
 }
 
