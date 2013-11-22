@@ -117,43 +117,44 @@ var MainGame = cc.Layer.extend({
              this.startGame(token);
          }.bind(this));
     },
-    startGame:function(value, type){
+    startGame:function(kikUser){
 
         //get signed data from kik
         //if !cached blob token
         var hasPlayed = hotr.blobOperations.hasPlayed();
         var hasToken = hotr.blobOperations.hasToken();
+        var storedUser = hotr.blobOperations.getUserName();
 
         //if I have an auth token, I don't care, just go.
-        if (hasToken){
+        if (hasToken && kikUser == storedUser){
             jc.log(['mainLayer'], "hasToken");
             this.initGame();
-        }else if (hasPlayed) { //if I don't ahve a token, well - have I played? If so, don't create a user for me, just get a token and go
+        }else if (hasPlayed && kikUser == storedUser) { //if I don't ahve a token, well - have I played? If so, don't create a user for me, just get a token and go
             jc.log(['mainLayer'], "hasPlayed");
             this.authorizeAndInitGame();
         }else{
             //I sort of look like a new player, take me through the new player flow
             jc.log(['mainLayer'], "newPlayer");
-            this.authorizeNewPlayer();
+            this.authorizeNewPlayer(kikUser);
         }
     },
     authorizeNewPlayer:function(){
         jc.log(['mainLayer'], "authorizeNewPlayer");
-        cards.kik.sign(this.signThis, function (signedData, token, host) {
+        cards.kik.sign(this.signThis, function (signedData, username, host) {
             //send these to us, for authtoken
             jc.log(['mainLayer'], "sign");
             jc.log(['mainLayer'], "signedData:" + JSON.stringify(signedData));
-            jc.log(['mainLayer'], "token:" + JSON.stringify(token));
+            jc.log(['mainLayer'], "username:" + JSON.stringify(username));
             jc.log(['mainLayer'], "host:" + JSON.stringify(host));
-            hotr.blobOperations.createNewPlayer(signedData, token, host, function(){
+            hotr.blobOperations.createNewPlayer(signedData, username, host, function(){
                 this.selectEditTeamPre();
             }.bind(this));
         }.bind(this));
     },
     authorizeAndInitGame:function(){
-        cards.kik.sign(this.signThis, function (signedData, token, host) {
+        cards.kik.sign(this.signThis, function (signedData, username, host) {
             //send these to us, for authtoken
-            hotr.blobOperations.getNewAuthTokenAndBlob(signedData, token, host, function(){
+            hotr.blobOperations.getNewAuthTokenAndBlob(signedData, username, host, function(){
                 this.selectEditTeamPre();
             }.bind(this));
         }.bind(this));

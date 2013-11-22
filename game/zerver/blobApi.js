@@ -82,7 +82,7 @@ exports.getNewAuthTokenAndBlob = function(signedData, userToken, host, callback)
     console.log("data:" + JSON.stringify(signedData));
     console.log("userToken:" + JSON.stringify(userToken));
     console.log("host:" + JSON.stringify(host));
-    kikcards.verify(userToken, host, signedData, function(err, res){
+    kikcards.anonymousVerify(userToken, host, signedData, function(err, res){
         console.log("kik verification err: " + err);
         console.log("kik verification response: " + res);
         if (err){
@@ -116,7 +116,7 @@ exports.getBlob = function(authToken, callback){
 
 exports.getAuthToken = function(signedData, userToken, host, callback){
     //.anonymousVerify with kik
-    kikcards.verify(userToken, host, signedData, function(err, res){
+    kikcards.anonymousVerify(userToken, host, signedData, function(err, res){
         if (err){
             throw "Kik verification failed: " + err;
         }else{

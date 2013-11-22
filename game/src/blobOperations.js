@@ -4,6 +4,7 @@ hotr.scratchBoard = {};
 hotr.formationSize = 12;
 hotr.authTokenLocalStoreKey = "x1xauthTokenx1x";
 hotr.haveSeenLocalStoreKey = "x1xhaveseenx1x";
+hotr.userNameKey = "x1xusernamex1x";
 hotr.blobOperations.getBlob = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
     blobApi.getBlob(authToken.token,function(err, data){
@@ -82,6 +83,14 @@ hotr.blobOperations.hasToken = function(){
     if (token.expires - Date.now() < 0){
         return false; //token expired
     }
+}
+
+hotr.blobOperations.getUserName = function(){
+    return jc.getLocalStorage(hotr.userNameKey);
+}
+
+hotr.blobOperations.setUserName = function(username){
+    return jc.setLocalStorage(hotr.userNameKey,username);
 }
 
 
