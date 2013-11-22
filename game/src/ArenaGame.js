@@ -40,6 +40,9 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamBFormation = jc.formations[hotr.arenaScene.data.teamBFormation];
         this.teamAPowers = hotr.arenaScene.data.teamAPowers;
         this.teamBPowers = hotr.arenaScene.data.teamBPowers;
+
+        this.setUpHud();
+
         this.setUp();
     },
     runScenario0:function(){
@@ -163,19 +166,19 @@ var ArenaGame = jc.WorldLayer.extend({
     placePowerTokens:function(powers, callback){
 
         //create power layer
-        this.powerLayer = new PowerHud();
-
-        //place layer  add to scene
-        hotr.arenaScene.addChild(this.powerLayer, this.getZOrder()+1);
-
-        this.powerLayer.init(powers);
-
-        this.powerLayer.inTransitionsComplete = function(){
-            this.powerLayer.hackOn();
-            callback();
-        }.bind(this);
-
-        this.powerLayer.start();
+//        this.powerLayer = new PowerHud();
+//
+//        //place layer  add to scene
+//        hotr.arenaScene.addChild(this.powerLayer, this.getZOrder()+1);
+//
+//        this.powerLayer.init(powers);
+//
+//        this.powerLayer.inTransitionsComplete = function(){
+//            this.powerLayer.hackOn();
+//            callback();
+//        }.bind(this);
+//
+//        this.powerLayer.start();
 
     },
     presentTeam:function(team, formation, point, callback){

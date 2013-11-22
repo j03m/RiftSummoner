@@ -1,7 +1,7 @@
 cards.ready(function(){
     var hotrSrc = [
         '../zerver/blobApi.js',
-        '../hotr.min.js',
+        '../hotr.min.js?version=1',
         'gameHtml5.js'
     ]
 
