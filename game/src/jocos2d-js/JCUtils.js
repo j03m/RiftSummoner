@@ -25,6 +25,28 @@ jc.valuePerSecond = function(value, interval){
 
 }
 
+jc.getCapability = function(name){
+    var def = spriteDefs[name];
+    var rtrn = {};
+    if (def.gameProperties.targets == 1){ //ground
+        rtrn.ground = jc.makeSpriteWithPlist(uiPlist, uiPng, "groundToGroundIcon.png");
+        rtrn.air = undefined;
+    }
+
+    if (def.gameProperties.targets == 0){ //air
+        rtrn.ground = undefined;
+        rtrn.air = jc.makeSpriteWithPlist(uiPlist, uiPng, "groundToAirIcon.png");
+    }
+
+    if (def.gameProperties.targets == 2){ //both
+        rtrn.ground = jc.makeSpriteWithPlist(uiPlist, uiPng, "groundToGroundIcon.png");
+        rtrn.air = jc.makeSpriteWithPlist(uiPlist, uiPng, "groundToAirIcon.png");;
+    }
+
+    return rtrn;
+
+}
+
 jc.elementSprite = function(name){
     if (name == "void"){
         return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0000_void.png");

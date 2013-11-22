@@ -103,10 +103,34 @@ var EditTeam = jc.UiElementsLayer.extend({
 
         this.placeElement(characterEntry);
 
-        //this.placeAttackTypes(characterEntry);
+        this.placeAttackTypes(characterEntry);
 
         //update labels
         this.updateStats(characterEntry);
+    },
+    placeAttackTypes:function(entry){
+        var caps = jc.getCapability(entry.name);
+        if (this.ground){
+            this.removeChild(this.ground);
+        }
+        if (this.air){
+            this.removeChild(this.air);
+        }
+        if (caps.ground){
+            this.ground = caps.ground;
+            this.addChild(caps.ground)
+            this.ground.setPosition(cc.p(58,270));
+        }
+
+        if (caps.air){
+            this.air = caps.air;
+            this.addChild(caps.air)
+            this.air.setPosition(cc.p(90,270));
+        }
+
+
+
+
     },
     updateStats:function(entry){
         var stats = jc.makeStats(entry.name);
