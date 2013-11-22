@@ -140,9 +140,9 @@ var powerConfig = {
 
 
     },
-    "knockback":function(value){
-        jc.checkPower(value, "knockback");
-        var config = spriteDefs[value].damageMods["knockback"];
+    "knockBack":function(value){
+        jc.checkPower(value, "knockBack");
+        var config = spriteDefs[value].damageMods["knockBack"];
         var distance = config.distance;
         if (this.owner.isFlippedX()){
             distance*=-1;

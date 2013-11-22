@@ -1292,7 +1292,7 @@ var spriteDefs = {
 			},
 			"idle": {
 				"start": 91,
-				"end": 131,
+				"end": 151,
 				"delay": 0.02,
 				"type": 0
 			},
@@ -1362,7 +1362,7 @@ var spriteDefs = {
 		"elementType": "life",
 		"unitType": 3,
 		"special": "Poison",
-		"damageMods": {
+		"powers": {
 			"poison": {
 				"damage": 50,
 				"duration": 5,
@@ -1370,7 +1370,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 400,
+			"MaxHP": 100,
 			"speed": 200,
 			"movementType": 1,
 			"targets": 1,

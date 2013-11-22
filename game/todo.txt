@@ -1,182 +1,37 @@
 Buglist -
 
-    *Missiles need to start at the characters attacking edge
-    *Missiles need a set velocity, right now they slow down when the character gets close.
-    *Tanks need to assess if they are still close enough to the target (per knockback)
-    Characters need to face who they are attacking
-    The players characters need some sort of indicator, green or red arrows above heads?
-    *adjust shadows right for flipx
-
-    *clip rect?
-    *remove missile + effects - check perf on phone
-    *if better, cache one missile + effect per soldier
-    *do the same for heals
-    *For area heals, cache the effects once tehy are applied.
-
-
-
-    mod cocos2d loading screen to your background
-    loading logic: Load core assets
-    show landing (placeholder)
-    pre-arena - show loader
-
-    start loading asyc
-    game battle preroll - what we have, what is loaded, whats not loaded, load sync whatever is not loaded
-
-    poison tints green
-    burning tints red
-    implement freeze - tints blue
-
-    implement tile powers
-
-    big attacks - rattle screen
-    explosions - flash screen, rattle screen
-
-    *flank bonus - if you attack me, and I am not locked on you +20%
-
-    *implement flank from battleheart
-
-
-
-    *fix bug where if a character is outside of the ellipse, the need to move into the ellipse asap
-
-
-
-    *powers don't get selected on click
-    *power animations seem to render in the wrong spot
-    *power effects don't animate the second application
-    **powers don't work on mobile
-    *PowerHud doesn't set selected because tile swallows touch.
-    *Tile needs to delegate back to hud. No more multiple touches
-
-    power need bigger presentation - lightning flash, larger animation
-    normal hits should have a sparkle ala battle heart
-
-    select portrait
-        *place card
-        update stats
-        *done closes and places characters
-        *close closes, no place
-        *transition from layer to layer (select team)
-        *select portrait updates portrait frame
-        *loading layer should close over the current scene and open over the next sene - changes to main
-        *create portrait render (sized for frames)
-        *create card render - sized for frame
-
-
-
-        Size cards and fix bugs with face shot
-        "Fight" button takes you to the arena
-        Kik integration
-        "Kik" button next to fight - kiks to friend a
-        Friend a selects team - battle
-        Award Coins + Stones
-        Friend b gets the replay
-        Award Coins + Stones
-        Friend b can also kik next battle
-
     BUG - Tinting hangs app - tinting creates 4 canvases for texture cache every frame. Was using 10% of cpu.
     BUG - localstorage does not work on amazon or localhost, but works on facebook
-
-    ***
-    get cocos2dhtml single engine file working
-    make hotr.min.js out of src dir
-    fixed shared code issues
-    make deploy script dir
-    push assets to s3
+    BUG - tiles click through to arean
+    BUG - power need bigger presentation - lightning flash, larger animation
+          big attacks - rattle screen
+          explosions - flash screen, rattle screen
+    mod cocos2d loading screen to your loader
+    normal hits should have a sparkle ala battle heart
+    implement missiles arrows, lob bomb - maybe it's just cocos2d jump to with rotation
     travis-ci
-    ssl?
-    ***
-    kik integration issue
+    push assets to s3
+    cloudfront?
+    team indicators
+
+    Next:
+    Edit Team UI
+        stats
+        icons
+        info - msgbox
+    pngopt
+    flip
+    rerender
+    Pre-battle screen
+    Post-battle screen
+    Landing (map)
+        Quest
+        Challenge
+        Summon
+        Store
 
 
 
 
-TO BETA:
 
-
-Landing page - copy frontier rush
-Backdrop
-loading door close/open
-slow start fix
-
-missiles + effects
-	arrows - arrow sprite
-	explosion - explosion sprite - scale down/up
-	fire ball - fireball sprite
-	fire - scale up/down
-	bomb - sprite
-	blood - particle
-	asset pipe fixed
-    fireball (different colors)
-    explosion
-    poison
-    arrow
-    burning
-    txt
-    healing
-    dragon fire
-    area radius
-    arrow
-    background
-    ui - style based on my wireframes
-    	window
-    colored shadows (red vs blue)
-
-
-formations and start positions
-	formation swipe to change
-	formation start up
-
-pan zoom
-	your characters warp in
-	their characters warp in
-	BEGIN
-	Zoom out
-	zoom in to closest level
-
-
-
-kik - beta
-
-
-
-formations:
-
-   4x4x4
-
-   4x8
-
-   3x4x5
-
-   5x4x3
-
-   1x5x6
-
-   arrow left
-
-   arrow right
-
-   bracket left
-
-   bracket right
-
-   flanks
-
-
-
-//map page - copy CC
-    //launch battle or review cards
-//pre-battle
-//edit deck
-//card layer
-    //todo: add button 'add' and add close 'x'
-//battle
-//battle goes to outcome
-    //replay
-//outcome goes to map
-//review cards
-    //level up
-    //sell
-//slot machine
 

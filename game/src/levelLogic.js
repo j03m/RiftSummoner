@@ -28,7 +28,7 @@ var temp =  [
         "data":{}
     },
     {
-        "name":"wizard",
+        "name":"elementalWind",
         "data":{}
     }]
 

@@ -230,10 +230,10 @@ var ArenaGame = jc.WorldLayer.extend({
                     var tr = this.sprites[i].getTextureRect();
                     var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
                     var worldPos = this.screenToWorld(nodePos); //where is that in the world?
-                    var compareMaxX = worldPos.x+(tr.width*2);
-                    var compareMinX = worldPos.x-tr.width*2;
-                    var compareMaxY = worldPos.y+tr.height*2;
-                    var compareMinY = worldPos.y-tr.height*2;
+                    var compareMaxX = worldPos.x;
+                    var compareMinX = worldPos.x;
+                    var compareMaxY = worldPos.y;
+                    var compareMinY = worldPos.y;
 
 
                     if (compareMaxX > maxX){
