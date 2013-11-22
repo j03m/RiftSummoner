@@ -82,7 +82,7 @@ exports.getNewAuthTokenAndBlob = function(signedData, userToken, host, callback)
     console.log("data:" + JSON.stringify(signedData));
     console.log("userToken:" + JSON.stringify(userToken));
     console.log("host:" + JSON.stringify(host));
-    kikcards.anonymousVerify(userToken, host, signedData, function(err, res){
+    kikcards.verify(userToken, host, signedData, function(err, res){
         console.log("kik verification err: " + err);
         console.log("kik verification response: " + res);
         if (err){
@@ -116,7 +116,7 @@ exports.getBlob = function(authToken, callback){
 
 exports.getAuthToken = function(signedData, userToken, host, callback){
     //.anonymousVerify with kik
-    kikcards.anonymousVerify(userToken, host, signedData, function(err, res){
+    kikcards.verify(userToken, host, signedData, function(err, res){
         if (err){
             throw "Kik verification failed: " + err;
         }else{
@@ -149,7 +149,9 @@ function makeAuthToken(userToken, callback){
 }
 
 function convertToken(authToken, callback){
+    console.log("Convert token: " + authToken);
     get(sessionNameSpace+authToken, function(err, res){
+
         if (err){
             throw err;
         }
@@ -157,6 +159,7 @@ function convertToken(authToken, callback){
         if (!res){
             throw "Could not convert authToken: " + authToken + " to valid user.";
         }
+        console.log("Converted to: " + userToken);
         callback(userToken);
     });
 }
