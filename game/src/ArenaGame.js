@@ -41,7 +41,7 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamAPowers = hotr.arenaScene.data.teamAPowers;
         this.teamBPowers = hotr.arenaScene.data.teamBPowers;
 
-        this.setUpHud();
+        //this.setUpHud();
 
         this.setUp();
     },
