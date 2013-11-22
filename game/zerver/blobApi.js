@@ -186,10 +186,13 @@ function newPlayer(authToken, callback){
 }
 
 function readBlob(userToken, callback){
+    console.log("Blob Read:" + blobNameSpace+userToken);
     get(blobNameSpace+userToken, function(err, blob){
         if (err){
             throw err;
         }
+
+        console.log("Blob Result:" + blob);
         if (blob){
             callback(JSON.parse(blob));
         }else{
