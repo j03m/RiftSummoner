@@ -179,6 +179,7 @@ var ArenaGame = jc.WorldLayer.extend({
 //        }.bind(this);
 //
 //        this.powerLayer.start();
+        callback();
 
     },
     presentTeam:function(team, formation, point, callback){
