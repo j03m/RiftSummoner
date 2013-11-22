@@ -1,6 +1,62 @@
 var jc = jc || {};
 
+jc.makeStats = function(name){
+    var def = spriteDefs[name];
+    var stats ={};
+    stats.hp = def.gameProperties.MaxHP;
+    stats.damage = jc.valuePerSecond(def.gameProperties.damage, def.gameProperties.actionDelays.attack);
+    stats.armor = 0; //todo: implement
+    stats.speed = def.gameProperties.speed;
+    stats.power = jc.getPowerRating(def);
+    stats.range = def.gameProperties.targetRadius;
+    return stats;
+}
 
+jc.getPowerRating= function(def){
+    return 10; //todo : this is going to change to tier
+}
+
+jc.valuePerSecond = function(value, interval){
+
+        if (!interval){
+            interval = 1;
+        }
+        return value * (1/interval);
+
+}
+
+jc.elementSprite = function(name){
+    if (name == "void"){
+        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0000_void.png");
+    }
+
+    if (name == "water"){
+        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0001_water.png");
+    }
+
+    if (name == "fire"){
+        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0002_fire.png");
+    }
+
+    if (name == "life"){
+        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0003_life.png");
+    }
+
+    if (name == "earth"){
+        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0004_earth.png");
+    }
+
+    if (name == "air"){
+        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0005_air.png");
+    }
+
+    if (name == "none"){
+        return undefined;
+    }
+
+    throw "Illegal element type: " + name;
+
+}
 
 jc.moveActionWithCallback = function(point, rate, callback){
     var action = cc.MoveTo.create(rate, point);

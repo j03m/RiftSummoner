@@ -101,8 +101,95 @@ var EditTeam = jc.UiElementsLayer.extend({
         //put this card sprite in the frame
         this.swapCharacterCard(card);
 
-        //fade in/fade out card
+        this.placeElement(characterEntry);
+
+        //this.placeAttackTypes(characterEntry);
+
         //update labels
+        this.updateStats(characterEntry);
+    },
+    updateStats:function(entry){
+        var stats = jc.makeStats(entry.name);
+        stats = this.makeStringStats(stats);
+
+        var size = cc.size(40, 10);
+        var align = cc.TEXT_ALIGNMENT_RIGHT;
+        var fntSize = 12;
+        var fntName = "gow";
+        var firstPos = cc.p(80, 245);
+        var spacing = 19;
+        var zorder = this.statsFrame.getZOrder()+1
+
+        var prefix = "lbl";
+        for (var stat in stats){
+            var lblName = prefix+stat
+            if (this[lblName]){
+                this.removeChild(this[lblName]);
+            }
+
+            this[lblName] = this.makeAndPlaceLabel(stats[stat], fntName, fntSize, size, align, firstPos,zorder);
+            firstPos.y-=spacing;
+        }
+
+
+    },
+    makeStringStats:function(stats){
+        for(var stat in stats){
+            stats[stat]=stats[stat].toString();
+            if (stats[stat].length < 7){
+                for(var i=0;i<7-stats[stat].length;i++){
+                    stats[stat]+=" ";
+                }
+            }
+        }
+        return stats;
+    },
+    makeAndPlaceLabel:function(value,fntName, fntSize,size , align, pos, zorder){
+        var lbl = cc.LabelTTF.create(value, fntName, fntSize, size, align);
+        this.addChild(lbl);
+        lbl.setPosition(pos);
+        lbl.setZOrder(zorder);
+        return lbl;
+    },
+    placeElement:function(entry){
+
+        //make elment
+        var element = spriteDefs[entry.name].elementType;
+        var elementSprite = jc.elementSprite(element);
+
+        //if set, remove
+        if (this.statsFrame.element){
+            this.removeChild(this.statsFrame.element);
+        }
+
+        if (!this.statsFrame.info){
+            this.statsFrame.info = new jc.CompositeButton();
+            this.statsFrame.info.initWithDefinition({
+                "main":"infoButton.png",
+                "pressed":"infoButton.png"
+            },this.infoTouch.bind(this));
+            this.statsFrame.info.setPosition(cc.p(135, 260));
+            this.addChild(this.statsFrame.info);
+        }else{
+            this.statsFrame.info.setZOrder(this.statsFrame.card.getZOrder()+1);
+        }
+
+        //if not none (undefined)
+        if (elementSprite){
+            this.statsFrame.element = elementSprite;
+            this.addChild(this.statsFrame.element);
+            var cardPos = this.statsFrame.getPosition();
+            var cardZOrder = this.statsFrame.getZOrder();
+            var cardTr = this.statsFrame.card.getTextureRect();
+            elementSprite.setPosition(cc.p(243, 135));
+            elementSprite.setZOrder(cardZOrder+1);
+        }
+
+
+
+    },
+    infoTouch:function(){
+        console.log("infoTouch");
     },
     swapCharacterCard:function(card){
         var pos = this.statsFrame.getPosition();
@@ -148,7 +235,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "type":"sprite",
                     "sprite":"statsFrame.png",
                     "padding":{
-                        "top":-37,
+                        "top":-40,
                         "left":95,
                     }
                 },
@@ -159,17 +246,17 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "cell":8,
                     "anchor":['right'],
                     "padding":{
-                        "top":28,
-                        "left":-21
+                        "top":31,
+                        "left":-31
                     },
                     "itemPadding":{
                         "top":0,
-                        "left":-1
+                        "left":6
                     },
                     "members":[
                         {
                             "type":"sprite",
-                            "sprite":"powerIconLargeFrame.png"
+                            "sprite":"level_0000_Layer-6.png"
                         }
                     ],
                     "membersTotal":5
@@ -182,7 +269,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "anchor":['right', 'bottom'],
                     "padding":{
                         "top":12,
-                        "left":-21
+                        "left":-20
                     },
                     "itemPadding":{
                         "top":0,

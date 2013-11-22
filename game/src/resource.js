@@ -20,8 +20,6 @@ var uiPlist = dirImg + "uiElements.plist";
 var g_characterPngs = {};
 var g_characterPlists = {};
 
-
-
 //core resources - need these to launch ui, loader, etc
 var g_maingame = [
     {src:arenaSheet},
@@ -32,8 +30,10 @@ var g_maingame = [
     {src:loadingPlist},
     {src:loadingPng},
     {src:uiPlist},
-    {src:uiPng}
-
+    {src:uiPng},
+    {fontName:"gow",
+        src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
+    }
 ];
 
 //core character resources and effects - stuff we need for battles
