@@ -1362,7 +1362,7 @@ var spriteDefs = {
 		"elementType": "life",
 		"unitType": 3,
 		"special": "Poison",
-		"powers": {
+		"damageMods": {
 			"poison": {
 				"damage": 50,
 				"duration": 5,
