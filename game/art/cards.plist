@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>blueKnight_pose.png</key>
+            <key>blackGargoyle_pose.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{135,2},{131,145}}</string>
@@ -12,6 +12,19 @@
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{131,145}}</string>
+                <key>sourceSize</key>
+                <string>{131,145}</string>
+            </dict>
+            <key>blueKnight_pose.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,737},{131,145}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{131,145}}</string>
                 <key>sourceSize</key>
@@ -59,7 +72,7 @@
             <key>dwarvenKnightFire_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,737},{131,145}}</string>
+                <string>{{2,590},{131,145}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +137,7 @@
             <key>elementalFire_pose.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,590},{131,145}}</string>
+                <string>{{2,443},{131,145}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +150,7 @@
             <key>elementalStone_pose.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,443},{131,145}}</string>
+                <string>{{2,296},{131,145}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -189,7 +202,7 @@
             <key>fireKnight_pose.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,296},{131,145}}</string>
+                <string>{{2,149},{131,145}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -209,32 +222,6 @@
                 <true/>
                 <key>sourceColorRect</key>
                 <string>{{12,0},{119,145}}</string>
-                <key>sourceSize</key>
-                <string>{131,145}</string>
-            </dict>
-            <key>gargoyleBlack_pose.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,149},{131,145}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{131,145}}</string>
-                <key>sourceSize</key>
-                <string>{131,145}</string>
-            </dict>
-            <key>gargoyleRed_pose.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{429,129},{131,141}}</string>
-                <key>offset</key>
-                <string>{0,-2}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,4},{131,141}}</string>
                 <key>sourceSize</key>
                 <string>{131,145}</string>
             </dict>
@@ -339,6 +326,19 @@
                 <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,8},{131,137}}</string>
+                <key>sourceSize</key>
+                <string>{131,145}</string>
+            </dict>
+            <key>redGargoyle_pose.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{429,129},{131,141}}</string>
+                <key>offset</key>
+                <string>{0,-2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,4},{131,141}}</string>
                 <key>sourceSize</key>
                 <string>{131,145}</string>
             </dict>
@@ -456,7 +456,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b9df520928af6cc626c7db914a9fb9d6:8e369462cebf2f87d798d6e9bf96332e:0afd5d88c1d04885828391deeb2050d9$</string>
+            <string>$TexturePacker:SmartUpdate:486720223feb78ce2a6012aec8857f31:33ba208abba1c9a7a4385c821ab58fad:0afd5d88c1d04885828391deeb2050d9$</string>
             <key>textureFileName</key>
             <string>cards.png</string>
         </dict>
