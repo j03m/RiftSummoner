@@ -4,8 +4,8 @@ var uuid = require('node-uuid');
 
 
 exports.newPlayer = function(userId, callback){
-    //make 3 cards for this player
-    cardGen(1,3, function(err, res){
+    //make 6 cards for this player
+    cardGen(3,6, function(err, res){
         var blob = {};
         blob["id"] = userId;
         blob.myguys = res;
