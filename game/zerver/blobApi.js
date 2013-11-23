@@ -58,11 +58,16 @@ exports.createNewPlayer = function(signedData, userToken, host, callback){
                     });
                 }else{
                     //doesn't exist, make an authtoken, create a blob return it all
+                    console.log(" No blob init new player");
                     makeAuthToken(userToken, function(tokenObj){
                         //make a blob
+                        console.log(" Made Token:" + tokenObj);
                         blobLogic.newPlayer(userToken, function(err, newBlob){
+
+                            console.log(" new player Logic:" + newBlob);
                             setBlob(userToken, newBlob, function(result){
                                 //setBlob checks response and throws
+                                console.log(" saved blob:" + newBlob);
                                 callback(newBlob, tokenObj);
                             });
                         });

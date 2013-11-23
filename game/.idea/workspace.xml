@@ -17,7 +17,7 @@
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/spriteConfigs/snakeThing.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375830073851" ignored="false" />
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/spriteConfigs/spider.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375830073851" ignored="false" />
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375830171070" ignored="false" />
-    <file path="/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385152448625" ignored="false" />
+    <file path="/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385186715989" ignored="false" />
     <file path="/a.dummy" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385149305400" ignored="false" />
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/spriteVars.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375830277292" ignored="false" />
     <file path="/game.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385050885842" ignored="false" />
@@ -65,12 +65,12 @@
     <file path="/Loading.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384548425602" ignored="false" />
     <file path="/JcUiElements.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384483460257" ignored="false" />
     <file path="/JCLayerManager.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384489036600" ignored="false" />
-    <file path="/blobApi.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385090956831" ignored="false" />
+    <file path="/blobApi.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385187414099" ignored="false" />
     <file path="/CCLoader.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384532606253" ignored="false" />
     <file path="/JCRequestLite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384535144829" ignored="false" />
     <file path="/levelLogic.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384665980586" ignored="false" />
     <file path="/cardGen.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384873530345" ignored="false" />
-    <file path="$USER_HOME$/Dropbox/Monsters/config/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385179546232" ignored="false" />
+    <file path="$USER_HOME$/Dropbox/Monsters/config/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385186716390" ignored="false" />
     <file path="$USER_HOME$/Dropbox/Monsters/config/characterTiers.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385149308949" ignored="false" />
     <file path="/random.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384787948537" ignored="false" />
     <file path="/test.cardGen.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384787743798" ignored="false" />
@@ -224,19 +224,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spriteVars.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="spriteVars.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="0.7290168">
+            <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="-12.16">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="characterTiers.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
+      <file leaf-file-name="blobOperationsServer.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/private/blobOperationsServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="16" selection-start="3599" selection-end="3600" vertical-scroll-proportion="-10.52">
+            <state line="5" column="8" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blobApi.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="56" selection-start="3263" selection-end="3263" vertical-scroll-proportion="0.5851319">
               <folding />
             </state>
           </provider>
@@ -262,17 +271,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CCTouchDispatcher.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platform/HTML5/cocos2d/touch_dispatcher/CCTouchDispatcher.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="386" column="28" selection-start="12439" selection-end="12684" vertical-scroll-proportion="-14.56">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -283,7 +281,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/resource.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCUtils.js" />
         <option value="$PROJECT_DIR$/src/editTeam.js" />
         <option value="$PROJECT_DIR$/cache.manifest" />
@@ -299,6 +296,7 @@
         <option value="$PROJECT_DIR$/src/ArenaGame.js" />
         <option value="$PROJECT_DIR$/src/selectTeam.js" />
         <option value="$PROJECT_DIR$/src/spriteVars.js" />
+        <option value="$PROJECT_DIR$/zerver/blobApi.js" />
       </list>
     </option>
   </component>
@@ -352,6 +350,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RunFighter-X-JS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zerver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -709,13 +721,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="48" selection-start="887" selection-end="887" vertical-scroll-proportion="-12.958333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html5/gameHtml5.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -736,13 +741,6 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="101" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/private/blobOperationsServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="185" selection-end="185" vertical-scroll-proportion="-4.2">
           <folding />
         </state>
       </provider>
@@ -825,7 +823,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="0.7290168">
+        <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="-12.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/blobOperationsServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="8" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="56" selection-start="3263" selection-end="3263" vertical-scroll-proportion="0.5851319">
           <folding />
         </state>
       </provider>
