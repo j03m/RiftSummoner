@@ -224,10 +224,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spriteVars.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="spriteVars.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="33.129498">
+            <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="-552.6">
               <folding />
             </state>
           </provider>
@@ -251,13 +251,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CCMouseDispatcher.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platform/HTML5/cocos2d/touch_dispatcher/CCMouseDispatcher.js">
+      <file leaf-file-name="characterTiers.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="580" column="16" selection-start="16623" selection-end="16623" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="28" column="66" selection-start="725" selection-end="725" vertical-scroll-proportion="0.36744186">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -289,7 +287,6 @@
         <option value="$PROJECT_DIR$/dev.html" />
         <option value="$PROJECT_DIR$/html5/gameProd.js" />
         <option value="$PROJECT_DIR$/private/blobOperationsServer.js" />
-        <option value="$PROJECT_DIR$/private/characterTiers.js" />
         <option value="$PROJECT_DIR$/platform/HTML5/cocos2d/touch_dispatcher/CCMouseDispatcher.js" />
         <option value="$PROJECT_DIR$/src/kikClientMock.js" />
         <option value="$PROJECT_DIR$/src/Main.js" />
@@ -297,6 +294,7 @@
         <option value="$PROJECT_DIR$/src/selectTeam.js" />
         <option value="$PROJECT_DIR$/src/spriteVars.js" />
         <option value="$PROJECT_DIR$/zerver/blobApi.js" />
+        <option value="$PROJECT_DIR$/private/characterTiers.js" />
       </list>
     </option>
   </component>
@@ -304,8 +302,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-112" />
-    <option name="y" value="65" />
+    <option name="x" value="76" />
+    <option name="y" value="93" />
     <option name="width" value="1188" />
     <option name="height" value="874" />
   </component>
@@ -609,7 +607,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-112" y="65" width="1188" height="874" extended-state="0" />
+    <frame x="76" y="93" width="1188" height="874" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -745,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="16" selection-start="3599" selection-end="3600" vertical-scroll-proportion="-10.52">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platform/HTML5/cocos2d/touch_dispatcher/CCTouchDispatcher.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="386" column="28" selection-start="12439" selection-end="12684" vertical-scroll-proportion="-14.56">
@@ -837,7 +828,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="33.129498">
+        <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="-552.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="66" selection-start="725" selection-end="725" vertical-scroll-proportion="0.36744186">
           <folding />
         </state>
       </provider>

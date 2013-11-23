@@ -21,16 +21,6 @@ exports.charTiers = {
             "tier": 1
         },
         {
-            "hp": 50,
-            "dps": 210,
-            "hps": 0,
-            "radius": 75,
-            "total": 22.003676470588236,
-            "name": "goblin",
-            "nTotal": 12.737656072644722,
-            "tier": 1
-        },
-        {
             "hp": 200,
             "dps": 50,
             "hps": 0,
