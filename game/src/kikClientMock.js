@@ -9,6 +9,10 @@ mckCards.kik.sign = function(value, cb){
 }
 
 
+mckCards.kik.pickUsers = function(cb){
+    cb();
+}
+
 mckCards.ready = function(cb){
     cb();
 };

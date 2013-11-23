@@ -7,7 +7,7 @@
             <key>airToAirIcon.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{262,599},{34,31}}</string>
+                <string>{{297,557},{34,31}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -293,7 +293,7 @@
             <key>elements_0000_void.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{269,810},{32,32}}</string>
+                <string>{{259,776},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -306,7 +306,7 @@
             <key>elements_0001_water.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{259,776},{32,32}}</string>
+                <string>{{259,742},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -319,7 +319,7 @@
             <key>elements_0002_fire.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{259,742},{32,32}}</string>
+                <string>{{259,708},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -332,7 +332,7 @@
             <key>elements_0003_life.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{259,708},{32,32}}</string>
+                <string>{{298,627},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -345,7 +345,7 @@
             <key>elements_0004_earth.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{297,557},{32,32}}</string>
+                <string>{{330,557},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -358,7 +358,7 @@
             <key>elements_0005_air.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{295,599},{32,32}}</string>
+                <string>{{298,593},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -488,7 +488,7 @@
             <key>imageLockedPowerIconSmall.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{295,633},{30,30}}</string>
+                <string>{{269,810},{30,30}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -514,7 +514,7 @@
             <key>leftArrowFormationName.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{332,987},{34,34}}</string>
+                <string>{{262,599},{34,34}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -527,7 +527,7 @@
             <key>leftArrowFormationNamePressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{296,987},{34,34}}</string>
+                <string>{{333,987},{34,34}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -953,6 +953,19 @@
                 <key>sourceSize</key>
                 <string>{198,162}</string>
             </dict>
+            <key>tmp.kik.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{296,987},{35,35}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{35,35}}</string>
+                <key>sourceSize</key>
+                <string>{35,35}</string>
+            </dict>
             <key>victoryScreenWindow.png</key>
             <dict>
                 <key>frame</key>
@@ -989,7 +1002,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e2d1bb11f21c08d14acbdb7a25f304a7:8557dd05fe0c28eb146cf11aaac3462d:9e4b30ac04d74345c82267339582b167$</string>
+            <string>$TexturePacker:SmartUpdate:0a046825ca1d60c30e134ba6967307d7:2e838b9a607da7c743e1a448b8e6fde6:9e4b30ac04d74345c82267339582b167$</string>
             <key>textureFileName</key>
             <string>uiElements.png</string>
         </dict>

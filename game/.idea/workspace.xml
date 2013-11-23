@@ -32,13 +32,13 @@
     <file path="/test-cellResolution.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1376427286642" ignored="false" />
     <file path="/TouchId.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1376944807777" ignored="false" />
     <file path="/sha256.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1376427250340" ignored="false" />
-    <file path="/fragment.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385131370820" ignored="false" />
+    <file path="/fragment.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385179595624" ignored="false" />
     <file path="/ExampleLayer.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1376620592545" ignored="false" />
     <file path="/test-collisions.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1376768486626" ignored="false" />
     <file path="/generateSequence.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1376842039497" ignored="false" />
     <file path="/gameHtml5.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385061121306" ignored="false" />
     <file path="/JCGameObject.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1376945849392" ignored="false" />
-    <file path="/ArenaGame.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385177323391" ignored="false" />
+    <file path="/ArenaGame.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385185426896" ignored="false" />
     <file path="/editTeam.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385144614366" ignored="false" />
     <file path="/resource.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385140083255" ignored="false" />
     <file path="/JCScrollingLayer.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384614040386" ignored="false" />
@@ -49,11 +49,11 @@
     <file path="/JCTouchLayer.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384981336695" ignored="false" />
     <file path="/AnimationTest.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384536112367" ignored="false" />
     <file path="/PowerHud.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384362888848" ignored="false" />
-    <file path="/selectTeam.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384895261453" ignored="false" />
+    <file path="/selectTeam.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385185251517" ignored="false" />
     <file path="/JCUtils.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385144423460" ignored="false" />
     <file path="/powerTileConfig.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384367751440" ignored="false" />
     <file path="/CCSprite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384368302008" ignored="false" />
-    <file path="/Main.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385089882839" ignored="false" />
+    <file path="/Main.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385185231335" ignored="false" />
     <file path="/CardLayer.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384459898299" ignored="false" />
     <file path="/blobOperations.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385089810452" ignored="false" />
     <file path="$USER_HOME$/Dropbox/Monsters/config/spriteConfigs/orge.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384452404650" ignored="false" />
@@ -70,7 +70,7 @@
     <file path="/JCRequestLite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384535144829" ignored="false" />
     <file path="/levelLogic.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384665980586" ignored="false" />
     <file path="/cardGen.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384873530345" ignored="false" />
-    <file path="$USER_HOME$/Dropbox/Monsters/config/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385152524853" ignored="false" />
+    <file path="$USER_HOME$/Dropbox/Monsters/config/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385179546232" ignored="false" />
     <file path="$USER_HOME$/Dropbox/Monsters/config/characterTiers.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385149308949" ignored="false" />
     <file path="/random.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384787948537" ignored="false" />
     <file path="/test.cardGen.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384787743798" ignored="false" />
@@ -86,7 +86,7 @@
     <file path="/JCWorldLayer.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384879733782" ignored="false" />
     <file path="$USER_HOME$/Dropbox/Monsters/config/spriteConfigs/elementalWind.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384888893230" ignored="false" />
     <file path="/app.build.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384963871218" ignored="false" />
-    <file path="/kikClientMock.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385089284103" ignored="false" />
+    <file path="/kikClientMock.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385185201329" ignored="false" />
     <file path="/gameProd.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385055674118" ignored="false" />
     <file path="/index.html" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385145194522" ignored="false" />
     <file path="/server.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385048830476" ignored="false" />
@@ -177,24 +177,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gameProd.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html5/gameProd.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="24" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="todo.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/todo.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="101" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SpriteTest.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SpriteTest.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -204,28 +186,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArenaGame.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ArenaGame.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ArenaGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="238" column="21" selection-start="8138" selection-end="8138" vertical-scroll-proportion="0.4676259">
+            <state line="51" column="56" selection-start="1436" selection-end="1436" vertical-scroll-proportion="-12.48">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameHtml5.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html5/gameHtml5.js">
+      <file leaf-file-name="selectTeam.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/selectTeam.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="119" column="12" selection-start="4254" selection-end="4254" vertical-scroll-proportion="-6.4">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spriteVars.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="91" column="42" selection-start="2956" selection-end="2956" vertical-scroll-proportion="-7.04">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blobOperations.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/blobOperations.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="136" column="20" selection-start="3775" selection-end="3775" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spriteVars.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="11" selection-start="1323" selection-end="1329" vertical-scroll-proportion="-5.56">
+            <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="0.7290168">
               <folding />
             </state>
           </provider>
@@ -251,6 +253,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="kikClientMock.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kikClientMock.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="9" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CCTouchDispatcher.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platform/HTML5/cocos2d/touch_dispatcher/CCTouchDispatcher.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -258,15 +269,6 @@
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blobOperationsServer.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/private/blobOperationsServer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="185" selection-end="185" vertical-scroll-proportion="-4.2">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -281,10 +283,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/html5/config.js" />
-        <option value="$PROJECT_DIR$/zerver/blobApi.js" />
-        <option value="$PROJECT_DIR$/src/levelLogic.js" />
-        <option value="$PROJECT_DIR$/src/powerConfig.js" />
         <option value="$PROJECT_DIR$/src/resource.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCUtils.js" />
         <option value="$PROJECT_DIR$/src/editTeam.js" />
@@ -296,7 +294,11 @@
         <option value="$PROJECT_DIR$/private/blobOperationsServer.js" />
         <option value="$PROJECT_DIR$/private/characterTiers.js" />
         <option value="$PROJECT_DIR$/platform/HTML5/cocos2d/touch_dispatcher/CCMouseDispatcher.js" />
+        <option value="$PROJECT_DIR$/src/kikClientMock.js" />
+        <option value="$PROJECT_DIR$/src/Main.js" />
         <option value="$PROJECT_DIR$/src/ArenaGame.js" />
+        <option value="$PROJECT_DIR$/src/selectTeam.js" />
+        <option value="$PROJECT_DIR$/src/spriteVars.js" />
       </list>
     </option>
   </component>
@@ -378,38 +380,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="private" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RunFighter-X-JS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RunFighter-X-JS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HTML5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -628,7 +598,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="122" y="35" width="1188" height="874" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924694" sideWeight="0.6710875" order="3" side_tool="false" content_ui="tabs" />
@@ -739,41 +709,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CardLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="52" selection-start="3531" selection-end="4461" vertical-scroll-proportion="0.9252747">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="16" selection-start="690" selection-end="703" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/editTeam.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="44" selection-start="4164" selection-end="4164" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cache.manifest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="49" selection-start="527" selection-end="527" vertical-scroll-proportion="-5.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="48" selection-start="887" selection-end="887" vertical-scroll-proportion="-12.958333">
@@ -812,20 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SpriteTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="11" selection-start="1323" selection-end="1329" vertical-scroll-proportion="-5.56">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="142" column="16" selection-start="3599" selection-end="3600" vertical-scroll-proportion="-10.52">
@@ -851,9 +772,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2542" column="18" selection-start="75078" selection-end="75082" vertical-scroll-proportion="0.676259">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpriteTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/blobOperations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="20" selection-start="3775" selection-end="3775" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kikClientMock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="9" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/selectTeam.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="12" selection-start="4254" selection-end="4254" vertical-scroll-proportion="-6.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="42" selection-start="2956" selection-end="2956" vertical-scroll-proportion="-7.04">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ArenaGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="238" column="21" selection-start="8138" selection-end="8138" vertical-scroll-proportion="0.4676259">
+        <state line="51" column="56" selection-start="1436" selection-end="1436" vertical-scroll-proportion="-12.48">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1025" column="30" selection-start="20097" selection-end="20097" vertical-scroll-proportion="0.7290168">
           <folding />
         </state>
       </provider>

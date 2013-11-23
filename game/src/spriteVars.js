@@ -1023,7 +1023,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 20
+			"targetRadius": 40
 		},
 		"baseOffset": {
 			"x": -20,

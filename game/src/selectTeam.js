@@ -107,6 +107,36 @@ var SelectTeam = jc.UiElementsLayer.extend({
     fightStart:function(){
         hotr.mainScene.layer.arenaPre();
     },
+    kikStart:function(){
+
+        cards.kik.pickUsers(function (users) {
+
+
+            var level = hotr.blobOperations.getLevel();
+
+            var teamA = hotr.blobOperations.getTeam();
+            var teamAFormation = hotr.blobOperations.getFormation();
+            var teamAPowers = hotr.blobOperations.getPowers();
+            var fightConfig = {
+                team:teamA,
+                teamFormation:jc.formations[teamAFormation],
+                teamPowers:teamAPowers
+            };
+
+            if (users){
+                for(var i=0;i<users.length;i++){
+                    cards.kik.send(users[i].username,  {title : 'Get some' ,
+                        text  : 'My army will crush you'  ,
+                        data  : fightConfig});
+                }
+            }
+        });
+
+        //launch picker
+        //send msg
+        //from msg, init battle
+        //send back
+    },
     close:function(){
         console.log("close");
     },
@@ -230,13 +260,26 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "anchor":['center'],
                     "padding":{
                         "top":20,
-                        "left":-30
+                        "left":-50
                     },
                     "type":"button",
                     "main":"buttonFight.png",
                     "pressed":"buttonFight.png",
                     "touchDelegateName":"fightStart"
                 },
+                "kikButton":{
+                    "cell":3,
+                    "anchor":['right'],
+                    "padding":{
+                        "top":20,
+                        "left":-50
+                    },
+                    "type":"button",
+                    "main":"tmp.kik.png",
+                    "pressed":"tmp.kik.png",
+                    "touchDelegateName":"kikStart"
+
+                }
             }
         },
     }

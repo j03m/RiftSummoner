@@ -36,12 +36,16 @@ var ArenaGame = jc.WorldLayer.extend({
 
         this.teamASprites = hotr.arenaScene.data.teamA;
         this.teamAFormation = jc.formations[hotr.arenaScene.data.teamAFormation];
-        this.teamBSprites = hotr.arenaScene.data.teamB;
-        this.teamBFormation = jc.formations[hotr.arenaScene.data.teamBFormation];
         this.teamAPowers = hotr.arenaScene.data.teamAPowers;
-        this.teamBPowers = hotr.arenaScene.data.teamBPowers;
-
-        //this.setUpHud();
+        if (cards.kik.message){
+            this.teamBSprites = cards.kik.message.team;
+            this.teamBFormation = cards.kik.message.formation;
+            this.teamBPowers = cards.kik.message.powers;
+        }else{
+            this.teamBSprites = hotr.arenaScene.data.teamB;
+            this.teamBFormation = jc.formations[hotr.arenaScene.data.teamBFormation];
+            this.teamBPowers = hotr.arenaScene.data.teamBPowers;
+        }
 
         this.setUp();
     },
