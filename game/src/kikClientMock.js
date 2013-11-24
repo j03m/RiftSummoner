@@ -16,3 +16,9 @@ mckCards.kik.pickUsers = function(cb){
 mckCards.ready = function(cb){
     cb();
 };
+
+mckCards.kik.message = {
+    team:[{name:"dragonRed"},{name:"dragonBlack"},{name:"orge"}],
+    formation:"4x4x4b",
+    powers:[]
+};

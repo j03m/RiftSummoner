@@ -82,9 +82,17 @@ var MainGame = cc.Layer.extend({
         var level = hotr.blobOperations.getLevel();
         var teamAFormation = hotr.blobOperations.getFormation();
         var teamAPowers = hotr.blobOperations.getPowers();
-        var teamB = hotr.levelLogic.getTeamForLevel(level);
-        var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
-        var teamBPowers = hotr.levelLogic.getPowers();
+
+        if (cards.kik.message){
+            var teamB = cards.kik.message.team;
+            var teamBFormation = "4x4x4b";
+            var teamBPowers = cards.kik.message.powers;
+
+        }else{
+            var teamB = hotr.levelLogic.getTeamForLevel(level);
+            var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
+            var teamBPowers = hotr.levelLogic.getPowers();
+        }
 
         var fightConfig = {
             teamA:teamA,
@@ -96,6 +104,9 @@ var MainGame = cc.Layer.extend({
             offense:'a'
         };
 
+        this.doArena(fightConfig);
+    },
+    doArena:function(fightConfig){
         hotr.arenaScene.data = fightConfig;
         var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
         this.showLoader(            {
@@ -116,6 +127,30 @@ var MainGame = cc.Layer.extend({
              jc.log(['mainLayer'], "getUser:" + token);
              this.startGame(token);
          }.bind(this));
+    },
+    doArenaDev:function(){
+        ArenaGame.scene();
+        //from hc data for dev purposes
+        var teamA = [{name:'dragonRed'}];
+        var teamAFormation = "4x4x4a";
+        var teamB = [{name:'orge'}];
+        var teamBFormation = "4x4x4b";
+        var fightConfig = {
+            teamA:teamA,
+            teamAFormation:teamAFormation,
+            teamB:teamB,
+            teamBFormation:teamBFormation,
+            teamAPowers:[],
+            teamBPowers:[],
+            offense:'a'
+        };
+        hotr.arenaScene.data = fightConfig;
+        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
+        this.showLoader(            {
+            "assets":assets,
+            "nextScene":'arena'
+        });
+
     },
     startGame:function(kikUser){
 

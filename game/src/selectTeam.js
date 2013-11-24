@@ -111,7 +111,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
 
         cards.kik.pickUsers(function (users) {
 
-
+            //todo: save to cloud, pull from cloud - no need to send the data - users can mod cheat.
             var level = hotr.blobOperations.getLevel();
 
             var teamA = hotr.blobOperations.getTeam();
@@ -119,7 +119,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
             var teamAPowers = hotr.blobOperations.getPowers();
             var fightConfig = {
                 team:teamA,
-                teamFormation:jc.formations[teamAFormation],
+                teamFormation:teamAFormation,
                 teamPowers:teamAPowers
             };
 

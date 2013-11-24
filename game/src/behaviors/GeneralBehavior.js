@@ -787,7 +787,7 @@ GeneralBehavior.prototype.afterEffects = function(){
 GeneralBehavior.prototype.removeEffects = function(effect, effectFunc, effectName){
     var func = powerConfig[effect.name + "-remove"].bind(this);
     func(effect);
-    this.unschedule(effectFunc);
+    this.owner.unschedule(effectFunc);
     this.owner.removeEffect(effectName);
     this.scheduledEffects[effectName] = undefined;
 
