@@ -7,12 +7,12 @@ Consts.dead=3;
 Consts.powerup=4;
 
 var AnimationTest = jc.TouchLayer.extend({
-    //character:"dwarvenKnightWater",
-    effect:"fire",
-    //missile:"greenbullet",
+    character:"shadowKnight",
+    effect:"select",
     init: function() {
 
         if (this._super()) {
+            MainGame.scene();
             if (AnimationTest.loaded){
                 this.go();
                 jc.playEffectOnTarget(this.effect, this.sprite, this, false);
@@ -44,7 +44,16 @@ var AnimationTest = jc.TouchLayer.extend({
                 for (var i=0;i<g_battleStuff.length;i++){
                     assets.push(g_battleStuff[i]);
                 }
-                cc.Director.getInstance().replaceScene(Loading.scene(assets, undefined, 'animationTest'));
+
+                var config = {
+                    "assets":assets,
+                    "nextScene":'animationTest'
+                };
+
+                var layer = new Loading();
+                var runningScene = cc.Director.getInstance().getRunningScene();
+                runningScene.addChild(layer);
+                layer.init(config);
             }
 
             return true;

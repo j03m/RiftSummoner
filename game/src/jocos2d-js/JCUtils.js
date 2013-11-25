@@ -197,6 +197,17 @@ jc.fadeOut=function(item, time, action){
 
 }
 
+jc.getVectorTo = function(to, from){
+    if (!to || !from){
+        throw "To and From positions required!";
+    }
+    var direction = cc.pSub(to,from);
+    var xd = Math.abs(to.x - from.x);
+    var yd = Math.abs(to.y - from.y);
+    var distance = cc.pLength(direction);
+    return {direction:direction, distance:distance, xd:xd, yd:yd};
+}
+
 jc.makeAnimationFromRange = function(name, config){
 
     //animate it
@@ -212,6 +223,9 @@ jc.makeAnimationFromRange = function(name, config){
 
     for(var i =first;i<=config.frames;i++){
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(name + "." + i + ".png");
+        if (!frame){
+            throw "Couldn't get a frame for: " + name + "." + i + ".png" + " is your naming convention off?";
+        }
         frames.push(frame);
     }
 

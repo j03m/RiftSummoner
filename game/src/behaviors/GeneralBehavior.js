@@ -361,14 +361,7 @@ GeneralBehavior.prototype.seek = function(toPoint){
 
 
 GeneralBehavior.prototype.getVectorTo= function(to, from){
-    if (!to || !from){
-        throw "To and From positions required!";
-    }
-    var direction = cc.pSub(to,from);
-    var xd = Math.abs(to.x - from.x);
-    var yd = Math.abs(to.y - from.y);
-    var distance = cc.pLength(direction);
-    return {direction:direction, distance:distance, xd:xd, yd:yd};
+    return jc.getVectorTo(to,from);
 }
 
 
@@ -578,6 +571,8 @@ GeneralBehavior.prototype.handleState = function(dt){
             break;
         case 'damage':this.handleDamage(dt);
             break;
+        case 'followUserCommand':this.followUserCommand(dt);
+            break;
     }
     this.afterEffects();
 }
@@ -691,6 +686,17 @@ GeneralBehavior.prototype.handleMove = function(dt){
     this.moveToward(point, dt);
 }
 
+
+GeneralBehavior.prototype.followUserCommand = function(dt){
+    var point = this.seek(this.followPoint);
+    if (point.x == 0 && point.y == 0){
+        //arrived - attack
+        this.setState('idle', 'idle'); //switch to idle - user command is done
+        return;
+    }
+    this.moveToward(point, dt);
+}
+
 GeneralBehavior.prototype.separate = function(){
     var steering = cc.p(0,0);
     var myTeam = this.owner.homeTeam();
@@ -783,6 +789,11 @@ GeneralBehavior.prototype.afterEffects = function(){
 
 
 };
+
+GeneralBehavior.prototype.followCommand = function(position){
+    this.followPoint = position;
+    this.setState('followUserCommand', 'move');
+}
 
 GeneralBehavior.prototype.removeEffects = function(effect, effectFunc, effectName){
     var func = powerConfig[effect.name + "-remove"].bind(this);

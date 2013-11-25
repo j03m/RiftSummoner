@@ -20,6 +20,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.teams['a'] = [];
             this.teams['b'] = [];
             this.scheduleUpdate();
+            this.doConvert = true;
 			return true;
 		} else {
 			return false;
@@ -265,7 +266,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
                 var scale = this.getOkayScale(maxX-minX, maxY-minY);
 
-                //todo: based on characterMid, select camera 1-9
+                //todo: based on characterMid, select camera 1-9                                             d
                 //todo: based on scale, select right scale ratio
 
                 //smooth
@@ -301,15 +302,50 @@ var ArenaGame = jc.WorldLayer.extend({
         return pos;
 
     },
+    setSpriteTargetLocation:function(touch, sprites){
+        //play tap effect at touch
+        jc.playEffectAtLocation("tapEffect", touch, jc.shadowZOrder,this);
+        this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["selectEffect"].sprite);
+        this.selectedSprite.effectAnimations["selectEffect"].playing = false;
+        this.nextTouchAction = undefined;
+        this.selectedSprite.behavior.followCommand(touch);
+    },
     targetTouchHandler:function(type, touch,sprites){
-        if (this.nextTouchAction){
-            if (type == jc.touchEnded){
-                var nodePos = this.convertToNodeSpace(touch);
+        if (type == jc.touchEnded){
+            var nodePos = touch; //this.convertToNodeSpace(touch);
+            if (this.nextTouchAction){
                 this.nextTouchAction(nodePos, sprites);
                 this.nextTouchAction = undefined;
             }
-            return true;
+            if (sprites){
+
+                var minSprite = this.getBestSpriteForTouch(nodePos, sprites, this.getTeam('a'));
+                if (minSprite){
+                    jc.playEffectOnTarget("selectEffect", minSprite, this, true );
+                    this.selectedSprite = minSprite;
+                    this.nextTouchAction = this.setSpriteTargetLocation.bind(this)
+                }
+
+            }
         }
+
+        return true;
+    },
+    getBestSpriteForTouch:function(touch, sprites, team){
+        var minSprite;
+        var minDis = this.winSize.width;
+        for(var i =0;i<sprites.length;i++){
+            //alive/myteam?
+            if (sprites[i].isAlive() && team.indexOf(sprites[i])!=-1){
+                //this.bestMatch?
+                var v1 = jc.getVectorTo(touch, sprites[i].getPosition());
+                if (v1.distance < minDis){
+                    minDis = v1.distance;
+                    minSprite = sprites[i];
+                }
+            }
+        }
+        return minSprite;
     }
 
 });

@@ -54,6 +54,25 @@ var effectsConfig = {
         "placement":"base2base",
         "times":1,
     },
+    "tapEffect":{
+        "png":"art/tap.png",
+        "plist":"art/tap.plist",
+        "start":"tapEffect.1.png",
+        "frames":15,
+        "delay":0.02,
+        "placement":"bottom",
+        "times":1,
+    },
+    "selectEffect":{
+        "png":"art/select.png",
+        "plist":"art/select.plist",
+        "start":"selectEffect.1.png",
+        "frames":31,
+        "delay":0.02,
+        "placement":"base2base",
+        "zorder":"behind",
+
+    },
     "fire":{
         "png":"art/fire.png",
         "plist":"art/fire.plist",

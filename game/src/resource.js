@@ -40,6 +40,11 @@ var g_maingame = [
 var g_battleStuff =[
     {src:effectsConfig['teleport'].png},
     {src:effectsConfig['teleport'].plist},
+    {src:effectsConfig['selectEffect'].png},
+    {src:effectsConfig['selectEffect'].plist},
+    {src:effectsConfig['tapEffect'].png},
+    {src:effectsConfig['tapEffect'].plist},
+
     {src:powerTilesPlist},
     {src:powerTilesPng},
 
