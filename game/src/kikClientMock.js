@@ -18,7 +18,7 @@ mckCards.ready = function(cb){
 };
 
 mckCards.kik.message = {
-    team:[ {"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"}, {"name":"redGargoyle"},{"name":"blackGargoyle"}],
+    team:[ {"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"orge"},],
     //team:[{"name":"redGargoyle"},{"name":"blackGargoyle"}],
     formation:"4x4x4b",
     powers:[]
