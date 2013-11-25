@@ -13,7 +13,7 @@ var cocos2dApp = cc.Application.extend({
 
         console.log("applicationDidFinishLaunching");
         var director = cc.Director.getInstance();
-
+        //director.setContentScaleFactor(2);
         // enable High Resource Mode(2x, such as iphone4) and maintains low resource on other devices.
 //     director->enableRetinaDisplay(true);
 	//cc.EGLView.getInstance().setDesignResolutionSize(320,480,cc.RESOLUTION_POLICY.SHOW_ALL);

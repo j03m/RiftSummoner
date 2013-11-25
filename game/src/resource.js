@@ -10,12 +10,12 @@ var powerTilesPlist= dirImg + "powerTiles.plist";
 var windowPng = dirImg + "windows.png";
 var windowPlist = dirImg + "windows.plist";
 
-var cardsPngs = [dirImg + "cards.png"];
+var cardsPngs = [dirImg + "cards-iphone5.png"];
 var cardsPlists = [dirImg + "cards.plist"];
-var loadingPng = dirImg + "loading.png";
-var loadingPlist = dirImg + "loading.plist";
-var uiPng = dirImg + "uiElements.png";
-var uiPlist = dirImg + "uiElements.plist";
+var loadingPng = dirImg + "loading-iphone5.png";
+var loadingPlist = dirImg + "loading-iphone5.plist";
+var uiPng = dirImg + "uiElements-iphone5.png";
+var uiPlist = dirImg + "uiElements-iphone5.plist";
 
 var g_characterPngs = {};
 var g_characterPlists = {};
@@ -52,8 +52,8 @@ var g_battleStuff =[
 
 for (var entry in spriteDefs ){
     if (!spriteDefs[entry].parentOnly && spriteDefs[entry].name){
-        g_characterPngs[entry] = dirImg + entry + 'Sheet.png';
-        g_characterPlists[entry] = dirImg + entry + 'Sheet.plist';
+        g_characterPngs[entry] = dirImg + entry + 'Sheet-hd.png';
+        g_characterPlists[entry] = dirImg + entry + 'Sheet-hd.plist';
     }
 }
 
