@@ -10,14 +10,19 @@ var spriteDefs = {
 			"movementType": 0,
 			"targets": 2,
 			"speed": 100,
-			"damage": 25,
+			"damage": 100,
+            "missile": "greenbullet",
 			"vsAirDamage": 5,
 			"actionDelays": {
-				"attack": 1
+				"attack": 0.01
 			},
 			"effectDelays": {
 				"attack": 0.01
 			},
+            "flightAug": {
+                "x": 25,
+                "y": 100
+            },
 			"targetRadius": 25,
 			"seekRadius": 25
 		},
@@ -629,12 +634,6 @@ var spriteDefs = {
 				"type": 0
 			},
 			"attack": {
-				"start": 51,
-				"end": 100,
-				"delay": 0.025,
-				"type": 1
-			},
-			"attack2": {
 				"start": 100,
 				"end": 147,
 				"delay": 0.025,
@@ -653,7 +652,7 @@ var spriteDefs = {
 				"type": 0
 			}
 		},
-		"behavior": "tank"
+		"behavior": "range"
 	},
 	"goblin": {
 		"name": "goblin",
@@ -1154,14 +1153,19 @@ var spriteDefs = {
 			"speed": 100,
 			"movementType": 0,
 			"targets": 2,
-			"damage": 15,
+			"damage": 100,
+            "missile": "greenbullet",
 			"splashDamage": 5,
 			"actionDelays": {
-				"attack": 1
+				"attack": 0.01
 			},
 			"effectDelays": {
 				"attack": 0.01
 			},
+            "flightAug": {
+                "x": 25,
+                "y": 100
+            },
 			"targetRadius": 25
 		},
 		"inherit": "gargoyle"

@@ -304,11 +304,35 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     setSpriteTargetLocation:function(touch, sprites){
         //play tap effect at touch
-        jc.playEffectAtLocation("tapEffect", touch, jc.shadowZOrder,this);
-        this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["selectEffect"].sprite);
-        this.selectedSprite.effectAnimations["selectEffect"].playing = false;
-        this.nextTouchAction = undefined;
-        this.selectedSprite.behavior.followCommand(touch);
+        if (sprites){
+            var minSprite = this.getBestSpriteForTouch(touch, sprites, this.getTeam('b'));
+            if (minSprite && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an enemy
+                doEnemyTouch.bind(this)(minSprite);
+
+            }else{
+                doGenericTouch.bind(this)();
+            }
+        }else{
+            doGenericTouch.bind(this)();
+        }
+
+        function doEnemyTouch(sprite){
+            jc.playEffectAtLocation("tapEffect", touch, jc.shadowZOrder,this);
+            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["selectEffect"].sprite);
+            this.selectedSprite.effectAnimations["selectEffect"].playing = false;
+            this.nextTouchAction = undefined;
+            this.selectedSprite.behavior.attackCommand(sprite);
+        }
+
+        function doGenericTouch(){
+            jc.playEffectAtLocation("tapEffect", touch, jc.shadowZOrder,this);
+            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["selectEffect"].sprite);
+            this.selectedSprite.effectAnimations["selectEffect"].playing = false;
+            this.nextTouchAction = undefined;
+            this.selectedSprite.behavior.followCommand(touch);
+        }
+
+
     },
     targetTouchHandler:function(type, touch,sprites){
         if (type == jc.touchEnded){

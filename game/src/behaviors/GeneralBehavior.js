@@ -795,6 +795,11 @@ GeneralBehavior.prototype.followCommand = function(position){
     this.setState('followUserCommand', 'move');
 }
 
+GeneralBehavior.prototype.attackCommand = function(target){
+    this.locked = target;
+    this.setState('move', 'move');
+}
+
 GeneralBehavior.prototype.removeEffects = function(effect, effectFunc, effectName){
     var func = powerConfig[effect.name + "-remove"].bind(this);
     func(effect);
