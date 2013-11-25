@@ -305,15 +305,28 @@ var ArenaGame = jc.WorldLayer.extend({
     setSpriteTargetLocation:function(touch, sprites){
         //play tap effect at touch
         if (sprites){
-            var minSprite = this.getBestSpriteForTouch(touch, sprites, this.getTeam('b'));
-            if (minSprite && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an enemy
+            var temp = [];
+            temp = temp.concat(this.getTeam('b'));
+            temp = temp.concat(this.getTeam('a'));
+            var minSprite = this.getBestSpriteForTouch(touch, sprites, temp);
+            if (minSprite && this.getTeam('b').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an enemy
                 doEnemyTouch.bind(this)(minSprite);
 
+            }else if (minSprite && this.getTeam('a').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an friend
+                doFriendTouch.bind(this)(minSprite);
             }else{
                 doGenericTouch.bind(this)();
             }
         }else{
             doGenericTouch.bind(this)();
+        }
+
+        function doFriendTouch(sprite){
+            jc.playEffectAtLocation("tapEffect", touch, jc.shadowZOrder,this);
+            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["selectEffect"].sprite);
+            this.selectedSprite.effectAnimations["selectEffect"].playing = false;
+            this.nextTouchAction = undefined;
+            this.selectedSprite.behavior.supportCommand(sprite);
         }
 
         function doEnemyTouch(sprite){

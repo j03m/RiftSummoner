@@ -800,6 +800,12 @@ GeneralBehavior.prototype.attackCommand = function(target){
     this.setState('move', 'move');
 }
 
+GeneralBehavior.prototype.supportCommand = function(target){
+    this.support = target;
+    this.setState('move', 'move');
+}
+
+
 GeneralBehavior.prototype.removeEffects = function(effect, effectFunc, effectName){
     var func = powerConfig[effect.name + "-remove"].bind(this);
     func(effect);
