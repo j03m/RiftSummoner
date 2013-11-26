@@ -9,6 +9,7 @@ cards.ready(function(){
         '../src/effectsConfig.js',
         '../src/powerTileConfig.js',
         '../src/powerConfig.js',
+        '../src/jocos2d-js/JCResolutions.js',
         '../src/resource.js',
         '../src/blobOperations.js',
         '../src/levelLogic.js',
@@ -43,6 +44,7 @@ cards.ready(function(){
         '../src/ArenaGame.js',
         '../src/AnimationTest.js',
         '../src/Loading.js',
+        '../src/retinaTest.js',
         '../src/Main.js',
         '../src/PowerHud.js',
         'gameHtml5.js'

@@ -1,7 +1,7 @@
 var missileConfig = {
                      "greenbullet":{
-                         "png":"art/greenbullet.png",
-                         "plist":"art/greenbullet.plist",
+                         "png":"art/greenbullet{v}.png",
+                         "plist":"art/greenbullet{v}.plist",
                          "start":"greenbullet.1.png",
                          "effect":"greenBang",
                          "frames":27,
@@ -10,8 +10,8 @@ var missileConfig = {
                          "speed":400
                      },
                     "fireball":{
-                        "png":"art/fireball.png",
-                        "plist":"art/fireball.plist",
+                        "png":"art/fireball{v}.png",
+                        "plist":"art/fireball{v}.plist",
                         "start":"fireball.1.png",
                         "effect":"explosion",
                         "frames":10,

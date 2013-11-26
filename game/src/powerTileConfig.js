@@ -1,31 +1,31 @@
 var powerTiles = {
     "fireBall":{
-        "png":"art/powerTiles.png",
-        "plist":"art/powerTiles.plist",
+        "png":"art/powerTiles{v}.png",
+        "plist":"art/powerTiles{v}.plist",
         "icon":"Fire4.png",
         "cooldown":2000,
         "type":"direct",
         "offense":"fireBall"
     },
     "poisonCloud":{
-        "png":"art/powerTiles.png",
-        "plist":"art/powerTiles.plist",
+        "png":"art/powerTiles{v}.png",
+        "plist":"art/powerTiles{v}.plist",
         "icon":"Poison4.png",
         "cooldown":2000,
         "type":"direct",
         "offense":"poisonCloud"
     },
     "lightningBolt":{
-        "png":"art/powerTiles.png",
-        "plist":"art/powerTiles.plist",
+        "png":"art/powerTiles{v}.png",
+        "plist":"art/powerTiles{v}.plist",
         "icon":"Holy1.png",
         "cooldown":2000,
         "type":"direct",
         "offense":"lightningBolt"
     },
     "healing":{
-        "png":"art/powerTiles.png",
-        "plist":"art/powerTiles.plist",
+        "png":"art/powerTiles{v}.png",
+        "plist":"art/powerTiles{v}.plist",
         "icon":"Holy5.png",
         "cooldown":2000,
         "type":"global",
@@ -40,8 +40,8 @@ var powerTiles = {
         "offense":"leechAll"
     },
     "iceStorm":{
-        "png":"art/powerTiles.png",
-        "plist":"art/powerTiles.plist",
+        "png":"art/powerTiles{v}.png",
+        "plist":"art/powerTiles{v}.plist",
         "icon":"Frost5.png",
         "cooldown":2000,
         "type":"global",

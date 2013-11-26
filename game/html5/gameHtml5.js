@@ -15,9 +15,8 @@ var cocos2dApp = cc.Application.extend({
         var director = cc.Director.getInstance();
 
         // enable High Resource Mode(2x, such as iphone4) and maintains low resource on other devices.
-//     director->enableRetinaDisplay(true);
-	//cc.EGLView.getInstance().setDesignResolutionSize(320,480,cc.RESOLUTION_POLICY.SHOW_ALL);
-
+        //     director->enableRetinaDisplay(true);
+	    //cc.EGLView.getInstance().setDesignResolutionSize(1136,640,cc.RESOLUTION_POLICY.SHOW_ALL);
 
         // turn on display FPS
         director.setDisplayStats(this.config.showFPS);
@@ -25,8 +24,6 @@ var cocos2dApp = cc.Application.extend({
         // set FPS. the default value is 1.0/60 if you don't call this
         director.setAnimationInterval(1.0 / this.config.frameRate);
 
-        //load resources
-        console.log("LoaderScene");
         cc.LoaderScene.preload(g_maingame, function () {
             console.log("StartScene");
             director.replaceScene(new this.startScene());
@@ -48,6 +45,7 @@ var cocos2dApp = cc.Application.extend({
 
 console.log("prescene");
 var myApp = new cocos2dApp(MainGame.scene);
+//var myApp = new cocos2dApp(RetinaTest.scene);
 
 window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
     console.log("Error occured: " + errorMsg);

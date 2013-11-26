@@ -1,7 +1,7 @@
 var effectsConfig = {
     "greenBang":{
-        "png":"art/greenBang.png",
-        "plist":"art/greenBang.plist",
+        "png":"art/greenBang{v}.png",
+        "plist":"art/greenBang{v}.plist",
         "start":"greenBang.1.png",
         "placement":"center",
         "frames":28,
@@ -9,8 +9,8 @@ var effectsConfig = {
         "times":1
     },
     "explosion":{
-        "png":"art/explosion.png",
-        "plist":"art/explosion.plist",
+        "png":"art/explosion{v}.png",
+        "plist":"art/explosion{v}.plist",
         "start":"explosion.1.png",
         "placement":"bottom",
         "zorder":"behind",
@@ -23,8 +23,8 @@ var effectsConfig = {
         "times":1
     },
     "blueRadius":{
-        "png":"art/blueRadius.png",
-        "plist":"art/blueRadius.plist",
+        "png":"art/blueRadius{v}.png",
+        "plist":"art/blueRadius{v}.plist",
         "start":"blueRadius.1.png",
         "frames":23,
         "delay":0.05,
@@ -37,8 +37,8 @@ var effectsConfig = {
 
     },
     "heal":{
-        "png":"art/heal.png",
-        "plist":"art/heal.plist",
+        "png":"art/heal{v}.png",
+        "plist":"art/heal{v}.plist",
         "start":"heal.5.png",
         "frames":17,
         "delay":0.05,
@@ -46,17 +46,17 @@ var effectsConfig = {
         "times":5,
     },
     "teleport":{
-        "png":"art/teleport.png",
-        "plist":"art/teleport.plist",
-        "start":"teleport.1.png",
+        "png":"art/teleport{v}.png",
+        "plist":"art/teleport{v}.plist",
+        "start":"teleport{v}.1.png",
         "frames":14,
         "delay":0.02,
         "placement":"base2base",
         "times":1,
     },
     "tapEffect":{
-        "png":"art/tap.png",
-        "plist":"art/tap.plist",
+        "png":"art/tap{v}.png",
+        "plist":"art/tap{v}.plist",
         "start":"tapEffect.1.png",
         "frames":15,
         "delay":0.02,
@@ -64,8 +64,8 @@ var effectsConfig = {
         "times":1,
     },
     "selectEffect":{
-        "png":"art/select.png",
-        "plist":"art/select.plist",
+        "png":"art/select{v}.png",
+        "plist":"art/select{v}.plist",
         "start":"selectEffect.1.png",
         "frames":31,
         "delay":0.02,
@@ -74,8 +74,8 @@ var effectsConfig = {
 
     },
     "fire":{
-        "png":"art/fire.png",
-        "plist":"art/fire.plist",
+        "png":"art/fire{v}.png",
+        "plist":"art/fire{v}.plist",
         "start":"fire.1.png",
         "frames":44,
         "delay":0.02,
@@ -84,8 +84,8 @@ var effectsConfig = {
     },
     "fireLoop":{
         "name":"fire",
-        "png":"art/fire.png",
-        "plist":"art/fire.plist",
+        "png":"art/fire{v}.png",
+        "plist":"art/fire{v}.plist",
         "start":"fire.1.png",
         "frames":44,
         "delay":0.02,
@@ -94,8 +94,8 @@ var effectsConfig = {
         "times":15,
     },
     "poison":{
-        "png":"art/poison.png",
-        "plist":"art/poison.plist",
+        "png":"art/poison{v}.png",
+        "plist":"art/poison{v}.plist",
         "start":"poison.1.png",
         "frames":50,
         "delay":0.02,

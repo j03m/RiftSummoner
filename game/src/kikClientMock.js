@@ -18,8 +18,13 @@ mckCards.ready = function(cb){
 };
 
 mckCards.kik.message = {
-    team:[{name:"dragonRed"},{name:"dragonBlack"},{name:"orge"}, {"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"}, {"name":"redGargoyle"},{"name":"blackGargoyle"}],
-    //team:[{"name":"redGargoyle"},{"name":"blackGargoyle"}],
+    //team:[{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"},{"name":"goblinKnightNormal"}, {"name":"redGargoyle"},{"name":"blackGargoyle"}],
+    team:[{"name":"orge"},{"name":"orge"}],
     formation:"4x4x4b",
     powers:[]
 };
+
+
+if (!cards){
+    var cards = mckCards; //auto shim in the mock
+}

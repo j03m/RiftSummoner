@@ -1,5 +1,6 @@
 var jc = jc || {};
 
+
 jc.makeStats = function(name){
     var def = spriteDefs[name];
     var stats ={};
@@ -259,6 +260,8 @@ jc.playTintedEffectOnTarget = function(name, target, layer, child, r, g, b){
 
     return effect;
 }
+
+
 
 jc.playEffectOnTarget = function(name, target, layer, child){
 
