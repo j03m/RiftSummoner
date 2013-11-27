@@ -4,14 +4,18 @@ jc.assetWildCard = "{v}";
 
 //this assumes you want landscape. todo: mod for portrait
 jc.resolutions = {};
-jc.resolutions['iphone'] = cc.size(480,320);
-jc.resolutions['iphone4'] = cc.size(960,640);
-jc.resolutions['iphone5'] = cc.size(1136,640);
-jc.resolutions['ipad'] = cc.size(1024, 768);
-jc.resolutions['ipadhd'] = cc.size(2048, 1536);
+jc.resolutions.iphone = cc.size(480,320);
+jc.resolutions.iphone4 = cc.size(960,640);
+//jc.resolutions.iphone5 = cc.size(1136,640);
+//jc.resolutions.ipad = cc.size(1024, 768);
+//jc.resolutions.ipadhd = cc.size(2048, 1536);
 
 jc.setDesignSize = function(size){
     jc.designSize = size;
+}
+
+jc.setActualSize = function(size){
+    jc.actualSize = size;
 }
 
 jc.bestAssetDirectory = function(window, screen){

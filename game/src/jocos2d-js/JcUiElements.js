@@ -120,6 +120,9 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             case 'bottom':
                 this.slideInFromBottom(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position,doneDelegate);
                 break;
+            case 'custom':
+                this[windowConfig.config.executeIn](doneDelegate);
+                break;
         }
     },
     doTransitionOut:function(windowConfig, doneDelegate){
@@ -136,6 +139,10 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             case 'bottom':
                 this.slideOutToBottom(windowConfig.window, windowConfig.config.transitionOutTime, undefined,doneDelegate);
                 break;
+            case 'custom':
+                this[windowConfig.config.executeOut](doneDelegate);
+                break;
+
         }
     },
     initFromConfig:function(configs, parent){
@@ -304,7 +311,8 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             }
 
             //keep track
-            parent.addChild(window);
+            this.addChild(window);
+            this.reorderChild(window, config.z);
             var instanceName;
             if (!member.name){
                 instanceName = name+i;
@@ -400,7 +408,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         var bottom;
         var right;
         var center;
-        var parentSize = parent.getContentSize();
+        var parentSize = this.winSize;
         var row = this.getRow(config.cell);
         var col = this.getCol(config.cell)
         var cellWidth = parentSize.width/3;
@@ -474,12 +482,11 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         }
         throw "Cell must be 1-9";
     },
-    centerThis:function(centerMe, centerOn){
-        var pos = this.getAnchorPosition({"cell":5}, centerMe, centerOn);
-        centerMe.setPosition(pos);
-    },
     centerThisPeer:function(centerMe, centerOn){
         centerMe.setPosition(centerOn.getPosition());
+    },
+    centerThisChild:function(centerMe, centerOn){
+        centerMe.setPosition(cc.p(50,50));
     },
     scaleTo:function(scaleMe, toMe){
         var currentSize = scaleMe.getContentSize();

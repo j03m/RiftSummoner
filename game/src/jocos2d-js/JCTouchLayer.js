@@ -101,14 +101,12 @@ jc.TouchLayer = cc.Layer.extend({
         var handled = [];
         for (var i=0;i<this.touchTargets.length;i++){
             var cs = this.touchTargets[i].getBoundingBox();
-            var tr;
-            if (this.touchTargets[i].getTextureRect){
-                tr = this.touchTargets[i].getTextureRect();
-                cs.with = tr.width;
-                cs.height= tr.height;
-            }
+            jc.log(['touchcore'], "Touch:" + JSON.stringify(touch));
+            jc.log(['touchcore'], "Sprite:" + this.touchTargets[i].name);
+            jc.log(['touchcore'], "Position:" + JSON.stringify(cs));
+            var contains = cc.rectContainsPoint(cs, touch);
 
-            if (cc.rectContainsPoint(cs, touch)){
+            if (contains){
                 handled.push(this.touchTargets[i]);
             }
         }
@@ -197,7 +195,7 @@ jc.TouchLayer = cc.Layer.extend({
             throw "when var must be before or after";
         }else{
             action = cc.Sequence.create(moveAction, callFunc);
-            item.runAction(moveAction);
+            item.runAction(action);
         }
 
 

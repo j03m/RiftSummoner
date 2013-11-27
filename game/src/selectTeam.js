@@ -148,7 +148,6 @@ var SelectTeam = jc.UiElementsLayer.extend({
                 //place highlight border
                 this.highlight.setVisible(true);
                 var pos = sprites[0].getPosition();
-                pos.y-=10;
                 this.highlight.setPosition(pos);
                 this.reorderChild(this.highlight, sprites[0].getZOrder()+1);
                 //put cell # into scratchboard
@@ -167,6 +166,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
             "transitionIn":"top",
             "transitionOut":"top",
             "sprite":"genericBackground.png",
+            "z":1,
             "kids":{
                 "closeButton":{
                     "cell":9,
@@ -178,18 +178,20 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "type":"button",
                     "main":"closeButton.png",
                     "pressed":"closeButton.png",
-                    "touchDelegateName":"close"
+                    "touchDelegateName":"close",
+                    "z":2,
 
                 },
                 "gridCells":{
                     "isGroup":true,
+                    "z":2,
                     "type":"grid",
                     "cols":4,
                     "cell":7,
-                    "anchor":['bottom'],
+                    "anchor":['top'],
                     "padding":{
-                        "top":-35,
-                        "left":-25
+                        "top":50,
+                        "left":10
                     },
                     "itemPadding":{
                         "top":3,
@@ -207,21 +209,22 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "membersTotal":12
                 },
                 "formation":{
-                    "cell":6,
-                    "anchor":['right','top'],
+                    "cell":9,
+                    "anchor":['left'],
                     "padding":{
-                        "top":-67,
-                        "left":-27
+                        "top":50,
+                        "left":-200
                     },
                     "type":"sprite",
-                    "sprite":"formationFrame.png"
+                    "sprite":"formationFrame.png",
+                    "z":2,
                 },
                 "description":{
-                    "cell":3,
-                    "anchor":['top'],
+                    "cell":5,
+                    "anchor":['right'],
                     "padding":{
-                        "top":-40,
-                        "left":-30
+                        "top":40,
+                        "left":123
                     },
                     "type":"sprite",
                     "sprite":"descriptionWindow.png"
@@ -229,11 +232,11 @@ var SelectTeam = jc.UiElementsLayer.extend({
                 "formationSelect":{
                     "isGroup":true,
                     "type":"line",
-                    "cell":3,
-                    "anchor":['left', 'top'],
+                    "cell":2,
+                    "anchor":['roght', 'top'],
                     "padding":{
-                        "top":20,
-                        "left":-50
+                        "top":30,
+                        "left":70
                     },
 
                     "members":[
@@ -256,11 +259,11 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     ]
                 },
                 "fightButton":{
-                    "cell":3,
-                    "anchor":['center'],
+                    "cell":2,
+                    "anchor":['right'],
                     "padding":{
-                        "top":20,
-                        "left":-50
+                        "top":10,
+                        "left":0
                     },
                     "type":"button",
                     "main":"buttonFight.png",
@@ -269,14 +272,14 @@ var SelectTeam = jc.UiElementsLayer.extend({
                 },
                 "kikButton":{
                     "cell":3,
-                    "anchor":['right'],
+                    "anchor":['left'],
                     "padding":{
-                        "top":20,
-                        "left":-50
+                        "top":10,
+                        "left":-10
                     },
                     "type":"button",
-                    "main":"tmp.kik.png",
-                    "pressed":"tmp.kik.png",
+                    "main":"buttonKikNormal.png",
+                    "pressed":"buttonKikPressed.png",
                     "touchDelegateName":"kikStart"
 
                 }

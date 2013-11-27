@@ -1,6 +1,7 @@
 var dirImg = "art/";
 var dirMusic = "sounds/";
 
+jc.setDesignSize = jc.resolutions.iphone4;
 
 jc.assetCategory = jc.bestAssetDirectory(window, screen);
 

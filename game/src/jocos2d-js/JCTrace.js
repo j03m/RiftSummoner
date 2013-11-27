@@ -3,7 +3,7 @@ var jc = jc || {};
 var tracers = {
 	'general':0,
 	'touch':0,
-    'touchcore':0,
+    'touchcore':1,
     'touchid':0,
     'touchout':1,
 	'mouse':0,

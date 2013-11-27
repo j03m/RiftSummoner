@@ -21,7 +21,7 @@ var Loading = jc.UiElementsLayer.extend({
         this.animationDone = true;
         this.spinner = jc.makeSpriteWithPlist(loadingPlist,loadingPng, "loader1.png");
         this.addChild(this.spinner);
-        this.spinner.setPosition(cc.p((this.winSize.width/2)-1, (this.winSize.height/2)+26));
+        this.spinner.setPosition(cc.p((this.winSize.width/2)-3, (this.winSize.height/2) + 51));
         this.startLoading();
 
     },
@@ -89,6 +89,28 @@ var Loading = jc.UiElementsLayer.extend({
         hotr.changeScene(this.nextScene);
 
     },
+    slideWallLeft:function(doneDelegate){
+        var itemRect = this.leftDoor.getTextureRect();
+        var fromX = (0 - itemRect.width); //offscreen left
+        var fromY = this.winSize.height/2;
+        var toX = (this.winSize.width/2)-itemRect.width/2;
+        var toY = fromY;
+        var to = cc.p(toX, toY);
+
+        this.slide(this.leftDoor, cc.p(fromX,fromY), to, jc.defaultTransitionTime, undefined, undefined,doneDelegate);
+
+    },
+    slideWallRight:function(doneDelegate){
+        var itemRect = this.rightDoor.getTextureRect();
+        var fromX = (this.winSize.width + itemRect.width); //offscreen right
+        var fromY = this.winSize.height/2;
+        var toX = (this.winSize.width/2)+itemRect.width/2;
+        var toY = fromY;
+        var to = cc.p(toX, toY);
+
+        this.slide(this.rightDoor, cc.p(fromX,fromY), to, jc.defaultTransitionTime, undefined, undefined,doneDelegate);
+
+    },
     checkPercent:function(){
         //implement loading bar once we have the sprites
         if (this.animationDone){
@@ -148,7 +170,8 @@ var Loading = jc.UiElementsLayer.extend({
     windowConfig:{
         "leftDoor":{
             "type":"sprite",
-            "transitionIn":"left",
+            "transitionIn":"custom",
+            "executeIn":"slideWallLeft",
             "transitionOut":"left",
             "cell":4,
             "anchor":['left'],
@@ -160,7 +183,8 @@ var Loading = jc.UiElementsLayer.extend({
         },
         "rightDoor":{
             "type":"sprite",
-            "transitionIn":"right",
+            "transitionIn":"custom",
+            "executeIn":"slideWallRight",
             "transitionOut":"right",
             "cell":6,
             "anchor":['right'],

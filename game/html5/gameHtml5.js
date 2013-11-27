@@ -16,7 +16,7 @@ var cocos2dApp = cc.Application.extend({
 
         // enable High Resource Mode(2x, such as iphone4) and maintains low resource on other devices.
         //     director->enableRetinaDisplay(true);
-	    //cc.EGLView.getInstance().setDesignResolutionSize(1136,640,cc.RESOLUTION_POLICY.SHOW_ALL);
+	    //cc.EGLView.getInstance().setDesignResolutionSize(960,640,cc.RESOLUTION_POLICY.SHOW_ALL);
 
         // turn on display FPS
         director.setDisplayStats(this.config.showFPS);

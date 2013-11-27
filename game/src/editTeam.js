@@ -2,7 +2,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     deck:[],
     cards:{},
     touchTargets:[],
-    cellWidth:120,
+    cellWidth:200,
     cells:20,
     cardLayer:undefined,
     playMap:{},
@@ -22,6 +22,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             this.tableView = new jc.ScrollingLayer();
             this["characterPortraitsFrame"].addChild(this.tableView);
             var scrollData = this.getDisplaySpritesAndMetaData();
+
             this.tableView.init({
                 sprites:scrollData.sprites,
                 metaData:scrollData.ids,
@@ -31,7 +32,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             });
 
             var pos = this.tableView.getPosition();
-            pos.y+=28;
+            pos.y+=56;
             this.tableView.setPosition(pos);
             this.reorderChild(this.tableView, 3);
             this.tableView.hackOn();
@@ -42,6 +43,8 @@ var EditTeam = jc.UiElementsLayer.extend({
         if (this.statsFrame.card){
             jc.fadeIn(this.statsFrame.card, 255);
         }
+        this.characterPortraitsLeft.setZOrder(9);
+        this.characterPortraitsRight.setZOrder(9);
     },
     outTransitionsComplete:function(){
         jc.layerManager.popLayer();
@@ -58,7 +61,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         sprite.pic = jc.getCharacterPortrait(name, sprite.getContentSize());
         sprite.addChild(sprite.pic);
         this.scaleTo(sprite.pic, sprite);
-        this.centerThis(sprite.pic, sprite);
+        this.centerThisChild(sprite.pic, sprite);
         return sprite;
     },
     getDisplaySpritesAndMetaData: function(){
@@ -119,29 +122,25 @@ var EditTeam = jc.UiElementsLayer.extend({
         if (caps.ground){
             this.ground = caps.ground;
             this.addChild(caps.ground)
-            this.ground.setPosition(cc.p(58,270));
+            this.ground.setPosition(cc.p(205,533));
         }
 
         if (caps.air){
             this.air = caps.air;
             this.addChild(caps.air)
-            this.air.setPosition(cc.p(90,270));
+            this.air.setPosition(cc.p(275,533));
         }
-
-
-
-
     },
     updateStats:function(entry){
         var stats = jc.makeStats(entry.name);
         stats = this.makeStringStats(stats);
 
-        var size = cc.size(40, 10);
-        var align = cc.TEXT_ALIGNMENT_RIGHT;
-        var fntSize = 12;
+        var size = cc.size(80, 20);
+        var align = cc.TEXT_ALIGNMENT_LEFT;
+        var fntSize = 16;
         var fntName = "gow";
-        var firstPos = cc.p(80, 245);
-        var spacing = 19;
+        var firstPos = cc.p(250, 480);
+        var spacing = 37;
         var zorder = this.statsFrame.getZOrder()+1
 
         var prefix = "lbl";
@@ -192,7 +191,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                 "main":"infoButton.png",
                 "pressed":"infoButton.png"
             },this.infoTouch.bind(this));
-            this.statsFrame.info.setPosition(cc.p(135, 260));
+            this.statsFrame.info.setPosition(cc.p(350, 515));
             this.addChild(this.statsFrame.info);
         }else{
             this.statsFrame.info.setZOrder(this.statsFrame.card.getZOrder()+1);
@@ -205,7 +204,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             var cardPos = this.statsFrame.getPosition();
             var cardZOrder = this.statsFrame.getZOrder();
             var cardTr = this.statsFrame.card.getTextureRect();
-            elementSprite.setPosition(cc.p(243, 135));
+            elementSprite.setPosition(cc.p(565, 275));
             elementSprite.setZOrder(cardZOrder+1);
         }
 
@@ -217,7 +216,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     },
     swapCharacterCard:function(card){
         var pos = this.statsFrame.getPosition();
-        card.setPosition(cc.p(185,pos.y));
+        card.setPosition(cc.p(480,pos.y));
         var swapFade = jc.swapFade.bind(this);
         swapFade(this.statsFrame.card, card);
         this.statsFrame.card = card;
@@ -244,7 +243,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "cell":9,
                     "anchor":['center', 'right'],
                     "padding":{
-                        "top":-15,
+                        "top":0,
                         "left":0
                     },
                     "type":"button",
@@ -255,12 +254,12 @@ var EditTeam = jc.UiElementsLayer.extend({
                 },
                 "statsFrame":{
                     "cell":4,
-                    "anchor":['center', 'right'],
+                    "anchor":['center', 'left'],
                     "type":"sprite",
                     "sprite":"statsFrame.png",
                     "padding":{
-                        "top":-40,
-                        "left":95,
+                        "top":-125,
+                        "left":55,
                     }
                 },
                 "powerLevels":{
@@ -268,14 +267,14 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "type":"grid",
                     "cols":5,
                     "cell":8,
-                    "anchor":['right'],
+                    "anchor":['center'],
                     "padding":{
-                        "top":31,
-                        "left":-31
+                        "top":29,
+                        "left":65
                     },
                     "itemPadding":{
                         "top":0,
-                        "left":6
+                        "left":11
                     },
                     "members":[
                         {
@@ -290,14 +289,14 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "type":"grid",
                     "cols":5,
                     "cell":8,
-                    "anchor":['right', 'bottom'],
+                    "anchor":['center', 'bottom'],
                     "padding":{
-                        "top":12,
-                        "left":-20
+                        "top":-40,
+                        "left":77
                     },
                     "itemPadding":{
                         "top":0,
-                        "left":-1
+                        "left":-2
                     },
                     "input":true,
                     "members":[
@@ -312,19 +311,19 @@ var EditTeam = jc.UiElementsLayer.extend({
                 "powerDesc":{
                     "type":"sprite",
                     "sprite":"powerIconsDescription.png",
-                    "cell":6,
-                    "anchor":['center'],
+                    "cell":5,
+                    "anchor":['left'],
                     "padding":{
-                        "top":-5,
-                        "left":-45
+                        "top":-45,
+                        "left":145
                     }
                 },
                 "nextLevel":{
-                    "cell":6,
-                    "anchor":['left', 'bottom'],
+                    "cell":5,
+                    "anchor":['right'],
                     "padding":{
-                        "top":-28,
-                        "left":-47
+                        "top":45,
+                        "left":5
                     },
                     "type":"sprite",
                     "sprite":"nextLevelCostFrame.png"
@@ -335,10 +334,10 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "pressed":"buttonTrainPressed.png",
                     "touchDelegateName":"trainPower",
                     "cell":6,
-                    "anchor":['right', 'bottom'],
+                    "anchor":['left'],
                     "padding":{
-                        "top":-22,
-                        "left":-36
+                        "top":50,
+                        "left":5
                     }
                 },
                 "doneButton":{
@@ -347,10 +346,10 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "pressed":"buttonDonePressed.png",
                     "touchDelegateName":"doneButton",
                     "cell":3,
-                    "anchor":['center'],
+                    "anchor":['left'],
                     "padding":{
-                        "top":23,
-                        "left":5
+                        "top":35,
+                        "left":-30
                     }
                 },
                 "characterPortraitsFrame":{
@@ -359,8 +358,8 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "cell":2,
                     "anchor":['top'],
                     "padding":{
-                        "top":2,
-                        "left":0
+                        "top":-20,
+                        "left":-90
                     }
                 },
                 "characterPortraitsLeft":{
@@ -371,9 +370,10 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "cell":1,
                     "anchor":['top', 'left'],
                     "padding":{
-                        "top":2,
+                        "top":-15,
                         "left":0
-                    }
+                    },
+                    z:10,
                 },
                 "characterPortraitsRight":{
                     "type":"button",
@@ -381,11 +381,12 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "pressed":"characterPortraitsButtonRightPressed.png",
                     "touchDelegateName":"nextChar",
                     "cell":3,
-                    "anchor":['top', 'right'],
+                    "anchor":['top'],
                     "padding":{
-                        "top":2,
-                        "left":0
-                    }
+                        "top":-20,
+                        "left":-30
+                    },
+                    z:10,
                 }
             }
         },
