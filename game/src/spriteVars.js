@@ -1,100 +1,86 @@
 var spriteDefs = {
-	"blackGargoyle": {
-		"name": "blackGargoyle",
-		"formalName": "Void Demon",
-		"details": "An winged creature from the void. It possesses a devastating air to ground dive and weak magic range abilities for other air units.",
-		"elementType": "void",
-		"special": "None",
-		"gameProperties": {
-			"MaxHP": 200,
-			"movementType": 0,
-			"targets": 2,
-			"speed": 100,
-			"damage": 100,
-            "missile": "greenbullet",
-			"vsAirDamage": 5,
-			"actionDelays": {
-				"attack": 0.01
-			},
-			"effectDelays": {
-				"attack": 0.01
-			},
-            "flightAug": {
-                "x": 25,
-                "y": 100
-            },
-			"targetRadius": 25,
-			"seekRadius": 25
-		},
-		"inherit": "gargoyle"
-	},
-	"blueKnight": {
-		"name": "blueKnight",
-		"formalName": "Elemental Knight - Water",
-		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of water, this unit also heals any units nearby.",
-		"elementType": "water",
-		"unitType": 3,
-		"effect": "blueRadius",
-		"gameProperties": {
-			"MaxHP": 500,
-			"movementType": 1,
-			"targets": 1,
-			"speed": 20,
-			"damage": 160,
-			"actionDelays": {
-				"attack": 0.05
-			},
-			"effectDelays": {
-				"attack": 0.05
-			},
-			"targetRadius": 20,
-			"seekRadius": 25,
-			"heal": 30
-		},
-		"powers": {
-			"healingRadius": {
-				"heal": 20,
-				"interval": 2,
-				"radius": 200
-			}
-		},
-		"inherit": "knight"
-	},
 	"dragon": {
 		"name": "dragon",
 		"parentOnly": true,
+		"byStep": 3,
+		"startFrame": 1,
+		"endFrame": 780,
 		"targetRadius": 100,
 		"step": 1,
 		"animations": {
 			"move": {
-				"start": 529,
-				"end": 565,
+				"start": 178,
+				"end": 188,
 				"delay": 0.035,
 				"type": 0
 			},
 			"attack": {
-				"start": 614,
-				"end": 690,
+				"start": 206,
+				"end": 230,
 				"delay": 0.035,
 				"type": 1
 			},
 			"dead": {
-				"start": 725,
-				"end": 790,
+				"start": 242,
+				"end": 255,
 				"delay": 0.02,
 				"type": 1
 			},
 			"idle": {
-				"start": 529,
-				"end": 565,
+				"start": 178,
+				"end": 188,
 				"delay": 0.035,
 				"type": 0
 			}
 		},
 		"behavior": "range"
 	},
-	"dragonBlack": {
-		"name": "dragonBlack",
+	"dragonFire": {
+		"name": "dragonFire",
+		"formalName": "Fire Dragon",
+		"details": "These small dragons are aerial terrors doing massive damage to ground units below but they have a difficulty targeting other air born units. Fire Dragons do additional burning damage after each attack and splash damage to units around it. ",
+		"elementType": "fire",
+		"unitType": 2,
+		"damageMods": {
+			"splashDamage": {
+				"damage": 50,
+				"radius": 100
+			},
+			"burn": {
+				"damage": 10,
+				"duration": 5,
+				"interval": 0.25
+			}
+		},
+		"gameProperties": {
+			"MaxHP": 500,
+			"speed": 150,
+			"damage": 250,
+			"missile": "fireball",
+			"missileOffset": {
+				"x": 0,
+				"y": 10
+			},
+			"flightAug": {
+				"x": 25,
+				"y": 100
+			},
+			"missleTarget": "base",
+			"movementType": 0,
+			"targets": 1,
+			"actionDelays": {
+				"attack": 5
+			},
+			"effectDelays": {
+				"attack": 1
+			},
+			"targetRadius": 100,
+			"seekRadius": 25
+		},
+		"inherit": "dragon"
+	},
+	"dragonVoid": {
+		"name": "dragonVoid",
 		"formalName": "Void Dragon",
 		"details": "These small dragons are aerial terrors doing massive damage to ground units below but they have a difficulty targeting other air born units.",
 		"elementType": "void",
@@ -114,50 +100,6 @@ var spriteDefs = {
 			"damage": 300,
 			"actionDelays": {
 				"attack": 1
-			},
-			"effectDelays": {
-				"attack": 1
-			},
-			"targetRadius": 100,
-			"seekRadius": 25
-		},
-		"inherit": "dragon"
-	},
-	"dragonRed": {
-		"name": "dragonRed",
-		"formalName": "Fire Dragon",
-		"details": "These small dragons are aerial terrors doing massive damage to ground units below but they have a difficulty targeting other air born units. Fire Dragons do additional burning damage after each attack and splash damage to units around it. ",
-		"elementType": "fire",
-		"unitType": 2,
-		"damageMods": {
-			"splashDamage": {
-				"damage": 50,
-				"radius": 100
-			},
-			"burn": {
-				"damage": 10,
-				"duration": 5,
-				"interval": 0.25
-			}
-		},
-		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 150,
-			"damage": 100,
-			"missile": "fireball",
-			"missileOffset": {
-				"x": 0,
-				"y": 10
-			},
-			"flightAug": {
-				"x": 25,
-				"y": 100
-			},
-			"missleTarget": "base",
-			"movementType": 0,
-			"targets": 1,
-			"actionDelays": {
-				"attack": 5
 			},
 			"effectDelays": {
 				"attack": 1
@@ -326,8 +268,8 @@ var spriteDefs = {
 		"unitType": 3,
 		"powers": {
 			"regeneration": {
-				"heal": 25,
-				"interval":0.5
+				"heal": 100,
+				"interval": 1
 			}
 		},
 		"gameProperties": {
@@ -417,6 +359,30 @@ var spriteDefs = {
 		},
 		"behavior": "range"
 	},
+	"elementalEarth": {
+		"name": "elementalEarth",
+		"formalName": "Stone Elemental",
+		"details": "Extraordinarily powerful, but slow moving.",
+		"elementType": "earth",
+		"unitType": 3,
+		"special": "None",
+		"gameProperties": {
+			"MaxHP": 1700,
+			"speed": 20,
+			"damage": 100,
+			"movementType": 1,
+			"targets": 1,
+			"actionDelays": {
+				"attack": 0.5
+			},
+			"effectDelays": {
+				"attack": 0.05
+			},
+			"targetRadius": 20,
+			"seekRadius": 25
+		},
+		"inherit": "elemental1"
+	},
 	"elementalFire": {
 		"name": "elementalFire",
 		"formalName": "Fire Elemental",
@@ -434,30 +400,6 @@ var spriteDefs = {
 			"MaxHP": 600,
 			"speed": 20,
 			"damage": 250,
-			"movementType": 1,
-			"targets": 1,
-			"actionDelays": {
-				"attack": 0.5
-			},
-			"effectDelays": {
-				"attack": 0.05
-			},
-			"targetRadius": 20,
-			"seekRadius": 25
-		},
-		"inherit": "elemental1"
-	},
-	"elementalStone": {
-		"name": "elementalStone",
-		"formalName": "Stone Elemental",
-		"details": "Extraordinarily powerful, but slow moving.",
-		"elementType": "earth",
-		"unitType": 3,
-		"special": "None",
-		"gameProperties": {
-			"MaxHP": 1700,
-			"speed": 20,
-			"damage": 100,
 			"movementType": 1,
 			"targets": 1,
 			"actionDelays": {
@@ -533,40 +475,67 @@ var spriteDefs = {
 		"name": "elf",
 		"parentOnly": true,
 		"targetRadius": 600,
+		"byStep": 3,
+		"startFrame": 1,
+		"endFrame": 1820,
 		"animations": {
 			"move": {
-				"start": 730,
-				"end": 741,
+				"start": 244,
+				"end": 251,
 				"delay": 0.02,
 				"type": 0
 			},
 			"attack": {
-				"start": 1365,
-				"end": 1415,
+				"start": 454,
+				"end": 471,
 				"delay": 0.025,
 				"type": 1
 			},
 			"idle": {
-				"start": 1263,
-				"end": 1358,
+				"start": 422,
+				"end": 432,
 				"delay": 0.02,
 				"type": 0
 			},
 			"dead": {
-				"start": 862,
-				"end": 910,
+				"start": 287,
+				"end": 298,
 				"delay": 0.02,
 				"type": 1
 			}
 		},
 		"behavior": "range"
 	},
-	"fireKnight": {
-		"name": "fireKnight",
-		"formalName": "Elemental Knight - Fire",
-		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of fire, this unit deals additional burn damage to its targets.",
-		"elementType": "fire",
-		"unitType": 3,
+	"elfEarth": {
+		"name": "elfEarth",
+		"formalName": "Plains Elf",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
+		"elementType": "earth",
+		"unitType": 4,
+		"special": "None",
+		"gameProperties": {
+			"MaxHP": 300,
+			"movementType": 1,
+			"targets": 2,
+			"damage": 35,
+			"speed": 85,
+			"actionDelays": {
+				"attack": 0.5
+			},
+			"effectDelays": {
+				"attack": 1
+			},
+			"targetRadius": 600
+		},
+		"inherit": "elf"
+	},
+	"elfFire": {
+		"name": "elfFire",
+		"formalName": "Fire Elf",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Fire Elves arrows burn their targets alive.",
+		"elementType": "earth",
+		"unitType": 4,
+		"special": "None",
 		"damageMods": {
 			"burn": {
 				"damage": 50,
@@ -575,24 +544,23 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 20,
-			"damage": 160,
+			"MaxHP": 100,
 			"movementType": 1,
-			"targets": 1,
+			"targets": 2,
+			"damage": 35,
+			"speed": 55,
 			"actionDelays": {
-				"attack": 1
+				"attack": 0.5
 			},
 			"effectDelays": {
-				"attack": 0.05
+				"attack": 1
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 600
 		},
-		"inherit": "knight"
+		"inherit": "elf"
 	},
-	"forestElf": {
-		"name": "forestElf",
+	"elfLife": {
+		"name": "elfLife",
 		"formalName": "Forest Elf",
 		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Forest Elves deal poison damage with each arrow.",
 		"elementType": "life",
@@ -623,36 +591,133 @@ var spriteDefs = {
 		},
 		"inherit": "elf"
 	},
+	"elfVoid": {
+		"name": "elfVoid",
+		"formalName": "Dark Elf",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the magic arrows that steal life from targets and give it to allies.",
+		"elementType": "void",
+		"unitType": 4,
+		"damageMods": {
+			"vampireDistro": {
+				"heal": 20,
+				"damage": 20
+			}
+		},
+		"gameProperties": {
+			"MaxHP": 200,
+			"damage": 45,
+			"movementType": 1,
+			"targets": 2,
+			"speed": 55,
+			"actionDelays": {
+				"attack": 0.5
+			},
+			"effectDelays": {
+				"attack": 1
+			},
+			"targetRadius": 600
+		},
+		"inherit": "elf"
+	},
 	"gargoyle": {
 		"name": "gargoyle",
 		"parentOnly": true,
+		"byStep": 3,
+		"startFrame": 1,
+		"endFrame": 787,
+		"flip": true,
 		"animations": {
 			"move": {
-				"start": 230,
-				"end": 255,
+				"start": 1,
+				"end": 8,
 				"delay": 0.025,
 				"type": 0
 			},
 			"attack": {
-				"start": 100,
-				"end": 147,
+				"start": 34,
+				"end": 49,
 				"delay": 0.025,
 				"type": 1
 			},
 			"dead": {
-				"start": 147,
-				"end": 228,
+				"start": 58,
+				"end": 73,
 				"delay": 0.025,
 				"type": 1
 			},
 			"idle": {
 				"start": 1,
-				"end": 24,
+				"end": 8,
 				"delay": 0.025,
 				"type": 0
 			}
 		},
 		"behavior": "range"
+	},
+	"gargoyleFire": {
+		"name": "gargoyleFire",
+		"formalName": "Fire Demon",
+		"details": "An winged creature embued with elemental fire. It possesses magic that it uses to destroy other air targets.",
+		"elementType": "fire",
+		"unitType": 0,
+		"special": "Splash Damage, Burn Damage",
+		"damageMods": {
+			"burn": {
+				"damage": 5,
+				"duration": 1,
+				"interval": 0.25
+			}
+		},
+		"gameProperties": {
+			"MaxHP": 200,
+			"speed": 100,
+			"movementType": 0,
+			"targets": 2,
+			"damage": 100,
+			"missile": "greenbullet",
+			"splashDamage": 5,
+			"actionDelays": {
+				"attack": 0.01
+			},
+			"effectDelays": {
+				"attack": 0.01
+			},
+			"flightAug": {
+				"x": 25,
+				"y": 100
+			},
+			"targetRadius": 25
+		},
+		"inherit": "gargoyle"
+	},
+	"gargoyleVoid": {
+		"name": "gargoyleVoid",
+		"formalName": "Void Demon",
+		"details": "An winged creature embued with elemental fire. It possesses magic that it uses to destroy other air targets.",
+		"elementType": "void",
+		"special": "None",
+		"gameProperties": {
+			"MaxHP": 200,
+			"movementType": 0,
+			"targets": 2,
+			"speed": 100,
+			"damage": 100,
+			"missile": "greenbullet",
+			"vsAirDamage": 5,
+			"actionDelays": {
+				"attack": 0.01
+			},
+			"effectDelays": {
+				"attack": 0.01
+			},
+			"flightAug": {
+				"x": 25,
+				"y": 100
+			},
+			"targetRadius": 25,
+			"seekRadius": 25
+		},
+		"inherit": "gargoyle"
 	},
 	"goblin": {
 		"name": "goblin",
@@ -874,31 +939,50 @@ var spriteDefs = {
 		},
 		"inherit": "goblinKnight"
 	},
-	"goldElf": {
-		"name": "goldElf",
-		"formalName": "Plains Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
-		"elementType": "earth",
-		"unitType": 4,
-		"special": "None",
-		"gameProperties": {
-			"MaxHP": 200,
-			"movementType": 1,
-			"targets": 2,
-			"damage": 35,
-			"speed": 55,
-			"actionDelays": {
-				"attack": 0.5
+	"knight": {
+		"name": "knight",
+		"parentOnly": true,
+		"targetRadius": 200,
+		"startFrame": 1,
+		"endFrame": 2050,
+		"flip": true,
+		"byStep": 3,
+		"animations": {
+			"move": {
+				"start": 4,
+				"end": 27,
+				"delay": 0.02,
+				"type": 0
 			},
-			"effectDelays": {
-				"attack": 1
+			"attack": {
+				"start": 144,
+				"end": 174,
+				"delay": 0.02,
+				"type": 1
 			},
-			"targetRadius": 600
+			"attack2": {
+				"start": 174,
+				"end": 206,
+				"delay": 0.02,
+				"type": 1
+			},
+			"dead": {
+				"start": 387,
+				"end": 419,
+				"delay": 0.02,
+				"type": 1
+			},
+			"idle": {
+				"start": 521,
+				"end": 530,
+				"delay": 0.02,
+				"type": 0
+			}
 		},
-		"inherit": "elf"
+		"behavior": "tank"
 	},
-	"goldKnight": {
-		"name": "goldKnight",
+	"knightEarth": {
+		"name": "knightEarth",
 		"formalName": "Elemental Knight - Earth",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of earth, this unit has almost 2x the health of other elemental knights.",
 		"elementType": "earth",
@@ -920,43 +1004,97 @@ var spriteDefs = {
 		},
 		"inherit": "knight"
 	},
-	"knight": {
-		"name": "knight",
-		"parentOnly": true,
-		"targetRadius": 200,
-		"animations": {
-			"move": {
-				"start": 11,
-				"end": 80,
-				"delay": 0.02,
-				"type": 0
-			},
-			"attack": {
-				"start": 440,
-				"end": 520,
-				"delay": 0.02,
-				"type": 1
-			},
-			"attack2": {
-				"start": 613,
-				"end": 796,
-				"delay": 0.02,
-				"type": 1
-			},
-			"dead": {
-				"start": 1120,
-				"end": 1259,
-				"delay": 0.02,
-				"type": 1
-			},
-			"idle": {
-				"start": 1380,
-				"end": 1460,
-				"delay": 0.02,
-				"type": 0
+	"knightFire": {
+		"name": "knightFire",
+		"formalName": "Elemental Knight - Fire",
+		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of fire, this unit deals additional burn damage to its targets.",
+		"elementType": "fire",
+		"unitType": 3,
+		"damageMods": {
+			"burn": {
+				"damage": 50,
+				"duration": 5,
+				"interval": 0.5
 			}
 		},
-		"behavior": "tank"
+		"gameProperties": {
+			"MaxHP": 500,
+			"speed": 20,
+			"damage": 160,
+			"movementType": 1,
+			"targets": 1,
+			"actionDelays": {
+				"attack": 1
+			},
+			"effectDelays": {
+				"attack": 0.05
+			},
+			"targetRadius": 20,
+			"seekRadius": 25
+		},
+		"inherit": "knight"
+	},
+	"knightVoid": {
+		"name": "knightVoid",
+		"formalName": "Elemental Knight - Void",
+		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
+		"elementType": "void",
+		"unitType": 3,
+		"effect": "blueRadius",
+		"powers": {
+			"vampireRadius": {
+				"damage": 20,
+				"radius": 100,
+				"interval": 1
+			}
+		},
+		"gameProperties": {
+			"MaxHP": 500,
+			"speed": 20,
+			"movementType": 1,
+			"targets": 1,
+			"damage": 160,
+			"actionDelays": {
+				"attack": 1
+			},
+			"effectDelays": {
+				"attack": 0.05
+			},
+			"targetRadius": 25
+		},
+		"inherit": "knight"
+	},
+	"knightWater": {
+		"name": "knightWaters",
+		"formalName": "Elemental Knight - Water",
+		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of water, this unit also heals any units nearby.",
+		"elementType": "water",
+		"unitType": 3,
+		"effect": "blueRadius",
+		"gameProperties": {
+			"MaxHP": 500,
+			"movementType": 1,
+			"targets": 1,
+			"speed": 20,
+			"damage": 160,
+			"actionDelays": {
+				"attack": 0.05
+			},
+			"effectDelays": {
+				"attack": 0.05
+			},
+			"targetRadius": 20,
+			"seekRadius": 25,
+			"heal": 30
+		},
+		"powers": {
+			"healingRadius": {
+				"heal": 20,
+				"interval": 2,
+				"radius": 200
+			}
+		},
+		"inherit": "knight"
 	},
 	"monsterbase": {
 		"name": "monsterbase",
@@ -1003,8 +1141,80 @@ var spriteDefs = {
 			}
 		}
 	},
+	"ogre": {
+		"name": "ogre",
+		"formalName": "Ogre",
+		"byStep": 3,
+		"flip": true,
+		"cardIndex": 0,
+		"portraitXy": {
+			"x": 241,
+			"y": 122
+		},
+		"details": "Ogre are massive, powerful creatures. Though they are slow movers, you do not want to be at the wrong end of their weapons.",
+		"elementType": 4,
+		"unitType": 3,
+		"special": "None",
+		"targetRadius": 75,
+		"startFrame": 1,
+		"endFrame": 204,
+		"gameProperties": {
+			"movementType": 1,
+			"targets": 1,
+			"MaxHP": 1500,
+			"speed": 15,
+			"damage": 200,
+			"actionDelays": {
+				"attack": 1
+			},
+			"effectDelays": {
+				"attack": 0.9
+			},
+			"targetRadius": 30
+		},
+		"animations": {
+			"move": {
+				"start": 241,
+				"end": 265,
+				"delay": 0.06,
+				"type": 0
+			},
+			"attack": {
+				"start": 1,
+				"end": 37,
+				"delay": 0.04,
+				"type": 1
+			},
+			"attack2": {
+				"start": 48,
+				"end": 84,
+				"delay": 0.04,
+				"type": 1
+			},
+			"idle": {
+				"start": 193,
+				"end": 240,
+				"delay": 0.02,
+				"type": 0
+			},
+			"damage": {
+				"start": 96,
+				"end": 108,
+				"delay": 0.04,
+				"type": 1
+			},
+			"dead": {
+				"start": 144,
+				"end": 192,
+				"delay": 0.06,
+				"type": 1
+			}
+		},
+		"behavior": "tank"
+	},
 	"orc": {
 		"name": "orc",
+		"flip": true,
 		"formalName": "Orc Warrior",
 		"details": "Orcs are fast, fierce attackers. What they lack in heavy armor, they make up for in pure tenacity.",
 		"elementType": "none",
@@ -1022,14 +1232,12 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 40
+			"targetRadius": 20
 		},
 		"baseOffset": {
 			"x": -20,
 			"y": -5
 		},
-		"startFrame": 1,
-		"endFrame": 48,
 		"byStep": 1,
 		"animations": {
 			"move": {
@@ -1071,111 +1279,13 @@ var spriteDefs = {
 		},
 		"behavior": "tank"
 	},
-	"orge": {
-		"name": "orge",
-		"formalName": "Orge",
-		"cardIndex": 0,
-		"portraitXy": {
-			"x": 241,
-			"y": 122
-		},
-		"details": "Orge are massive, powerful creatures. Though they are slow movers, you do not want to be at the wrong end of their weapons.",
-		"elementType": 4,
-		"unitType": 3,
-		"special": "None",
-		"targetRadius": 75,
-		"gameProperties": {
-			"movementType": 1,
-			"targets": 1,
-			"MaxHP": 1500,
-			"speed": 15,
-			"damage": 200,
-			"actionDelays": {
-				"attack": 1
-			},
-			"effectDelays": {
-				"attack": 0.9
-			},
-			"targetRadius": 30
-		},
-		"startFrame": 1,
-		"endFrame": 48,
-		"byStep": 1,
-		"animations": {
-			"move": {
-				"start": 241,
-				"end": 265,
-				"delay": 0.06,
-				"type": 0
-			},
-			"attack": {
-				"start": 1,
-				"end": 37,
-				"delay": 0.04,
-				"type": 1
-			},
-			"attack2": {
-				"start": 48,
-				"end": 84,
-				"delay": 0.04,
-				"type": 1
-			},
-			"idle": {
-				"start": 193,
-				"end": 240,
-				"delay": 0.02,
-				"type": 0
-			},
-			"damage": {
-				"start": 96,
-				"end": 108,
-				"delay": 0.04,
-				"type": 1
-			},
-			"dead": {
-				"start": 144,
-				"end": 192,
-				"delay": 0.06,
-				"type": 1
-			}
-		},
-		"behavior": "tank"
-	},
-	"redGargoyle": {
-		"name": "redGargoyle",
-		"formalName": "Void Demon",
-		"details": "An winged creature embued with elemental fire. It possesses a devastating air to ground dive and weak magic range abilities for other air units. Fire Demons deal splash and burn damage around their targets.",
-		"elementType": "fire",
-		"unitType": 0,
-		"special": "Splash Damage, Burn Damage",
-		"gameProperties": {
-			"MaxHP": 200,
-			"speed": 100,
-			"movementType": 0,
-			"targets": 2,
-			"damage": 100,
-            "missile": "greenbullet",
-			"splashDamage": 5,
-			"actionDelays": {
-				"attack": 0.01
-			},
-			"effectDelays": {
-				"attack": 0.01
-			},
-            "flightAug": {
-                "x": 25,
-                "y": 100
-            },
-			"targetRadius": 25
-		},
-		"inherit": "gargoyle"
-	},
 	"scowerer": {
 		"name": "scowerer",
 		"formalName": "Void Scavenger",
 		"details": "Weak, dog-like creatures that quickly attack the weakest target they can find. When killed the scowerer will burst a poison acid on anyone nearby.",
 		"elementType": "life",
 		"unitType": 3,
+		"flip": true,
 		"special": "None",
 		"deathMods": {
 			"explodePoison": {
@@ -1229,36 +1339,6 @@ var spriteDefs = {
 			}
 		},
 		"behavior": "flanker"
-	},
-	"shadowKnight": {
-		"name": "shadowKnight",
-		"formalName": "Elemental Knight - Void",
-		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
-		"elementType": "void",
-		"unitType": 3,
-		"effect": "blueRadius",
-		"powers": {
-			"vampireRadius": {
-				"damage": 20,
-				"radius": 100,
-				"interval": 1
-			}
-		},
-		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 20,
-			"movementType": 1,
-			"targets": 1,
-			"damage": 160,
-			"actionDelays": {
-				"attack": 1
-			},
-			"effectDelays": {
-				"attack": 0.05
-			},
-			"targetRadius": 25
-		},
-		"inherit": "knight"
 	},
 	"shellback": {
 		"name": "shellback",
@@ -1365,6 +1445,7 @@ var spriteDefs = {
 		"details": "These guardians will choose and defend a target to death dealing heavy damage from their bladed legs and injecting enemies with poison. They do not however, have much armor and are easily killed.",
 		"elementType": "life",
 		"unitType": 3,
+		"flip": true,
 		"special": "Poison",
 		"damageMods": {
 			"poison": {
@@ -1444,8 +1525,6 @@ var spriteDefs = {
 			"x": 0,
 			"y": 10
 		},
-		"startFrame": 1,
-		"endFrame": 48,
 		"byStep": 1,
 		"animations": {
 			"move": {
@@ -1487,40 +1566,13 @@ var spriteDefs = {
 		},
 		"behavior": "healer"
 	},
-	"voidElf": {
-		"name": "voidElf",
-		"formalName": "Dark Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the magic arrows that steal life from targets and give it to allies.",
-		"elementType": "void",
-		"unitType": 4,
-		"damageMods": {
-			"vampireDistro": {
-				"heal": 20,
-				"damage": 20
-			}
-		},
-		"gameProperties": {
-			"MaxHP": 200,
-			"damage": 45,
-			"movementType": 1,
-			"targets": 2,
-			"speed": 55,
-			"actionDelays": {
-				"attack": 0.5
-			},
-			"effectDelays": {
-				"attack": 1
-			},
-			"targetRadius": 600
-		},
-		"inherit": "elf"
-	},
 	"wizard": {
 		"name": "wizard",
 		"formalName": "Goblin Wizard",
 		"details": "These goblins are masters of destructive magic and can do serious damage at an impressive range.",
 		"elementType": "none",
 		"unitType": 4,
+		"flip": true,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 100,
@@ -1541,9 +1593,6 @@ var spriteDefs = {
 			"x": 0,
 			"y": 10
 		},
-		"startFrame": 1,
-		"endFrame": 48,
-		"byStep": 1,
 		"animations": {
 			"move": {
 				"start": 241,

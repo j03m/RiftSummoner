@@ -7,7 +7,7 @@ while read p; do
 	echo $p
 	cat $p >> catSrc.js
 	echo >> catSrc.js
-done < buildorder.txt
+done < game/buildorder.txt
 uglifyjs catSrc.js -m -c -o hotr.min.js
 mv hotr.min.js game/hotr.min.js
 mv catSrc.js catSrcLast.js
