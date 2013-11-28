@@ -42,7 +42,9 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
 }
 
 RangeBehavior.prototype.doMissile = function(){
-
+    if (!this.locked){
+        return;
+    }
     //make missile sprite
     if (!this.firing){ //do missile
 

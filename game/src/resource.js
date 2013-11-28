@@ -42,8 +42,8 @@ var g_maingame = [
 
 for (var entry in spriteDefs ){
     if (!spriteDefs[entry].parentOnly && spriteDefs[entry].name){
-        g_characterPngs[entry] = transformAsset(dirImg + entry + 'Sheet.png');
-        g_characterPlists[entry] = transformAsset(dirImg + entry + 'Sheet.plist');
+        g_characterPngs[entry] = transformAsset(dirImg + entry + 'Sheet{v}.png');
+        g_characterPlists[entry] = transformAsset(dirImg + entry + 'Sheet{v}.plist');
     }
 }
 

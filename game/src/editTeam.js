@@ -45,6 +45,8 @@ var EditTeam = jc.UiElementsLayer.extend({
         }
         this.characterPortraitsLeft.setZOrder(9);
         this.characterPortraitsRight.setZOrder(9);
+        this.mainFrame.setZOrder(-1);
+        this.statsFrame.setZOrder(2);
     },
     outTransitionsComplete:function(){
         jc.layerManager.popLayer();
@@ -61,7 +63,9 @@ var EditTeam = jc.UiElementsLayer.extend({
         sprite.pic = jc.getCharacterPortrait(name, sprite.getContentSize());
         sprite.addChild(sprite.pic);
         this.scaleTo(sprite.pic, sprite);
+        jc.scaleCard(sprite.pic);
         this.centerThisChild(sprite.pic, sprite);
+        sprite.pic.setZOrder(-1);
         return sprite;
     },
     getDisplaySpritesAndMetaData: function(){
@@ -98,11 +102,15 @@ var EditTeam = jc.UiElementsLayer.extend({
         //index of card, data = character id
         var characterEntry = hotr.blobOperations.getEntryWithId(data);
 
+
+
         //get card image from jc.getCharacterCard
         var card = jc.getCharacterCard(characterEntry.name);
 
         //put this card sprite in the frame
         this.swapCharacterCard(card);
+
+
 
         this.placeElement(characterEntry);
 
@@ -205,7 +213,8 @@ var EditTeam = jc.UiElementsLayer.extend({
             var cardZOrder = this.statsFrame.getZOrder();
             var cardTr = this.statsFrame.card.getTextureRect();
             elementSprite.setPosition(cc.p(565, 275));
-            elementSprite.setZOrder(cardZOrder+1);
+            elementSprite.setZOrder(cardZOrder+2);
+
         }
 
 
@@ -216,10 +225,12 @@ var EditTeam = jc.UiElementsLayer.extend({
     },
     swapCharacterCard:function(card){
         var pos = this.statsFrame.getPosition();
-        card.setPosition(cc.p(480,pos.y));
-        var swapFade = jc.swapFade.bind(this);
-        swapFade(this.statsFrame.card, card);
+        card.setPosition(cc.p(360,pos.y-10));
+        var swapFade = jc.swapFade.bind(this.mainFrame);
+        swapFade(this.statsFrame.card, card, false);
         this.statsFrame.card = card;
+        card.setZOrder(1);
+
     },
     previousChar:function(){
         this.tableView.left();

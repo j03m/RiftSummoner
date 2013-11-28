@@ -71,9 +71,12 @@ var SelectTeam = jc.UiElementsLayer.extend({
 
         //scale it to size
         this.scaleTo(card,this[cellName]);
+        jc.scaleCard(card);
+
 
         //center on selected cell
         this.centerThisPeer(card, this[cellName]);
+
 
         //if one is there, hide it
         if (this[cellName].pic){
@@ -91,7 +94,9 @@ var SelectTeam = jc.UiElementsLayer.extend({
 
         //add a border if it's not there
         if (!this[cellName].border) {
-            this[cellName].border = jc.makeSpriteWithPlist(uiPlist, uiPng, "portraitSmall.png");
+            this[cellName].border = jc.makeSpriteWithPlist(uiPlist, uiPng, "portraitSmall.png")
+            this.addChild(this[cellName].border);
+            this.centerThisPeer(this[cellName].border, this[cellName]);
             this.reorderChild(this[cellName].border, this[cellName].pic.getZOrder()+1);
         }
     },

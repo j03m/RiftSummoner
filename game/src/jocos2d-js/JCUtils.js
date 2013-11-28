@@ -1,5 +1,9 @@
 var jc = jc || {};
 
+jc.cardScale = 0.85;
+jc.scaleCard = function(card){
+    card.setScale(card.getScaleX()*jc.cardScale, card.getScaleY()*jc.cardScale);
+}
 
 jc.makeStats = function(name){
     var def = spriteDefs[name];
@@ -172,7 +176,9 @@ jc.swapFade = function(swapOut, swapIn){
 
     function doFadeIn(){
         swapIn.setOpacity(0);
+
         this.addChild(swapIn);
+
         jc.fadeIn(swapIn, 255, jc.defaultTransitionTime/4);
     }
 }
@@ -551,7 +557,7 @@ jc.portraitFromCard = function(name,card, size){
 
 jc.getCharacterCard = function(name){
     var frame = name+"" +
-        "_pose.png";
+        "_bg.png";
     var indexNumber = spriteDefs[name].cardIndex;
     if (indexNumber == undefined){
         indexNumber = 0;

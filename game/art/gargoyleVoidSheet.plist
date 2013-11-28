@@ -4,319 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>gargoyleVoid.001.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,164},{12,52}}</string>
-                <key>offset</key>
-                <string>{-4,-24}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{50,58},{12,52}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.002.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{28,2},{16,50}}</string>
-                <key>offset</key>
-                <string>{-6,-25}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{46,60},{16,50}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.003.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{40,104},{20,44}}</string>
-                <key>offset</key>
-                <string>{-8,-27}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{42,65},{20,44}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.004.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{80,42},{16,38}}</string>
-                <key>offset</key>
-                <string>{-5,-41}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{47,82},{16,38}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.005.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{82,142},{12,34}}</string>
-                <key>offset</key>
-                <string>{-3,-40}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{51,83},{12,34}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.006.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{96,176},{12,32}}</string>
-                <key>offset</key>
-                <string>{-3,-38}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{51,82},{12,32}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.007.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{96,2},{12,38}}</string>
-                <key>offset</key>
-                <string>{-4,-36}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{50,77},{12,38}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.008.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{46,2},{12,48}}</string>
-                <key>offset</key>
-                <string>{-3,-25}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{51,61},{12,48}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.034.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,56},{14,52}}</string>
-                <key>offset</key>
-                <string>{-5,-24}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{48,58},{14,52}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.035.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{16,110},{22,50}}</string>
-                <key>offset</key>
-                <string>{-6,-25}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{43,60},{22,50}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.036.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,212},{26,40}}</string>
-                <key>offset</key>
-                <string>{-7,-29}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{40,69},{26,40}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.037.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{60,2},{20,38}}</string>
-                <key>offset</key>
-                <string>{-2,-41}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{48,82},{20,38}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.038.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{98,104},{16,32}}</string>
-                <key>offset</key>
-                <string>{-1,-37}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{51,81},{16,32}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.039.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{96,142},{18,32}}</string>
-                <key>offset</key>
-                <string>{-1,-38}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{50,82},{18,32}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.040.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{82,212},{20,38}}</string>
-                <key>offset</key>
-                <string>{-2,-35}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{48,76},{20,38}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.041.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{18,56},{20,50}}</string>
-                <key>offset</key>
-                <string>{-2,-25}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{48,60},{20,50}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.042.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{24,52}}</string>
-                <key>offset</key>
-                <string>{-4,-24}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{44,58},{24,52}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.043.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{30,162},{26,48}}</string>
-                <key>offset</key>
-                <string>{-6,-26}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{41,62},{26,48}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.044.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{26,214},{26,40}}</string>
-                <key>offset</key>
-                <string>{-6,-30}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{41,70},{26,40}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.045.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{60,42},{18,38}}</string>
-                <key>offset</key>
-                <string>{-2,-41}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{49,82},{18,38}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.046.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{134,2},{14,34}}</string>
-                <key>offset</key>
-                <string>{0,-38}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{53,81},{14,34}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.047.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{104,212},{14,32}}</string>
-                <key>offset</key>
-                <string>{-2,-39}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{51,83},{14,32}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.048.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{82,2},{12,38}}</string>
-                <key>offset</key>
-                <string>{-4,-34}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{50,75},{12,38}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.049.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{16,162},{12,50}}</string>
-                <key>offset</key>
-                <string>{-4,-24}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{50,59},{12,50}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>gargoyleVoid.058.png</key>
+            <key>gargoyleVoid.1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,110},{12,52}}</string>
@@ -329,23 +17,309 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.059.png</key>
+            <key>gargoyleVoid.2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{40,54},{18,48}}</string>
+                <string>{{16,108},{18,50}}</string>
                 <key>offset</key>
-                <string>{-1,-25}</string>
+                <string>{-6,-25}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{50,61},{18,48}}</string>
+                <string>{{45,60},{18,50}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.060.png</key>
+            <key>gargoyleVoid.3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{110,2},{22,34}}</string>
+                <string>{{26,210},{20,44}}</string>
+                <key>offset</key>
+                <string>{-7,-27}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,65},{20,44}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.34.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{14,52}}</string>
+                <key>offset</key>
+                <string>{-5,-24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{48,58},{14,52}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.35.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{16,56},{22,50}}</string>
+                <key>offset</key>
+                <string>{-6,-25}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,60},{22,50}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.36.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{48,210},{26,40}}</string>
+                <key>offset</key>
+                <string>{-7,-29}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{40,69},{26,40}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.37.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{76,42},{20,36}}</string>
+                <key>offset</key>
+                <string>{-1,-41}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{49,83},{20,36}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.38.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{76,238},{16,32}}</string>
+                <key>offset</key>
+                <string>{-1,-37}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,81},{16,32}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.39.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{86,140},{18,32}}</string>
+                <key>offset</key>
+                <string>{-1,-38}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,82},{18,32}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{70,160},{16,38}}</string>
+                <key>offset</key>
+                <string>{-5,-41}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{47,82},{16,38}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.40.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{60,2},{20,38}}</string>
+                <key>offset</key>
+                <string>{-2,-34}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{48,75},{20,38}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.41.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{18,2},{20,50}}</string>
+                <key>offset</key>
+                <string>{-2,-25}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{48,60},{20,50}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.42.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,164},{22,50}}</string>
+                <key>offset</key>
+                <string>{-3,-25}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{46,60},{22,50}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.43.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{26,160},{24,48}}</string>
+                <key>offset</key>
+                <string>{-5,-26}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,62},{24,48}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.44.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{50,98},{24,40}}</string>
+                <key>offset</key>
+                <string>{-5,-29}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{43,69},{24,40}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.45.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{52,160},{16,38}}</string>
+                <key>offset</key>
+                <string>{-1,-41}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,82},{16,38}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.46.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{98,2},{14,34}}</string>
+                <key>offset</key>
+                <string>{0,-38}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{53,81},{14,34}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.47.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{108,74},{14,32}}</string>
+                <key>offset</key>
+                <string>{-2,-39}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,83},{14,32}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.48.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{88,160},{12,36}}</string>
+                <key>offset</key>
+                <string>{-4,-34}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{50,76},{12,36}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.49.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{36,108},{12,48}}</string>
+                <key>offset</key>
+                <string>{-3,-25}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,61},{12,48}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.5.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{98,38},{12,34}}</string>
+                <key>offset</key>
+                <string>{-3,-40}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,83},{12,34}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.58.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,56},{12,52}}</string>
+                <key>offset</key>
+                <string>{-4,-24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{50,58},{12,52}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.59.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{40,2},{18,46}}</string>
+                <key>offset</key>
+                <string>{-1,-26}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{50,63},{18,46}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.6.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,38},{12,32}}</string>
+                <key>offset</key>
+                <string>{-3,-38}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,82},{12,32}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.60.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{100,198},{22,34}}</string>
                 <key>offset</key>
                 <string>{-3,-32}</string>
                 <key>rotated</key>
@@ -355,10 +329,10 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.061.png</key>
+            <key>gargoyleVoid.61.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,218},{22,36}}</string>
+                <string>{{76,200},{22,36}}</string>
                 <key>offset</key>
                 <string>{-1,-35}</string>
                 <key>rotated</key>
@@ -368,36 +342,36 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.062.png</key>
+            <key>gargoyleVoid.62.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{58,190},{20,38}}</string>
+                <string>{{54,50},{20,38}}</string>
                 <key>offset</key>
                 <string>{-6,-41}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{44,82},{20,38}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.063.png</key>
+            <key>gargoyleVoid.63.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{120,212},{30,24}}</string>
+                <string>{{112,108},{30,22}}</string>
                 <key>offset</key>
-                <string>{-11,-29}</string>
+                <string>{-11,-30}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{34,77},{30,24}}</string>
+                <string>{{34,79},{30,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.064.png</key>
+            <key>gargoyleVoid.64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{58,150},{22,38}}</string>
+                <string>{{2,216},{22,38}}</string>
                 <key>offset</key>
                 <string>{-7,-23}</string>
                 <key>rotated</key>
@@ -407,10 +381,10 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.065.png</key>
+            <key>gargoyleVoid.65.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{114,38},{20,34}}</string>
+                <string>{{102,160},{20,34}}</string>
                 <key>offset</key>
                 <string>{-4,-25}</string>
                 <key>rotated</key>
@@ -420,10 +394,10 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.066.png</key>
+            <key>gargoyleVoid.66.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,42},{14,36}}</string>
+                <string>{{92,80},{14,36}}</string>
                 <key>offset</key>
                 <string>{-3,-24}</string>
                 <key>rotated</key>
@@ -433,10 +407,10 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.067.png</key>
+            <key>gargoyleVoid.67.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{82,104},{14,36}}</string>
+                <string>{{76,80},{14,36}}</string>
                 <key>offset</key>
                 <string>{0,-23}</string>
                 <key>rotated</key>
@@ -446,23 +420,23 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.068.png</key>
+            <key>gargoyleVoid.68.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,82},{20,34}}</string>
+                <string>{{110,234},{20,34}}</string>
                 <key>offset</key>
-                <string>{1,-26}</string>
+                <string>{2,-26}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{51,69},{20,34}}</string>
+                <string>{{52,69},{20,34}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.069.png</key>
+            <key>gargoyleVoid.69.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,82},{20,34}}</string>
+                <string>{{76,118},{20,34}}</string>
                 <key>offset</key>
                 <string>{2,-34}</string>
                 <key>rotated</key>
@@ -472,55 +446,81 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.070.png</key>
+            <key>gargoyleVoid.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{62,104},{18,36}}</string>
+                <string>{{82,2},{14,36}}</string>
                 <key>offset</key>
-                <string>{1,-42}</string>
+                <string>{-4,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{52,84},{18,36}}</string>
+                <string>{{49,78},{14,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.071.png</key>
+            <key>gargoyleVoid.70.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,190},{30,20}}</string>
+                <string>{{50,140},{18,34}}</string>
+                <key>offset</key>
+                <string>{1,-43}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,86},{18,34}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.71.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{124,72},{30,20}}</string>
                 <key>offset</key>
                 <string>{0,-50}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{45,100},{30,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.072.png</key>
+            <key>gargoyleVoid.72.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,74},{26,22}}</string>
+                <string>{{126,32},{26,20}}</string>
                 <key>offset</key>
-                <string>{0,-49}</string>
+                <string>{0,-50}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{47,98},{26,22}}</string>
+                <string>{{47,100},{26,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>gargoyleVoid.073.png</key>
+            <key>gargoyleVoid.73.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{116,104},{28,22}}</string>
+                <string>{{114,2},{28,22}}</string>
                 <key>offset</key>
                 <string>{-1,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
                 <string>{{45,98},{28,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>gargoyleVoid.8.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{40,50},{12,46}}</string>
+                <key>offset</key>
+                <string>{-3,-26}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,63},{12,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
@@ -534,7 +534,7 @@
             <key>size</key>
             <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ad7b2f941a19d2f9a54888aeb8829aa1:c832bd8457cb9460c0460fca6fd38b4c:f331b78fda934dc42296e5ee51957f78$</string>
+            <string>$TexturePacker:SmartUpdate:5c23c68bd1535b7e20a2211714fc39bb:7b29d3d27ca61944827a281b12a7200b:f331b78fda934dc42296e5ee51957f78$</string>
             <key>textureFileName</key>
             <string>gargoyleVoidSheet.png</string>
         </dict>

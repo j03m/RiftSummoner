@@ -86,7 +86,7 @@ var powerConfig = {
         //damage them
         for(var i=0;i<foes.length;i++){
             if (GeneralBehavior.applyDamage(foes[i], this.owner, config.damage)){
-               jc.genericPower('fire', value, this.owner, foes[i], config.burn)
+               jc.genericPower('burn', value, this.owner, foes[i], config.burn)
             }
         }
     },

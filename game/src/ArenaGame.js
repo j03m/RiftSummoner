@@ -28,13 +28,11 @@ var ArenaGame = jc.WorldLayer.extend({
 		}
 	},
     onShow:function(){
-//        if(!hotr.arenaScene.data){
-//            this.runScenario0();
-//        }else{
-//            this.runScenario();
-//        }
-
-        this.showVictory();
+        if(!hotr.arenaScene.data){
+            this.runScenario0();
+        }else{
+            this.runScenario();
+        }
     },
     runScenario:function(){
         this.teamASprites = hotr.arenaScene.data.teamA;

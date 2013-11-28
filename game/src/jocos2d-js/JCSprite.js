@@ -434,9 +434,9 @@ jc.Sprite = cc.Sprite.extend({
 
             pos.y += 5;
             if (!this.isFlippedX()){
-                pos.x = (pos.x - cs.width) + 250;
+                pos.x = (pos.x - cs.width) + 230;
             }else{
-                pos.x = (pos.x - cs.width) + 270;
+                pos.x = (pos.x - cs.width) + 220;
             }
 
             if (this.gameObject && this.gameObject.flightAug){

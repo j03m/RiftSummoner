@@ -11,25 +11,25 @@ var spriteDefs = {
 			"move": {
 				"start": 178,
 				"end": 188,
-				"delay": 0.035,
+				"delay": 0.1,
 				"type": 0
 			},
 			"attack": {
 				"start": 206,
 				"end": 230,
-				"delay": 0.035,
+				"delay": 0.1,
 				"type": 1
 			},
 			"dead": {
 				"start": 242,
 				"end": 255,
-				"delay": 0.02,
+				"delay": 0.1,
 				"type": 1
 			},
 			"idle": {
 				"start": 178,
 				"end": 188,
-				"delay": 0.035,
+				"delay": 0.1,
 				"type": 0
 			}
 		},
@@ -482,25 +482,25 @@ var spriteDefs = {
 			"move": {
 				"start": 244,
 				"end": 251,
-				"delay": 0.02,
+				"delay": 0.05,
 				"type": 0
 			},
 			"attack": {
 				"start": 454,
 				"end": 471,
-				"delay": 0.025,
+				"delay": 0.05,
 				"type": 1
 			},
 			"idle": {
 				"start": 422,
 				"end": 432,
-				"delay": 0.02,
+				"delay": 0.05,
 				"type": 0
 			},
 			"dead": {
 				"start": 287,
 				"end": 298,
-				"delay": 0.02,
+				"delay": 0.05,
 				"type": 1
 			}
 		},
@@ -630,25 +630,25 @@ var spriteDefs = {
 			"move": {
 				"start": 1,
 				"end": 8,
-				"delay": 0.025,
+				"delay": 0.1,
 				"type": 0
 			},
 			"attack": {
 				"start": 34,
 				"end": 49,
-				"delay": 0.025,
+				"delay": 0.1,
 				"type": 1
 			},
 			"dead": {
 				"start": 58,
 				"end": 73,
-				"delay": 0.025,
+				"delay": 0.1,
 				"type": 1
 			},
 			"idle": {
 				"start": 1,
 				"end": 8,
-				"delay": 0.025,
+				"delay": 0.1,
 				"type": 0
 			}
 		},
@@ -735,8 +735,14 @@ var spriteDefs = {
 			"splashDamage": {
 				"damage": 25,
 				"radius": 50
-			}
-		},
+			},
+            "burn":{
+                "damage":50,
+                "duration":5,
+                "interval":0.5
+            }
+
+        },
 		"deathMods": {
 			"explodeFire": {
 				"damage": 25,
@@ -951,31 +957,31 @@ var spriteDefs = {
 			"move": {
 				"start": 4,
 				"end": 27,
-				"delay": 0.02,
+				"delay": 0.08,
 				"type": 0
 			},
 			"attack": {
 				"start": 144,
 				"end": 174,
-				"delay": 0.02,
+				"delay": 0.08,
 				"type": 1
 			},
 			"attack2": {
 				"start": 174,
 				"end": 206,
-				"delay": 0.02,
+				"delay": 0.08,
 				"type": 1
 			},
 			"dead": {
 				"start": 387,
 				"end": 419,
-				"delay": 0.02,
+				"delay": 0.08,
 				"type": 1
 			},
 			"idle": {
 				"start": 521,
 				"end": 530,
-				"delay": 0.02,
+				"delay": 0.08,
 				"type": 0
 			}
 		},
