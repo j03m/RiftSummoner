@@ -94,14 +94,34 @@ jc.TouchLayer = cc.Layer.extend({
         throw "child must implement!"
     },
     hitSpriteTarget:function(type, touch, event){
+        jc.log(['touchcore'], "Raw Touch:" + JSON.stringify(touch));
+
         touch = this.touchToPoint(touch);
+        jc.log(['touchcore'], "Raw Touch Point:" + JSON.stringify(touch));
+
+        var converted = this.convertToNodeSpace(touch);
+        jc.log(['touchcore'], "Converted Touch:" + JSON.stringify(converted));
+
         if (this.doConvert){
-            touch = this.convertToNodeSpace(touch);
+            jc.log(['touchcore'], "Using converted touch.");
+            touch = converted;
         }
         var handled = [];
         for (var i=0;i<this.touchTargets.length;i++){
-            var cs = this.touchTargets[i].getBoundingBox();
-            jc.log(['touchcore'], "Touch:" + JSON.stringify(touch));
+
+            if ( this.touchTargets[i] instanceof jc.Sprite){ //jc.sprites in this game ahve like 512x512 - contentSize + boudningbox are unusable
+                var rect = this.touchTargets[i].getTextureRect(); //texture rect gives us a width
+                var pos = this.touchTargets[i].getBasePosition(); //base pos gives us bottom middle of sprite
+                var cs = {};
+                cs.width = rect.width;
+                cs.height = rect.height;
+                cs.x = pos.x - cs.width/2; //move x to bottom left most of rect
+                cs.y = pos.y; //y should be bottom already
+
+            }else{
+                var cs = this.touchTargets[i].getBoundingBox();
+            }
+
             jc.log(['touchcore'], "Sprite:" + this.touchTargets[i].name);
             jc.log(['touchcore'], "Position:" + JSON.stringify(cs));
             var contains = cc.rectContainsPoint(cs, touch);

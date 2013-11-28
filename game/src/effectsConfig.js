@@ -1,7 +1,7 @@
 var effectsConfig = {
     "greenBang":{
-        "png":"art/greenBang{v}.png",
-        "plist":"art/greenBang{v}.plist",
+        "png":"art/greenBang.png",
+        "plist":"art/greenBang.plist",
         "start":"greenBang.1.png",
         "placement":"center",
         "frames":28,
@@ -9,8 +9,8 @@ var effectsConfig = {
         "times":1
     },
     "explosion":{
-        "png":"art/explosion{v}.png",
-        "plist":"art/explosion{v}.plist",
+        "png":"art/explosion.png",
+        "plist":"art/explosion.plist",
         "start":"explosion.1.png",
         "placement":"bottom",
         "zorder":"behind",
@@ -23,8 +23,8 @@ var effectsConfig = {
         "times":1
     },
     "blueRadius":{
-        "png":"art/blueRadius{v}.png",
-        "plist":"art/blueRadius{v}.plist",
+        "png":"art/blueRadius.png",
+        "plist":"art/blueRadius.plist",
         "start":"blueRadius.1.png",
         "frames":23,
         "delay":0.05,
@@ -37,8 +37,8 @@ var effectsConfig = {
 
     },
     "heal":{
-        "png":"art/heal{v}.png",
-        "plist":"art/heal{v}.plist",
+        "png":"art/heal.png",
+        "plist":"art/heal.plist",
         "start":"heal.5.png",
         "frames":17,
         "delay":0.05,
@@ -46,36 +46,58 @@ var effectsConfig = {
         "times":5,
     },
     "teleport":{
-        "png":"art/teleport{v}.png",
-        "plist":"art/teleport{v}.plist",
-        "start":"teleport{v}.1.png",
+        "png":"art/teleport.png",
+        "plist":"art/teleport.plist",
+        "start":"teleport.1.png",
         "frames":14,
         "delay":0.02,
         "placement":"base2base",
         "times":1,
     },
-    "tapEffect":{
-        "png":"art/tap{v}.png",
-        "plist":"art/tap{v}.plist",
-        "start":"tapEffect.1.png",
-        "frames":15,
-        "delay":0.02,
+    "movement":{
+        "png":"art/touch-iphone4.png",
+        "plist":"art/touch-iphone4.plist",
+        "start":"movement.1.png",
+        "frames":8,
+        "delay":0.05,
         "placement":"bottom",
-        "times":1,
+        "times":2,
     },
-    "selectEffect":{
-        "png":"art/select{v}.png",
-        "plist":"art/select{v}.plist",
-        "start":"selectEffect.1.png",
-        "frames":31,
-        "delay":0.02,
-        "placement":"base2base",
+    "characterSelect":{
+        "png":"art/touch-iphone4.png",
+        "plist":"art/touch-iphone4.plist",
+        "start":"characterSelect.1.png",
+        "frames":7,
+        "delay":0.05,
+        "placement":"bottom",
         "zorder":"behind",
 
     },
+    "enemySelection":{
+        "png":"art/touch-iphone4.png",
+        "plist":"art/touch-iphone4.plist",
+        "start":"enemySelection.1.png",
+        "frames":7,
+        "delay":0.05,
+        "placement":"base2base",
+        "zorder":"behind",
+        "times":2,
+
+    },
+    "allySelection":{
+        "png":"art/touch-iphone4.png",
+        "plist":"art/touch-iphone4.plist",
+        "start":"allySelection.1.png",
+        "frames":7,
+        "delay":0.05,
+        "placement":"base2base",
+        "zorder":"behind",
+        "times":2,
+
+    },
     "fire":{
-        "png":"art/fire{v}.png",
-        "plist":"art/fire{v}.plist",
+        "png":"art/fire.png",
+        "plist":"art/fire.plist",
         "start":"fire.1.png",
         "frames":44,
         "delay":0.02,
@@ -84,8 +106,8 @@ var effectsConfig = {
     },
     "fireLoop":{
         "name":"fire",
-        "png":"art/fire{v}.png",
-        "plist":"art/fire{v}.plist",
+        "png":"art/fire.png",
+        "plist":"art/fire.plist",
         "start":"fire.1.png",
         "frames":44,
         "delay":0.02,
@@ -94,8 +116,8 @@ var effectsConfig = {
         "times":15,
     },
     "poison":{
-        "png":"art/poison{v}.png",
-        "plist":"art/poison{v}.plist",
+        "png":"art/poison.png",
+        "plist":"art/poison.plist",
         "start":"poison.1.png",
         "frames":50,
         "delay":0.02,

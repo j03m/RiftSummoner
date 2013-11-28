@@ -21,6 +21,7 @@ var loadingPlist = transformAsset(dirImg + "loading{v}.plist");
 var uiPng = transformAsset(dirImg + "uiElements{v}.png");
 var uiPlist = transformAsset(dirImg + "uiElements{v}.plist");
 
+
 var g_characterPngs = {};
 var g_characterPlists = {};
 
@@ -41,8 +42,8 @@ var g_maingame = [
 
 for (var entry in spriteDefs ){
     if (!spriteDefs[entry].parentOnly && spriteDefs[entry].name){
-        g_characterPngs[entry] = transformAsset(dirImg + entry + 'Sheet{v}.png');
-        g_characterPlists[entry] = transformAsset(dirImg + entry + 'Sheet{v}.plist');
+        g_characterPngs[entry] = transformAsset(dirImg + entry + 'Sheet.png');
+        g_characterPlists[entry] = transformAsset(dirImg + entry + 'Sheet.plist');
     }
 }
 
@@ -57,13 +58,10 @@ for (var entry in effectsConfig){
 }
 
 var g_battleStuff =[
-    {src:g_characterPngs['teleport'].png},
-    {src:g_characterPlists['teleport'].plist},
-    {src:g_characterPngs['selectEffect'].png},
-    {src:g_characterPlists['selectEffect'].plist},
-    {src:g_characterPngs['tapEffect'].png},
-    {src:g_characterPlists['tapEffect'].plist},
-
+    {src:g_characterPngs['teleport']},
+    {src:g_characterPlists['teleport']},
+    {src:g_characterPngs['characterSelect']},
+    {src:g_characterPlists['characterSelect']},
     {src:powerTilesPlist},
     {src:powerTilesPng},
 

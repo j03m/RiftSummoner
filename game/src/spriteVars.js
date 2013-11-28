@@ -326,8 +326,8 @@ var spriteDefs = {
 		"unitType": 3,
 		"powers": {
 			"regeneration": {
-				"heal": 100,
-				"interval": 1
+				"heal": 25,
+				"interval":0.5
 			}
 		},
 		"gameProperties": {

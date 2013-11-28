@@ -229,7 +229,7 @@ GeneralBehavior.prototype.allFoesWithinRadiusOfPoint = function(radius, point){
 
 GeneralBehavior.prototype.seekEnemy = function(){
     if (!this.locked){
-        throw "invalid state, character must be locked to seek.";
+        return;
     }
 
     var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
@@ -339,8 +339,16 @@ GeneralBehavior.prototype.seek = function(toPoint){
         throw "Owning game object required";
     }
 
-    if (this.withinRadius(toPoint)){
-        return cc.p(0,0);
+    if (this.followPoint){
+        if (this.withinThisRadius(toPoint, 25,25)){
+            this.followPoint = undefined;
+            return cc.p(0,0);
+        }
+    }else{
+        if (this.withinRadius(toPoint)){
+            return cc.p(0,0);
+        }
+
     }
 
     var myFeet = this.owner.getBasePosition();
@@ -535,6 +543,9 @@ GeneralBehavior.prototype.handleDeath = function(){
         var state= this.getState();
         if (!this.owner.isAlive() && state.brain!='dead'){
             this.setState('dead','dead');
+            if (this.owner.movementType == jc.movementType.air){
+                this.owner.fallToShadow();
+            }
         }
 
         if (!this.owner.isAlive()){
@@ -547,7 +558,6 @@ GeneralBehavior.prototype.handleDeath = function(){
             this.owner.scheduleOnce(this.deadForGood.bind(this), 3);
             this.callbacksDisabled++;
         }
-
     }
 
 }
@@ -677,7 +687,14 @@ GeneralBehavior.prototype.handleIdle = function(dt){
 }
 
 GeneralBehavior.prototype.handleMove = function(dt){
+    //give me a chance to retarget closer;
+    this.handleIdle(dt);
+
     var point = this.seekEnemy();
+    if (!point){
+        this.setState('idle','idle');
+        return;
+    }
     if (point.x == 0 && point.y == 0){
         //arrived - attack
         this.setState('fighting', 'move'); //switch to fight, but keep animation the same

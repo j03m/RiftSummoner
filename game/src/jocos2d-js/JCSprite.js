@@ -78,6 +78,15 @@ jc.Sprite = cc.Sprite.extend({
         this.layer.removeChild(this.healthBar);
         this.cleanUp();
     },
+    fallToShadow:function(){
+        this.noShadowUpdate = true;
+        var pos = this.shadow.getPosition();
+        var moveDiff = cc.pSub(pos, this.getPosition());
+        var distanceToMove = cc.pLength(moveDiff);
+        var moveDuration = distanceToMove/this.gameObject.speed;
+        var action = cc.MoveTo.create(pos, moveDuration);
+        this.runAction(action);
+    },
     disableHealthBar:function(){
         this.hideHealthbar = true;
     },

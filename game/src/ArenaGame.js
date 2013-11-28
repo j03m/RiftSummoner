@@ -14,6 +14,7 @@ var ArenaGame = jc.WorldLayer.extend({
     teamAPowers:undefined,
     teamBPowers:undefined,
     presentationSpeed:0.2,
+    timeLimit:60000,
     init: function() {
         this.name = "Arena";
         if (this._super(arenaSheet)) {
@@ -27,11 +28,13 @@ var ArenaGame = jc.WorldLayer.extend({
 		}
 	},
     onShow:function(){
-        if(!hotr.arenaScene.data){
-            this.runScenario0();
-        }else{
-            this.runScenario();
-        }
+//        if(!hotr.arenaScene.data){
+//            this.runScenario0();
+//        }else{
+//            this.runScenario();
+//        }
+
+        this.showVictory();
     },
     runScenario:function(){
         this.teamASprites = hotr.arenaScene.data.teamA;
@@ -133,6 +136,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.teams['b']=_.filter(this.teams['b'],goodSprite);
             this.sprites = this.teams['a'].concat(this.teams['b']);
 
+            this.startedAt = Date.now();
             this.started=true;
         }.bind(this));
 
@@ -224,6 +228,10 @@ var ArenaGame = jc.WorldLayer.extend({
         var maxY=0;
         var shouldScale = false;
         if (this.started){
+            //check for winner
+            this.checkWinner();
+
+
             for (var i =0; i<this.sprites.length;i++){
                 if (this.sprites[i].isAlive() && this.sprites[i].isVisible()){
                     var position = this.sprites[i].getPosition(); //where am i in the layer
@@ -313,7 +321,8 @@ var ArenaGame = jc.WorldLayer.extend({
                 doEnemyTouch.bind(this)(minSprite);
 
             }else if (minSprite && this.getTeam('a').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an friend
-                doFriendTouch.bind(this)(minSprite);
+                //doFriendTouch.bind(this)(minSprite);
+                doGenericTouch.bind(this)();
             }else{
                 doGenericTouch.bind(this)();
             }
@@ -322,25 +331,25 @@ var ArenaGame = jc.WorldLayer.extend({
         }
 
         function doFriendTouch(sprite){
-            jc.playEffectAtLocation("tapEffect", touch, jc.shadowZOrder,this);
-            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["selectEffect"].sprite);
-            this.selectedSprite.effectAnimations["selectEffect"].playing = false;
+            jc.playEffectAtLocation("allySelection", touch, jc.shadowZOrder,this);
+            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["characterSelect"].sprite);
+            this.selectedSprite.effectAnimations["characterSelect"].playing = false;
             this.nextTouchAction = undefined;
             this.selectedSprite.behavior.supportCommand(sprite);
         }
 
         function doEnemyTouch(sprite){
-            jc.playEffectAtLocation("tapEffect", touch, jc.shadowZOrder,this);
-            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["selectEffect"].sprite);
-            this.selectedSprite.effectAnimations["selectEffect"].playing = false;
+            jc.playEffectAtLocation("enemySelection", touch, jc.shadowZOrder,this);
+            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["characterSelect"].sprite);
+            this.selectedSprite.effectAnimations["characterSelect"].playing = false;
             this.nextTouchAction = undefined;
             this.selectedSprite.behavior.attackCommand(sprite);
         }
 
         function doGenericTouch(){
-            jc.playEffectAtLocation("tapEffect", touch, jc.shadowZOrder,this);
-            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["selectEffect"].sprite);
-            this.selectedSprite.effectAnimations["selectEffect"].playing = false;
+            jc.playEffectAtLocation("movement", touch, jc.shadowZOrder,this);
+            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["characterSelect"].sprite);
+            this.selectedSprite.effectAnimations["characterSelect"].playing = false;
             this.nextTouchAction = undefined;
             this.selectedSprite.behavior.followCommand(touch);
         }
@@ -353,12 +362,12 @@ var ArenaGame = jc.WorldLayer.extend({
             if (this.nextTouchAction){
                 this.nextTouchAction(nodePos, sprites);
                 this.nextTouchAction = undefined;
-            }
-            if (sprites){
+
+            } else if (sprites){
 
                 var minSprite = this.getBestSpriteForTouch(nodePos, sprites, this.getTeam('a'));
                 if (minSprite){
-                    jc.playEffectOnTarget("selectEffect", minSprite, this, true );
+                    jc.playEffectOnTarget("characterSelect", minSprite, this, true );
                     this.selectedSprite = minSprite;
                     this.nextTouchAction = this.setSpriteTargetLocation.bind(this)
                 }
@@ -383,6 +392,80 @@ var ArenaGame = jc.WorldLayer.extend({
             }
         }
         return minSprite;
+    },
+    checkWinner: function(){
+        //first - is everyone dead on either team?
+        var teamaisdead = true;
+        var teambisdead = true;
+        var aliveA = 0;
+        var aliveB = 0;
+        var teama = this.getTeam('a');
+        var teamb = this.getTeam('b');
+        for(var i =0;i<teama.length;i++){
+            if (teama[i].getParent()==this){
+                teamaisdead=false;
+            }
+            aliveA++;
+        }
+
+        for(var i =0;i<teamb.length;i++){
+            if (teamb[i].getParent()==this){
+                teambisdead=false;
+            }
+            aliveB++;
+        }
+
+        if (teambisdead){
+            //pause game, display victory
+            this.started = false;
+            this.showVictory();
+            return;
+        }
+
+        if (teamaisdead){
+            //pause game, display lost
+            this.started = false;
+            alert("you lose, loser!")
+            return;
+        }
+
+        //hey no team is fully dead. But, how long have been running?
+        if (this.timeExpired()){
+            if (aliveA > aliveB){
+                //pause game, display victory
+                this.started = false;
+                this.showVictory();
+
+            }
+
+            if (aliveB > aliveA){
+                //pause game, display defeat
+                this.started = false;
+                alert("you lose, loser!")
+            }
+
+
+            if (aliveB == aliveA){
+                //pause game, display defeat
+                this.started = false;
+                alert("its a draw!")
+            }
+        }
+    },
+    showVictory:function(){
+        this.victory = new Victory();
+        this.victory.init(); //todo pass stats
+        this.addChild(this.victory);
+        this.victory.start();
+    },
+    timeExpired:function(){
+        var time = Date.now() - this.startedAt;
+        if (time>this.timeLimit){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
 });

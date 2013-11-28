@@ -7,20 +7,20 @@
             <key>knightEarth.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{144,328},{34,50}}</string>
+                <string>{{194,108},{32,50}}</string>
                 <key>offset</key>
-                <string>{10,-33}</string>
+                <string>{11,-33}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{53,68},{34,50}}</string>
+                <string>{{55,68},{32,50}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,276},{34,50}}</string>
+                <string>{{176,276},{34,50}}</string>
                 <key>offset</key>
                 <string>{10,-32}</string>
                 <key>rotated</key>
@@ -33,33 +33,33 @@
             <key>knightEarth.12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{258,2},{34,50}}</string>
+                <string>{{278,376},{34,48}}</string>
                 <key>offset</key>
-                <string>{9,-31}</string>
+                <string>{9,-32}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{52,66},{34,50}}</string>
+                <string>{{52,68},{34,48}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{176,220},{32,50}}</string>
+                <string>{{192,166},{32,50}}</string>
                 <key>offset</key>
-                <string>{9,-29}</string>
+                <string>{8,-29}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{53,64},{32,50}}</string>
+                <string>{{52,64},{32,50}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{100,282},{32,52}}</string>
+                <string>{{112,224},{32,52}}</string>
                 <key>offset</key>
                 <string>{8,-28}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>knightEarth.144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{196,110},{40,50}}</string>
+                <string>{{152,444},{40,50}}</string>
                 <key>offset</key>
                 <string>{6,-35}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>knightEarth.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{156,168},{40,50}}</string>
+                <string>{{196,2},{40,50}}</string>
                 <key>offset</key>
                 <string>{6,-35}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>knightEarth.146.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,224},{40,50}}</string>
+                <string>{{186,56},{40,50}}</string>
                 <key>offset</key>
                 <string>{6,-35}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>knightEarth.147.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,440},{40,50}}</string>
+                <string>{{152,114},{40,50}}</string>
                 <key>offset</key>
                 <string>{6,-35}</string>
                 <key>rotated</key>
@@ -124,11 +124,11 @@
             <key>knightEarth.148.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{100,336},{42,50}}</string>
+                <string>{{98,180},{42,50}}</string>
                 <key>offset</key>
                 <string>{5,-35}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{44,70},{42,50}}</string>
                 <key>sourceSize</key>
@@ -137,7 +137,7 @@
             <key>knightEarth.149.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{178,2},{40,50}}</string>
+                <string>{{146,224},{40,50}}</string>
                 <key>offset</key>
                 <string>{4,-35}</string>
                 <key>rotated</key>
@@ -163,7 +163,7 @@
             <key>knightEarth.150.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{272,54},{36,48}}</string>
+                <string>{{244,326},{36,48}}</string>
                 <key>offset</key>
                 <string>{1,-35}</string>
                 <key>rotated</key>
@@ -176,11 +176,11 @@
             <key>knightEarth.151.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{220,478},{32,48}}</string>
+                <string>{{252,268},{32,48}}</string>
                 <key>offset</key>
                 <string>{-1,-35}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{43,71},{32,48}}</string>
                 <key>sourceSize</key>
@@ -189,7 +189,7 @@
             <key>knightEarth.152.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{208,428},{32,48}}</string>
+                <string>{{222,218},{32,48}}</string>
                 <key>offset</key>
                 <string>{0,-35}</string>
                 <key>rotated</key>
@@ -202,7 +202,7 @@
             <key>knightEarth.153.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{188,378},{32,48}}</string>
+                <string>{{298,426},{32,48}}</string>
                 <key>offset</key>
                 <string>{-1,-35}</string>
                 <key>rotated</key>
@@ -215,26 +215,26 @@
             <key>knightEarth.154.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{84,124},{26,56}}</string>
+                <string>{{108,60},{26,56}}</string>
                 <key>offset</key>
-                <string>{-2,-31}</string>
+                <string>{-3,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{45,63},{26,56}}</string>
+                <string>{{44,63},{26,56}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.155.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{30,2},{24,70}}</string>
+                <string>{{30,2},{24,68}}</string>
                 <key>offset</key>
-                <string>{-2,-24}</string>
+                <string>{-2,-25}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{46,49},{24,70}}</string>
+                <string>{{46,51},{24,68}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
@@ -280,46 +280,46 @@
             <key>knightEarth.159.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{108,60},{46,54}}</string>
+                <string>{{38,346},{44,54}}</string>
                 <key>offset</key>
                 <string>{-13,-32}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{24,65},{46,54}}</string>
+                <string>{{25,65},{44,54}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,286},{32,58}}</string>
+                <string>{{84,122},{32,56}}</string>
                 <key>offset</key>
-                <string>{6,-30}</string>
+                <string>{6,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{50,61},{32,58}}</string>
+                <string>{{50,63},{32,56}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.160.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,464},{46,52}}</string>
+                <string>{{136,60},{48,52}}</string>
                 <key>offset</key>
                 <string>{-13,-33}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{24,67},{46,52}}</string>
+                <string>{{23,67},{48,52}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.161.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,2},{44,54}}</string>
+                <string>{{2,408},{44,54}}</string>
                 <key>offset</key>
                 <string>{-11,-32}</string>
                 <key>rotated</key>
@@ -332,20 +332,20 @@
             <key>knightEarth.162.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{56,2},{38,62}}</string>
+                <string>{{56,2},{38,60}}</string>
                 <key>offset</key>
-                <string>{-2,-28}</string>
+                <string>{-2,-29}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{39,57},{38,62}}</string>
+                <string>{{39,59},{38,60}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.163.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{40,74},{30,66}}</string>
+                <string>{{40,72},{30,66}}</string>
                 <key>offset</key>
                 <string>{8,-27}</string>
                 <key>rotated</key>
@@ -358,20 +358,20 @@
             <key>knightEarth.164.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,154},{42,44}}</string>
+                <string>{{328,2},{40,44}}</string>
                 <key>offset</key>
                 <string>{14,-38}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{53,76},{42,44}}</string>
+                <string>{{54,76},{40,44}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.165.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{302,204},{44,44}}</string>
+                <string>{{310,146},{44,44}}</string>
                 <key>offset</key>
                 <string>{13,-38}</string>
                 <key>rotated</key>
@@ -384,7 +384,7 @@
             <key>knightEarth.166.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{334,50},{44,42}}</string>
+                <string>{{320,50},{44,42}}</string>
                 <key>offset</key>
                 <string>{13,-39}</string>
                 <key>rotated</key>
@@ -397,7 +397,7 @@
             <key>knightEarth.167.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{326,102},{44,42}}</string>
+                <string>{{318,98},{44,42}}</string>
                 <key>offset</key>
                 <string>{13,-39}</string>
                 <key>rotated</key>
@@ -410,7 +410,7 @@
             <key>knightEarth.168.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{412,2},{42,40}}</string>
+                <string>{{390,142},{42,40}}</string>
                 <key>offset</key>
                 <string>{14,-40}</string>
                 <key>rotated</key>
@@ -423,7 +423,7 @@
             <key>knightEarth.169.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,48},{42,40}}</string>
+                <string>{{386,190},{42,40}}</string>
                 <key>offset</key>
                 <string>{14,-40}</string>
                 <key>rotated</key>
@@ -436,7 +436,7 @@
             <key>knightEarth.17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,282},{32,54}}</string>
+                <string>{{118,118},{32,54}}</string>
                 <key>offset</key>
                 <string>{6,-31}</string>
                 <key>rotated</key>
@@ -449,7 +449,7 @@
             <key>knightEarth.170.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{454,2},{36,42}}</string>
+                <string>{{432,2},{36,42}}</string>
                 <key>offset</key>
                 <string>{11,-39}</string>
                 <key>rotated</key>
@@ -462,7 +462,7 @@
             <key>knightEarth.171.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,304},{34,44}}</string>
+                <string>{{350,192},{34,44}}</string>
                 <key>offset</key>
                 <string>{9,-38}</string>
                 <key>rotated</key>
@@ -475,7 +475,7 @@
             <key>knightEarth.172.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{298,256},{38,46}}</string>
+                <string>{{228,102},{38,46}}</string>
                 <key>offset</key>
                 <string>{8,-37}</string>
                 <key>rotated</key>
@@ -488,7 +488,7 @@
             <key>knightEarth.173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{204,272},{40,48}}</string>
+                <string>{{202,328},{40,48}}</string>
                 <key>offset</key>
                 <string>{7,-36}</string>
                 <key>rotated</key>
@@ -501,7 +501,7 @@
             <key>knightEarth.174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{156,58},{40,50}}</string>
+                <string>{{134,278},{40,50}}</string>
                 <key>offset</key>
                 <string>{6,-35}</string>
                 <key>rotated</key>
@@ -514,37 +514,37 @@
             <key>knightEarth.175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{220,2},{36,50}}</string>
+                <string>{{240,378},{36,48}}</string>
                 <key>offset</key>
-                <string>{5,-35}</string>
+                <string>{5,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{47,70},{36,50}}</string>
+                <string>{{47,72},{36,48}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.176.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{160,380},{26,50}}</string>
+                <string>{{46,198},{24,50}}</string>
                 <key>offset</key>
                 <string>{1,-35}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,70},{26,50}}</string>
+                <string>{{49,70},{24,50}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.177.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{46,200},{22,56}}</string>
+                <string>{{132,2},{22,56}}</string>
                 <key>offset</key>
                 <string>{-2,-32}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{47,64},{22,56}}</string>
                 <key>sourceSize</key>
@@ -553,7 +553,7 @@
             <key>knightEarth.178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{36,224},{26,58}}</string>
+                <string>{{32,286},{26,58}}</string>
                 <key>offset</key>
                 <string>{-4,-31}</string>
                 <key>rotated</key>
@@ -566,7 +566,7 @@
             <key>knightEarth.179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{72,66},{34,56}}</string>
+                <string>{{72,64},{34,56}}</string>
                 <key>offset</key>
                 <string>{-8,-32}</string>
                 <key>rotated</key>
@@ -579,7 +579,7 @@
             <key>knightEarth.18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{102,224},{30,52}}</string>
+                <string>{{86,392},{30,52}}</string>
                 <key>offset</key>
                 <string>{7,-32}</string>
                 <key>rotated</key>
@@ -592,7 +592,7 @@
             <key>knightEarth.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,394},{38,52}}</string>
+                <string>{{84,338},{38,52}}</string>
                 <key>offset</key>
                 <string>{-10,-34}</string>
                 <key>rotated</key>
@@ -605,7 +605,7 @@
             <key>knightEarth.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,116},{40,50}}</string>
+                <string>{{124,334},{40,50}}</string>
                 <key>offset</key>
                 <string>{-11,-35}</string>
                 <key>rotated</key>
@@ -618,7 +618,7 @@
             <key>knightEarth.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{56,458},{38,52}}</string>
+                <string>{{156,2},{38,52}}</string>
                 <key>offset</key>
                 <string>{-10,-34}</string>
                 <key>rotated</key>
@@ -631,7 +631,7 @@
             <key>knightEarth.183.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{40,402},{36,54}}</string>
+                <string>{{74,224},{36,54}}</string>
                 <key>offset</key>
                 <string>{-9,-33}</string>
                 <key>rotated</key>
@@ -683,20 +683,20 @@
             <key>knightEarth.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{76,338},{22,54}}</string>
+                <string>{{86,446},{22,52}}</string>
                 <key>offset</key>
-                <string>{7,-33}</string>
+                <string>{7,-34}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{56,66},{22,54}}</string>
+                <string>{{56,68},{22,52}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{278,312},{38,46}}</string>
+                <string>{{238,2},{38,46}}</string>
                 <key>offset</key>
                 <string>{18,-37}</string>
                 <key>rotated</key>
@@ -709,20 +709,20 @@
             <key>knightEarth.189.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{294,360},{34,44}}</string>
+                <string>{{362,96},{32,44}}</string>
                 <key>offset</key>
                 <string>{15,-38}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{58,76},{34,44}}</string>
+                <string>{{59,76},{32,44}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,162},{28,50}}</string>
+                <string>{{194,438},{28,50}}</string>
                 <key>offset</key>
                 <string>{8,-33}</string>
                 <key>rotated</key>
@@ -735,7 +735,7 @@
             <key>knightEarth.190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{362,148},{30,44}}</string>
+                <string>{{370,2},{30,44}}</string>
                 <key>offset</key>
                 <string>{12,-38}</string>
                 <key>rotated</key>
@@ -748,7 +748,7 @@
             <key>knightEarth.191.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{454,70},{28,42}}</string>
+                <string>{{310,288},{28,42}}</string>
                 <key>offset</key>
                 <string>{10,-39}</string>
                 <key>rotated</key>
@@ -761,11 +761,11 @@
             <key>knightEarth.192.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{394,150},{26,42}}</string>
+                <string>{{476,160},{26,42}}</string>
                 <key>offset</key>
                 <string>{10,-39}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{57,78},{26,42}}</string>
                 <key>sourceSize</key>
@@ -774,7 +774,7 @@
             <key>knightEarth.193.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{454,128},{26,42}}</string>
+                <string>{{432,154},{26,42}}</string>
                 <key>offset</key>
                 <string>{10,-39}</string>
                 <key>rotated</key>
@@ -787,7 +787,7 @@
             <key>knightEarth.194.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{454,100},{26,42}}</string>
+                <string>{{432,68},{26,42}}</string>
                 <key>offset</key>
                 <string>{11,-39}</string>
                 <key>rotated</key>
@@ -800,33 +800,33 @@
             <key>knightEarth.195.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{454,40},{28,42}}</string>
+                <string>{{432,40},{26,42}}</string>
                 <key>offset</key>
-                <string>{11,-39}</string>
+                <string>{12,-39}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{57,78},{28,42}}</string>
+                <string>{{59,78},{26,42}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.196.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{174,482},{28,44}}</string>
+                <string>{{234,482},{28,42}}</string>
                 <key>offset</key>
-                <string>{12,-38}</string>
+                <string>{12,-39}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{58,76},{28,44}}</string>
+                <string>{{58,78},{28,42}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.197.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{348,200},{30,44}}</string>
+                <string>{{364,48},{30,44}}</string>
                 <key>offset</key>
                 <string>{13,-38}</string>
                 <key>rotated</key>
@@ -839,7 +839,7 @@
             <key>knightEarth.198.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,250},{32,44}}</string>
+                <string>{{356,144},{32,44}}</string>
                 <key>offset</key>
                 <string>{14,-38}</string>
                 <key>rotated</key>
@@ -852,11 +852,11 @@
             <key>knightEarth.199.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{274,412},{34,44}}</string>
+                <string>{{328,476},{34,44}}</string>
                 <key>offset</key>
                 <string>{16,-38}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{59,76},{34,44}}</string>
                 <key>sourceSize</key>
@@ -865,7 +865,7 @@
             <key>knightEarth.20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,422},{30,48}}</string>
+                <string>{{256,210},{30,48}}</string>
                 <key>offset</key>
                 <string>{8,-34}</string>
                 <key>rotated</key>
@@ -878,7 +878,7 @@
             <key>knightEarth.200.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{374,2},{36,44}}</string>
+                <string>{{312,192},{36,44}}</string>
                 <key>offset</key>
                 <string>{18,-38}</string>
                 <key>rotated</key>
@@ -891,24 +891,24 @@
             <key>knightEarth.201.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{254,364},{38,46}}</string>
+                <string>{{310,242},{38,44}}</string>
                 <key>offset</key>
-                <string>{18,-37}</string>
+                <string>{18,-38}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{59,74},{38,46}}</string>
+                <string>{{59,76},{38,44}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.202.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{270,472},{38,46}}</string>
+                <string>{{228,54},{38,46}}</string>
                 <key>offset</key>
                 <string>{18,-37}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{59,74},{38,46}}</string>
                 <key>sourceSize</key>
@@ -917,20 +917,20 @@
             <key>knightEarth.203.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{228,162},{38,48}}</string>
+                <string>{{46,464},{38,46}}</string>
                 <key>offset</key>
-                <string>{16,-36}</string>
+                <string>{16,-37}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{57,72},{38,48}}</string>
+                <string>{{57,74},{38,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.204.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,214},{38,48}}</string>
+                <string>{{212,276},{38,48}}</string>
                 <key>offset</key>
                 <string>{13,-36}</string>
                 <key>rotated</key>
@@ -943,20 +943,20 @@
             <key>knightEarth.205.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{112,116},{40,50}}</string>
+                <string>{{198,382},{40,48}}</string>
                 <key>offset</key>
-                <string>{9,-35}</string>
+                <string>{9,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{49,70},{40,50}}</string>
+                <string>{{49,72},{40,48}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.206.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{118,388},{40,50}}</string>
+                <string>{{118,392},{40,50}}</string>
                 <key>offset</key>
                 <string>{5,-35}</string>
                 <key>rotated</key>
@@ -969,7 +969,7 @@
             <key>knightEarth.21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{222,372},{30,48}}</string>
+                <string>{{226,160},{30,48}}</string>
                 <key>offset</key>
                 <string>{8,-34}</string>
                 <key>rotated</key>
@@ -982,7 +982,7 @@
             <key>knightEarth.22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{222,322},{30,48}}</string>
+                <string>{{282,318},{30,48}}</string>
                 <key>offset</key>
                 <string>{9,-35}</string>
                 <key>rotated</key>
@@ -995,11 +995,11 @@
             <key>knightEarth.23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{174,432},{32,48}}</string>
+                <string>{{278,478},{32,48}}</string>
                 <key>offset</key>
                 <string>{8,-35}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{52,71},{32,48}}</string>
                 <key>sourceSize</key>
@@ -1008,7 +1008,7 @@
             <key>knightEarth.24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,276},{32,50}}</string>
+                <string>{{188,224},{32,50}}</string>
                 <key>offset</key>
                 <string>{8,-34}</string>
                 <key>rotated</key>
@@ -1021,7 +1021,7 @@
             <key>knightEarth.25.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,448},{34,52}}</string>
+                <string>{{98,280},{34,52}}</string>
                 <key>offset</key>
                 <string>{7,-33}</string>
                 <key>rotated</key>
@@ -1034,7 +1034,7 @@
             <key>knightEarth.26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{38,346},{36,54}}</string>
+                <string>{{60,282},{36,54}}</string>
                 <key>offset</key>
                 <string>{6,-32}</string>
                 <key>rotated</key>
@@ -1047,24 +1047,24 @@
             <key>knightEarth.27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{64,224},{36,56}}</string>
+                <string>{{46,140},{36,56}}</string>
                 <key>offset</key>
-                <string>{6,-31}</string>
+                <string>{5,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{48,63},{36,56}}</string>
+                <string>{{47,63},{36,56}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.387.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{104,182},{40,50}}</string>
+                <string>{{110,446},{40,50}}</string>
                 <key>offset</key>
                 <string>{7,-35}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{47,70},{40,50}}</string>
                 <key>sourceSize</key>
@@ -1073,7 +1073,7 @@
             <key>knightEarth.388.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{180,328},{40,48}}</string>
+                <string>{{150,174},{40,48}}</string>
                 <key>offset</key>
                 <string>{6,-36}</string>
                 <key>rotated</key>
@@ -1086,7 +1086,7 @@
             <key>knightEarth.389.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,2},{42,46}}</string>
+                <string>{{2,464},{42,46}}</string>
                 <key>offset</key>
                 <string>{6,-37}</string>
                 <key>rotated</key>
@@ -1099,7 +1099,7 @@
             <key>knightEarth.390.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{370,96},{42,42}}</string>
+                <string>{{350,238},{42,42}}</string>
                 <key>offset</key>
                 <string>{8,-39}</string>
                 <key>rotated</key>
@@ -1112,7 +1112,7 @@
             <key>knightEarth.391.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,406},{40,40}}</string>
+                <string>{{432,182},{40,40}}</string>
                 <key>offset</key>
                 <string>{8,-40}</string>
                 <key>rotated</key>
@@ -1125,37 +1125,37 @@
             <key>knightEarth.392.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,350},{36,40}}</string>
+                <string>{{396,104},{36,38}}</string>
                 <key>offset</key>
-                <string>{8,-40}</string>
+                <string>{8,-41}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,80},{36,40}}</string>
+                <string>{{50,82},{36,38}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.393.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{414,92},{30,38}}</string>
+                <string>{{436,96},{30,38}}</string>
                 <key>offset</key>
-                <string>{5,-41}</string>
+                <string>{4,-41}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,82},{30,38}}</string>
+                <string>{{49,82},{30,38}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.394.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,472},{22,38}}</string>
+                <string>{{468,232},{22,38}}</string>
                 <key>offset</key>
                 <string>{0,-41}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{49,82},{22,38}}</string>
                 <key>sourceSize</key>
@@ -1164,33 +1164,20 @@
             <key>knightEarth.395.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,472},{22,38}}</string>
+                <string>{{194,490},{20,38}}</string>
                 <key>offset</key>
                 <string>{0,-41}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{49,82},{22,38}}</string>
+                <string>{{50,82},{20,38}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.396.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{366,472},{20,38}}</string>
-                <key>offset</key>
-                <string>{0,-41}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{50,82},{20,38}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>knightEarth.397.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{466,184},{20,36}}</string>
+                <string>{{354,330},{20,36}}</string>
                 <key>offset</key>
                 <string>{0,-42}</string>
                 <key>rotated</key>
@@ -1200,10 +1187,10 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>knightEarth.398.png</key>
+            <key>knightEarth.397.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{406,178},{20,36}}</string>
+                <string>{{392,310},{20,36}}</string>
                 <key>offset</key>
                 <string>{0,-42}</string>
                 <key>rotated</key>
@@ -1213,10 +1200,23 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
+            <key>knightEarth.398.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{418,296},{20,36}}</string>
+                <key>offset</key>
+                <string>{0,-42}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,84},{20,36}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
             <key>knightEarth.399.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{400,232},{20,36}}</string>
+                <string>{{332,318},{20,36}}</string>
                 <key>offset</key>
                 <string>{0,-42}</string>
                 <key>rotated</key>
@@ -1229,7 +1229,7 @@
             <key>knightEarth.4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{46,142},{36,56}}</string>
+                <string>{{36,224},{36,56}}</string>
                 <key>offset</key>
                 <string>{6,-31}</string>
                 <key>rotated</key>
@@ -1242,11 +1242,11 @@
             <key>knightEarth.400.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{382,284},{22,36}}</string>
+                <string>{{460,256},{22,36}}</string>
                 <key>offset</key>
                 <string>{0,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{49,84},{22,36}}</string>
                 <key>sourceSize</key>
@@ -1255,11 +1255,11 @@
             <key>knightEarth.401.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,334},{22,36}}</string>
+                <string>{{354,306},{22,36}}</string>
                 <key>offset</key>
                 <string>{0,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{49,84},{22,36}}</string>
                 <key>sourceSize</key>
@@ -1268,7 +1268,7 @@
             <key>knightEarth.402.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,250},{22,34}}</string>
+                <string>{{476,80},{22,34}}</string>
                 <key>offset</key>
                 <string>{0,-43}</string>
                 <key>rotated</key>
@@ -1281,7 +1281,7 @@
             <key>knightEarth.403.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,230},{22,34}}</string>
+                <string>{{396,72},{22,34}}</string>
                 <key>offset</key>
                 <string>{0,-43}</string>
                 <key>rotated</key>
@@ -1294,7 +1294,7 @@
             <key>knightEarth.404.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,226},{22,34}}</string>
+                <string>{{476,56},{22,34}}</string>
                 <key>offset</key>
                 <string>{1,-43}</string>
                 <key>rotated</key>
@@ -1307,7 +1307,7 @@
             <key>knightEarth.405.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,206},{22,34}}</string>
+                <string>{{396,48},{22,34}}</string>
                 <key>offset</key>
                 <string>{1,-43}</string>
                 <key>rotated</key>
@@ -1320,7 +1320,7 @@
             <key>knightEarth.406.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{352,392},{22,36}}</string>
+                <string>{{394,272},{22,36}}</string>
                 <key>offset</key>
                 <string>{2,-42}</string>
                 <key>rotated</key>
@@ -1333,7 +1333,7 @@
             <key>knightEarth.407.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,448},{22,38}}</string>
+                <string>{{428,224},{22,38}}</string>
                 <key>offset</key>
                 <string>{2,-41}</string>
                 <key>rotated</key>
@@ -1346,7 +1346,7 @@
             <key>knightEarth.408.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{414,124},{24,38}}</string>
+                <string>{{436,128},{24,38}}</string>
                 <key>offset</key>
                 <string>{4,-41}</string>
                 <key>rotated</key>
@@ -1359,7 +1359,7 @@
             <key>knightEarth.409.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,296},{26,36}}</string>
+                <string>{{394,234},{26,36}}</string>
                 <key>offset</key>
                 <string>{4,-42}</string>
                 <key>rotated</key>
@@ -1372,7 +1372,7 @@
             <key>knightEarth.410.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{428,200},{24,34}}</string>
+                <string>{{476,30},{24,34}}</string>
                 <key>offset</key>
                 <string>{5,-43}</string>
                 <key>rotated</key>
@@ -1385,11 +1385,11 @@
             <key>knightEarth.411.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,254},{28,30}}</string>
+                <string>{{402,2},{28,30}}</string>
                 <key>offset</key>
                 <string>{7,-45}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{53,90},{28,30}}</string>
                 <key>sourceSize</key>
@@ -1398,7 +1398,7 @@
             <key>knightEarth.412.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{406,274},{30,26}}</string>
+                <string>{{476,132},{30,26}}</string>
                 <key>offset</key>
                 <string>{9,-47}</string>
                 <key>rotated</key>
@@ -1411,7 +1411,7 @@
             <key>knightEarth.413.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,46},{32,26}}</string>
+                <string>{{476,104},{32,26}}</string>
                 <key>offset</key>
                 <string>{11,-47}</string>
                 <key>rotated</key>
@@ -1424,7 +1424,7 @@
             <key>knightEarth.414.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{476,156},{34,26}}</string>
+                <string>{{476,2},{34,26}}</string>
                 <key>offset</key>
                 <string>{12,-47}</string>
                 <key>rotated</key>
@@ -1437,24 +1437,24 @@
             <key>knightEarth.415.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{372,246},{36,26}}</string>
+                <string>{{474,204},{36,26}}</string>
                 <key>offset</key>
-                <string>{12,-47}</string>
+                <string>{11,-47}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{54,94},{36,26}}</string>
+                <string>{{53,94},{36,26}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.416.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{380,194},{36,24}}</string>
+                <string>{{422,248},{36,24}}</string>
                 <key>offset</key>
                 <string>{12,-48}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{54,96},{36,24}}</string>
                 <key>sourceSize</key>
@@ -1463,7 +1463,7 @@
             <key>knightEarth.417.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{350,448},{36,22}}</string>
+                <string>{{354,282},{36,22}}</string>
                 <key>offset</key>
                 <string>{12,-49}</string>
                 <key>rotated</key>
@@ -1476,7 +1476,7 @@
             <key>knightEarth.418.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{428,178},{36,20}}</string>
+                <string>{{456,280},{36,20}}</string>
                 <key>offset</key>
                 <string>{12,-50}</string>
                 <key>rotated</key>
@@ -1489,7 +1489,7 @@
             <key>knightEarth.419.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{438,156},{36,20}}</string>
+                <string>{{418,274},{36,20}}</string>
                 <key>offset</key>
                 <string>{12,-50}</string>
                 <key>rotated</key>
@@ -1502,7 +1502,7 @@
             <key>knightEarth.5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,408},{36,54}}</string>
+                <string>{{48,402},{36,54}}</string>
                 <key>offset</key>
                 <string>{7,-32}</string>
                 <key>rotated</key>
@@ -1515,124 +1515,124 @@
             <key>knightEarth.521.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{250,212},{26,48}}</string>
+                <string>{{268,50},{26,46}}</string>
                 <key>offset</key>
-                <string>{1,-35}</string>
+                <string>{1,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{48,71},{26,48}}</string>
+                <string>{{48,73},{26,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.522.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{246,264},{26,48}}</string>
+                <string>{{258,150},{26,46}}</string>
                 <key>offset</key>
-                <string>{0,-35}</string>
+                <string>{0,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{47,71},{26,48}}</string>
+                <string>{{47,73},{26,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.523.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{276,104},{24,48}}</string>
+                <string>{{268,98},{24,46}}</string>
                 <key>offset</key>
-                <string>{0,-35}</string>
+                <string>{0,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{48,71},{24,48}}</string>
+                <string>{{48,73},{24,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.524.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{268,156},{24,48}}</string>
+                <string>{{278,2},{24,46}}</string>
                 <key>offset</key>
-                <string>{0,-35}</string>
+                <string>{0,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{48,71},{24,48}}</string>
+                <string>{{48,73},{24,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.525.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,52},{22,48}}</string>
+                <string>{{288,194},{22,46}}</string>
                 <key>offset</key>
-                <string>{0,-35}</string>
+                <string>{0,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{49,71},{22,48}}</string>
+                <string>{{49,73},{22,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.526.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{302,104},{22,48}}</string>
+                <string>{{304,2},{22,46}}</string>
                 <key>offset</key>
-                <string>{0,-35}</string>
+                <string>{0,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{49,71},{22,48}}</string>
+                <string>{{49,73},{22,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.527.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{294,154},{22,48}}</string>
+                <string>{{296,50},{22,46}}</string>
                 <key>offset</key>
-                <string>{-1,-35}</string>
+                <string>{-1,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{48,71},{22,48}}</string>
+                <string>{{48,73},{22,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.528.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{278,206},{22,48}}</string>
+                <string>{{294,98},{22,46}}</string>
                 <key>offset</key>
-                <string>{-1,-35}</string>
+                <string>{-1,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{48,71},{22,48}}</string>
+                <string>{{48,73},{22,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.529.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{274,262},{22,48}}</string>
+                <string>{{286,146},{22,46}}</string>
                 <key>offset</key>
-                <string>{-1,-35}</string>
+                <string>{-1,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{48,71},{22,48}}</string>
+                <string>{{48,73},{22,46}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>knightEarth.530.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{254,314},{22,48}}</string>
+                <string>{{286,260},{22,48}}</string>
                 <key>offset</key>
                 <string>{-1,-35}</string>
                 <key>rotated</key>
@@ -1645,7 +1645,7 @@
             <key>knightEarth.6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,54},{36,50}}</string>
+                <string>{{160,386},{36,50}}</string>
                 <key>offset</key>
                 <string>{9,-34}</string>
                 <key>rotated</key>
@@ -1658,7 +1658,7 @@
             <key>knightEarth.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{238,106},{36,48}}</string>
+                <string>{{224,432},{36,48}}</string>
                 <key>offset</key>
                 <string>{10,-34}</string>
                 <key>rotated</key>
@@ -1671,7 +1671,7 @@
             <key>knightEarth.8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{294,2},{34,48}}</string>
+                <string>{{262,428},{34,48}}</string>
                 <key>offset</key>
                 <string>{11,-34}</string>
                 <key>rotated</key>
@@ -1684,7 +1684,7 @@
             <key>knightEarth.9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{236,54},{34,50}}</string>
+                <string>{{166,330},{34,50}}</string>
                 <key>offset</key>
                 <string>{11,-33}</string>
                 <key>rotated</key>
@@ -1704,7 +1704,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e0e076ffa15be69b0fdd8754af472fb0:3d3d7a0ee063ef02f5e853be34c28b07:c86b5031074ae06090d5251b2009b892$</string>
+            <string>$TexturePacker:SmartUpdate:cb354d21cf2a89315c2f4173eca361bc:e85b415cab6a0caf8699f46b273f9c47:c86b5031074ae06090d5251b2009b892$</string>
             <key>textureFileName</key>
             <string>knightEarthSheet.png</string>
         </dict>

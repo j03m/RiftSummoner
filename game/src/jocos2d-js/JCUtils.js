@@ -365,7 +365,6 @@ jc.setChildEffectPosition = function(effect, parent, config){
 
     if (placement){
         if (placement == 'bottom') {
-            effectPos.y += etr.height/2; //up to feet
             effectPos.x += cs.width/2;
         }else if (placement=='ground'){
             effectPos.y += etr.height/2; //up to feet
