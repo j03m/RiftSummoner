@@ -11,6 +11,11 @@ var RangeBehavior =  function(sprite){
 
 RangeBehavior.prototype.handleRangeFight = function(dt){
 
+    //is anyone closer?
+    if (!this.forceLocked){
+        this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam());
+    }
+
     //is my target alive?
     var state= this.getState();
     if (!this.locked && state.anim.indexOf('attack')==-1){

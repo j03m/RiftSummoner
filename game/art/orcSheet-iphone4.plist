@@ -7,7 +7,7 @@
             <key>orc.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,238},{38,66}}</string>
+                <string>{{208,288},{38,66}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>orc.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,252},{36,66}}</string>
+                <string>{{276,326},{36,66}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -30,49 +30,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.100.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{430,146},{32,68}}</string>
-                <key>offset</key>
-                <string>{1,-86}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{105,172},{32,68}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.101.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{290,78},{36,68}}</string>
-                <key>offset</key>
-                <string>{2,-86}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{104,172},{36,68}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.102.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{274,226},{38,66}}</string>
-                <key>offset</key>
-                <string>{2,-86}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{103,173},{38,66}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>orc.103.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{138,274},{34,66}}</string>
+                <string>{{70,362},{34,66}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -85,7 +46,7 @@
             <key>orc.104.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{340,278},{30,64}}</string>
+                <string>{{266,544},{30,64}}</string>
                 <key>offset</key>
                 <string>{0,-87}</string>
                 <key>rotated</key>
@@ -98,7 +59,7 @@
             <key>orc.105.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,334},{36,64}}</string>
+                <string>{{332,542},{36,64}}</string>
                 <key>offset</key>
                 <string>{0,-87}</string>
                 <key>rotated</key>
@@ -111,7 +72,7 @@
             <key>orc.106.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{136,310},{38,64}}</string>
+                <string>{{200,508},{38,64}}</string>
                 <key>offset</key>
                 <string>{0,-87}</string>
                 <key>rotated</key>
@@ -124,7 +85,7 @@
             <key>orc.107.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{206,286},{40,64}}</string>
+                <string>{{266,502},{40,64}}</string>
                 <key>offset</key>
                 <string>{2,-87}</string>
                 <key>rotated</key>
@@ -137,7 +98,7 @@
             <key>orc.108.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,290},{42,64}}</string>
+                <string>{{404,444},{42,64}}</string>
                 <key>offset</key>
                 <string>{5,-87}</string>
                 <key>rotated</key>
@@ -147,10 +108,23 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
+            <key>orc.109.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{68,450},{44,64}}</string>
+                <key>offset</key>
+                <string>{8,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{106,175},{44,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
             <key>orc.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,238},{36,66}}</string>
+                <string>{{344,324},{36,66}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -160,10 +134,140 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
+            <key>orc.110.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{134,472},{42,64}}</string>
+                <key>offset</key>
+                <string>{9,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{108,174},{42,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.111.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{200,464},{42,64}}</string>
+                <key>offset</key>
+                <string>{7,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{106,176},{42,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.112.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{416,292},{38,66}}</string>
+                <key>offset</key>
+                <string>{4,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{105,174},{38,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.113.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{276,288},{36,66}}</string>
+                <key>offset</key>
+                <string>{1,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{103,174},{36,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.114.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,350},{36,66}}</string>
+                <key>offset</key>
+                <string>{0,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{102,174},{36,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.115.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{430,154},{36,68}}</string>
+                <key>offset</key>
+                <string>{-1,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{101,172},{36,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.116.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,192},{36,68}}</string>
+                <key>offset</key>
+                <string>{0,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{102,172},{36,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.117.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{72,124},{40,68}}</string>
+                <key>offset</key>
+                <string>{0,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{100,172},{40,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.118.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{430,70},{42,68}}</string>
+                <key>offset</key>
+                <string>{0,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{99,172},{42,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.119.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{360,38},{42,68}}</string>
+                <key>offset</key>
+                <string>{0,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{99,172},{42,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
             <key>orc.12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{410,264},{36,66}}</string>
+                <string>{{70,324},{36,66}}</string>
                 <key>offset</key>
                 <string>{0,-86}</string>
                 <key>rotated</key>
@@ -173,36 +277,218 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.13.png</key>
+            <key>orc.120.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{206,210},{38,66}}</string>
+                <string>{{402,488},{40,64}}</string>
                 <key>offset</key>
-                <string>{0,-86}</string>
+                <string>{-1,-88}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,173},{38,66}}</string>
+                <string>{{99,176},{40,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.14.png</key>
+            <key>orc.121.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{138,198},{38,66}}</string>
+                <string>{{398,530},{36,64}}</string>
                 <key>offset</key>
-                <string>{0,-86}</string>
+                <string>{-4,-88}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,173},{38,66}}</string>
+                <string>{{98,176},{36,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.122.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{478,332},{32,62}}</string>
+                <key>offset</key>
+                <string>{-4,-89}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{100,178},{32,62}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.123.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{126,556},{32,60}}</string>
+                <key>offset</key>
+                <string>{-2,-90}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{102,180},{32,60}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.124.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,578},{34,56}}</string>
+                <key>offset</key>
+                <string>{2,-92}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{105,184},{34,56}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.125.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{64,576},{40,56}}</string>
+                <key>offset</key>
+                <string>{9,-92}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{109,184},{40,56}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.126.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,614},{46,50}}</string>
+                <key>offset</key>
+                <string>{9,-95}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{106,190},{46,50}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.127.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{338,620},{46,46}}</string>
+                <key>offset</key>
+                <string>{10,-97}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,194},{46,46}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.128.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{102,818},{46,42}}</string>
+                <key>offset</key>
+                <string>{10,-99}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,198},{46,42}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.129.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{52,846},{46,40}}</string>
+                <key>offset</key>
+                <string>{10,-100}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,200},{46,40}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.130.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,852},{46,38}}</string>
+                <key>offset</key>
+                <string>{10,-101}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,202},{46,38}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.131.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{462,590},{48,38}}</string>
+                <key>offset</key>
+                <string>{10,-101}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{106,202},{48,38}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.132.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{472,710},{46,38}}</string>
+                <key>offset</key>
+                <string>{10,-101}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{107,202},{46,38}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.133.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{404,748},{46,36}}</string>
+                <key>offset</key>
+                <string>{10,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,204},{46,36}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.134.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{152,816},{48,36}}</string>
+                <key>offset</key>
+                <string>{10,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{106,204},{48,36}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.135.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{202,806},{48,36}}</string>
+                <key>offset</key>
+                <string>{10,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{106,204},{48,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>orc.144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{302,606},{48,36}}</string>
+                <string>{{252,772},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -215,7 +501,7 @@
             <key>orc.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{352,598},{48,36}}</string>
+                <string>{{304,744},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -228,7 +514,7 @@
             <key>orc.146.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,572},{48,36}}</string>
+                <string>{{354,722},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -241,7 +527,7 @@
             <key>orc.147.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,638},{48,36}}</string>
+                <string>{{422,710},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -254,7 +540,7 @@
             <key>orc.148.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{52,630},{48,36}}</string>
+                <string>{{2,814},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -267,7 +553,7 @@
             <key>orc.149.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{102,614},{48,36}}</string>
+                <string>{{52,808},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -277,23 +563,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.15.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,212},{38,66}}</string>
-                <key>offset</key>
-                <string>{0,-86}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{101,173},{38,66}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>orc.150.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,596},{48,36}}</string>
+                <string>{{102,780},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -306,7 +579,7 @@
             <key>orc.151.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{202,578},{48,36}}</string>
+                <string>{{152,778},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -319,7 +592,7 @@
             <key>orc.152.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{252,576},{48,36}}</string>
+                <string>{{202,768},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -332,7 +605,7 @@
             <key>orc.153.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{352,598},{48,36}}</string>
+                <string>{{304,744},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -345,7 +618,7 @@
             <key>orc.154.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{302,568},{48,36}}</string>
+                <string>{{254,734},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -358,7 +631,7 @@
             <key>orc.155.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{352,560},{48,36}}</string>
+                <string>{{304,706},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -371,7 +644,7 @@
             <key>orc.156.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,600},{48,36}}</string>
+                <string>{{372,684},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -384,7 +657,7 @@
             <key>orc.157.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,596},{48,36}}</string>
+                <string>{{102,780},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -397,7 +670,7 @@
             <key>orc.158.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{52,592},{48,36}}</string>
+                <string>{{436,672},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -410,7 +683,7 @@
             <key>orc.159.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{102,576},{48,36}}</string>
+                <string>{{2,776},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -420,23 +693,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.16.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{140,156},{40,66}}</string>
-                <key>offset</key>
-                <string>{0,-86}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{100,173},{40,66}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>orc.160.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,558},{48,36}}</string>
+                <string>{{52,770},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -449,7 +709,7 @@
             <key>orc.161.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{202,540},{48,36}}</string>
+                <string>{{102,742},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -462,7 +722,7 @@
             <key>orc.162.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{252,538},{48,36}}</string>
+                <string>{{152,740},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -475,7 +735,7 @@
             <key>orc.163.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{302,530},{48,36}}</string>
+                <string>{{204,730},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -488,7 +748,7 @@
             <key>orc.164.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,596},{48,36}}</string>
+                <string>{{102,780},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -501,7 +761,7 @@
             <key>orc.165.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{352,598},{48,36}}</string>
+                <string>{{304,744},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -514,7 +774,7 @@
             <key>orc.166.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,562},{48,36}}</string>
+                <string>{{254,696},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -527,7 +787,7 @@
             <key>orc.167.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{52,554},{48,36}}</string>
+                <string>{{2,738},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -540,7 +800,7 @@
             <key>orc.168.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{102,538},{48,36}}</string>
+                <string>{{52,732},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -553,7 +813,7 @@
             <key>orc.169.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,520},{48,36}}</string>
+                <string>{{102,704},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -563,23 +823,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.17.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,170},{40,66}}</string>
-                <key>offset</key>
-                <string>{0,-86}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{100,173},{40,66}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>orc.170.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{202,502},{48,36}}</string>
+                <string>{{154,702},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -592,7 +839,7 @@
             <key>orc.171.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{252,500},{48,36}}</string>
+                <string>{{204,692},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -605,7 +852,7 @@
             <key>orc.172.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,524},{48,36}}</string>
+                <string>{{2,700},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -618,7 +865,7 @@
             <key>orc.173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{52,516},{48,36}}</string>
+                <string>{{52,694},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -631,7 +878,7 @@
             <key>orc.174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{102,500},{48,36}}</string>
+                <string>{{104,666},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -644,7 +891,7 @@
             <key>orc.175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,482},{48,36}}</string>
+                <string>{{154,664},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -657,7 +904,7 @@
             <key>orc.176.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{202,464},{48,36}}</string>
+                <string>{{322,668},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -670,7 +917,7 @@
             <key>orc.177.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,534},{48,36}}</string>
+                <string>{{272,658},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -683,7 +930,7 @@
             <key>orc.178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{52,516},{48,36}}</string>
+                <string>{{52,694},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -696,7 +943,7 @@
             <key>orc.179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{382,522},{48,36}}</string>
+                <string>{{222,654},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -709,7 +956,7 @@
             <key>orc.18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{72,156},{40,66}}</string>
+                <string>{{2,308},{40,66}}</string>
                 <key>offset</key>
                 <string>{4,-83}</string>
                 <key>rotated</key>
@@ -722,7 +969,7 @@
             <key>orc.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{332,492},{48,36}}</string>
+                <string>{{386,646},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -735,7 +982,7 @@
             <key>orc.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{448,496},{48,36}}</string>
+                <string>{{288,620},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -748,7 +995,7 @@
             <key>orc.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{398,484},{48,36}}</string>
+                <string>{{2,662},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -761,7 +1008,7 @@
             <key>orc.183.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,524},{48,36}}</string>
+                <string>{{2,700},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -774,7 +1021,7 @@
             <key>orc.184.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{282,462},{48,36}}</string>
+                <string>{{54,656},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -787,7 +1034,7 @@
             <key>orc.185.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{348,454},{48,36}}</string>
+                <string>{{104,628},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -800,11 +1047,11 @@
             <key>orc.186.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{466,446},{48,36}}</string>
+                <string>{{172,626},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{106,204},{48,36}}</string>
                 <key>sourceSize</key>
@@ -813,7 +1060,7 @@
             <key>orc.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{416,446},{48,36}}</string>
+                <string>{{238,616},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -826,7 +1073,7 @@
             <key>orc.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,486},{48,36}}</string>
+                <string>{{54,618},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -839,7 +1086,7 @@
             <key>orc.189.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{52,478},{48,36}}</string>
+                <string>{{122,590},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -852,7 +1099,7 @@
             <key>orc.19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{416,222},{40,66}}</string>
+                <string>{{70,282},{40,66}}</string>
                 <key>offset</key>
                 <string>{5,-82}</string>
                 <key>rotated</key>
@@ -865,7 +1112,7 @@
             <key>orc.190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{102,462},{48,36}}</string>
+                <string>{{188,588},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -878,7 +1125,7 @@
             <key>orc.191.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{398,484},{48,36}}</string>
+                <string>{{2,662},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -891,98 +1138,7 @@
             <key>orc.192.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,562},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.193.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{282,462},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.194.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{152,444},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.195.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{52,554},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.196.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,448},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.197.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{52,440},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.198.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{102,424},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.199.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,410},{48,36}}</string>
+                <string>{{254,696},{48,36}}</string>
                 <key>offset</key>
                 <string>{10,-102}</string>
                 <key>rotated</key>
@@ -995,7 +1151,7 @@
             <key>orc.2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,130},{38,68}}</string>
+                <string>{{142,134},{38,68}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
@@ -1008,7 +1164,7 @@
             <key>orc.20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{274,266},{40,64}}</string>
+                <string>{{336,462},{40,64}}</string>
                 <key>offset</key>
                 <string>{6,-81}</string>
                 <key>rotated</key>
@@ -1018,140 +1174,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.200.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{52,402},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.201.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{232,426},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.202.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{298,424},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.203.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{282,462},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.204.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{366,416},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.205.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{352,560},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.206.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{436,408},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.207.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{352,598},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.208.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{182,406},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.209.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{52,516},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>orc.21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{272,308},{40,62}}</string>
+                <string>{{66,496},{40,62}}</string>
                 <key>offset</key>
                 <string>{6,-82}</string>
                 <key>rotated</key>
@@ -1164,7 +1190,7 @@
             <key>orc.22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{202,328},{38,62}}</string>
+                <string>{{322,580},{38,62}}</string>
                 <key>offset</key>
                 <string>{6,-84}</string>
                 <key>rotated</key>
@@ -1177,7 +1203,7 @@
             <key>orc.23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,328},{36,64}}</string>
+                <string>{{332,504},{36,64}}</string>
                 <key>offset</key>
                 <string>{7,-87}</string>
                 <key>rotated</key>
@@ -1190,7 +1216,7 @@
             <key>orc.24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,366},{34,62}}</string>
+                <string>{{386,610},{34,62}}</string>
                 <key>offset</key>
                 <string>{8,-89}</string>
                 <key>rotated</key>
@@ -1200,348 +1226,218 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.241.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{282,462},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.242.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{248,388},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.243.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{282,462},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.244.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{252,576},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.245.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{316,386},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.246.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{386,378},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.247.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{352,598},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.248.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{152,596},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.249.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{436,370},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>orc.25.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,350},{34,62}}</string>
+                <string>{{476,396},{34,62}}</string>
                 <key>offset</key>
                 <string>{9,-89}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{112,178},{34,62}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.250.png</key>
+            <key>orc.26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,386},{48,36}}</string>
+                <string>{{64,538},{36,60}}</string>
                 <key>offset</key>
-                <string>{10,-102}</string>
+                <string>{9,-90}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
+                <string>{{111,180},{36,60}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.251.png</key>
+            <key>orc.27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,368},{48,36}}</string>
+                <string>{{2,538},{38,60}}</string>
                 <key>offset</key>
-                <string>{10,-102}</string>
+                <string>{9,-90}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
+                <string>{{110,180},{38,60}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.252.png</key>
+            <key>orc.28.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{52,402},{48,36}}</string>
+                <string>{{2,496},{40,62}}</string>
                 <key>offset</key>
-                <string>{10,-102}</string>
+                <string>{9,-89}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
+                <string>{{109,178},{40,62}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.253.png</key>
+            <key>orc.29.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,350},{48,36}}</string>
+                <string>{{142,210},{44,66}}</string>
                 <key>offset</key>
-                <string>{10,-102}</string>
+                <string>{7,-87}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.254.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{102,576},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.255.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{52,516},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.256.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{336,348},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.257.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{402,572},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.258.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{386,340},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.259.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{336,310},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.260.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{402,572},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.261.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{456,332},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.262.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{406,302},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.263.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{52,478},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.264.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,372},{48,36}}</string>
-                <key>offset</key>
-                <string>{10,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,204},{48,36}}</string>
+                <string>{{105,174},{44,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>orc.3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{72,116},{38,68}}</string>
+                <string>{{212,124},{38,68}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
                 <string>{{102,171},{38,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.30.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{134,426},{44,64}}</string>
+                <key>offset</key>
+                <string>{7,-85}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{105,173},{44,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.31.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{204,418},{44,64}}</string>
+                <key>offset</key>
+                <string>{7,-83}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{105,171},{44,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.32.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{270,458},{42,64}}</string>
+                <key>offset</key>
+                <string>{7,-82}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{106,170},{42,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.33.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{468,526},{42,62}}</string>
+                <key>offset</key>
+                <string>{7,-82}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{106,171},{42,62}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.34.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{142,92},{40,68}}</string>
+                <key>offset</key>
+                <string>{8,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{108,172},{40,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.35.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{470,460},{40,64}}</string>
+                <key>offset</key>
+                <string>{9,-88}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{109,176},{40,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.36.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{258,576},{38,62}}</string>
+                <key>offset</key>
+                <string>{11,-89}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{112,178},{38,62}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.37.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{194,548},{38,62}}</string>
+                <key>offset</key>
+                <string>{11,-89}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{112,178},{38,62}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.38.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,516},{38,62}}</string>
+                <key>offset</key>
+                <string>{11,-89}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{112,178},{38,62}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.39.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{450,630},{40,60}}</string>
+                <key>offset</key>
+                <string>{9,-90}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{109,180},{40,60}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>orc.4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{142,82},{38,68}}</string>
+                <string>{{360,122},{38,68}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
@@ -1551,10 +1447,114 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
+            <key>orc.40.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{398,568},{40,62}}</string>
+                <key>offset</key>
+                <string>{9,-89}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{109,178},{40,62}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.41.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{212,200},{44,66}}</string>
+                <key>offset</key>
+                <string>{7,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{105,174},{44,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.42.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{72,166},{36,68}}</string>
+                <key>offset</key>
+                <string>{4,-85}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{106,171},{36,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.43.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,100},{50,68}}</string>
+                <key>offset</key>
+                <string>{-6,-85}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{89,171},{50,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.44.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{422,192},{58,66}}</string>
+                <key>offset</key>
+                <string>{-10,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{81,173},{58,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.45.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,44},{54,68}}</string>
+                <key>offset</key>
+                <string>{-9,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{84,172},{54,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.46.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{72,72},{50,68}}</string>
+                <key>offset</key>
+                <string>{13,-85}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{108,171},{50,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.47.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{150,38},{52,68}}</string>
+                <key>offset</key>
+                <string>{13,-84}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{107,170},{52,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
             <key>orc.48.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,198},{38,66}}</string>
+                <string>{{348,284},{38,66}}</string>
                 <key>offset</key>
                 <string>{5,-84}</string>
                 <key>rotated</key>
@@ -1567,7 +1567,7 @@
             <key>orc.49.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{360,114},{34,68}}</string>
+                <string>{{142,174},{34,68}}</string>
                 <key>offset</key>
                 <string>{3,-83}</string>
                 <key>rotated</key>
@@ -1580,7 +1580,7 @@
             <key>orc.5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{220,78},{38,68}}</string>
+                <string>{{290,122},{38,68}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
@@ -1697,7 +1697,7 @@
             <key>orc.58.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,110},{34,68}}</string>
+                <string>{{212,164},{34,68}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
@@ -1710,7 +1710,7 @@
             <key>orc.59.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{206,250},{34,66}}</string>
+                <string>{{138,336},{34,66}}</string>
                 <key>offset</key>
                 <string>{1,-84}</string>
                 <key>rotated</key>
@@ -1723,7 +1723,7 @@
             <key>orc.6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,70},{38,68}}</string>
+                <string>{{430,114},{38,68}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -1736,7 +1736,7 @@
             <key>orc.60.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{138,238},{34,66}}</string>
+                <string>{{206,328},{34,66}}</string>
                 <key>offset</key>
                 <string>{1,-84}</string>
                 <key>rotated</key>
@@ -1749,7 +1749,7 @@
             <key>orc.61.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{360,78},{34,68}}</string>
+                <string>{{282,162},{34,68}}</string>
                 <key>offset</key>
                 <string>{1,-84}</string>
                 <key>rotated</key>
@@ -1762,7 +1762,7 @@
             <key>orc.62.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{142,122},{32,68}}</string>
+                <string>{{2,230},{32,68}}</string>
                 <key>offset</key>
                 <string>{2,-84}</string>
                 <key>rotated</key>
@@ -1775,7 +1775,7 @@
             <key>orc.63.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{212,118},{32,68}}</string>
+                <string>{{72,204},{32,68}}</string>
                 <key>offset</key>
                 <string>{2,-84}</string>
                 <key>rotated</key>
@@ -1788,7 +1788,7 @@
             <key>orc.64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{282,150},{30,68}}</string>
+                <string>{{352,162},{30,68}}</string>
                 <key>offset</key>
                 <string>{5,-85}</string>
                 <key>rotated</key>
@@ -1798,23 +1798,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.65.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{72,72},{42,68}}</string>
-                <key>offset</key>
-                <string>{12,-85}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{111,171},{42,68}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>orc.66.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{352,150},{44,66}}</string>
+                <string>{{282,198},{44,66}}</string>
                 <key>offset</key>
                 <string>{-1,-86}</string>
                 <key>rotated</key>
@@ -1827,7 +1814,7 @@
             <key>orc.67.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,38},{42,68}}</string>
+                <string>{{290,38},{42,68}}</string>
                 <key>offset</key>
                 <string>{-1,-85}</string>
                 <key>rotated</key>
@@ -1840,7 +1827,7 @@
             <key>orc.68.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,88},{40,68}}</string>
+                <string>{{220,82},{40,68}}</string>
                 <key>offset</key>
                 <string>{-3,-86}</string>
                 <key>rotated</key>
@@ -1853,7 +1840,7 @@
             <key>orc.69.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,44},{42,68}}</string>
+                <string>{{220,38},{42,68}}</string>
                 <key>offset</key>
                 <string>{0,-86}</string>
                 <key>rotated</key>
@@ -1866,7 +1853,7 @@
             <key>orc.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{360,38},{38,68}}</string>
+                <string>{{360,82},{38,68}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -1892,7 +1879,7 @@
             <key>orc.71.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,276},{50,64}}</string>
+                <string>{{2,444},{50,64}}</string>
                 <key>offset</key>
                 <string>{7,-86}</string>
                 <key>rotated</key>
@@ -1905,7 +1892,7 @@
             <key>orc.72.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{348,196},{40,66}}</string>
+                <string>{{140,256},{40,66}}</string>
                 <key>offset</key>
                 <string>{-3,-87}</string>
                 <key>rotated</key>
@@ -1918,7 +1905,7 @@
             <key>orc.73.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{280,182},{42,66}}</string>
+                <string>{{280,244},{42,66}}</string>
                 <key>offset</key>
                 <string>{-3,-87}</string>
                 <key>rotated</key>
@@ -1928,23 +1915,231 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
+            <key>orc.74.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{338,418},{42,64}}</string>
+                <key>offset</key>
+                <string>{-2,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{97,176},{42,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.75.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{272,412},{44,64}}</string>
+                <key>offset</key>
+                <string>{-3,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{95,176},{44,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.76.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{272,364},{46,64}}</string>
+                <key>offset</key>
+                <string>{-3,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{94,176},{46,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.77.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{68,398},{50,64}}</string>
+                <key>offset</key>
+                <string>{-5,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{90,176},{50,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.78.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{138,372},{52,64}}</string>
+                <key>offset</key>
+                <string>{-6,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{88,176},{52,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.79.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{410,388},{54,64}}</string>
+                <key>offset</key>
+                <string>{-7,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{86,176},{54,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
             <key>orc.8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,38},{38,68}}</string>
+                <string>{{290,82},{38,68}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
                 <string>{{101,171},{38,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.80.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{344,362},{54,64}}</string>
+                <key>offset</key>
+                <string>{-7,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{86,176},{54,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.81.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{412,332},{54,64}}</string>
+                <key>offset</key>
+                <string>{-7,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{86,176},{54,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.82.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,388},{54,64}}</string>
+                <key>offset</key>
+                <string>{-7,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{86,176},{54,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.83.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{206,364},{52,64}}</string>
+                <key>offset</key>
+                <string>{-6,-88}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{88,176},{52,64}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.84.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{352,194},{44,66}}</string>
+                <key>offset</key>
+                <string>{-3,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{95,174},{44,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.85.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{210,246},{40,66}}</string>
+                <key>offset</key>
+                <string>{-2,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{98,174},{40,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.86.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{418,252},{38,66}}</string>
+                <key>offset</key>
+                <string>{-3,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{98,174},{38,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.87.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{138,298},{36,66}}</string>
+                <key>offset</key>
+                <string>{-3,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{99,174},{36,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.88.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{350,240},{42,66}}</string>
+                <key>offset</key>
+                <string>{-1,-87}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{98,174},{42,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>orc.89.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,264},{42,66}}</string>
+                <key>offset</key>
+                <string>{-1,-86}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{98,173},{42,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>orc.9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{220,38},{38,68}}</string>
+                <string>{{2,152},{38,68}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -1954,55 +2149,16 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>orc.96.png</key>
+            <key>orc.90.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{212,152},{56,66}}</string>
+                <string>{{72,238},{42,66}}</string>
                 <key>offset</key>
-                <string>{-15,-87}</string>
+                <string>{0,-86}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{77,174},{56,66}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.97.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{420,180},{40,66}}</string>
-                <key>offset</key>
-                <string>{-7,-87}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{93,174},{40,66}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.98.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{290,116},{32,68}}</string>
-                <key>offset</key>
-                <string>{-3,-86}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{101,172},{32,68}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>orc.99.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{478,264},{30,66}}</string>
-                <key>offset</key>
-                <string>{-1,-87}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{104,174},{30,66}}</string>
+                <string>{{99,173},{42,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
@@ -2016,7 +2172,7 @@
             <key>size</key>
             <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0c5b943196d0832796eff3718d83bcda:9a54c88bf7430b7c0ac557ca702b4da3:16714751d3b143cc35f2a7dca458fd4a$</string>
+            <string>$TexturePacker:SmartUpdate:d236e51bc25713671c60d4a58fe2b5ad:6225eae3fbae4b122dca511976c73447:16714751d3b143cc35f2a7dca458fd4a$</string>
             <key>textureFileName</key>
             <string>orcSheet-iphone4.png</string>
         </dict>

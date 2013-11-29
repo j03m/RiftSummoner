@@ -7,7 +7,7 @@
             <key>knightFire.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{360,316},{66,98}}</string>
+                <string>{{584,402},{66,98}}</string>
                 <key>offset</key>
                 <string>{21,-66}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>knightFire.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{396,208},{64,98}}</string>
+                <string>{{606,302},{64,98}}</string>
                 <key>offset</key>
                 <string>{21,-64}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>knightFire.12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{462,200},{64,96}}</string>
+                <string>{{636,502},{64,96}}</string>
                 <key>offset</key>
                 <string>{19,-63}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>knightFire.144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{230,902},{80,98}}</string>
+                <string>{{394,902},{80,98}}</string>
                 <key>offset</key>
                 <string>{12,-71}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>knightFire.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{148,902},{80,98}}</string>
+                <string>{{624,2},{80,98}}</string>
                 <key>offset</key>
                 <string>{12,-71}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>knightFire.146.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,2},{80,98}}</string>
+                <string>{{614,102},{80,98}}</string>
                 <key>offset</key>
                 <string>{12,-71}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>knightFire.147.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,108},{80,98}}</string>
+                <string>{{560,202},{80,98}}</string>
                 <key>offset</key>
                 <string>{12,-71}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>knightFire.149.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{312,902},{80,96}}</string>
+                <string>{{706,2},{80,96}}</string>
                 <key>offset</key>
                 <string>{7,-71}</string>
                 <key>rotated</key>
@@ -163,7 +163,7 @@
             <key>knightFire.150.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{406,416},{70,96}}</string>
+                <string>{{628,902},{70,96}}</string>
                 <key>offset</key>
                 <string>{2,-71}</string>
                 <key>rotated</key>
@@ -176,7 +176,7 @@
             <key>knightFire.151.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{478,406},{62,94}}</string>
+                <string>{{778,100},{62,94}}</string>
                 <key>offset</key>
                 <string>{-1,-71}</string>
                 <key>rotated</key>
@@ -189,7 +189,7 @@
             <key>knightFire.152.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{462,514},{62,94}}</string>
+                <string>{{726,200},{62,94}}</string>
                 <key>offset</key>
                 <string>{0,-71}</string>
                 <key>rotated</key>
@@ -202,11 +202,11 @@
             <key>knightFire.153.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{470,720},{62,94}}</string>
+                <string>{{366,838},{62,94}}</string>
                 <key>offset</key>
                 <string>{0,-71}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{89,144},{62,94}}</string>
                 <key>sourceSize</key>
@@ -358,7 +358,7 @@
             <key>knightFire.164.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{550,902},{80,88}}</string>
+                <string>{{842,98},{80,88}}</string>
                 <key>offset</key>
                 <string>{28,-76}</string>
                 <key>rotated</key>
@@ -384,11 +384,11 @@
             <key>knightFire.166.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{482,816},{88,84}}</string>
+                <string>{{730,296},{88,84}}</string>
                 <key>offset</key>
                 <string>{26,-78}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{102,156},{88,84}}</string>
                 <key>sourceSize</key>
@@ -397,7 +397,7 @@
             <key>knightFire.167.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{632,390},{88,82}}</string>
+                <string>{{790,196},{88,82}}</string>
                 <key>offset</key>
                 <string>{26,-79}</string>
                 <key>rotated</key>
@@ -410,7 +410,7 @@
             <key>knightFire.168.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{706,942},{84,80}}</string>
+                <string>{{778,538},{84,80}}</string>
                 <key>offset</key>
                 <string>{28,-80}</string>
                 <key>rotated</key>
@@ -423,11 +423,11 @@
             <key>knightFire.169.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{792,916},{82,78}}</string>
+                <string>{{790,386},{82,78}}</string>
                 <key>offset</key>
                 <string>{29,-81}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{108,162},{82,78}}</string>
                 <key>sourceSize</key>
@@ -449,7 +449,7 @@
             <key>knightFire.170.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{872,2},{70,82}}</string>
+                <string>{{790,466},{70,82}}</string>
                 <key>offset</key>
                 <string>{23,-79}</string>
                 <key>rotated</key>
@@ -462,11 +462,11 @@
             <key>knightFire.171.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{610,678},{68,88}}</string>
+                <string>{{924,74},{68,88}}</string>
                 <key>offset</key>
                 <string>{18,-76}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{104,152},{68,88}}</string>
                 <key>sourceSize</key>
@@ -475,7 +475,7 @@
             <key>knightFire.172.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{534,706},{74,92}}</string>
+                <string>{{702,500},{74,92}}</string>
                 <key>offset</key>
                 <string>{16,-74}</string>
                 <key>rotated</key>
@@ -488,7 +488,7 @@
             <key>knightFire.173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{460,2},{80,96}}</string>
+                <string>{{696,102},{80,96}}</string>
                 <key>offset</key>
                 <string>{14,-72}</string>
                 <key>rotated</key>
@@ -501,7 +501,7 @@
             <key>knightFire.174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,216},{80,98}}</string>
+                <string>{{524,302},{80,98}}</string>
                 <key>offset</key>
                 <string>{12,-71}</string>
                 <key>rotated</key>
@@ -514,7 +514,7 @@
             <key>knightFire.175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,534},{70,98}}</string>
+                <string>{{564,508},{70,98}}</string>
                 <key>offset</key>
                 <string>{10,-71}</string>
                 <key>rotated</key>
@@ -605,7 +605,7 @@
             <key>knightFire.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{270,746},{78,98}}</string>
+                <string>{{516,726},{78,98}}</string>
                 <key>offset</key>
                 <string>{-21,-71}</string>
                 <key>rotated</key>
@@ -696,7 +696,7 @@
             <key>knightFire.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{472,902},{76,92}}</string>
+                <string>{{666,600},{76,92}}</string>
                 <key>offset</key>
                 <string>{37,-74}</string>
                 <key>rotated</key>
@@ -709,11 +709,11 @@
             <key>knightFire.189.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{692,480},{64,88}}</string>
+                <string>{{922,212},{64,88}}</string>
                 <key>offset</key>
                 <string>{31,-76}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{119,152},{64,88}}</string>
                 <key>sourceSize</key>
@@ -735,11 +735,11 @@
             <key>knightFire.190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{680,666},{58,86}}</string>
+                <string>{{918,402},{58,86}}</string>
                 <key>offset</key>
                 <string>{24,-77}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{115,154},{58,86}}</string>
                 <key>sourceSize</key>
@@ -748,7 +748,7 @@
             <key>knightFire.191.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{306,846},{54,84}}</string>
+                <string>{{280,846},{54,84}}</string>
                 <key>offset</key>
                 <string>{20,-78}</string>
                 <key>rotated</key>
@@ -761,11 +761,11 @@
             <key>knightFire.192.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{782,830},{50,84}}</string>
+                <string>{{830,638},{50,84}}</string>
                 <key>offset</key>
                 <string>{20,-78}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{115,156},{50,84}}</string>
                 <key>sourceSize</key>
@@ -774,11 +774,11 @@
             <key>knightFire.193.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{762,744},{50,84}}</string>
+                <string>{{744,620},{50,84}}</string>
                 <key>offset</key>
                 <string>{21,-78}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{116,156},{50,84}}</string>
                 <key>sourceSize</key>
@@ -787,11 +787,11 @@
             <key>knightFire.194.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{740,658},{50,84}}</string>
+                <string>{{918,602},{50,84}}</string>
                 <key>offset</key>
                 <string>{22,-78}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{117,156},{50,84}}</string>
                 <key>sourceSize</key>
@@ -800,11 +800,11 @@
             <key>knightFire.195.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{708,754},{52,84}}</string>
+                <string>{{918,548},{52,84}}</string>
                 <key>offset</key>
                 <string>{23,-78}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{117,156},{52,84}}</string>
                 <key>sourceSize</key>
@@ -813,7 +813,7 @@
             <key>knightFire.196.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{710,570},{56,86}}</string>
+                <string>{{816,286},{56,86}}</string>
                 <key>offset</key>
                 <string>{24,-77}</string>
                 <key>rotated</key>
@@ -826,11 +826,11 @@
             <key>knightFire.197.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{648,768},{58,86}}</string>
+                <string>{{918,342},{58,86}}</string>
                 <key>offset</key>
                 <string>{27,-77}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{118,154},{58,86}}</string>
                 <key>sourceSize</key>
@@ -839,11 +839,11 @@
             <key>knightFire.198.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{632,890},{62,86}}</string>
+                <string>{{920,278},{62,86}}</string>
                 <key>offset</key>
                 <string>{29,-77}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{118,154},{62,86}}</string>
                 <key>sourceSize</key>
@@ -852,11 +852,11 @@
             <key>knightFire.199.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{642,576},{66,88}}</string>
+                <string>{{924,144},{66,88}}</string>
                 <key>offset</key>
                 <string>{33,-76}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{120,152},{66,88}}</string>
                 <key>sourceSize</key>
@@ -865,7 +865,7 @@
             <key>knightFire.20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{412,732},{56,96}}</string>
+                <string>{{672,300},{56,96}}</string>
                 <key>offset</key>
                 <string>{17,-68}</string>
                 <key>rotated</key>
@@ -878,7 +878,7 @@
             <key>knightFire.200.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{392,830},{70,88}}</string>
+                <string>{{924,2},{70,88}}</string>
                 <key>offset</key>
                 <string>{36,-76}</string>
                 <key>rotated</key>
@@ -891,7 +891,7 @@
             <key>knightFire.201.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{572,800},{74,88}}</string>
+                <string>{{848,2},{74,88}}</string>
                 <key>offset</key>
                 <string>{37,-76}</string>
                 <key>rotated</key>
@@ -904,7 +904,7 @@
             <key>knightFire.202.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{616,484},{74,90}}</string>
+                <string>{{714,398},{74,90}}</string>
                 <key>offset</key>
                 <string>{36,-74}</string>
                 <key>rotated</key>
@@ -917,7 +917,7 @@
             <key>knightFire.203.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{394,902},{76,92}}</string>
+                <string>{{658,800},{76,92}}</string>
                 <key>offset</key>
                 <string>{32,-74}</string>
                 <key>rotated</key>
@@ -930,11 +930,11 @@
             <key>knightFire.204.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,624},{74,94}}</string>
+                <string>{{562,826},{74,94}}</string>
                 <key>offset</key>
                 <string>{27,-73}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{110,146},{74,94}}</string>
                 <key>sourceSize</key>
@@ -943,7 +943,7 @@
             <key>knightFire.205.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{350,634},{78,96}}</string>
+                <string>{{476,902},{78,96}}</string>
                 <key>offset</key>
                 <string>{18,-72}</string>
                 <key>rotated</key>
@@ -956,7 +956,7 @@
             <key>knightFire.206.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{278,326},{80,98}}</string>
+                <string>{{502,408},{80,98}}</string>
                 <key>offset</key>
                 <string>{11,-71}</string>
                 <key>rotated</key>
@@ -969,7 +969,7 @@
             <key>knightFire.21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{528,200},{58,94}}</string>
+                <string>{{596,706},{58,94}}</string>
                 <key>offset</key>
                 <string>{17,-70}</string>
                 <key>rotated</key>
@@ -982,7 +982,7 @@
             <key>knightFire.22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{498,298},{58,94}}</string>
+                <string>{{788,2},{58,94}}</string>
                 <key>offset</key>
                 <string>{18,-70}</string>
                 <key>rotated</key>
@@ -995,7 +995,7 @@
             <key>knightFire.23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{350,732},{60,96}}</string>
+                <string>{{652,402},{60,96}}</string>
                 <key>offset</key>
                 <string>{17,-69}</string>
                 <key>rotated</key>
@@ -1060,7 +1060,7 @@
             <key>knightFire.387.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,434},{80,98}}</string>
+                <string>{{482,516},{80,98}}</string>
                 <key>offset</key>
                 <string>{13,-71}</string>
                 <key>rotated</key>
@@ -1073,7 +1073,7 @@
             <key>knightFire.388.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,102},{82,96}}</string>
+                <string>{{642,202},{82,96}}</string>
                 <key>offset</key>
                 <string>{12,-71}</string>
                 <key>rotated</key>
@@ -1086,7 +1086,7 @@
             <key>knightFire.389.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{558,296},{82,92}}</string>
+                <string>{{656,706},{82,92}}</string>
                 <key>offset</key>
                 <string>{13,-74}</string>
                 <key>rotated</key>
@@ -1099,7 +1099,7 @@
             <key>knightFire.390.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{696,856},{84,84}}</string>
+                <string>{{918,462},{84,84}}</string>
                 <key>offset</key>
                 <string>{15,-78}</string>
                 <key>rotated</key>
@@ -1112,7 +1112,7 @@
             <key>knightFire.391.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{792,2},{78,78}}</string>
+                <string>{{744,672},{78,78}}</string>
                 <key>offset</key>
                 <string>{17,-81}</string>
                 <key>rotated</key>
@@ -1125,11 +1125,11 @@
             <key>knightFire.392.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{716,2},{74,76}}</string>
+                <string>{{916,654},{74,76}}</string>
                 <key>offset</key>
                 <string>{15,-82}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{98,164},{74,76}}</string>
                 <key>sourceSize</key>
@@ -1138,7 +1138,7 @@
             <key>knightFire.393.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{716,80},{58,74}}</string>
+                <string>{{824,690},{58,74}}</string>
                 <key>offset</key>
                 <string>{9,-83}</string>
                 <key>rotated</key>
@@ -1151,11 +1151,11 @@
             <key>knightFire.394.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{872,118},{42,74}}</string>
+                <string>{{874,490},{42,74}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{100,166},{42,74}}</string>
                 <key>sourceSize</key>
@@ -1164,11 +1164,11 @@
             <key>knightFire.395.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{948,106},{42,74}}</string>
+                <string>{{874,414},{42,74}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{99,166},{42,74}}</string>
                 <key>sourceSize</key>
@@ -1177,11 +1177,11 @@
             <key>knightFire.396.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{948,150},{40,72}}</string>
+                <string>{{742,892},{40,72}}</string>
                 <key>offset</key>
                 <string>{0,-84}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{100,168},{40,72}}</string>
                 <key>sourceSize</key>
@@ -1190,7 +1190,7 @@
             <key>knightFire.397.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{716,140},{40,72}}</string>
+                <string>{{700,894},{40,72}}</string>
                 <key>offset</key>
                 <string>{0,-84}</string>
                 <key>rotated</key>
@@ -1203,7 +1203,7 @@
             <key>knightFire.398.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{642,142},{42,72}}</string>
+                <string>{{898,782},{42,72}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
@@ -1216,11 +1216,11 @@
             <key>knightFire.399.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{642,98},{42,72}}</string>
+                <string>{{974,730},{42,72}}</string>
                 <key>offset</key>
                 <string>{0,-84}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{99,168},{42,72}}</string>
                 <key>sourceSize</key>
@@ -1242,7 +1242,7 @@
             <key>knightFire.400.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{872,202},{42,70}}</string>
+                <string>{{824,794},{42,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -1255,11 +1255,11 @@
             <key>knightFire.401.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{946,192},{42,70}}</string>
+                <string>{{972,804},{42,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{99,170},{42,70}}</string>
                 <key>sourceSize</key>
@@ -1268,7 +1268,7 @@
             <key>knightFire.402.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{944,236},{42,68}}</string>
+                <string>{{902,870},{42,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -1281,7 +1281,7 @@
             <key>knightFire.403.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{716,214},{42,68}}</string>
+                <string>{{832,962},{42,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -1294,7 +1294,7 @@
             <key>knightFire.404.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{792,210},{42,68}}</string>
+                <string>{{896,826},{42,68}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -1307,11 +1307,11 @@
             <key>knightFire.405.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{588,246},{42,68}}</string>
+                <string>{{824,892},{42,68}}</string>
                 <key>offset</key>
                 <string>{3,-86}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{102,172},{42,68}}</string>
                 <key>sourceSize</key>
@@ -1320,7 +1320,7 @@
             <key>knightFire.406.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{642,54},{42,72}}</string>
+                <string>{{824,750},{42,72}}</string>
                 <key>offset</key>
                 <string>{4,-84}</string>
                 <key>rotated</key>
@@ -1333,11 +1333,11 @@
             <key>knightFire.407.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{872,74},{42,74}}</string>
+                <string>{{874,338},{42,74}}</string>
                 <key>offset</key>
                 <string>{6,-83}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{105,166},{42,74}}</string>
                 <key>sourceSize</key>
@@ -1346,7 +1346,7 @@
             <key>knightFire.408.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{594,2},{46,74}}</string>
+                <string>{{874,188},{46,74}}</string>
                 <key>offset</key>
                 <string>{8,-83}</string>
                 <key>rotated</key>
@@ -1359,7 +1359,7 @@
             <key>knightFire.409.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{642,2},{50,72}}</string>
+                <string>{{900,730},{50,72}}</string>
                 <key>offset</key>
                 <string>{8,-84}</string>
                 <key>rotated</key>
@@ -1372,7 +1372,7 @@
             <key>knightFire.410.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{956,2},{48,66}}</string>
+                <string>{{212,852},{48,66}}</string>
                 <key>offset</key>
                 <string>{10,-87}</string>
                 <key>rotated</key>
@@ -1385,11 +1385,11 @@
             <key>knightFire.411.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{814,82},{54,60}}</string>
+                <string>{{700,968},{54,60}}</string>
                 <key>offset</key>
                 <string>{15,-90}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{108,180},{54,60}}</string>
                 <key>sourceSize</key>
@@ -1398,11 +1398,11 @@
             <key>knightFire.412.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{588,170},{58,52}}</string>
+                <string>{{790,838},{58,52}}</string>
                 <key>offset</key>
                 <string>{19,-94}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{110,188},{58,52}}</string>
                 <key>sourceSize</key>
@@ -1411,11 +1411,11 @@
             <key>knightFire.413.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{956,52},{64,52}}</string>
+                <string>{{736,826},{64,52}}</string>
                 <key>offset</key>
                 <string>{21,-94}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{109,188},{64,52}}</string>
                 <key>sourceSize</key>
@@ -1424,11 +1424,11 @@
             <key>knightFire.414.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{758,140},{68,52}}</string>
+                <string>{{762,966},{68,52}}</string>
                 <key>offset</key>
                 <string>{23,-94}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{109,188},{68,52}}</string>
                 <key>sourceSize</key>
@@ -1437,7 +1437,7 @@
             <key>knightFire.415.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{588,98},{70,52}}</string>
+                <string>{{864,566},{70,52}}</string>
                 <key>offset</key>
                 <string>{24,-94}</string>
                 <key>rotated</key>
@@ -1450,7 +1450,7 @@
             <key>knightFire.416.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{232,852},{72,48}}</string>
+                <string>{{138,852},{72,48}}</string>
                 <key>offset</key>
                 <string>{23,-96}</string>
                 <key>rotated</key>
@@ -1463,11 +1463,11 @@
             <key>knightFire.417.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{632,978},{72,44}}</string>
+                <string>{{874,264},{72,44}}</string>
                 <key>offset</key>
                 <string>{23,-98}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{107,196},{72,44}}</string>
                 <key>sourceSize</key>
@@ -1476,7 +1476,7 @@
             <key>knightFire.418.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{642,186},{72,40}}</string>
+                <string>{{740,752},{72,40}}</string>
                 <key>offset</key>
                 <string>{23,-100}</string>
                 <key>rotated</key>
@@ -1489,13 +1489,351 @@
             <key>knightFire.419.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{872,162},{72,38}}</string>
+                <string>{{784,892},{72,38}}</string>
                 <key>offset</key>
                 <string>{23,-101}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{107,202},{72,38}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.461.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{440,626},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.462.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{434,734},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.463.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{312,902},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.464.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{542,2},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.465.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{532,102},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.466.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{478,202},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.467.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{442,308},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.468.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{420,416},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.469.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{400,526},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.470.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{358,634},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.471.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{352,738},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.472.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{230,902},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.473.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{460,2},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.474.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{450,102},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.475.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{396,208},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.476.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{360,316},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.477.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{338,426},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.478.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{318,534},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.479.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{276,638},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.480.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{270,746},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.481.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{148,902},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.482.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{378,2},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.483.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{368,108},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.484.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{314,216},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.485.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{278,326},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>knightFire.486.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{256,434},{80,98}}</string>
+                <key>offset</key>
+                <string>{12,-71}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{92,142},{80,98}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
@@ -1512,140 +1850,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>knightFire.521.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{534,100},{52,94}}</string>
-                <key>offset</key>
-                <string>{2,-71}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{96,144},{52,94}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>knightFire.522.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{542,2},{50,94}}</string>
-                <key>offset</key>
-                <string>{1,-71}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{96,144},{50,94}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>knightFire.523.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{138,852},{48,92}}</string>
-                <key>offset</key>
-                <string>{0,-72}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{96,146},{48,92}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>knightFire.524.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{550,598},{46,92}}</string>
-                <key>offset</key>
-                <string>{0,-72}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{97,146},{46,92}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>knightFire.525.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{586,390},{44,92}}</string>
-                <key>offset</key>
-                <string>{0,-72}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{98,146},{44,92}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>knightFire.526.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{570,490},{44,92}}</string>
-                <key>offset</key>
-                <string>{-1,-72}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{97,146},{44,92}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>knightFire.527.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{598,584},{42,92}}</string>
-                <key>offset</key>
-                <string>{-1,-72}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{98,146},{42,92}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>knightFire.528.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{542,394},{42,94}}</string>
-                <key>offset</key>
-                <string>{-2,-71}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{97,144},{42,94}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>knightFire.529.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{526,502},{42,94}}</string>
-                <key>offset</key>
-                <string>{-2,-71}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{97,144},{42,94}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>knightFire.530.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{506,610},{42,94}}</string>
-                <key>offset</key>
-                <string>{-2,-71}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{97,144},{42,94}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>knightFire.6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{276,638},{72,98}}</string>
+                <string>{{522,616},{72,98}}</string>
                 <key>offset</key>
                 <string>{17,-68}</string>
                 <key>rotated</key>
@@ -1658,7 +1866,7 @@
             <key>knightFire.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{390,526},{70,96}}</string>
+                <string>{{556,902},{70,96}}</string>
                 <key>offset</key>
                 <string>{20,-69}</string>
                 <key>rotated</key>
@@ -1671,7 +1879,7 @@
             <key>knightFire.8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{428,308},{68,96}}</string>
+                <string>{{596,608},{68,96}}</string>
                 <key>offset</key>
                 <string>{22,-68}</string>
                 <key>rotated</key>
@@ -1684,11 +1892,11 @@
             <key>knightFire.9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,426},{66,98}}</string>
+                <string>{{462,834},{66,98}}</string>
                 <key>offset</key>
                 <string>{22,-67}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{109,138},{66,98}}</string>
                 <key>sourceSize</key>
@@ -1704,7 +1912,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:bdfad76025e583cf1a823a81e481eb81:deece84dc55c39edf016730cfb0797e7:c96ef4bbe4bf313ac69e8497888a0284$</string>
+            <string>$TexturePacker:SmartUpdate:da5d67ddf420c0eea9dd61a705e876a7:0315ca5b11d78752520e15c960015f82:146836bbfeca6493ca00422d86227e7e$</string>
             <key>textureFileName</key>
             <string>knightFireSheet-iphone4.png</string>
         </dict>

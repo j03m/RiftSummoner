@@ -291,37 +291,40 @@ var spriteDefs = {
 	},
 	"elemental1": {
 		"name": "elemental1",
+		"byStep": 2,
+		"startFrame": 1,
+		"endFrame": 550,
 		"parentOnly": true,
 		"targetRadius": 20,
 		"animations": {
 			"move": {
-				"start": 81,
-				"end": 128,
-				"delay": 0.02,
+				"start": 41,
+				"end": 65,
+				"delay": 0.08,
 				"type": 0
 			},
 			"attack": {
-				"start": 141,
-				"end": 188,
-				"delay": 0.025,
+				"start": 71,
+				"end": 92,
+				"delay": 0.08,
 				"type": 1
 			},
 			"attack2": {
-				"start": 201,
-				"end": 248,
-				"delay": 0.025,
+				"start": 101,
+				"end": 125,
+				"delay": 0.08,
 				"type": 1
 			},
 			"idle": {
 				"start": 1,
-				"end": 72,
-				"delay": 0.02,
+				"end": 37,
+				"delay": 0.08,
 				"type": 0
 			},
 			"dead": {
-				"start": 261,
-				"end": 296,
-				"delay": 0.02,
+				"start": 131,
+				"end": 152,
+				"delay": 0.08,
 				"type": 1
 			}
 		},
@@ -482,25 +485,25 @@ var spriteDefs = {
 			"move": {
 				"start": 244,
 				"end": 251,
-				"delay": 0.05,
+				"delay": 0.08,
 				"type": 0
 			},
 			"attack": {
 				"start": 454,
 				"end": 471,
-				"delay": 0.05,
+				"delay": 0.08,
 				"type": 1
 			},
 			"idle": {
 				"start": 422,
 				"end": 432,
-				"delay": 0.05,
+				"delay": 0.08,
 				"type": 0
 			},
 			"dead": {
 				"start": 287,
 				"end": 298,
-				"delay": 0.05,
+				"delay": 0.08,
 				"type": 1
 			}
 		},
@@ -630,25 +633,25 @@ var spriteDefs = {
 			"move": {
 				"start": 1,
 				"end": 8,
-				"delay": 0.1,
+				"delay": 0.05,
 				"type": 0
 			},
 			"attack": {
 				"start": 34,
 				"end": 49,
-				"delay": 0.1,
+				"delay": 0.025,
 				"type": 1
 			},
 			"dead": {
 				"start": 58,
 				"end": 73,
-				"delay": 0.1,
+				"delay": 0.025,
 				"type": 1
 			},
 			"idle": {
 				"start": 1,
 				"end": 8,
-				"delay": 0.1,
+				"delay": 0.05,
 				"type": 0
 			}
 		},
@@ -677,7 +680,7 @@ var spriteDefs = {
 			"missile": "greenbullet",
 			"splashDamage": 5,
 			"actionDelays": {
-				"attack": 0.01
+				"attack": 0.05
 			},
 			"effectDelays": {
 				"attack": 0.01
@@ -730,19 +733,19 @@ var spriteDefs = {
 		"details": "Goblin demolition experts hurl explosives at enemies. While they don't have an impressive range, they can inflict massive damage on groups of ground enemies at a time.",
 		"elementType": "fire",
 		"unitType": 3,
+		"flip": true,
 		"special": "Splash Damage",
 		"damageMods": {
 			"splashDamage": {
 				"damage": 25,
 				"radius": 50
 			},
-            "burn":{
-                "damage":50,
-                "duration":5,
-                "interval":0.5
-            }
-
-        },
+			"burn": {
+				"damage": 50,
+				"duration": 5,
+				"interval": 0.5
+			}
+		},
 		"deathMods": {
 			"explodeFire": {
 				"damage": 25,
@@ -979,8 +982,8 @@ var spriteDefs = {
 				"type": 1
 			},
 			"idle": {
-				"start": 521,
-				"end": 530,
+				"start": 461,
+				"end": 486,
 				"delay": 0.08,
 				"type": 0
 			}
@@ -1150,7 +1153,7 @@ var spriteDefs = {
 	"ogre": {
 		"name": "ogre",
 		"formalName": "Ogre",
-		"byStep": 3,
+		"byStep": 2,
 		"flip": true,
 		"cardIndex": 0,
 		"portraitXy": {
@@ -1180,38 +1183,32 @@ var spriteDefs = {
 		},
 		"animations": {
 			"move": {
-				"start": 241,
-				"end": 265,
+				"start": 50,
+				"end": 72,
 				"delay": 0.06,
 				"type": 0
 			},
 			"attack": {
-				"start": 1,
-				"end": 37,
+				"start": 74,
+				"end": 115,
 				"delay": 0.04,
 				"type": 1
 			},
 			"attack2": {
-				"start": 48,
-				"end": 84,
+				"start": 122,
+				"end": 151,
 				"delay": 0.04,
 				"type": 1
 			},
 			"idle": {
-				"start": 193,
-				"end": 240,
+				"start": 1,
+				"end": 35,
 				"delay": 0.02,
 				"type": 0
 			},
-			"damage": {
-				"start": 96,
-				"end": 108,
-				"delay": 0.04,
-				"type": 1
-			},
 			"dead": {
-				"start": 144,
-				"end": 192,
+				"start": 169,
+				"end": 203,
 				"delay": 0.06,
 				"type": 1
 			}
@@ -1233,12 +1230,12 @@ var spriteDefs = {
 			"targets": 1,
 			"damage": 50,
 			"actionDelays": {
-				"attack": 0.2
+				"attack": 0.5
 			},
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 20
+			"targetRadius": 30
 		},
 		"baseOffset": {
 			"x": -20,
@@ -1247,32 +1244,32 @@ var spriteDefs = {
 		"byStep": 1,
 		"animations": {
 			"move": {
-				"start": 241,
-				"end": 264,
-				"delay": 0.025,
+				"start": 18,
+				"end": 41,
+				"delay": 0.04,
 				"type": 0
 			},
 			"attack": {
-				"start": 1,
-				"end": 25,
-				"delay": 0.025,
+				"start": 42,
+				"end": 64,
+				"delay": 0.03,
 				"type": 1
 			},
 			"attack2": {
-				"start": 48,
-				"end": 73,
-				"delay": 0.02,
+				"start": 66,
+				"end": 90,
+				"delay": 0.03,
 				"type": 1
 			},
 			"idle": {
-				"start": 193,
-				"end": 209,
-				"delay": 0.02,
+				"start": 1,
+				"end": 12,
+				"delay": 0.04,
 				"type": 0
 			},
 			"damage": {
-				"start": 96,
-				"end": 108,
+				"start": 103,
+				"end": 135,
 				"delay": 0.04,
 				"type": 1
 			},
@@ -1534,38 +1531,26 @@ var spriteDefs = {
 		"byStep": 1,
 		"animations": {
 			"move": {
-				"start": 241,
-				"end": 264,
+				"start": 25,
+				"end": 49,
 				"delay": 0.025,
 				"type": 0
 			},
 			"attack": {
-				"start": 1,
-				"end": 24,
-				"delay": 0.02,
-				"type": 1
-			},
-			"attack2": {
-				"start": 48,
-				"end": 73,
+				"start": 50,
+				"end": 71,
 				"delay": 0.02,
 				"type": 1
 			},
 			"idle": {
-				"start": 193,
-				"end": 209,
+				"start": 1,
+				"end": 24,
 				"delay": 0.02,
 				"type": 0
 			},
-			"damage": {
-				"start": 96,
-				"end": 108,
-				"delay": 0.04,
-				"type": 1
-			},
 			"dead": {
-				"start": 144,
-				"end": 192,
+				"start": 109,
+				"end": 145,
 				"delay": 0.06,
 				"type": 1
 			}
@@ -1578,7 +1563,6 @@ var spriteDefs = {
 		"details": "These goblins are masters of destructive magic and can do serious damage at an impressive range.",
 		"elementType": "none",
 		"unitType": 4,
-		"flip": true,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 100,
@@ -1601,38 +1585,32 @@ var spriteDefs = {
 		},
 		"animations": {
 			"move": {
-				"start": 241,
-				"end": 264,
-				"delay": 0.025,
+				"start": 26,
+				"end": 48,
+				"delay": 0.05,
 				"type": 0
 			},
 			"attack": {
-				"start": 1,
-				"end": 40,
-				"delay": 0.02,
+				"start": 49,
+				"end": 72,
+				"delay": 0.05,
 				"type": 1
 			},
 			"attack2": {
-				"start": 48,
-				"end": 80,
-				"delay": 0.02,
+				"start": 73,
+				"end": 97,
+				"delay": 0.05,
 				"type": 1
 			},
 			"idle": {
-				"start": 193,
-				"end": 209,
-				"delay": 0.02,
+				"start": 1,
+				"end": 24,
+				"delay": 0.05,
 				"type": 0
 			},
-			"damage": {
-				"start": 96,
-				"end": 108,
-				"delay": 0.04,
-				"type": 1
-			},
 			"dead": {
-				"start": 144,
-				"end": 192,
+				"start": 110,
+				"end": 155,
 				"delay": 0.06,
 				"type": 1
 			}

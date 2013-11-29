@@ -33,6 +33,7 @@ var ArenaGame = jc.WorldLayer.extend({
         }else{
             this.runScenario();
         }
+
     },
     runScenario:function(){
         this.teamASprites = hotr.arenaScene.data.teamA;
@@ -135,7 +136,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.sprites = this.teams['a'].concat(this.teams['b']);
 
             this.startedAt = Date.now();
-            this.started=true;
+            this.started = true;
         }.bind(this));
 
     },
@@ -232,7 +233,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
             for (var i =0; i<this.sprites.length;i++){
                 if (this.sprites[i].isAlive() && this.sprites[i].isVisible()){
-                    var position = this.sprites[i].getPosition(); //where am i in the layer
+                    var position = this.sprites[i].getBasePosition(); //where am i in the layer
                     var shouldScale = true;
                     var tr = this.sprites[i].getTextureRect();
                     var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
@@ -240,7 +241,7 @@ var ArenaGame = jc.WorldLayer.extend({
                     var compareMaxX = worldPos.x + tr.width;
                     var compareMinX = worldPos.x - tr.width;
                     var compareMaxY = worldPos.y + tr.height;
-                    var compareMinY = worldPos.y - tr.height;
+                    var compareMinY = worldPos.y - (tr.height/2);
 
 
                     if (compareMaxX > maxX){
@@ -415,15 +416,13 @@ var ArenaGame = jc.WorldLayer.extend({
 
         if (teambisdead){
             //pause game, display victory
-            this.started = false;
             this.showVictory();
             return;
         }
 
         if (teamaisdead){
             //pause game, display lost
-            this.started = false;
-            alert("you lose, loser!")
+            this.showDefeat();
             return;
         }
 
@@ -431,30 +430,37 @@ var ArenaGame = jc.WorldLayer.extend({
         if (this.timeExpired()){
             if (aliveA > aliveB){
                 //pause game, display victory
-                this.started = false;
                 this.showVictory();
 
             }
 
             if (aliveB > aliveA){
                 //pause game, display defeat
-                this.started = false;
-                alert("you lose, loser!")
+                this.showDefeat();
             }
 
 
             if (aliveB == aliveA){
                 //pause game, display defeat
-                this.started = false;
-                alert("its a draw!")
+                this.showDefeat();
             }
         }
     },
     showVictory:function(){
-        this.victory = new Victory();
-        this.victory.init(); //todo pass stats
-        this.addChild(this.victory);
-        this.victory.start();
+        this.started = false;
+        this.panToWorldPoint(cc.p(this.worldSize.x, this.worldSize.y), 1, jc.defaultTransitionTime, function(){
+            this.victory = new Victory();
+            this.victory.init(); //todo pass stats
+            this.addChild(this.victory);
+        }.bind(this));
+    },
+    showDefeat:function(){
+        this.started = false;
+        this.panToWorldPoint(cc.p(this.worldSize.x, this.worldSize.y), 1, jc.defaultTransitionTime, function(){
+            this.defeat = new Defeat();
+            this.defeat.init(); //todo pass stats
+            this.addChild(this.defeat);
+        }.bind(this));
     },
     timeExpired:function(){
         var time = Date.now() - this.startedAt;

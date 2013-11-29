@@ -680,6 +680,10 @@ GeneralBehavior.prototype.handleIdle = function(dt){
         this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam());
     }
 
+    if (this.locked && !this.locked.isAlive()){
+        this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam());
+    }
+
     if (this.locked){
         this.setState('move', 'move');
     }
@@ -688,11 +692,15 @@ GeneralBehavior.prototype.handleIdle = function(dt){
 
 GeneralBehavior.prototype.handleMove = function(dt){
     //give me a chance to retarget closer;
-    this.handleIdle(dt);
+    if (!this.forceLocked){
+        this.handleIdle(dt);
+    }
+
 
     var point = this.seekEnemy();
     if (!point){
         this.setState('idle','idle');
+        this.forceLocked = false;
         return;
     }
     if (point.x == 0 && point.y == 0){
@@ -814,6 +822,7 @@ GeneralBehavior.prototype.followCommand = function(position){
 
 GeneralBehavior.prototype.attackCommand = function(target){
     this.locked = target;
+    this.forceLocked = true;
     this.setState('move', 'move');
 }
 

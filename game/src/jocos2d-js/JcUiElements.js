@@ -117,6 +117,9 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             case 'top':
                 this.slideInFromTop(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position,doneDelegate);
                 break;
+            case 'topToMid':
+                this.slideTopToMid(windowConfig.window, windowConfig.config.transitionInTime, doneDelegate);
+                break;
             case 'bottom':
                 this.slideInFromBottom(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position,doneDelegate);
                 break;   case 'topToMid':

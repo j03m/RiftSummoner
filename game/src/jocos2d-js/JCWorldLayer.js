@@ -101,11 +101,11 @@ jc.WorldLayer = jc.TouchLayer.extend({
     },
     getScale:function(width,height){
         var scale = {x:this.winSize.width/width, y:this.winSize.height/height};
-        if (scale.x > 1){
-            scale.x = 1;
+        if (scale.x > 2){
+            scale.x = 2;
         }
-        if (scale.y > 1){
-            scale.y=1;
+        if (scale.y > 2){
+            scale.y=2;
         }
         return scale;
 

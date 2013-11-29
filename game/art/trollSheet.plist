@@ -7,7 +7,7 @@
             <key>troll.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,244},{28,28}}</string>
+                <string>{{2,242},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>troll.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{136,84},{28,30}}</string>
+                <string>{{130,52},{28,30}}</string>
                 <key>offset</key>
                 <string>{6,-45}</string>
                 <key>rotated</key>
@@ -30,166 +30,452 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>troll.100.png</key>
+            <key>troll.109.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,22},{20,38}}</string>
+                <string>{{32,240},{28,28}}</string>
                 <key>offset</key>
-                <string>{0,-41}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{50,82},{20,38}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.101.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{164,2},{18,36}}</string>
-                <key>offset</key>
-                <string>{-1,-42}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{50,84},{18,36}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.102.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,44},{18,36}}</string>
-                <key>offset</key>
-                <string>{-1,-42}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{50,84},{18,36}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.103.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{126,2},{20,36}}</string>
-                <key>offset</key>
-                <string>{-2,-42}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{48,84},{20,36}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.104.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{202,2},{24,34}}</string>
-                <key>offset</key>
-                <string>{0,-43}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{48,86},{24,34}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.105.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{98,114},{26,30}}</string>
-                <key>offset</key>
-                <string>{1,-45}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{48,90},{26,30}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.106.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{230,60},{24,28}}</string>
-                <key>offset</key>
-                <string>{2,-46}</string>
+                <string>{6,-46}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{50,92},{24,28}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.107.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{184,204},{22,28}}</string>
-                <key>offset</key>
-                <string>{4,-46}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,92},{22,28}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.108.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{214,198},{26,28}}</string>
-                <key>offset</key>
-                <string>{5,-46}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,92},{26,28}}</string>
+                <string>{{52,92},{28,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,124},{28,30}}</string>
+                <string>{{98,52},{28,30}}</string>
                 <key>offset</key>
                 <string>{6,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
                 <string>{{52,90},{28,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.110.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,84},{26,30}}</string>
+                <key>offset</key>
+                <string>{6,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{26,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.111.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{66,82},{26,30}}</string>
+                <key>offset</key>
+                <string>{6,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{26,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.112.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{194,90},{26,30}}</string>
+                <key>offset</key>
+                <string>{6,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{26,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.113.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{162,64},{26,30}}</string>
+                <key>offset</key>
+                <string>{5,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,90},{26,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.114.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{230,2},{24,30}}</string>
+                <key>offset</key>
+                <string>{4,-45}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{52,90},{24,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.115.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,112},{22,30}}</string>
+                <key>offset</key>
+                <string>{2,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,90},{22,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.116.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{162,114},{20,30}}</string>
+                <key>offset</key>
+                <string>{0,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,90},{20,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.117.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{194,138},{18,30}}</string>
+                <key>offset</key>
+                <string>{-2,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{49,90},{18,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.118.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{34,132},{16,30}}</string>
+                <key>offset</key>
+                <string>{-2,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,90},{16,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.119.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{152,286},{16,28}}</string>
+                <key>offset</key>
+                <string>{-2,-46}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,92},{16,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{34,110},{28,30}}</string>
+                <string>{{34,54},{28,30}}</string>
                 <key>offset</key>
                 <string>{6,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
                 <string>{{52,90},{28,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.120.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,294},{16,26}}</string>
+                <key>offset</key>
+                <string>{-1,-47}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,94},{16,26}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.121.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{150,304},{16,26}}</string>
+                <key>offset</key>
+                <string>{1,-47}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,94},{16,26}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.122.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{212,256},{20,28}}</string>
+                <key>offset</key>
+                <string>{2,-46}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,92},{20,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.123.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{32,270},{22,28}}</string>
+                <key>offset</key>
+                <string>{3,-46}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,92},{22,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.124.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{62,252},{22,28}}</string>
+                <key>offset</key>
+                <string>{3,-46}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,92},{22,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.125.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{34,108},{22,30}}</string>
+                <key>offset</key>
+                <string>{3,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,90},{22,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.126.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{34,84},{22,30}}</string>
+                <key>offset</key>
+                <string>{3,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,90},{22,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.127.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,104},{20,30}}</string>
+                <key>offset</key>
+                <string>{3,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{20,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.128.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{162,136},{18,30}}</string>
+                <key>offset</key>
+                <string>{2,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{18,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.129.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,126},{18,30}}</string>
+                <key>offset</key>
+                <string>{0,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,90},{18,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,104},{28,30}}</string>
+                <string>{{2,54},{28,30}}</string>
                 <key>offset</key>
                 <string>{6,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
                 <string>{{52,90},{28,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.130.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,136},{14,30}}</string>
+                <key>offset</key>
+                <string>{-1,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,90},{14,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.131.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{182,282},{16,28}}</string>
+                <key>offset</key>
+                <string>{0,-46}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,92},{16,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.132.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{122,304},{18,26}}</string>
+                <key>offset</key>
+                <string>{3,-47}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{54,94},{18,26}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.133.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{80,330},{22,22}}</string>
+                <key>offset</key>
+                <string>{3,-46}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{52,95},{22,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.134.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{28,342},{22,20}}</string>
+                <key>offset</key>
+                <string>{3,-47}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{52,97},{22,20}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.135.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{108,324},{22,22}}</string>
+                <key>offset</key>
+                <string>{3,-49}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{52,98},{22,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.136.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{150,322},{22,22}}</string>
+                <key>offset</key>
+                <string>{3,-49}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{52,98},{22,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.137.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{178,320},{22,22}}</string>
+                <key>offset</key>
+                <string>{3,-49}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{52,98},{22,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.138.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{82,306},{22,24}}</string>
+                <key>offset</key>
+                <string>{3,-48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,96},{22,24}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.139.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,336},{22,24}}</string>
+                <key>offset</key>
+                <string>{3,-48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,96},{22,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{104,84},{28,30}}</string>
+                <string>{{66,52},{28,30}}</string>
                 <key>offset</key>
                 <string>{6,-45}</string>
                 <key>rotated</key>
@@ -199,10 +485,62 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
+            <key>troll.140.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{28,318},{22,24}}</string>
+                <key>offset</key>
+                <string>{2,-48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,96},{22,24}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.141.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{56,298},{22,24}}</string>
+                <key>offset</key>
+                <string>{3,-48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,96},{22,24}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.142.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,312},{22,24}}</string>
+                <key>offset</key>
+                <string>{3,-48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,96},{22,24}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.143.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{30,294},{22,24}}</string>
+                <key>offset</key>
+                <string>{3,-48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,96},{22,24}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
             <key>troll.144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{158,372},{22,24}}</string>
+                <string>{{230,58},{22,24}}</string>
                 <key>offset</key>
                 <string>{3,-48}</string>
                 <key>rotated</key>
@@ -215,59 +553,7 @@
             <key>troll.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,370},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.146.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{106,352},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.147.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,394},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.148.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{28,380},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.149.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,374},{22,24}}</string>
+                <string>{{230,34},{22,24}}</string>
                 <key>offset</key>
                 <string>{3,-48}</string>
                 <key>rotated</key>
@@ -280,579 +566,59 @@
             <key>troll.15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,58},{28,30}}</string>
+                <string>{{226,82},{28,30}}</string>
                 <key>offset</key>
                 <string>{6,-45}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{52,90},{28,30}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.150.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{80,352},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.151.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{214,346},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.152.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{132,350},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.153.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{158,348},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.154.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{188,346},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.155.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{106,328},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.156.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,370},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.157.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{28,356},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.158.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,350},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.159.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{188,346},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,230},{28,28}}</string>
+                <string>{{62,222},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
                 <string>{{52,92},{28,28}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.160.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{80,328},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.161.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{218,322},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.162.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,370},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.163.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{132,326},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.164.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,370},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.165.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{162,324},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.166.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{192,322},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.167.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{106,304},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.168.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,346},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.169.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{28,332},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{62,224},{28,28}}</string>
+                <string>{{92,206},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
                 <string>{{52,92},{28,28}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.170.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,326},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.171.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{80,304},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.172.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{222,298},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.173.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{136,302},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.174.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{166,300},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.175.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{196,298},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.176.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{110,280},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.177.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,322},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.178.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{28,308},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.179.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,370},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,202},{28,28}}</string>
+                <string>{{214,204},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
                 <string>{{52,92},{28,28}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.180.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{132,350},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.181.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,302},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.182.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{80,304},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.183.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{84,280},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.184.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{28,308},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.185.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{140,278},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.186.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{136,302},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.187.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{80,352},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.188.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{114,256},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.189.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,298},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{124,174},{28,28}}</string>
+                <string>{{184,188},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -862,140 +628,10 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>troll.190.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{28,284},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.191.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{58,278},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.192.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{136,302},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.193.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,326},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.194.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{196,298},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.195.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{188,346},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.196.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,370},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.197.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{88,256},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.198.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,326},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.199.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,326},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
             <key>troll.2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{216,168},{28,28}}</string>
+                <string>{{154,186},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1008,7 +644,7 @@
             <key>troll.20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{186,146},{28,28}}</string>
+                <string>{{124,176},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1018,140 +654,10 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>troll.200.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{170,276},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.201.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{144,254},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.202.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{118,232},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.203.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,274},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.204.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{218,322},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.205.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{32,260},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.206.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{62,254},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.207.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{132,350},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.208.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{132,350},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.209.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{80,352},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
             <key>troll.21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{156,144},{28,28}}</string>
+                <string>{{2,212},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1164,7 +670,7 @@
             <key>troll.22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,214},{28,28}}</string>
+                <string>{{32,210},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1177,7 +683,7 @@
             <key>troll.23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,200},{28,28}}</string>
+                <string>{{62,192},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1190,7 +696,7 @@
             <key>troll.24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{62,194},{28,28}}</string>
+                <string>{{94,176},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1200,335 +706,218 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>troll.241.png</key>
+            <key>troll.25.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,232},{22,24}}</string>
+                <string>{{196,32},{26,32}}</string>
                 <key>offset</key>
-                <string>{3,-48}</string>
+                <string>{1,-41}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
+                <string>{{48,85},{26,32}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>troll.242.png</key>
+            <key>troll.26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{230,274},{22,24}}</string>
+                <string>{{62,276},{20,28}}</string>
                 <key>offset</key>
-                <string>{3,-48}</string>
+                <string>{1,-41}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
+                <string>{{51,87},{20,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>troll.243.png</key>
+            <key>troll.27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{54,326},{22,24}}</string>
+                <string>{{92,264},{20,28}}</string>
                 <key>offset</key>
-                <string>{3,-48}</string>
+                <string>{1,-41}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
+                <string>{{51,87},{20,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>troll.244.png</key>
+            <key>troll.28.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{204,274},{22,24}}</string>
+                <string>{{122,262},{20,28}}</string>
                 <key>offset</key>
-                <string>{3,-48}</string>
+                <string>{1,-42}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
+                <string>{{51,88},{20,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>troll.245.png</key>
+            <key>troll.29.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{136,302},{22,24}}</string>
+                <string>{{66,110},{20,30}}</string>
                 <key>offset</key>
-                <string>{3,-48}</string>
+                <string>{1,-44}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.246.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,326},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.247.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,326},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.248.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{196,298},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.249.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{178,252},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.250.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{210,250},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.251.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{28,308},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.252.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{152,230},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.253.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{184,228},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.254.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{28,308},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.255.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,326},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.256.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,370},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.257.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{136,302},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.258.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{214,226},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.259.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,326},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.260.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{54,350},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.261.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{132,350},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.262.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{136,302},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.263.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{230,114},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.264.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{230,90},{22,24}}</string>
-                <key>offset</key>
-                <string>{3,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,96},{22,24}}</string>
+                <string>{{51,89},{20,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{94,172},{28,28}}</string>
+                <string>{{216,174},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
                 <string>{{52,92},{28,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.30.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{98,126},{18,30}}</string>
+                <key>offset</key>
+                <string>{2,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{18,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.31.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{194,118},{18,30}}</string>
+                <key>offset</key>
+                <string>{2,-45}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{18,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.32.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{212,278},{18,28}}</string>
+                <key>offset</key>
+                <string>{2,-44}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{18,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.33.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{182,300},{18,26}}</string>
+                <key>offset</key>
+                <string>{2,-43}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{18,26}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.34.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{54,322},{18,24}}</string>
+                <key>offset</key>
+                <string>{2,-43}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,91},{18,24}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.35.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{212,298},{20,26}}</string>
+                <key>offset</key>
+                <string>{1,-42}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,89},{20,26}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.36.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{152,244},{20,28}}</string>
+                <key>offset</key>
+                <string>{1,-41}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,87},{20,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.37.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{182,240},{20,28}}</string>
+                <key>offset</key>
+                <string>{0,-41}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,87},{20,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.38.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{98,104},{20,30}}</string>
+                <key>offset</key>
+                <string>{0,-41}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,86},{20,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.39.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{162,92},{20,30}}</string>
+                <key>offset</key>
+                <string>{0,-42}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,87},{20,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{126,144},{28,28}}</string>
+                <string>{{186,158},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1538,14 +927,118 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
+            <key>troll.40.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,82},{20,30}}</string>
+                <key>offset</key>
+                <string>{1,-43}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,88},{20,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.41.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{98,82},{20,30}}</string>
+                <key>offset</key>
+                <string>{1,-43}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,88},{20,30}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.42.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{92,286},{18,28}}</string>
+                <key>offset</key>
+                <string>{2,-44}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{18,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.43.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{122,284},{18,28}}</string>
+                <key>offset</key>
+                <string>{2,-44}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{18,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.44.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{152,266},{18,28}}</string>
+                <key>offset</key>
+                <string>{2,-44}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{18,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.45.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{182,262},{18,28}}</string>
+                <key>offset</key>
+                <string>{2,-44}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{53,90},{18,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.46.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{212,234},{20,28}}</string>
+                <key>offset</key>
+                <string>{2,-44}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,90},{20,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>troll.47.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{182,218},{20,28}}</string>
+                <key>offset</key>
+                <string>{2,-44}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,90},{20,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
             <key>troll.48.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{176,54},{20,28}}</string>
+                <string>{{2,272},{20,28}}</string>
                 <key>offset</key>
                 <string>{1,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{51,88},{20,28}}</string>
                 <key>sourceSize</key>
@@ -1554,7 +1047,7 @@
             <key>troll.49.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{164,22},{32,30}}</string>
+                <string>{{162,2},{32,30}}</string>
                 <key>offset</key>
                 <string>{8,-45}</string>
                 <key>rotated</key>
@@ -1567,7 +1060,7 @@
             <key>troll.5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{220,138},{28,28}}</string>
+                <string>{{156,156},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1580,7 +1073,7 @@
             <key>troll.50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{42,28},{18,36}}</string>
+                <string>{{124,2},{18,36}}</string>
                 <key>offset</key>
                 <string>{2,-42}</string>
                 <key>rotated</key>
@@ -1593,7 +1086,7 @@
             <key>troll.51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{86,22},{18,36}}</string>
+                <string>{{86,2},{18,36}}</string>
                 <key>offset</key>
                 <string>{2,-42}</string>
                 <key>rotated</key>
@@ -1606,7 +1099,7 @@
             <key>troll.52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{86,2},{18,38}}</string>
+                <string>{{46,2},{18,38}}</string>
                 <key>offset</key>
                 <string>{2,-41}</string>
                 <key>rotated</key>
@@ -1632,7 +1125,7 @@
             <key>troll.54.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{124,24},{28,32}}</string>
+                <string>{{196,2},{28,32}}</string>
                 <key>offset</key>
                 <string>{7,-44}</string>
                 <key>rotated</key>
@@ -1645,7 +1138,7 @@
             <key>troll.55.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{40,48},{30,30}}</string>
+                <string>{{34,22},{30,30}}</string>
                 <key>offset</key>
                 <string>{8,-45}</string>
                 <key>rotated</key>
@@ -1658,7 +1151,7 @@
             <key>troll.56.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{80,42},{30,30}}</string>
+                <string>{{2,22},{30,30}}</string>
                 <key>offset</key>
                 <string>{8,-45}</string>
                 <key>rotated</key>
@@ -1671,7 +1164,7 @@
             <key>troll.57.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{34,80},{30,28}}</string>
+                <string>{{162,34},{30,28}}</string>
                 <key>offset</key>
                 <string>{8,-46}</string>
                 <key>rotated</key>
@@ -1684,7 +1177,7 @@
             <key>troll.58.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{72,74},{30,28}}</string>
+                <string>{{130,22},{30,28}}</string>
                 <key>offset</key>
                 <string>{7,-46}</string>
                 <key>rotated</key>
@@ -1697,7 +1190,7 @@
             <key>troll.59.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{190,116},{28,28}}</string>
+                <string>{{126,146},{28,28}}</string>
                 <key>offset</key>
                 <string>{7,-46}</string>
                 <key>rotated</key>
@@ -1710,7 +1203,7 @@
             <key>troll.6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{160,114},{28,28}}</string>
+                <string>{{2,182},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1723,7 +1216,7 @@
             <key>troll.60.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,184},{28,28}}</string>
+                <string>{{32,180},{28,28}}</string>
                 <key>offset</key>
                 <string>{7,-46}</string>
                 <key>rotated</key>
@@ -1736,7 +1229,7 @@
             <key>troll.61.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,170},{28,28}}</string>
+                <string>{{64,162},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1749,7 +1242,7 @@
             <key>troll.62.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,204},{26,28}}</string>
+                <string>{{92,236},{26,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1762,7 +1255,7 @@
             <key>troll.63.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,202},{26,28}}</string>
+                <string>{{122,234},{26,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1775,7 +1268,7 @@
             <key>troll.64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,176},{26,28}}</string>
+                <string>{{152,216},{26,28}}</string>
                 <key>offset</key>
                 <string>{5,-46}</string>
                 <key>rotated</key>
@@ -1788,7 +1281,7 @@
             <key>troll.65.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,174},{26,28}}</string>
+                <string>{{122,206},{26,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1801,7 +1294,7 @@
             <key>troll.66.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{64,164},{28,28}}</string>
+                <string>{{96,146},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1814,7 +1307,7 @@
             <key>troll.67.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,142},{28,28}}</string>
+                <string>{{2,152},{28,28}}</string>
                 <key>offset</key>
                 <string>{7,-46}</string>
                 <key>rotated</key>
@@ -1827,7 +1320,7 @@
             <key>troll.68.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{112,54},{30,28}}</string>
+                <string>{{98,22},{30,28}}</string>
                 <key>offset</key>
                 <string>{7,-46}</string>
                 <key>rotated</key>
@@ -1840,7 +1333,7 @@
             <key>troll.69.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,28},{30,28}}</string>
+                <string>{{66,22},{30,28}}</string>
                 <key>offset</key>
                 <string>{7,-46}</string>
                 <key>rotated</key>
@@ -1853,7 +1346,7 @@
             <key>troll.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{130,114},{28,28}}</string>
+                <string>{{34,150},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1866,7 +1359,7 @@
             <key>troll.70.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,154},{28,28}}</string>
+                <string>{{66,132},{28,28}}</string>
                 <key>offset</key>
                 <string>{7,-46}</string>
                 <key>rotated</key>
@@ -1879,46 +1372,20 @@
             <key>troll.71.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{34,140},{28,28}}</string>
+                <string>{{226,144},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
                 <string>{{52,92},{28,28}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.72.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{66,134},{28,28}}</string>
-                <key>offset</key>
-                <string>{6,-46}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{52,92},{28,28}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.73.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,64},{30,28}}</string>
-                <key>offset</key>
-                <string>{7,-46}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{52,92},{30,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>troll.8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{168,84},{28,28}}</string>
+                <string>{{226,114},{28,28}}</string>
                 <key>offset</key>
                 <string>{6,-46}</string>
                 <key>rotated</key>
@@ -1931,65 +1398,13 @@
             <key>troll.9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{144,54},{28,30}}</string>
+                <string>{{194,60},{28,30}}</string>
                 <key>offset</key>
                 <string>{6,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
                 <string>{{52,90},{28,30}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.96.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{198,88},{26,30}}</string>
-                <key>offset</key>
-                <string>{6,-45}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,90},{26,30}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.97.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,94},{28,30}}</string>
-                <key>offset</key>
-                <string>{6,-45}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{52,90},{28,30}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.98.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{230,28},{24,30}}</string>
-                <key>offset</key>
-                <string>{4,-45}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{52,90},{24,30}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>troll.99.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{46,2},{24,38}}</string>
-                <key>offset</key>
-                <string>{2,-41}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{50,82},{24,38}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
@@ -2003,7 +1418,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:abc52c3f052b4f337c0a97a250f5a92d:8366f27773a92ebc2a7d4d175b5a96cd:02d834eacb242052c2c7f009f5ba3447$</string>
+            <string>$TexturePacker:SmartUpdate:ad0217a1b743dc4d326ba5ae9354471c:5e95c50280a676b3aacbef870d55faf4:02d834eacb242052c2c7f009f5ba3447$</string>
             <key>textureFileName</key>
             <string>trollSheet.png</string>
         </dict>

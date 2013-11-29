@@ -33,7 +33,9 @@ jc.Sprite = cc.Sprite.extend({
         this.batch.retain();
         this.effects = {};
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame);
-
+        if (!frame){
+            throw firstFrame + " for sprite: " + config.name + " was not found.";
+        }
 		this.initWithSpriteFrame(frame);
         this.type = config.type;
         if(this.type != 'background'){
@@ -434,9 +436,9 @@ jc.Sprite = cc.Sprite.extend({
 
             pos.y += 5;
             if (!this.isFlippedX()){
-                pos.x = (pos.x - cs.width) + 230;
+                pos.x = (pos.x - cs.width) + 240;
             }else{
-                pos.x = (pos.x - cs.width) + 220;
+                pos.x = (pos.x - cs.width) + 250;
             }
 
             if (this.gameObject && this.gameObject.flightAug){
