@@ -101,8 +101,12 @@ var effectsConfig = {
         "start":"fire.1.png",
         "frames":44,
         "delay":0.02,
-        "placement":"base2base",
+        "placement":"bottom",
         "zorder":"behind",
+        "offset":{
+            "x":0,
+            "y":65
+        }
     },
     "fireLoop":{
         "name":"fire",

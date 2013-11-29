@@ -200,7 +200,13 @@ jc.Sprite = cc.Sprite.extend({
         return this.gameObject.targetRadius;
     },
     getTargetRadiusY:function(){
-        return this.gameObject.targetRadius/4;
+        if (this.behaviorType == 'range'){
+            return this.gameObject.targetRadius;
+        }else{
+            return this.gameObject.targetRadius/2;
+
+        }
+
     },
     getSeekRadius: function(){
         return this.gameObject.seekRadius;

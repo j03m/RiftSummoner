@@ -4,7 +4,7 @@
     <list default="true" id="9096c513-4105-4630-94e9-8fc9d8fc267f" name="Default" comment="" />
     <ignored path="RunFighter-X-JS.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/JCSprite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385743447612" ignored="false" />
+    <file path="/JCSprite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385750005504" ignored="false" />
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/spriteConfigs/gargoyle.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375830093602" ignored="false" />
     <file path="/gargoyle.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375829169498" ignored="false" />
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/spriteConfigs/dragon.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375829973312" ignored="false" />
@@ -26,7 +26,7 @@
     <file path="/JCTrace.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385053730114" ignored="false" />
     <file path="/tank.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375908513717" ignored="false" />
     <file path="/TankBehavior.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1377005655610" ignored="false" />
-    <file path="/GeneralBehavior.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385731985963" ignored="false" />
+    <file path="/GeneralBehavior.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385749478021" ignored="false" />
     <file path="/BehaviorMap.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375910031684" ignored="false" />
     <file path="/fragment.js2" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1376426502572" ignored="false" />
     <file path="/test-cellResolution.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1376427286642" ignored="false" />
@@ -50,7 +50,7 @@
     <file path="/AnimationTest.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385312133843" ignored="false" />
     <file path="/PowerHud.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384362888848" ignored="false" />
     <file path="/selectTeam.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385610953436" ignored="false" />
-    <file path="/JCUtils.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385610946626" ignored="false" />
+    <file path="/JCUtils.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385749148838" ignored="false" />
     <file path="/powerTileConfig.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384367751440" ignored="false" />
     <file path="/CCSprite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384368302008" ignored="false" />
     <file path="/Main.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385311960164" ignored="false" />
@@ -199,7 +199,7 @@
       <file leaf-file-name="ArenaGame.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ArenaGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="137" selection-start="8430" selection-end="8430" vertical-scroll-proportion="-10.68">
+            <state line="439" column="51" selection-start="15651" selection-end="15651" vertical-scroll-proportion="-7.08">
               <folding />
             </state>
           </provider>
@@ -226,25 +226,25 @@
       <file leaf-file-name="JCUtils.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="451" column="43" selection-start="11982" selection-end="11982" vertical-scroll-proportion="0.0">
+            <state line="373" column="38" selection-start="9719" selection-end="9719" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="effectsConfig.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="effectsConfig.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/effectsConfig.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="27" selection-start="2759" selection-end="2759" vertical-scroll-proportion="0.7058824">
+            <state line="107" column="18" selection-start="2601" selection-end="2601" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html5/game.js">
+      <file leaf-file-name="GeneralBehavior.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/behaviors/GeneralBehavior.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="22" selection-start="1678" selection-end="1678" vertical-scroll-proportion="0.0">
+            <state line="72" column="88" selection-start="2027" selection-end="2027" vertical-scroll-proportion="-5.32">
               <folding />
             </state>
           </provider>
@@ -277,10 +277,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JCSprite.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="JCSprite.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCSprite.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="132" selection-start="2901" selection-end="2901" vertical-scroll-proportion="-7.8">
+            <state line="205" column="49" selection-start="6587" selection-end="6587" vertical-scroll-proportion="0.745">
               <folding />
             </state>
           </provider>
@@ -296,8 +296,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/jocos2d-js/JCWorldLayer.js" />
-        <option value="$PROJECT_DIR$/src/behaviors/GeneralBehavior.js" />
         <option value="$PROJECT_DIR$/src/spriteVars.js" />
         <option value="$PROJECT_DIR$/src/topSlideDialog.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCSlidingDialogue.js" />
@@ -308,10 +306,12 @@
         <option value="$PROJECT_DIR$/html5/game.js" />
         <option value="$PROJECT_DIR$/buildorder.txt" />
         <option value="$PROJECT_DIR$/src/kikClientMock.js" />
-        <option value="$PROJECT_DIR$/src/jocos2d-js/JCSprite.js" />
-        <option value="$PROJECT_DIR$/src/ArenaGame.js" />
         <option value="$PROJECT_DIR$/src/behaviors/RangeBehavior.js" />
+        <option value="$PROJECT_DIR$/src/jocos2d-js/JCUtils.js" />
         <option value="$PROJECT_DIR$/src/effectsConfig.js" />
+        <option value="$PROJECT_DIR$/src/behaviors/GeneralBehavior.js" />
+        <option value="$PROJECT_DIR$/src/ArenaGame.js" />
+        <option value="$PROJECT_DIR$/src/jocos2d-js/JCSprite.js" />
       </list>
     </option>
   </component>
@@ -723,7 +723,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/jocos2d-js/JCSprite.js</url>
-          <line>265</line>
+          <line>271</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/touchIdTests/test-collisions.js</url>
@@ -744,13 +744,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/behaviors/GeneralBehavior.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="708" column="119" selection-start="20807" selection-end="20807" vertical-scroll-proportion="-6.6363635">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1228" column="121" selection-start="24128" selection-end="24128" vertical-scroll-proportion="-8.16">
@@ -810,23 +803,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCSprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="132" selection-start="2901" selection-end="2901" vertical-scroll-proportion="-7.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCWorldLayer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="4" selection-start="2293" selection-end="2293" vertical-scroll-proportion="-5.16">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ArenaGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="137" selection-start="8430" selection-end="8430" vertical-scroll-proportion="-10.68">
           <folding />
         </state>
       </provider>
@@ -847,14 +826,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="451" column="43" selection-start="11982" selection-end="11982" vertical-scroll-proportion="0.0">
+        <state line="373" column="38" selection-start="9719" selection-end="9719" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/effectsConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="27" selection-start="2759" selection-end="2759" vertical-scroll-proportion="0.7058824">
+        <state line="107" column="18" selection-start="2601" selection-end="2601" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ArenaGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="439" column="51" selection-start="15651" selection-end="15651" vertical-scroll-proportion="-7.08">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/behaviors/GeneralBehavior.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="88" selection-start="2027" selection-end="2027" vertical-scroll-proportion="-5.32">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCSprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="205" column="49" selection-start="6587" selection-end="6587" vertical-scroll-proportion="0.745">
           <folding />
         </state>
       </provider>

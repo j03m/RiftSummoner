@@ -677,10 +677,12 @@ GeneralBehavior.prototype.handleIdle = function(dt){
     }
 
     if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){
+        this.forceLocked = false;
         this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam());
     }
 
     if (this.locked && !this.locked.isAlive()){
+        this.forceLocked = false;
         this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam());
     }
 

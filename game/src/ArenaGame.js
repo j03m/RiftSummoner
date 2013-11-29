@@ -428,22 +428,22 @@ var ArenaGame = jc.WorldLayer.extend({
 
         //hey no team is fully dead. But, how long have been running?
         if (this.timeExpired()){
-            if (aliveA > aliveB){
-                //pause game, display victory
-                this.showVictory();
-
-            }
-
-            if (aliveB > aliveA){
-                //pause game, display defeat
-                this.showDefeat();
-            }
-
-
-            if (aliveB == aliveA){
-                //pause game, display defeat
-                this.showDefeat();
-            }
+//            if (aliveA > aliveB){
+//                //pause game, display victory
+//                this.showVictory();
+//
+//            }
+//
+//            if (aliveB > aliveA){
+//                //pause game, display defeat
+//                this.showDefeat();
+//            }
+//
+//
+//            if (aliveB == aliveA){
+//                //pause game, display defeat
+//                this.showDefeat();
+//            }
         }
     },
     showVictory:function(){
