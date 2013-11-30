@@ -202,19 +202,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="kikClientMock.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="kikClientMock.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kikClientMock.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="101" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FlankerBehavior.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/behaviors/FlankerBehavior.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="43" selection-start="555" selection-end="555" vertical-scroll-proportion="0.0">
+            <state line="20" column="113" selection-start="441" selection-end="441" vertical-scroll-proportion="0.42674252">
               <folding />
             </state>
           </provider>
@@ -238,10 +229,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="characterTiers.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="characterTiers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="349" column="1" selection-start="8756" selection-end="8756" vertical-scroll-proportion="0.95732576">
+            <state line="349" column="1" selection-start="8756" selection-end="8756" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kikServerMock.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/private/kikServerMock.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -316,8 +316,8 @@
         <option value="$PROJECT_DIR$/src/ArenaGame.js" />
         <option value="$PROJECT_DIR$/src/spriteVars.js" />
         <option value="$PROJECT_DIR$/src/behaviors/FlankerBehavior.js" />
-        <option value="$PROJECT_DIR$/src/kikClientMock.js" />
         <option value="$PROJECT_DIR$/private/characterTiers.js" />
+        <option value="$PROJECT_DIR$/src/kikClientMock.js" />
       </list>
     </option>
   </component>
@@ -768,11 +768,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/selectTeam.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="25" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Loading.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="17" selection-start="2596" selection-end="2609" vertical-scroll-proportion="-6.12" />
@@ -849,13 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kikClientMock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="101" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1152" column="9" selection-start="22693" selection-end="22697" vertical-scroll-proportion="13.96">
@@ -865,7 +853,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="349" column="1" selection-start="8756" selection-end="8756" vertical-scroll-proportion="0.95732576">
+        <state line="349" column="1" selection-start="8756" selection-end="8756" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/kikServerMock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kikClientMock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="113" selection-start="441" selection-end="441" vertical-scroll-proportion="0.42674252">
           <folding />
         </state>
       </provider>
