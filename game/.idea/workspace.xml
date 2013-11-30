@@ -17,7 +17,7 @@
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/spriteConfigs/snakeThing.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375830073851" ignored="false" />
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/spriteConfigs/spider.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375830073851" ignored="false" />
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375830171070" ignored="false" />
-    <file path="/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385785246754" ignored="false" />
+    <file path="/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385785837017" ignored="false" />
     <file path="/a.dummy" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385577929532" ignored="false" />
     <file path="$USER_HOME$/Documents/maya/projects/Monsters/config/spriteVars.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1375830277292" ignored="false" />
     <file path="/game.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385050885842" ignored="false" />
@@ -70,7 +70,7 @@
     <file path="/JCRequestLite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384535144829" ignored="false" />
     <file path="/levelLogic.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384665980586" ignored="false" />
     <file path="/cardGen.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384873530345" ignored="false" />
-    <file path="$USER_HOME$/Dropbox/Monsters/config/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385785247268" ignored="false" />
+    <file path="$USER_HOME$/Dropbox/Monsters/config/sheets.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385785837550" ignored="false" />
     <file path="$USER_HOME$/Dropbox/Monsters/config/characterTiers.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385577938837" ignored="false" />
     <file path="/random.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384787948537" ignored="false" />
     <file path="/test.cardGen.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384787743798" ignored="false" />
@@ -202,15 +202,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ArenaGame.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ArenaGame.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="467" column="36" selection-start="16358" selection-end="16358" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="kikClientMock.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kikClientMock.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -238,10 +229,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spriteVars.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="spriteVars.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1152" column="9" selection-start="22693" selection-end="22697" vertical-scroll-proportion="-0.52481204">
+            <state line="1152" column="9" selection-start="22693" selection-end="22697" vertical-scroll-proportion="13.96">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="characterTiers.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="349" column="1" selection-start="8756" selection-end="8756" vertical-scroll-proportion="0.95732576">
               <folding />
             </state>
           </provider>
@@ -302,7 +302,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/jocos2d-js/JCSprite.js" />
         <option value="$PROJECT_DIR$/src/behaviors/RangeBehavior.js" />
         <option value="$PROJECT_DIR$/platform/HTML5/cocos2d/base_nodes/CCNode.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCCompositeButton.js" />
@@ -318,6 +317,7 @@
         <option value="$PROJECT_DIR$/src/spriteVars.js" />
         <option value="$PROJECT_DIR$/src/behaviors/FlankerBehavior.js" />
         <option value="$PROJECT_DIR$/src/kikClientMock.js" />
+        <option value="$PROJECT_DIR$/private/characterTiers.js" />
       </list>
     </option>
   </component>
@@ -420,6 +420,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="behaviors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RunFighter-X-JS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="private" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -638,7 +652,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924694" sideWeight="0.6710875" order="3" side_tool="false" content_ui="tabs" />
@@ -754,13 +768,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCCompositeButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="40" selection-start="2471" selection-end="2471" vertical-scroll-proportion="-1.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/selectTeam.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="25" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.0" />
@@ -851,7 +858,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1152" column="9" selection-start="22693" selection-end="22697" vertical-scroll-proportion="-0.52481204">
+        <state line="1152" column="9" selection-start="22693" selection-end="22697" vertical-scroll-proportion="13.96">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="349" column="1" selection-start="8756" selection-end="8756" vertical-scroll-proportion="0.95732576">
           <folding />
         </state>
       </provider>
