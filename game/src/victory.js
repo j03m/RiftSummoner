@@ -30,6 +30,10 @@ var Victory = jc.UiElementsLayer.extend({
         console.log(sprites[0].name);
         return false;
     },
+    close:function(){
+        this.onDone();
+    },
+    onDone:function(){},
     windowConfig:{
         "mainFrame":{
             "cell":5,
@@ -37,7 +41,22 @@ var Victory = jc.UiElementsLayer.extend({
             "transitionIn":"topToMid",
             "transitionOut":"top",
             "sprite":"victoryScreenWindow.png",
+            "kids":{
+                "okButton":{
+                    "cell":1,
+                    "anchor":['center'],
+                    "padding":{
+                        "top":70,
+                        "left":53
+                    },
+                    "type":"button",
+                    "main":"buttonOk.png",
+                    "pressed":"buttonOk.png",
+                    "touchDelegateName":"close",
+                    "z":1
 
+                },
+            }
         }
     }
 });

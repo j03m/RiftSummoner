@@ -248,7 +248,7 @@ GeneralBehavior.prototype.seekEnemy = function(){
     //this sort of blows.
     if (this.owner.gameObject.movementType == jc.movementType.ground){
         var center = cc.p(this.owner.layer.winSize.width/2, this.owner.layer.winSize.height/2);
-        if (!jc.insideEllipse(600,300, attackPosition,center)){
+        if (!jc.insideEllipse(jc.elMajor,jc.elMinor, attackPosition,center)){
             attackPosition = center;
         }
     }
@@ -603,12 +603,12 @@ GeneralBehavior.prototype.handleFight = function(dt){
 
     //is my target alive?
     var state= this.getState();
-    if (!this.locked && state.anim.indexOf('attack')==-1){
+    if (!this.locked){
         this.setState('idle', state.anim);
         return;
     }
 
-    if (!this.locked.isAlive() && state.anim.indexOf('attack')==-1){
+    if (!this.locked.isAlive()){
         this.setState('idle', state.anim);
         return;
     }
@@ -624,6 +624,10 @@ GeneralBehavior.prototype.handleFight = function(dt){
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1){
         this.setAttackAnim('fighting', function(){
             var point = this.seekEnemy();
+            if (!point){
+                this.setState('move', 'move');
+                return;
+            }
             if (point.x != 0 || point.y != 0){
                 //out of range, they fled or we got knocked back
                 this.setState('move', 'move');

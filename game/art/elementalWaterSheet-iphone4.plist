@@ -7,33 +7,59 @@
             <key>elementalWater.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{740,286},{46,68}}</string>
+                <string>{{614,738},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,68}}</string>
+                <string>{{97,169},{46,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{872,350},{48,66}}</string>
+                <string>{{760,400},{48,66}}</string>
                 <key>offset</key>
-                <string>{-1,-82}</string>
+                <string>{-1,-81}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,169},{48,66}}</string>
+                <string>{{95,168},{48,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.100.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{444,176},{40,74}}</string>
+                <string>{{424,670},{38,74}}</string>
+                <key>offset</key>
+                <string>{2,-83}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,166},{38,74}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWater.101.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{448,832},{38,74}}</string>
+                <key>offset</key>
+                <string>{2,-83}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,166},{38,74}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWater.102.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{418,756},{40,74}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
@@ -43,49 +69,23 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWater.101.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{396,734},{40,76}}</string>
-                <key>offset</key>
-                <string>{1,-82}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{101,164},{40,76}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>elementalWater.102.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{380,776},{40,76}}</string>
-                <key>offset</key>
-                <string>{1,-82}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{101,164},{40,76}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>elementalWater.103.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,438},{42,74}}</string>
+                <string>{{406,842},{40,74}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,166},{42,74}}</string>
+                <string>{{101,166},{40,74}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.104.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,542},{42,74}}</string>
+                <string>{{374,766},{42,74}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>elementalWater.105.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{472,776},{44,74}}</string>
+                <string>{{328,766},{44,74}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>elementalWater.106.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{470,852},{44,74}}</string>
+                <string>{{316,854},{44,74}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>elementalWater.107.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{460,930},{46,74}}</string>
+                <string>{{268,854},{46,74}}</string>
                 <key>offset</key>
                 <string>{-1,-83}</string>
                 <key>rotated</key>
@@ -137,20 +137,20 @@
             <key>elementalWater.108.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,776},{48,74}}</string>
+                <string>{{464,340},{46,74}}</string>
                 <key>offset</key>
-                <string>{-2,-83}</string>
+                <string>{-1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{94,166},{48,74}}</string>
+                <string>{{96,166},{46,74}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.109.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,854},{48,74}}</string>
+                <string>{{456,264},{48,74}}</string>
                 <key>offset</key>
                 <string>{-2,-83}</string>
                 <key>rotated</key>
@@ -163,85 +163,85 @@
             <key>elementalWater.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{898,2},{48,66}}</string>
+                <string>{{788,262},{48,66}}</string>
                 <key>offset</key>
-                <string>{-1,-82}</string>
+                <string>{-1,-81}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,169},{48,66}}</string>
+                <string>{{95,168},{48,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.110.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{408,932},{50,74}}</string>
+                <string>{{460,746},{50,72}}</string>
                 <key>offset</key>
-                <string>{-3,-83}</string>
+                <string>{-3,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{92,166},{50,74}}</string>
+                <string>{{92,168},{50,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.111.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{448,86},{52,72}}</string>
+                <string>{{514,668},{50,70}}</string>
                 <key>offset</key>
-                <string>{-4,-82}</string>
+                <string>{-4,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{90,166},{52,72}}</string>
+                <string>{{91,168},{50,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.112.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{462,542},{52,70}}</string>
+                <string>{{512,742},{50,70}}</string>
                 <key>offset</key>
-                <string>{-5,-82}</string>
+                <string>{-4,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{89,167},{52,70}}</string>
+                <string>{{91,167},{50,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.113.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{706,2},{52,68}}</string>
+                <string>{{484,908},{52,68}}</string>
                 <key>offset</key>
-                <string>{-5,-82}</string>
+                <string>{-5,-81}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{89,168},{52,68}}</string>
+                <string>{{89,167},{52,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.114.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{690,74},{52,68}}</string>
+                <string>{{826,72},{52,66}}</string>
                 <key>offset</key>
                 <string>{-5,-81}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{89,167},{52,68}}</string>
+                <string>{{89,168},{52,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.115.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{772,428},{52,66}}</string>
+                <string>{{896,56},{52,66}}</string>
                 <key>offset</key>
                 <string>{-5,-81}</string>
                 <key>rotated</key>
@@ -254,33 +254,33 @@
             <key>elementalWater.116.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{766,486},{52,66}}</string>
+                <string>{{964,2},{52,66}}</string>
                 <key>offset</key>
-                <string>{-5,-81}</string>
+                <string>{-5,-80}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{89,168},{52,66}}</string>
+                <string>{{89,167},{52,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.117.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{744,680},{52,66}}</string>
+                <string>{{798,2},{52,66}}</string>
                 <key>offset</key>
-                <string>{-5,-81}</string>
+                <string>{-5,-80}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{89,168},{52,66}}</string>
+                <string>{{89,167},{52,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.118.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{704,432},{52,66}}</string>
+                <string>{{896,2},{52,66}}</string>
                 <key>offset</key>
                 <string>{-5,-81}</string>
                 <key>rotated</key>
@@ -293,72 +293,72 @@
             <key>elementalWater.119.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{698,486},{52,66}}</string>
+                <string>{{842,944},{52,66}}</string>
                 <key>offset</key>
-                <string>{-5,-82}</string>
+                <string>{-5,-81}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{89,169},{52,66}}</string>
+                <string>{{89,168},{52,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{820,354},{50,66}}</string>
+                <string>{{750,332},{48,66}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,169},{50,66}}</string>
+                <string>{{95,169},{48,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.120.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{630,486},{52,66}}</string>
+                <string>{{644,956},{52,66}}</string>
                 <key>offset</key>
-                <string>{-4,-82}</string>
+                <string>{-5,-82}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{90,169},{52,66}}</string>
+                <string>{{89,169},{52,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.121.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{674,146},{52,68}}</string>
+                <string>{{526,962},{52,66}}</string>
                 <key>offset</key>
-                <string>{-4,-82}</string>
+                <string>{-4,-83}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{90,168},{52,68}}</string>
+                <string>{{90,170},{52,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.122.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{688,288},{50,68}}</string>
+                <string>{{618,212},{50,66}}</string>
                 <key>offset</key>
                 <string>{-3,-83}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{92,169},{50,68}}</string>
+                <string>{{92,170},{50,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.123.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{674,362},{50,68}}</string>
+                <string>{{698,954},{50,68}}</string>
                 <key>offset</key>
                 <string>{-3,-83}</string>
                 <key>rotated</key>
@@ -371,20 +371,20 @@
             <key>elementalWater.124.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{516,542},{50,70}}</string>
+                <string>{{620,404},{48,68}}</string>
                 <key>offset</key>
                 <string>{-2,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,168},{50,70}}</string>
+                <string>{{94,169},{48,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.125.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{720,216},{48,68}}</string>
+                <string>{{626,594},{48,68}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
@@ -397,46 +397,46 @@
             <key>elementalWater.126.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{726,358},{46,68}}</string>
+                <string>{{662,734},{46,68}}</string>
                 <key>offset</key>
-                <string>{0,-84}</string>
+                <string>{0,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,68}}</string>
+                <string>{{97,169},{46,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{676,682},{50,66}}</string>
+                <string>{{784,212},{48,66}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{93,169},{50,66}}</string>
+                <string>{{95,169},{48,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.131.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{670,540},{46,68}}</string>
+                <string>{{676,594},{46,68}}</string>
                 <key>offset</key>
-                <string>{0,-84}</string>
+                <string>{0,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,68}}</string>
+                <string>{{97,169},{46,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.132.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{662,612},{46,68}}</string>
+                <string>{{662,664},{46,68}}</string>
                 <key>offset</key>
                 <string>{-1,-81}</string>
                 <key>rotated</key>
@@ -449,46 +449,59 @@
             <key>elementalWater.133.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{468,252},{48,70}}</string>
+                <string>{{562,144},{46,68}}</string>
                 <key>offset</key>
-                <string>{-3,-79}</string>
+                <string>{-2,-79}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,164},{48,70}}</string>
+                <string>{{95,165},{46,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.134.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,948},{52,74}}</string>
+                <string>{{428,594},{50,72}}</string>
                 <key>offset</key>
-                <string>{-3,-76}</string>
+                <string>{-3,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{91,159},{52,74}}</string>
+                <string>{{92,161},{50,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.135.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{350,654},{56,78}}</string>
+                <string>{{416,438},{54,76}}</string>
                 <key>offset</key>
                 <string>{-4,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{88,156},{56,78}}</string>
+                <string>{{89,157},{54,76}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.136.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{372,2},{58,82}}</string>
+                <string>{{356,448},{58,80}}</string>
+                <key>offset</key>
+                <string>{-5,-74}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{86,154},{58,80}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWater.137.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{402,2},{58,82}}</string>
                 <key>offset</key>
                 <string>{-5,-74}</string>
                 <key>rotated</key>
@@ -498,23 +511,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWater.137.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{182,962},{60,84}}</string>
-                <key>offset</key>
-                <string>{-6,-73}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{84,151},{60,84}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>elementalWater.138.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,962},{60,84}}</string>
+                <string>{{236,962},{60,84}}</string>
                 <key>offset</key>
                 <string>{-7,-73}</string>
                 <key>rotated</key>
@@ -527,7 +527,7 @@
             <key>elementalWater.139.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,456},{62,84}}</string>
+                <string>{{322,594},{62,84}}</string>
                 <key>offset</key>
                 <string>{-8,-73}</string>
                 <key>rotated</key>
@@ -540,98 +540,98 @@
             <key>elementalWater.14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{618,542},{50,68}}</string>
+                <string>{{738,264},{48,66}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,168},{50,68}}</string>
+                <string>{{95,169},{48,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.140.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{268,956},{66,84}}</string>
+                <string>{{316,680},{64,84}}</string>
                 <key>offset</key>
                 <string>{-10,-73}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{77,151},{66,84}}</string>
+                <string>{{78,151},{64,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.141.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{296,568},{70,84}}</string>
+                <string>{{396,90},{70,82}}</string>
                 <key>offset</key>
-                <string>{-12,-73}</string>
+                <string>{-13,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{73,151},{70,84}}</string>
+                <string>{{72,153},{70,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.142.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{370,92},{76,82}}</string>
+                <string>{{390,180},{76,82}}</string>
                 <key>offset</key>
-                <string>{-15,-74}</string>
+                <string>{-16,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{67,153},{76,82}}</string>
+                <string>{{66,153},{76,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.143.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,270},{82,82}}</string>
+                <string>{{318,364},{82,80}}</string>
                 <key>offset</key>
-                <string>{-19,-74}</string>
+                <string>{-19,-75}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{60,153},{82,82}}</string>
+                <string>{{60,155},{82,80}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{232,480},{86,80}}</string>
+                <string>{{322,2},{86,78}}</string>
                 <key>offset</key>
-                <string>{-21,-74}</string>
+                <string>{-21,-75}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,154},{86,80}}</string>
+                <string>{{56,156},{86,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{182,300},{90,78}}</string>
+                <string>{{80,498},{90,78}}</string>
                 <key>offset</key>
-                <string>{-23,-75}</string>
+                <string>{-24,-75}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,156},{90,78}}</string>
+                <string>{{51,156},{90,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.146.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,594},{92,76}}</string>
+                <string>{{2,500},{92,76}}</string>
                 <key>offset</key>
                 <string>{-25,-75}</string>
                 <key>rotated</key>
@@ -644,7 +644,7 @@
             <key>elementalWater.147.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,500},{92,76}}</string>
+                <string>{{2,406},{92,76}}</string>
                 <key>offset</key>
                 <string>{-26,-75}</string>
                 <key>rotated</key>
@@ -657,7 +657,7 @@
             <key>elementalWater.148.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,688},{92,74}}</string>
+                <string>{{2,688},{92,74}}</string>
                 <key>offset</key>
                 <string>{-27,-76}</string>
                 <key>rotated</key>
@@ -670,85 +670,85 @@
             <key>elementalWater.149.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,876},{92,74}}</string>
+                <string>{{2,782},{92,72}}</string>
                 <key>offset</key>
                 <string>{-28,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{46,159},{92,74}}</string>
+                <string>{{46,160},{92,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{610,614},{50,68}}</string>
+                <string>{{612,476},{48,68}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,168},{50,68}}</string>
+                <string>{{95,168},{48,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.150.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,782},{92,74}}</string>
+                <string>{{148,198},{90,72}}</string>
                 <key>offset</key>
                 <string>{-28,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{46,159},{92,74}}</string>
+                <string>{{47,160},{90,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.151.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{124,486},{90,72}}</string>
+                <string>{{86,302},{90,72}}</string>
                 <key>offset</key>
-                <string>{-28,-77}</string>
+                <string>{-28,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{47,161},{90,72}}</string>
+                <string>{{47,160},{90,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.152.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{238,866},{88,72}}</string>
+                <string>{{160,380},{88,70}}</string>
                 <key>offset</key>
                 <string>{-28,-77}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,161},{88,72}}</string>
+                <string>{{48,162},{88,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.153.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{288,182},{86,74}}</string>
+                <string>{{282,468},{86,72}}</string>
                 <key>offset</key>
-                <string>{-27,-76}</string>
+                <string>{-27,-77}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,159},{86,74}}</string>
+                <string>{{50,161},{86,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.154.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{312,862},{84,74}}</string>
+                <string>{{252,768},{84,74}}</string>
                 <key>offset</key>
                 <string>{-26,-76}</string>
                 <key>rotated</key>
@@ -761,20 +761,20 @@
             <key>elementalWater.155.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{244,776},{84,76}}</string>
+                <string>{{246,594},{84,74}}</string>
                 <key>offset</key>
                 <string>{-25,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,158},{84,76}}</string>
+                <string>{{53,159},{84,74}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.156.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{238,664},{84,76}}</string>
+                <string>{{238,682},{84,76}}</string>
                 <key>offset</key>
                 <string>{-24,-76}</string>
                 <key>rotated</key>
@@ -787,59 +787,59 @@
             <key>elementalWater.157.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{262,280},{86,78}}</string>
+                <string>{{168,594},{86,76}}</string>
                 <key>offset</key>
                 <string>{-23,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,157},{86,78}}</string>
+                <string>{{54,158},{86,76}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.158.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{164,776},{88,78}}</string>
+                <string>{{316,92},{86,78}}</string>
                 <key>offset</key>
                 <string>{-22,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,157},{88,78}}</string>
+                <string>{{55,157},{86,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.159.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,394},{90,80}}</string>
+                <string>{{80,406},{90,78}}</string>
                 <key>offset</key>
                 <string>{-22,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,156},{90,80}}</string>
+                <string>{{53,157},{90,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{620,734},{50,68}}</string>
+                <string>{{610,334},{48,68}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,168},{50,68}}</string>
+                <string>{{95,168},{48,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.160.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,208},{90,84}}</string>
+                <string>{{166,778},{90,84}}</string>
                 <key>offset</key>
                 <string>{-22,-74}</string>
                 <key>rotated</key>
@@ -852,7 +852,7 @@
             <key>elementalWater.161.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,872},{78,88}}</string>
+                <string>{{236,94},{78,88}}</string>
                 <key>offset</key>
                 <string>{-22,-72}</string>
                 <key>rotated</key>
@@ -867,11 +867,11 @@
                 <key>frame</key>
                 <string>{{2,110},{56,102}}</string>
                 <key>offset</key>
-                <string>{-14,-65}</string>
+                <string>{-14,-66}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{78,134},{56,102}}</string>
+                <string>{{78,135},{56,102}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
@@ -891,20 +891,20 @@
             <key>elementalWater.164.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{48,2},{60,100}}</string>
+                <string>{{48,2},{58,100}}</string>
                 <key>offset</key>
                 <string>{0,-65}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{90,135},{60,100}}</string>
+                <string>{{91,135},{58,100}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.165.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{364,182},{78,82}}</string>
+                <string>{{336,272},{78,82}}</string>
                 <key>offset</key>
                 <string>{11,-72}</string>
                 <key>rotated</key>
@@ -917,20 +917,20 @@
             <key>elementalWater.166.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{158,872},{88,78}}</string>
+                <string>{{242,2},{88,78}}</string>
                 <key>offset</key>
-                <string>{18,-72}</string>
+                <string>{18,-73}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{94,153},{88,78}}</string>
+                <string>{{94,154},{88,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.167.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,686},{88,82}}</string>
+                <string>{{222,186},{88,82}}</string>
                 <key>offset</key>
                 <string>{22,-69}</string>
                 <key>rotated</key>
@@ -943,7 +943,20 @@
             <key>elementalWater.168.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,576},{86,84}}</string>
+                <string>{{306,184},{86,82}}</string>
+                <key>offset</key>
+                <string>{24,-69}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{101,148},{86,82}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWater.169.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{250,276},{86,84}}</string>
                 <key>offset</key>
                 <string>{24,-68}</string>
                 <key>rotated</key>
@@ -953,10 +966,23 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWater.169.png</key>
+            <key>elementalWater.17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{204,392},{86,84}}</string>
+                <string>{{570,406},{48,68}}</string>
+                <key>offset</key>
+                <string>{-1,-83}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{95,169},{48,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWater.170.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{232,380},{86,84}}</string>
                 <key>offset</key>
                 <string>{24,-67}</string>
                 <key>rotated</key>
@@ -966,49 +992,23 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWater.17.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{568,734},{50,68}}</string>
-                <key>offset</key>
-                <string>{-2,-83}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{93,169},{50,68}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>elementalWater.170.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{78,782},{88,84}}</string>
-                <key>offset</key>
-                <string>{24,-67}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{100,145},{88,84}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>elementalWater.171.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{282,92},{88,86}}</string>
+                <string>{{194,470},{86,86}}</string>
                 <key>offset</key>
                 <string>{24,-66}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,143},{88,86}}</string>
+                <string>{{101,143},{86,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.172.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{282,2},{88,88}}</string>
+                <string>{{160,290},{88,88}}</string>
                 <key>offset</key>
                 <string>{24,-65}</string>
                 <key>rotated</key>
@@ -1021,7 +1021,7 @@
             <key>elementalWater.173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,302},{88,90}}</string>
+                <string>{{78,686},{88,90}}</string>
                 <key>offset</key>
                 <string>{24,-63}</string>
                 <key>rotated</key>
@@ -1034,7 +1034,7 @@
             <key>elementalWater.174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{80,594},{88,90}}</string>
+                <string>{{78,594},{88,90}}</string>
                 <key>offset</key>
                 <string>{24,-63}</string>
                 <key>rotated</key>
@@ -1047,7 +1047,7 @@
             <key>elementalWater.175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,312},{88,92}}</string>
+                <string>{{60,104},{88,92}}</string>
                 <key>offset</key>
                 <string>{24,-62}</string>
                 <key>rotated</key>
@@ -1060,33 +1060,33 @@
             <key>elementalWater.176.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{110,2},{88,92}}</string>
+                <string>{{98,874},{88,90}}</string>
                 <key>offset</key>
                 <string>{24,-62}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,136},{88,92}}</string>
+                <string>{{100,137},{88,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.177.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,104},{88,92}}</string>
+                <string>{{76,782},{88,90}}</string>
                 <key>offset</key>
-                <string>{24,-61}</string>
+                <string>{24,-62}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,135},{88,92}}</string>
+                <string>{{100,137},{88,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,208},{86,92}}</string>
+                <string>{{108,2},{86,92}}</string>
                 <key>offset</key>
                 <string>{25,-61}</string>
                 <key>rotated</key>
@@ -1099,7 +1099,7 @@
             <key>elementalWater.179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,96},{82,92}}</string>
+                <string>{{2,312},{82,92}}</string>
                 <key>offset</key>
                 <string>{27,-61}</string>
                 <key>rotated</key>
@@ -1112,11 +1112,11 @@
             <key>elementalWater.18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{634,436},{48,68}}</string>
+                <string>{{598,264},{48,68}}</string>
                 <key>offset</key>
                 <string>{-1,-83}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{95,169},{48,68}}</string>
                 <key>sourceSize</key>
@@ -1125,7 +1125,7 @@
             <key>elementalWater.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,406},{80,92}}</string>
+                <string>{{66,208},{80,92}}</string>
                 <key>offset</key>
                 <string>{28,-61}</string>
                 <key>rotated</key>
@@ -1138,20 +1138,20 @@
             <key>elementalWater.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{200,2},{80,92}}</string>
+                <string>{{188,870},{78,90}}</string>
                 <key>offset</key>
-                <string>{26,-61}</string>
+                <string>{27,-62}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{106,135},{80,92}}</string>
+                <string>{{108,137},{78,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,688},{74,92}}</string>
+                <string>{{2,594},{74,92}}</string>
                 <key>offset</key>
                 <string>{22,-66}</string>
                 <key>rotated</key>
@@ -1177,11 +1177,11 @@
             <key>elementalWater.184.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,970},{52,92}}</string>
+                <string>{{2,876},{52,92}}</string>
                 <key>offset</key>
                 <string>{10,-74}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{104,148},{52,92}}</string>
                 <key>sourceSize</key>
@@ -1190,37 +1190,37 @@
             <key>elementalWater.185.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{240,188},{46,90}}</string>
+                <string>{{196,2},{44,90}}</string>
                 <key>offset</key>
-                <string>{8,-75}</string>
+                <string>{9,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{105,150},{46,90}}</string>
+                <string>{{107,150},{44,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.186.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,578},{38,88}}</string>
+                <string>{{168,682},{38,86}}</string>
                 <key>offset</key>
-                <string>{6,-76}</string>
+                <string>{6,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,152},{38,88}}</string>
+                <string>{{107,154},{38,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,2},{34,82}}</string>
+                <string>{{210,558},{34,82}}</string>
                 <key>offset</key>
                 <string>{6,-79}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{109,158},{34,82}}</string>
                 <key>sourceSize</key>
@@ -1229,11 +1229,11 @@
             <key>elementalWater.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{316,736},{38,78}}</string>
+                <string>{{416,264},{38,78}}</string>
                 <key>offset</key>
                 <string>{4,-81}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{105,162},{38,78}}</string>
                 <key>sourceSize</key>
@@ -1242,7 +1242,7 @@
             <key>elementalWater.189.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{552,928},{42,74}}</string>
+                <string>{{362,842},{42,74}}</string>
                 <key>offset</key>
                 <string>{2,-83}</string>
                 <key>rotated</key>
@@ -1255,7 +1255,7 @@
             <key>elementalWater.19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{568,542},{48,70}}</string>
+                <string>{{472,416},{48,70}}</string>
                 <key>offset</key>
                 <string>{-1,-83}</string>
                 <key>rotated</key>
@@ -1268,20 +1268,20 @@
             <key>elementalWater.190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{642,290},{44,70}}</string>
+                <string>{{670,404},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-83}</string>
+                <string>{1,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,168},{44,70}}</string>
+                <string>{{99,170},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{932,70},{46,66}}</string>
+                <string>{{838,262},{46,66}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -1294,20 +1294,20 @@
             <key>elementalWater.20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{484,414},{48,70}}</string>
+                <string>{{604,884},{48,70}}</string>
                 <key>offset</key>
-                <string>{-1,-84}</string>
+                <string>{-1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,169},{48,70}}</string>
+                <string>{{95,168},{48,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,342},{48,70}}</string>
+                <string>{{582,812},{48,70}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
@@ -1320,20 +1320,20 @@
             <key>elementalWater.22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{560,850},{48,72}}</string>
+                <string>{{554,886},{48,70}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,72}}</string>
+                <string>{{95,169},{48,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,776},{48,72}}</string>
+                <string>{{480,594},{48,72}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
@@ -1346,7 +1346,7 @@
             <key>elementalWater.24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,616},{48,72}}</string>
+                <string>{{464,668},{48,72}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
@@ -1359,46 +1359,46 @@
             <key>elementalWater.25.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{412,542},{48,72}}</string>
+                <string>{{564,740},{48,70}}</string>
                 <key>offset</key>
-                <string>{-1,-84}</string>
+                <string>{-1,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,72}}</string>
+                <string>{{95,170},{48,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{408,618},{48,72}}</string>
+                <string>{{532,814},{48,70}}</string>
                 <key>offset</key>
-                <string>{-1,-84}</string>
+                <string>{-1,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,72}}</string>
+                <string>{{95,170},{48,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{468,2},{48,72}}</string>
+                <string>{{614,666},{46,70}}</string>
                 <key>offset</key>
-                <string>{-1,-84}</string>
+                <string>{0,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,72}}</string>
+                <string>{{97,170},{46,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.271.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{760,2},{46,68}}</string>
+                <string>{{588,2},{46,68}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -1411,50 +1411,50 @@
             <key>elementalWater.272.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{744,72},{46,68}}</string>
+                <string>{{800,330},{46,66}}</string>
                 <key>offset</key>
-                <string>{0,-83}</string>
+                <string>{-1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,169},{46,68}}</string>
+                <string>{{96,170},{46,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.273.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{508,614},{50,70}}</string>
+                <string>{{560,336},{48,68}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,167},{50,70}}</string>
+                <string>{{95,168},{48,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.274.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{526,486},{54,68}}</string>
+                <string>{{88,970},{52,68}}</string>
                 <key>offset</key>
                 <string>{-3,-81}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{90,167},{54,68}}</string>
+                <string>{{91,167},{52,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.275.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{660,218},{58,68}}</string>
+                <string>{{424,962},{58,68}}</string>
                 <key>offset</key>
                 <string>{-5,-79}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{86,165},{58,68}}</string>
                 <key>sourceSize</key>
@@ -1463,24 +1463,24 @@
             <key>elementalWater.276.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,430},{60,70}}</string>
+                <string>{{354,962},{58,68}}</string>
                 <key>offset</key>
-                <string>{-6,-78}</string>
+                <string>{-6,-79}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{84,163},{60,70}}</string>
+                <string>{{85,165},{58,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.277.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{322,776},{56,76}}</string>
+                <string>{{158,966},{56,76}}</string>
                 <key>offset</key>
                 <string>{-6,-77}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{86,159},{56,76}}</string>
                 <key>sourceSize</key>
@@ -1489,11 +1489,11 @@
             <key>elementalWater.278.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{322,368},{52,84}}</string>
+                <string>{{2,970},{52,84}}</string>
                 <key>offset</key>
                 <string>{-7,-76}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{87,154},{52,84}}</string>
                 <key>sourceSize</key>
@@ -1502,59 +1502,59 @@
             <key>elementalWater.279.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{234,96},{46,90}}</string>
+                <string>{{150,96},{46,90}}</string>
                 <key>offset</key>
-                <string>{-7,-75}</string>
+                <string>{-8,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{90,150},{46,90}}</string>
+                <string>{{89,150},{46,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.28.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{560,614},{48,70}}</string>
+                <string>{{578,594},{46,70}}</string>
                 <key>offset</key>
-                <string>{-1,-85}</string>
+                <string>{0,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,170},{48,70}}</string>
+                <string>{{97,170},{46,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.280.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{80,500},{42,92}}</string>
+                <string>{{56,876},{40,92}}</string>
                 <key>offset</key>
                 <string>{-8,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{91,148},{42,92}}</string>
+                <string>{{92,148},{40,92}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.281.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{84,406},{36,92}}</string>
+                <string>{{198,94},{36,90}}</string>
                 <key>offset</key>
-                <string>{-9,-74}</string>
+                <string>{-9,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,148},{36,92}}</string>
+                <string>{{93,150},{36,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.282.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,486},{32,88}}</string>
+                <string>{{160,470},{32,88}}</string>
                 <key>offset</key>
                 <string>{-10,-76}</string>
                 <key>rotated</key>
@@ -1567,20 +1567,20 @@
             <key>elementalWater.283.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,368},{30,86}}</string>
+                <string>{{208,682},{28,86}}</string>
                 <key>offset</key>
                 <string>{-9,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{96,154},{30,86}}</string>
+                <string>{{97,154},{28,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.284.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,354},{30,82}}</string>
+                <string>{{462,2},{30,82}}</string>
                 <key>offset</key>
                 <string>{-9,-79}</string>
                 <key>rotated</key>
@@ -1593,20 +1593,20 @@
             <key>elementalWater.285.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{316,654},{32,80}}</string>
+                <string>{{400,356},{30,80}}</string>
                 <key>offset</key>
                 <string>{-9,-80}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,160},{32,80}}</string>
+                <string>{{96,160},{30,80}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.286.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{388,854},{30,76}}</string>
+                <string>{{432,344},{30,76}}</string>
                 <key>offset</key>
                 <string>{-8,-82}</string>
                 <key>rotated</key>
@@ -1619,11 +1619,11 @@
             <key>elementalWater.287.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{596,924},{30,72}}</string>
+                <string>{{268,930},{30,72}}</string>
                 <key>offset</key>
                 <string>{-8,-84}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{97,168},{30,72}}</string>
                 <key>sourceSize</key>
@@ -1632,11 +1632,11 @@
             <key>elementalWater.288.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{948,2},{30,66}}</string>
+                <string>{{342,930},{30,66}}</string>
                 <key>offset</key>
                 <string>{-7,-87}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{98,174},{30,66}}</string>
                 <key>sourceSize</key>
@@ -1645,11 +1645,11 @@
             <key>elementalWater.289.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{958,208},{30,60}}</string>
+                <string>{{322,962},{30,60}}</string>
                 <key>offset</key>
                 <string>{-5,-90}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{100,180},{30,60}}</string>
                 <key>sourceSize</key>
@@ -1658,7 +1658,7 @@
             <key>elementalWater.29.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{566,220},{46,70}}</string>
+                <string>{{564,480},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -1671,37 +1671,37 @@
             <key>elementalWater.290.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{596,486},{32,54}}</string>
+                <string>{{494,962},{30,54}}</string>
                 <key>offset</key>
-                <string>{-4,-93}</string>
+                <string>{-3,-93}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,186},{32,54}}</string>
+                <string>{{102,186},{30,54}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.291.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{628,990},{32,50}}</string>
+                <string>{{160,560},{32,48}}</string>
                 <key>offset</key>
-                <string>{-1,-95}</string>
+                <string>{-1,-96}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{103,190},{32,50}}</string>
+                <string>{{103,192},{32,48}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.292.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{982,528},{36,46}}</string>
+                <string>{{468,516},{36,46}}</string>
                 <key>offset</key>
                 <string>{0,-97}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{102,194},{36,46}}</string>
                 <key>sourceSize</key>
@@ -1710,24 +1710,24 @@
             <key>elementalWater.293.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{904,574},{42,46}}</string>
+                <string>{{906,212},{40,46}}</string>
                 <key>offset</key>
                 <string>{0,-97}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,194},{42,46}}</string>
+                <string>{{100,194},{40,46}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.294.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{922,390},{46,50}}</string>
+                <string>{{736,212},{46,50}}</string>
                 <key>offset</key>
                 <string>{0,-95}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{97,190},{46,50}}</string>
                 <key>sourceSize</key>
@@ -1736,11 +1736,11 @@
             <key>elementalWater.295.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{840,422},{48,52}}</string>
+                <string>{{852,212},{48,52}}</string>
                 <key>offset</key>
                 <string>{0,-94}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{96,188},{48,52}}</string>
                 <key>sourceSize</key>
@@ -1749,59 +1749,59 @@
             <key>elementalWater.296.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{834,482},{50,52}}</string>
+                <string>{{700,72},{48,52}}</string>
                 <key>offset</key>
                 <string>{0,-94}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{95,188},{50,52}}</string>
+                <string>{{96,188},{48,52}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.297.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{958,240},{50,50}}</string>
+                <string>{{686,212},{48,50}}</string>
                 <key>offset</key>
                 <string>{0,-95}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,190},{50,50}}</string>
+                <string>{{96,190},{48,50}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.298.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{964,154},{50,50}}</string>
+                <string>{{916,110},{48,48}}</string>
                 <key>offset</key>
-                <string>{0,-95}</string>
+                <string>{0,-96}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,190},{50,50}}</string>
+                <string>{{96,192},{48,48}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.299.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{930,292},{50,48}}</string>
+                <string>{{966,70},{48,46}}</string>
                 <key>offset</key>
-                <string>{0,-96}</string>
+                <string>{0,-97}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,192},{50,48}}</string>
+                <string>{{96,194},{48,46}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{916,140},{46,66}}</string>
+                <string>{{750,2},{46,66}}</string>
                 <key>offset</key>
                 <string>{0,-82}</string>
                 <key>rotated</key>
@@ -1814,7 +1814,7 @@
             <key>elementalWater.30.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{548,304},{46,70}}</string>
+                <string>{{522,408},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -1827,128 +1827,128 @@
             <key>elementalWater.300.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{930,342},{50,46}}</string>
+                <string>{{700,166},{48,44}}</string>
                 <key>offset</key>
-                <string>{0,-97}</string>
+                <string>{0,-98}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,194},{50,46}}</string>
+                <string>{{96,196},{48,44}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.301.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{980,2},{50,42}}</string>
+                <string>{{966,118},{48,42}}</string>
                 <key>offset</key>
                 <string>{0,-99}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,198},{50,42}}</string>
+                <string>{{96,198},{48,42}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.302.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{408,692},{50,40}}</string>
+                <string>{{810,398},{48,40}}</string>
                 <key>offset</key>
                 <string>{0,-100}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{95,200},{50,40}}</string>
+                <string>{{96,200},{48,40}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.303.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{982,384},{50,38}}</string>
+                <string>{{826,126},{48,38}}</string>
                 <key>offset</key>
                 <string>{0,-101}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,202},{50,38}}</string>
+                <string>{{96,202},{48,38}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.304.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{922,438},{50,36}}</string>
+                <string>{{418,516},{48,36}}</string>
                 <key>offset</key>
                 <string>{0,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,204},{50,36}}</string>
+                <string>{{96,204},{48,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.305.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{582,448},{50,36}}</string>
+                <string>{{344,556},{48,36}}</string>
                 <key>offset</key>
                 <string>{0,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,204},{50,36}}</string>
+                <string>{{96,204},{48,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.306.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{982,332},{50,38}}</string>
+                <string>{{294,556},{48,36}}</string>
                 <key>offset</key>
-                <string>{0,-101}</string>
+                <string>{0,-102}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,202},{50,38}}</string>
+                <string>{{96,204},{48,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.307.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,502},{50,38}}</string>
+                <string>{{520,554},{48,38}}</string>
                 <key>offset</key>
                 <string>{0,-101}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,202},{50,38}}</string>
+                <string>{{96,202},{48,38}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.308.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,502},{50,38}}</string>
+                <string>{{470,554},{48,38}}</string>
                 <key>offset</key>
                 <string>{0,-101}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,202},{50,38}}</string>
+                <string>{{96,202},{48,38}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.309.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,734},{48,40}}</string>
+                <string>{{798,468},{48,40}}</string>
                 <key>offset</key>
                 <string>{0,-100}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{96,200},{48,40}}</string>
                 <key>sourceSize</key>
@@ -1957,7 +1957,7 @@
             <key>elementalWater.31.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{566,2},{46,70}}</string>
+                <string>{{512,336},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -1970,46 +1970,46 @@
             <key>elementalWater.310.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{980,104},{48,42}}</string>
+                <string>{{570,552},{48,40}}</string>
                 <key>offset</key>
-                <string>{0,-99}</string>
+                <string>{0,-100}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{96,198},{48,42}}</string>
+                <string>{{96,200},{48,40}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.311.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{980,54},{48,42}}</string>
+                <string>{{700,122},{48,42}}</string>
                 <key>offset</key>
-                <string>{0,-99}</string>
+                <string>{-1,-99}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{96,198},{48,42}}</string>
+                <string>{{95,198},{48,42}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.312.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{974,436},{48,44}}</string>
+                <string>{{798,166},{46,44}}</string>
                 <key>offset</key>
                 <string>{0,-98}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{96,196},{48,44}}</string>
+                <string>{{97,196},{46,44}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.313.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{968,482},{46,44}}</string>
+                <string>{{750,166},{46,44}}</string>
                 <key>offset</key>
                 <string>{0,-98}</string>
                 <key>rotated</key>
@@ -2022,7 +2022,7 @@
             <key>elementalWater.314.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{920,476},{46,46}}</string>
+                <string>{{848,330},{46,46}}</string>
                 <key>offset</key>
                 <string>{0,-97}</string>
                 <key>rotated</key>
@@ -2035,7 +2035,7 @@
             <key>elementalWater.315.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{934,528},{44,46}}</string>
+                <string>{{894,166},{44,46}}</string>
                 <key>offset</key>
                 <string>{0,-97}</string>
                 <key>rotated</key>
@@ -2048,7 +2048,7 @@
             <key>elementalWater.316.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{886,524},{44,46}}</string>
+                <string>{{846,166},{44,46}}</string>
                 <key>offset</key>
                 <string>{0,-97}</string>
                 <key>rotated</key>
@@ -2061,11 +2061,11 @@
             <key>elementalWater.317.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{856,570},{42,46}}</string>
+                <string>{{886,262},{42,46}}</string>
                 <key>offset</key>
                 <string>{0,-97}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{99,194},{42,46}}</string>
                 <key>sourceSize</key>
@@ -2074,11 +2074,11 @@
             <key>elementalWater.318.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{848,614},{42,44}}</string>
+                <string>{{942,162},{42,44}}</string>
                 <key>offset</key>
                 <string>{0,-98}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{99,196},{42,44}}</string>
                 <key>sourceSize</key>
@@ -2087,20 +2087,20 @@
             <key>elementalWater.319.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{524,734},{40,42}}</string>
+                <string>{{826,518},{40,40}}</string>
                 <key>offset</key>
-                <string>{0,-99}</string>
+                <string>{0,-100}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,198},{40,42}}</string>
+                <string>{{100,200},{40,40}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.32.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{550,74},{46,70}}</string>
+                <string>{{506,264},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2113,24 +2113,24 @@
             <key>elementalWater.320.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{982,292},{40,38}}</string>
+                <string>{{876,126},{38,38}}</string>
                 <key>offset</key>
                 <string>{0,-101}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,202},{40,38}}</string>
+                <string>{{101,202},{38,38}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.321.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,618},{38,34}}</string>
+                <string>{{860,32},{38,34}}</string>
                 <key>offset</key>
                 <string>{0,-103}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{101,206},{38,34}}</string>
                 <key>sourceSize</key>
@@ -2139,7 +2139,7 @@
             <key>elementalWater.322.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{680,990},{38,32}}</string>
+                <string>{{468,230},{38,32}}</string>
                 <key>offset</key>
                 <string>{0,-104}</string>
                 <key>rotated</key>
@@ -2152,46 +2152,46 @@
             <key>elementalWater.323.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{890,418},{38,30}}</string>
+                <string>{{508,230},{38,30}}</string>
                 <key>offset</key>
-                <string>{0,-105}</string>
+                <string>{-1,-105}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{101,210},{38,30}}</string>
+                <string>{{100,210},{38,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.324.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{890,458},{38,28}}</string>
+                <string>{{858,2},{36,28}}</string>
                 <key>offset</key>
-                <string>{-1,-106}</string>
+                <string>{0,-106}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,212},{38,28}}</string>
+                <string>{{102,212},{36,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.325.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,514},{36,26}}</string>
+                <string>{{472,488},{34,26}}</string>
                 <key>offset</key>
                 <string>{0,-107}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,214},{36,26}}</string>
+                <string>{{103,214},{34,26}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.326.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{238,750},{32,24}}</string>
+                <string>{{356,530},{32,24}}</string>
                 <key>offset</key>
                 <string>{0,-108}</string>
                 <key>rotated</key>
@@ -2204,7 +2204,7 @@
             <key>elementalWater.327.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{262,368},{26,22}}</string>
+                <string>{{390,530},{26,22}}</string>
                 <key>offset</key>
                 <string>{0,-109}</string>
                 <key>rotated</key>
@@ -2217,11 +2217,11 @@
             <key>elementalWater.328.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,190},{16,18}}</string>
+                <string>{{318,448},{16,18}}</string>
                 <key>offset</key>
                 <string>{0,-111}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{112,222},{16,18}}</string>
                 <key>sourceSize</key>
@@ -2243,7 +2243,7 @@
             <key>elementalWater.33.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{534,148},{46,70}}</string>
+                <string>{{468,158},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2269,7 +2269,7 @@
             <key>elementalWater.34.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,232},{46,70}}</string>
+                <string>{{494,2},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2282,7 +2282,7 @@
             <key>elementalWater.35.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,2},{46,70}}</string>
+                <string>{{468,86},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2295,7 +2295,7 @@
             <key>elementalWater.36.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{502,76},{46,70}}</string>
+                <string>{{566,666},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2308,7 +2308,7 @@
             <key>elementalWater.37.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{486,160},{46,70}}</string>
+                <string>{{530,594},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2321,72 +2321,72 @@
             <key>elementalWater.38.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{534,396},{46,70}}</string>
+                <string>{{516,146},{44,70}}</string>
                 <key>offset</key>
-                <string>{0,-85}</string>
+                <string>{1,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,70}}</string>
+                <string>{{99,170},{44,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.39.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{628,364},{44,70}}</string>
+                <string>{{660,334},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{910,210},{46,66}}</string>
+                <string>{{760,118},{46,64}}</string>
                 <key>offset</key>
                 <string>{0,-82}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,169},{46,66}}</string>
+                <string>{{97,170},{46,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.40.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{660,2},{44,70}}</string>
+                <string>{{648,264},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.41.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{644,74},{44,70}}</string>
+                <string>{{610,142},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.42.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{774,356},{44,68}}</string>
+                <string>{{636,2},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2399,7 +2399,7 @@
             <key>elementalWater.43.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{810,540},{44,68}}</string>
+                <string>{{610,72},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2412,7 +2412,7 @@
             <key>elementalWater.44.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{802,610},{44,68}}</string>
+                <string>{{796,944},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2425,7 +2425,7 @@
             <key>elementalWater.45.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{764,540},{44,68}}</string>
+                <string>{{792,874},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2438,7 +2438,7 @@
             <key>elementalWater.46.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{756,610},{44,68}}</string>
+                <string>{{770,804},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2451,59 +2451,59 @@
             <key>elementalWater.47.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{764,734},{44,68}}</string>
+                <string>{{838,874},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.48.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{718,734},{44,68}}</string>
+                <string>{{816,804},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.49.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{708,804},{44,68}}</string>
+                <string>{{802,734},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{882,280},{46,66}}</string>
+                <string>{{760,70},{46,64}}</string>
                 <key>offset</key>
-                <string>{0,-81}</string>
+                <string>{0,-82}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,168},{46,66}}</string>
+                <string>{{97,170},{46,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{854,2},{42,68}}</string>
+                <string>{{814,594},{42,68}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -2516,7 +2516,7 @@
             <key>elementalWater.51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{838,72},{42,68}}</string>
+                <string>{{802,664},{42,68}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -2529,7 +2529,7 @@
             <key>elementalWater.52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{822,142},{42,68}}</string>
+                <string>{{770,594},{42,68}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -2542,7 +2542,7 @@
             <key>elementalWater.53.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{816,212},{42,68}}</string>
+                <string>{{754,474},{42,68}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -2555,20 +2555,20 @@
             <key>elementalWater.54.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{702,850},{44,68}}</string>
+                <string>{{716,404},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.55.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{788,284},{42,68}}</string>
+                <string>{{706,334},{42,68}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -2581,85 +2581,85 @@
             <key>elementalWater.56.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{674,920},{44,68}}</string>
+                <string>{{694,264},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.57.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{656,850},{44,68}}</string>
+                <string>{{656,142},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.58.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{628,920},{44,68}}</string>
+                <string>{{682,2},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.59.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{718,540},{44,68}}</string>
+                <string>{{656,72},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{882,72},{48,66}}</string>
+                <string>{{516,488},{46,64}}</string>
                 <key>offset</key>
-                <string>{-1,-81}</string>
+                <string>{0,-81}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,66}}</string>
+                <string>{{97,169},{46,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.60.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{710,610},{44,68}}</string>
+                <string>{{710,474},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.61.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{672,734},{44,68}}</string>
+                <string>{{756,734},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2672,11 +2672,11 @@
             <key>elementalWater.62.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{638,804},{44,68}}</string>
+                <string>{{756,664},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
@@ -2685,7 +2685,7 @@
             <key>elementalWater.63.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{610,850},{44,68}}</string>
+                <string>{{750,944},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2698,7 +2698,7 @@
             <key>elementalWater.64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{808,2},{44,68}}</string>
+                <string>{{746,874},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2711,7 +2711,7 @@
             <key>elementalWater.65.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{792,72},{44,68}}</string>
+                <string>{{724,804},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2724,7 +2724,7 @@
             <key>elementalWater.66.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{776,142},{44,68}}</string>
+                <string>{{710,734},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2737,7 +2737,7 @@
             <key>elementalWater.67.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{770,214},{44,68}}</string>
+                <string>{{724,594},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2750,46 +2750,46 @@
             <key>elementalWater.68.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{628,146},{44,70}}</string>
+                <string>{{710,664},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.69.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{614,218},{44,70}}</string>
+                <string>{{700,874},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{866,142},{48,66}}</string>
+                <string>{{594,958},{48,64}}</string>
                 <key>offset</key>
                 <string>{-1,-81}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,66}}</string>
+                <string>{{95,169},{48,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.70.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{596,292},{44,70}}</string>
+                <string>{{542,2},{44,70}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
@@ -2802,7 +2802,7 @@
             <key>elementalWater.71.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{582,376},{44,70}}</string>
+                <string>{{516,74},{44,70}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
@@ -2815,7 +2815,7 @@
             <key>elementalWater.72.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{614,2},{44,70}}</string>
+                <string>{{654,882},{44,70}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
@@ -2828,33 +2828,33 @@
             <key>elementalWater.73.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{500,324},{46,70}}</string>
+                <string>{{678,804},{44,68}}</string>
                 <key>offset</key>
-                <string>{0,-85}</string>
+                <string>{1,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,70}}</string>
+                <string>{{99,171},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.74.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{534,686},{46,70}}</string>
+                <string>{{562,74},{46,68}}</string>
                 <key>offset</key>
-                <string>{0,-84}</string>
+                <string>{0,-85}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,169},{46,70}}</string>
+                <string>{{97,171},{46,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.75.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{728,144},{46,68}}</string>
+                <string>{{662,474},{46,68}}</string>
                 <key>offset</key>
                 <string>{0,-84}</string>
                 <key>rotated</key>
@@ -2867,11 +2867,11 @@
             <key>elementalWater.8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{860,212},{48,66}}</string>
+                <string>{{758,544},{48,66}}</string>
                 <key>offset</key>
                 <string>{-1,-81}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{95,168},{48,66}}</string>
                 <key>sourceSize</key>
@@ -2880,11 +2880,11 @@
             <key>elementalWater.9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{832,282},{48,66}}</string>
+                <string>{{690,544},{48,66}}</string>
                 <key>offset</key>
                 <string>{-1,-81}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{95,168},{48,66}}</string>
                 <key>sourceSize</key>
@@ -2893,7 +2893,7 @@
             <key>elementalWater.91.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{606,686},{46,68}}</string>
+                <string>{{620,546},{46,68}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -2906,7 +2906,7 @@
             <key>elementalWater.92.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{568,804},{44,68}}</string>
+                <string>{{548,218},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
@@ -2919,33 +2919,46 @@
             <key>elementalWater.93.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{598,74},{44,70}}</string>
+                <string>{{632,810},{44,70}}</string>
                 <key>offset</key>
-                <string>{1,-83}</string>
+                <string>{0,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,168},{44,70}}</string>
+                <string>{{98,168},{44,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.94.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{582,146},{44,70}}</string>
+                <string>{{554,264},{42,70}}</string>
                 <key>offset</key>
                 <string>{1,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,169},{44,70}}</string>
+                <string>{{100,169},{42,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWater.95.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{460,690},{42,72}}</string>
+                <string>{{488,820},{42,72}}</string>
+                <key>offset</key>
+                <string>{1,-84}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{100,168},{42,72}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWater.96.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{410,918},{42,72}}</string>
                 <key>offset</key>
                 <string>{1,-84}</string>
                 <key>rotated</key>
@@ -2955,36 +2968,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWater.96.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{516,852},{42,74}}</string>
-                <key>offset</key>
-                <string>{1,-83}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{100,166},{42,74}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>elementalWater.97.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{508,928},{42,74}}</string>
-                <key>offset</key>
-                <string>{1,-83}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{100,166},{42,74}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>elementalWater.98.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{426,266},{40,74}}</string>
+                <string>{{386,594},{40,74}}</string>
                 <key>offset</key>
                 <string>{2,-83}</string>
                 <key>rotated</key>
@@ -2994,16 +2981,29 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWater.99.png</key>
+            <key>elementalWater.98.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{408,354},{40,74}}</string>
+                <string>{{382,680},{40,74}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
                 <string>{{101,166},{40,74}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWater.99.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{394,554},{38,74}}</string>
+                <key>offset</key>
+                <string>{2,-83}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{103,166},{38,74}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
@@ -3017,7 +3017,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:9cd9eaf7de0ec0d548b7326c87735f20:ce9b1cf658e8e19039e75c39893f79ea:97206ce21183666668c85cf677a3cf8d$</string>
+            <string>$TexturePacker:SmartUpdate:3be7ab59614f5b3fa3a88cd6c61413ce:2971af87b7310b894565e614bd789577:97206ce21183666668c85cf677a3cf8d$</string>
             <key>textureFileName</key>
             <string>elementalWaterSheet-iphone4.png</string>
         </dict>

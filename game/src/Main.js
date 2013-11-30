@@ -23,10 +23,13 @@ var MainGame = cc.Layer.extend({
     },
     changeScene:function(key, assets, data){         //todo: change to layer manager
 
+        if(this.loader){
+            cc.Director.getInstance().getRunningScene().removeChild(this.loader)
+        }
 
         switch(key){
             case 'selectTeam':
-                cc.Director.getInstance().replaceScene(SelectTeam.scene());
+                    cc.Director.getInstance().replaceScene(SelectTeam.scene());
                 break;
             case 'editTeam':
                 cc.Director.getInstance().replaceScene(EditTeam.scene());
@@ -37,15 +40,15 @@ var MainGame = cc.Layer.extend({
             case 'animationTest':
                 cc.Director.getInstance().replaceScene(AnimationTest.scene());
                 break;
-
-
         }
+
+
     },
     showLoader:function(config){
-        var layer = new Loading();
+        this.loader = new Loading();
         var runningScene = cc.Director.getInstance().getRunningScene();
-        runningScene.addChild(layer);
-        layer.init(config);
+        runningScene.addChild(this.loader);
+        this.loader.init(config);
 
     },
     selectEditTeamPre: function(){

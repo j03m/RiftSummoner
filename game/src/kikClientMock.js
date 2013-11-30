@@ -18,7 +18,7 @@ mckCards.ready = function(cb){
 };
 
 mckCards.kik.message = {
-    team:[{"name":"orc"}, {"name":"elementalEarth"}, {"name":"elfEarth"}, {"name":"knightFire"}],
+    team:[{"name":"orc"}, {"name":"elfFire"}, {"name":"shellback"}, {"name":"elfVoid"}, {"name":"ogre"}],
 
     formation:"4x4x4b",
     powers:[]

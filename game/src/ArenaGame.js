@@ -33,6 +33,7 @@ var ArenaGame = jc.WorldLayer.extend({
         }else{
             this.runScenario();
         }
+       // this.showVictory();
 
     },
     runScenario:function(){
@@ -448,19 +449,31 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     showVictory:function(){
         this.started = false;
-        this.panToWorldPoint(cc.p(this.worldSize.x, this.worldSize.y), 1, jc.defaultTransitionTime, function(){
-            this.victory = new Victory();
-            this.victory.init(); //todo pass stats
-            this.addChild(this.victory);
-        }.bind(this));
+        this.setScale(1);
+        this.setPosition(cc.p(0,0));
+        this.victory = new Victory();
+        this.victory.onDone = function(){
+            this.removeChild(this.victory);
+            hotr.mainScene.layer.selectEditTeamPre();
+        }.bind(this);
+        this.victory.init();
+
+        this.addChild(this.victory);
+
+
     },
     showDefeat:function(){
         this.started = false;
-        this.panToWorldPoint(cc.p(this.worldSize.x, this.worldSize.y), 1, jc.defaultTransitionTime, function(){
-            this.defeat = new Defeat();
-            this.defeat.init(); //todo pass stats
-            this.addChild(this.defeat);
-        }.bind(this));
+        this.setScale(1);
+        this.setPosition(cc.p(0,0));
+        this.defeat = new Defeat();
+        this.defeat.onDone = function(){
+            this.removeChild(this.defeat);
+            hotr.mainScene.layer.selectEditTeamPre();
+        }.bind(this);
+        this.defeat.init(); //todo pass stats
+
+        this.addChild(this.defeat);
     },
     timeExpired:function(){
         var time = Date.now() - this.startedAt;
@@ -485,11 +498,12 @@ ArenaGame.create = function() {
 };
 
 ArenaGame.scene = function() {
-	if (!hotr.arenaScene){
-        hotr.arenaScene = cc.Scene.create();
-        hotr.arenaScene.layer = ArenaGame.create();
-        hotr.arenaScene.addChild(hotr.arenaScene.layer);
+    if (hotr.arenaScene){
+        hotr.arenaScene.release();
     }
+    hotr.arenaScene = cc.Scene.create();
+    hotr.arenaScene.layer = ArenaGame.create();
+    hotr.arenaScene.addChild(hotr.arenaScene.layer);
     return hotr.arenaScene;
 
 };

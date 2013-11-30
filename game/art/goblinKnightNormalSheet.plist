@@ -7,20 +7,20 @@
             <key>goblinKnightNormal.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,174},{16,22}}</string>
+                <string>{{430,234},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,224},{14,22}}</string>
+                <string>{{406,232},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>goblinKnightNormal.100.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{426,224},{14,22}}</string>
+                <string>{{382,218},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -46,33 +46,33 @@
             <key>goblinKnightNormal.101.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{426,174},{16,22}}</string>
+                <string>{{358,210},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.102.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,216},{14,22}}</string>
+                <string>{{200,260},{14,20}}</string>
                 <key>offset</key>
-                <string>{1,-48}</string>
+                <string>{1,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,97},{14,22}}</string>
+                <string>{{54,99},{14,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.103.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,214},{14,22}}</string>
+                <string>{{334,210},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-48}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>goblinKnightNormal.104.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,208},{14,22}}</string>
+                <string>{{310,210},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-48}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>goblinKnightNormal.105.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,166},{16,22}}</string>
+                <string>{{142,118},{16,22}}</string>
                 <key>offset</key>
                 <string>{-1,-48}</string>
                 <key>rotated</key>
@@ -111,20 +111,20 @@
             <key>goblinKnightNormal.106.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{278,24},{20,24}}</string>
+                <string>{{468,68},{18,24}}</string>
                 <key>offset</key>
                 <string>{-2,-47}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,95},{20,24}}</string>
+                <string>{{49,95},{18,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.107.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{252,24},{20,24}}</string>
+                <string>{{388,50},{20,24}}</string>
                 <key>offset</key>
                 <string>{-2,-47}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>goblinKnightNormal.108.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{472,26},{22,24}}</string>
+                <string>{{390,26},{22,24}}</string>
                 <key>offset</key>
                 <string>{-3,-47}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>goblinKnightNormal.109.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{226,24},{20,24}}</string>
+                <string>{{416,48},{20,24}}</string>
                 <key>offset</key>
                 <string>{-2,-47}</string>
                 <key>rotated</key>
@@ -163,11 +163,11 @@
             <key>goblinKnightNormal.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,198},{14,22}}</string>
+                <string>{{286,196},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
@@ -176,7 +176,7 @@
             <key>goblinKnightNormal.110.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{488,118},{20,22}}</string>
+                <string>{{142,40},{20,22}}</string>
                 <key>offset</key>
                 <string>{-2,-48}</string>
                 <key>rotated</key>
@@ -189,7 +189,7 @@
             <key>goblinKnightNormal.111.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{392,64},{22,22}}</string>
+                <string>{{28,26},{22,22}}</string>
                 <key>offset</key>
                 <string>{-3,-48}</string>
                 <key>rotated</key>
@@ -202,20 +202,20 @@
             <key>goblinKnightNormal.112.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{366,22},{24,22}}</string>
+                <string>{{364,18},{24,22}}</string>
                 <key>offset</key>
-                <string>{-4,-48}</string>
+                <string>{-5,-48}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{44,97},{24,22}}</string>
+                <string>{{43,97},{24,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.113.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{444,50},{24,20}}</string>
+                <string>{{362,42},{24,20}}</string>
                 <key>offset</key>
                 <string>{-5,-49}</string>
                 <key>rotated</key>
@@ -228,59 +228,59 @@
             <key>goblinKnightNormal.114.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,60},{22,22}}</string>
+                <string>{{76,48},{22,20}}</string>
                 <key>offset</key>
-                <string>{-5,-49}</string>
+                <string>{-5,-50}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{44,98},{22,22}}</string>
+                <string>{{44,100},{22,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.115.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,46},{10,22}}</string>
+                <string>{{226,240},{10,20}}</string>
                 <key>offset</key>
-                <string>{0,-49}</string>
+                <string>{0,-50}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{55,98},{10,22}}</string>
+                <string>{{55,100},{10,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.116.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{380,58},{10,22}}</string>
+                <string>{{498,2},{12,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{57,98},{10,22}}</string>
+                <string>{{56,98},{12,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.117.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,202},{20,20}}</string>
+                <string>{{2,60},{22,20}}</string>
                 <key>offset</key>
                 <string>{6,-50}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{56,100},{20,20}}</string>
+                <string>{{55,100},{22,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.118.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{418,42},{24,20}}</string>
+                <string>{{336,42},{24,20}}</string>
                 <key>offset</key>
                 <string>{6,-50}</string>
                 <key>rotated</key>
@@ -293,7 +293,7 @@
             <key>goblinKnightNormal.119.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,26},{22,18}}</string>
+                <string>{{50,70},{22,18}}</string>
                 <key>offset</key>
                 <string>{6,-50}</string>
                 <key>rotated</key>
@@ -306,7 +306,7 @@
             <key>goblinKnightNormal.12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,188},{14,22}}</string>
+                <string>{{262,194},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -319,7 +319,7 @@
             <key>goblinKnightNormal.120.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,204},{20,18}}</string>
+                <string>{{72,158},{20,18}}</string>
                 <key>offset</key>
                 <string>{5,-50}</string>
                 <key>rotated</key>
@@ -332,7 +332,7 @@
             <key>goblinKnightNormal.121.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{188,202},{18,20}}</string>
+                <string>{{72,178},{18,20}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
@@ -345,20 +345,20 @@
             <key>goblinKnightNormal.122.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,186},{14,22}}</string>
+                <string>{{178,246},{14,20}}</string>
                 <key>offset</key>
-                <string>{2,-48}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{55,97},{14,22}}</string>
+                <string>{{55,99},{14,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.123.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,186},{14,22}}</string>
+                <string>{{238,194},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-48}</string>
                 <key>rotated</key>
@@ -371,7 +371,7 @@
             <key>goblinKnightNormal.124.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,186},{14,22}}</string>
+                <string>{{214,180},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-48}</string>
                 <key>rotated</key>
@@ -384,7 +384,7 @@
             <key>goblinKnightNormal.125.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,186},{14,22}}</string>
+                <string>{{190,166},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-48}</string>
                 <key>rotated</key>
@@ -397,20 +397,20 @@
             <key>goblinKnightNormal.126.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,186},{14,22}}</string>
+                <string>{{156,232},{14,20}}</string>
                 <key>offset</key>
-                <string>{2,-48}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{55,97},{14,22}}</string>
+                <string>{{55,99},{14,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.127.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,264},{14,20}}</string>
+                <string>{{134,218},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
@@ -423,7 +423,7 @@
             <key>goblinKnightNormal.128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,258},{14,20}}</string>
+                <string>{{112,216},{14,20}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
@@ -436,7 +436,7 @@
             <key>goblinKnightNormal.129.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,240},{14,20}}</string>
+                <string>{{90,212},{14,20}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
@@ -449,7 +449,7 @@
             <key>goblinKnightNormal.13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,186},{14,22}}</string>
+                <string>{{166,152},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -462,46 +462,46 @@
             <key>goblinKnightNormal.130.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,186},{14,22}}</string>
+                <string>{{68,198},{14,20}}</string>
                 <key>offset</key>
-                <string>{4,-48}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{57,97},{14,22}}</string>
+                <string>{{57,99},{14,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.131.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,188},{14,22}}</string>
+                <string>{{2,210},{14,20}}</string>
                 <key>offset</key>
-                <string>{4,-48}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{57,97},{14,22}}</string>
+                <string>{{57,99},{14,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.132.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,188},{14,22}}</string>
+                <string>{{142,152},{14,22}}</string>
                 <key>offset</key>
-                <string>{4,-48}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{57,97},{14,22}}</string>
+                <string>{{57,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.133.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,164},{16,22}}</string>
+                <string>{{166,102},{16,22}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
@@ -514,7 +514,7 @@
             <key>goblinKnightNormal.134.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,188},{14,22}}</string>
+                <string>{{98,142},{14,22}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
@@ -527,7 +527,7 @@
             <key>goblinKnightNormal.135.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,158},{16,22}}</string>
+                <string>{{190,100},{16,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -540,7 +540,7 @@
             <key>goblinKnightNormal.136.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,188},{14,22}}</string>
+                <string>{{74,142},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -553,46 +553,7 @@
             <key>goblinKnightNormal.137.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,138},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.138.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{290,136},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.139.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{266,136},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.14.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,188},{14,22}}</string>
+                <string>{{2,154},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -602,36 +563,75 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>goblinKnightNormal.140.png</key>
+            <key>goblinKnightNormal.138.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,136},{16,22}}</string>
+                <string>{{26,144},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.139.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{50,142},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.14.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{478,230},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.140.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{454,218},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.141.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,136},{16,22}}</string>
+                <string>{{430,218},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.142.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,186},{14,22}}</string>
+                <string>{{406,216},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -644,20 +644,20 @@
             <key>goblinKnightNormal.143.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,136},{16,22}}</string>
+                <string>{{138,168},{16,20}}</string>
                 <key>offset</key>
-                <string>{2,-49}</string>
+                <string>{2,-50}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,98},{16,22}}</string>
+                <string>{{54,100},{16,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,230},{16,20}}</string>
+                <string>{{2,192},{16,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
@@ -670,11 +670,11 @@
             <key>goblinKnightNormal.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{298,224},{14,20}}</string>
+                <string>{{24,200},{14,20}}</string>
                 <key>offset</key>
                 <string>{4,-50}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{57,100},{14,20}}</string>
                 <key>sourceSize</key>
@@ -683,7 +683,7 @@
             <key>goblinKnightNormal.146.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{276,220},{14,20}}</string>
+                <string>{{46,198},{14,20}}</string>
                 <key>offset</key>
                 <string>{4,-50}</string>
                 <key>rotated</key>
@@ -696,33 +696,33 @@
             <key>goblinKnightNormal.147.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,82},{12,20}}</string>
+                <string>{{226,218},{10,20}}</string>
                 <key>offset</key>
                 <string>{2,-50}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{56,100},{12,20}}</string>
+                <string>{{57,100},{10,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.148.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{166,202},{18,20}}</string>
+                <string>{{24,182},{16,20}}</string>
                 <key>offset</key>
-                <string>{-2,-49}</string>
+                <string>{-1,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{49,99},{18,20}}</string>
+                <string>{{51,99},{16,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.149.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,224},{20,20}}</string>
+                <string>{{2,170},{20,20}}</string>
                 <key>offset</key>
                 <string>{-3,-49}</string>
                 <key>rotated</key>
@@ -735,7 +735,7 @@
             <key>goblinKnightNormal.15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,208},{14,22}}</string>
+                <string>{{382,202},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -748,33 +748,33 @@
             <key>goblinKnightNormal.150.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{440,94},{22,20}}</string>
+                <string>{{26,160},{20,20}}</string>
                 <key>offset</key>
                 <string>{-3,-49}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{46,99},{22,20}}</string>
+                <string>{{47,99},{20,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.151.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,116},{20,22}}</string>
+                <string>{{50,158},{20,20}}</string>
                 <key>offset</key>
-                <string>{-3,-48}</string>
+                <string>{-3,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{47,97},{20,22}}</string>
+                <string>{{47,99},{20,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.152.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{440,116},{20,22}}</string>
+                <string>{{168,24},{20,22}}</string>
                 <key>offset</key>
                 <string>{-3,-48}</string>
                 <key>rotated</key>
@@ -787,33 +787,33 @@
             <key>goblinKnightNormal.153.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{356,58},{22,22}}</string>
+                <string>{{476,254},{20,20}}</string>
                 <key>offset</key>
-                <string>{-3,-48}</string>
+                <string>{-3,-49}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{46,97},{22,22}}</string>
+                <string>{{47,99},{20,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.154.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{392,42},{24,20}}</string>
+                <string>{{26,50},{22,20}}</string>
                 <key>offset</key>
                 <string>{-4,-49}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{44,99},{24,20}}</string>
+                <string>{{45,99},{22,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.155.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,72},{22,20}}</string>
+                <string>{{52,48},{22,20}}</string>
                 <key>offset</key>
                 <string>{-4,-49}</string>
                 <key>rotated</key>
@@ -826,20 +826,20 @@
             <key>goblinKnightNormal.156.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{392,88},{22,20}}</string>
+                <string>{{454,234},{20,20}}</string>
                 <key>offset</key>
                 <string>{-4,-49}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{45,99},{22,20}}</string>
+                <string>{{46,99},{20,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.157.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{304,44},{18,24}}</string>
+                <string>{{442,68},{18,24}}</string>
                 <key>offset</key>
                 <string>{-3,-47}</string>
                 <key>rotated</key>
@@ -852,7 +852,7 @@
             <key>goblinKnightNormal.158.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,44},{14,24}}</string>
+                <string>{{142,24},{14,24}}</string>
                 <key>offset</key>
                 <string>{-3,-47}</string>
                 <key>rotated</key>
@@ -865,7 +865,7 @@
             <key>goblinKnightNormal.159.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{356,46},{10,24}}</string>
+                <string>{{2,26},{10,24}}</string>
                 <key>offset</key>
                 <string>{0,-47}</string>
                 <key>rotated</key>
@@ -878,7 +878,7 @@
             <key>goblinKnightNormal.16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,208},{14,22}}</string>
+                <string>{{358,194},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -891,7 +891,7 @@
             <key>goblinKnightNormal.160.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,136},{16,22}}</string>
+                <string>{{214,98},{16,22}}</string>
                 <key>offset</key>
                 <string>{3,-48}</string>
                 <key>rotated</key>
@@ -904,7 +904,7 @@
             <key>goblinKnightNormal.161.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{416,86},{22,20}}</string>
+                <string>{{100,26},{22,20}}</string>
                 <key>offset</key>
                 <string>{5,-49}</string>
                 <key>rotated</key>
@@ -917,7 +917,7 @@
             <key>goblinKnightNormal.162.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{440,72},{22,20}}</string>
+                <string>{{76,26},{22,20}}</string>
                 <key>offset</key>
                 <string>{5,-49}</string>
                 <key>rotated</key>
@@ -930,7 +930,7 @@
             <key>goblinKnightNormal.163.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,82},{22,20}}</string>
+                <string>{{52,26},{22,20}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
@@ -943,7 +943,7 @@
             <key>goblinKnightNormal.164.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{416,64},{22,20}}</string>
+                <string>{{2,38},{22,20}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
@@ -956,24 +956,24 @@
             <key>goblinKnightNormal.165.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{488,96},{20,22}}</string>
+                <string>{{288,24},{20,20}}</string>
                 <key>offset</key>
-                <string>{4,-48}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{54,97},{20,22}}</string>
+                <string>{{54,99},{20,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.166.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,46},{18,22}}</string>
+                <string>{{122,74},{18,22}}</string>
                 <key>offset</key>
                 <string>{4,-48}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{55,97},{18,22}}</string>
                 <key>sourceSize</key>
@@ -982,7 +982,7 @@
             <key>goblinKnightNormal.167.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,136},{16,22}}</string>
+                <string>{{286,82},{16,22}}</string>
                 <key>offset</key>
                 <string>{4,-48}</string>
                 <key>rotated</key>
@@ -995,7 +995,7 @@
             <key>goblinKnightNormal.168.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{426,208},{14,22}}</string>
+                <string>{{334,194},{14,22}}</string>
                 <key>offset</key>
                 <string>{4,-48}</string>
                 <key>rotated</key>
@@ -1008,11 +1008,11 @@
             <key>goblinKnightNormal.169.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,138},{16,22}}</string>
+                <string>{{494,98},{16,22}}</string>
                 <key>offset</key>
                 <string>{3,-48}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{55,97},{16,22}}</string>
                 <key>sourceSize</key>
@@ -1021,7 +1021,7 @@
             <key>goblinKnightNormal.17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,192},{14,22}}</string>
+                <string>{{310,194},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -1034,7 +1034,20 @@
             <key>goblinKnightNormal.170.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,192},{14,22}}</string>
+                <string>{{478,206},{14,22}}</string>
+                <key>offset</key>
+                <string>{3,-48}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{56,97},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.171.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{454,202},{14,22}}</string>
                 <key>offset</key>
                 <string>{3,-48}</string>
                 <key>rotated</key>
@@ -1044,127 +1057,114 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>goblinKnightNormal.171.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{74,138},{16,22}}</string>
-                <key>offset</key>
-                <string>{2,-48}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{54,97},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
             <key>goblinKnightNormal.172.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,200},{14,22}}</string>
+                <string>{{430,202},{14,22}}</string>
                 <key>offset</key>
-                <string>{2,-48}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{55,97},{14,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,138},{16,22}}</string>
+                <string>{{406,200},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,138},{16,22}}</string>
+                <string>{{382,186},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,138},{16,22}}</string>
+                <string>{{358,178},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.176.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,136},{16,22}}</string>
+                <string>{{334,178},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.177.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,158},{16,22}}</string>
+                <string>{{286,180},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,156},{16,22}}</string>
+                <string>{{310,178},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{426,156},{16,22}}</string>
+                <string>{{454,186},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{426,192},{14,22}}</string>
+                <string>{{430,186},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -1177,46 +1177,46 @@
             <key>goblinKnightNormal.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,148},{16,22}}</string>
+                <string>{{406,184},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,146},{16,22}}</string>
+                <string>{{382,170},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,140},{16,22}}</string>
+                <string>{{358,162},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.183.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,120},{16,22}}</string>
+                <string>{{456,88},{16,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -1229,7 +1229,7 @@
             <key>goblinKnightNormal.184.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{254,220},{14,20}}</string>
+                <string>{{260,226},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
@@ -1242,7 +1242,7 @@
             <key>goblinKnightNormal.185.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{232,220},{14,20}}</string>
+                <string>{{204,244},{14,20}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
@@ -1255,7 +1255,7 @@
             <key>goblinKnightNormal.186.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{498,48},{12,20}}</string>
+                <string>{{498,254},{12,20}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
@@ -1268,7 +1268,7 @@
             <key>goblinKnightNormal.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,70},{10,20}}</string>
+                <string>{{226,196},{10,20}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -1281,7 +1281,7 @@
             <key>goblinKnightNormal.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{498,26},{12,20}}</string>
+                <string>{{480,88},{12,20}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -1294,7 +1294,7 @@
             <key>goblinKnightNormal.189.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{188,222},{14,20}}</string>
+                <string>{{238,226},{14,20}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
@@ -1307,7 +1307,7 @@
             <key>goblinKnightNormal.19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,198},{14,22}}</string>
+                <string>{{334,162},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -1320,7 +1320,7 @@
             <key>goblinKnightNormal.190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{166,222},{14,20}}</string>
+                <string>{{282,212},{14,20}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
@@ -1333,7 +1333,20 @@
             <key>goblinKnightNormal.191.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,224},{16,20}}</string>
+                <string>{{260,210},{14,20}}</string>
+                <key>offset</key>
+                <string>{-1,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,99},{14,20}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.192.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{48,180},{16,20}}</string>
                 <key>offset</key>
                 <string>{-1,-49}</string>
                 <key>rotated</key>
@@ -1343,23 +1356,10 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>goblinKnightNormal.192.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{336,222},{16,20}}</string>
-                <key>offset</key>
-                <string>{-1,-49}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{51,99},{16,20}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
             <key>goblinKnightNormal.193.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,118},{16,22}}</string>
+                <string>{{432,88},{16,22}}</string>
                 <key>offset</key>
                 <string>{-1,-48}</string>
                 <key>rotated</key>
@@ -1372,11 +1372,11 @@
             <key>goblinKnightNormal.194.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{496,70},{14,24}}</string>
+                <string>{{414,70},{14,24}}</string>
                 <key>offset</key>
                 <string>{1,-48}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{54,96},{14,24}}</string>
                 <key>sourceSize</key>
@@ -1385,7 +1385,7 @@
             <key>goblinKnightNormal.195.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{366,2},{18,26}}</string>
+                <string>{{310,2},{18,26}}</string>
                 <key>offset</key>
                 <string>{5,-47}</string>
                 <key>rotated</key>
@@ -1398,7 +1398,7 @@
             <key>goblinKnightNormal.196.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,94},{20,22}}</string>
+                <string>{{100,48},{20,22}}</string>
                 <key>offset</key>
                 <string>{7,-42}</string>
                 <key>rotated</key>
@@ -1411,20 +1411,20 @@
             <key>goblinKnightNormal.197.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,24},{18,24}}</string>
+                <string>{{468,48},{18,24}}</string>
                 <key>offset</key>
-                <string>{7,-39}</string>
+                <string>{6,-39}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{58,87},{18,24}}</string>
+                <string>{{57,87},{18,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.198.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,2},{14,26}}</string>
+                <string>{{366,2},{14,26}}</string>
                 <key>offset</key>
                 <string>{0,-35}</string>
                 <key>rotated</key>
@@ -1437,7 +1437,7 @@
             <key>goblinKnightNormal.199.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{394,18},{24,22}}</string>
+                <string>{{310,22},{24,22}}</string>
                 <key>offset</key>
                 <string>{-4,-34}</string>
                 <key>rotated</key>
@@ -1450,20 +1450,20 @@
             <key>goblinKnightNormal.2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,118},{16,22}}</string>
+                <string>{{262,178},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,184},{14,22}}</string>
+                <string>{{238,178},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -1476,7 +1476,7 @@
             <key>goblinKnightNormal.200.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{282,2},{26,20}}</string>
+                <string>{{254,2},{26,20}}</string>
                 <key>offset</key>
                 <string>{-5,-33}</string>
                 <key>rotated</key>
@@ -1489,7 +1489,7 @@
             <key>goblinKnightNormal.201.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,2},{26,22}}</string>
+                <string>{{114,2},{26,22}}</string>
                 <key>offset</key>
                 <string>{-5,-32}</string>
                 <key>rotated</key>
@@ -1502,7 +1502,7 @@
             <key>goblinKnightNormal.202.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{254,2},{26,20}}</string>
+                <string>{{226,2},{26,20}}</string>
                 <key>offset</key>
                 <string>{-5,-32}</string>
                 <key>rotated</key>
@@ -1515,20 +1515,20 @@
             <key>goblinKnightNormal.203.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{142,2},{26,22}}</string>
+                <string>{{198,2},{26,20}}</string>
                 <key>offset</key>
-                <string>{-5,-31}</string>
+                <string>{-5,-32}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{42,80},{26,22}}</string>
+                <string>{{42,82},{26,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.204.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{226,2},{26,20}}</string>
+                <string>{{170,2},{26,20}}</string>
                 <key>offset</key>
                 <string>{-5,-31}</string>
                 <key>rotated</key>
@@ -1541,13 +1541,13 @@
             <key>goblinKnightNormal.205.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{114,2},{26,22}}</string>
+                <string>{{142,2},{26,20}}</string>
                 <key>offset</key>
-                <string>{-5,-30}</string>
+                <string>{-5,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{42,79},{26,22}}</string>
+                <string>{{42,81},{26,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
@@ -1606,7 +1606,7 @@
             <key>goblinKnightNormal.21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,192},{14,22}}</string>
+                <string>{{286,164},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -1619,7 +1619,7 @@
             <key>goblinKnightNormal.210.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{476,2},{24,22}}</string>
+                <string>{{338,18},{24,22}}</string>
                 <key>offset</key>
                 <string>{-4,-29}</string>
                 <key>rotated</key>
@@ -1632,7 +1632,7 @@
             <key>goblinKnightNormal.211.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{446,26},{22,24}}</string>
+                <string>{{472,2},{22,24}}</string>
                 <key>offset</key>
                 <string>{-3,-28}</string>
                 <key>rotated</key>
@@ -1645,33 +1645,33 @@
             <key>goblinKnightNormal.212.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,2},{22,26}}</string>
+                <string>{{446,2},{22,24}}</string>
                 <key>offset</key>
                 <string>{-3,-27}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{46,74},{22,26}}</string>
+                <string>{{46,75},{22,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.213.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,2},{20,26}}</string>
+                <string>{{468,26},{20,24}}</string>
                 <key>offset</key>
-                <string>{-2,-26}</string>
+                <string>{-2,-27}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,73},{20,26}}</string>
+                <string>{{48,75},{20,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.214.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{470,50},{20,24}}</string>
+                <string>{{442,26},{20,24}}</string>
                 <key>offset</key>
                 <string>{-2,-27}</string>
                 <key>rotated</key>
@@ -1684,7 +1684,7 @@
             <key>goblinKnightNormal.215.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,46},{18,22}}</string>
+                <string>{{142,62},{18,22}}</string>
                 <key>offset</key>
                 <string>{-1,-28}</string>
                 <key>rotated</key>
@@ -1697,7 +1697,7 @@
             <key>goblinKnightNormal.216.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,46},{18,22}}</string>
+                <string>{{166,46},{18,22}}</string>
                 <key>offset</key>
                 <string>{-1,-28}</string>
                 <key>rotated</key>
@@ -1710,7 +1710,7 @@
             <key>goblinKnightNormal.217.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,46},{18,22}}</string>
+                <string>{{192,44},{18,22}}</string>
                 <key>offset</key>
                 <string>{-1,-28}</string>
                 <key>rotated</key>
@@ -1723,7 +1723,7 @@
             <key>goblinKnightNormal.218.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,46},{18,22}}</string>
+                <string>{{264,24},{18,22}}</string>
                 <key>offset</key>
                 <string>{-1,-28}</string>
                 <key>rotated</key>
@@ -1736,7 +1736,7 @@
             <key>goblinKnightNormal.219.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,26},{18,22}}</string>
+                <string>{{240,24},{18,22}}</string>
                 <key>offset</key>
                 <string>{-1,-28}</string>
                 <key>rotated</key>
@@ -1749,7 +1749,7 @@
             <key>goblinKnightNormal.22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,182},{14,22}}</string>
+                <string>{{310,162},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -1762,33 +1762,33 @@
             <key>goblinKnightNormal.220.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,26},{18,22}}</string>
+                <string>{{216,24},{18,22}}</string>
                 <key>offset</key>
-                <string>{-1,-29}</string>
+                <string>{-1,-28}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,78},{18,22}}</string>
+                <string>{{50,77},{18,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.221.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,118},{16,22}}</string>
+                <string>{{408,86},{16,22}}</string>
                 <key>offset</key>
-                <string>{-1,-29}</string>
+                <string>{-1,-28}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{51,78},{16,22}}</string>
+                <string>{{51,77},{16,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.222.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,26},{18,22}}</string>
+                <string>{{192,24},{18,22}}</string>
                 <key>offset</key>
                 <string>{-2,-29}</string>
                 <key>rotated</key>
@@ -1801,7 +1801,7 @@
             <key>goblinKnightNormal.223.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,26},{18,22}}</string>
+                <string>{{98,70},{18,22}}</string>
                 <key>offset</key>
                 <string>{-3,-30}</string>
                 <key>rotated</key>
@@ -1814,7 +1814,7 @@
             <key>goblinKnightNormal.224.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{304,24},{18,24}}</string>
+                <string>{{442,48},{18,24}}</string>
                 <key>offset</key>
                 <string>{-4,-32}</string>
                 <key>rotated</key>
@@ -1827,7 +1827,7 @@
             <key>goblinKnightNormal.225.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{394,2},{14,26}}</string>
+                <string>{{338,2},{14,26}}</string>
                 <key>offset</key>
                 <string>{0,-35}</string>
                 <key>rotated</key>
@@ -1840,20 +1840,20 @@
             <key>goblinKnightNormal.226.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,2},{20,26}}</string>
+                <string>{{282,2},{20,26}}</string>
                 <key>offset</key>
-                <string>{3,-38}</string>
+                <string>{3,-39}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,85},{20,26}}</string>
+                <string>{{53,86},{20,26}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.227.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,2},{24,22}}</string>
+                <string>{{394,2},{24,22}}</string>
                 <key>offset</key>
                 <string>{5,-44}</string>
                 <key>rotated</key>
@@ -1866,7 +1866,7 @@
             <key>goblinKnightNormal.228.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,18},{22,24}}</string>
+                <string>{{420,2},{22,24}}</string>
                 <key>offset</key>
                 <string>{4,-48}</string>
                 <key>rotated</key>
@@ -1879,24 +1879,24 @@
             <key>goblinKnightNormal.229.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{416,108},{20,22}}</string>
+                <string>{{416,26},{20,24}}</string>
                 <key>offset</key>
-                <string>{4,-49}</string>
+                <string>{4,-48}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,98},{20,22}}</string>
+                <string>{{54,96},{20,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,176},{14,22}}</string>
+                <string>{{478,182},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
@@ -1905,7 +1905,7 @@
             <key>goblinKnightNormal.230.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,26},{18,22}}</string>
+                <string>{{74,70},{18,22}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
@@ -1918,7 +1918,7 @@
             <key>goblinKnightNormal.231.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,222},{16,20}}</string>
+                <string>{{94,178},{16,20}}</string>
                 <key>offset</key>
                 <string>{4,-50}</string>
                 <key>rotated</key>
@@ -1931,85 +1931,85 @@
             <key>goblinKnightNormal.232.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,204},{16,20}}</string>
+                <string>{{182,230},{14,20}}</string>
                 <key>offset</key>
-                <string>{4,-50}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,100},{16,20}}</string>
+                <string>{{57,99},{14,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.233.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{276,202},{16,20}}</string>
+                <string>{{494,232},{16,20}}</string>
                 <key>offset</key>
-                <string>{4,-50}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{56,100},{16,20}}</string>
+                <string>{{56,99},{16,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.234.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{254,202},{16,20}}</string>
+                <string>{{494,210},{16,20}}</string>
                 <key>offset</key>
-                <string>{4,-50}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{56,100},{16,20}}</string>
+                <string>{{56,99},{16,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.235.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{144,222},{14,20}}</string>
+                <string>{{204,228},{14,20}}</string>
                 <key>offset</key>
-                <string>{4,-50}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{57,100},{14,20}}</string>
+                <string>{{57,99},{14,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.236.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,118},{16,22}}</string>
+                <string>{{494,188},{16,20}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{54,98},{16,22}}</string>
+                <string>{{54,99},{16,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.237.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,118},{16,22}}</string>
+                <string>{{454,170},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.238.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,118},{16,22}}</string>
+                <string>{{384,72},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2022,7 +2022,7 @@
             <key>goblinKnightNormal.239.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,118},{16,22}}</string>
+                <string>{{360,64},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2035,11 +2035,11 @@
             <key>goblinKnightNormal.24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,174},{14,22}}</string>
+                <string>{{430,170},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
@@ -2048,7 +2048,7 @@
             <key>goblinKnightNormal.240.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,120},{16,22}}</string>
+                <string>{{336,64},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2061,124 +2061,7 @@
             <key>goblinKnightNormal.241.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,120},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.242.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{50,120},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.243.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{26,120},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.244.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,120},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.245.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{122,118},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.246.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{474,140},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.247.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{450,138},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.248.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{122,136},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.249.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{426,138},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.25.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{314,172},{14,22}}</string>
+                <string>{{406,168},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -2188,23 +2071,140 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>goblinKnightNormal.250.png</key>
+            <key>goblinKnightNormal.242.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,130},{16,22}}</string>
+                <string>{{382,154},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.243.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{358,146},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.244.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{334,146},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.245.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{262,162},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.246.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{214,164},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.247.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{238,162},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.248.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{286,148},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.249.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{310,146},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.25.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{478,158},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.250.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{454,154},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,170},{14,22}}</string>
+                <string>{{430,154},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -2217,7 +2217,7 @@
             <key>goblinKnightNormal.27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,170},{14,22}}</string>
+                <string>{{406,152},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -2230,7 +2230,7 @@
             <key>goblinKnightNormal.28.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,170},{14,22}}</string>
+                <string>{{382,138},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -2243,20 +2243,20 @@
             <key>goblinKnightNormal.29.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,128},{16,22}}</string>
+                <string>{{358,130},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,170},{14,22}}</string>
+                <string>{{334,130},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -2269,20 +2269,20 @@
             <key>goblinKnightNormal.30.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,122},{16,22}}</string>
+                <string>{{262,146},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.300.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{42,224},{14,18}}</string>
+                <string>{{126,250},{14,18}}</string>
                 <key>offset</key>
                 <string>{0,-51}</string>
                 <key>rotated</key>
@@ -2295,7 +2295,7 @@
             <key>goblinKnightNormal.301.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{22,224},{14,18}}</string>
+                <string>{{146,248},{14,18}}</string>
                 <key>offset</key>
                 <string>{0,-51}</string>
                 <key>rotated</key>
@@ -2308,7 +2308,7 @@
             <key>goblinKnightNormal.302.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,220},{14,20}}</string>
+                <string>{{238,210},{14,20}}</string>
                 <key>offset</key>
                 <string>{0,-50}</string>
                 <key>rotated</key>
@@ -2321,7 +2321,7 @@
             <key>goblinKnightNormal.303.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{486,262},{14,20}}</string>
+                <string>{{160,216},{14,20}}</string>
                 <key>offset</key>
                 <string>{-1,-50}</string>
                 <key>rotated</key>
@@ -2334,7 +2334,7 @@
             <key>goblinKnightNormal.304.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,262},{14,20}}</string>
+                <string>{{138,202},{14,20}}</string>
                 <key>offset</key>
                 <string>{-1,-50}</string>
                 <key>rotated</key>
@@ -2347,7 +2347,7 @@
             <key>goblinKnightNormal.305.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{442,256},{14,20}}</string>
+                <string>{{182,214},{14,20}}</string>
                 <key>offset</key>
                 <string>{-1,-50}</string>
                 <key>rotated</key>
@@ -2360,7 +2360,7 @@
             <key>goblinKnightNormal.306.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,256},{14,20}}</string>
+                <string>{{160,200},{14,20}}</string>
                 <key>offset</key>
                 <string>{0,-50}</string>
                 <key>rotated</key>
@@ -2373,7 +2373,7 @@
             <key>goblinKnightNormal.307.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{486,246},{14,20}}</string>
+                <string>{{204,212},{14,20}}</string>
                 <key>offset</key>
                 <string>{1,-50}</string>
                 <key>rotated</key>
@@ -2386,7 +2386,7 @@
             <key>goblinKnightNormal.308.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,170},{14,22}}</string>
+                <string>{{190,150},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2399,7 +2399,7 @@
             <key>goblinKnightNormal.309.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,110},{16,22}}</string>
+                <string>{{312,64},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2412,20 +2412,20 @@
             <key>goblinKnightNormal.31.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,104},{16,22}}</string>
+                <string>{{214,148},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.310.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,102},{16,22}}</string>
+                <string>{{262,80},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2438,124 +2438,124 @@
             <key>goblinKnightNormal.311.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,100},{16,22}}</string>
+                <string>{{238,146},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.312.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,100},{16,22}}</string>
+                <string>{{286,132},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.313.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,100},{16,22}}</string>
+                <string>{{310,130},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.314.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,148},{16,22}}</string>
+                <string>{{454,138},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.315.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,100},{16,22}}</string>
+                <string>{{430,138},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.316.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,100},{16,22}}</string>
+                <string>{{406,136},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.317.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,136},{16,22}}</string>
+                <string>{{382,122},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.318.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,136},{16,22}}</string>
+                <string>{{358,114},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.319.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,120},{16,22}}</string>
+                <string>{{334,114},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.32.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,100},{16,22}}</string>
+                <string>{{238,80},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2568,33 +2568,33 @@
             <key>goblinKnightNormal.320.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,120},{16,22}}</string>
+                <string>{{166,136},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.321.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,100},{16,22}}</string>
+                <string>{{142,136},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.322.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,102},{16,22}}</string>
+                <string>{{142,100},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2607,7 +2607,7 @@
             <key>goblinKnightNormal.323.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,170},{14,22}}</string>
+                <string>{{262,130},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2620,7 +2620,7 @@
             <key>goblinKnightNormal.324.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,170},{14,22}}</string>
+                <string>{{190,134},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
@@ -2633,7 +2633,7 @@
             <key>goblinKnightNormal.325.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,172},{14,22}}</string>
+                <string>{{214,132},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
@@ -2646,7 +2646,7 @@
             <key>goblinKnightNormal.326.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,172},{14,22}}</string>
+                <string>{{238,130},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
@@ -2659,7 +2659,7 @@
             <key>goblinKnightNormal.327.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,172},{14,22}}</string>
+                <string>{{286,116},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
@@ -2672,7 +2672,7 @@
             <key>goblinKnightNormal.328.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,172},{14,22}}</string>
+                <string>{{310,114},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
@@ -2685,11 +2685,11 @@
             <key>goblinKnightNormal.329.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,172},{14,22}}</string>
+                <string>{{478,134},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{53,98},{14,22}}</string>
                 <key>sourceSize</key>
@@ -2698,7 +2698,7 @@
             <key>goblinKnightNormal.33.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,102},{16,22}}</string>
+                <string>{{166,84},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2711,7 +2711,7 @@
             <key>goblinKnightNormal.330.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,170},{14,22}}</string>
+                <string>{{454,122},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
@@ -2724,7 +2724,7 @@
             <key>goblinKnightNormal.331.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,156},{14,22}}</string>
+                <string>{{430,122},{14,22}}</string>
                 <key>offset</key>
                 <string>{0,-49}</string>
                 <key>rotated</key>
@@ -2737,7 +2737,7 @@
             <key>goblinKnightNormal.332.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,154},{14,22}}</string>
+                <string>{{406,120},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2750,7 +2750,7 @@
             <key>goblinKnightNormal.333.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,154},{14,22}}</string>
+                <string>{{382,106},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2763,7 +2763,7 @@
             <key>goblinKnightNormal.334.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,154},{14,22}}</string>
+                <string>{{358,98},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2776,7 +2776,7 @@
             <key>goblinKnightNormal.335.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,102},{16,22}}</string>
+                <string>{{190,82},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2789,7 +2789,7 @@
             <key>goblinKnightNormal.336.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,154},{14,22}}</string>
+                <string>{{334,98},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -2802,24 +2802,24 @@
             <key>goblinKnightNormal.337.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,102},{16,22}}</string>
+                <string>{{494,166},{16,20}}</string>
                 <key>offset</key>
-                <string>{2,-49}</string>
+                <string>{2,-50}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{54,98},{16,22}}</string>
+                <string>{{54,100},{16,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.338.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{232,202},{16,20}}</string>
+                <string>{{494,144},{16,20}}</string>
                 <key>offset</key>
                 <string>{2,-50}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{54,100},{16,20}}</string>
                 <key>sourceSize</key>
@@ -2828,20 +2828,20 @@
             <key>goblinKnightNormal.339.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,202},{16,20}}</string>
+                <string>{{494,122},{16,20}}</string>
                 <key>offset</key>
-                <string>{3,-50}</string>
+                <string>{2,-50}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{55,100},{16,20}}</string>
+                <string>{{54,100},{16,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.34.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,102},{16,22}}</string>
+                <string>{{214,80},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2854,7 +2854,7 @@
             <key>goblinKnightNormal.340.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,246},{14,20}}</string>
+                <string>{{182,198},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
@@ -2867,7 +2867,7 @@
             <key>goblinKnightNormal.341.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{398,248},{14,20}}</string>
+                <string>{{204,196},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
@@ -2880,7 +2880,7 @@
             <key>goblinKnightNormal.342.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,248},{14,20}}</string>
+                <string>{{116,200},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
@@ -2893,7 +2893,7 @@
             <key>goblinKnightNormal.343.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{442,240},{14,20}}</string>
+                <string>{{138,186},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
@@ -2906,7 +2906,7 @@
             <key>goblinKnightNormal.344.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,240},{14,20}}</string>
+                <string>{{160,184},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
@@ -2919,7 +2919,7 @@
             <key>goblinKnightNormal.345.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{398,232},{14,20}}</string>
+                <string>{{182,182},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
@@ -2932,7 +2932,7 @@
             <key>goblinKnightNormal.346.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,242},{14,20}}</string>
+                <string>{{160,168},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
@@ -2945,11 +2945,11 @@
             <key>goblinKnightNormal.347.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{298,202},{14,20}}</string>
+                <string>{{94,196},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{56,100},{14,20}}</string>
                 <key>sourceSize</key>
@@ -2958,11 +2958,11 @@
             <key>goblinKnightNormal.348.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{496,224},{14,20}}</string>
+                <string>{{116,184},{14,20}}</string>
                 <key>offset</key>
                 <string>{3,-50}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{56,100},{14,20}}</string>
                 <key>sourceSize</key>
@@ -2971,7 +2971,7 @@
             <key>goblinKnightNormal.349.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,224},{14,18}}</string>
+                <string>{{2,274},{14,18}}</string>
                 <key>offset</key>
                 <string>{3,-51}</string>
                 <key>rotated</key>
@@ -2984,7 +2984,7 @@
             <key>goblinKnightNormal.35.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,100},{16,22}}</string>
+                <string>{{288,64},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -2997,7 +2997,7 @@
             <key>goblinKnightNormal.350.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{490,294},{14,18}}</string>
+                <string>{{22,266},{14,18}}</string>
                 <key>offset</key>
                 <string>{3,-51}</string>
                 <key>rotated</key>
@@ -3010,7 +3010,7 @@
             <key>goblinKnightNormal.351.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{470,294},{14,18}}</string>
+                <string>{{42,264},{14,18}}</string>
                 <key>offset</key>
                 <string>{3,-51}</string>
                 <key>rotated</key>
@@ -3023,7 +3023,7 @@
             <key>goblinKnightNormal.352.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,294},{14,18}}</string>
+                <string>{{62,262},{14,18}}</string>
                 <key>offset</key>
                 <string>{3,-51}</string>
                 <key>rotated</key>
@@ -3036,11 +3036,11 @@
             <key>goblinKnightNormal.353.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{336,244},{16,18}}</string>
+                <string>{{24,216},{16,18}}</string>
                 <key>offset</key>
                 <string>{3,-51}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{55,102},{16,18}}</string>
                 <key>sourceSize</key>
@@ -3049,7 +3049,7 @@
             <key>goblinKnightNormal.354.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{398,264},{18,16}}</string>
+                <string>{{46,214},{18,16}}</string>
                 <key>offset</key>
                 <string>{4,-52}</string>
                 <key>rotated</key>
@@ -3062,7 +3062,7 @@
             <key>goblinKnightNormal.355.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,288},{18,14}}</string>
+                <string>{{84,260},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3075,7 +3075,7 @@
             <key>goblinKnightNormal.356.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{410,288},{18,14}}</string>
+                <string>{{106,248},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3088,7 +3088,7 @@
             <key>goblinKnightNormal.357.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{390,282},{18,14}}</string>
+                <string>{{126,234},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3101,7 +3101,7 @@
             <key>goblinKnightNormal.358.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{370,280},{18,14}}</string>
+                <string>{{2,258},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3114,7 +3114,7 @@
             <key>goblinKnightNormal.359.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{350,274},{18,14}}</string>
+                <string>{{22,250},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3127,7 +3127,7 @@
             <key>goblinKnightNormal.36.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,82},{16,22}}</string>
+                <string>{{98,108},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3140,7 +3140,7 @@
             <key>goblinKnightNormal.360.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,264},{18,14}}</string>
+                <string>{{42,248},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3153,7 +3153,7 @@
             <key>goblinKnightNormal.361.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,256},{18,14}}</string>
+                <string>{{64,246},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3166,7 +3166,7 @@
             <key>goblinKnightNormal.362.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,246},{18,14}}</string>
+                <string>{{86,244},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3179,7 +3179,7 @@
             <key>goblinKnightNormal.363.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{270,236},{18,14}}</string>
+                <string>{{106,232},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3192,7 +3192,7 @@
             <key>goblinKnightNormal.364.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{250,236},{18,14}}</string>
+                <string>{{2,242},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3205,7 +3205,7 @@
             <key>goblinKnightNormal.365.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{230,236},{18,14}}</string>
+                <string>{{22,234},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3218,7 +3218,7 @@
             <key>goblinKnightNormal.366.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,236},{18,14}}</string>
+                <string>{{44,232},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3231,7 +3231,7 @@
             <key>goblinKnightNormal.367.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{478,278},{18,14}}</string>
+                <string>{{66,230},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3244,7 +3244,7 @@
             <key>goblinKnightNormal.368.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,278},{18,14}}</string>
+                <string>{{86,228},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3257,7 +3257,7 @@
             <key>goblinKnightNormal.369.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{438,272},{18,14}}</string>
+                <string>{{66,214},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3270,7 +3270,7 @@
             <key>goblinKnightNormal.37.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,82},{16,22}}</string>
+                <string>{{74,108},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3283,7 +3283,7 @@
             <key>goblinKnightNormal.370.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{418,272},{18,14}}</string>
+                <string>{{2,226},{18,14}}</string>
                 <key>offset</key>
                 <string>{5,-53}</string>
                 <key>rotated</key>
@@ -3296,7 +3296,7 @@
             <key>goblinKnightNormal.38.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,82},{16,22}}</string>
+                <string>{{2,120},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3309,7 +3309,7 @@
             <key>goblinKnightNormal.39.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,82},{16,22}}</string>
+                <string>{{26,110},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3322,7 +3322,7 @@
             <key>goblinKnightNormal.4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,154},{14,22}}</string>
+                <string>{{262,114},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -3335,7 +3335,7 @@
             <key>goblinKnightNormal.40.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,82},{16,22}}</string>
+                <string>{{50,108},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3348,7 +3348,7 @@
             <key>goblinKnightNormal.41.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,82},{16,22}}</string>
+                <string>{{264,62},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3361,7 +3361,7 @@
             <key>goblinKnightNormal.42.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,84},{16,22}}</string>
+                <string>{{240,62},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3374,59 +3374,59 @@
             <key>goblinKnightNormal.43.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,84},{16,22}}</string>
+                <string>{{166,120},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{54,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.44.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,84},{16,22}}</string>
+                <string>{{190,118},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{54,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.45.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,84},{16,22}}</string>
+                <string>{{214,116},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{54,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.46.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,84},{16,22}}</string>
+                <string>{{238,114},{14,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{54,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.47.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,82},{16,22}}</string>
+                <string>{{142,82},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3439,7 +3439,7 @@
             <key>goblinKnightNormal.48.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{326,84},{16,22}}</string>
+                <string>{{166,66},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3452,7 +3452,7 @@
             <key>goblinKnightNormal.49.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{302,82},{16,22}}</string>
+                <string>{{190,64},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3465,7 +3465,7 @@
             <key>goblinKnightNormal.5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,154},{14,22}}</string>
+                <string>{{286,100},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -3478,7 +3478,7 @@
             <key>goblinKnightNormal.50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,64},{16,22}}</string>
+                <string>{{216,62},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3491,7 +3491,7 @@
             <key>goblinKnightNormal.51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,64},{16,22}}</string>
+                <string>{{312,46},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3504,7 +3504,7 @@
             <key>goblinKnightNormal.52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,64},{16,22}}</string>
+                <string>{{288,46},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3517,7 +3517,7 @@
             <key>goblinKnightNormal.53.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,64},{16,22}}</string>
+                <string>{{264,44},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3530,7 +3530,7 @@
             <key>goblinKnightNormal.54.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,64},{16,22}}</string>
+                <string>{{240,44},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3543,7 +3543,7 @@
             <key>goblinKnightNormal.55.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,64},{16,22}}</string>
+                <string>{{216,44},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3556,7 +3556,7 @@
             <key>goblinKnightNormal.56.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,66},{16,22}}</string>
+                <string>{{98,90},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3569,7 +3569,7 @@
             <key>goblinKnightNormal.57.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,66},{16,22}}</string>
+                <string>{{74,90},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3582,7 +3582,7 @@
             <key>goblinKnightNormal.58.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,66},{16,22}}</string>
+                <string>{{2,102},{16,22}}</string>
                 <key>offset</key>
                 <string>{1,-49}</string>
                 <key>rotated</key>
@@ -3595,20 +3595,7 @@
             <key>goblinKnightNormal.59.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,66},{16,22}}</string>
-                <key>offset</key>
-                <string>{1,-49}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.6.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{146,154},{14,22}}</string>
+                <string>{{310,98},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -3618,23 +3605,36 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
+            <key>goblinKnightNormal.6.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{478,110},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
             <key>goblinKnightNormal.60.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,66},{16,22}}</string>
+                <string>{{454,106},{14,22}}</string>
                 <key>offset</key>
-                <string>{1,-49}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,98},{16,22}}</string>
+                <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,156},{14,22}}</string>
+                <string>{{430,106},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -3647,7 +3647,7 @@
             <key>goblinKnightNormal.70.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,156},{14,22}}</string>
+                <string>{{406,104},{14,22}}</string>
                 <key>offset</key>
                 <string>{5,-49}</string>
                 <key>rotated</key>
@@ -3660,7 +3660,7 @@
             <key>goblinKnightNormal.71.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,64},{16,22}}</string>
+                <string>{{26,92},{16,22}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
@@ -3673,20 +3673,20 @@
             <key>goblinKnightNormal.72.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{302,64},{16,22}}</string>
+                <string>{{382,90},{14,22}}</string>
                 <key>offset</key>
-                <string>{3,-49}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{55,98},{16,22}}</string>
+                <string>{{57,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.73.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,156},{14,22}}</string>
+                <string>{{358,82},{14,22}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
@@ -3699,7 +3699,7 @@
             <key>goblinKnightNormal.74.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,156},{14,22}}</string>
+                <string>{{334,82},{14,22}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
@@ -3712,7 +3712,7 @@
             <key>goblinKnightNormal.75.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,156},{14,22}}</string>
+                <string>{{310,82},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -3725,7 +3725,7 @@
             <key>goblinKnightNormal.76.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,154},{14,22}}</string>
+                <string>{{98,126},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -3738,7 +3738,7 @@
             <key>goblinKnightNormal.77.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,176},{14,22}}</string>
+                <string>{{74,126},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
@@ -3751,24 +3751,24 @@
             <key>goblinKnightNormal.78.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,46},{16,22}}</string>
+                <string>{{2,138},{14,22}}</string>
                 <key>offset</key>
-                <string>{2,-49}</string>
+                <string>{3,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,98},{16,22}}</string>
+                <string>{{56,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.79.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,150},{14,22}}</string>
+                <string>{{26,128},{14,22}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{56,98},{14,22}}</string>
                 <key>sourceSize</key>
@@ -3777,11 +3777,11 @@
             <key>goblinKnightNormal.8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,126},{14,22}}</string>
+                <string>{{50,126},{14,22}}</string>
                 <key>offset</key>
                 <string>{2,-49}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{55,98},{14,22}}</string>
                 <key>sourceSize</key>
@@ -3790,7 +3790,7 @@
             <key>goblinKnightNormal.80.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,46},{16,22}}</string>
+                <string>{{50,90},{16,22}}</string>
                 <key>offset</key>
                 <string>{3,-49}</string>
                 <key>rotated</key>
@@ -3803,24 +3803,24 @@
             <key>goblinKnightNormal.81.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,46},{16,22}}</string>
+                <string>{{262,98},{14,22}}</string>
                 <key>offset</key>
-                <string>{3,-49}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{55,98},{16,22}}</string>
+                <string>{{57,98},{14,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.82.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,46},{16,22}}</string>
+                <string>{{124,50},{16,22}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{56,98},{16,22}}</string>
                 <key>sourceSize</key>
@@ -3829,11 +3829,11 @@
             <key>goblinKnightNormal.83.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,46},{16,22}}</string>
+                <string>{{124,26},{16,22}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{56,98},{16,22}}</string>
                 <key>sourceSize</key>
@@ -3842,11 +3842,11 @@
             <key>goblinKnightNormal.84.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,46},{16,22}}</string>
+                <string>{{494,74},{16,22}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{56,98},{16,22}}</string>
                 <key>sourceSize</key>
@@ -3855,7 +3855,7 @@
             <key>goblinKnightNormal.85.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,26},{18,22}}</string>
+                <string>{{2,82},{18,22}}</string>
                 <key>offset</key>
                 <string>{3,-48}</string>
                 <key>rotated</key>
@@ -3868,7 +3868,7 @@
             <key>goblinKnightNormal.86.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{144,202},{18,20}}</string>
+                <string>{{116,164},{18,20}}</string>
                 <key>offset</key>
                 <string>{3,-48}</string>
                 <key>rotated</key>
@@ -3881,59 +3881,7 @@
             <key>goblinKnightNormal.87.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{90,204},{18,20}}</string>
-                <key>offset</key>
-                <string>{3,-47}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{54,97},{18,20}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.88.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{68,204},{18,20}}</string>
-                <key>offset</key>
-                <string>{3,-47}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{54,97},{18,20}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.89.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{46,204},{18,20}}</string>
-                <key>offset</key>
-                <string>{3,-47}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{54,97},{18,20}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.9.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{338,102},{14,22}}</string>
-                <key>offset</key>
-                <string>{2,-49}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{55,98},{14,22}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
-            <key>goblinKnightNormal.90.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{24,204},{18,20}}</string>
+                <string>{{94,158},{18,20}}</string>
                 <key>offset</key>
                 <string>{3,-48}</string>
                 <key>rotated</key>
@@ -3943,23 +3891,75 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>goblinKnightNormal.91.png</key>
+            <key>goblinKnightNormal.88.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,26},{18,22}}</string>
+                <string>{{122,142},{18,20}}</string>
                 <key>offset</key>
-                <string>{4,-48}</string>
+                <string>{3,-47}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{54,97},{18,20}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.89.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{122,120},{18,20}}</string>
+                <key>offset</key>
+                <string>{3,-47}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{54,97},{18,20}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.9.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{238,98},{14,22}}</string>
+                <key>offset</key>
+                <string>{2,-49}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{55,97},{18,22}}</string>
+                <string>{{55,98},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.90.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{122,98},{18,20}}</string>
+                <key>offset</key>
+                <string>{3,-48}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{54,98},{18,20}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>goblinKnightNormal.91.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{494,50},{16,22}}</string>
+                <key>offset</key>
+                <string>{4,-48}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{56,97},{16,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>goblinKnightNormal.92.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,26},{18,22}}</string>
+                <string>{{26,72},{18,22}}</string>
                 <key>offset</key>
                 <string>{4,-49}</string>
                 <key>rotated</key>
@@ -3972,13 +3972,13 @@
             <key>goblinKnightNormal.93.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,46},{16,22}}</string>
+                <string>{{494,26},{16,22}}</string>
                 <key>offset</key>
-                <string>{5,-49}</string>
+                <string>{4,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{57,98},{16,22}}</string>
+                <string>{{56,98},{16,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
@@ -3992,7 +3992,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:616be4eb3d7bbe00cb5ee63936f14e47:de10d4801520d1017aa01e3b214ba370:fb13e4b03c8f22a1679512d1f5d597b2$</string>
+            <string>$TexturePacker:SmartUpdate:ca9808b0c7d84eaff62f8edaf76065b0:10a41c28cb6f5856fe7ac9897a01a2a7:fb13e4b03c8f22a1679512d1f5d597b2$</string>
             <key>textureFileName</key>
             <string>goblinKnightNormalSheet.png</string>
         </dict>

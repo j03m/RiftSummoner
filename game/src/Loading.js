@@ -58,7 +58,7 @@ var Loading = jc.UiElementsLayer.extend({
 
         //if there
         if (this.apiCalls){
-            this.startLoadingapiCalls();
+            this.startLoadingApiCalls();
         }
 
         this.schedule(this.checkPercent);
@@ -68,7 +68,7 @@ var Loading = jc.UiElementsLayer.extend({
             this.ccLoaderDone = true;
         }.bind(this));
     },
-    startLoadingapiCalls:function(){
+    startLoadingApiCalls:function(){
         var q = async.queue(function(task,callback){
             task.action(callback);
         }.bind(this),2);

@@ -18,7 +18,12 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
 
     //is my target alive?
     var state= this.getState();
-    if (!this.locked && state.anim.indexOf('attack')==-1){
+    if (!this.locked){
+        this.setState('idle', state.anim);
+        return;
+    }
+
+    if (!this.locked.isAlive()){
         this.setState('idle', state.anim);
         return;
     }

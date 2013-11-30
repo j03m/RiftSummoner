@@ -16,7 +16,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
             this.addChild(this.highlight);
             this.name = "SelectTeam";
             jc.layerManager.pushLayer(this);
-            this.start();
+            ;
 
             //if blob formation is not set
             //use it
@@ -34,6 +34,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
     onShow:function(){
         if (!this.first){
             //llp through characters
+            this.start();
             var formationOrder = hotr.blobOperations.getFormationOrder();
             for (var i =0; i<formationOrder.length; i++){
                 if (formationOrder[i]!=undefined){

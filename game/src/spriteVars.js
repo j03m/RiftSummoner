@@ -268,8 +268,8 @@ var spriteDefs = {
 		"unitType": 3,
 		"powers": {
 			"regeneration": {
-				"heal": 100,
-				"interval": 1
+				"heal": 30,
+				"interval": 0.5
 			}
 		},
 		"gameProperties": {
@@ -425,8 +425,8 @@ var spriteDefs = {
 		"special": "None",
 		"powers": {
 			"regeneration": {
-				"heal": 100,
-				"interval": 1
+				"heal": 30,
+				"interval": 0.5
 			}
 		},
 		"gameProperties": {
@@ -633,25 +633,25 @@ var spriteDefs = {
 			"move": {
 				"start": 1,
 				"end": 8,
-				"delay": 0.05,
+				"delay": 0.08,
 				"type": 0
 			},
 			"attack": {
 				"start": 34,
 				"end": 49,
-				"delay": 0.025,
+				"delay": 0.08,
 				"type": 1
 			},
 			"dead": {
 				"start": 58,
 				"end": 73,
-				"delay": 0.025,
+				"delay": 0.08,
 				"type": 1
 			},
 			"idle": {
 				"start": 1,
 				"end": 8,
-				"delay": 0.05,
+				"delay": 0.08,
 				"type": 0
 			}
 		},
@@ -776,25 +776,25 @@ var spriteDefs = {
 			"move": {
 				"start": 80,
 				"end": 90,
-				"delay": 0.02,
+				"delay": 0.03,
 				"type": 0
 			},
 			"attack": {
 				"start": 315,
 				"end": 353,
-				"delay": 0.025,
+				"delay": 0.03,
 				"type": 1
 			},
 			"idle": {
 				"start": 1,
 				"end": 60,
-				"delay": 0.02,
+				"delay": 0.05,
 				"type": 0
 			},
 			"dead": {
 				"start": 450,
 				"end": 550,
-				"delay": 0.02,
+				"delay": 0.01,
 				"type": 1
 			}
 		},
@@ -1351,7 +1351,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 150,
+			"MaxHP": 250,
 			"movementType": 1,
 			"targets": 1,
 			"speed": 200,

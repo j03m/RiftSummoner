@@ -7,7 +7,33 @@
             <key>scowerer.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,206},{32,34}}</string>
+                <string>{{34,132},{32,36}}</string>
+                <key>offset</key>
+                <string>{-1,-101}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,203},{32,36}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.170.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{68,402},{32,34}}</string>
+                <key>offset</key>
+                <string>{-1,-101}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,204},{32,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.171.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{74,476},{32,34}}</string>
                 <key>offset</key>
                 <string>{-1,-102}</string>
                 <key>rotated</key>
@@ -17,36 +43,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>scowerer.170.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{184,146},{32,32}}</string>
-                <key>offset</key>
-                <string>{-1,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{103,206},{32,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.171.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{58,434},{34,34}}</string>
-                <key>offset</key>
-                <string>{-1,-102}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{102,205},{34,34}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>scowerer.172.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{56,472},{34,34}}</string>
+                <string>{{32,404},{34,34}}</string>
                 <key>offset</key>
                 <string>{-1,-102}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>scowerer.173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,470},{32,34}}</string>
+                <string>{{58,440},{32,34}}</string>
                 <key>offset</key>
                 <string>{-2,-101}</string>
                 <key>rotated</key>
@@ -72,98 +72,111 @@
             <key>scowerer.174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,350},{30,34}}</string>
+                <string>{{2,290},{30,36}}</string>
                 <key>offset</key>
-                <string>{-3,-101}</string>
+                <string>{-3,-100}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,204},{30,34}}</string>
+                <string>{{102,202},{30,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,128},{30,38}}</string>
+                <string>{{2,134},{30,40}}</string>
                 <key>offset</key>
-                <string>{-4,-100}</string>
+                <string>{-4,-99}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{101,201},{30,38}}</string>
+                <string>{{101,199},{30,40}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.176.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{28,40}}</string>
+                <string>{{2,2},{28,42}}</string>
                 <key>offset</key>
-                <string>{-4,-100}</string>
+                <string>{-4,-99}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,200},{28,40}}</string>
+                <string>{{102,198},{28,42}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.177.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,44},{26,40}}</string>
+                <string>{{2,46},{26,42}}</string>
                 <key>offset</key>
-                <string>{-3,-100}</string>
+                <string>{-3,-99}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{104,200},{26,40}}</string>
+                <string>{{104,198},{26,42}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,86},{22,40}}</string>
+                <string>{{2,90},{22,42}}</string>
                 <key>offset</key>
-                <string>{-1,-99}</string>
+                <string>{-2,-98}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,199},{22,40}}</string>
+                <string>{{107,197},{22,42}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{26,86},{22,38}}</string>
+                <string>{{26,90},{20,40}}</string>
                 <key>offset</key>
-                <string>{-1,-98}</string>
+                <string>{-1,-97}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,199},{22,38}}</string>
+                <string>{{109,197},{20,40}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,472},{22,36}}</string>
+                <string>{{32,2},{22,38}}</string>
                 <key>offset</key>
-                <string>{-1,-98}</string>
+                <string>{-1,-97}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,200},{22,36}}</string>
+                <string>{{108,198},{22,38}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,434},{24,36}}</string>
+                <string>{{30,46},{24,38}}</string>
+                <key>offset</key>
+                <string>{-2,-97}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{106,198},{24,38}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.182.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{32,366},{24,36}}</string>
                 <key>offset</key>
                 <string>{-2,-98}</string>
                 <key>rotated</key>
@@ -173,23 +186,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>scowerer.182.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{172,74},{24,34}}</string>
-                <key>offset</key>
-                <string>{-2,-99}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,202},{24,34}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>scowerer.183.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{126,458},{26,34}}</string>
+                <string>{{248,398},{26,34}}</string>
                 <key>offset</key>
                 <string>{-2,-98}</string>
                 <key>rotated</key>
@@ -202,20 +202,20 @@
             <key>scowerer.184.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{324,70},{28,32}}</string>
+                <string>{{316,348},{26,32}}</string>
                 <key>offset</key>
                 <string>{-2,-98}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{104,202},{28,32}}</string>
+                <string>{{105,202},{26,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.185.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{252,2},{30,32}}</string>
+                <string>{{246,178},{30,32}}</string>
                 <key>offset</key>
                 <string>{-2,-99}</string>
                 <key>rotated</key>
@@ -228,7 +228,7 @@
             <key>scowerer.186.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{182,184},{32,32}}</string>
+                <string>{{252,358},{32,32}}</string>
                 <key>offset</key>
                 <string>{-1,-100}</string>
                 <key>rotated</key>
@@ -241,20 +241,20 @@
             <key>scowerer.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{180,222},{32,32}}</string>
+                <string>{{92,438},{34,32}}</string>
                 <key>offset</key>
-                <string>{0,-100}</string>
+                <string>{-1,-100}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{104,204},{32,32}}</string>
+                <string>{{102,204},{34,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,264},{32,32}}</string>
+                <string>{{242,324},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,-101}</string>
                 <key>rotated</key>
@@ -267,7 +267,7 @@
             <key>scowerer.189.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{186,2},{32,32}}</string>
+                <string>{{242,290},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,-101}</string>
                 <key>rotated</key>
@@ -280,59 +280,59 @@
             <key>scowerer.190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,38},{32,32}}</string>
+                <string>{{58,366},{32,34}}</string>
                 <key>offset</key>
-                <string>{-1,-102}</string>
+                <string>{-1,-101}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,206},{32,32}}</string>
+                <string>{{103,204},{32,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.245.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{250,36},{30,32}}</string>
+                <string>{{88,2},{30,34}}</string>
                 <key>offset</key>
-                <string>{-1,-103}</string>
+                <string>{-1,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{104,207},{30,32}}</string>
+                <string>{{104,205},{30,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.246.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{230,70},{30,32}}</string>
+                <string>{{68,160},{30,34}}</string>
                 <key>offset</key>
-                <string>{-1,-103}</string>
+                <string>{-1,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{104,207},{30,32}}</string>
+                <string>{{104,205},{30,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.247.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,106},{30,32}}</string>
+                <string>{{80,78},{30,34}}</string>
                 <key>offset</key>
-                <string>{-1,-103}</string>
+                <string>{-1,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{104,207},{30,32}}</string>
+                <string>{{104,205},{30,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.248.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{216,180},{30,32}}</string>
+                <string>{{220,144},{30,32}}</string>
                 <key>offset</key>
                 <string>{-1,-103}</string>
                 <key>rotated</key>
@@ -345,7 +345,7 @@
             <key>scowerer.249.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{214,218},{30,32}}</string>
+                <string>{{232,74},{30,32}}</string>
                 <key>offset</key>
                 <string>{-1,-103}</string>
                 <key>rotated</key>
@@ -358,85 +358,85 @@
             <key>scowerer.250.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{440,2},{30,30}}</string>
+                <string>{{220,110},{30,32}}</string>
                 <key>offset</key>
-                <string>{-1,-104}</string>
+                <string>{-2,-103}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{104,209},{30,30}}</string>
+                <string>{{103,207},{30,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.251.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{434,34},{30,30}}</string>
+                <string>{{244,252},{30,32}}</string>
                 <key>offset</key>
-                <string>{-1,-104}</string>
+                <string>{-2,-103}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{104,209},{30,30}}</string>
+                <string>{{103,207},{30,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.252.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{414,66},{30,30}}</string>
+                <string>{{244,218},{30,32}}</string>
                 <key>offset</key>
-                <string>{-2,-104}</string>
+                <string>{-2,-103}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,209},{30,30}}</string>
+                <string>{{103,207},{30,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.253.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,102},{30,30}}</string>
+                <string>{{300,460},{30,32}}</string>
                 <key>offset</key>
-                <string>{-2,-104}</string>
+                <string>{-2,-103}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,209},{30,30}}</string>
+                <string>{{103,207},{30,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.254.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{374,136},{30,30}}</string>
+                <string>{{288,426},{30,32}}</string>
                 <key>offset</key>
-                <string>{-2,-104}</string>
+                <string>{-2,-103}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,209},{30,30}}</string>
+                <string>{{103,207},{30,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.255.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,170},{30,30}}</string>
+                <string>{{276,392},{30,32}}</string>
                 <key>offset</key>
-                <string>{-2,-104}</string>
+                <string>{-2,-103}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,209},{30,30}}</string>
+                <string>{{103,207},{30,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.256.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{366,206},{30,30}}</string>
+                <string>{{422,436},{30,30}}</string>
                 <key>offset</key>
                 <string>{-2,-104}</string>
                 <key>rotated</key>
@@ -449,7 +449,7 @@
             <key>scowerer.257.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,340},{30,30}}</string>
+                <string>{{410,404},{30,30}}</string>
                 <key>offset</key>
                 <string>{-2,-104}</string>
                 <key>rotated</key>
@@ -462,7 +462,7 @@
             <key>scowerer.258.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{358,274},{30,30}}</string>
+                <string>{{398,372},{30,30}}</string>
                 <key>offset</key>
                 <string>{-2,-104}</string>
                 <key>rotated</key>
@@ -475,7 +475,7 @@
             <key>scowerer.259.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,308},{30,30}}</string>
+                <string>{{376,340},{30,30}}</string>
                 <key>offset</key>
                 <string>{-2,-104}</string>
                 <key>rotated</key>
@@ -488,20 +488,20 @@
             <key>scowerer.260.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{214,460},{32,30}}</string>
+                <string>{{366,308},{30,30}}</string>
                 <key>offset</key>
-                <string>{-3,-104}</string>
+                <string>{-2,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{101,209},{32,30}}</string>
+                <string>{{103,209},{30,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.261.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{214,426},{32,30}}</string>
+                <string>{{302,36},{32,30}}</string>
                 <key>offset</key>
                 <string>{-3,-104}</string>
                 <key>rotated</key>
@@ -514,7 +514,7 @@
             <key>scowerer.262.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{212,392},{32,30}}</string>
+                <string>{{302,2},{32,30}}</string>
                 <key>offset</key>
                 <string>{-3,-104}</string>
                 <key>rotated</key>
@@ -527,7 +527,7 @@
             <key>scowerer.263.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,358},{32,30}}</string>
+                <string>{{284,138},{32,30}}</string>
                 <key>offset</key>
                 <string>{-3,-104}</string>
                 <key>rotated</key>
@@ -540,7 +540,7 @@
             <key>scowerer.264.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,324},{32,30}}</string>
+                <string>{{296,70},{32,30}}</string>
                 <key>offset</key>
                 <string>{-3,-104}</string>
                 <key>rotated</key>
@@ -553,228 +553,228 @@
             <key>scowerer.265.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{274,384},{32,28}}</string>
+                <string>{{100,150},{34,30}}</string>
                 <key>offset</key>
-                <string>{-3,-105}</string>
+                <string>{-4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,211},{32,28}}</string>
+                <string>{{99,209},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.266.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{272,350},{32,28}}</string>
+                <string>{{112,74},{34,30}}</string>
                 <key>offset</key>
-                <string>{-3,-105}</string>
+                <string>{-4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,211},{32,28}}</string>
+                <string>{{99,209},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.267.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{156,2},{34,28}}</string>
+                <string>{{100,114},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,211},{34,28}}</string>
+                <string>{{99,209},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.268.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,38},{34,28}}</string>
+                <string>{{98,196},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,211},{34,28}}</string>
+                <string>{{99,209},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.269.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{142,74},{34,28}}</string>
+                <string>{{140,458},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,211},{34,28}}</string>
+                <string>{{99,209},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.270.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{128,112},{34,28}}</string>
+                <string>{{126,422},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,211},{34,28}}</string>
+                <string>{{99,209},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.271.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{124,2},{34,30}}</string>
+                <string>{{102,386},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,210},{34,30}}</string>
+                <string>{{99,209},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.272.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,38},{34,30}}</string>
+                <string>{{92,350},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,210},{34,30}}</string>
+                <string>{{99,209},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.273.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{110,76},{34,30}}</string>
+                <string>{{92,314},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,210},{34,30}}</string>
+                <string>{{99,209},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.274.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,114},{34,30}}</string>
+                <string>{{88,38},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-5,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,210},{34,30}}</string>
+                <string>{{98,210},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.275.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{94,156},{34,30}}</string>
+                <string>{{38,480},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-5,-105}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,210},{34,30}}</string>
+                <string>{{98,210},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.276.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,242},{34,30}}</string>
+                <string>{{2,480},{34,30}}</string>
                 <key>offset</key>
-                <string>{-4,-105}</string>
+                <string>{-5,-105}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,210},{34,30}}</string>
+                <string>{{98,210},{34,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.277.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{250,138},{32,30}}</string>
+                <string>{{284,104},{32,30}}</string>
                 <key>offset</key>
-                <string>{-3,-105}</string>
+                <string>{-4,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,210},{32,30}}</string>
+                <string>{{100,210},{32,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.278.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{284,2},{32,30}}</string>
+                <string>{{278,176},{32,30}}</string>
                 <key>offset</key>
-                <string>{-3,-105}</string>
+                <string>{-4,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,210},{32,30}}</string>
+                <string>{{100,210},{32,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.279.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{282,36},{32,30}}</string>
+                <string>{{276,212},{32,30}}</string>
                 <key>offset</key>
-                <string>{-3,-105}</string>
+                <string>{-4,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,210},{32,30}}</string>
+                <string>{{100,210},{32,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.280.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{262,70},{32,30}}</string>
+                <string>{{270,36},{32,30}}</string>
                 <key>offset</key>
-                <string>{-3,-105}</string>
+                <string>{-4,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,210},{32,30}}</string>
+                <string>{{100,210},{32,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.281.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{250,104},{32,30}}</string>
+                <string>{{270,2},{32,30}}</string>
                 <key>offset</key>
-                <string>{-3,-105}</string>
+                <string>{-4,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,210},{32,30}}</string>
+                <string>{{100,210},{32,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.282.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{408,2},{30,30}}</string>
+                <string>{{366,276},{30,30}}</string>
                 <key>offset</key>
                 <string>{-3,-105}</string>
                 <key>rotated</key>
@@ -787,7 +787,7 @@
             <key>scowerer.283.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,34},{30,30}}</string>
+                <string>{{398,472},{30,30}}</string>
                 <key>offset</key>
                 <string>{-3,-105}</string>
                 <key>rotated</key>
@@ -800,7 +800,7 @@
             <key>scowerer.284.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{382,70},{30,30}}</string>
+                <string>{{390,440},{30,30}}</string>
                 <key>offset</key>
                 <string>{-3,-105}</string>
                 <key>rotated</key>
@@ -813,7 +813,7 @@
             <key>scowerer.285.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{370,104},{30,30}}</string>
+                <string>{{378,408},{30,30}}</string>
                 <key>offset</key>
                 <string>{-3,-105}</string>
                 <key>rotated</key>
@@ -826,11 +826,11 @@
             <key>scowerer.286.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,242},{28,30}}</string>
+                <string>{{346,130},{28,30}}</string>
                 <key>offset</key>
                 <string>{-2,-105}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{104,210},{28,30}}</string>
                 <key>sourceSize</key>
@@ -839,11 +839,11 @@
             <key>scowerer.287.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,212},{28,30}}</string>
+                <string>{{400,98},{28,30}}</string>
                 <key>offset</key>
                 <string>{-2,-105}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{104,210},{28,30}}</string>
                 <key>sourceSize</key>
@@ -852,11 +852,11 @@
             <key>scowerer.288.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{398,228},{28,30}}</string>
+                <string>{{430,98},{28,30}}</string>
                 <key>offset</key>
                 <string>{-2,-105}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{104,210},{28,30}}</string>
                 <key>sourceSize</key>
@@ -865,33 +865,20 @@
             <key>scowerer.289.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,212},{28,30}}</string>
+                <string>{{430,162},{26,30}}</string>
                 <key>offset</key>
                 <string>{-1,-105}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{105,210},{28,30}}</string>
+                <string>{{106,210},{26,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.290.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{390,286},{26,28}}</string>
-                <key>offset</key>
-                <string>{0,-105}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{107,211},{26,28}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.291.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{428,272},{26,30}}</string>
+                <string>{{460,150},{26,30}}</string>
                 <key>offset</key>
                 <string>{0,-104}</string>
                 <key>rotated</key>
@@ -901,27 +888,40 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
+            <key>scowerer.291.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{430,130},{26,30}}</string>
+                <key>offset</key>
+                <string>{0,-104}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,209},{26,30}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
             <key>scowerer.292.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{462,270},{26,30}}</string>
+                <string>{{460,122},{26,30}}</string>
                 <key>offset</key>
-                <string>{1,-104}</string>
+                <string>{0,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{108,209},{26,30}}</string>
+                <string>{{107,209},{26,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.293.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{462,242},{26,30}}</string>
+                <string>{{376,130},{26,30}}</string>
                 <key>offset</key>
                 <string>{1,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{108,209},{26,30}}</string>
                 <key>sourceSize</key>
@@ -930,11 +930,11 @@
             <key>scowerer.294.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{396,258},{26,30}}</string>
+                <string>{{372,162},{26,30}}</string>
                 <key>offset</key>
                 <string>{1,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{108,209},{26,30}}</string>
                 <key>sourceSize</key>
@@ -943,7 +943,7 @@
             <key>scowerer.295.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{406,166},{26,30}}</string>
+                <string>{{372,98},{26,30}}</string>
                 <key>offset</key>
                 <string>{1,-104}</string>
                 <key>rotated</key>
@@ -956,59 +956,59 @@
             <key>scowerer.296.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{466,182},{28,30}}</string>
+                <string>{{372,66},{26,30}}</string>
                 <key>offset</key>
                 <string>{1,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{28,30}}</string>
+                <string>{{108,209},{26,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.297.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{400,198},{28,30}}</string>
+                <string>{{372,34},{26,30}}</string>
                 <key>offset</key>
-                <string>{1,-104}</string>
+                <string>{2,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{28,30}}</string>
+                <string>{{109,209},{26,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.298.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{434,182},{28,30}}</string>
+                <string>{{372,2},{26,30}}</string>
                 <key>offset</key>
-                <string>{1,-104}</string>
+                <string>{2,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{28,30}}</string>
+                <string>{{109,209},{26,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.299.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{466,152},{28,30}}</string>
+                <string>{{366,484},{26,30}}</string>
                 <key>offset</key>
                 <string>{2,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{108,209},{28,30}}</string>
+                <string>{{109,209},{26,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.300.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{434,152},{28,30}}</string>
+                <string>{{460,92},{28,30}}</string>
                 <key>offset</key>
                 <string>{2,-104}</string>
                 <key>rotated</key>
@@ -1021,11 +1021,11 @@
             <key>scowerer.301.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{466,122},{28,30}}</string>
+                <string>{{400,66},{28,30}}</string>
                 <key>offset</key>
                 <string>{2,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{108,209},{28,30}}</string>
                 <key>sourceSize</key>
@@ -1034,33 +1034,33 @@
             <key>scowerer.302.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,138},{30,30}}</string>
+                <string>{{430,66},{28,30}}</string>
                 <key>offset</key>
-                <string>{2,-104}</string>
+                <string>{3,-104}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{30,30}}</string>
+                <string>{{109,209},{28,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.303.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{248,174},{32,30}}</string>
+                <string>{{366,376},{30,30}}</string>
                 <key>offset</key>
-                <string>{3,-104}</string>
+                <string>{4,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{32,30}}</string>
+                <string>{{109,209},{30,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.304.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{246,214},{32,30}}</string>
+                <string>{{264,70},{32,30}}</string>
                 <key>offset</key>
                 <string>{4,-104}</string>
                 <key>rotated</key>
@@ -1073,20 +1073,20 @@
             <key>scowerer.305.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,386},{34,30}}</string>
+                <string>{{238,36},{32,30}}</string>
                 <key>offset</key>
                 <string>{4,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{34,30}}</string>
+                <string>{{108,209},{32,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.306.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,252},{32,30}}</string>
+                <string>{{238,2},{32,30}}</string>
                 <key>offset</key>
                 <string>{4,-104}</string>
                 <key>rotated</key>
@@ -1099,59 +1099,59 @@
             <key>scowerer.307.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,290},{32,30}}</string>
+                <string>{{340,172},{30,30}}</string>
                 <key>offset</key>
-                <string>{3,-104}</string>
+                <string>{4,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{32,30}}</string>
+                <string>{{109,209},{30,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.308.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{182,468},{32,30}}</string>
+                <string>{{338,206},{30,30}}</string>
                 <key>offset</key>
                 <string>{3,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{32,30}}</string>
+                <string>{{108,209},{30,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.309.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{182,434},{32,30}}</string>
+                <string>{{344,344},{30,30}}</string>
                 <key>offset</key>
-                <string>{3,-104}</string>
+                <string>{4,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{32,30}}</string>
+                <string>{{109,209},{30,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.310.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{180,400},{32,30}}</string>
+                <string>{{334,312},{30,30}}</string>
                 <key>offset</key>
                 <string>{4,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,209},{32,30}}</string>
+                <string>{{109,209},{30,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.311.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{178,366},{32,30}}</string>
+                <string>{{252,142},{32,30}}</string>
                 <key>offset</key>
                 <string>{4,-104}</string>
                 <key>rotated</key>
@@ -1164,7 +1164,7 @@
             <key>scowerer.312.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{178,332},{32,30}}</string>
+                <string>{{252,108},{32,30}}</string>
                 <key>offset</key>
                 <string>{4,-104}</string>
                 <key>rotated</key>
@@ -1177,20 +1177,20 @@
             <key>scowerer.313.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,140},{32,30}}</string>
+                <string>{{336,244},{30,30}}</string>
                 <key>offset</key>
-                <string>{3,-104}</string>
+                <string>{4,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{32,30}}</string>
+                <string>{{109,209},{30,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.314.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,2},{30,30}}</string>
+                <string>{{334,280},{30,30}}</string>
                 <key>offset</key>
                 <string>{3,-104}</string>
                 <key>rotated</key>
@@ -1203,7 +1203,7 @@
             <key>scowerer.315.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{434,122},{28,30}}</string>
+                <string>{{460,62},{28,30}}</string>
                 <key>offset</key>
                 <string>{2,-104}</string>
                 <key>rotated</key>
@@ -1216,11 +1216,11 @@
             <key>scowerer.316.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{478,92},{28,30}}</string>
+                <string>{{400,34},{28,30}}</string>
                 <key>offset</key>
                 <string>{1,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{107,209},{28,30}}</string>
                 <key>sourceSize</key>
@@ -1229,11 +1229,11 @@
             <key>scowerer.317.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{446,92},{28,30}}</string>
+                <string>{{430,34},{28,30}}</string>
                 <key>offset</key>
                 <string>{1,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{107,209},{28,30}}</string>
                 <key>sourceSize</key>
@@ -1242,37 +1242,37 @@
             <key>scowerer.318.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{466,62},{28,30}}</string>
+                <string>{{400,2},{28,30}}</string>
                 <key>offset</key>
-                <string>{1,-104}</string>
+                <string>{0,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,209},{28,30}}</string>
+                <string>{{106,209},{28,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.319.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{406,134},{26,30}}</string>
+                <string>{{430,2},{28,30}}</string>
                 <key>offset</key>
-                <string>{1,-104}</string>
+                <string>{0,-104}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,209},{26,30}}</string>
+                <string>{{106,209},{28,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.320.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{472,32},{28,30}}</string>
+                <string>{{430,468},{28,30}}</string>
                 <key>offset</key>
                 <string>{0,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{106,209},{28,30}}</string>
                 <key>sourceSize</key>
@@ -1281,7 +1281,7 @@
             <key>scowerer.460.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,104},{26,32}}</string>
+                <string>{{306,314},{26,32}}</string>
                 <key>offset</key>
                 <string>{1,-102}</string>
                 <key>rotated</key>
@@ -1294,7 +1294,7 @@
             <key>scowerer.461.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,240},{26,32}}</string>
+                <string>{{306,280},{26,32}}</string>
                 <key>offset</key>
                 <string>{1,-102}</string>
                 <key>rotated</key>
@@ -1307,33 +1307,33 @@
             <key>scowerer.462.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{340,172},{26,32}}</string>
+                <string>{{306,246},{28,32}}</string>
                 <key>offset</key>
-                <string>{1,-102}</string>
+                <string>{0,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,206},{26,32}}</string>
+                <string>{{106,206},{28,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.463.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,206},{26,32}}</string>
+                <string>{{332,450},{28,32}}</string>
                 <key>offset</key>
-                <string>{1,-102}</string>
+                <string>{0,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,206},{26,32}}</string>
+                <string>{{106,206},{28,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.464.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{312,104},{28,32}}</string>
+                <string>{{320,416},{28,32}}</string>
                 <key>offset</key>
                 <string>{0,-102}</string>
                 <key>rotated</key>
@@ -1346,20 +1346,20 @@
             <key>scowerer.465.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,172},{28,32}}</string>
+                <string>{{308,382},{28,32}}</string>
                 <key>offset</key>
-                <string>{0,-103}</string>
+                <string>{0,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
+                <string>{{106,206},{28,32}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.466.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{308,206},{28,32}}</string>
+                <string>{{286,348},{28,32}}</string>
                 <key>offset</key>
                 <string>{0,-103}</string>
                 <key>rotated</key>
@@ -1372,46 +1372,46 @@
             <key>scowerer.467.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{124,422},{26,34}}</string>
+                <string>{{130,186},{28,34}}</string>
                 <key>offset</key>
-                <string>{1,-102}</string>
+                <string>{0,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,205},{26,34}}</string>
+                <string>{{106,205},{28,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.468.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,386},{26,34}}</string>
+                <string>{{30,442},{26,36}}</string>
                 <key>offset</key>
-                <string>{1,-102}</string>
+                <string>{1,-101}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,205},{26,34}}</string>
+                <string>{{108,203},{26,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.469.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,350},{26,34}}</string>
+                <string>{{2,442},{26,36}}</string>
                 <key>offset</key>
-                <string>{1,-102}</string>
+                <string>{1,-101}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,205},{26,34}}</string>
+                <string>{{108,203},{26,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.470.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,314},{26,34}}</string>
+                <string>{{224,362},{26,34}}</string>
                 <key>offset</key>
                 <string>{1,-102}</string>
                 <key>rotated</key>
@@ -1424,33 +1424,33 @@
             <key>scowerer.471.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,274},{26,32}}</string>
+                <string>{{214,326},{26,34}}</string>
                 <key>offset</key>
-                <string>{1,-103}</string>
+                <string>{1,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{108,207},{26,32}}</string>
+                <string>{{108,205},{26,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.472.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{280,242},{28,32}}</string>
+                <string>{{214,290},{26,34}}</string>
                 <key>offset</key>
-                <string>{1,-103}</string>
+                <string>{1,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,207},{28,32}}</string>
+                <string>{{108,205},{26,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.473.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{304,446},{26,32}}</string>
+                <string>{{334,36},{26,32}}</string>
                 <key>offset</key>
                 <string>{1,-103}</string>
                 <key>rotated</key>
@@ -1463,202 +1463,7 @@
             <key>scowerer.474.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{304,412},{26,32}}</string>
-                <key>offset</key>
-                <string>{1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{108,207},{26,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.475.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{272,282},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.476.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{246,456},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.477.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{246,422},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.478.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{304,378},{26,32}}</string>
-                <key>offset</key>
-                <string>{1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{108,207},{26,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.479.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{302,344},{26,32}}</string>
-                <key>offset</key>
-                <string>{1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{108,207},{26,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.480.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{302,310},{26,32}}</string>
-                <key>offset</key>
-                <string>{1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{108,207},{26,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.481.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{244,388},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.482.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{242,354},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.483.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{310,240},{26,32}}</string>
-                <key>offset</key>
-                <string>{1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{108,207},{26,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.484.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{242,320},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.485.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{282,138},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.486.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{302,276},{26,32}}</string>
-                <key>offset</key>
-                <string>{1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{108,207},{26,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.487.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{316,2},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.488.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{314,36},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.489.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{124,228},{26,34}}</string>
+                <string>{{210,38},{26,34}}</string>
                 <key>offset</key>
                 <string>{1,-102}</string>
                 <key>rotated</key>
@@ -1668,101 +1473,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>scowerer.490.png</key>
+            <key>scowerer.475.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{294,70},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.491.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{186,256},{30,32}}</string>
-                <key>offset</key>
-                <string>{-1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{104,207},{30,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.492.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{178,298},{30,32}}</string>
-                <key>offset</key>
-                <string>{-1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{104,207},{30,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.493.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{282,104},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.494.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{276,452},{26,32}}</string>
-                <key>offset</key>
-                <string>{1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{108,207},{26,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.495.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{276,418},{26,32}}</string>
-                <key>offset</key>
-                <string>{1,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{108,207},{26,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.496.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{280,172},{28,32}}</string>
-                <key>offset</key>
-                <string>{0,-103}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{106,207},{28,32}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.497.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{278,208},{28,32}}</string>
+                <string>{{276,314},{28,32}}</string>
                 <key>offset</key>
                 <string>{-1,-103}</string>
                 <key>rotated</key>
@@ -1772,49 +1486,205 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>scowerer.498.png</key>
+            <key>scowerer.476.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{220,2},{30,32}}</string>
+                <string>{{128,268},{28,34}}</string>
                 <key>offset</key>
-                <string>{-2,-103}</string>
+                <string>{-1,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,207},{30,32}}</string>
+                <string>{{105,205},{28,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>scowerer.499.png</key>
+            <key>scowerer.477.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,36},{30,32}}</string>
+                <string>{{68,124},{30,34}}</string>
                 <key>offset</key>
-                <string>{-2,-103}</string>
+                <string>{-1,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,207},{30,32}}</string>
+                <string>{{104,205},{30,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>scowerer.500.png</key>
+            <key>scowerer.478.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,72},{30,32}}</string>
+                <string>{{128,232},{28,34}}</string>
                 <key>offset</key>
-                <string>{-2,-103}</string>
+                <string>{0,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,207},{30,32}}</string>
+                <string>{{106,205},{28,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>scowerer.501.png</key>
+            <key>scowerer.479.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,314},{30,34}}</string>
+                <string>{{210,2},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,205},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.480.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{192,146},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,205},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.481.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{172,448},{28,34}}</string>
+                <key>offset</key>
+                <string>{-1,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{105,205},{28,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.482.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{158,412},{28,34}}</string>
+                <key>offset</key>
+                <string>{-1,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{105,205},{28,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.483.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{204,74},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,205},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.484.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{134,376},{28,34}}</string>
+                <key>offset</key>
+                <string>{-1,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{105,205},{28,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.485.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{124,340},{28,34}}</string>
+                <key>offset</key>
+                <string>{-1,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{105,205},{28,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.486.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{192,110},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,205},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.487.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{124,304},{28,34}}</string>
+                <key>offset</key>
+                <string>{-1,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{105,205},{28,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.488.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{98,268},{28,34}}</string>
+                <key>offset</key>
+                <string>{-1,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{105,205},{28,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.489.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{188,254},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,205},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.490.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{190,182},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,205},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.491.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{66,278},{30,34}}</string>
                 <key>offset</key>
                 <string>{-2,-102}</string>
                 <key>rotated</key>
@@ -1824,10 +1694,140 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
+            <key>scowerer.492.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{66,242},{30,34}}</string>
+                <key>offset</key>
+                <string>{-2,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,205},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.493.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{98,232},{28,34}}</string>
+                <key>offset</key>
+                <string>{-1,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{105,205},{28,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.494.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{188,218},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,205},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.495.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{244,474},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,205},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.496.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{232,438},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{107,205},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.497.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{120,38},{28,34}}</string>
+                <key>offset</key>
+                <string>{-1,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{105,205},{28,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.498.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{66,206},{30,34}}</string>
+                <key>offset</key>
+                <string>{-2,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,205},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.499.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{60,322},{30,34}}</string>
+                <key>offset</key>
+                <string>{-2,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,205},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.500.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{34,286},{30,34}}</string>
+                <key>offset</key>
+                <string>{-2,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,205},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.501.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{34,250},{30,34}}</string>
+                <key>offset</key>
+                <string>{-3,-102}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{102,205},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
             <key>scowerer.502.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,278},{30,34}}</string>
+                <string>{{36,170},{30,34}}</string>
                 <key>offset</key>
                 <string>{-3,-102}</string>
                 <key>rotated</key>
@@ -1840,98 +1840,98 @@
             <key>scowerer.503.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,242},{30,34}}</string>
+                <string>{{34,214},{30,34}}</string>
                 <key>offset</key>
-                <string>{-3,-103}</string>
+                <string>{-3,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,206},{30,34}}</string>
+                <string>{{102,205},{30,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.504.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,2},{30,34}}</string>
+                <string>{{2,252},{30,36}}</string>
                 <key>offset</key>
-                <string>{-3,-103}</string>
+                <string>{-3,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,206},{30,34}}</string>
+                <string>{{102,204},{30,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.505.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{90,40},{30,34}}</string>
+                <string>{{2,214},{30,36}}</string>
                 <key>offset</key>
-                <string>{-3,-103}</string>
+                <string>{-3,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,206},{30,34}}</string>
+                <string>{{102,204},{30,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.506.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,78},{30,34}}</string>
+                <string>{{56,40},{30,36}}</string>
                 <key>offset</key>
-                <string>{-3,-103}</string>
+                <string>{-3,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,206},{30,34}}</string>
+                <string>{{102,204},{30,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.507.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,2},{30,36}}</string>
+                <string>{{2,176},{32,36}}</string>
                 <key>offset</key>
-                <string>{-3,-102}</string>
+                <string>{-4,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,204},{30,36}}</string>
+                <string>{{100,204},{32,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.508.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{30,44},{30,36}}</string>
+                <string>{{56,2},{30,36}}</string>
                 <key>offset</key>
-                <string>{-3,-102}</string>
+                <string>{-4,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,204},{30,36}}</string>
+                <string>{{101,204},{30,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.509.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{64,120},{30,34}}</string>
+                <string>{{48,86},{30,36}}</string>
                 <key>offset</key>
-                <string>{-3,-103}</string>
+                <string>{-4,-102}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,206},{30,34}}</string>
+                <string>{{101,204},{30,36}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.510.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{62,164},{30,34}}</string>
+                <string>{{108,474},{30,34}}</string>
                 <key>offset</key>
                 <string>{-4,-103}</string>
                 <key>rotated</key>
@@ -1944,20 +1944,20 @@
             <key>scowerer.511.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{186,110},{30,32}}</string>
+                <string>{{120,2},{28,34}}</string>
                 <key>offset</key>
                 <string>{-4,-103}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{101,207},{30,32}}</string>
+                <string>{{102,206},{28,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.512.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{250,248},{28,32}}</string>
+                <string>{{276,280},{28,32}}</string>
                 <key>offset</key>
                 <string>{-4,-103}</string>
                 <key>rotated</key>
@@ -1970,7 +1970,7 @@
             <key>scowerer.513.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,286},{28,32}}</string>
+                <string>{{276,246},{28,32}}</string>
                 <key>offset</key>
                 <string>{-4,-103}</string>
                 <key>rotated</key>
@@ -1983,7 +1983,7 @@
             <key>scowerer.514.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{366,238},{28,30}}</string>
+                <string>{{370,204},{28,30}}</string>
                 <key>offset</key>
                 <string>{-4,-103}</string>
                 <key>rotated</key>
@@ -1996,20 +1996,20 @@
             <key>scowerer.515.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{304,480},{30,30}}</string>
+                <string>{{368,238},{28,30}}</string>
                 <key>offset</key>
-                <string>{-5,-103}</string>
+                <string>{-4,-103}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,208},{30,30}}</string>
+                <string>{{102,208},{28,30}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.516.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{472,2},{30,28}}</string>
+                <string>{{460,32},{30,28}}</string>
                 <key>offset</key>
                 <string>{-5,-104}</string>
                 <key>rotated</key>
@@ -2022,20 +2022,20 @@
             <key>scowerer.517.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{272,316},{32,28}}</string>
+                <string>{{460,2},{30,28}}</string>
                 <key>offset</key>
                 <string>{-5,-104}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,210},{32,28}}</string>
+                <string>{{100,210},{30,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.518.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{312,138},{32,28}}</string>
+                <string>{{334,2},{32,28}}</string>
                 <key>offset</key>
                 <string>{-5,-104}</string>
                 <key>rotated</key>
@@ -2048,7 +2048,20 @@
             <key>scowerer.519.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{126,150},{34,28}}</string>
+                <string>{{316,138},{32,28}}</string>
+                <key>offset</key>
+                <string>{-5,-104}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{99,210},{32,28}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.520.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{218,402},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-104}</string>
                 <key>rotated</key>
@@ -2058,10 +2071,23 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>scowerer.520.png</key>
+            <key>scowerer.521.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{158,110},{34,26}}</string>
+                <string>{{194,366},{34,28}}</string>
+                <key>offset</key>
+                <string>{-5,-104}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{98,210},{34,28}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>scowerer.522.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{216,254},{34,26}}</string>
                 <key>offset</key>
                 <string>{-5,-105}</string>
                 <key>rotated</key>
@@ -2071,75 +2097,49 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>scowerer.521.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{32,396},{36,26}}</string>
-                <key>offset</key>
-                <string>{-5,-105}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{97,212},{36,26}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>scowerer.522.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{32,358},{36,26}}</string>
-                <key>offset</key>
-                <string>{-5,-105}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{97,212},{36,26}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>scowerer.523.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,320},{36,26}}</string>
+                <string>{{218,182},{34,26}}</string>
                 <key>offset</key>
-                <string>{-5,-105}</string>
+                <string>{-5,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,26}}</string>
+                <string>{{98,211},{34,26}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.524.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,282},{36,26}}</string>
+                <string>{{32,328},{36,26}}</string>
                 <key>offset</key>
-                <string>{-6,-105}</string>
+                <string>{-6,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{96,212},{36,26}}</string>
+                <string>{{96,211},{36,26}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.525.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{156,148},{34,26}}</string>
+                <string>{{216,218},{34,26}}</string>
                 <key>offset</key>
-                <string>{-6,-105}</string>
+                <string>{-6,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{34,26}}</string>
+                <string>{{97,211},{34,26}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.526.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{374,36},{32,26}}</string>
+                <string>{{362,450},{32,26}}</string>
                 <key>offset</key>
                 <string>{-6,-105}</string>
                 <key>rotated</key>
@@ -2152,98 +2152,98 @@
             <key>scowerer.527.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{346,2},{32,28}}</string>
+                <string>{{328,70},{32,28}}</string>
                 <key>offset</key>
-                <string>{-6,-105}</string>
+                <string>{-7,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{98,211},{32,28}}</string>
+                <string>{{97,211},{32,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.528.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{344,36},{32,28}}</string>
+                <string>{{316,104},{32,28}}</string>
                 <key>offset</key>
-                <string>{-6,-105}</string>
+                <string>{-7,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{98,211},{32,28}}</string>
+                <string>{{97,210},{32,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.529.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,70},{32,26}}</string>
+                <string>{{350,416},{32,26}}</string>
                 <key>offset</key>
-                <string>{-6,-105}</string>
+                <string>{-7,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{98,212},{32,26}}</string>
+                <string>{{97,211},{32,26}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.530.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,186},{34,26}}</string>
+                <string>{{338,382},{32,26}}</string>
                 <key>offset</key>
-                <string>{-6,-105}</string>
+                <string>{-6,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{34,26}}</string>
+                <string>{{98,211},{32,26}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.531.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,228},{34,26}}</string>
+                <string>{{310,172},{32,28}}</string>
                 <key>offset</key>
-                <string>{-6,-105}</string>
+                <string>{-6,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{34,26}}</string>
+                <string>{{98,210},{32,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.532.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,458},{34,26}}</string>
+                <string>{{308,210},{32,28}}</string>
                 <key>offset</key>
-                <string>{-6,-105}</string>
+                <string>{-6,-104}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{34,26}}</string>
+                <string>{{98,210},{32,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.533.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,422},{34,26}}</string>
+                <string>{{332,484},{32,26}}</string>
                 <key>offset</key>
                 <string>{-6,-105}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{34,26}}</string>
+                <string>{{98,212},{32,26}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.534.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,386},{34,26}}</string>
+                <string>{{272,470},{34,26}}</string>
                 <key>offset</key>
                 <string>{-6,-105}</string>
                 <key>rotated</key>
@@ -2256,24 +2256,24 @@
             <key>scowerer.535.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,350},{34,26}}</string>
+                <string>{{260,434},{34,26}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-5,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{98,213},{34,26}}</string>
+                <string>{{98,212},{34,26}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.536.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,314},{34,26}}</string>
+                <string>{{208,484},{34,26}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{98,213},{34,26}}</string>
                 <key>sourceSize</key>
@@ -2282,215 +2282,215 @@
             <key>scowerer.537.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,244},{36,26}}</string>
+                <string>{{2,404},{36,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-5,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,213},{36,26}}</string>
+                <string>{{97,211},{36,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.538.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,206},{36,26}}</string>
+                <string>{{2,366},{36,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-5,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,213},{36,26}}</string>
+                <string>{{97,211},{36,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.539.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{64,2},{36,26}}</string>
+                <string>{{2,328},{36,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-5,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,213},{36,26}}</string>
+                <string>{{97,211},{36,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.540.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{62,40},{36,26}}</string>
+                <string>{{184,330},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,213},{36,26}}</string>
+                <string>{{99,211},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.541.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,82},{36,26}}</string>
+                <string>{{172,484},{34,26}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-106}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,213},{36,26}}</string>
+                <string>{{99,213},{34,26}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.542.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{34,126},{36,28}}</string>
+                <string>{{184,294},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{99,211},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.543.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{32,168},{36,28}}</string>
+                <string>{{180,38},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-105}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{99,211},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.544.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,472},{36,28}}</string>
+                <string>{{180,2},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-106}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{99,212},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.545.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,434},{36,28}}</string>
+                <string>{{162,146},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-106}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{99,212},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.546.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,396},{36,28}}</string>
+                <string>{{174,74},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-106}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{99,212},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.547.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,358},{36,28}}</string>
+                <string>{{162,110},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-106}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{99,212},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.548.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,320},{36,28}}</string>
+                <string>{{158,258},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-106}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{99,212},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.549.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,282},{36,28}}</string>
+                <string>{{160,182},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-106}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{99,212},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.550.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,244},{36,28}}</string>
+                <string>{{158,222},{34,28}}</string>
                 <key>offset</key>
-                <string>{-5,-106}</string>
+                <string>{-4,-106}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{99,212},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.551.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,206},{36,28}}</string>
+                <string>{{150,38},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{98,212},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.552.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,168},{36,28}}</string>
+                <string>{{150,2},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{97,212},{36,28}}</string>
+                <string>{{98,212},{34,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>scowerer.553.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{124,192},{34,28}}</string>
+                <string>{{132,146},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
@@ -2503,7 +2503,7 @@
             <key>scowerer.554.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,278},{34,28}}</string>
+                <string>{{144,74},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
@@ -2516,7 +2516,7 @@
             <key>scowerer.555.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{94,422},{34,28}}</string>
+                <string>{{132,110},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
@@ -2529,7 +2529,7 @@
             <key>scowerer.556.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,386},{34,28}}</string>
+                <string>{{202,448},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
@@ -2542,7 +2542,7 @@
             <key>scowerer.557.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,350},{34,28}}</string>
+                <string>{{188,412},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
@@ -2555,7 +2555,7 @@
             <key>scowerer.558.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,314},{34,28}}</string>
+                <string>{{164,376},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
@@ -2568,7 +2568,7 @@
             <key>scowerer.559.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,278},{34,28}}</string>
+                <string>{{154,340},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
@@ -2581,7 +2581,7 @@
             <key>scowerer.560.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{94,192},{34,28}}</string>
+                <string>{{154,304},{34,28}}</string>
                 <key>offset</key>
                 <string>{-5,-106}</string>
                 <key>rotated</key>
@@ -2601,7 +2601,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:794bb36ed46724ff01ef0a538bc6143f:83e4077f7a42152759597a979314b74e:66efa4eae426674d8f651f9e31d61f15$</string>
+            <string>$TexturePacker:SmartUpdate:4c44ed0ddf7c72ab352622054a487914:e2e3fcc8c3e49dfa2df516424fc48186:66efa4eae426674d8f651f9e31d61f15$</string>
             <key>textureFileName</key>
             <string>scowererSheet-iphone4.png</string>
         </dict>

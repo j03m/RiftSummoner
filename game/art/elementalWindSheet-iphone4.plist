@@ -7,20 +7,20 @@
             <key>elementalWind.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{620,142},{46,68}}</string>
+                <string>{{536,560},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,68}}</string>
+                <string>{{97,169},{46,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{862,526},{48,66}}</string>
+                <string>{{920,954},{48,66}}</string>
                 <key>offset</key>
                 <string>{-1,-81}</string>
                 <key>rotated</key>
@@ -33,7 +33,33 @@
             <key>elementalWind.100.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,276},{40,74}}</string>
+                <string>{{360,378},{38,74}}</string>
+                <key>offset</key>
+                <string>{2,-83}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,166},{38,74}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWind.101.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{338,302},{38,74}}</string>
+                <key>offset</key>
+                <string>{2,-83}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,166},{38,74}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWind.102.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{364,2},{40,74}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
@@ -43,49 +69,23 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWind.101.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{358,842},{40,76}}</string>
-                <key>offset</key>
-                <string>{1,-82}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{101,164},{40,76}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>elementalWind.102.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{398,564},{40,76}}</string>
-                <key>offset</key>
-                <string>{1,-82}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{101,164},{40,76}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>elementalWind.103.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{332,370},{42,74}}</string>
+                <string>{{324,78},{40,74}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,166},{42,74}}</string>
+                <string>{{101,166},{40,74}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.104.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{332,294},{42,74}}</string>
+                <string>{{322,170},{42,74}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>elementalWind.105.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{480,890},{44,74}}</string>
+                <string>{{278,94},{44,74}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>elementalWind.106.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,718},{44,74}}</string>
+                <string>{{276,172},{44,74}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>elementalWind.107.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{454,814},{46,74}}</string>
+                <string>{{228,172},{46,74}}</string>
                 <key>offset</key>
                 <string>{-1,-83}</string>
                 <key>rotated</key>
@@ -137,20 +137,20 @@
             <key>elementalWind.108.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,918},{48,74}}</string>
+                <string>{{274,2},{46,74}}</string>
                 <key>offset</key>
-                <string>{-2,-83}</string>
+                <string>{-1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{94,166},{48,74}}</string>
+                <string>{{96,166},{46,74}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.109.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{412,642},{48,74}}</string>
+                <string>{{228,96},{48,74}}</string>
                 <key>offset</key>
                 <string>{-2,-83}</string>
                 <key>rotated</key>
@@ -163,72 +163,59 @@
             <key>elementalWind.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{838,600},{48,66}}</string>
+                <string>{{870,954},{48,66}}</string>
                 <key>offset</key>
-                <string>{-1,-82}</string>
+                <string>{-1,-81}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,169},{48,66}}</string>
+                <string>{{95,168},{48,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.110.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{406,738},{50,74}}</string>
+                <string>{{378,454},{50,72}}</string>
                 <key>offset</key>
-                <string>{-3,-83}</string>
+                <string>{-3,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{92,166},{50,74}}</string>
+                <string>{{92,168},{50,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.111.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,352},{52,72}}</string>
+                <string>{{448,674},{50,70}}</string>
                 <key>offset</key>
-                <string>{-4,-82}</string>
+                <string>{-4,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{90,166},{52,72}}</string>
+                <string>{{91,168},{50,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.112.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,426},{52,70}}</string>
+                <string>{{484,566},{50,70}}</string>
                 <key>offset</key>
-                <string>{-5,-82}</string>
+                <string>{-4,-82}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{89,167},{52,70}}</string>
+                <string>{{91,167},{50,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.113.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,420},{52,68}}</string>
-                <key>offset</key>
-                <string>{-5,-82}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{89,168},{52,68}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>elementalWind.114.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{448,420},{52,68}}</string>
+                <string>{{292,248},{52,68}}</string>
                 <key>offset</key>
                 <string>{-5,-81}</string>
                 <key>rotated</key>
@@ -238,10 +225,23 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
+            <key>elementalWind.114.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{700,492},{52,66}}</string>
+                <key>offset</key>
+                <string>{-5,-81}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{89,168},{52,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
             <key>elementalWind.115.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{724,406},{52,66}}</string>
+                <string>{{802,962},{52,66}}</string>
                 <key>offset</key>
                 <string>{-5,-81}</string>
                 <key>rotated</key>
@@ -254,33 +254,33 @@
             <key>elementalWind.116.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{722,282},{52,66}}</string>
+                <string>{{646,492},{52,66}}</string>
                 <key>offset</key>
-                <string>{-5,-81}</string>
+                <string>{-5,-80}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{89,168},{52,66}}</string>
+                <string>{{89,167},{52,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.117.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{656,406},{52,66}}</string>
+                <string>{{592,492},{52,66}}</string>
                 <key>offset</key>
-                <string>{-5,-81}</string>
+                <string>{-5,-80}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{89,168},{52,66}}</string>
+                <string>{{89,167},{52,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.118.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{654,282},{52,66}}</string>
+                <string>{{734,962},{52,66}}</string>
                 <key>offset</key>
                 <string>{-5,-81}</string>
                 <key>rotated</key>
@@ -293,7 +293,33 @@
             <key>elementalWind.119.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{588,408},{52,66}}</string>
+                <string>{{666,962},{52,66}}</string>
+                <key>offset</key>
+                <string>{-5,-81}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{89,168},{52,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWind.12.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{854,904},{48,66}}</string>
+                <key>offset</key>
+                <string>{-1,-82}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{95,169},{48,66}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWind.120.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{524,506},{52,66}}</string>
                 <key>offset</key>
                 <string>{-5,-82}</string>
                 <key>rotated</key>
@@ -303,62 +329,36 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWind.12.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{830,458},{50,66}}</string>
-                <key>offset</key>
-                <string>{-2,-82}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{93,169},{50,66}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>elementalWind.120.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{586,282},{52,66}}</string>
-                <key>offset</key>
-                <string>{-4,-82}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{90,169},{52,66}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>elementalWind.121.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,954},{52,68}}</string>
+                <string>{{598,962},{52,66}}</string>
                 <key>offset</key>
-                <string>{-4,-82}</string>
+                <string>{-4,-83}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{90,168},{52,68}}</string>
+                <string>{{90,170},{52,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.122.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,214},{50,68}}</string>
+                <string>{{786,910},{50,66}}</string>
                 <key>offset</key>
                 <string>{-3,-83}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{92,169},{50,68}}</string>
+                <string>{{92,170},{50,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.123.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{530,2},{50,68}}</string>
+                <string>{{646,848},{50,68}}</string>
                 <key>offset</key>
                 <string>{-3,-83}</string>
                 <key>rotated</key>
@@ -371,20 +371,20 @@
             <key>elementalWind.124.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{418,166},{50,70}}</string>
+                <string>{{478,284},{48,68}}</string>
                 <key>offset</key>
                 <string>{-2,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,168},{50,70}}</string>
+                <string>{{94,169},{48,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.125.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{582,2},{48,68}}</string>
+                <string>{{478,214},{48,68}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
@@ -397,46 +397,46 @@
             <key>elementalWind.126.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{618,212},{46,68}}</string>
+                <string>{{546,352},{46,68}}</string>
                 <key>offset</key>
-                <string>{0,-84}</string>
+                <string>{0,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,68}}</string>
+                <string>{{97,169},{46,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{792,406},{50,66}}</string>
+                <string>{{838,836},{48,66}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,169},{50,66}}</string>
+                <string>{{95,169},{48,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.131.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{578,338},{46,68}}</string>
+                <string>{{528,282},{46,68}}</string>
                 <key>offset</key>
-                <string>{0,-84}</string>
+                <string>{0,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,68}}</string>
+                <string>{{97,169},{46,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.132.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{530,338},{46,68}}</string>
+                <string>{{528,212},{46,68}}</string>
                 <key>offset</key>
                 <string>{-1,-81}</string>
                 <key>rotated</key>
@@ -449,72 +449,72 @@
             <key>elementalWind.133.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{454,474},{48,70}}</string>
+                <string>{{512,142},{46,68}}</string>
                 <key>offset</key>
-                <string>{-3,-79}</string>
+                <string>{-2,-79}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,164},{48,70}}</string>
+                <string>{{95,165},{46,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.134.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{400,842},{52,74}}</string>
+                <string>{{378,300},{50,72}}</string>
                 <key>offset</key>
-                <string>{-3,-76}</string>
+                <string>{-3,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{91,159},{52,74}}</string>
+                <string>{{92,161},{50,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.135.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{348,762},{56,78}}</string>
+                <string>{{2,966},{54,76}}</string>
                 <key>offset</key>
                 <string>{-4,-75}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{88,156},{56,78}}</string>
+                <string>{{89,157},{54,76}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.136.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{288,762},{58,82}}</string>
+                <string>{{228,964},{58,80}}</string>
                 <key>offset</key>
                 <string>{-5,-74}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{86,153},{58,82}}</string>
+                <string>{{86,154},{58,80}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.137.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,574},{60,84}}</string>
+                <string>{{144,964},{58,82}}</string>
                 <key>offset</key>
-                <string>{-6,-73}</string>
+                <string>{-5,-74}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{84,151},{60,84}}</string>
+                <string>{{86,153},{58,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.138.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{314,208},{60,84}}</string>
+                <string>{{394,850},{60,84}}</string>
                 <key>offset</key>
                 <string>{-7,-73}</string>
                 <key>rotated</key>
@@ -527,11 +527,11 @@
             <key>elementalWind.139.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{204,958},{62,84}}</string>
+                <string>{{330,850},{62,84}}</string>
                 <key>offset</key>
                 <string>{-8,-73}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{81,151},{62,84}}</string>
                 <key>sourceSize</key>
@@ -540,98 +540,98 @@
             <key>elementalWind.14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{484,72},{50,68}}</string>
+                <string>{{814,768},{48,66}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,168},{50,68}}</string>
+                <string>{{95,169},{48,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.140.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,956},{66,84}}</string>
+                <string>{{374,586},{64,84}}</string>
                 <key>offset</key>
                 <string>{-10,-73}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{77,151},{66,84}}</string>
+                <string>{{78,151},{64,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.141.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,300},{70,84}}</string>
+                <string>{{456,846},{70,82}}</string>
                 <key>offset</key>
-                <string>{-12,-73}</string>
+                <string>{-13,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{73,151},{70,84}}</string>
+                <string>{{72,153},{70,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.142.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{326,480},{76,82}}</string>
+                <string>{{394,936},{76,82}}</string>
                 <key>offset</key>
-                <string>{-15,-74}</string>
+                <string>{-16,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{67,153},{76,82}}</string>
+                <string>{{66,153},{76,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.143.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{288,678},{82,82}}</string>
+                <string>{{310,942},{82,80}}</string>
                 <key>offset</key>
-                <string>{-19,-74}</string>
+                <string>{-19,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{60,153},{82,82}}</string>
+                <string>{{60,155},{82,80}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{232,212},{86,80}}</string>
+                <string>{{298,480},{86,78}}</string>
                 <key>offset</key>
-                <string>{-21,-74}</string>
+                <string>{-21,-75}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,154},{86,80}}</string>
+                <string>{{56,156},{86,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{232,96},{90,78}}</string>
+                <string>{{172,872},{90,78}}</string>
                 <key>offset</key>
-                <string>{-23,-75}</string>
+                <string>{-24,-75}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,156},{90,78}}</string>
+                <string>{{51,156},{90,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.146.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,500},{92,76}}</string>
+                <string>{{196,2},{92,76}}</string>
                 <key>offset</key>
                 <string>{-25,-75}</string>
                 <key>rotated</key>
@@ -644,7 +644,7 @@
             <key>elementalWind.147.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,406},{92,76}}</string>
+                <string>{{150,96},{92,76}}</string>
                 <key>offset</key>
                 <string>{-26,-75}</string>
                 <key>rotated</key>
@@ -657,7 +657,7 @@
             <key>elementalWind.148.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,876},{92,74}}</string>
+                <string>{{2,500},{92,74}}</string>
                 <key>offset</key>
                 <string>{-27,-76}</string>
                 <key>rotated</key>
@@ -670,85 +670,85 @@
             <key>elementalWind.149.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,782},{92,74}}</string>
+                <string>{{2,594},{92,72}}</string>
                 <key>offset</key>
                 <string>{-28,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{46,159},{92,74}}</string>
+                <string>{{46,160},{92,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{470,144},{50,68}}</string>
+                <string>{{462,144},{48,68}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,168},{50,68}}</string>
+                <string>{{95,168},{48,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.150.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,688},{92,74}}</string>
+                <string>{{78,406},{90,72}}</string>
                 <key>offset</key>
                 <string>{-28,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{46,159},{92,74}}</string>
+                <string>{{47,160},{90,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.151.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{282,2},{90,72}}</string>
+                <string>{{178,778},{90,72}}</string>
                 <key>offset</key>
-                <string>{-28,-77}</string>
+                <string>{-28,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{47,161},{90,72}}</string>
+                <string>{{47,160},{90,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.152.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{214,680},{88,72}}</string>
+                <string>{{226,678},{88,70}}</string>
                 <key>offset</key>
                 <string>{-28,-77}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,161},{88,72}}</string>
+                <string>{{48,162},{88,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.153.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{356,2},{86,74}}</string>
+                <string>{{298,676},{86,72}}</string>
                 <key>offset</key>
-                <string>{-27,-76}</string>
+                <string>{-27,-77}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,159},{86,74}}</string>
+                <string>{{50,161},{86,72}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.154.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,394},{84,74}}</string>
+                <string>{{372,676},{84,74}}</string>
                 <key>offset</key>
                 <string>{-26,-76}</string>
                 <key>rotated</key>
@@ -761,20 +761,20 @@
             <key>elementalWind.155.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{248,488},{84,76}}</string>
+                <string>{{330,764},{84,74}}</string>
                 <key>offset</key>
                 <string>{-25,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,158},{84,76}}</string>
+                <string>{{53,159},{84,74}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.156.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,488},{84,76}}</string>
+                <string>{{252,856},{84,76}}</string>
                 <key>offset</key>
                 <string>{-24,-76}</string>
                 <key>rotated</key>
@@ -787,7 +787,7 @@
             <key>elementalWind.157.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{312,94},{86,76}}</string>
+                <string>{{252,768},{86,76}}</string>
                 <key>offset</key>
                 <string>{-23,-76}</string>
                 <key>rotated</key>
@@ -800,46 +800,46 @@
             <key>elementalWind.158.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,866},{88,78}}</string>
+                <string>{{240,392},{86,78}}</string>
                 <key>offset</key>
                 <string>{-22,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,157},{88,78}}</string>
+                <string>{{55,157},{86,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.159.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,214},{90,80}}</string>
+                <string>{{92,872},{90,78}}</string>
                 <key>offset</key>
                 <string>{-22,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,156},{90,80}}</string>
+                <string>{{53,157},{90,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{478,2},{50,68}}</string>
+                <string>{{502,2},{48,68}}</string>
                 <key>offset</key>
-                <string>{-2,-82}</string>
+                <string>{-1,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,168},{50,68}}</string>
+                <string>{{95,168},{48,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.160.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{90,308},{90,84}}</string>
+                <string>{{92,780},{90,84}}</string>
                 <key>offset</key>
                 <string>{-22,-74}</string>
                 <key>rotated</key>
@@ -852,7 +852,7 @@
             <key>elementalWind.161.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{162,868},{78,88}}</string>
+                <string>{{86,308},{78,88}}</string>
                 <key>offset</key>
                 <string>{-22,-72}</string>
                 <key>rotated</key>
@@ -891,20 +891,20 @@
             <key>elementalWind.164.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{48,2},{60,100}}</string>
+                <string>{{48,2},{58,100}}</string>
                 <key>offset</key>
-                <string>{0,-64}</string>
+                <string>{0,-65}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{90,134},{60,100}}</string>
+                <string>{{91,135},{58,100}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.165.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,574},{78,82}}</string>
+                <string>{{406,762},{78,82}}</string>
                 <key>offset</key>
                 <string>{11,-72}</string>
                 <key>rotated</key>
@@ -917,20 +917,20 @@
             <key>elementalWind.166.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{168,776},{88,78}}</string>
+                <string>{{148,214},{88,78}}</string>
                 <key>offset</key>
-                <string>{18,-72}</string>
+                <string>{18,-73}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{94,153},{88,78}}</string>
+                <string>{{94,154},{88,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.167.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,868},{88,82}}</string>
+                <string>{{166,588},{88,82}}</string>
                 <key>offset</key>
                 <string>{22,-69}</string>
                 <key>rotated</key>
@@ -943,7 +943,20 @@
             <key>elementalWind.168.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{176,306},{86,82}}</string>
+                <string>{{250,588},{86,82}}</string>
+                <key>offset</key>
+                <string>{24,-69}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{101,148},{86,82}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWind.169.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{214,486},{86,82}}</string>
                 <key>offset</key>
                 <string>{24,-68}</string>
                 <key>rotated</key>
@@ -953,10 +966,23 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWind.169.png</key>
+            <key>elementalWind.17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,400},{86,84}}</string>
+                <string>{{462,74},{48,68}}</string>
+                <key>offset</key>
+                <string>{-1,-83}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{95,169},{48,68}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWind.170.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{166,304},{86,84}}</string>
                 <key>offset</key>
                 <string>{24,-67}</string>
                 <key>rotated</key>
@@ -966,49 +992,23 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWind.17.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{432,74},{50,68}}</string>
-                <key>offset</key>
-                <string>{-2,-83}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{93,169},{50,68}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>elementalWind.170.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{168,590},{88,86}}</string>
-                <key>offset</key>
-                <string>{24,-66}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{100,143},{88,86}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>elementalWind.171.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{126,686},{88,86}}</string>
+                <string>{{152,398},{86,86}}</string>
                 <key>offset</key>
                 <string>{24,-66}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,143},{88,86}}</string>
+                <string>{{101,143},{86,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.172.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,778},{88,88}}</string>
+                <string>{{124,498},{88,88}}</string>
                 <key>offset</key>
                 <string>{24,-65}</string>
                 <key>rotated</key>
@@ -1021,7 +1021,7 @@
             <key>elementalWind.173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{80,498},{88,90}}</string>
+                <string>{{2,874},{88,90}}</string>
                 <key>offset</key>
                 <string>{24,-63}</string>
                 <key>rotated</key>
@@ -1034,7 +1034,7 @@
             <key>elementalWind.174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{80,406},{88,90}}</string>
+                <string>{{76,594},{88,90}}</string>
                 <key>offset</key>
                 <string>{24,-63}</string>
                 <key>rotated</key>
@@ -1047,7 +1047,7 @@
             <key>elementalWind.175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{110,2},{88,92}}</string>
+                <string>{{60,104},{88,92}}</string>
                 <key>offset</key>
                 <string>{24,-62}</string>
                 <key>rotated</key>
@@ -1060,7 +1060,7 @@
             <key>elementalWind.176.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,594},{88,90}}</string>
+                <string>{{56,688},{88,90}}</string>
                 <key>offset</key>
                 <string>{24,-62}</string>
                 <key>rotated</key>
@@ -1073,20 +1073,20 @@
             <key>elementalWind.177.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,104},{88,92}}</string>
+                <string>{{2,782},{88,90}}</string>
                 <key>offset</key>
-                <string>{24,-61}</string>
+                <string>{24,-62}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,135},{88,92}}</string>
+                <string>{{100,137},{88,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,312},{86,92}}</string>
+                <string>{{108,2},{86,92}}</string>
                 <key>offset</key>
                 <string>{25,-61}</string>
                 <key>rotated</key>
@@ -1099,7 +1099,7 @@
             <key>elementalWind.179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,214},{82,92}}</string>
+                <string>{{2,312},{82,92}}</string>
                 <key>offset</key>
                 <string>{27,-61}</string>
                 <key>rotated</key>
@@ -1112,7 +1112,7 @@
             <key>elementalWind.18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{536,72},{48,68}}</string>
+                <string>{{698,846},{48,68}}</string>
                 <key>offset</key>
                 <string>{-1,-83}</string>
                 <key>rotated</key>
@@ -1125,7 +1125,7 @@
             <key>elementalWind.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{200,2},{80,92}}</string>
+                <string>{{66,214},{80,92}}</string>
                 <key>offset</key>
                 <string>{28,-61}</string>
                 <key>rotated</key>
@@ -1138,20 +1138,20 @@
             <key>elementalWind.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,96},{80,92}}</string>
+                <string>{{146,686},{78,90}}</string>
                 <key>offset</key>
-                <string>{26,-61}</string>
+                <string>{27,-62}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{106,135},{80,92}}</string>
+                <string>{{108,137},{78,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,594},{74,92}}</string>
+                <string>{{2,406},{74,92}}</string>
                 <key>offset</key>
                 <string>{22,-66}</string>
                 <key>rotated</key>
@@ -1177,11 +1177,11 @@
             <key>elementalWind.184.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,970},{52,92}}</string>
+                <string>{{2,688},{52,92}}</string>
                 <key>offset</key>
                 <string>{10,-74}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{104,148},{52,92}}</string>
                 <key>sourceSize</key>
@@ -1190,33 +1190,33 @@
             <key>elementalWind.185.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,686},{46,90}}</string>
+                <string>{{78,498},{44,90}}</string>
                 <key>offset</key>
-                <string>{8,-75}</string>
+                <string>{9,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{105,150},{46,90}}</string>
+                <string>{{107,150},{44,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.186.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{248,770},{38,88}}</string>
+                <string>{{334,588},{38,86}}</string>
                 <key>offset</key>
-                <string>{6,-76}</string>
+                <string>{6,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{107,152},{38,88}}</string>
+                <string>{{107,154},{38,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{322,846},{34,82}}</string>
+                <string>{{472,930},{34,82}}</string>
                 <key>offset</key>
                 <string>{6,-79}</string>
                 <key>rotated</key>
@@ -1229,7 +1229,7 @@
             <key>elementalWind.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{372,658},{38,78}}</string>
+                <string>{{508,930},{38,78}}</string>
                 <key>offset</key>
                 <string>{4,-81}</string>
                 <key>rotated</key>
@@ -1242,7 +1242,7 @@
             <key>elementalWind.189.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{564,946},{42,74}}</string>
+                <string>{{252,304},{42,74}}</string>
                 <key>offset</key>
                 <string>{2,-83}</string>
                 <key>rotated</key>
@@ -1255,7 +1255,7 @@
             <key>elementalWind.19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{480,348},{48,70}}</string>
+                <string>{{578,818},{48,70}}</string>
                 <key>offset</key>
                 <string>{-1,-83}</string>
                 <key>rotated</key>
@@ -1268,20 +1268,20 @@
             <key>elementalWind.190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,2},{44,70}}</string>
+                <string>{{622,212},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,169},{44,70}}</string>
+                <string>{{99,170},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{878,738},{46,66}}</string>
+                <string>{{652,138},{46,66}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -1294,20 +1294,20 @@
             <key>elementalWind.20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,348},{48,70}}</string>
+                <string>{{548,918},{48,70}}</string>
                 <key>offset</key>
-                <string>{-1,-84}</string>
+                <string>{-1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,169},{48,70}}</string>
+                <string>{{95,168},{48,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{468,238},{48,70}}</string>
+                <string>{{528,846},{48,70}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
@@ -1320,20 +1320,20 @@
             <key>elementalWind.22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{570,850},{48,72}}</string>
+                <string>{{536,746},{48,70}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,72}}</string>
+                <string>{{95,169},{48,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{546,776},{48,72}}</string>
+                <string>{{430,448},{48,72}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
@@ -1346,7 +1346,7 @@
             <key>elementalWind.24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{504,702},{48,72}}</string>
+                <string>{{400,374},{48,72}}</string>
                 <key>offset</key>
                 <string>{-1,-84}</string>
                 <key>rotated</key>
@@ -1359,46 +1359,46 @@
             <key>elementalWind.25.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{462,628},{48,72}}</string>
+                <string>{{500,674},{48,70}}</string>
                 <key>offset</key>
-                <string>{-1,-84}</string>
+                <string>{-1,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,72}}</string>
+                <string>{{95,170},{48,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{440,554},{48,72}}</string>
+                <string>{{486,746},{48,70}}</string>
                 <key>offset</key>
-                <string>{-1,-84}</string>
+                <string>{-1,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,72}}</string>
+                <string>{{95,170},{48,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{404,480},{48,72}}</string>
+                <string>{{480,434},{46,70}}</string>
                 <key>offset</key>
-                <string>{-1,-84}</string>
+                <string>{0,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,72}}</string>
+                <string>{{97,170},{46,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.271.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{632,2},{46,68}}</string>
+                <string>{{552,2},{46,68}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -1411,33 +1411,33 @@
             <key>elementalWind.272.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{586,72},{46,68}}</string>
+                <string>{{922,70},{46,66}}</string>
                 <key>offset</key>
                 <string>{-1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{96,169},{46,68}}</string>
+                <string>{{96,170},{46,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.273.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{522,142},{48,68}}</string>
+                <string>{{674,776},{48,68}}</string>
                 <key>offset</key>
-                <string>{-1,-82}</string>
+                <string>{-2,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,68}}</string>
+                <string>{{94,168},{48,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.274.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{518,284},{52,66}}</string>
+                <string>{{362,246},{52,66}}</string>
                 <key>offset</key>
                 <string>{-3,-80}</string>
                 <key>rotated</key>
@@ -1450,59 +1450,59 @@
             <key>elementalWind.275.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,958},{54,64}}</string>
+                <string>{{228,248},{54,62}}</string>
                 <key>offset</key>
                 <string>{-4,-79}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{89,167},{54,64}}</string>
+                <string>{{89,168},{54,62}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.276.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{500,966},{54,62}}</string>
+                <string>{{80,966},{54,62}}</string>
                 <key>offset</key>
-                <string>{-5,-78}</string>
+                <string>{-5,-77}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{88,167},{54,62}}</string>
+                <string>{{88,166},{54,62}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.277.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,958},{50,64}}</string>
+                <string>{{970,68},{48,64}}</string>
                 <key>offset</key>
-                <string>{-6,-77}</string>
+                <string>{-5,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{89,165},{50,64}}</string>
+                <string>{{91,165},{48,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.278.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{782,742},{44,68}}</string>
+                <string>{{606,142},{44,68}}</string>
                 <key>offset</key>
-                <string>{-6,-76}</string>
+                <string>{-6,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{92,162},{44,68}}</string>
+                <string>{{92,161},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.279.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{418,310},{36,70}}</string>
+                <string>{{378,528},{36,70}}</string>
                 <key>offset</key>
                 <string>{-6,-75}</string>
                 <key>rotated</key>
@@ -1515,20 +1515,20 @@
             <key>elementalWind.28.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{418,238},{48,70}}</string>
+                <string>{{450,362},{46,70}}</string>
                 <key>offset</key>
-                <string>{-1,-85}</string>
+                <string>{0,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,170},{48,70}}</string>
+                <string>{{97,170},{46,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.280.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{358,920},{32,70}}</string>
+                <string>{{440,640},{32,70}}</string>
                 <key>offset</key>
                 <string>{-7,-76}</string>
                 <key>rotated</key>
@@ -1541,124 +1541,124 @@
             <key>elementalWind.281.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,994},{28,68}}</string>
+                <string>{{486,818},{26,66}}</string>
                 <key>offset</key>
                 <string>{-7,-77}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,163},{28,68}}</string>
+                <string>{{100,164},{26,66}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.282.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,190},{22,62}}</string>
+                <string>{{166,190},{22,60}}</string>
                 <key>offset</key>
-                <string>{-7,-78}</string>
+                <string>{-7,-79}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{102,167},{22,62}}</string>
+                <string>{{102,169},{22,60}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.283.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,190},{20,56}}</string>
+                <string>{{302,568},{18,54}}</string>
                 <key>offset</key>
-                <string>{-6,-79}</string>
+                <string>{-6,-80}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{104,171},{20,56}}</string>
+                <string>{{105,173},{18,54}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.284.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,188},{18,50}}</string>
+                <string>{{358,568},{16,50}}</string>
                 <key>offset</key>
                 <string>{-5,-79}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{106,174},{18,50}}</string>
+                <string>{{107,174},{16,50}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.285.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,182},{16,44}}</string>
+                <string>{{252,942},{16,44}}</string>
                 <key>offset</key>
-                <string>{-4,-79}</string>
+                <string>{-5,-79}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{108,177},{16,44}}</string>
+                <string>{{107,177},{16,44}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.286.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,660},{16,38}}</string>
+                <string>{{60,198},{14,38}}</string>
                 <key>offset</key>
                 <string>{-4,-78}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{108,179},{16,38}}</string>
+                <string>{{109,179},{14,38}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.287.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{296,660},{16,34}}</string>
+                <string>{{100,198},{14,34}}</string>
                 <key>offset</key>
                 <string>{-4,-78}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{108,181},{16,34}}</string>
+                <string>{{109,181},{14,34}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.288.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,198},{14,28}}</string>
+                <string>{{136,198},{14,28}}</string>
                 <key>offset</key>
-                <string>{-3,-78}</string>
+                <string>{-4,-78}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{110,184},{14,28}}</string>
+                <string>{{109,184},{14,28}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.289.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{90,198},{14,24}}</string>
+                <string>{{214,574},{12,24}}</string>
                 <key>offset</key>
                 <string>{-3,-78}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{110,186},{14,24}}</string>
+                <string>{{111,186},{12,24}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.29.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{620,834},{46,70}}</string>
+                <string>{{430,290},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -1671,33 +1671,33 @@
             <key>elementalWind.290.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{116,198},{14,22}}</string>
+                <string>{{240,574},{12,22}}</string>
                 <key>offset</key>
                 <string>{-3,-77}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{110,186},{14,22}}</string>
+                <string>{{111,186},{12,22}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.291.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{276,188},{12,20}}</string>
+                <string>{{264,574},{12,18}}</string>
                 <key>offset</key>
-                <string>{-2,-76}</string>
+                <string>{-3,-77}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{112,186},{12,20}}</string>
+                <string>{{111,188},{12,18}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.292.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{224,574},{12,16}}</string>
+                <string>{{508,1010},{12,16}}</string>
                 <key>offset</key>
                 <string>{-2,-76}</string>
                 <key>rotated</key>
@@ -1710,7 +1710,7 @@
             <key>elementalWind.293.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{206,574},{12,16}}</string>
+                <string>{{284,574},{12,16}}</string>
                 <key>offset</key>
                 <string>{-2,-76}</string>
                 <key>rotated</key>
@@ -1723,39 +1723,39 @@
             <key>elementalWind.294.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{188,574},{12,16}}</string>
+                <string>{{274,78},{12,14}}</string>
                 <key>offset</key>
                 <string>{-2,-76}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{112,188},{12,16}}</string>
+                <string>{{112,189},{12,14}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.295.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,574},{12,16}}</string>
+                <string>{{542,1010},{12,14}}</string>
                 <key>offset</key>
                 <string>{-2,-76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{112,188},{12,16}}</string>
+                <string>{{112,189},{12,14}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.296.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{140,198},{12,14}}</string>
+                <string>{{526,1010},{12,14}}</string>
                 <key>offset</key>
-                <string>{-2,-77}</string>
+                <string>{-2,-76}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{112,190},{12,14}}</string>
+                <string>{{112,189},{12,14}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
@@ -1801,7 +1801,7 @@
             <key>elementalWind.3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{856,808},{46,66}}</string>
+                <string>{{922,2},{46,66}}</string>
                 <key>offset</key>
                 <string>{0,-82}</string>
                 <key>rotated</key>
@@ -1814,7 +1814,7 @@
             <key>elementalWind.30.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{608,618},{46,70}}</string>
+                <string>{{430,218},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -1957,7 +1957,7 @@
             <key>elementalWind.31.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{602,690},{46,70}}</string>
+                <string>{{414,146},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2100,7 +2100,7 @@
             <key>elementalWind.32.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{596,762},{46,70}}</string>
+                <string>{{454,2},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2243,7 +2243,7 @@
             <key>elementalWind.33.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{586,546},{46,70}}</string>
+                <string>{{414,74},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2269,7 +2269,7 @@
             <key>elementalWind.34.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{560,618},{46,70}}</string>
+                <string>{{366,150},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2282,7 +2282,7 @@
             <key>elementalWind.35.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{554,690},{46,70}}</string>
+                <string>{{406,2},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2295,7 +2295,7 @@
             <key>elementalWind.36.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{552,474},{46,70}}</string>
+                <string>{{366,78},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2308,7 +2308,7 @@
             <key>elementalWind.37.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{538,546},{46,70}}</string>
+                <string>{{598,890},{46,70}}</string>
                 <key>offset</key>
                 <string>{0,-85}</string>
                 <key>rotated</key>
@@ -2321,72 +2321,72 @@
             <key>elementalWind.38.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{512,618},{46,70}}</string>
+                <string>{{628,776},{44,70}}</string>
                 <key>offset</key>
-                <string>{0,-85}</string>
+                <string>{1,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,70}}</string>
+                <string>{{99,170},{44,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.39.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{744,906},{44,70}}</string>
+                <string>{{646,2},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{840,880},{46,66}}</string>
+                <string>{{970,134},{46,64}}</string>
                 <key>offset</key>
                 <string>{0,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,169},{46,66}}</string>
+                <string>{{97,170},{46,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.40.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{714,834},{44,70}}</string>
+                <string>{{606,72},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.41.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{690,762},{44,70}}</string>
+                <string>{{748,840},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.42.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{760,812},{44,68}}</string>
+                <string>{{724,770},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2399,7 +2399,7 @@
             <key>elementalWind.43.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{784,460},{44,68}}</string>
+                <string>{{722,700},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2412,7 +2412,7 @@
             <key>elementalWind.44.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{772,530},{44,68}}</string>
+                <string>{{688,630},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2425,7 +2425,7 @@
             <key>elementalWind.45.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{748,600},{44,68}}</string>
+                <string>{{676,560},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2438,7 +2438,7 @@
             <key>elementalWind.46.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{742,672},{44,68}}</string>
+                <string>{{622,422},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2451,72 +2451,72 @@
             <key>elementalWind.47.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{736,742},{44,68}}</string>
+                <string>{{778,630},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.48.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{738,460},{44,68}}</string>
+                <string>{{766,560},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.49.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{726,530},{44,68}}</string>
+                <string>{{712,422},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{796,950},{46,66}}</string>
+                <string>{{692,2},{46,64}}</string>
                 <key>offset</key>
-                <string>{0,-81}</string>
+                <string>{0,-82}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,168},{46,66}}</string>
+                <string>{{97,170},{46,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{702,602},{44,68}}</string>
+                <string>{{684,352},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{818,530},{42,68}}</string>
+                <string>{{666,282},{42,68}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -2529,7 +2529,7 @@
             <key>elementalWind.52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{794,600},{42,68}}</string>
+                <string>{{794,840},{42,68}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -2542,33 +2542,33 @@
             <key>elementalWind.53.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{696,672},{44,68}}</string>
+                <string>{{770,770},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.54.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{764,336},{44,68}}</string>
+                <string>{{768,700},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.55.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{788,670},{42,68}}</string>
+                <string>{{734,630},{42,68}}</string>
                 <key>offset</key>
                 <string>{2,-86}</string>
                 <key>rotated</key>
@@ -2581,85 +2581,85 @@
             <key>elementalWind.56.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{692,460},{44,68}}</string>
+                <string>{{722,560},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.57.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{680,532},{44,68}}</string>
+                <string>{{668,422},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.58.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{656,602},{44,68}}</string>
+                <string>{{640,352},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.59.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{718,336},{44,68}}</string>
+                <string>{{622,282},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{832,670},{48,66}}</string>
+                <string>{{652,72},{46,64}}</string>
                 <key>offset</key>
-                <string>{-1,-81}</string>
+                <string>{0,-81}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,66}}</string>
+                <string>{{97,169},{46,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.60.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{672,336},{44,68}}</string>
+                <string>{{646,918},{42,68}}</string>
                 <key>offset</key>
-                <string>{1,-86}</string>
+                <string>{2,-86}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{99,172},{44,68}}</string>
+                <string>{{101,172},{42,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.61.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{646,462},{44,68}}</string>
+                <string>{{594,352},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2672,7 +2672,7 @@
             <key>elementalWind.62.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{634,532},{44,68}}</string>
+                <string>{{576,282},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2685,7 +2685,7 @@
             <key>elementalWind.63.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{600,462},{44,68}}</string>
+                <string>{{576,212},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2698,7 +2698,7 @@
             <key>elementalWind.64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{712,212},{44,68}}</string>
+                <string>{{560,142},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2711,7 +2711,7 @@
             <key>elementalWind.65.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{668,142},{44,68}}</string>
+                <string>{{600,2},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2724,7 +2724,7 @@
             <key>elementalWind.66.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{666,212},{44,68}}</string>
+                <string>{{560,72},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2737,7 +2737,7 @@
             <key>elementalWind.67.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{626,336},{44,68}}</string>
+                <string>{{676,700},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-86}</string>
                 <key>rotated</key>
@@ -2750,46 +2750,46 @@
             <key>elementalWind.68.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{724,978},{44,70}}</string>
+                <string>{{642,630},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.69.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{698,906},{44,70}}</string>
+                <string>{{630,560},{44,68}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-86}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,170},{44,70}}</string>
+                <string>{{99,172},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{828,740},{48,66}}</string>
+                <string>{{970,2},{48,64}}</string>
                 <key>offset</key>
                 <string>{-1,-81}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,168},{48,66}}</string>
+                <string>{{95,169},{48,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.70.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{668,834},{44,70}}</string>
+                <string>{{596,632},{44,70}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
@@ -2802,11 +2802,11 @@
             <key>elementalWind.71.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{652,978},{44,70}}</string>
+                <string>{{586,704},{44,70}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{99,170},{44,70}}</string>
                 <key>sourceSize</key>
@@ -2815,7 +2815,7 @@
             <key>elementalWind.72.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{652,906},{44,70}}</string>
+                <string>{{584,560},{44,70}}</string>
                 <key>offset</key>
                 <string>{1,-85}</string>
                 <key>rotated</key>
@@ -2828,33 +2828,33 @@
             <key>elementalWind.73.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{504,474},{46,70}}</string>
+                <string>{{576,422},{44,68}}</string>
                 <key>offset</key>
-                <string>{0,-85}</string>
+                <string>{1,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,170},{46,70}}</string>
+                <string>{{99,171},{44,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.74.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{490,546},{46,70}}</string>
+                <string>{{512,72},{46,68}}</string>
                 <key>offset</key>
-                <string>{0,-84}</string>
+                <string>{0,-85}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,169},{46,70}}</string>
+                <string>{{97,171},{46,68}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.75.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{572,142},{46,68}}</string>
+                <string>{{528,424},{46,68}}</string>
                 <key>offset</key>
                 <string>{0,-84}</string>
                 <key>rotated</key>
@@ -2867,7 +2867,7 @@
             <key>elementalWind.8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{806,812},{48,66}}</string>
+                <string>{{812,700},{48,66}}</string>
                 <key>offset</key>
                 <string>{-1,-81}</string>
                 <key>rotated</key>
@@ -2880,7 +2880,7 @@
             <key>elementalWind.9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{790,882},{48,66}}</string>
+                <string>{{754,492},{48,66}}</string>
                 <key>offset</key>
                 <string>{-1,-81}</string>
                 <key>rotated</key>
@@ -2893,7 +2893,7 @@
             <key>elementalWind.91.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{570,212},{46,68}}</string>
+                <string>{{498,354},{46,68}}</string>
                 <key>offset</key>
                 <string>{0,-83}</string>
                 <key>rotated</key>
@@ -2906,11 +2906,11 @@
             <key>elementalWind.92.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{634,72},{44,68}}</string>
+                <string>{{716,916},{44,68}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{99,169},{44,68}}</string>
                 <key>sourceSize</key>
@@ -2919,33 +2919,46 @@
             <key>elementalWind.93.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{650,690},{44,70}}</string>
+                <string>{{550,632},{44,70}}</string>
                 <key>offset</key>
-                <string>{1,-83}</string>
+                <string>{0,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,168},{44,70}}</string>
+                <string>{{98,168},{44,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.94.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{644,762},{44,70}}</string>
+                <string>{{632,704},{42,70}}</string>
                 <key>offset</key>
                 <string>{1,-84}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,169},{44,70}}</string>
+                <string>{{100,169},{42,70}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalWind.95.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{608,924},{42,72}}</string>
+                <string>{{450,522},{42,72}}</string>
+                <key>offset</key>
+                <string>{1,-84}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{100,168},{42,72}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWind.96.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{440,566},{42,72}}</string>
                 <key>offset</key>
                 <string>{1,-84}</string>
                 <key>rotated</key>
@@ -2955,36 +2968,10 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWind.96.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{526,870},{42,74}}</string>
-                <key>offset</key>
-                <string>{1,-83}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{100,166},{42,74}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>elementalWind.97.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{502,794},{42,74}}</string>
-                <key>offset</key>
-                <string>{1,-83}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{100,166},{42,74}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>elementalWind.98.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{390,90},{40,74}}</string>
+                <string>{{322,2},{40,74}}</string>
                 <key>offset</key>
                 <string>{2,-83}</string>
                 <key>rotated</key>
@@ -2994,16 +2981,29 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>elementalWind.99.png</key>
+            <key>elementalWind.98.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,200},{40,74}}</string>
+                <string>{{296,302},{40,74}}</string>
                 <key>offset</key>
                 <string>{1,-83}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
                 <string>{{101,166},{40,74}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>elementalWind.99.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{320,378},{38,74}}</string>
+                <key>offset</key>
+                <string>{2,-83}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{103,166},{38,74}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
@@ -3017,7 +3017,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:37b2cbe7e60859540934589fb1968e34:e277e5479815bc13773e8572c45b4a8c:bec30bcbba4c067e845d339133654a79$</string>
+            <string>$TexturePacker:SmartUpdate:a722a152ecf2df311e4bbf83e3a5eb2e:14b506c22a0d6244e319bda74ea5ee07:bec30bcbba4c067e845d339133654a79$</string>
             <key>textureFileName</key>
             <string>elementalWindSheet-iphone4.png</string>
         </dict>

@@ -7,7 +7,7 @@
             <key>elementalEarth.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{386,726},{38,86}}</string>
+                <string>{{324,822},{38,86}}</string>
                 <key>offset</key>
                 <string>{0,-77}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>elementalEarth.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,770},{40,88}}</string>
+                <string>{{226,288},{40,88}}</string>
                 <key>offset</key>
                 <string>{-4,-76}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>elementalEarth.101.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{382,816},{38,86}}</string>
+                <string>{{302,910},{38,86}}</string>
                 <key>offset</key>
                 <string>{0,-77}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>elementalEarth.102.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{502,438},{38,84}}</string>
+                <string>{{448,88},{38,84}}</string>
                 <key>offset</key>
                 <string>{0,-78}</string>
                 <key>rotated</key>
@@ -59,20 +59,20 @@
             <key>elementalEarth.103.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{492,262},{40,84}}</string>
+                <string>{{440,174},{38,84}}</string>
                 <key>offset</key>
-                <string>{0,-78}</string>
+                <string>{1,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,156},{40,84}}</string>
+                <string>{{102,156},{38,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.104.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,352},{40,84}}</string>
+                <string>{{432,610},{40,84}}</string>
                 <key>offset</key>
                 <string>{2,-78}</string>
                 <key>rotated</key>
@@ -85,46 +85,46 @@
             <key>elementalEarth.105.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{476,176},{42,84}}</string>
+                <string>{{512,976},{42,84}}</string>
                 <key>offset</key>
-                <string>{3,-78}</string>
+                <string>{2,-78}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{102,156},{42,84}}</string>
+                <string>{{101,156},{42,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.106.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{460,2},{42,84}}</string>
+                <string>{{490,890},{42,84}}</string>
                 <key>offset</key>
-                <string>{3,-78}</string>
+                <string>{2,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,156},{42,84}}</string>
+                <string>{{101,156},{42,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.107.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{316,92},{44,86}}</string>
+                <string>{{320,92},{44,86}}</string>
                 <key>offset</key>
-                <string>{5,-77}</string>
+                <string>{4,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,154},{44,86}}</string>
+                <string>{{102,154},{44,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.108.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,868},{42,88}}</string>
+                <string>{{154,570},{42,88}}</string>
                 <key>offset</key>
                 <string>{4,-76}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>elementalEarth.109.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,306},{38,96}}</string>
+                <string>{{94,2},{38,96}}</string>
                 <key>offset</key>
                 <string>{1,-72}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>elementalEarth.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,778},{42,88}}</string>
+                <string>{{182,288},{42,88}}</string>
                 <key>offset</key>
                 <string>{-5,-76}</string>
                 <key>rotated</key>
@@ -189,7 +189,7 @@
             <key>elementalEarth.112.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,2},{52,96}}</string>
+                <string>{{50,102},{52,96}}</string>
                 <key>offset</key>
                 <string>{-11,-72}</string>
                 <key>rotated</key>
@@ -202,20 +202,20 @@
             <key>elementalEarth.113.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{46,2},{48,98}}</string>
+                <string>{{46,2},{46,98}}</string>
                 <key>offset</key>
-                <string>{-8,-71}</string>
+                <string>{-7,-71}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{88,142},{48,98}}</string>
+                <string>{{90,142},{46,98}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.114.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{50,102},{60,96}}</string>
+                <string>{{2,208},{60,96}}</string>
                 <key>offset</key>
                 <string>{15,-72}</string>
                 <key>rotated</key>
@@ -228,7 +228,7 @@
             <key>elementalEarth.115.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,464},{80,86}}</string>
+                <string>{{238,558},{80,86}}</string>
                 <key>offset</key>
                 <string>{25,-77}</string>
                 <key>rotated</key>
@@ -241,7 +241,7 @@
             <key>elementalEarth.116.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{380,446},{78,84}}</string>
+                <string>{{398,718},{78,84}}</string>
                 <key>offset</key>
                 <string>{24,-78}</string>
                 <key>rotated</key>
@@ -254,7 +254,7 @@
             <key>elementalEarth.117.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,900},{78,84}}</string>
+                <string>{{364,808},{78,84}}</string>
                 <key>offset</key>
                 <string>{24,-78}</string>
                 <key>rotated</key>
@@ -267,7 +267,7 @@
             <key>elementalEarth.118.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{340,940},{78,82}}</string>
+                <string>{{480,174},{78,82}}</string>
                 <key>offset</key>
                 <string>{23,-79}</string>
                 <key>rotated</key>
@@ -280,20 +280,20 @@
             <key>elementalEarth.119.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{572,88},{74,82}}</string>
+                <string>{{176,948},{74,82}}</string>
                 <key>offset</key>
-                <string>{22,-79}</string>
+                <string>{21,-79}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{105,158},{74,82}}</string>
+                <string>{{104,158},{74,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{288,2},{42,88}}</string>
+                <string>{{152,390},{42,88}}</string>
                 <key>offset</key>
                 <string>{-5,-76}</string>
                 <key>rotated</key>
@@ -306,20 +306,20 @@
             <key>elementalEarth.120.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{394,356},{68,84}}</string>
+                <string>{{2,952},{68,82}}</string>
                 <key>offset</key>
-                <string>{18,-78}</string>
+                <string>{18,-79}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{104,156},{68,84}}</string>
+                <string>{{104,158},{68,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.121.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,266},{60,84}}</string>
+                <string>{{444,804},{60,84}}</string>
                 <key>offset</key>
                 <string>{14,-78}</string>
                 <key>rotated</key>
@@ -332,7 +332,7 @@
             <key>elementalEarth.122.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{294,182},{50,86}}</string>
+                <string>{{306,278},{50,86}}</string>
                 <key>offset</key>
                 <string>{10,-77}</string>
                 <key>rotated</key>
@@ -345,33 +345,33 @@
             <key>elementalEarth.123.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,2},{42,86}}</string>
+                <string>{{426,980},{42,84}}</string>
                 <key>offset</key>
-                <string>{6,-77}</string>
+                <string>{5,-78}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{105,154},{42,86}}</string>
+                <string>{{104,156},{42,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.124.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{390,178},{40,86}}</string>
+                <string>{{534,864},{38,84}}</string>
                 <key>offset</key>
-                <string>{1,-77}</string>
+                <string>{1,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{101,154},{40,86}}</string>
+                <string>{{102,156},{38,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.125.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,638},{38,86}}</string>
+                <string>{{360,542},{38,86}}</string>
                 <key>offset</key>
                 <string>{0,-77}</string>
                 <key>rotated</key>
@@ -384,7 +384,7 @@
             <key>elementalEarth.13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{272,92},{42,88}}</string>
+                <string>{{124,480},{42,88}}</string>
                 <key>offset</key>
                 <string>{-5,-76}</string>
                 <key>rotated</key>
@@ -397,7 +397,7 @@
             <key>elementalEarth.131.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{346,728},{38,86}}</string>
+                <string>{{354,632},{38,86}}</string>
                 <key>offset</key>
                 <string>{0,-77}</string>
                 <key>rotated</key>
@@ -410,7 +410,7 @@
             <key>elementalEarth.132.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,528},{38,84}}</string>
+                <string>{{506,778},{38,84}}</string>
                 <key>offset</key>
                 <string>{-1,-78}</string>
                 <key>rotated</key>
@@ -423,7 +423,7 @@
             <key>elementalEarth.133.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{388,268},{40,86}}</string>
+                <string>{{260,926},{40,86}}</string>
                 <key>offset</key>
                 <string>{-3,-77}</string>
                 <key>rotated</key>
@@ -436,85 +436,85 @@
             <key>elementalEarth.134.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,760},{38,88}}</string>
+                <string>{{234,660},{36,88}}</string>
                 <key>offset</key>
-                <string>{-5,-76}</string>
+                <string>{-4,-76}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{96,152},{38,88}}</string>
+                <string>{{98,152},{36,88}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.135.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{58,872},{38,90}}</string>
+                <string>{{2,680},{36,90}}</string>
                 <key>offset</key>
                 <string>{-4,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,150},{38,90}}</string>
+                <string>{{98,150},{36,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.136.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{158,384},{46,88}}</string>
+                <string>{{312,184},{44,86}}</string>
                 <key>offset</key>
-                <string>{-4,-76}</string>
+                <string>{-4,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,152},{46,88}}</string>
+                <string>{{94,154},{44,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.137.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,276},{52,86}}</string>
+                <string>{{276,368},{50,86}}</string>
                 <key>offset</key>
-                <string>{-2,-77}</string>
+                <string>{-1,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{92,154},{52,86}}</string>
+                <string>{{94,154},{50,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.138.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,964},{58,86}}</string>
+                <string>{{488,88},{58,82}}</string>
                 <key>offset</key>
-                <string>{3,-77}</string>
+                <string>{3,-79}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{94,154},{58,86}}</string>
+                <string>{{94,158},{58,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.139.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{90,964},{54,80}}</string>
+                <string>{{522,514},{60,80}}</string>
                 <key>offset</key>
-                <string>{2,-80}</string>
+                <string>{6,-80}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,160},{54,80}}</string>
+                <string>{{96,160},{60,80}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{250,186},{42,88}}</string>
+                <string>{{156,766},{42,88}}</string>
                 <key>offset</key>
                 <string>{-5,-76}</string>
                 <key>rotated</key>
@@ -527,24 +527,24 @@
             <key>elementalEarth.140.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{614,256},{60,78}}</string>
+                <string>{{518,682},{58,78}}</string>
                 <key>offset</key>
                 <string>{0,-81}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{90,162},{60,78}}</string>
+                <string>{{91,162},{58,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.141.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{258,950},{80,72}}</string>
+                <string>{{560,170},{80,72}}</string>
                 <key>offset</key>
                 <string>{2,-84}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{82,168},{80,72}}</string>
                 <key>sourceSize</key>
@@ -553,20 +553,20 @@
             <key>elementalEarth.142.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{548,518},{80,66}}</string>
+                <string>{{514,600},{80,64}}</string>
                 <key>offset</key>
-                <string>{2,-87}</string>
+                <string>{2,-88}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{82,174},{80,66}}</string>
+                <string>{{82,176},{80,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.143.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{584,430},{80,60}}</string>
+                <string>{{558,426},{80,60}}</string>
                 <key>offset</key>
                 <string>{2,-90}</string>
                 <key>rotated</key>
@@ -579,20 +579,20 @@
             <key>elementalEarth.144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{172,958},{84,64}}</string>
+                <string>{{426,894},{84,62}}</string>
                 <key>offset</key>
-                <string>{4,-88}</string>
+                <string>{4,-89}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{82,176},{84,64}}</string>
+                <string>{{82,178},{84,62}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{206,96},{88,64}}</string>
+                <string>{{134,858},{88,64}}</string>
                 <key>offset</key>
                 <string>{6,-88}</string>
                 <key>rotated</key>
@@ -605,20 +605,20 @@
             <key>elementalEarth.146.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,194},{88,64}}</string>
+                <string>{{90,768},{88,64}}</string>
                 <key>offset</key>
-                <string>{7,-88}</string>
+                <string>{6,-88}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{83,176},{88,64}}</string>
+                <string>{{82,176},{88,64}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.147.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{136,294},{88,64}}</string>
+                <string>{{40,678},{88,64}}</string>
                 <key>offset</key>
                 <string>{7,-88}</string>
                 <key>rotated</key>
@@ -631,7 +631,7 @@
             <key>elementalEarth.148.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,490},{88,64}}</string>
+                <string>{{58,496},{88,64}}</string>
                 <key>offset</key>
                 <string>{7,-88}</string>
                 <key>rotated</key>
@@ -644,7 +644,7 @@
             <key>elementalEarth.149.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,400},{88,64}}</string>
+                <string>{{40,588},{88,64}}</string>
                 <key>offset</key>
                 <string>{7,-88}</string>
                 <key>rotated</key>
@@ -657,24 +657,24 @@
             <key>elementalEarth.15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{246,284},{42,88}}</string>
+                <string>{{150,676},{42,88}}</string>
                 <key>offset</key>
-                <string>{-4,-76}</string>
+                <string>{-5,-76}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{95,152},{42,88}}</string>
+                <string>{{94,152},{42,88}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.150.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,590},{88,64}}</string>
+                <string>{{86,952},{88,64}}</string>
                 <key>offset</key>
                 <string>{7,-88}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{83,176},{88,64}}</string>
                 <key>sourceSize</key>
@@ -683,7 +683,7 @@
             <key>elementalEarth.151.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{86,500},{88,64}}</string>
+                <string>{{68,862},{88,64}}</string>
                 <key>offset</key>
                 <string>{7,-88}</string>
                 <key>rotated</key>
@@ -696,7 +696,7 @@
             <key>elementalEarth.152.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{84,594},{88,64}}</string>
+                <string>{{2,862},{88,64}}</string>
                 <key>offset</key>
                 <string>{7,-88}</string>
                 <key>rotated</key>
@@ -709,7 +709,7 @@
             <key>elementalEarth.16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{206,374},{42,88}}</string>
+                <string>{{106,676},{42,88}}</string>
                 <key>offset</key>
                 <string>{-4,-76}</string>
                 <key>rotated</key>
@@ -722,20 +722,20 @@
             <key>elementalEarth.17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{362,90},{42,86}}</string>
+                <string>{{242,838},{40,86}}</string>
                 <key>offset</key>
                 <string>{-3,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{96,154},{42,86}}</string>
+                <string>{{97,154},{40,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{346,180},{42,86}}</string>
+                <string>{{338,2},{42,86}}</string>
                 <key>offset</key>
                 <string>{-3,-77}</string>
                 <key>rotated</key>
@@ -748,20 +748,20 @@
             <key>elementalEarth.19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{344,270},{42,86}}</string>
+                <string>{{272,646},{40,86}}</string>
                 <key>offset</key>
                 <string>{-2,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,154},{42,86}}</string>
+                <string>{{98,154},{40,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,816},{38,86}}</string>
+                <string>{{320,734},{38,86}}</string>
                 <key>offset</key>
                 <string>{0,-77}</string>
                 <key>rotated</key>
@@ -774,20 +774,20 @@
             <key>elementalEarth.20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{446,90},{42,84}}</string>
+                <string>{{400,524},{40,84}}</string>
                 <key>offset</key>
-                <string>{-2,-78}</string>
+                <string>{-1,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,156},{42,84}}</string>
+                <string>{{99,156},{40,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{460,442},{40,84}}</string>
+                <string>{{394,438},{40,84}}</string>
                 <key>offset</key>
                 <string>{-1,-78}</string>
                 <key>rotated</key>
@@ -800,46 +800,46 @@
             <key>elementalEarth.22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,532},{40,84}}</string>
+                <string>{{370,352},{40,84}}</string>
                 <key>offset</key>
-                <string>{0,-78}</string>
+                <string>{-1,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,156},{40,84}}</string>
+                <string>{{99,156},{40,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{408,618},{40,84}}</string>
+                <string>{{478,692},{38,84}}</string>
                 <key>offset</key>
                 <string>{0,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,156},{40,84}}</string>
+                <string>{{101,156},{38,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{598,172},{40,82}}</string>
+                <string>{{518,430},{38,82}}</string>
                 <key>offset</key>
-                <string>{0,-79}</string>
+                <string>{1,-79}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,158},{40,82}}</string>
+                <string>{{102,158},{38,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.25.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{510,698},{38,82}}</string>
+                <string>{{482,516},{38,82}}</string>
                 <key>offset</key>
                 <string>{1,-79}</string>
                 <key>rotated</key>
@@ -852,20 +852,20 @@
             <key>elementalEarth.26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{508,788},{38,82}}</string>
+                <string>{{558,258},{36,82}}</string>
                 <key>offset</key>
-                <string>{1,-79}</string>
+                <string>{2,-79}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,158},{38,82}}</string>
+                <string>{{104,158},{36,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{534,608},{36,82}}</string>
+                <string>{{532,342},{36,82}}</string>
                 <key>offset</key>
                 <string>{2,-79}</string>
                 <key>rotated</key>
@@ -878,7 +878,7 @@
             <key>elementalEarth.28.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{560,174},{36,84}}</string>
+                <string>{{478,260},{36,84}}</string>
                 <key>offset</key>
                 <string>{2,-78}</string>
                 <key>rotated</key>
@@ -891,7 +891,7 @@
             <key>elementalEarth.29.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{534,260},{36,84}}</string>
+                <string>{{452,346},{36,84}}</string>
                 <key>offset</key>
                 <string>{2,-78}</string>
                 <key>rotated</key>
@@ -904,7 +904,7 @@
             <key>elementalEarth.3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,904},{36,86}}</string>
+                <string>{{394,630},{36,86}}</string>
                 <key>offset</key>
                 <string>{0,-77}</string>
                 <key>rotated</key>
@@ -917,7 +917,7 @@
             <key>elementalEarth.30.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{506,348},{36,84}}</string>
+                <string>{{440,260},{36,84}}</string>
                 <key>offset</key>
                 <string>{2,-78}</string>
                 <key>rotated</key>
@@ -930,20 +930,20 @@
             <key>elementalEarth.31.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{340,550},{38,86}}</string>
+                <string>{{474,606},{38,84}}</string>
                 <key>offset</key>
-                <string>{1,-77}</string>
+                <string>{1,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,154},{38,86}}</string>
+                <string>{{102,156},{38,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.32.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{328,640},{38,86}}</string>
+                <string>{{284,822},{38,86}}</string>
                 <key>offset</key>
                 <string>{1,-77}</string>
                 <key>rotated</key>
@@ -956,7 +956,7 @@
             <key>elementalEarth.33.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{352,358},{40,86}}</string>
+                <string>{{238,750},{40,86}}</string>
                 <key>offset</key>
                 <string>{0,-77}</string>
                 <key>rotated</key>
@@ -969,33 +969,33 @@
             <key>elementalEarth.34.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,462},{40,86}}</string>
+                <string>{{442,520},{38,84}}</string>
                 <key>offset</key>
-                <string>{0,-77}</string>
+                <string>{0,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,154},{40,86}}</string>
+                <string>{{101,156},{38,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.35.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{380,532},{40,84}}</string>
+                <string>{{436,434},{38,84}}</string>
                 <key>offset</key>
                 <string>{0,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,156},{40,84}}</string>
+                <string>{{101,156},{38,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.36.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{450,618},{38,84}}</string>
+                <string>{{412,348},{38,84}}</string>
                 <key>offset</key>
                 <string>{0,-78}</string>
                 <key>rotated</key>
@@ -1008,7 +1008,7 @@
             <key>elementalEarth.37.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{306,728},{38,86}}</string>
+                <string>{{354,454},{38,86}}</string>
                 <key>offset</key>
                 <string>{0,-77}</string>
                 <key>rotated</key>
@@ -1021,33 +1021,33 @@
             <key>elementalEarth.4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{250,374},{36,88}}</string>
+                <string>{{360,720},{36,86}}</string>
                 <key>offset</key>
-                <string>{0,-76}</string>
+                <string>{0,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{102,152},{36,88}}</string>
+                <string>{{102,154},{36,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.41.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{246,670},{38,88}}</string>
+                <string>{{200,750},{36,88}}</string>
                 <key>offset</key>
                 <string>{2,-76}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,152},{38,88}}</string>
+                <string>{{104,152},{36,88}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.42.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,780},{36,90}}</string>
+                <string>{{2,588},{36,90}}</string>
                 <key>offset</key>
                 <string>{2,-75}</string>
                 <key>rotated</key>
@@ -1060,7 +1060,7 @@
             <key>elementalEarth.43.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{216,580},{38,88}}</string>
+                <string>{{210,468},{38,88}}</string>
                 <key>offset</key>
                 <string>{1,-76}</string>
                 <key>rotated</key>
@@ -1073,46 +1073,46 @@
             <key>elementalEarth.44.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{164,680},{40,88}}</string>
+                <string>{{198,570},{38,88}}</string>
                 <key>offset</key>
                 <string>{1,-76}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{101,152},{40,88}}</string>
+                <string>{{102,152},{38,88}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.45.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{298,552},{40,86}}</string>
+                <string>{{320,544},{38,86}}</string>
                 <key>offset</key>
-                <string>{1,-77}</string>
+                <string>{2,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{101,154},{40,86}}</string>
+                <string>{{103,154},{38,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.46.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,178},{42,84}}</string>
+                <string>{{358,266},{40,84}}</string>
                 <key>offset</key>
                 <string>{1,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,156},{42,84}}</string>
+                <string>{{101,156},{40,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.47.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{504,524},{42,82}}</string>
+                <string>{{546,2},{42,82}}</string>
                 <key>offset</key>
                 <string>{1,-79}</string>
                 <key>rotated</key>
@@ -1125,20 +1125,20 @@
             <key>elementalEarth.48.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{490,614},{42,82}}</string>
+                <string>{{614,334},{42,80}}</string>
                 <key>offset</key>
-                <string>{1,-79}</string>
+                <string>{1,-80}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,158},{42,82}}</string>
+                <string>{{100,160},{42,80}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.49.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{572,260},{40,82}}</string>
+                <string>{{516,258},{40,82}}</string>
                 <key>offset</key>
                 <string>{2,-79}</string>
                 <key>rotated</key>
@@ -1151,7 +1151,7 @@
             <key>elementalEarth.5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,464},{36,88}}</string>
+                <string>{{300,2},{36,88}}</string>
                 <key>offset</key>
                 <string>{0,-76}</string>
                 <key>rotated</key>
@@ -1164,7 +1164,7 @@
             <key>elementalEarth.50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{544,346},{40,82}}</string>
+                <string>{{490,346},{40,82}}</string>
                 <key>offset</key>
                 <string>{2,-79}</string>
                 <key>rotated</key>
@@ -1177,7 +1177,7 @@
             <key>elementalEarth.51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{504,2},{40,84}}</string>
+                <string>{{382,2},{40,84}}</string>
                 <key>offset</key>
                 <string>{2,-78}</string>
                 <key>rotated</key>
@@ -1190,20 +1190,20 @@
             <key>elementalEarth.52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{332,2},{42,86}}</string>
+                <string>{{366,90},{40,84}}</string>
                 <key>offset</key>
-                <string>{1,-77}</string>
+                <string>{1,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,154},{42,86}}</string>
+                <string>{{101,156},{40,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.53.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{286,640},{40,86}}</string>
+                <string>{{200,840},{40,86}}</string>
                 <key>offset</key>
                 <string>{1,-77}</string>
                 <key>rotated</key>
@@ -1216,7 +1216,7 @@
             <key>elementalEarth.54.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,552},{40,86}}</string>
+                <string>{{328,366},{40,86}}</string>
                 <key>offset</key>
                 <string>{1,-77}</string>
                 <key>rotated</key>
@@ -1229,7 +1229,7 @@
             <key>elementalEarth.55.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{426,704},{38,84}}</string>
+                <string>{{400,262},{38,84}}</string>
                 <key>offset</key>
                 <string>{1,-78}</string>
                 <key>rotated</key>
@@ -1242,20 +1242,20 @@
             <key>elementalEarth.56.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{546,2},{38,84}}</string>
+                <string>{{424,2},{38,84}}</string>
                 <key>offset</key>
-                <string>{2,-78}</string>
+                <string>{1,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,156},{38,84}}</string>
+                <string>{{102,156},{38,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.57.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{490,88},{40,84}}</string>
+                <string>{{358,180},{40,84}}</string>
                 <key>offset</key>
                 <string>{1,-78}</string>
                 <key>rotated</key>
@@ -1268,20 +1268,20 @@
             <key>elementalEarth.58.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{466,704},{42,82}}</string>
+                <string>{{476,432},{40,82}}</string>
                 <key>offset</key>
                 <string>{1,-79}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,158},{42,82}}</string>
+                <string>{{101,158},{40,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.59.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{630,2},{42,82}}</string>
+                <string>{{502,2},{42,82}}</string>
                 <key>offset</key>
                 <string>{1,-79}</string>
                 <key>rotated</key>
@@ -1294,33 +1294,33 @@
             <key>elementalEarth.6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{264,860},{38,88}}</string>
+                <string>{{282,94},{36,88}}</string>
                 <key>offset</key>
                 <string>{-1,-76}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,152},{38,88}}</string>
+                <string>{{101,152},{36,88}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.60.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{586,2},{42,82}}</string>
+                <string>{{596,252},{42,80}}</string>
                 <key>offset</key>
-                <string>{1,-79}</string>
+                <string>{1,-80}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{100,158},{42,82}}</string>
+                <string>{{100,160},{42,80}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.61.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{586,344},{42,80}}</string>
+                <string>{{570,342},{42,80}}</string>
                 <key>offset</key>
                 <string>{1,-80}</string>
                 <key>rotated</key>
@@ -1333,7 +1333,7 @@
             <key>elementalEarth.62.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{542,434},{40,82}}</string>
+                <string>{{548,86},{40,82}}</string>
                 <key>offset</key>
                 <string>{2,-79}</string>
                 <key>rotated</key>
@@ -1346,46 +1346,46 @@
             <key>elementalEarth.63.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{532,88},{38,84}}</string>
+                <string>{{408,88},{38,84}}</string>
                 <key>offset</key>
-                <string>{3,-78}</string>
+                <string>{2,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{104,156},{38,84}}</string>
+                <string>{{103,156},{38,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{226,770},{38,88}}</string>
+                <string>{{274,188},{36,88}}</string>
                 <key>offset</key>
-                <string>{2,-76}</string>
+                <string>{3,-76}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,152},{38,88}}</string>
+                <string>{{105,152},{36,88}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.65.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{224,860},{38,88}}</string>
+                <string>{{268,278},{36,88}}</string>
                 <key>offset</key>
                 <string>{2,-76}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{103,152},{38,88}}</string>
+                <string>{{104,152},{36,88}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,860},{38,88}}</string>
+                <string>{{194,660},{38,88}}</string>
                 <key>offset</key>
                 <string>{-2,-76}</string>
                 <key>rotated</key>
@@ -1398,7 +1398,7 @@
             <key>elementalEarth.71.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,2},{38,86}}</string>
+                <string>{{314,646},{38,86}}</string>
                 <key>offset</key>
                 <string>{0,-77}</string>
                 <key>rotated</key>
@@ -1411,7 +1411,7 @@
             <key>elementalEarth.72.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{520,174},{38,84}}</string>
+                <string>{{400,176},{38,84}}</string>
                 <key>offset</key>
                 <string>{-1,-78}</string>
                 <key>rotated</key>
@@ -1424,11 +1424,11 @@
             <key>elementalEarth.73.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,986},{36,84}}</string>
+                <string>{{464,2},{36,84}}</string>
                 <key>offset</key>
                 <string>{-1,-78}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{101,156},{36,84}}</string>
                 <key>sourceSize</key>
@@ -1437,7 +1437,7 @@
             <key>elementalEarth.74.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{406,90},{38,86}}</string>
+                <string>{{280,734},{38,86}}</string>
                 <key>offset</key>
                 <string>{-3,-77}</string>
                 <key>rotated</key>
@@ -1450,20 +1450,20 @@
             <key>elementalEarth.75.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{202,284},{42,88}}</string>
+                <string>{{312,456},{40,86}}</string>
                 <key>offset</key>
-                <string>{-6,-76}</string>
+                <string>{-5,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,152},{42,88}}</string>
+                <string>{{95,154},{40,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.76.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{240,2},{46,88}}</string>
+                <string>{{106,586},{46,88}}</string>
                 <key>offset</key>
                 <string>{-8,-76}</string>
                 <key>rotated</key>
@@ -1476,46 +1476,46 @@
             <key>elementalEarth.77.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,780},{56,90}}</string>
+                <string>{{94,390},{56,88}}</string>
                 <key>offset</key>
-                <string>{-8,-75}</string>
+                <string>{-8,-76}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{84,150},{56,90}}</string>
+                <string>{{84,152},{56,88}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.78.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,688},{72,90}}</string>
+                <string>{{228,2},{70,90}}</string>
                 <key>offset</key>
                 <string>{-8,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{76,150},{72,90}}</string>
+                <string>{{77,150},{70,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.79.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,500},{82,92}}</string>
+                <string>{{198,96},{82,90}}</string>
                 <key>offset</key>
-                <string>{-7,-74}</string>
+                <string>{-7,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{72,148},{82,92}}</string>
+                <string>{{72,150},{82,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{142,868},{40,88}}</string>
+                <string>{{196,378},{40,88}}</string>
                 <key>offset</key>
                 <string>{-3,-76}</string>
                 <key>rotated</key>
@@ -1528,33 +1528,33 @@
             <key>elementalEarth.80.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,2},{88,92}}</string>
+                <string>{{92,296},{88,92}}</string>
                 <key>offset</key>
-                <string>{-5,-74}</string>
+                <string>{-6,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{71,148},{88,92}}</string>
+                <string>{{70,148},{88,92}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.81.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{112,100},{92,92}}</string>
+                <string>{{2,402},{90,92}}</string>
                 <key>offset</key>
                 <string>{-4,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{70,148},{92,92}}</string>
+                <string>{{71,148},{90,92}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.82.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{90,200},{92,92}}</string>
+                <string>{{134,2},{92,92}}</string>
                 <key>offset</key>
                 <string>{-3,-74}</string>
                 <key>rotated</key>
@@ -1567,7 +1567,7 @@
             <key>elementalEarth.83.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{42,306},{92,92}}</string>
+                <string>{{104,100},{92,92}}</string>
                 <key>offset</key>
                 <string>{-3,-74}</string>
                 <key>rotated</key>
@@ -1580,7 +1580,7 @@
             <key>elementalEarth.84.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,594},{80,92}}</string>
+                <string>{{152,194},{80,92}}</string>
                 <key>offset</key>
                 <string>{-5,-74}</string>
                 <key>rotated</key>
@@ -1593,7 +1593,7 @@
             <key>elementalEarth.85.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,872},{54,90}}</string>
+                <string>{{2,496},{54,90}}</string>
                 <key>offset</key>
                 <string>{6,-75}</string>
                 <key>rotated</key>
@@ -1606,20 +1606,20 @@
             <key>elementalEarth.86.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,208},{96,86}}</string>
+                <string>{{64,200},{94,86}}</string>
                 <key>offset</key>
                 <string>{16,-77}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{88,154},{96,86}}</string>
+                <string>{{89,154},{94,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.87.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,404},{94,88}}</string>
+                <string>{{2,306},{94,88}}</string>
                 <key>offset</key>
                 <string>{15,-76}</string>
                 <key>rotated</key>
@@ -1632,7 +1632,7 @@
             <key>elementalEarth.88.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{76,688},{88,86}}</string>
+                <string>{{2,772},{88,86}}</string>
                 <key>offset</key>
                 <string>{13,-77}</string>
                 <key>rotated</key>
@@ -1645,46 +1645,46 @@
             <key>elementalEarth.89.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,814},{84,84}}</string>
+                <string>{{342,910},{82,84}}</string>
                 <key>offset</key>
                 <string>{14,-78}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{92,156},{84,84}}</string>
+                <string>{{93,156},{82,84}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{142,778},{40,88}}</string>
+                <string>{{168,480},{40,88}}</string>
                 <key>offset</key>
-                <string>{-3,-76}</string>
+                <string>{-4,-76}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,152},{40,88}}</string>
+                <string>{{96,152},{40,88}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.90.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{288,374},{62,86}}</string>
+                <string>{{250,468},{60,86}}</string>
                 <key>offset</key>
                 <string>{10,-77}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{99,154},{62,86}}</string>
+                <string>{{100,154},{60,86}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>elementalEarth.91.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{206,680},{38,88}}</string>
+                <string>{{234,188},{38,88}}</string>
                 <key>offset</key>
                 <string>{1,-76}</string>
                 <key>rotated</key>
@@ -1697,7 +1697,7 @@
             <key>elementalEarth.92.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{304,850},{36,88}}</string>
+                <string>{{238,378},{36,88}}</string>
                 <key>offset</key>
                 <string>{0,-76}</string>
                 <key>rotated</key>
@@ -1717,7 +1717,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:086345ee2094ec258c70d0ed4baf21a2:1d9268ede00205bb47a93718e3b427c5:dbaf13d448bcd796cc5388dd47ded24f$</string>
+            <string>$TexturePacker:SmartUpdate:abc2adacb3a31926327803191fcb45c8:1f22e5ea18187d4860cdff19e02c3092:dbaf13d448bcd796cc5388dd47ded24f$</string>
             <key>textureFileName</key>
             <string>elementalEarthSheet-iphone4.png</string>
         </dict>
