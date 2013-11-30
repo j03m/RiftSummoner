@@ -202,19 +202,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="kikClientMock.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="kikClientMock.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kikClientMock.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="113" selection-start="441" selection-end="441" vertical-scroll-proportion="0.42674252">
+            <state line="20" column="113" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="powerConfig.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/powerConfig.js">
+      <file leaf-file-name="dev.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="12" selection-start="5700" selection-end="5700" vertical-scroll-proportion="0.0">
+            <state line="40" column="17" selection-start="0" selection-end="1327" vertical-scroll-proportion="-25.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="59" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.72901326">
               <folding />
             </state>
           </provider>
@@ -240,15 +249,6 @@
       </file>
       <file leaf-file-name="kikServerMock.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/kikServerMock.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpriteTest.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SpriteTest.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -302,7 +302,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/behaviors/RangeBehavior.js" />
         <option value="$PROJECT_DIR$/platform/HTML5/cocos2d/base_nodes/CCNode.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCCompositeButton.js" />
         <option value="$PROJECT_DIR$/src/Loading.js" />
@@ -318,6 +317,7 @@
         <option value="$PROJECT_DIR$/src/behaviors/FlankerBehavior.js" />
         <option value="$PROJECT_DIR$/private/characterTiers.js" />
         <option value="$PROJECT_DIR$/src/kikClientMock.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -768,16 +768,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Loading.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="17" selection-start="2596" selection-end="2609" vertical-scroll-proportion="-6.12" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotr.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="6268" selection-start="118238" selection-end="118238" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/victory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="4" selection-start="791" selection-end="863" vertical-scroll-proportion="-11.8" />
@@ -867,7 +857,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kikClientMock.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="113" selection-start="441" selection-end="441" vertical-scroll-proportion="0.42674252">
+        <state line="20" column="113" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="17" selection-start="0" selection-end="1327" vertical-scroll-proportion="-25.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="59" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.72901326">
           <folding />
         </state>
       </provider>
