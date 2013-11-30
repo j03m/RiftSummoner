@@ -44,7 +44,8 @@ exports.createNewPlayer = function(signedData, userToken, host, callback){
         console.log("kik verification err: " + err);
         console.log("kik verification response: " + res);
         if (err){
-            throw "Kik verification failed: " + err;
+            console.log("Kik verification failed: " + err);
+            callback(undefined);
         }else{
             //do a blob read for this user - its possible we can end up in this function if local storage
             //gets nuked. We can't allow that to nuke an existing user. So, don't overwrite them use the blob we find.
@@ -91,7 +92,8 @@ exports.getNewAuthTokenAndBlob = function(signedData, userToken, host, callback)
         console.log("kik verification err: " + err);
         console.log("kik verification response: " + res);
         if (err){
-            throw "Kik verification failed: " + err;
+            console.log("Kik verification failed: " + err);
+            callback(undefined);
         }else{
             makeAuthToken(userToken, function(authTokenObj){
                 readBlob(userToken, function(blob){
@@ -124,7 +126,7 @@ exports.getAuthToken = function(signedData, userToken, host, callback){
     kikcards.verify(userToken, host, signedData, function(err, res){
         if (err){
             console.log("Kik verification failed: " + err);
-            callback("blablabla");
+            callback(undefined);
         }else{
             makeAuthToken(userToken, callback);
         }
