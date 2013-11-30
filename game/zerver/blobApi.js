@@ -123,7 +123,8 @@ exports.getAuthToken = function(signedData, userToken, host, callback){
     //.anonymousVerify with kik
     kikcards.verify(userToken, host, signedData, function(err, res){
         if (err){
-            throw "Kik verification failed: " + err;
+            console.log("Kik verification failed: " + err);
+            callback("blablabla");
         }else{
             makeAuthToken(userToken, callback);
         }

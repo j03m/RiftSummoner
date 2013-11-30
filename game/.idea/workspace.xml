@@ -65,7 +65,7 @@
     <file path="/Loading.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385498353451" ignored="false" />
     <file path="/JcUiElements.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385740516748" ignored="false" />
     <file path="/JCLayerManager.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384489036600" ignored="false" />
-    <file path="/blobApi.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385577361937" ignored="false" />
+    <file path="/blobApi.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1385842758372" ignored="false" />
     <file path="/CCLoader.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384532606253" ignored="false" />
     <file path="/JCRequestLite.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384535144829" ignored="false" />
     <file path="/levelLogic.js" changelist="9096c513-4105-4630-94e9-8fc9d8fc267f" time="1384665980586" ignored="false" />
@@ -220,10 +220,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="59" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.72901326">
+            <state line="33" column="0" selection-start="1174" selection-end="1174" vertical-scroll-proportion="-20.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blobOperationsServer.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/private/blobOperationsServer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -232,7 +241,16 @@
       <file leaf-file-name="spriteVars.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1152" column="9" selection-start="22693" selection-end="22697" vertical-scroll-proportion="13.96">
+            <state line="1152" column="9" selection-start="22693" selection-end="22697" vertical-scroll-proportion="3.16">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blobApi.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="126" column="34" selection-start="5072" selection-end="5072" vertical-scroll-proportion="0.71533924">
               <folding />
             </state>
           </provider>
@@ -251,24 +269,6 @@
         <entry file="file://$PROJECT_DIR$/private/kikServerMock.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JCSprite.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jocos2d-js/JCSprite.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="33" selection-start="4056" selection-end="4056" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="34" selection-start="3538" selection-end="3538" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -302,7 +302,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/platform/HTML5/cocos2d/base_nodes/CCNode.js" />
         <option value="$PROJECT_DIR$/src/jocos2d-js/JCCompositeButton.js" />
         <option value="$PROJECT_DIR$/src/Loading.js" />
         <option value="$PROJECT_DIR$/src/selectTeam.js" />
@@ -318,6 +317,7 @@
         <option value="$PROJECT_DIR$/private/characterTiers.js" />
         <option value="$PROJECT_DIR$/src/kikClientMock.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/zerver/blobApi.js" />
       </list>
     </option>
   </component>
@@ -370,6 +370,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RunFighter-X-JS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zerver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -768,16 +782,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/victory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="4" selection-start="791" selection-end="863" vertical-scroll-proportion="-11.8" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defeat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="33" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ArenaGame.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="467" column="36" selection-start="16358" selection-end="16358" vertical-scroll-proportion="0.0">
@@ -834,13 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1152" column="9" selection-start="22693" selection-end="22697" vertical-scroll-proportion="13.96">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/characterTiers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="349" column="1" selection-start="8756" selection-end="8756" vertical-scroll-proportion="0.0">
@@ -871,7 +868,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="59" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.72901326">
+        <state line="33" column="0" selection-start="1174" selection-end="1174" vertical-scroll-proportion="-20.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/blobOperationsServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spriteVars.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1152" column="9" selection-start="22693" selection-end="22697" vertical-scroll-proportion="3.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zerver/blobApi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="34" selection-start="5072" selection-end="5072" vertical-scroll-proportion="0.71533924">
           <folding />
         </state>
       </provider>
