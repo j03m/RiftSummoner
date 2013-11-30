@@ -1,7 +1,9 @@
+console.log("file running");
 cards.ready(function(){
+    console.log("card ready");
     var hotrSrc = [
         '../zerver/blobApi.js',
-        '../hotr.min.js?version=1',
+        '../hotr.min.js?version=2',
         'gameHtml5.js'
     ]
 
