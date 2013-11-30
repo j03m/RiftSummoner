@@ -115,6 +115,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
     },
     kikStart:function(){
 
+        cards.browser.setOrientationLock('portrait');
         cards.kik.pickUsers(function (users) {
 
             //todo: save to cloud, pull from cloud - no need to send the data - users can mod cheat.
@@ -136,6 +137,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
                         data  : fightConfig});
                 }
             }
+
+            cards.browser.setOrientationLock('landscape');
         });
 
         //launch picker
