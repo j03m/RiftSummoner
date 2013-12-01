@@ -1161,7 +1161,7 @@ var spriteDefs = {
 			"y": 122
 		},
 		"details": "Ogre are massive, powerful creatures. Though they are slow movers, you do not want to be at the wrong end of their weapons.",
-		"elementType": 4,
+		"elementType": "none",
 		"unitType": 3,
 		"special": "None",
 		"targetRadius": 75,
