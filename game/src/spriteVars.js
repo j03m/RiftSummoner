@@ -1074,7 +1074,7 @@ var spriteDefs = {
 		"inherit": "knight"
 	},
 	"knightWater": {
-		"name": "knightWaters",
+		"name": "knightWater",
 		"formalName": "Elemental Knight - Water",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of water, this unit also heals any units nearby.",
 		"elementType": "water",

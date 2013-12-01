@@ -8,8 +8,12 @@ hotr.userNameKey = "x1xusernamex1x";
 hotr.blobOperations.getBlob = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
     blobApi.getBlob(authToken.token,function(err, data){
-        hotr.playerBlob = data;
-        callback();
+        if (data != undefined){
+            hotr.playerBlob = data;
+            callback(true);
+        }else{
+            callback(false);
+        }
     });
 }
 
@@ -44,11 +48,12 @@ hotr.blobOperations.getTeam = function(){
     return team;
 }
 
-hotr.blobOperations.createNewPlayer = function(signedData, userToken, host, callback){
+hotr.blobOperations.createNewPlayer = function(signedData, userToken, host,  callback){
     blobApi.createNewPlayer(signedData, userToken, host, function(blob, token){
         hotr.playerBlob = blob;
         hotr.blobOperations.setAuthToken(token);
         hotr.blobOperations.setHasPlayed();
+        hotr.blobOperations.setUserName(userToken);
         callback();
     });
 }
@@ -83,6 +88,7 @@ hotr.blobOperations.hasToken = function(){
     if (token.expires - Date.now() < 0){
         return false; //token expired
     }
+    return true;
 }
 
 hotr.blobOperations.getUserName = function(){

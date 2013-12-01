@@ -22,13 +22,17 @@ var blobNameSpace = "hotr:blob:";
 exports.saveBlob =  function(authToken, blob, callback){
     //first, we need to get the current blob
     convertToken(authToken, function(userToken){
-        readBlob(userToken, function(storedBlob){
-            if (storedBlob.version < blob.version){
-                setBlob(userToken, blob, callback);
-            }else{
-                throw "Stored blob is version: " + storedBlob.version + " attempting to overwrite with: " + blob.version;
-            }
-        });
+        if(!userToken){
+            callback({error:"session invalid"});
+        }else{
+            readBlob(userToken, function(storedBlob){
+                if (storedBlob.version < blob.version){
+                    setBlob(userToken, blob, callback);
+                }else{
+                    throw "Stored blob is version: " + storedBlob.version + " attempting to overwrite with: " + blob.version;
+                }
+            });
+        }
     });
 }
 
@@ -112,8 +116,8 @@ exports.getBlob = function(authToken, callback){
 
     //get usertoken from session token
     convertToken(authToken, function(userToken){
-        if (userToken==undefined){
-            throw "No user for session: " + authToken + " found.";
+        if(!userToken){
+            callback({error:"session invalid"});
         }else{
             //get blob
             readBlob(userToken, callback);
@@ -159,13 +163,14 @@ function makeAuthToken(userToken, callback){
 function convertToken(authToken, callback){
     console.log("Convert token: " + authToken);
     get(sessionNameSpace+authToken, function(err, res){
-
         if (err){
             throw err;
         }
         var userToken = res;
         if (!res){
-            throw "Could not convert authToken: " + authToken + " to valid user.";
+            console.log("Could not convert authToken: " + authToken + " to valid user.");
+            callback(undefined);
+            return;
         }
         console.log("Converted to: " + userToken);
         callback(userToken);
@@ -187,12 +192,16 @@ function setBlob(userToken, blob, callback){
 
 function newPlayer(authToken, callback){
     convertToken(authToken, function(userToken){
-        blobLogic.newPlayer(userToken, function(err, newBlob){
-            if (err){
-                throw err;
-            }
-            setBlob(userToken, newBlob, callback);
-        });
+        if(!userToken){
+            callback({error:"session invalid"});
+        }else{
+            blobLogic.newPlayer(userToken, function(err, newBlob){
+                if (err){
+                    throw err;
+                }
+                setBlob(userToken, newBlob, callback);
+            });
+        }
     });
 }
 

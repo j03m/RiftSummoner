@@ -332,7 +332,7 @@ exports.charTiers = {
             "hps": 40,
             "radius": 20,
             "total": 104.74509803921569,
-            "name": "knightWaters",
+            "name": "knightWater",
             "nTotal": 78.83590856097166,
             "tier": 4
         },

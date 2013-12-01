@@ -166,7 +166,7 @@ var MainGame = cc.Layer.extend({
         //if I have an auth token, I don't care, just go.
         if (hasToken && kikUser == storedUser){
             jc.log(['mainLayer'], "hasToken");
-            this.initGame();
+            this.initGame(kikUser);
         }else if (hasPlayed && kikUser == storedUser) { //if I don't ahve a token, well - have I played? If so, don't create a user for me, just get a token and go
             jc.log(['mainLayer'], "hasPlayed");
             this.authorizeAndInitGame();
@@ -197,10 +197,15 @@ var MainGame = cc.Layer.extend({
             }.bind(this));
         }.bind(this));
     },
-    initGame:function(callback){
-        hotr.blobOperations.getBlob(function(){
-            this.selectEditTeamPre();
-        });
+    initGame:function(kikUser){
+        hotr.blobOperations.getBlob(function(result){
+            if (result){
+                this.selectEditTeamPre();
+            }else{
+                this.authorizeNewPlayer(kikUser);
+            }
+
+        }.bind(this));
     },
     makeCardDictionary:function(){
         var names = hotr.blobOperations.getCharacterNames();

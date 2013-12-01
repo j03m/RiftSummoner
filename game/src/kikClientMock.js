@@ -5,7 +5,7 @@ mckCards.kik.getUser = function(cb){
 }
 
 mckCards.kik.sign = function(value, cb){
-    cb("hihihihi1", "yabbo yaboo yaboo6", "mrmgue4uandwho");
+    cb("hihihihi1", "joeiscool1", "mrmgue4uandwho");
 }
 
 
