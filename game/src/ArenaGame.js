@@ -241,7 +241,7 @@ var ArenaGame = jc.WorldLayer.extend({
                     var worldPos = this.screenToWorld(nodePos); //where is that in the world?
                     var compareMaxX = worldPos.x + tr.width;
                     var compareMinX = worldPos.x - tr.width;
-                    var compareMaxY = worldPos.y + tr.height;
+                    var compareMaxY = worldPos.y + tr.height*1.5;
                     var compareMinY = worldPos.y - (tr.height/2);
 
 

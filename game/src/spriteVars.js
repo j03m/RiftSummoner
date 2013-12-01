@@ -1153,7 +1153,7 @@ var spriteDefs = {
 	"ogre": {
 		"name": "ogre",
 		"formalName": "Ogre",
-		"byStep": 2,
+		"byStep": 1,
 		"flip": true,
 		"cardIndex": 0,
 		"portraitXy": {
@@ -1202,7 +1202,7 @@ var spriteDefs = {
 			},
 			"idle": {
 				"start": 1,
-				"end": 35,
+				"end": 48,
 				"delay": 0.02,
 				"type": 0
 			},
@@ -1267,15 +1267,9 @@ var spriteDefs = {
 				"delay": 0.04,
 				"type": 0
 			},
-			"damage": {
-				"start": 103,
-				"end": 135,
-				"delay": 0.04,
-				"type": 1
-			},
 			"dead": {
-				"start": 144,
-				"end": 192,
+				"start": 103,
+				"end": 130,
 				"delay": 0.04,
 				"type": 1
 			}

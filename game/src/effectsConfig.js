@@ -31,8 +31,8 @@ var effectsConfig = {
         "zorder":"behind",
         "placement":"bottom",
         "offset":{
-            "x":-5,
-            "y":-110
+            "x":0,
+            "y":0
         }
 
     },
