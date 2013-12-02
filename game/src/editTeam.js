@@ -291,7 +291,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             "transitionOut":"top",
             "sprite":"genericBackground.png",
             "padding":{
-                "top":-20,
+                "top":-10,
                 "left":0
             },
             "kids":{
