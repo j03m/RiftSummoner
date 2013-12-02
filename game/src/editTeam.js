@@ -19,9 +19,11 @@ var EditTeam = jc.UiElementsLayer.extend({
     onShow:function(){
         this.letterBoxVertical();
         this.start();
-
-        //hack need to paint two black bands over the right/left of the screen because my scroller needs to be screen wide :/
-
+        this.infoDialog = jc.makeSpriteWithPlist(uiPlist, uiPng, "titleDescription.png");
+        this.addChild(this.infoDialog);
+        this.infoPos = cc.p((this.winSize.width/2) + 230, (this.winSize.height/2)+145);
+        this.infoDialog.setPosition(this.infoPos);
+        jc.fadeOut(this.infoDialog);
 
         if (!this.tableView){
             this.tableView = new jc.ScrollingLayer();
@@ -209,7 +211,10 @@ var EditTeam = jc.UiElementsLayer.extend({
         }
         return stats;
     },
-    makeAndPlaceLabel:function(value,fntName, fntSize,size , align, pos, zorder){
+    makeAndPlaceLabel:function(value,fntName, fntSize,size , align, pos, zorder, parent){
+        if (parent){
+            parent = this;
+        }
         var lbl = cc.LabelTTF.create(value, fntName, fntSize, size, align);
         this.addChild(lbl);
         lbl.setPosition(pos);
@@ -260,20 +265,25 @@ var EditTeam = jc.UiElementsLayer.extend({
     },
     buildInfoDialogForSelectedCharacter:function(){
         //title label
-        var size = cc.size(80, 20);
-        var align = cc.TEXT_ALIGNMENT_LEFT;
+        var sizeTitle = cc.size(200, 20);
+        var sizeDesc = cc.size(330, 200);
+        var align = cc.TEXT_ALIGNMENT_CENTER;
         var fntSize = 16;
         var fntName = "gow";
-        var titlePos = this.infoPos;
-        titlePos.y -= 25;
-        var descPos = this.infoPos;
+        var titlePos = cc.p(795,600);
 
+        var descPos = cc.p(800,440);
 
-        var zorder = this.statsFrame.getZOrder()+1;
-
-
-        this.infoDialog.title = this.makeAndPlaceLabel(this.lastSelection.formalName, fntName, fntSize, size, align, titlePos,zorder);
-        this.infoDialog.desc = this.makeAndPlaceLabel(this.lastSelection.details, fntName, fntSize, size, align, descPos,zorder);
+        var zorder = 1;
+        var entry = spriteDefs[this.lastSelection.name];
+        if (this.infoDialog.title){
+            this.infoDialog.removeChild(this.infoDialog.title);
+        }
+        if (this.infoDialog.desc){
+            this.infoDialog.removeChild(this.infoDialog.desc);
+        }
+        this.infoDialog.title = this.makeAndPlaceLabel(entry.formalName, fntName, fntSize, sizeTitle, align, titlePos,zorder);
+        this.infoDialog.desc = this.makeAndPlaceLabel(entry.details, fntName, fntSize, sizeDesc, align, descPos,zorder);
 
         jc.fadeIn(this.infoDialog,255, jc.defaultTransitionTime*2, function(){
             this.scheduleOnce(this.infoFade.bind(this),2);

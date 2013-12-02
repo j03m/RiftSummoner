@@ -38,7 +38,7 @@ var spriteDefs = {
 	"dragonFire": {
 		"name": "dragonFire",
 		"formalName": "Fire Dragon",
-		"details": "These small dragons are aerial terrors doing massive damage to ground units below but they have a difficulty targeting other air born units. Fire Dragons do additional burning damage after each attack and splash damage to units around it. ",
+		"details": "These small dragons are aerial terrors that do massive damage to the ground units below them. However, they have a difficulty targeting other air born units. Fire Dragons inflict additional burn damage to targets and splash damage to surrounding units.",
 		"elementType": "fire",
 		"unitType": 2,
 		"damageMods": {
@@ -47,8 +47,8 @@ var spriteDefs = {
 				"radius": 100
 			},
 			"burn": {
-				"damage": 10,
-				"duration": 5,
+				"damage": 50,
+				"duration": 1,
 				"interval": 0.25
 			}
 		},
@@ -156,7 +156,7 @@ var spriteDefs = {
 	"dwarvenKnightEarth": {
 		"name": "dwarvenKnightEarth",
 		"formalName": "Dwarven Knight - Earth",
-		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with earth magic, this dwarf has additional health.",
+		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with earth magic these dwarves are particularly hard to kill.",
 		"elementType": "earth",
 		"unitType": 3,
 		"gameProperties": {
@@ -179,7 +179,7 @@ var spriteDefs = {
 	"dwarvenKnightFire": {
 		"name": "dwarvenKnightFire",
 		"formalName": "Dwarven Knight - Fire",
-		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with fire magic, this dwarf is immune completely immune to fire and explosive based attacks.",
+		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with fire magic, this dwarf is completely immune to fire element attackers.",
 		"elementType": "fire",
 		"unitType": 3,
 		"gameProperties": {
@@ -205,7 +205,7 @@ var spriteDefs = {
 	"dwarvenKnightLife": {
 		"name": "dwarvenKnightLife",
 		"formalName": "Dwarven Knight - Life",
-		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with life magic, this dwarf is immune to poison.",
+		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with life magic, this dwarf is immune to poison and life based attackers.",
 		"elementType": "life",
 		"unitType": 3,
 		"gameProperties": {
@@ -231,7 +231,7 @@ var spriteDefs = {
 	"dwarvenKnightVoid": {
 		"name": "dwarvenKnightVoid",
 		"formalName": "Dwarven Knight - Void",
-		"details": "Dwarven Knights are known for being very difficult to kill. His armor embued with void magic, this dwarf is immune to vampiric powers and has its own.",
+		"details": "Dwarven Knights are known for being very difficult to kill. His armor embued with void magic, this dwarf is immune to void powers and drains the life of his targets.",
 		"elementType": "void",
 		"unitType": 3,
 		"damageMods": {
@@ -263,12 +263,12 @@ var spriteDefs = {
 	"dwarvenKnightWater": {
 		"name": "dwarvenKnightWater",
 		"formalName": "Dwarven Knight - Water",
-		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with water magic, this dwarf regenerates.",
+		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with water magic, this dwarf regenerates health over time.",
 		"elementType": "water",
 		"unitType": 3,
 		"powers": {
 			"regeneration": {
-				"heal": 30,
+				"heal": 20,
 				"interval": 0.5
 			}
 		},
@@ -370,7 +370,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 1700,
+			"MaxHP": 2000,
 			"speed": 20,
 			"damage": 100,
 			"movementType": 1,
@@ -389,18 +389,18 @@ var spriteDefs = {
 	"elementalFire": {
 		"name": "elementalFire",
 		"formalName": "Fire Elemental",
-		"details": "Extraordinarily powerful, but slow moving. Heavy additional burn damage inflicted.",
+		"details": "Extraordinarily powerful, but slow moving. These elementals inflict additional burn damage.",
 		"elementType": "fire",
 		"unitType": 3,
 		"damageMods": {
 			"burn": {
-				"damage": 50,
-				"duration": 5,
-				"interval": 0.5
+				"damage": 20,
+				"duration": 1,
+				"interval": 0.25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 600,
+			"MaxHP": 1000,
 			"speed": 20,
 			"damage": 250,
 			"movementType": 1,
@@ -419,18 +419,18 @@ var spriteDefs = {
 	"elementalWater": {
 		"name": "elementalWater",
 		"formalName": "Water Elemental",
-		"details": "Fast elemental creatures that fire at range. Water elementals have regenerative abilities.",
+		"details": "Fast elemental creatures that fire at range. Water elementals also have regenerative abilities.",
 		"elementType": "water",
 		"unitType": 3,
 		"special": "None",
 		"powers": {
 			"regeneration": {
-				"heal": 30,
+				"heal": 20,
 				"interval": 0.5
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 500,
+			"MaxHP": 200,
 			"speed": 50,
 			"damage": 75,
 			"movementType": 1,
@@ -454,12 +454,12 @@ var spriteDefs = {
 		"unitType": 3,
 		"damageMods": {
 			"knockBack": {
-				"distance": 15
+				"distance": 30
 			}
 		},
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 50,
+			"speed": 70,
 			"damage": 50,
 			"movementType": 1,
 			"targets": 2,
@@ -535,14 +535,14 @@ var spriteDefs = {
 	"elfFire": {
 		"name": "elfFire",
 		"formalName": "Fire Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Fire Elves arrows burn their targets alive.",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. These elves have arrows that burn their targets alive.",
 		"elementType": "earth",
 		"unitType": 4,
 		"special": "None",
 		"damageMods": {
 			"burn": {
-				"damage": 50,
-				"duration": 5,
+				"damage": 25,
+				"duration": 1,
 				"interval": 0.5
 			}
 		},
@@ -570,9 +570,9 @@ var spriteDefs = {
 		"unitType": 4,
 		"damageMods": {
 			"poison": {
-				"damage": 50,
+				"damage": 10,
 				"duration": 5,
-				"interval": 0.5
+				"interval": 0.25
 			}
 		},
 		"gameProperties": {
@@ -597,12 +597,12 @@ var spriteDefs = {
 	"elfVoid": {
 		"name": "elfVoid",
 		"formalName": "Dark Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the magic arrows that steal life from targets and give it to allies.",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the magic arrows that steal life from targets and give it to all allies on the board.",
 		"elementType": "void",
 		"unitType": 4,
 		"damageMods": {
 			"vampireDistro": {
-				"heal": 20,
+				"heal": 10,
 				"damage": 20
 			}
 		},
@@ -660,7 +660,7 @@ var spriteDefs = {
 	"gargoyleFire": {
 		"name": "gargoyleFire",
 		"formalName": "Fire Demon",
-		"details": "An winged creature embued with elemental fire. It possesses magic that it uses to destroy other air targets.",
+		"details": "An winged creature embued with elemental fire. It possesses magic that it uses to attack other air or ground targets. Fire demons inflict additional burn damage to enemies.",
 		"elementType": "fire",
 		"unitType": 0,
 		"special": "Splash Damage, Burn Damage",
@@ -676,7 +676,7 @@ var spriteDefs = {
 			"speed": 100,
 			"movementType": 0,
 			"targets": 2,
-			"damage": 100,
+			"damage": 50,
 			"missile": "greenbullet",
 			"splashDamage": 5,
 			"actionDelays": {
@@ -696,7 +696,7 @@ var spriteDefs = {
 	"gargoyleVoid": {
 		"name": "gargoyleVoid",
 		"formalName": "Void Demon",
-		"details": "An winged creature embued with elemental fire. It possesses magic that it uses to destroy other air targets.",
+		"details": "An winged creature embued with the void. It possesses magic that it uses to destroy other air targets.",
 		"elementType": "void",
 		"special": "None",
 		"gameProperties": {
@@ -730,19 +730,19 @@ var spriteDefs = {
 			"y": 72
 		},
 		"formalName": "Goblin Demolition Expert",
-		"details": "Goblin demolition experts hurl explosives at enemies. While they don't have an impressive range, they can inflict massive damage on groups of ground enemies at a time.",
+		"details": "Goblin demolition experts hurl explosives at enemies. While they don't have an impressive range, they can inflict massive damage on groups of ground enemies.",
 		"elementType": "fire",
 		"unitType": 3,
 		"flip": true,
 		"special": "Splash Damage",
 		"damageMods": {
 			"splashDamage": {
-				"damage": 25,
-				"radius": 50
+				"damage": 100,
+				"radius": 100
 			},
 			"burn": {
-				"damage": 50,
-				"duration": 5,
+				"damage": 40,
+				"duration": 1,
 				"interval": 0.5
 			}
 		},
@@ -770,7 +770,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 75
+			"targetRadius": 200
 		},
 		"animations": {
 			"move": {
@@ -853,7 +853,7 @@ var spriteDefs = {
 		"special": "Burn Damage",
 		"gameProperties": {
 			"MaxHP": 200,
-			"speed": 120,
+			"speed": 170,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 25,
@@ -900,7 +900,7 @@ var spriteDefs = {
 	"goblinKnightFire": {
 		"name": "goblinKnightFire",
 		"formalName": "Goblin Knight - Fire",
-		"details": "Goblin Knights are fast and do reasonable damage. These fire goblins live near magma in deep caves are resist burning damage.",
+		"details": "Goblin Knights are fast and do reasonable damage. These fire goblins live near magma in deep caves are resist immune to fire based damage.",
 		"elementType": "fire",
 		"unitType": 3,
 		"special": "Resist Fire",
@@ -927,7 +927,7 @@ var spriteDefs = {
 	"goblinKnightNormal": {
 		"name": "goblinKnightNormal",
 		"formalName": "Goblin Knight",
-		"details": "Goblin Knights are fast and do reasonable damage..",
+		"details": "Goblin Knights are fast and do reasonable damage.",
 		"elementType": "none",
 		"unitType": 3,
 		"special": "Resist Fire",
@@ -1022,14 +1022,14 @@ var spriteDefs = {
 		"damageMods": {
 			"burn": {
 				"damage": 50,
-				"duration": 5,
-				"interval": 0.5
+				"duration": 2,
+				"interval": 0.25
 			}
 		},
 		"gameProperties": {
 			"MaxHP": 500,
 			"speed": 20,
-			"damage": 160,
+			"damage": 200,
 			"movementType": 1,
 			"targets": 1,
 			"actionDelays": {
@@ -1052,9 +1052,9 @@ var spriteDefs = {
 		"effect": "blueRadius",
 		"powers": {
 			"vampireRadius": {
-				"damage": 20,
+				"damage": 10,
 				"radius": 100,
-				"interval": 1
+				"interval": 0.25
 			}
 		},
 		"gameProperties": {
@@ -1098,9 +1098,9 @@ var spriteDefs = {
 		},
 		"powers": {
 			"healingRadius": {
-				"heal": 20,
-				"interval": 2,
-				"radius": 200
+				"heal": 5,
+				"interval": 0.25,
+				"radius": 100
 			}
 		},
 		"inherit": "knight"
@@ -1160,7 +1160,7 @@ var spriteDefs = {
 			"x": 241,
 			"y": 122
 		},
-		"details": "Ogre are massive, powerful creatures. Though they are slow movers, you do not want to be at the wrong end of their weapons.",
+		"details": "Ogres are massive, powerful creatures. Though they are slow movers, you do not want to be at the wrong end of their weapons.",
 		"elementType": "none",
 		"unitType": 3,
 		"special": "None",
@@ -1172,7 +1172,7 @@ var spriteDefs = {
 			"targets": 1,
 			"MaxHP": 1500,
 			"speed": 15,
-			"damage": 200,
+			"damage": 300,
 			"actionDelays": {
 				"attack": 1
 			},
@@ -1230,7 +1230,7 @@ var spriteDefs = {
 			"targets": 1,
 			"damage": 50,
 			"actionDelays": {
-				"attack": 0.5
+				"attack": 0.25
 			},
 			"effectDelays": {
 				"attack": 0.5
@@ -1279,19 +1279,19 @@ var spriteDefs = {
 	"scowerer": {
 		"name": "scowerer",
 		"formalName": "Void Scavenger",
-		"details": "Weak, dog-like creatures that quickly attack the weakest target they can find. When killed the scowerer will burst a poison acid on anyone nearby.",
+		"details": "Weak, dog-like creatures that are trained to rush archers and healers. When killed the scowerer will burst and a poison acid will cover anyone nearby.",
 		"elementType": "life",
 		"unitType": 3,
 		"flip": true,
 		"special": "None",
 		"deathMods": {
 			"explodePoison": {
-				"damage": 100,
-				"radius": 75,
+				"damage": 200,
+				"radius": 100,
 				"poison": {
-					"damage": 50,
+					"damage": 25,
 					"duration": 5,
-					"interval": 0.5
+					"interval": 0.25
 				}
 			}
 		},
@@ -1340,12 +1340,12 @@ var spriteDefs = {
 	"shellback": {
 		"name": "shellback",
 		"formalName": "Shellback Raider",
-		"details": "Heavily armored and fast, shellbacks are mindless attack animals. This one is trained to lock onto and kill weaker archers and healers.",
+		"details": "Heavily armored and fast, shellbacks are mindless attack animals trained to lock onto and kill weaker archers and healers.",
 		"elementType": "none",
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 250,
+			"MaxHP": 400,
 			"movementType": 1,
 			"targets": 1,
 			"speed": 200,
@@ -1395,7 +1395,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 150,
-			"speed": 80,
+			"speed": 140,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 45,
@@ -1497,7 +1497,7 @@ var spriteDefs = {
 	"troll": {
 		"name": "troll",
 		"formalName": "Goblin Cleric",
-		"details": "These small goblins are expert in healing magic. They will stay back, supporting your warriors and healing them in battle.",
+		"details": "These small trolls are expert in healing magic. They will stay back, supporting your warriors and healing them in battle.",
 		"elementType": "none",
 		"unitType": 3,
 		"special": "Healing",
@@ -1507,10 +1507,10 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 2,
 			"damage": 10,
-			"heal": 50,
+			"heal": 70,
 			"actionDelays": {
 				"attack": 0.5,
-				"heal": 0.5
+				"heal": 0.4
 			},
 			"effectDelays": {
 				"attack": 0.05,
@@ -1563,7 +1563,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 2,
 			"speed": 50,
-			"damage": 50,
+			"damage": 80,
 			"missile": "greenbullet",
 			"actionDelays": {
 				"attack": 0.05
@@ -1571,7 +1571,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 400
+			"targetRadius": 300
 		},
 		"baseOffset": {
 			"x": 0,

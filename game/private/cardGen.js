@@ -16,6 +16,19 @@ exports.generateCards = function(stones, cards, callback){
     });
 }
 
+exports.getEveryone = function(){
+    var result = []
+    for (var tier in characterTiers){
+        var chars = characterTiers[tier];
+        for (var entry in chars){
+            var card = {name:chars[entry].name, id:uuid.v4()};
+            result.push(card);
+        }
+    }
+    return result;
+}
+
+
 exports.generateCard  = generateCard;
 var generateCard = function(stones, callback){
     if (stones <1){

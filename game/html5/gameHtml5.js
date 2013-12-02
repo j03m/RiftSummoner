@@ -41,15 +41,11 @@ var cocos2dApp = cc.Application.extend({
 //            }, this);
         }, this);
 
-
-
-
-
         return true;
     }
 });
 
-console.log("prescene");
+
 var myApp = new cocos2dApp(MainGame.scene);
 //var myApp = new cocos2dApp(RetinaTest.scene);
 

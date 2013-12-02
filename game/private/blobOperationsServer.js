@@ -1,4 +1,5 @@
 var cardGen = require('./cardGen.js').generateCards;
+var getEveryone = require('./cardGen.js').getEveryone;
 var uuid = require('node-uuid');
 
 
@@ -8,7 +9,7 @@ exports.newPlayer = function(userId, callback){
     cardGen(3,6, function(err, res){
         var blob = {};
         blob["id"] = userId;
-        blob.myguys = res;
+        blob.myguys = getEveryone();
         blob.coins = 50;
         blob.stones = 3;
         blob.version = 0;
