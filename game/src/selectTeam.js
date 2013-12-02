@@ -47,11 +47,19 @@ var SelectTeam = jc.UiElementsLayer.extend({
         }else if (hotr.scratchBoard.selectedCharacter!=undefined && hotr.scratchBoard.currentCell!=undefined){
             var id = hotr.blobOperations.indexToId(hotr.scratchBoard.selectedCharacter);
             var cell = parseInt(hotr.scratchBoard.currentCell.replace(this.cellPrefix, ""));
-            this.removeExistingVisual(id, cell);
-            this.doSelectionData(id, cell);
-            this.doSelectionVisual(id, cell, hotr.scratchBoard.currentCell);
-            hotr.scratchBoard.selectedCharacter = undefined;
-            hotr.scratchBoard.currentCell = undefined;
+            if (id){
+                this.removeExistingVisual(id, cell);
+                this.doSelectionData(id, cell);
+                this.doSelectionVisual(id, cell, hotr.scratchBoard.currentCell);
+                hotr.scratchBoard.selectedCharacter = undefined;
+                hotr.scratchBoard.currentCell = undefined;
+            }else{
+                if (this[hotr.scratchBoard.currentCell].pic){
+                    jc.fadeOut(this[hotr.scratchBoard.currentCell].pic);
+                    hotr.blobOperations.clearFormationPosition(cell);
+                }
+            }
+
         }
     },
     removeExistingVisual:function(id,cell){

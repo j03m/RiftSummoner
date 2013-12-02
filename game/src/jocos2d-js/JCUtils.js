@@ -6,15 +6,28 @@ jc.scaleCard = function(card){
 }
 
 jc.makeStats = function(name){
-    var def = spriteDefs[name];
-    var stats ={};
-    stats.hp = def.gameProperties.MaxHP;
-    stats.damage = jc.valuePerSecond(def.gameProperties.damage, def.gameProperties.actionDelays.attack);
-    stats.armor = 0; //todo: implement
-    stats.speed = def.gameProperties.speed;
-    stats.power = jc.getPowerRating(def);
-    stats.range = def.gameProperties.targetRadius;
-    return stats;
+    if (name){
+        var def = spriteDefs[name];
+        var stats ={};
+        stats.hp = def.gameProperties.MaxHP;
+        stats.damage = jc.valuePerSecond(def.gameProperties.damage, def.gameProperties.actionDelays.attack);
+        stats.armor = 0; //todo: implement
+        stats.speed = def.gameProperties.speed;
+        stats.power = jc.getPowerRating(def);
+        stats.range = def.gameProperties.targetRadius;
+        return stats;
+    }else{
+        var stats ={};
+        stats.hp = 0;
+        stats.damage = 0;
+        stats.armor = 0; //todo: implement
+        stats.speed = 0;
+        stats.power = 0;
+        stats.range = 0;
+        return stats;
+
+    }
+
 }
 
 jc.getPowerRating= function(def){

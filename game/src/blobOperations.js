@@ -120,7 +120,12 @@ hotr.blobOperations.getPowers = function(){
 
 hotr.blobOperations.indexToId = function(index){
     hotr.blobOperations.validate();
-    return hotr.playerBlob.myguys[index].id;
+    if (hotr.playerBlob.myguys[index]){
+        return hotr.playerBlob.myguys[index].id;
+    }else{
+        return undefined;
+    }
+
 }
 
 hotr.blobOperations.getFormationOrder = function(){
@@ -138,6 +143,10 @@ hotr.blobOperations.getCurrentFormationPosition = function(id){
     }else{
         return hotr.playerBlob.formation.indexOf(id);
     }
+}
+
+hotr.blobOperations.clearFormationPosition = function(cell){
+    hotr.playerBlob.formation[cell]=undefined;
 }
 
 hotr.blobOperations.placeCharacterFormation = function(id, cell){

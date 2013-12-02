@@ -52,9 +52,15 @@ var EditTeam = jc.UiElementsLayer.extend({
         jc.layerManager.popLayer();
     },
     makeScrollSprites: function(names){
-       return _.map(names, function(name){
+        var characters =  _.map(names, function(name){
             return this.makeScrollSprite(name);
-       }.bind(this));
+        }.bind(this));
+
+        //empty
+        var sprite = new cc.Sprite();
+        sprite.initWithSpriteFrameName("characterPortraitFrame.png");
+        characters.push(sprite);
+        return characters;
 
     },
     makeScrollSprite: function(name){
@@ -99,34 +105,46 @@ var EditTeam = jc.UiElementsLayer.extend({
         this.close();
     },
     selectionCallback:function(index, sprite, data){
-        //index of card, data = character id
-        var characterEntry = hotr.blobOperations.getEntryWithId(data);
+        if (data){
+            //index of card, data = character id
+            var characterEntry = hotr.blobOperations.getEntryWithId(data);
 
 
 
-        //get card image from jc.getCharacterCard
-        var card = jc.getCharacterCard(characterEntry.name);
+            //get card image from jc.getCharacterCard
+            var card = jc.getCharacterCard(characterEntry.name);
 
-        //put this card sprite in the frame
-        this.swapCharacterCard(card);
+            //put this card sprite in the frame
+            this.swapCharacterCard(card);
 
+            this.placeElement(characterEntry);
 
+            this.placeAttackTypes(characterEntry);
 
-        this.placeElement(characterEntry);
-
-        this.placeAttackTypes(characterEntry);
-
-        //update labels
-        this.updateStats(characterEntry);
+            //update labels
+            this.updateStats(characterEntry);
+        }else{
+            this.mainFrame.removeChild(this.statsFrame.card);
+            this.statsFrame.card=undefined;
+            this.removeChild(this.statsFrame.element);
+            this.removeChild(this.statsFrame.info);
+            this.clearStats();
+            this.clearAttackTypes();
+        }
     },
-    placeAttackTypes:function(entry){
-        var caps = jc.getCapability(entry.name);
+    clearAttackTypes:function(){
         if (this.ground){
             this.removeChild(this.ground);
         }
         if (this.air){
             this.removeChild(this.air);
         }
+
+    },
+    placeAttackTypes:function(entry){
+        this.clearAttackTypes();
+
+        var caps = jc.getCapability(entry.name);
         if (caps.ground){
             this.ground = caps.ground;
             this.addChild(caps.ground)
@@ -137,6 +155,16 @@ var EditTeam = jc.UiElementsLayer.extend({
             this.air = caps.air;
             this.addChild(caps.air)
             this.air.setPosition(cc.p(275,533));
+        }
+    },
+    clearStats:function(){
+        var stats = jc.makeStats();
+        var prefix = "lbl";
+        for (var stat in stats){
+            var lblName = prefix+stat;
+            if (this[lblName]){
+                this.removeChild(this[lblName]);
+            }
         }
     },
     updateStats:function(entry){
@@ -226,10 +254,15 @@ var EditTeam = jc.UiElementsLayer.extend({
     swapCharacterCard:function(card){
         var pos = this.statsFrame.getPosition();
         card.setPosition(cc.p(360,pos.y-10));
-        var swapFade = jc.swapFade.bind(this.mainFrame);
-        swapFade(this.statsFrame.card, card, false);
+        if (this.statsFrame.card){
+            var swapFade = jc.swapFade.bind(this.mainFrame);
+            swapFade(this.statsFrame.card, card, false);
+        }else{
+            this.mainFrame.addChild(card);
+        }
         this.statsFrame.card = card;
         card.setZOrder(1);
+        this.statsFrame.setZOrder(2);
 
     },
     previousChar:function(){
@@ -240,7 +273,10 @@ var EditTeam = jc.UiElementsLayer.extend({
     },
     close:function(){
         this.done();
-        jc.fadeOut(this.statsFrame.card,1);
+        if (this.statsFrame.card){
+            jc.fadeOut(this.statsFrame.card,1);
+        }
+
     },
     windowConfig:{
         "mainFrame":{
