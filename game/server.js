@@ -18,7 +18,8 @@ if (config.prod){
 
 
 
-app.use(zerver.middleware())
+app.use(zerver.middleware());
+app.use(express.compress());
 app.use(express.static(__dirname ));
 fs.readdir(__dirname, function(err, results){
     for (var i =0; i<results.length; i++){
