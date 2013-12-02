@@ -16,8 +16,38 @@ var EditTeam = jc.UiElementsLayer.extend({
             return false;
         }
     },
+    drawBorders:function(){
+        var size = this.mainFrame.getContentSize();
+        var barWidth = (this.winSize.width - size.width)/2;
+        this.leftBar = cc.DrawNode.create();
+        this.rightBar = cc.DrawNode.create();
+        this.addChild(this.leftBar);
+        this.addChild(this.rightBar);
+        var color = cc.c4f(0,0,0,1);
+        var border = cc.c4f(0, 0, 0 , 1);
+        this.leftBar.clear();
+        this.rightBar.clear();
+        this.leftBar.setPosition(cc.p(0,0));
+        this.leftBar.setPosition(cc.p(this.winSize.width - barWidth,0));
+        this.drawRect(this.leftBar, cc.RectMake(0,0,barWidth,this.winSize.height) , color, border,1);
+        this.drawRect(this.rightBar, cc.rect(0,0,barWidth,this.winSize.height) , color, border,1);
+        this.leftBar.setZOrder(100);
+        this.rightBar.setZOrder(100);
+
+    },
+    drawRect:function(poly, rect, fill, border, borderWidth){
+        var height = rect.height;
+        var width = rect.width;
+        var vertices = [cc.p(0, 0), cc.p(0, height), cc.p(width, height), cc.p(width, 0)];
+        poly.drawPoly(vertices, fill, borderWidth, border);
+    },
     onShow:function(){
+        this.drawBorders();
         this.start();
+
+        //hack need to paint two black bands over the right/left of the screen because my scroller needs to be screen wide :/
+
+
         if (!this.tableView){
             this.tableView = new jc.ScrollingLayer();
             this["characterPortraitsFrame"].addChild(this.tableView);
@@ -285,6 +315,10 @@ var EditTeam = jc.UiElementsLayer.extend({
             "transitionIn":"top",
             "transitionOut":"top",
             "sprite":"genericBackground.png",
+            "padding":{
+                "top":-20,
+                "left":0
+            },
             "kids":{
                 "closeButton":{
                     "cell":9,
@@ -316,7 +350,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "cell":8,
                     "anchor":['center'],
                     "padding":{
-                        "top":29,
+                        "top":9,
                         "left":65
                     },
                     "itemPadding":{
@@ -338,7 +372,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "cell":8,
                     "anchor":['center', 'bottom'],
                     "padding":{
-                        "top":-40,
+                        "top":-60,
                         "left":77
                     },
                     "itemPadding":{
@@ -395,7 +429,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "cell":3,
                     "anchor":['left'],
                     "padding":{
-                        "top":35,
+                        "top":25,
                         "left":-30
                     }
                 },

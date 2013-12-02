@@ -185,6 +185,10 @@ var SelectTeam = jc.UiElementsLayer.extend({
             "transitionIn":"top",
             "transitionOut":"top",
             "sprite":"genericBackground.png",
+            "padding":{
+                "top":-20,
+                "left":0
+            },
             "z":1,
             "kids":{
                 "closeButton":{
@@ -254,7 +258,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "cell":2,
                     "anchor":['roght', 'top'],
                     "padding":{
-                        "top":30,
+                        "top":10,
                         "left":70
                     },
 
@@ -281,7 +285,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "cell":2,
                     "anchor":['right'],
                     "padding":{
-                        "top":10,
+                        "top":0,
                         "left":0
                     },
                     "type":"button",
@@ -293,7 +297,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "cell":3,
                     "anchor":['left'],
                     "padding":{
-                        "top":10,
+                        "top":0,
                         "left":-10
                     },
                     "type":"button",
