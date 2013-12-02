@@ -47,18 +47,18 @@ jc.getCapability = function(name){
     var def = spriteDefs[name];
     var rtrn = {};
     if (def.gameProperties.targets == 1){ //ground
-        rtrn.ground = jc.makeSpriteWithPlist(uiPlist, uiPng, "groundToGroundIcon.png");
+        rtrn.ground = jc.makeSpriteWithPlist(uiPlist, uiPng, "canAttackGround.png");
         rtrn.air = undefined;
     }
 
     if (def.gameProperties.targets == 0){ //air
         rtrn.ground = undefined;
-        rtrn.air = jc.makeSpriteWithPlist(uiPlist, uiPng, "groundToAirIcon.png");
+        rtrn.air = jc.makeSpriteWithPlist(uiPlist, uiPng, "canAttackAir.png");
     }
 
     if (def.gameProperties.targets == 2){ //both
-        rtrn.ground = jc.makeSpriteWithPlist(uiPlist, uiPng, "groundToGroundIcon.png");
-        rtrn.air = jc.makeSpriteWithPlist(uiPlist, uiPng, "groundToAirIcon.png");;
+        rtrn.ground = jc.makeSpriteWithPlist(uiPlist, uiPng, "canAttackGround.png");
+        rtrn.air = jc.makeSpriteWithPlist(uiPlist, uiPng, "canAttackAir.png");;
     }
 
     return rtrn;

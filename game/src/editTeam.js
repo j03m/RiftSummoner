@@ -114,7 +114,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             //index of card, data = character id
             var characterEntry = hotr.blobOperations.getEntryWithId(data);
 
-
+            this.lastSelection = characterEntry
 
             //get card image from jc.getCharacterCard
             var card = jc.getCharacterCard(characterEntry.name);
@@ -130,6 +130,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             this.updateStats(characterEntry);
         }else{
             this.mainFrame.removeChild(this.statsFrame.card);
+            this.lastSelection=undefined;
             this.statsFrame.card=undefined;
             this.removeChild(this.statsFrame.element);
             this.removeChild(this.statsFrame.info);
@@ -153,13 +154,13 @@ var EditTeam = jc.UiElementsLayer.extend({
         if (caps.ground){
             this.ground = caps.ground;
             this.addChild(caps.ground)
-            this.ground.setPosition(cc.p(205,533));
+            this.ground.setPosition(cc.p(205,545));
         }
 
         if (caps.air){
             this.air = caps.air;
             this.addChild(caps.air)
-            this.air.setPosition(cc.p(275,533));
+            this.air.setPosition(cc.p(275,545));
         }
     },
     clearStats:function(){
@@ -180,7 +181,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         var align = cc.TEXT_ALIGNMENT_LEFT;
         var fntSize = 16;
         var fntName = "gow";
-        var firstPos = cc.p(250, 480);
+        var firstPos = cc.p(250, 490);
         var spacing = 37;
         var zorder = this.statsFrame.getZOrder()+1
 
@@ -231,11 +232,11 @@ var EditTeam = jc.UiElementsLayer.extend({
             this.statsFrame.info.initWithDefinition({
                 "main":"infoButton.png",
                 "pressed":"infoButton.png"
-            },this.infoTouch.bind(this));
-            this.statsFrame.info.setPosition(cc.p(350, 515));
+            },this.infoTouch.bind(this), this.infoPress.bind(this));
+            this.statsFrame.info.setPosition(cc.p(330, 555));
             this.addChild(this.statsFrame.info);
         }else{
-            this.statsFrame.info.setZOrder(this.statsFrame.card.getZOrder()+1);
+            this.statsFrame.info.setZOrder(this.statsFrame.getZOrder()+2);
         }
 
         //if not none (undefined)
@@ -253,8 +254,43 @@ var EditTeam = jc.UiElementsLayer.extend({
 
 
     },
+    infoPress: function(){
+        this.buildInfoDialogForSelectedCharacter();
+
+    },
+    buildInfoDialogForSelectedCharacter:function(){
+        //title label
+        var size = cc.size(80, 20);
+        var align = cc.TEXT_ALIGNMENT_LEFT;
+        var fntSize = 16;
+        var fntName = "gow";
+        var titlePos = this.infoPos;
+        titlePos.y -= 25;
+        var descPos = this.infoPos;
+
+
+        var zorder = this.statsFrame.getZOrder()+1;
+
+
+        this.infoDialog.title = this.makeAndPlaceLabel(this.lastSelection.formalName, fntName, fntSize, size, align, titlePos,zorder);
+        this.infoDialog.desc = this.makeAndPlaceLabel(this.lastSelection.details, fntName, fntSize, size, align, descPos,zorder);
+
+        jc.fadeIn(this.infoDialog,255, jc.defaultTransitionTime*2, function(){
+            this.scheduleOnce(this.infoFade.bind(this),2);
+        }.bind(this));
+    },
     infoTouch:function(){
-        console.log("infoTouch");
+        this.doInfoFadeOut = true;
+    },
+    infoFade:function(){
+        if (this.doInfoFadeOut){
+            jc.fadeOut(this.infoDialog,jc.defaultTransitionTime*2);
+            jc.fadeOut(this.infoDialog.title,jc.defaultTransitionTime*2);
+            jc.fadeOut(this.infoDialog.desc,jc.defaultTransitionTime*2);
+            this.doInfoFadeOut = false;
+        }else{
+            this.scheduleOnce(this.infoFade.bind(this),2);
+        }
     },
     swapCharacterCard:function(card){
         var pos = this.statsFrame.getPosition();

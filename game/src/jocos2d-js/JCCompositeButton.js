@@ -1,6 +1,6 @@
 var jc = jc || {};
 jc.CompositeButton = cc.Sprite.extend({
-    initWithDefinition:function(def, onTouch){
+    initWithDefinition:function(def, onTouch, onPress){
         if (!def){
             throw "Must supply a definition";
         }
@@ -12,6 +12,7 @@ jc.CompositeButton = cc.Sprite.extend({
         }
         this.def = def;
         this.onTouch = onTouch;
+        this.onPress = onPress;
         this.initWithSpriteFrameName(def.main);
         if (this.def.subs){
             for(var i=0; i<def.subs.length;i++){
@@ -47,6 +48,9 @@ jc.CompositeButton = cc.Sprite.extend({
         if(this.frameCheck(touch)){
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(this.def.pressed);
             this.setDisplayFrame(frame);
+            if (this.onPress){
+                this.onPress();
+            }
             return true;
         }else{
             return false
