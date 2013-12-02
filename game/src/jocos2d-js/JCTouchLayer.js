@@ -113,8 +113,8 @@ jc.TouchLayer = cc.Layer.extend({
                 var rect = this.touchTargets[i].getTextureRect(); //texture rect gives us a width
                 var pos = this.touchTargets[i].getBasePosition(); //base pos gives us bottom middle of sprite
                 var cs = {};
-                cs.width = rect.width;
-                cs.height = rect.height;
+                cs.width = rect.width *1.4;
+                cs.height = rect.height*1.4;
                 cs.x = pos.x - cs.width/2; //move x to bottom left most of rect
                 cs.y = pos.y; //y should be bottom already
 
