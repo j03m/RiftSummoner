@@ -233,7 +233,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
 
             for (var i =0; i<this.sprites.length;i++){
-                if (this.sprites[i].isAlive() && this.sprites[i].isVisible()){
+                if (this.sprites[i].getParent()==this){
                     var position = this.sprites[i].getBasePosition(); //where am i in the layer
                     var shouldScale = true;
                     var tr = this.sprites[i].getTextureRect();
@@ -382,7 +382,7 @@ var ArenaGame = jc.WorldLayer.extend({
         var minDis = this.winSize.width;
         for(var i =0;i<sprites.length;i++){
             //alive/myteam?
-            if (sprites[i].isAlive() && team.indexOf(sprites[i])!=-1){
+            if (sprites[i].getParent()==this && team.indexOf(sprites[i])!=-1){
                 //this.bestMatch?
                 var v1 = jc.getVectorTo(touch, sprites[i].getPosition());
                 if (v1.distance < minDis){
