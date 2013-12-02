@@ -3,34 +3,59 @@ hotr.levelLogic = {};
 
 var temp =  [
     {
-        "name":"goblinKnightNormal",
+        "name":"ogre",
         "id":"id1",
         "data":{}
     },
     {
-        "name":"goblinKnightNormal",
+        "name":"ogre",
         "id":"id2",
         "data":{}
     },
     {
-        "name":"goblinKnightNormal",
+        "name":"ogre",
         "id":"id3",
         "data":{}
     },
     {
-        "name":"goblinKnightNormal",
+        "name":"ogre",
         "id":"id4",
         "data":{}
     },
     {
-        "name":"elfLife",
+        "name":"orc",
         "id":"id5",
         "data":{}
     },
     {
-        "name":"elfFire",
+        "name":"goblin",
         "data":{}
-    }]
+    },
+    {
+        "name":"goblin",
+        "data":{}
+    },
+    {
+        "name":"orc",
+        "data":{}
+    },
+    {
+        "name":"wizard",
+        "data":{}
+    },
+    {
+        "name":"wizard",
+        "data":{}
+    },
+    {
+        "name":"wizard",
+        "data":{}
+    },
+    {
+        "name":"wizard",
+        "data":{}
+    }
+]
 
 
 

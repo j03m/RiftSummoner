@@ -16,9 +16,63 @@ mckCards.kik.pickUsers = function(cb){
 mckCards.ready = function(cb){
     cb();
 };
-
+var temp =  [
+    {
+        "name":"ogre",
+        "id":"id1",
+        "data":{}
+    },
+    {
+        "name":"ogre",
+        "id":"id2",
+        "data":{}
+    },
+    {
+        "name":"ogre",
+        "id":"id3",
+        "data":{}
+    },
+    {
+        "name":"ogre",
+        "id":"id4",
+        "data":{}
+    },
+    {
+        "name":"orc",
+        "id":"id5",
+        "data":{}
+    },
+    {
+        "name":"goblin",
+        "data":{}
+    },
+    {
+        "name":"goblin",
+        "data":{}
+    },
+    {
+        "name":"orc",
+        "data":{}
+    },
+    {
+        "name":"wizard",
+        "data":{}
+    },
+    {
+        "name":"wizard",
+        "data":{}
+    },
+    {
+        "name":"wizard",
+        "data":{}
+    },
+    {
+        "name":"wizard",
+        "data":{}
+    }
+]
 mckCards.kik.message = {
-    team:[{"name":"knightWater"}, {"name":"knightFire"}, {"name":"knightEarth"}, {"name":"knightVoid"}, {"name":"ogre"}, {"name":"elementalWater"}],
+    team:temp,
     formation:"4x4x4b",
     powers:[]
 };

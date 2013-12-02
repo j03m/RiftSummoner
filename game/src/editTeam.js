@@ -101,8 +101,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         return returnme;
     },
     targetTouchHandler: function(type, touch, sprites) {
-        console.log(sprites[0].name);
-        return false;
+        return true;
     },
     "trainPower": function(){
         console.log("trainPower");

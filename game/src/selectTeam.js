@@ -32,6 +32,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
         }
     },
     onShow:function(){
+        this.nextEnabled = true;
         if (!this.first){
             //llp through characters
             this.start();
@@ -119,11 +120,17 @@ var SelectTeam = jc.UiElementsLayer.extend({
         console.log("next");
     },
     fightStart:function(){
-        hotr.mainScene.layer.arenaPre();
+        if (this.nextEnabled){
+            hotr.mainScene.layer.arenaPre();
+        }
+
     },
     kikStart:function(){
+        if (!this.nextEnabled){
+            return;
+        }
 
-        cards.browser.setOrientationLock('free');
+        //cards.browser.setOrientationLock('free');
         cards.kik.pickUsers(function (users) {
 
             //todo: save to cloud, pull from cloud - no need to send the data - users can mod cheat.
@@ -145,9 +152,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                         data  : fightConfig});
                 }
             }
-            this.scheduleOnce(function(){
-                cards.browser.setOrientationLock('landscape');
-            });
+
 
         });
 
@@ -171,12 +176,12 @@ var SelectTeam = jc.UiElementsLayer.extend({
                 this.reorderChild(this.highlight, sprites[0].getZOrder()+1);
                 //put cell # into scratchboard
                 hotr.scratchBoard.currentCell = sprites[0].name;
+                this.nextEnabled = false;
                 jc.layerManager.pushLayer(EditTeam.getInstance(),10);
 
             }
-
-            return true;
         }
+        return true;
     },
     windowConfig:{
         "mainFrame":{
