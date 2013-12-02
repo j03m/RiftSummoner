@@ -66,6 +66,31 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             }
         }
     },
+    letterBoxVertical:function(){
+        var size = jc.designSize;
+        var barWidth = (this.winSize.width - size.width)/2;
+        this.leftBar = cc.DrawNode.create();
+        this.rightBar = cc.DrawNode.create();
+        this.addChild(this.leftBar);
+        this.addChild(this.rightBar);
+        var color = cc.c4f(0,0,0,1);
+        var border = cc.c4f(0, 0, 0 , 1);
+        this.leftBar.clear();
+        this.rightBar.clear();
+        this.leftBar.setPosition(cc.p(0,0));
+        this.leftBar.setPosition(cc.p(this.winSize.width - barWidth,0));
+        this.drawRect(this.leftBar, cc.RectMake(0,0,barWidth,this.winSize.height) , color, border,1);
+        this.drawRect(this.rightBar, cc.rect(0,0,barWidth,this.winSize.height) , color, border,1);
+        this.leftBar.setZOrder(100);
+        this.rightBar.setZOrder(100);
+
+    },
+    drawRect:function(poly, rect, fill, border, borderWidth){
+        var height = rect.height;
+        var width = rect.width;
+        var vertices = [cc.p(0, 0), cc.p(0, height), cc.p(width, height), cc.p(width, 0)];
+        poly.drawPoly(vertices, fill, borderWidth, border);
+    },
     onTransitionComplete:function(){
         this.incTransition();
         this.checkTransitionsDone()

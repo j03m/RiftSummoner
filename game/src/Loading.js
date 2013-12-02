@@ -7,10 +7,12 @@ var Loading = jc.UiElementsLayer.extend({
         this.assetFunc = config.assetFunc;
 
 
+
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(loadingPlist);
             this.initFromConfig(this.windowConfig);
             this.start();
+            this.letterBoxVertical();
             return true;
         } else {
             return false;
@@ -28,6 +30,7 @@ var Loading = jc.UiElementsLayer.extend({
     startLoading:function(){
 
         //first thing calculate total items
+       // this.letterBoxVertical();
         this.totalItemsToLoad = 0;
         this.totalItemsCompleted=0;
         if (this.assets){
