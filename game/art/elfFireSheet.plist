@@ -7,115 +7,115 @@
             <key>elfFire.244.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,76},{18,28}}</string>
+                <string>{{96,156},{12,28}}</string>
                 <key>offset</key>
-                <string>{-1,-44}</string>
+                <string>{0,-43}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,90},{18,28}}</string>
+                <string>{{54,89},{12,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.245.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{88,44},{22,30}}</string>
+                <string>{{98,110},{16,28}}</string>
                 <key>offset</key>
-                <string>{-4,-45}</string>
+                <string>{-2,-44}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{45,90},{22,30}}</string>
+                <string>{{50,90},{16,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.246.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,78},{20,30}}</string>
+                <string>{{76,62},{16,30}}</string>
                 <key>offset</key>
-                <string>{-2,-45}</string>
+                <string>{-1,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,90},{20,30}}</string>
+                <string>{{51,90},{16,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.247.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{38,226},{16,28}}</string>
+                <string>{{116,50},{10,30}}</string>
                 <key>offset</key>
-                <string>{1,-46}</string>
+                <string>{1,-45}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{53,92},{16,28}}</string>
+                <string>{{56,90},{10,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.248.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{46,80},{22,30}}</string>
+                <string>{{98,140},{14,28}}</string>
                 <key>offset</key>
                 <string>{-1,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,90},{22,30}}</string>
+                <string>{{52,91},{14,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.249.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,110},{20,28}}</string>
+                <string>{{2,146},{14,26}}</string>
                 <key>offset</key>
-                <string>{-2,-45}</string>
+                <string>{-1,-44}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,91},{20,28}}</string>
+                <string>{{52,91},{14,26}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.250.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{112,44},{14,28}}</string>
+                <string>{{66,150},{12,28}}</string>
                 <key>offset</key>
-                <string>{0,-45}</string>
+                <string>{-1,-44}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,91},{14,28}}</string>
+                <string>{{53,90},{12,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.251.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{94,22},{20,30}}</string>
+                <string>{{100,80},{14,28}}</string>
                 <key>offset</key>
-                <string>{-2,-44}</string>
+                <string>{-1,-43}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{48,89},{20,30}}</string>
+                <string>{{52,89},{14,28}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.287.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{30,150},{10,30}}</string>
+                <string>{{116,18},{10,30}}</string>
                 <key>offset</key>
                 <string>{0,-45}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{55,90},{10,30}}</string>
                 <key>sourceSize</key>
@@ -124,20 +124,33 @@
             <key>elfFire.288.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,140},{10,30}}</string>
+                <string>{{34,144},{8,30}}</string>
                 <key>offset</key>
-                <string>{0,-45}</string>
+                <string>{-1,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{55,90},{10,30}}</string>
+                <string>{{55,90},{8,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.289.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,230},{12,26}}</string>
+                <string>{{116,82},{10,28}}</string>
+                <key>offset</key>
+                <string>{0,-46}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{55,92},{10,28}}</string>
+                <key>sourceSize</key>
+                <string>{120,120}</string>
+            </dict>
+            <key>elfFire.290.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{30,154},{12,26}}</string>
                 <key>offset</key>
                 <string>{0,-47}</string>
                 <key>rotated</key>
@@ -147,497 +160,484 @@
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
-            <key>elfFire.290.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{112,104},{14,24}}</string>
-                <key>offset</key>
-                <string>{1,-48}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{54,96},{14,24}}</string>
-                <key>sourceSize</key>
-                <string>{120,120}</string>
-            </dict>
             <key>elfFire.291.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{102,140},{16,24}}</string>
+                <string>{{58,164},{12,24}}</string>
                 <key>offset</key>
                 <string>{1,-48}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,96},{16,24}}</string>
+                <string>{{55,96},{12,24}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.292.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{48,132},{16,20}}</string>
+                <string>{{116,112},{10,22}}</string>
                 <key>offset</key>
-                <string>{4,-50}</string>
+                <string>{2,-49}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{56,100},{16,20}}</string>
+                <string>{{57,98},{10,22}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.293.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{48,112},{18,20}}</string>
+                <string>{{50,178},{12,20}}</string>
                 <key>offset</key>
-                <string>{7,-50}</string>
+                <string>{3,-50}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{58,100},{18,20}}</string>
+                <string>{{57,100},{12,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.294.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,106},{22,18}}</string>
+                <string>{{2,176},{14,20}}</string>
                 <key>offset</key>
-                <string>{9,-51}</string>
+                <string>{5,-50}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{58,102},{22,18}}</string>
+                <string>{{58,100},{14,20}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.295.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{112,74},{28,14}}</string>
+                <string>{{24,184},{18,18}}</string>
                 <key>offset</key>
-                <string>{13,-53}</string>
+                <string>{7,-51}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{59,106},{28,14}}</string>
+                <string>{{58,102},{18,18}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.296.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{62,152},{30,12}}</string>
+                <string>{{28,168},{20,14}}</string>
                 <key>offset</key>
-                <string>{15,-54}</string>
+                <string>{10,-53}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{60,108},{30,12}}</string>
+                <string>{{60,106},{20,14}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.297.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,130},{34,8}}</string>
+                <string>{{2,162},{24,12}}</string>
                 <key>offset</key>
-                <string>{16,-56}</string>
+                <string>{11,-54}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{59,112},{34,8}}</string>
+                <string>{{59,108},{24,12}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.298.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{22,122},{34,6}}</string>
+                <string>{{84,164},{24,8}}</string>
                 <key>offset</key>
-                <string>{17,-57}</string>
+                <string>{11,-56}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{60,114},{34,6}}</string>
+                <string>{{59,112},{24,8}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.422.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{56,234},{16,30}}</string>
+                <string>{{2,132},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.423.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,212},{16,30}}</string>
+                <string>{{66,136},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.424.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,216},{16,30}}</string>
+                <string>{{34,130},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.425.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,198},{16,30}}</string>
+                <string>{{2,118},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.426.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,194},{16,30}}</string>
+                <string>{{66,122},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.427.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,176},{16,30}}</string>
+                <string>{{34,116},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.428.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,158},{16,30}}</string>
+                <string>{{66,108},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.429.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,166},{16,30}}</string>
+                <string>{{2,104},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.430.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,166},{16,30}}</string>
+                <string>{{34,102},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.431.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{42,194},{16,30}}</string>
+                <string>{{66,94},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.432.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{42,162},{16,30}}</string>
+                <string>{{2,90},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.454.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{24,194},{16,30}}</string>
+                <string>{{34,88},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.455.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{94,2},{18,32}}</string>
+                <string>{{68,80},{12,30}}</string>
                 <key>offset</key>
-                <string>{5,-44}</string>
+                <string>{3,-45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,88},{18,32}}</string>
+                <string>{{57,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.456.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,200},{20,34}}</string>
+                <string>{{2,62},{12,32}}</string>
                 <key>offset</key>
-                <string>{4,-43}</string>
+                <string>{3,-44}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,86},{20,34}}</string>
+                <string>{{57,88},{12,32}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.457.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,82},{20,38}}</string>
+                <string>{{78,48},{12,36}}</string>
                 <key>offset</key>
-                <string>{3,-41}</string>
+                <string>{2,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,82},{20,38}}</string>
+                <string>{{56,84},{12,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.458.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{24,2},{20,38}}</string>
+                <string>{{2,32},{14,36}}</string>
                 <key>offset</key>
-                <string>{3,-41}</string>
+                <string>{2,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,82},{20,38}}</string>
+                <string>{{55,84},{14,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.459.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,162},{20,36}}</string>
+                <string>{{2,48},{12,36}}</string>
                 <key>offset</key>
-                <string>{3,-42}</string>
+                <string>{2,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,84},{20,36}}</string>
+                <string>{{56,84},{12,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.460.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{46,40},{18,38}}</string>
+                <string>{{40,46},{12,36}}</string>
                 <key>offset</key>
-                <string>{4,-41}</string>
+                <string>{2,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{55,82},{18,38}}</string>
+                <string>{{56,84},{12,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.461.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,122},{18,38}}</string>
+                <string>{{78,34},{12,36}}</string>
                 <key>offset</key>
-                <string>{3,-41}</string>
+                <string>{2,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,82},{18,38}}</string>
+                <string>{{56,84},{12,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.462.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,42},{20,38}}</string>
+                <string>{{42,2},{12,38}}</string>
                 <key>offset</key>
                 <string>{2,-41}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,82},{20,38}}</string>
+                <string>{{56,82},{12,38}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.463.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{20,38}}</string>
+                <string>{{2,2},{12,38}}</string>
                 <key>offset</key>
-                <string>{3,-41}</string>
+                <string>{2,-41}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,82},{20,38}}</string>
+                <string>{{56,82},{12,38}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.464.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,40},{20,36}}</string>
+                <string>{{78,18},{14,36}}</string>
                 <key>offset</key>
-                <string>{3,-42}</string>
+                <string>{2,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,84},{20,36}}</string>
+                <string>{{55,84},{14,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.465.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{24,80},{20,36}}</string>
+                <string>{{40,32},{12,36}}</string>
                 <key>offset</key>
                 <string>{2,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,84},{20,36}}</string>
+                <string>{{56,84},{12,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.466.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{24,42},{20,36}}</string>
+                <string>{{40,16},{14,36}}</string>
                 <key>offset</key>
                 <string>{1,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{51,84},{20,36}}</string>
+                <string>{{54,84},{14,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.467.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,2},{22,36}}</string>
+                <string>{{2,16},{14,36}}</string>
                 <key>offset</key>
                 <string>{1,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,84},{22,36}}</string>
+                <string>{{54,84},{14,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.468.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{46,2},{22,36}}</string>
+                <string>{{82,2},{14,36}}</string>
                 <key>offset</key>
                 <string>{2,-42}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{51,84},{22,36}}</string>
+                <string>{{55,84},{14,36}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.469.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,236},{18,34}}</string>
+                <string>{{40,60},{12,34}}</string>
                 <key>offset</key>
-                <string>{3,-43}</string>
+                <string>{2,-43}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,86},{18,34}}</string>
+                <string>{{56,86},{12,34}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.470.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{24,162},{16,30}}</string>
+                <string>{{2,76},{12,30}}</string>
                 <key>offset</key>
-                <string>{3,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{55,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
             <key>elfFire.471.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{30,118},{16,30}}</string>
+                <string>{{36,74},{12,30}}</string>
                 <key>offset</key>
-                <string>{4,-45}</string>
+                <string>{2,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,90},{16,30}}</string>
+                <string>{{56,90},{12,30}}</string>
                 <key>sourceSize</key>
                 <string>{120,120}</string>
             </dict>
@@ -651,7 +651,7 @@
             <key>size</key>
             <string>{128,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:22405d9cf66e2b76191a8bbdbf72a607:e92b5511c8a355ade085f3b5995e82f9:e54f40e811965532193b6369543a5084$</string>
+            <string>$TexturePacker:SmartUpdate:3501986ef56a6c0e511dad60503a085b:74d476f8a74d936040d7ac9e35168f8f:883552974bfbf2eafac841a94fad5dbc$</string>
             <key>textureFileName</key>
             <string>elfFireSheet.png</string>
         </dict>
