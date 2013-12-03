@@ -28,6 +28,7 @@ var g_characterPlists = {};
 //core resources - need these to launch ui, loader, etc
 var g_maingame = [
     {src:loadingPlist},
+    {src:arenaSheet},
     {src:loadingPng},
     {fontName:"gow",
         src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
@@ -59,7 +60,6 @@ var g_battleStuff =[
     {src:g_characterPlists['characterSelect']},
     {src:powerTilesPlist},
     {src:powerTilesPng},
-    {src:arenaSheet},
     {src:shadowPlist},
     {src:shadowPng}
 ]

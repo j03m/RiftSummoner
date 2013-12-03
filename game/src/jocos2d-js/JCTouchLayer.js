@@ -115,7 +115,7 @@ jc.TouchLayer = cc.Layer.extend({
                 var cs = {};
                 cs.width = rect.width *1.4;
                 cs.height = rect.height*1.4;
-                cs.x = pos.x - cs.width/2; //move x to bottom left most of rect
+                cs.x = pos.x - cs.width/2;
                 cs.y = pos.y; //y should be bottom already
 
             }else{
