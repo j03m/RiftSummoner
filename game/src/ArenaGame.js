@@ -14,7 +14,8 @@ var ArenaGame = jc.WorldLayer.extend({
     teamAPowers:undefined,
     teamBPowers:undefined,
     presentationSpeed:0.2,
-    timeLimit:60000,
+    timeLimit:60,
+    thinkIntervals:0.01,
     init: function() {
         this.name = "Arena";
         if (this._super(arenaSheet)) {
@@ -225,6 +226,8 @@ var ArenaGame = jc.WorldLayer.extend({
     update:function (dt){
         //pulse each sprite
         this.lastThink += dt;
+
+
         var minX=this.worldSize.width;
         var maxX=0;
         var minY=this.worldSize.height;
@@ -275,14 +278,14 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
 
 
-                if (this.lastThink > 0.05){
-                    this.sprites[i].think(this.lastThink);
+                if (this.lastThink > this.thinkIntervals){
+                    this.sprites[i].think(this.thinkIntervals);
                 }
 
 
             }
 
-            if (this.lastThink > 0.05){
+            if (this.lastThink > this.thinkIntervals){
                 this.lastThink = 0;
             }
 
