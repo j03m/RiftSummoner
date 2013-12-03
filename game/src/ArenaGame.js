@@ -22,8 +22,6 @@ var ArenaGame = jc.WorldLayer.extend({
             this.teams['b'] = [];
             this.scheduleUpdate();
             this.doConvert = true;
-            this.lastThink = 0;
-            this.movementQueue = [];
 			return true;
 		} else {
 			return false;
@@ -224,7 +222,6 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     update:function (dt){
         //pulse each sprite
-        this.lastThink += dt;
         var minX=this.worldSize.width;
         var maxX=0;
         var minY=this.worldSize.height;
@@ -236,10 +233,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 return;
             }
 
-            //movement
-            this.drainMoves();
 
-            //thinking and scale
             for (var i =0; i<this.sprites.length;i++){
                 if (this.sprites[i].getParent()==this){
                     var position = this.sprites[i].getBasePosition(); //where am i in the layer
@@ -273,21 +267,8 @@ var ArenaGame = jc.WorldLayer.extend({
                         //cosole.log("MinY:"+this.sprites[i].name);
                     }
                 }
-
-
-                if (this.lastThink > 0.05){
-                    this.sprites[i].think(this.lastThink);
-                }
-
-
+                this.sprites[i].think(dt);
             }
-
-            if (this.lastThink > 0.05){
-                this.lastThink = 0;
-            }
-
-
-
             var scaleLimit = 50;
             if (!this.scaleGate && shouldScale){
 
@@ -314,28 +295,12 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
 
             }
-
-
         }
     },
     doBlood:function(sprite){
 //        var flower = cc.ParticleSystem.create(bloodPlist);
 //        this.addChild( flower );
 //        flower.setPosition( this.getRandomBloodSpot(sprite));
-    },
-    registerMovement: function(ai, point, time){
-        this.movementQueue.push({
-            "ai":ai,
-            "point":point,
-            "time":time
-        });
-
-    },
-    drainMoves:function(){
-        for(var i=0;i<this.movementQueue.length;i++){
-            var entry = this.movementQueue.shift();
-            entry.ai.moveToward(entry.point, entry.time);
-        }
     },
     getRandomBloodSpot:function(sprite){
         var pos = sprite.getPosition();    //explicity use getPosition, not getBasePoisition here
@@ -519,54 +484,6 @@ var ArenaGame = jc.WorldLayer.extend({
         }else{
             return false;
         }
-
-    },
-    snapshot:function(){
-        var children = this.getChildren();
-        var snap = {};
-        for(var i =0;i<children.length;i++){
-            snap = takeSnap(children[i]);
-        }
-    },
-    takeSnap:function(node){
-
-
-
-        //what sprite is this?
-        var snap;
-        if (node instanceof jc.Sprite){
-            snap = {
-                "sprite":node.name,
-                "hp":node.gameObject.hp,
-                "pos":node.getBasePosition(),
-                "state":node.getState(),
-                "children":[]
-            }
-            var children = node.getChildren();
-            for (var i =0; i<children.length;i++){
-                snap.children.push({
-                    "name":children[i].name,
-                })
-            }
-
-        }else{
-
-        }
-
-        //if jc
-
-        //health
-
-        //position
-
-        //state
-
-        //children -
-            //position
-
-        //if effect
-
-        //position
 
     }
 
