@@ -15,6 +15,8 @@ var ArenaGame = jc.WorldLayer.extend({
     teamBPowers:undefined,
     presentationSpeed:0.2,
     timeLimit:60000,
+    thinkInterval:0.05,
+    lastThink:0,
     init: function() {
         this.name = "Arena";
         if (this._super(arenaSheet)) {
@@ -222,6 +224,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     update:function (dt){
         //pulse each sprite
+        this.lastThink+=dt;
         var minX=this.worldSize.width;
         var maxX=0;
         var minY=this.worldSize.height;
@@ -233,68 +236,72 @@ var ArenaGame = jc.WorldLayer.extend({
                 return;
             }
 
+            if (this.lastThink>=this.thinkInterval){
+                for (var i =0; i<this.sprites.length;i++){
+                    if (this.sprites[i].getParent()==this){
+                        var position = this.sprites[i].getBasePosition(); //where am i in the layer
+                        var shouldScale = true;
+                        var tr = this.sprites[i].getTextureRect();
+                        var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
+                        var worldPos = this.screenToWorld(nodePos); //where is that in the world?
+                        var compareMaxX = worldPos.x + tr.width;
+                        var compareMinX = worldPos.x - tr.width;
+                        var compareMaxY = worldPos.y + tr.height*1.5;
+                        var compareMinY = worldPos.y - (tr.height/2);
 
-            for (var i =0; i<this.sprites.length;i++){
-                if (this.sprites[i].getParent()==this){
-                    var position = this.sprites[i].getBasePosition(); //where am i in the layer
-                    var shouldScale = true;
-                    var tr = this.sprites[i].getTextureRect();
-                    var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
-                    var worldPos = this.screenToWorld(nodePos); //where is that in the world?
-                    var compareMaxX = worldPos.x + tr.width;
-                    var compareMinX = worldPos.x - tr.width;
-                    var compareMaxY = worldPos.y + tr.height*1.5;
-                    var compareMinY = worldPos.y - (tr.height/2);
 
+                        if (compareMaxX > maxX){
+                            maxX = compareMaxX;
+                            //cosole.log("MaxX:"+this.sprites[i].name);
+                        }
 
-                    if (compareMaxX > maxX){
-                        maxX = compareMaxX;
-                        //cosole.log("MaxX:"+this.sprites[i].name);
+                        if (compareMinX < minX){
+                            minX = compareMinX;
+                            //cosole.log("MinX:"+this.sprites[i].name);
+                        }
+
+                        if (compareMaxY > maxY){
+                            maxY = compareMaxY;
+                            //cosole.log("MaxY:"+this.sprites[i].name);
+                        }
+
+                        if (compareMinY < minY){
+                            minY = compareMinY;
+                            //cosole.log("MinY:"+this.sprites[i].name);
+                        }
                     }
 
-                    if (compareMinX < minX){
-                        minX = compareMinX;
-                        //cosole.log("MinX:"+this.sprites[i].name);
-                    }
-
-                    if (compareMaxY > maxY){
-                        maxY = compareMaxY;
-                        //cosole.log("MaxY:"+this.sprites[i].name);
-                    }
-
-                    if (compareMinY < minY){
-                        minY = compareMinY;
-                        //cosole.log("MinY:"+this.sprites[i].name);
-                    }
+                    this.sprites[i].think(dt);
                 }
-                this.sprites[i].think(dt);
+                var scaleLimit = 50;
+                if (!this.scaleGate && shouldScale){
+
+                    var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
+                    var scale = this.getOkayScale(maxX-minX, maxY-minY);
+
+                    //todo: based on characterMid, select camera 1-9                                             d
+                    //todo: based on scale, select right scale ratio
+
+                    //smooth
+                    if (!this.lastPan){
+                        this.lastPan = characterMid;
+                        var diff = cc.p(scaleLimit+1,scaleLimit+1);
+                    }else{
+                        var diff = cc.pSub(this.lastPan, characterMid);
+                    }
+                    if (Math.abs(diff.x) > scaleLimit || Math.abs(diff.y)>scaleLimit){
+                        this.lastPan = characterMid;
+
+                        this.panToWorldPoint(characterMid, scale, jc.defaultTransitionTime, function(){
+                            this.scaleGate = false;
+                        }.bind(this));
+                    }
+
+                }
+                this.lastThink = 0;
             }
-            var scaleLimit = 50;
-            if (!this.scaleGate && shouldScale){
 
 
-                var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
-                var scale = this.getOkayScale(maxX-minX, maxY-minY);
-
-                //todo: based on characterMid, select camera 1-9                                             d
-                //todo: based on scale, select right scale ratio
-
-                //smooth
-                if (!this.lastPan){
-                    this.lastPan = characterMid;
-                    var diff = cc.p(scaleLimit+1,scaleLimit+1);
-                }else{
-                    var diff = cc.pSub(this.lastPan, characterMid);
-                }
-                if (Math.abs(diff.x) > scaleLimit || Math.abs(diff.y)>scaleLimit){
-                    this.lastPan = characterMid;
-
-                    this.panToWorldPoint(characterMid, scale, jc.defaultTransitionTime, function(){
-                        this.scaleGate = false;
-                    }.bind(this));
-                }
-
-            }
         }
     },
     doBlood:function(sprite){
