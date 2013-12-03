@@ -72,7 +72,7 @@ var MainGame = cc.Layer.extend({
 //            ]
 //        }
         var assets = this.makeCardDictionary();
-        assets = assets.contact(g_ui);
+        assets = assets.concat(g_ui);
         this.showLoader({
             "assets":assets,
             "nextScene":'selectTeam'
