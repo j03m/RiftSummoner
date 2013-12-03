@@ -714,7 +714,8 @@ GeneralBehavior.prototype.handleMove = function(dt){
         this.setState('fighting', 'move'); //switch to fight, but keep animation the same
         return;
     }
-    this.moveToward(point, dt);
+    this.owner.layer.registerMovement(this, point, dt);
+
 }
 
 
