@@ -229,7 +229,9 @@ var ArenaGame = jc.WorldLayer.extend({
         var shouldScale = false;
         if (this.started){
             //check for winner
-            this.checkWinner();
+            if (this.checkWinner()){
+                return;
+            }
 
 
             for (var i =0; i<this.sprites.length;i++){
@@ -418,13 +420,13 @@ var ArenaGame = jc.WorldLayer.extend({
         if (teambisdead){
             //pause game, display victory
             this.showVictory();
-            return;
+            return true;
         }
 
         if (teamaisdead){
             //pause game, display lost
             this.showDefeat();
-            return;
+            return true;
         }
 
         //hey no team is fully dead. But, how long have been running?

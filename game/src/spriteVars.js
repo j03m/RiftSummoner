@@ -770,7 +770,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 200
+			"targetRadius": 75
 		},
 		"animations": {
 			"move": {

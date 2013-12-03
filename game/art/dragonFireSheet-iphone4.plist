@@ -7,59 +7,215 @@
             <key>dragonFire.178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{126,240},{102,116}}</string>
+                <string>{{382,288},{104,116}}</string>
                 <key>offset</key>
                 <string>{-6,13}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{63,49},{102,116}}</string>
+                <string>{{62,49},{104,116}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{106,614},{102,90}}</string>
+                <string>{{330,490},{104,90}}</string>
                 <key>offset</key>
                 <string>{-6,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{63,76},{102,90}}</string>
+                <string>{{62,76},{104,90}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,742},{100,80}}</string>
+                <string>{{106,754},{102,80}}</string>
                 <key>offset</key>
                 <string>{-5,-10}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{65,90},{100,80}}</string>
+                <string>{{64,90},{102,80}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{104,706},{100,82}}</string>
+                <string>{{212,688},{102,82}}</string>
                 <key>offset</key>
                 <string>{-5,-50}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{65,129},{100,82}}</string>
+                <string>{{64,129},{102,82}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{244,300},{98,112}}</string>
+                <string>{{118,350},{100,112}}</string>
+                <key>offset</key>
+                <string>{-4,-64}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{66,128},{100,112}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.183.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{224,482},{100,104}}</string>
+                <key>offset</key>
+                <string>{-4,-59}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{66,127},{100,104}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.184.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{210,772},{100,96}}</string>
+                <key>offset</key>
+                <string>{-4,-58}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{66,130},{100,96}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.185.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{320,634},{102,88}}</string>
+                <key>offset</key>
+                <string>{-6,-57}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,133},{102,88}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.186.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,698},{102,100}}</string>
+                <key>offset</key>
+                <string>{-6,-60}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,130},{102,100}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.187.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{108,650},{102,102}}</string>
+                <key>offset</key>
+                <string>{-6,-54}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,123},{102,102}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.188.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{216,584},{102,102}}</string>
+                <key>offset</key>
+                <string>{-6,4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{63,65},{102,102}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.206.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{152,2},{98,138}}</string>
+                <key>offset</key>
+                <string>{-3,22}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{68,29},{98,138}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.207.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,210},{98,122}}</string>
+                <key>offset</key>
+                <string>{-4,13}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{67,46},{98,122}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.208.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{412,872},{98,94}}</string>
+                <key>offset</key>
+                <string>{-5,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{66,74},{98,94}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.209.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,800},{102,78}}</string>
+                <key>offset</key>
+                <string>{-4,-8}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{65,89},{102,78}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.210.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{424,672},{100,86}}</string>
+                <key>offset</key>
+                <string>{-4,-48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{66,125},{100,86}}</string>
+                <key>sourceSize</key>
+                <string>{240,240}</string>
+            </dict>
+            <key>dragonFire.211.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,406},{98,112}}</string>
                 <key>offset</key>
                 <string>{-4,-64}</string>
                 <key>rotated</key>
@@ -69,478 +225,322 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>dragonFire.183.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{228,500},{98,104}}</string>
-                <key>offset</key>
-                <string>{-4,-59}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{67,127},{98,104}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.184.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,824},{98,96}}</string>
-                <key>offset</key>
-                <string>{-5,-58}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{66,130},{98,96}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.185.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{420,684},{100,88}}</string>
-                <key>offset</key>
-                <string>{-6,-57}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{64,133},{100,88}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.186.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,640},{100,100}}</string>
-                <key>offset</key>
-                <string>{-6,-60}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{64,130},{100,100}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.187.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{110,512},{100,102}}</string>
-                <key>offset</key>
-                <string>{-6,-54}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{64,123},{100,102}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.188.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{396,582},{100,102}}</string>
-                <key>offset</key>
-                <string>{-6,4}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{64,65},{100,102}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.206.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{152,2},{96,138}}</string>
-                <key>offset</key>
-                <string>{-4,22}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{68,29},{96,138}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.207.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,204},{96,122}}</string>
-                <key>offset</key>
-                <string>{-4,13}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{68,46},{96,122}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.208.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,924},{98,94}}</string>
-                <key>offset</key>
-                <string>{-6,-1}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{65,74},{98,94}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.209.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{432,2},{100,78}}</string>
-                <key>offset</key>
-                <string>{-5,-8}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{65,89},{100,78}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.210.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{210,696},{100,86}}</string>
-                <key>offset</key>
-                <string>{-5,-48}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{65,125},{100,86}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
-            <key>dragonFire.211.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{414,320},{96,112}}</string>
-                <key>offset</key>
-                <string>{-5,-64}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{67,128},{96,112}}</string>
-                <key>sourceSize</key>
-                <string>{240,240}</string>
-            </dict>
             <key>dragonFire.212.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{404,434},{94,106}}</string>
+                <string>{{2,506},{94,106}}</string>
                 <key>offset</key>
-                <string>{-4,-60}</string>
+                <string>{-3,-60}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{69,127},{94,106}}</string>
+                <string>{{70,127},{94,106}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.213.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,924},{92,98}}</string>
+                <string>{{106,836},{96,100}}</string>
                 <key>offset</key>
-                <string>{-3,-59}</string>
+                <string>{-3,-58}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{71,130},{92,98}}</string>
+                <string>{{69,128},{96,100}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.214.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{192,888},{94,94}}</string>
+                <string>{{208,924},{96,94}}</string>
                 <key>offset</key>
                 <string>{-3,-58}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{70,131},{94,94}}</string>
+                <string>{{69,131},{96,94}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.215.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{116,344},{92,112}}</string>
+                <string>{{356,394},{94,112}}</string>
                 <key>offset</key>
                 <string>{-2,-59}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{72,123},{92,112}}</string>
+                <string>{{71,123},{94,112}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.216.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{418,206},{92,112}}</string>
+                <string>{{2,310},{94,114}}</string>
                 <key>offset</key>
-                <string>{-2,-58}</string>
+                <string>{-2,-57}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{72,122},{92,112}}</string>
+                <string>{{71,120},{94,114}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.217.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{278,786},{94,92}}</string>
+                <string>{{418,774},{96,92}}</string>
                 <key>offset</key>
                 <string>{-3,-1}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{70,75},{94,92}}</string>
+                <string>{{69,75},{96,92}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.218.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{292,98},{98,136}}</string>
+                <string>{{292,100},{100,136}}</string>
                 <key>offset</key>
                 <string>{-5,22}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{66,30},{98,136}}</string>
+                <string>{{65,30},{100,136}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.219.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,138},{100,124}}</string>
+                <string>{{134,140},{102,124}}</string>
                 <key>offset</key>
                 <string>{-6,15}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{64,43},{100,124}}</string>
+                <string>{{63,43},{102,124}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.220.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{214,600},{102,94}}</string>
+                <string>{{2,602},{104,94}}</string>
                 <key>offset</key>
-                <string>{-7,-1}</string>
+                <string>{-7,-2}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{62,74},{102,94}}</string>
+                <string>{{61,75},{104,94}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.221.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,104},{100,80}}</string>
+                <string>{{430,106},{104,80}}</string>
                 <key>offset</key>
                 <string>{-7,-10}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{63,90},{100,80}}</string>
+                <string>{{61,90},{104,80}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.222.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{100,824},{98,78}}</string>
+                <string>{{432,2},{102,78}}</string>
                 <key>offset</key>
                 <string>{-6,-46}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{65,127},{98,78}}</string>
+                <string>{{63,127},{102,78}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.223.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{230,400},{98,110}}</string>
+                <string>{{242,304},{100,112}}</string>
                 <key>offset</key>
-                <string>{-6,-65}</string>
+                <string>{-5,-64}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{65,130},{98,110}}</string>
+                <string>{{65,128},{100,112}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.224.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,444},{98,106}}</string>
+                <string>{{116,452},{100,106}}</string>
                 <key>offset</key>
                 <string>{-5,-61}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{66,128},{98,106}}</string>
+                <string>{{65,128},{100,106}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.225.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,684},{98,100}}</string>
+                <string>{{316,724},{100,100}}</string>
                 <key>offset</key>
                 <string>{-5,-59}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{66,129},{98,100}}</string>
+                <string>{{65,129},{100,100}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.226.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,544},{102,94}}</string>
+                <string>{{110,554},{104,94}}</string>
                 <key>offset</key>
-                <string>{-7,-58}</string>
+                <string>{-6,-58}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{62,131},{102,94}}</string>
+                <string>{{62,131},{104,94}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.227.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,340},{102,112}}</string>
+                <string>{{126,244},{104,114}}</string>
                 <key>offset</key>
-                <string>{-6,-58}</string>
+                <string>{-6,-57}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{63,122},{102,112}}</string>
+                <string>{{62,120},{104,114}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.228.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,198},{100,118}}</string>
+                <string>{{260,202},{100,120}}</string>
                 <key>offset</key>
-                <string>{-5,-53}</string>
+                <string>{-4,-52}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{65,114},{100,118}}</string>
+                <string>{{66,112},{100,120}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.229.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{180,790},{96,96}}</string>
+                <string>{{312,826},{98,96}}</string>
                 <key>offset</key>
                 <string>{-3,1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{69,71},{96,96}}</string>
+                <string>{{68,71},{98,96}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.230.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{292,2},{94,138}}</string>
+                <string>{{292,2},{96,138}}</string>
                 <key>offset</key>
-                <string>{-3,22}</string>
+                <string>{-2,22}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{70,29},{94,138}}</string>
+                <string>{{70,29},{96,138}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.242.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{100,148}}</string>
+                <string>{{2,2},{104,148}}</string>
                 <key>offset</key>
                 <string>{-6,27}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{64,19},{100,148}}</string>
+                <string>{{62,19},{104,148}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.243.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,104},{98,130}}</string>
+                <string>{{2,108},{100,130}}</string>
                 <key>offset</key>
-                <string>{-7,12}</string>
+                <string>{-6,12}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{64,43},{98,130}}</string>
+                <string>{{64,43},{100,130}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.244.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{116,438},{72,110}}</string>
+                <string>{{232,406},{74,110}}</string>
                 <key>offset</key>
-                <string>{-12,-17}</string>
+                <string>{-12,-18}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{72,82},{72,110}}</string>
+                <string>{{71,83},{74,110}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.245.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,408},{60,102}}</string>
+                <string>{{436,568},{62,102}}</string>
                 <key>offset</key>
-                <string>{-11,-22}</string>
+                <string>{-12,-23}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{79,91},{60,102}}</string>
+                <string>{{77,92},{62,102}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.246.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{372,786},{60,92}}</string>
+                <string>{{58,934},{62,92}}</string>
                 <key>offset</key>
-                <string>{-6,-29}</string>
+                <string>{-7,-29}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{84,103},{60,92}}</string>
+                <string>{{82,103},{62,92}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.247.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{396,530},{50,104}}</string>
+                <string>{{330,582},{50,104}}</string>
                 <key>offset</key>
                 <string>{-5,-28}</string>
                 <key>rotated</key>
@@ -553,20 +553,20 @@
             <key>dragonFire.248.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{380,198},{36,118}}</string>
+                <string>{{382,212},{36,120}}</string>
                 <key>offset</key>
-                <string>{-1,-38}</string>
+                <string>{0,-38}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,99},{36,118}}</string>
+                <string>{{102,98},{36,120}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.249.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,100},{36,136}}</string>
+                <string>{{152,102},{36,136}}</string>
                 <key>offset</key>
                 <string>{-3,-52}</string>
                 <key>rotated</key>
@@ -579,37 +579,37 @@
             <key>dragonFire.250.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,302},{36,116}}</string>
+                <string>{{382,250},{36,118}}</string>
                 <key>offset</key>
-                <string>{-1,-47}</string>
+                <string>{-1,-48}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{101,109},{36,116}}</string>
+                <string>{{101,109},{36,118}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.251.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{334,512},{60,94}}</string>
+                <string>{{304,924},{60,96}}</string>
                 <key>offset</key>
-                <string>{-10,-56}</string>
+                <string>{-10,-55}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{80,129},{60,94}}</string>
+                <string>{{80,127},{60,96}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.252.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,608},{74,76}}</string>
+                <string>{{436,490},{74,76}}</string>
                 <key>offset</key>
                 <string>{-4,-82}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{79,164},{74,76}}</string>
                 <key>sourceSize</key>
@@ -618,20 +618,20 @@
             <key>dragonFire.253.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{288,882},{88,52}}</string>
+                <string>{{208,870},{90,52}}</string>
                 <key>offset</key>
                 <string>{-3,-94}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{73,188},{88,52}}</string>
+                <string>{{72,188},{90,52}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
             <key>dragonFire.254.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{358,318},{88,54}}</string>
+                <string>{{2,934},{88,54}}</string>
                 <key>offset</key>
                 <string>{-3,-93}</string>
                 <key>rotated</key>
@@ -644,13 +644,13 @@
             <key>dragonFire.255.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{372,848},{88,52}}</string>
+                <string>{{2,880},{90,52}}</string>
                 <key>offset</key>
                 <string>{-3,-94}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{73,188},{88,52}}</string>
+                <string>{{72,188},{90,52}}</string>
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
@@ -664,7 +664,7 @@
             <key>size</key>
             <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ea7b0f6ec6c99fa30a03a5306d7cafea:3a5bc93f237affea828287a1b8336c72:cd433b61dd2ac6d47931bc4eecd251fe$</string>
+            <string>$TexturePacker:SmartUpdate:9a3581b481e968d38f355a63befb90aa:f0c36bc2bf6671c907a8cbe215075aa6:8213fdffca590a4be204c352f5cc9af8$</string>
             <key>textureFileName</key>
             <string>dragonFireSheet-iphone4.png</string>
         </dict>
