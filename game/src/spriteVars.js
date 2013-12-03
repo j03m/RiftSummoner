@@ -161,7 +161,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"gameProperties": {
 			"MaxHP": 1300,
-			"speed": 50,
+			"speed": 100,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 25,
@@ -1171,7 +1171,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"MaxHP": 1500,
-			"speed": 15,
+			"speed": 50,
 			"damage": 300,
 			"actionDelays": {
 				"attack": 1

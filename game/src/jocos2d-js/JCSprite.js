@@ -191,11 +191,6 @@ jc.Sprite = cc.Sprite.extend({
 		}
 		return action;
 	},
-    update: function(dt){
-        if (!this.isAlive()){
-            this.think(dt);
-        }
-    },
     getTargetRadius:function(){
         return this.gameObject.targetRadius;
     },
