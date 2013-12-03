@@ -123,10 +123,7 @@ RangeBehavior.prototype.doMissile = function(){
         var seq = cc.Sequence.create(moveTo, callback);
         this.missile.runAction(seq);
 
-    }else{
-        this.hitLogic();
     }
-
 }
 
 RangeBehavior.prototype.handleRangeIdle = function(dt){
