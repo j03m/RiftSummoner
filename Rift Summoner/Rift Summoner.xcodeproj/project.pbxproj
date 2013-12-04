@@ -326,6 +326,7 @@
 		5DEB55C8184F818900B7F46D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DEB55C7184F818900B7F46D /* GameKit.framework */; };
 		5DEB55CA184F81AA00B7F46D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DEB55C9184F81AA00B7F46D /* StoreKit.framework */; };
 		5DEB7ABD184F870B00B7F46D /* src in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB7ABC184F870B00B7F46D /* src */; };
+		5DEB7AC2184FB4EB00B7F46D /* localArt in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB7AC1184FB4EB00B7F46D /* localArt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1055,6 +1056,7 @@
 		5DEB55C7184F818900B7F46D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		5DEB55C9184F81AA00B7F46D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5DEB7ABC184F870B00B7F46D /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../game/src; sourceTree = "<group>"; };
+		5DEB7AC1184FB4EB00B7F46D /* localArt */ = {isa = PBXFileReference; lastKnownFileType = folder; name = localArt; path = ../../game/localArt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1131,6 +1133,7 @@
 		5DEB512C184F813300B7F46D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5DEB7AC1184FB4EB00B7F46D /* localArt */,
 				5DEB7ABC184F870B00B7F46D /* src */,
 				5DEB512D184F813300B7F46D /* CloseNormal.png */,
 				5DEB512F184F813300B7F46D /* CloseSelected.png */,
@@ -2601,6 +2604,7 @@
 				5DEB5380184F813800B7F46D /* jsb_opengl.js in Resources */,
 				5DEB5378184F813800B7F46D /* jsb_cocos2d_constants.js in Resources */,
 				5DEB5136184F813300B7F46D /* Icon-72.png in Resources */,
+				5DEB7AC2184FB4EB00B7F46D /* localArt in Resources */,
 				5DEB5134184F813300B7F46D /* HelloWorld.png in Resources */,
 				5DEB5365184F813800B7F46D /* jsb_cocos2dx_auto_api.js in Resources */,
 				5DEB5138184F813300B7F46D /* Icon-Small-50.png in Resources */,

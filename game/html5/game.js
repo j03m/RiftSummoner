@@ -1,5 +1,6 @@
 cards.ready(function(){
     var hotrSrc = [
+        '../src/jocos2d-js/JCBrowser.js',
         '../src/kikClientMock.js',
         '../zerver/blobApi.js',
         '../src/underscore-min.js',
