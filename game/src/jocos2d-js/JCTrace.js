@@ -19,7 +19,8 @@ var tracers = {
     'resource':1,
     'camera':1,
     'console':1,
-    'zerverpipe':1
+    'zerverpipe':1,
+    'resource':1
 };
 
 jc.log = function(categories, msg){

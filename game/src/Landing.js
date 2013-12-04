@@ -101,6 +101,15 @@ Landing.scene = function() {
     if (!hotr.landingScene){
         hotr.landingScene = cc.Scene.create();
         hotr.landingScene.layer = new Landing();
+        if (!jc.isBrowser){
+
+            //native layout mods here
+            hotr.landingScene.layer.windowConfig.mainFrame.kids.battleButton.padding.left = 83;
+            hotr.landingScene.layer.windowConfig.mainFrame.kids.storeButton.padding.left = 83;
+            hotr.landingScene.layer.windowConfig.mainFrame.kids.questButton.padding.left = -49;
+            hotr.landingScene.layer.windowConfig.mainFrame.kids.summonButton.padding.left = -49;
+        }
+
         hotr.landingScene.addChild(hotr.landingScene.layer);
         hotr.landingScene.layer.init();
 

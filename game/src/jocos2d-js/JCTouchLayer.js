@@ -47,20 +47,20 @@ jc.TouchLayer = cc.Layer.extend({
     onShow:function(){},
     onHide:function(){},
     wireInput: function(val){
-        if ('mouse' in sys.capabilities) {
-            if (val){
-                cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 1);
-            }else{
-                cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
-            }
-        } else {
-            if (val){
-                cc.Director.getInstance().getTouchDispatcher()._addTargetedDelegate(this, 1, true);
-            }else{
-                cc.Director.getInstance().getTouchDispatcher()._removeDelegate(this);
-            }
-
-        }
+//        if ('mouse' in sys.capabilities) {
+//            if (val){
+//                cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 1);
+//            }else{
+//                cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
+//            }
+//        } else {
+//            if (val){
+//                cc.Director.getInstance().getTouchDispatcher()._addTargetedDelegate(this, 1, true);
+//            }else{
+//                cc.Director.getInstance().getTouchDispatcher()._removeDelegate(this);
+//            }
+//
+//        }
     },
     onTouchBegan: function(touch) {
         return this.hitSpriteTarget(jc.touchBegan, touch);

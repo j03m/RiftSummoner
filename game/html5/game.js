@@ -10,6 +10,7 @@ cards.ready(function(){
         '../src/effectsConfig.js',
         '../src/powerTileConfig.js',
         '../src/powerConfig.js',
+        '../src/jocos2d-js/JCTrace.js',
         '../src/jocos2d-js/JCResolutions.js',
         '../src/resource.js',
         '../src/blobOperations.js',

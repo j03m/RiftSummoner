@@ -32,16 +32,16 @@ jc.CompositeButton = cc.Sprite.extend({
     },
     onEnter: function(){
         if ('mouse' in sys.capabilities) {
-            cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 0);
+           // cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 0);
         } else {
-            cc.Director.getInstance().getTouchDispatcher()._addTargetedDelegate(this, 0, true);
+           // cc.Director.getInstance().getTouchDispatcher()._addTargetedDelegate(this, 0, true);
         }
     },
     onExit: function(){
         if ('mouse' in sys.capabilities) {
-            cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
+            //cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
         } else {
-            cc.Director.getInstance().getTouchDispatcher()._removeDelegate(this);
+            //cc.Director.getInstance().getTouchDispatcher()._removeDelegate(this);
         }
     },
     onTouchBegan: function(touch) {

@@ -30,6 +30,8 @@ jc.bestAssetDirectory = function(){
 
 jc.bestAssetDirectoryNative = function(){
     var size = cc.Director.getInstance().getWinSize(); //dont do this in html5, it gets the canvas size, not what we want
+    jc.log(['resource'], "director winSize returned: ");
+    jc.log(['resource'], size);
     return jc.bestAssetDirectoryWorker(size);
 }
 
@@ -65,6 +67,6 @@ jc.bestAssetDirectoryWorker = function(actualSize){
             }
         }
     }
-
+    jc.log(['resource'], "selected: " + maxSet + " for assets dir.");
     return maxSet;
 }
