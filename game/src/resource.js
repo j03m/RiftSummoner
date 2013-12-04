@@ -72,7 +72,7 @@ var g_battleStuff =[
 
 var g_ui =[
     {src:uiPlist},
-    {src:uiPng}]
+    {src:uiPng}];
 
 //todo async background loading
 var g_everything = [];

@@ -71,6 +71,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
     doScale:function(scale, pos, rate, callback){
         //var action = jc.PanAndZoom.create(rate, pos , scale.x, scale.y );
         //this.runActionWithCallback(action, callback);
+        callback();
     },
     getClosestCorrectScale:function(scale){
         //don't allow a zoom further in than 1
