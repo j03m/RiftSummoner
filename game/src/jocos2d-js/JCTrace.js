@@ -15,7 +15,11 @@ var tracers = {
 	'tests':0,
 	'requestManager':0,
     'gameplay':0 ,
-    'mainLayer':1
+    'mainLayer':1,
+    'resource':1,
+    'camera':1,
+    'console':1,
+    'zerverpipe':1
 };
 
 jc.log = function(categories, msg){

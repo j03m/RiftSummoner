@@ -64,13 +64,13 @@ jc.WorldLayer = jc.TouchLayer.extend({
         var scale = this.getScaleWorld();
         scale = this.getClosestCorrectScale(scale);
         var converted = this.convertToLayerPosition(cc.p(this.worldSize.width/2, this.worldSize.height/2));
-        var action = jc.PanAndZoom.create(rate, converted, scale.x, scale.y );
-        this.runActionWithCallback(action, done);
+        //var action = jc.PanAndZoom.create(rate, converted, scale.x, scale.y );
+        //this.runActionWithCallback(action, done);
     },
 
     doScale:function(scale, pos, rate, callback){
-        var action = jc.PanAndZoom.create(rate, pos , scale.x, scale.y );
-        this.runActionWithCallback(action, callback);
+        //var action = jc.PanAndZoom.create(rate, pos , scale.x, scale.y );
+        //this.runActionWithCallback(action, callback);
     },
     getClosestCorrectScale:function(scale){
         //don't allow a zoom further in than 1

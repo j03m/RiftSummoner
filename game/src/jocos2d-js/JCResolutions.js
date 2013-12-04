@@ -18,7 +18,22 @@ jc.setActualSize = function(size){
     jc.actualSize = size;
 }
 
-jc.bestAssetDirectory = function(window, screen){
+jc.bestAssetDirectory = function(){
+    if (!jc.isBrowser) {
+        return jc.bestAssetDirectoryNative();
+    }else{
+       return jc.bestAssetDirectoryWeb(window, screen);
+    }
+
+
+}
+
+jc.bestAssetDirectoryNative = function(){
+    var size = cc.Director.getInstance().getWinSize(); //dont do this in html5, it gets the canvas size, not what we want
+    return jc.bestAssetDirectoryWorker(size);
+}
+
+jc.bestAssetDirectoryWeb = function(window, screen){
 
     //height switched because screen always reports portrait,
     //you can use window.orientation to determine rotation, but I don't care
@@ -31,12 +46,17 @@ jc.bestAssetDirectory = function(window, screen){
         actualSize = cc.size(screen.width*dpr, screen.height*dpr);
     }
 
+    return jc.bestAssetDirectoryWorker(actualSize);
+
+}
+
+jc.bestAssetDirectoryWorker = function(actualSize){
     //determine what asset size we should be using.
     //in our game we follow http://www.codeandweb.com/blog/2012/12/14/scaling-content-for-retina-display-iphone-and-ipad
     //we are designing for iphone 5, but scaling down from ipad 3
     //so we mostly care about width, our height will get cut.
-    var max = 0;
     var maxSet = "";
+    var max = 0;
     for(var res in jc.resolutions){
         if (jc.resolutions[res].width<= actualSize.width){
             if (jc.resolutions[res].width > max){

@@ -5,9 +5,18 @@ hotr.formationSize = 12;
 hotr.authTokenLocalStoreKey = "x1xauthTokenx1x";
 hotr.haveSeenLocalStoreKey = "x1xhaveseenx1x";
 hotr.userNameKey = "x1xusernamex1x";
+
+//check for web vs native
+if (typeof blobApi !== 'undefined') {
+    if (!jc.blobApi){
+        jc.blobApi = blobApi;
+    }
+}
+
+
 hotr.blobOperations.getBlob = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
-    blobApi.getBlob(authToken.token,function(err, data){
+    jc.blobApi.getBlob(authToken.token,function(err, data){
         if (data != undefined){
             hotr.playerBlob = data;
             callback(true);
@@ -20,7 +29,7 @@ hotr.blobOperations.getBlob = function(callback){
 hotr.blobOperations.saveBlob = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
     hotr.playerBlob.version++;
-    blobApi.saveBlob(authToken.token, hotr.playerBlob, function(err, res){
+    jc.blobApi.saveBlob(authToken.token, hotr.playerBlob, function(err, res){
         callback(err, res);
     });
 }
@@ -49,7 +58,7 @@ hotr.blobOperations.getTeam = function(){
 }
 
 hotr.blobOperations.createNewPlayer = function(signedData, userToken, host,  callback){
-    blobApi.createNewPlayer(signedData, userToken, host, function(blob, token){
+    jc.blobApi.createNewPlayer(signedData, userToken, host, function(blob, token){
         hotr.playerBlob = blob;
         hotr.blobOperations.setAuthToken(token);
         hotr.blobOperations.setHasPlayed();
@@ -59,7 +68,7 @@ hotr.blobOperations.createNewPlayer = function(signedData, userToken, host,  cal
 }
 
 hotr.blobOperations.getNewAuthTokenAndBlob = function(signedData, userToken, host, callback){
-    blobApi.getNewAuthTokenAndBlob(signedData, userToken, host, function(authToken, blob){
+    jc.blobApi.getNewAuthTokenAndBlob(signedData, userToken, host, function(authToken, blob){
         hotr.playerBlob = blob;
         hotr.blobOperations.setAuthToken(authToken);
         callback();
@@ -69,7 +78,7 @@ hotr.blobOperations.getNewAuthTokenAndBlob = function(signedData, userToken, hos
 
 
 hotr.blobOperations.getNewAuthToken = function(signedData, userToken, host, callback){
-    blobApi.getAuthToken(signedData, userToken, host, callback);
+    jc.blobApi.getAuthToken(signedData, userToken, host, callback);
 }
 
 hotr.blobOperations.setAuthToken = function(token){
