@@ -1,9 +1,7 @@
 var jc = jc || {};
 
 jc.UiConf = {};
-jc.UiConf.frame19Rect = cc.RectMake(34,34,167,206);
-jc.UiConf.frame20Rect = cc.RectMake(25,25,125,150);
-
+jc.woodRect = cc.rect(105,105,140,140);
 jc.UiElementsLayer = jc.TouchLayer.extend({
     windowConfig:{
         "window":{

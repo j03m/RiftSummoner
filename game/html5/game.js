@@ -41,6 +41,7 @@ cards.ready(function(){
         '../src/editTeam.js',
         '../src/victory.js',
         '../src/defeat.js',
+        '../src/Landing.js',
         '../src/ArenaGame.js',
         '../src/AnimationTest.js',
         '../src/Loading.js',

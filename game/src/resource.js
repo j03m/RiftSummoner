@@ -20,6 +20,8 @@ var loadingPng = transformAsset(dirImg + "loading{v}.png");
 var loadingPlist = transformAsset(dirImg + "loading{v}.plist");
 var uiPng = transformAsset(dirImg + "uiElements{v}.png");
 var uiPlist = transformAsset(dirImg + "uiElements{v}.plist");
+var landingPng = transformAsset(dirImg + "landing{v}.png");
+var landingPlist = transformAsset(dirImg + "landing{v}.plist");
 
 
 var g_characterPngs = {};
@@ -30,6 +32,8 @@ var g_maingame = [
     {src:loadingPlist},
     {src:arenaSheet},
     {src:loadingPng},
+    {src:landingPng},
+    {src:landingPlist},
     {fontName:"gow",
         src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
     }

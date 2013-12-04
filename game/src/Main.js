@@ -37,6 +37,9 @@ var MainGame = cc.Layer.extend({
             case 'arena':
                 cc.Director.getInstance().replaceScene(hotr.arenaScene);
                 break;
+            case 'landing':
+                cc.Director.getInstance().replaceScene(Landing.scene());
+                break;
             case 'animationTest':
                 cc.Director.getInstance().replaceScene(AnimationTest.scene());
                 break;
@@ -186,7 +189,7 @@ var MainGame = cc.Layer.extend({
             jc.log(['mainLayer'], "username:" + JSON.stringify(username));
             jc.log(['mainLayer'], "host:" + JSON.stringify(host));
             hotr.blobOperations.createNewPlayer(signedData, username, host, function(){
-                this.selectEditTeamPre();
+                this.startingScene();
             }.bind(this));
         }.bind(this));
     },
@@ -194,19 +197,22 @@ var MainGame = cc.Layer.extend({
         cards.kik.sign(this.signThis, function (signedData, username, host) {
             //send these to us, for authtoken
             hotr.blobOperations.getNewAuthTokenAndBlob(signedData, username, host, function(){
-                this.selectEditTeamPre();
+                this.startingScene();
             }.bind(this));
         }.bind(this));
     },
     initGame:function(kikUser){
         hotr.blobOperations.getBlob(function(result){
             if (result){
-                this.selectEditTeamPre();
+                this.startingScene();
             }else{
                 this.authorizeNewPlayer(kikUser);
             }
 
         }.bind(this));
+    },
+    startingScene:function(){
+        this.changeScene('landing');
     },
     makeCardDictionary:function(){
         var names = hotr.blobOperations.getCharacterNames();
