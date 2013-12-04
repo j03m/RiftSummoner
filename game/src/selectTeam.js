@@ -114,10 +114,10 @@ var SelectTeam = jc.UiElementsLayer.extend({
         hotr.blobOperations.placeCharacterFormation(id, cell);
     },
     previousFormation:function(){
-        console.log("previous");
+        jc.log(['selectTeam'], "previousButton");
     },
     nextFormation:function(){
-        console.log("next");
+        jc.log(['selectTeam'], "nextButton");
     },
     fightStart:function(){
         if (this.nextEnabled){
@@ -162,7 +162,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
         //send back
     },
     close:function(){
-        console.log("close");
+        jc.log(['selectTeam'], "close");
     },
     targetTouchHandler: function(type, touch, sprites) {
         if (sprites[0]){

@@ -21,10 +21,10 @@ var Victory = jc.UiElementsLayer.extend({
 
     },
     inTransitionsComplete:function(){
-        console.log("woot");
+        jc.log(['victory'], "in transition complete");
     },
     outTransitionsComplete:function(){
-        console.log("woot2");
+        jc.log(['victory'], "out transition complete");
     },
     targetTouchHandler: function(type, touch, sprites) {
         console.log(sprites[0].name);

@@ -35,7 +35,7 @@ var PowerHud = jc.UiElementsLayer.extend({
         return false; //the tiles are swallowing touches, so this should never get called.
     },
     onShow:function(){
-        console.log("onshow");
+        jc.log(['powerHud'], "show");
     }
 });
 

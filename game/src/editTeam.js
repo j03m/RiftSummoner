@@ -104,7 +104,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         return true;
     },
     "trainPower": function(){
-        console.log("trainPower");
+        jc.log(['editTeam'], "train");
     },
     "doneButton": function(){
         hotr.scratchBoard.selectedCharacter = this.tableView.selectedIndex;

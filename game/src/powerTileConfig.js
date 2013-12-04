@@ -50,7 +50,9 @@ var powerTiles = {
 
 }
 
-cc.Sprite.prototype.setColor = function(){ console.log("setcolor");};
+cc.Sprite.prototype.setColor = function(){
+    jc.log(['powerTiles'], "setColor called");
+};
 var globalPowers = {
     "fireBall":function(){
 

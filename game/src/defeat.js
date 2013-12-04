@@ -21,13 +21,13 @@ var Defeat = jc.UiElementsLayer.extend({
 
     },
     inTransitionsComplete:function(){
-        console.log("oh noes");
+        jc.log(['defeatdialog'], "oh noes");
     },
     outTransitionsComplete:function(){
-        console.log("oh noes");
+        jc.log(['defeatdialog'], "oh noes");
     },
     targetTouchHandler: function(type, touch, sprites) {
-        console.log(sprites[0].name);
+        jc.log(['defeatdialog', 'touchcore'], "oh noes");
         return false;
     },
     close:function(){
