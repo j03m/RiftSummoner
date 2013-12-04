@@ -225,6 +225,11 @@ var ArenaGame = jc.WorldLayer.extend({
                 done();
             }
     },
+    update:function(dt){
+        for (var i =0; i<this.sprites.length;i++){
+            this.sprites[i].behavior.handleMove(dt);
+        }
+    },
     doUpdate:function (dt){
         //pulse each sprite
 
@@ -238,8 +243,6 @@ var ArenaGame = jc.WorldLayer.extend({
             if (this.checkWinner()){
                 return;
             }
-
-
             for (var i =0; i<this.sprites.length;i++){
                 if (this.sprites[i].getParent()==this){
                     var position = this.sprites[i].getBasePosition(); //where am i in the layer

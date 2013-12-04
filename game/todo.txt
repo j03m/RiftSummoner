@@ -1,37 +1,19 @@
-Buglist -
+post idiots guide to cocos2dx javascript bindings
+build backend
+    random game
+        if in redis ! empty, shift make match
+        else no games available
 
-    BUG - Tinting hangs app - tinting creates 4 canvases for texture cache every frame. Was using 10% of cpu.
-    BUG - localstorage does not work on amazon or localhost, but works on facebook
-    BUG - tiles click through to arean
-    BUG - power need bigger presentation - lightning flash, larger animation
-          big attacks - rattle screen
-          explosions - flash screen, rattle screen
-    mod cocos2d loading screen to your loader
-    normal hits should have a sparkle ala battle heart
-    implement missiles arrows, lob bomb - maybe it's just cocos2d jump to with rotation
-    travis-ci
-    push assets to s3
-    cloudfront?
-    team indicators
-
-    Next:
-    Reduce/Rerender
-    Click to Move (unlock, move to, relock - new ai state, commandMove)
-    Get Correct Resolution
-    Always find closest (ai)
-    Info button?
-    Coins/Stones
-    Summon
-    Store
-    Light FTUE
-    Landing (map)
-        Quest
-        Challenge
-        Summon
-        Store
+    friend
+        check username
+        make match
 
 
+    sms - send txt to all contacts
+    facebook - read docs for ios
+    twitter - read docs for ios, send tweet app store link, username?
+    game center - read docs?
 
 
-
-
+get a native build
+read ios provisioning stuff

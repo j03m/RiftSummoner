@@ -140,7 +140,6 @@ jc.WorldLayer = jc.TouchLayer.extend({
         return node;
 
     },
-
     worldToScreen:function(point){
 
         //get the center of our view expressed as a world coord

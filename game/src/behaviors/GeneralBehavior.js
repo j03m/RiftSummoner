@@ -575,8 +575,6 @@ GeneralBehavior.prototype.handleState = function(dt){
     switch(state.brain){
         case 'idle':this.handleIdle(dt);
             break;
-        case 'move':this.handleMove(dt);
-            break;
         case 'fighting':this.handleFight(dt);
             break;
         case 'damage':this.handleDamage(dt);
@@ -698,6 +696,12 @@ GeneralBehavior.prototype.handleIdle = function(dt){
 
 GeneralBehavior.prototype.handleMove = function(dt){
     //give me a chance to retarget closer;
+
+    var state = this.getState();
+    if (state.brain != "move"){
+        return;
+    }
+
     if (!this.forceLocked){
         this.handleIdle(dt);
     }
