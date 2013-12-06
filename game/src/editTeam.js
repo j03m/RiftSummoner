@@ -21,7 +21,12 @@ var EditTeam = jc.UiElementsLayer.extend({
         this.start();
         this.infoDialog = jc.makeSpriteWithPlist(uiPlist, uiPng, "titleDescription.png");
         this.addChild(this.infoDialog);
-        this.infoPos = cc.p((this.winSize.width/2) + 230, (this.winSize.height/2)+145);
+        if (jc.isBrowser){
+            this.infoPos = cc.p((this.winSize.width/2) + 230, (this.winSize.height/2)+145);
+        }else{
+            this.infoPos = cc.p((this.winSize.width/2) + 160, (this.winSize.height/2)+145);
+        }
+
         this.infoDialog.setPosition(this.infoPos);
         jc.fadeOut(this.infoDialog);
 
@@ -40,6 +45,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 
             var pos = this.tableView.getPosition();
             pos.y+=56;
+
             this.tableView.setPosition(pos);
             this.reorderChild(this.tableView, 3);
             this.tableView.hackOn();
@@ -153,13 +159,22 @@ var EditTeam = jc.UiElementsLayer.extend({
         if (caps.ground){
             this.ground = caps.ground;
             this.addChild(caps.ground)
-            this.ground.setPosition(cc.p(205,545));
+            if (jc.isBrowser){
+                this.ground.setPosition(cc.p(205,545));
+            }else{
+
+            }   this.ground.setPosition(cc.p(105,520));
+
         }
 
         if (caps.air){
             this.air = caps.air;
             this.addChild(caps.air)
-            this.air.setPosition(cc.p(275,545));
+            if (jc.isBrowser){
+                this.air.setPosition(cc.p(275,545));
+            }else{
+                this.air.setPosition(cc.p(175,520));
+            }
         }
     },
     clearStats:function(){
@@ -180,7 +195,12 @@ var EditTeam = jc.UiElementsLayer.extend({
         var align = cc.TEXT_ALIGNMENT_LEFT;
         var fntSize = 16;
         var fntName = "gow";
-        var firstPos = cc.p(250, 490);
+        if (jc.isBrowser){
+            var firstPos = cc.p(230, 490);
+        }else{
+            var firstPos = cc.p(160, 470);
+        }
+
         var spacing = 37;
         var zorder = this.statsFrame.getZOrder()+1
 
@@ -235,7 +255,12 @@ var EditTeam = jc.UiElementsLayer.extend({
                 "main":"infoButton.png",
                 "pressed":"infoButton.png"
             },this.infoTouch.bind(this), this.infoPress.bind(this));
-            this.statsFrame.info.setPosition(cc.p(330, 555));
+            if (jc.isBrowser){
+                this.statsFrame.info.setPosition(cc.p(330, 555));
+            }else{
+                this.statsFrame.info.setPosition(cc.p(240, 535));
+            }
+
             this.addChild(this.statsFrame.info);
         }else{
             this.statsFrame.info.setZOrder(this.statsFrame.getZOrder()+2);
@@ -248,7 +273,12 @@ var EditTeam = jc.UiElementsLayer.extend({
             var cardPos = this.statsFrame.getPosition();
             var cardZOrder = this.statsFrame.getZOrder();
             var cardTr = this.statsFrame.card.getTextureRect();
-            elementSprite.setPosition(cc.p(565, 275));
+            if (jc.isBrowser){
+                elementSprite.setPosition(cc.p(580, 275));
+            }else{
+                elementSprite.setPosition(cc.p(510, 275));
+            }
+
             elementSprite.setZOrder(cardZOrder+2);
 
         }
@@ -497,6 +527,23 @@ EditTeam.getInstance = function() {
     if (!hotr.editTeam){
         hotr.editTeam = new EditTeam();
         hotr.editTeam.retain();
+        if (!jc.isBrowser){
+
+            //native layout mods here
+            hotr.editTeam.windowConfig.mainFrame.padding.top = 0;
+            hotr.editTeam.windowConfig.mainFrame.kids.characterPortraitsRight.padding.left = 116;
+            hotr.editTeam.windowConfig.mainFrame.kids.characterPortraitsFrame.padding.left = 0;
+            hotr.editTeam.windowConfig.mainFrame.kids.powerDesc.padding.left = 200;
+            hotr.editTeam.windowConfig.mainFrame.kids.powerDesc.padding.top = -45;
+            hotr.editTeam.windowConfig.mainFrame.kids.nextLevel.padding.left = 110;
+            hotr.editTeam.windowConfig.mainFrame.kids.trainButton.padding.left = 110;
+            hotr.editTeam.windowConfig.mainFrame.kids.nextLevel.padding.top = 25;
+            hotr.editTeam.windowConfig.mainFrame.kids.trainButton.padding.top = 35;
+            hotr.editTeam.windowConfig.mainFrame.kids.powerLevels.padding.top = 30;
+            hotr.editTeam.windowConfig.mainFrame.kids.powerIcons.padding.top = -5;
+            hotr.editTeam.windowConfig.mainFrame.kids.closeButton.padding.top = -100;
+
+        }
         hotr.editTeam.init();
     }
     return hotr.editTeam;

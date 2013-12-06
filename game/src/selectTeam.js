@@ -196,20 +196,20 @@ var SelectTeam = jc.UiElementsLayer.extend({
             },
             "z":1,
             "kids":{
-                "closeButton":{
-                    "cell":9,
-                    "anchor":['center', 'right'],
-                    "padding":{
-                        "top":-15,
-                        "left":0
-                    },
-                    "type":"button",
-                    "main":"closeButton.png",
-                    "pressed":"closeButton.png",
-                    "touchDelegateName":"close",
-                    "z":2,
-
-                },
+//                "closeButton":{
+//                    "cell":9,
+//                    "anchor":['center', 'right'],
+//                    "padding":{
+//                        "top":-15,
+//                        "left":0
+//                    },
+//                    "type":"button",
+//                    "main":"closeButton.png",
+//                    "pressed":"closeButton.png",
+//                    "touchDelegateName":"close",
+//                    "z":2,
+//
+//                },
                 "gridCells":{
                     "isGroup":true,
                     "z":2,
@@ -257,35 +257,35 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "type":"sprite",
                     "sprite":"descriptionWindow.png"
                 },
-                "formationSelect":{
-                    "isGroup":true,
-                    "type":"line",
-                    "cell":2,
-                    "anchor":['roght', 'top'],
-                    "padding":{
-                        "top":10,
-                        "left":70
-                    },
-
-                    "members":[
-                        {
-                            "type":"button",
-                            "main":"leftArrowFormationName.png",
-                            "pressed":"leftArrowFormationName.png",
-                            "touchDelegateName":"previousFormation"
-                        },
-                        {
-                            "type":"sprite",
-                            "sprite":"formationNameFrame.png"
-                        },
-                        {
-                            "type":"button",
-                            "main":"rightArrowFormationName.png",
-                            "pressed":"rightArrowFormationName.png",
-                            "touchDelegateName":"nextFormation"
-                        }
-                    ]
-                },
+//                "formationSelect":{
+//                    "isGroup":true,
+//                    "type":"line",
+//                    "cell":2,
+//                    "anchor":['roght', 'top'],
+//                    "padding":{
+//                        "top":10,
+//                        "left":70
+//                    },
+//
+//                    "members":[
+//                        {
+//                            "type":"button",
+//                            "main":"leftArrowFormationName.png",
+//                            "pressed":"leftArrowFormationName.png",
+//                            "touchDelegateName":"previousFormation"
+//                        },
+//                        {
+//                            "type":"sprite",
+//                            "sprite":"formationNameFrame.png"
+//                        },
+//                        {
+//                            "type":"button",
+//                            "main":"rightArrowFormationName.png",
+//                            "pressed":"rightArrowFormationName.png",
+//                            "touchDelegateName":"nextFormation"
+//                        }
+//                    ]
+//                },
                 "fightButton":{
                     "cell":2,
                     "anchor":['right'],
@@ -325,6 +325,21 @@ SelectTeam.scene = function() {
         hotr.selectTeamScene.layer = new SelectTeam();
         hotr.selectTeamScene.layer.retain();
         hotr.selectTeamScene.addChild(hotr.selectTeamScene.layer);
+
+        if (!jc.isBrowser){
+
+            //native layout mods here
+            hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.gridCells.padding.left = -35;
+            hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.formation.padding.left = -100;
+            hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.description.padding.left = 225;
+            hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.fightButton.padding.left = 125;
+            hotr.selectTeamScene.layer.windowConfig.mainFrame.padding.top = 0;
+            delete hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.kikButton;
+        }else{
+            //todo: kik button delete for facebook/twitter
+        }
+
+
         hotr.selectTeamScene.layer.init();
 
     }

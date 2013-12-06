@@ -229,8 +229,8 @@ jc.fadeIn= function(item, opacity , time, action){
 //expects to be bound to cocos2d layer
 jc.swapFade = function(swapOut, swapIn){
 
-    jc.log(['utilEffects'], "out:" + JSON.stringify(swapOut));
-    jc.log(['utilEffects'], "in:" + JSON.stringify(swapIn));
+    jc.log(['utilEffects'], "fade out name:" + swapOut.name);
+    jc.log(['utilEffects'], "fade in name:" + swapIn.name);
 
     if (swapOut){
         jc.fadeOut(swapOut, jc.defaultTransitionTime/4, function(){

@@ -144,6 +144,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     },
     raiseSelected:function(){
         jc.log(['scroller'],"raiseSelected:" + this.doUpdate);
+        this.doUpdate=false;
         this.endAdjustmentRunning = false;
 //        for(var i =0;i<this.sprites.length;i++){ //todo: change to math based
 //            var sprite = this.sprites[i];
