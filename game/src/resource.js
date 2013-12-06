@@ -1,6 +1,8 @@
+
+
 var dirImg = "art/";
 var dirMusic = "sounds/";
-var dirLocal = "localArt/";
+
 
 
 jc.setDesignSize(jc.resolutions.iphone4);
@@ -9,15 +11,15 @@ jc.assetCategory = jc.bestAssetDirectory();
 
 
 //todo {v}-ify these
-var arenaSheet = transformAsset(dirLocal + "arena.png");
-var landingPng = transformAsset(dirLocal + "landing{v}.png");
-var landingPlist = transformAsset(dirLocal + "landing{v}.plist");
-var loadingPng = transformAsset(dirLocal + "loading{v}.png");
-var loadingPlist = transformAsset(dirLocal + "loading{v}.plist");
-var cardsPngs = [transformAsset(dirLocal + "cards{v}.png")];
-var cardsPlists = [transformAsset(dirLocal + "cards{v}.plist")];
-var uiPng = transformAsset(dirLocal + "uiElements{v}.png");
-var uiPlist = transformAsset(dirLocal + "uiElements{v}.plist");
+var arenaSheet = transformAsset(dirImg + "arena.png");
+var landingPng = transformAsset(dirImg + "landing{v}.png");
+var landingPlist = transformAsset(dirImg + "landing{v}.plist");
+var loadingPng = transformAsset(dirImg + "loading{v}.png");
+var loadingPlist = transformAsset(dirImg + "loading{v}.plist");
+var cardsPngs = [transformAsset(dirImg + "cards{v}.png")];
+var cardsPlists = [transformAsset(dirImg + "cards{v}.plist")];
+var uiPng = transformAsset(dirImg + "uiElements{v}.png");
+var uiPlist = transformAsset(dirImg + "uiElements{v}.plist");
 
 
 var shadowPlist = transformAsset(dirImg + "shadowSheet.plist");

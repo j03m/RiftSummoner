@@ -75,9 +75,9 @@ jc.Sprite = cc.Sprite.extend({
 	},
     die:function(){
         this.imdeadman=true;
-        this.layer.removeChild(this);
-        this.layer.removeChild(this.shadow);
-        this.layer.removeChild(this.healthBar);
+        this.layer.removeChild(this, true);
+        this.layer.removeChild(this.shadow, true);
+        this.layer.removeChild(this.healthBar, true);
         this.cleanUp();
     },
     fallToShadow:function(){
@@ -100,6 +100,7 @@ jc.Sprite = cc.Sprite.extend({
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("shadowSmall.png");
         this.shadow.initWithSpriteFrame(frame);
         this.shadow.setScaleX(0.5);
+        this.shadow.retain();
         this.layer.addChild(this.shadow);
         this.layer.reorderChild(this.shadow, jc.shadowZOrder);
         this.updateShadowPosition();
@@ -119,8 +120,8 @@ jc.Sprite = cc.Sprite.extend({
 
         //this.stopAction(this.animations[this.state].action);
 		this.state = -1;
-        this.layer.removeChild(this.shadow);
-        this.layer.removeChild(this.healthBar);
+        this.layer.removeChild(this.shadow, true);
+        this.layer.removeChild(this.healthBar, true);
         for(var i =0; i<this.animations.length; i++){
 			this.animations[i].action.release();
 		}

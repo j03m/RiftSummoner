@@ -24,12 +24,12 @@ var MainGame = cc.Layer.extend({
     changeScene:function(key, assets, data){         //todo: change to layer manager
 
         if(this.loader){
-            cc.Director.getInstance().getRunningScene().removeChild(this.loader)
+            cc.Director.getInstance().getRunningScene().removeChild(this.loader,true)
         }
 
         switch(key){
             case 'selectTeam':
-                    cc.Director.getInstance().replaceScene(SelectTeam.scene());
+                cc.Director.getInstance().replaceScene(SelectTeam.scene());
                 break;
             case 'editTeam':
                 cc.Director.getInstance().replaceScene(EditTeam.scene());
@@ -368,6 +368,7 @@ MainGame.scene = function() {
     if (!hotr.mainScene){
         hotr.mainScene = cc.Scene.create();
         hotr.mainScene.layer = MainGame.create();
+        hotr.mainScene.layer.retain();
         hotr.mainScene.addChild(hotr.mainScene.layer );
     }
     hotr.changeScene = hotr.mainScene.layer.changeScene.bind(hotr.mainScene.layer);

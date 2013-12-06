@@ -238,8 +238,8 @@ cc.Rect = function (x1, y1, width1, height1) {
  * @param {Number} height
  * @return {cc.Rect}
  */
-cc.RectMake = function (x, y, width, height) {
-    cc.log("cc.RectMake will be deprecated sooner or later. Use cc.rect instead.");
+cc.rect = function (x, y, width, height) {
+    cc.log("cc.rect will be deprecated sooner or later. Use cc.rect instead.");
     return cc.rect(x, y, width, height);
 };
 

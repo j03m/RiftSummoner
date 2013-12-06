@@ -1,5 +1,39 @@
 var jc = jc || {};
 
+//Fixes
+if (jc.isBrowser){
+    //dont' do this on the web, crushes perf
+    cc.Sprite.prototype.setColor = function(){
+        jc.log(['console'], "setColor called on the web - don't do it man.");
+    };
+
+    jc.dumpStack = function(who){
+        jc.log(who, console.trace());
+    }
+}
+
+
+if (!jc.isBrowser){
+    //native bindings to setScale only take one param
+    cc.Sprite.prototype.setScale = function(x,y){
+        this.setScaleX(x);
+        this.setScaleY(y);
+    };
+
+    //origin required in web, doesn't exist native;
+    cc.Sprite.prototype.nativeBoundingBox = cc.Sprite.prototype.getBoundingBox;
+    cc.Sprite.prototype.getBoundingBox = function(){
+        var bb = this.nativeBoundingBox();
+        bb.origin = cc.p(bb.x, bb.y);
+        return bb;
+    }
+    jc.dumpStack = function (who) {
+        var stack = new Error().stack;
+        jc.log(who, stack);
+    }
+}
+
+
 jc.cardScale = 0.85;
 jc.scaleCard = function(card){
     card.setScale(card.getScaleX()*jc.cardScale, card.getScaleY()*jc.cardScale);
@@ -119,6 +153,13 @@ jc.cap = function(point, rect){
     }
 }
 
+jc.makeSimpleSprite = function (image){
+    var sprite = new cc.Sprite();
+    sprite.initWithSpriteFrameName(image);
+    sprite.retain();
+    return sprite;
+}
+
 jc.makeSpriteWithPlist = function(plist, png, startFrame){
     var sprite = new cc.Sprite();
     cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
@@ -127,6 +168,7 @@ jc.makeSpriteWithPlist = function(plist, png, startFrame){
     //todo change to size of sprite
     var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(startFrame);
     sprite.initWithSpriteFrame(frame);
+    sprite.retain();
     return sprite;
 }
 
@@ -156,6 +198,7 @@ jc.unshade = function(item){
 }
 
 jc.fadeIn= function(item, opacity , time, action){
+    jc.dumpStack(['fadeOut']);
     if (!time){
         time = jc.defaultTransitionTime;
     }
@@ -178,9 +221,13 @@ jc.fadeIn= function(item, opacity , time, action){
 
 //expects to be bound to cocos2d layer
 jc.swapFade = function(swapOut, swapIn){
+
+    jc.log(['utilEffects'], "out:" + JSON.stringify(swapOut));
+    jc.log(['utilEffects'], "in:" + JSON.stringify(swapIn));
+
     if (swapOut){
         jc.fadeOut(swapOut, jc.defaultTransitionTime/4, function(){
-            this.removeChild(swapOut);
+            this.removeChild(swapOut, false);
             doFadeIn.bind(this)();
         }.bind(this));
     }else{
@@ -197,6 +244,7 @@ jc.swapFade = function(swapOut, swapIn){
 }
 
 jc.fadeOut=function(item, time, action){
+    jc.dumpStack(['fadeOut']);
     if (!time){
         time = jc.defaultTransitionTime;
     }
@@ -334,7 +382,7 @@ jc.playEffectOnTarget = function(name, target, layer, child){
 
     if (config.times){
         var onDone = cc.CallFunc.create(function(){
-            parent.removeChild(effect);
+            parent.removeChild(effect, false);
             target.effectAnimations[name].playing =false;
         }.bind(this));
 
@@ -364,7 +412,7 @@ jc.playEffectAtLocation = function(name, location, z, layer){
     layer.reorderChild(effect,z);
     if (config.times){
         var onDone = cc.CallFunc.create(function(){
-            layer.removeChild(effect);
+            layer.removeChild(effect, false);
         }.bind(this));
         var action = cc.Sequence.create(effectAnimation, onDone);
         effect.runAction(action);
@@ -469,7 +517,7 @@ jc.genericPowerApply = function(effectData, effectName, varName,bObj){
 
 jc.genericPowerRemove = function(varName,effectName, bObj){
     if (bObj.owner[varName]){
-        bObj.owner.removeChild(bObj.owner[varName]);
+        bObj.owner.removeChild(bObj.owner[varName], false);
     }
     delete bObj.owner[varName];
     bObj.owner.effectAnimations[effectName].playing = false;
@@ -564,7 +612,7 @@ jc.portraitFromCard = function(name,card, size){
     var heightDiff = cs.height - tr.height;
     capturePos.x-=widthDiff;
     capturePos.y-=heightDiff;
-    var rect = cc.RectMake(capturePos.x, capturePos.y,size.width,size.height);
+    var rect = cc.rect(capturePos.x, capturePos.y,size.width,size.height);
     card.setTextureRect(rect);
     card.setContentSize(size);
     return card;

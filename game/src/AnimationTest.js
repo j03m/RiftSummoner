@@ -63,7 +63,7 @@ var AnimationTest = jc.TouchLayer.extend({
     },
     go:function(){
         if (this.sprite){
-            this.removeChild(this.sprite);
+            this.removeChild(this.sprite,false);
             if (this.sprite.cleanUp){
                 this.sprite.cleanUp();
             }

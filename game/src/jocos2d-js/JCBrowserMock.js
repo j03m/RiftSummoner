@@ -1,6 +1,5 @@
 var jc = jc || {};
 jc.dataTarget = 'http://localhost/';
-
 if (!jc.isBrowser){
     var window = jc;
 

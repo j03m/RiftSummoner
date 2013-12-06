@@ -77,7 +77,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         this.rightBar.clear();
         this.leftBar.setPosition(cc.p(0,0));
         this.leftBar.setPosition(cc.p(this.winSize.width - barWidth,0));
-        this.drawRect(this.leftBar, cc.RectMake(0,0,barWidth,this.winSize.height) , color, border,1);
+        this.drawRect(this.leftBar, cc.rect(0,0,barWidth,this.winSize.height) , color, border,1);
         this.drawRect(this.rightBar, cc.rect(0,0,barWidth,this.winSize.height) , color, border,1);
         this.leftBar.setZOrder(100);
         this.rightBar.setZOrder(100);
@@ -191,6 +191,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 var size = undefined;
                 if (config.type == "scale9"){
                     size = this.calculateSize(config, parent);
+                    jc.log(['ui'], "scale9 size:" + JSON.stringify(size));
                 }
 
                 //make it
@@ -198,6 +199,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
 
                 if (!size){
                     size = window.getTextureRect();
+                    jc.log(['ui'], "TextureRect size:" + JSON.stringify(size));
                 }
 
                 //what cell is it anchored to
@@ -289,6 +291,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             var itemHeight = size.height* config.itemSize.height/100;
             itemSize = cc.size(itemWidth, itemHeight);
             itemSizeHardSet = true;
+            jc.log(['ui'], "initGrid itemSize hard set:" + JSON.stringify(itemSize));
         }
 
         var x = -1;
@@ -305,8 +308,10 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             }
 
             var window = this.makeWindowByType(member, itemSize);
-            var elementSize = window.getBoundingBox().size;
+            var elementSize = window.getTextureRect();
+            jc.log(['ui'], "element itemSize from boundingBox:" + JSON.stringify(elementSize));
             if (!itemSizeHardSet){
+                jc.log(['ui'], "element itemSize not hard set, using elementSize");
                 itemSize = elementSize; //buttons and sprites set their own sizes
             }
 
@@ -314,32 +319,26 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 initialPosition = this.getAnchorPosition(config, itemSize, parent);
                 x = initialPosition.x;
                 y = initialPosition.y;
-//                if (config.itemPadding){
-//                    if (config.itemPadding.all){
-//                        y-=config.itemPadding.all;
-//                        x+=config.itemPadding.all;
-//                    }else{
-//                        if (config.itemPadding.top){
-//                            y-=config.itemPadding.top;
-//                        }
-//                        if (config.itemPadding.left){
-//                            x+=config.itemPadding.left;
-//                        }
-//                    }
-//                }
+
             }else if (colCount!=0){
                 //the last pass, we moved x from the previous elements center, to where our center should be.
                 //however, this assumes we're the same size as the previous element
                 //if we are not, we'll overlap them. So here, we also need to apply some logic that moves us further if we're larger then the
                 //last element;
-                //if (lastSize.width < itemSize.width){
                     x+=itemSize.width/2;
-                //}
             }
 
             //keep track
+            jc.log(['ui'], "adding child:" + window.name);
+            if (config.z == undefined){
+                config.z = 0;
+            }
+            jc.log(['ui'], "reordering child:" + config.z);
             this.addChild(window);
-            this.reorderChild(window, config.z);
+            if (config.z !=0){
+                this.reorderChild(window, config.z);
+            }
+
             var instanceName;
             if (!member.name){
                 instanceName = name+i;
@@ -424,12 +423,23 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         return cc.size(w,h);
     },
     getAnchorPosition:function(config, size, parent){
+        if (!config){
+            throw "Need a config!";
+        }
+
+        if (!size){
+            throw "Need a size!";
+        }
+
         if (!config.cell){
             throw "Need a cell";
         }
         if (!config.anchor){
             config.anchor=[];
         }
+
+
+
         var top;
         var left;
         var bottom;
@@ -520,7 +530,8 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         var toSize = toMe.getContentSize();
         var scalex = toSize.width/currentSize.width;
         var scaley = toSize.height/currentSize.height;
-        scaleMe.setScale(scalex, scaley);
+        scaleMe.setScaleX(scalex)
+        scaleMe.setScaleY(scaley);
     }
 
 });

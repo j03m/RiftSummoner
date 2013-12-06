@@ -64,15 +64,14 @@ var EditTeam = jc.UiElementsLayer.extend({
         }.bind(this));
 
         //empty
-        var sprite = new cc.Sprite();
-        sprite.initWithSpriteFrameName("characterPortraitFrame.png");
+
+        var sprite = jc.makeSimpleSprite("characterPortraitFrame.png");
         characters.push(sprite);
         return characters;
 
     },
     makeScrollSprite: function(name){
-        var sprite = new cc.Sprite();
-        sprite.initWithSpriteFrameName("characterPortraitFrame.png");
+        var sprite = jc.makeSimpleSprite("characterPortraitFrame.png");
         sprite.pic = jc.getCharacterPortrait(name, sprite.getContentSize());
         sprite.addChild(sprite.pic);
         this.scaleTo(sprite.pic, sprite);
@@ -91,8 +90,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     getEmptyCells:function(number){
         var returnme=[];
         for(var i =0;i<number;i++){
-            var sprite = new cc.Sprite();
-            sprite.initWithSpriteFrameName("characterPortraitFrame.png");
+            var sprite = jc.makeSimpleSprite("characterPortraitFrame.png");
             if (!this.cellWidth){
                 this.cellWidth = sprite.getTextureRect().width + 100;
             }
@@ -130,21 +128,21 @@ var EditTeam = jc.UiElementsLayer.extend({
             //update labels
             this.updateStats(characterEntry);
         }else{
-            this.mainFrame.removeChild(this.statsFrame.card);
+            this.mainFrame.removeChild(this.statsFrame.card,false);
             this.lastSelection=undefined;
             this.statsFrame.card=undefined;
-            this.removeChild(this.statsFrame.element);
-            this.removeChild(this.statsFrame.info);
+            this.removeChild(this.statsFrame.element,false);
+            this.removeChild(this.statsFrame.info,false);
             this.clearStats();
             this.clearAttackTypes();
         }
     },
     clearAttackTypes:function(){
         if (this.ground){
-            this.removeChild(this.ground);
+            this.removeChild(this.ground,false);
         }
         if (this.air){
-            this.removeChild(this.air);
+            this.removeChild(this.air,false);
         }
 
     },
@@ -170,7 +168,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         for (var stat in stats){
             var lblName = prefix+stat;
             if (this[lblName]){
-                this.removeChild(this[lblName]);
+                this.removeChild(this[lblName],false);
             }
         }
     },
@@ -190,7 +188,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         for (var stat in stats){
             var lblName = prefix+stat
             if (this[lblName]){
-                this.removeChild(this[lblName]);
+                this.removeChild(this[lblName],false);
             }
 
             this[lblName] = this.makeAndPlaceLabel(stats[stat], fntName, fntSize, size, align, firstPos,zorder);
@@ -228,7 +226,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 
         //if set, remove
         if (this.statsFrame.element){
-            this.removeChild(this.statsFrame.element);
+            this.removeChild(this.statsFrame.element,false);
         }
 
         if (!this.statsFrame.info){
@@ -276,10 +274,10 @@ var EditTeam = jc.UiElementsLayer.extend({
         var zorder = 1;
         var entry = spriteDefs[this.lastSelection.name];
         if (this.infoDialog.title){
-            this.infoDialog.removeChild(this.infoDialog.title);
+            this.infoDialog.removeChild(this.infoDialog.title,false);
         }
         if (this.infoDialog.desc){
-            this.infoDialog.removeChild(this.infoDialog.desc);
+            this.infoDialog.removeChild(this.infoDialog.desc,false);
         }
         this.infoDialog.title = this.makeAndPlaceLabel(entry.formalName, fntName, fntSize, sizeTitle, align, titlePos,zorder);
         this.infoDialog.desc = this.makeAndPlaceLabel(entry.details, fntName, fntSize, sizeDesc, align, descPos,zorder);

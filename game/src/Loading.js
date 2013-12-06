@@ -114,6 +114,9 @@ var Loading = jc.UiElementsLayer.extend({
         this.slide(this.rightDoor, cc.p(fromX,fromY), to, jc.defaultTransitionTime, undefined, undefined,doneDelegate);
 
     },
+    getPercentage:function(){
+        return 100;
+    },
     checkPercent:function(){
         //implement loading bar once we have the sprites
         if (this.animationDone){
@@ -121,7 +124,13 @@ var Loading = jc.UiElementsLayer.extend({
             var parts = 20; //we have 20 animation states for the bar
 
             //first, what is the asset loader at?
-            var loader = cc.Loader.getInstance();
+            var getPercentage;
+            if (jc.isBrowser){
+                 getPercentage = cc.Loader.getInstance().getPercentage;
+            }else{
+                getPercentage = this.getPercentage;
+            }
+
 
 
             //ccLoader is a bit of a piece, so - we need to patch it up with some stuff...
@@ -132,7 +141,7 @@ var Loading = jc.UiElementsLayer.extend({
                 if (this.ccLoaderDone==true){
                     percent = 100;
                 }else{
-                    percent = loader.getPercentage(); //it will also go over, so patch that down
+                    percent = getPercentage(); //it will also go over, so patch that down
                     if (percent> 100){
                         percent = 100;
                     }

@@ -3,9 +3,9 @@ var jc = jc || {};
 var tracers = {
 	'general':0,
 	'touch':0,
-    'touchcore':1,
+    'touchcore':0,
     'touchid':0,
-    'touchout':1,
+    'touchout':0,
 	'mouse':0,
 	'states':0,
 	'sprite':0,
@@ -15,12 +15,15 @@ var tracers = {
 	'tests':0,
 	'requestManager':0,
     'gameplay':0 ,
-    'mainLayer':1,
-    'resource':1,
-    'camera':1,
+    'mainLayer':0,
+    'resource':0,
+    'camera':0,
     'console':1,
-    'zerverpipe':1,
-    'resource':1
+    'zerverpipe':0,
+    'resource':0,
+    'ui':0,
+    'scroller':1,
+    'utilEffects':1
 };
 
 jc.log = function(categories, msg){

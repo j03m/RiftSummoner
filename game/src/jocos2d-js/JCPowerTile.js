@@ -7,8 +7,7 @@ jc.PowerTile = jc.CompositeButton.extend({
         var cs = this.getContentSize();
         this.setScale(this.tileSize.width/cs.width, this.tileSize.height/cs.height);
 
-        this.border = new cc.Sprite();
-        this.border.initWithSpriteFrameName("Border5.png");
+        this.border = jc.makeSimpleSprite("Border5.png");
         this.addChild(this.border, 10);
         this.border.setPosition(this.borderPos); //wtf is wrong with cocos positioning
 

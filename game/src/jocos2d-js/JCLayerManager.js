@@ -29,7 +29,7 @@ LayerManager.prototype.popLayer = function(){
     }
 
     layer.pause();
-    this.currentLayer.removeChild(layer);
+    this.currentLayer.removeChild(layer, false);
     this.currentLayer.undarken();
     this.currentLayer.resume();
     this.currentLayer.onShow();

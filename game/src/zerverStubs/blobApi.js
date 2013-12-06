@@ -143,7 +143,7 @@
         var url  = jc.dataTarget + apiDir,
             data = JSON.stringify(args);
 
-        jc.log(['zerverpipe'], 'Request: ' + url);
+        jc.log(['zerverpipe'], 'Requesting: ' + url);
 
         for (var i=0, len=tree.length; i<len; i++) {
             url += '/' + encodeURIComponent( tree[i] );
@@ -178,7 +178,7 @@
     function ajaxPost (url, data, callback) {
         var done = false,
             xhr;
-
+        jc.log(['zerverpipe'], 'XMLHttpRequest: ' +(typeof XMLHttpRequest !== 'undefined'));
         if (typeof XMLHttpRequest !== 'undefined') {
             xhr = new XMLHttpRequest();
         }

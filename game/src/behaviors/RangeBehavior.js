@@ -112,7 +112,7 @@ RangeBehavior.prototype.doMissile = function(){
         var moveTo = cc.MoveTo.create(timeToImpact, targetPos);
         var callback = cc.CallFunc.create(function(){
             this.hitLogic();
-            this.owner.layer.removeChild(this.missile);
+            this.owner.layer.removeChild(this.missile, false);
             this.firing = false;
             if (this.locked){
                 jc.playEffectOnTarget(missileType.effect, this.locked, this.owner.layer);

@@ -249,7 +249,7 @@ var ExampleLayer = cc.Layer.extend({
 		var toSplice = Math.floor(Math.random()*this.badguys.length);
 		var baddyToCycle = this.badguys.splice(toSplice,1)[0];
 		baddyToCycle.cleanUp();
-		this.removeChild(baddyToCycle);
+		this.removeChild(baddyToCycle, false);
 		baddyToCycle = null;
 		this.makeAndPlaceBaddy(Math.floor(Math.random()*360));
 		cc.log("*****BAD GUYS:" + this.badguys.length);

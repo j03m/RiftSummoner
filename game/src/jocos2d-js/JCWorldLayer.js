@@ -12,7 +12,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
             var y = this.worldSize.height/2;
             this.worldMidPoint = cc.p(x,y);
             this.screenMidPoint = cc.p(this.winSize.width/2, this.winSize.height/2);
-            this.worldBoundary = cc.RectMake(this.worldSize.width/4, this.worldSize.height/4, this.worldSize.width/2 + this.worldSize.width/4, this.worldSize.height/2 + this.worldSize.height/4);
+            this.worldBoundary = cc.rect(this.worldSize.width/4, this.worldSize.height/4, this.worldSize.width/2 + this.worldSize.width/4, this.worldSize.height/2 + this.worldSize.height/4);
             this.setViewCenter(cc.p(this.worldSize.width/2,this.worldSize.height/2));
             this.bubbleAllTouches(true);
             this.worldScale = {x:this.winSize.width/this.worldSize.width, y:this.winSize.height/this.worldSize.height};

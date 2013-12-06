@@ -18,6 +18,7 @@ jc.TouchLayer = cc.Layer.extend({
             this.superOnExit = this.onExit;
             this.onExit = this.childOnExit;
             this.touchTargets=[];
+            this.retain();
             return true;
         } else {
             return false;
@@ -47,20 +48,21 @@ jc.TouchLayer = cc.Layer.extend({
     onShow:function(){},
     onHide:function(){},
     wireInput: function(val){
-//        if ('mouse' in sys.capabilities) {
-//            if (val){
-//                cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 1);
-//            }else{
-//                cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
-//            }
-//        } else {
-//            if (val){
-//                cc.Director.getInstance().getTouchDispatcher()._addTargetedDelegate(this, 1, true);
-//            }else{
-//                cc.Director.getInstance().getTouchDispatcher()._removeDelegate(this);
-//            }
-//
-//        }
+        if ('mouse' in sys.capabilities) {
+            if (val){
+                cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 1);
+            }else{
+                cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
+            }
+        } else {
+            if (val){
+                cc.registerTargetedDelegate(0,true, this);
+                //cc.Director.getInstance().getTouchDispatcher()._addTargetedDelegate(this, 1, true);
+            }else{
+                cc.unregisterTouchDelegate(this);
+                //cc.Director.getInstance().getTouchDispatcher()._removeDelegate(this);
+            }
+        }
     },
     onTouchBegan: function(touch) {
         return this.hitSpriteTarget(jc.touchBegan, touch);
@@ -342,7 +344,7 @@ jc.TouchLayer = cc.Layer.extend({
             throw "A window needs a sprite backdrop and a scale9 rect";
         }
         if (!rect){
-            rect = cc.RectMake(45, 45, 350, 600)
+            rect = cc.rect(45, 45, 350, 600)
         }
         var windowSprite  = cc.Scale9Sprite.create();
         windowSprite.initWithSpriteFrameName(spriteName, rect);
