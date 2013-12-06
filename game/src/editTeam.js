@@ -24,7 +24,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         if (jc.isBrowser){
             this.infoPos = cc.p((this.winSize.width/2) + 230, (this.winSize.height/2)+145);
         }else{
-            this.infoPos = cc.p((this.winSize.width/2) + 160, (this.winSize.height/2)+145);
+            this.infoPos = cc.p((this.winSize.width/2) + 225, (this.winSize.height/2)+140);
         }
 
         this.infoDialog.setPosition(this.infoPos);
@@ -163,7 +163,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                 this.ground.setPosition(cc.p(205,545));
             }else{
 
-            }   this.ground.setPosition(cc.p(105,520));
+            }   this.ground.setPosition(cc.p(105,535));
 
         }
 
@@ -173,7 +173,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             if (jc.isBrowser){
                 this.air.setPosition(cc.p(275,545));
             }else{
-                this.air.setPosition(cc.p(175,520));
+                this.air.setPosition(cc.p(175,535));
             }
         }
     },
@@ -198,11 +198,11 @@ var EditTeam = jc.UiElementsLayer.extend({
         if (jc.isBrowser){
             var firstPos = cc.p(230, 490);
         }else{
-            var firstPos = cc.p(160, 470);
+            var firstPos = cc.p(165, 480);
         }
 
         var spacing = 37;
-        var zorder = this.statsFrame.getZOrder()+1
+        var zorder = this.statsFrame.getZOrder()+1;
 
         var prefix = "lbl";
         for (var stat in stats){
@@ -258,7 +258,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             if (jc.isBrowser){
                 this.statsFrame.info.setPosition(cc.p(330, 555));
             }else{
-                this.statsFrame.info.setPosition(cc.p(240, 535));
+                this.statsFrame.info.setPosition(cc.p(240, 545));
             }
 
             this.addChild(this.statsFrame.info);
@@ -276,19 +276,15 @@ var EditTeam = jc.UiElementsLayer.extend({
             if (jc.isBrowser){
                 elementSprite.setPosition(cc.p(580, 275));
             }else{
-                elementSprite.setPosition(cc.p(510, 275));
+                elementSprite.setPosition(cc.p(480, 265));
             }
 
             elementSprite.setZOrder(cardZOrder+2);
-
         }
-
-
 
     },
     infoPress: function(){
         this.buildInfoDialogForSelectedCharacter();
-
     },
     buildInfoDialogForSelectedCharacter:function(){
         //title label
@@ -297,9 +293,16 @@ var EditTeam = jc.UiElementsLayer.extend({
         var align = cc.TEXT_ALIGNMENT_CENTER;
         var fntSize = 16;
         var fntName = "gow";
-        var titlePos = cc.p(795,600);
 
-        var descPos = cc.p(800,440);
+        if(jc.isBrowser){
+            var titlePos = cc.p(795,600);
+            var descPos = cc.p(800,440);
+        }else{
+            var titlePos = cc.p(725,600);
+            var descPos = cc.p(730,440);
+
+        }
+
 
         var zorder = 1;
         var entry = spriteDefs[this.lastSelection.name];

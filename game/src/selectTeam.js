@@ -329,6 +329,7 @@ SelectTeam.scene = function() {
         if (!jc.isBrowser){
 
             //native layout mods here
+            hotr.selectTeamScene.layer.windowConfig.mainFrame.padding.top = -20;
             hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.gridCells.padding.left = -35;
             hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.formation.padding.left = -100;
             hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.description.padding.left = 225;
