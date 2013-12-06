@@ -70,6 +70,7 @@ RangeBehavior.prototype.doMissile = function(){
         if (!this.missile){
             this.missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
             this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
+            this.missile.runAction(this.missileAnimation);
 
         }
 
@@ -96,7 +97,7 @@ RangeBehavior.prototype.doMissile = function(){
         this.missile.setFlippedX(this.owner.isFlippedX());
 
         this.missile.setPosition(ownerPos);
-        this.missile.runAction(this.missileAnimation);
+
 
         //move it to the target at damageDelay speed
         var targetPos;

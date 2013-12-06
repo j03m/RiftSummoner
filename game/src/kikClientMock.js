@@ -22,34 +22,34 @@ var temp =  [
         "id":"id1",
         "data":{}
     },
-//    {
-//        "name":"ogre",
-//        "id":"id2",
-//        "data":{}
-//    },
-//    {
-//        "name":"ogre",
-//        "id":"id3",
-//        "data":{}
-//    },
-//    {
-//        "name":"ogre",
-//        "id":"id4",
-//        "data":{}
-//    },
-//    {
-//        "name":"orc",
-//        "id":"id5",
-//        "data":{}
-//    },
-//    {
-//        "name":"goblin",
-//        "data":{}
-//    },
-//    {
-//        "name":"goblin",
-//        "data":{}
-//    },
+    {
+        "name":"ogre",
+        "id":"id2",
+        "data":{}
+    },
+    {
+        "name":"ogre",
+        "id":"id3",
+        "data":{}
+    },
+    {
+        "name":"ogre",
+        "id":"id4",
+        "data":{}
+    },
+    {
+        "name":"orc",
+        "id":"id5",
+        "data":{}
+    },
+    {
+        "name":"goblin",
+        "data":{}
+    },
+    {
+        "name":"goblin",
+        "data":{}
+    },
     {
         "name":"orc",
         "data":{}

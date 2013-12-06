@@ -496,6 +496,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 EditTeam.getInstance = function() {
     if (!hotr.editTeam){
         hotr.editTeam = new EditTeam();
+        hotr.editTeam.retain();
         hotr.editTeam.init();
     }
     return hotr.editTeam;

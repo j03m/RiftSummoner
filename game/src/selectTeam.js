@@ -321,7 +321,9 @@ var SelectTeam = jc.UiElementsLayer.extend({
 SelectTeam.scene = function() {
     if (!hotr.selectTeamScene){
         hotr.selectTeamScene = cc.Scene.create();
+        hotr.selectTeamScene.retain();
         hotr.selectTeamScene.layer = new SelectTeam();
+        hotr.selectTeamScene.layer.retain();
         hotr.selectTeamScene.addChild(hotr.selectTeamScene.layer);
         hotr.selectTeamScene.layer.init();
 

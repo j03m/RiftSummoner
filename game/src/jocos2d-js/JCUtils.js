@@ -31,6 +31,8 @@ if (!jc.isBrowser){
         var stack = new Error().stack;
         jc.log(who, stack);
     }
+
+    cc.Sprite.prototype.setFlippedX = cc.Sprite.prototype.setFlipX;
 }
 
 
@@ -153,6 +155,11 @@ jc.cap = function(point, rect){
     }
 }
 
+
+//todo: down the road we are going to have to have 1 sprite factory that
+//accepts params and a layername and keeps an index of sprites created for that layer.
+//that will allow a layer to release all of it's sprites in one call. Right now, anything
+//created here leaks mem
 jc.makeSimpleSprite = function (image){
     var sprite = new cc.Sprite();
     sprite.initWithSpriteFrameName(image);
@@ -308,9 +315,13 @@ jc.makeAnimationFromRange = function(name, config){
 
     var animation = cc.Animation.create(frames, config.delay);
     if (!config.times){
-        return cc.RepeatForever.create(cc.Animate.create(animation));
+        var rf = cc.RepeatForever.create(cc.Animate.create(animation));
+        rf.retain(); //j03m fix leak
+        return rf;
     }else{
-        return cc.Repeat.create(cc.Animate.create(animation), config.times);
+        var r = cc.Repeat.create(cc.Animate.create(animation), config.times);
+        r.retain();  //j03m fix leak
+        return r;
     }
 
 }

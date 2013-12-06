@@ -37,6 +37,7 @@ jc.Sprite = cc.Sprite.extend({
             throw firstFrame + " for sprite: " + config.name + " was not found.";
         }
 		this.initWithSpriteFrame(frame);
+        this.retain(); //j03m fix leak
         this.type = config.type;
         if(this.type != 'background'){
             this.superDraw = this.draw;
@@ -107,7 +108,8 @@ jc.Sprite = cc.Sprite.extend({
     },
     initHealthBar:function(){
         this.healthBar = cc.DrawNode.create();
-        this.healthBar.contentSize = cc.SizeMake(this.HealthBarWidth, this.HealthBarHeight);
+        this.healthBar.retain(); //j03m fix leak
+        this.healthBar.contentSize = cc.size(this.HealthBarWidth, this.HealthBarHeight);
         this.layer.addChild(this.healthBar);
         this.updateHealthBarPos();
     },
@@ -178,6 +180,7 @@ jc.Sprite = cc.Sprite.extend({
 		//if the entry type is a loop create a forver action
 		if (entry.type == jc.AnimationTypeLoop){
  			action = cc.RepeatForever.create(cc.Animate.create(animation));
+            action.retain(); //j03m fix leak
 			action.tag = entry.state;
 
 		}else{
@@ -532,6 +535,7 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
     //init
     character.type = 'character';
     sprite.initWithPlist(g_characterPlists[def], g_characterPngs[def], nameFormat.format(firstFrame), character);
+
     //create definitions from the animation states
     for (var animation in character.animations){
         //use this to create a definition in the sprite
@@ -553,7 +557,8 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
         jc.playEffectOnTarget(character.effect, sprite, layer, true);
     }
 
-    //return the sprite;
+    //return the sprite
+
     return sprite;
 }
 

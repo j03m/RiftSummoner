@@ -511,10 +511,13 @@ ArenaGame.create = function() {
 
 ArenaGame.scene = function() {
     if (hotr.arenaScene){
+        hotr.arenaScene.layer.release();
         hotr.arenaScene.release();
     }
     hotr.arenaScene = cc.Scene.create();
+    hotr.arenaScene.retain();
     hotr.arenaScene.layer = ArenaGame.create();
+    hotr.arenaScene.layer.retain();
     hotr.arenaScene.addChild(hotr.arenaScene.layer);
     return hotr.arenaScene;
 
