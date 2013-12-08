@@ -3,12 +3,8 @@
 var dirImg = "art/";
 var dirMusic = "sounds/";
 
-
-
+jc.bestAssetDirectory();
 jc.setDesignSize(jc.resolutions.iphone4);
-
-jc.assetCategory = jc.bestAssetDirectory();
-
 
 //todo {v}-ify these
 var arenaSheet = transformAsset(dirImg + "arena.png");
@@ -16,6 +12,7 @@ var landingPng = transformAsset(dirImg + "landing{v}.png");
 var landingPlist = transformAsset(dirImg + "landing{v}.plist");
 var loadingPng = transformAsset(dirImg + "loading{v}.png");
 var loadingPlist = transformAsset(dirImg + "loading{v}.plist");
+
 var cardsPngs = [transformAsset(dirImg + "cards{v}.png")];
 var cardsPlists = [transformAsset(dirImg + "cards{v}.plist")];
 var uiPng = transformAsset(dirImg + "uiElements{v}.png");
@@ -26,7 +23,7 @@ var shadowPlist = transformAsset(dirImg + "shadowSheet.plist");
 var shadowPng = transformAsset(dirImg + "shadowSheet.png");
 var powerTilesPng= transformAsset(dirImg + "powerTiles.png");
 var powerTilesPlist= transformAsset(dirImg + "powerTiles.plist");
-
+var guide = dirImg + "selectEditTeamScreen4.png";
 
 var g_characterPngs = {};
 var g_characterPlists = {};
@@ -43,6 +40,26 @@ var g_maingame = [
     }
 ];
 
+//*****uncomment for designmode
+if (jc.designMode){
+
+
+var cardsPngs = [transformAsset(dirImg + "cards-ipadhd.png")];
+var cardsPlists = [transformAsset(dirImg + "cards-ipadhd.plist")];
+var uiPng = transformAsset(dirImg + "uiElements-ipadhd.png");
+var uiPlist = transformAsset(dirImg + "uiElements-ipadhd.plist");
+var g_maingame = [
+    {src:guide},
+    {src:uiPng},
+    {src:uiPlist},
+    {src:cardsPlists[0]},
+    {src:cardsPngs[0]},
+
+    {fontName:"gow",
+        src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
+    }
+];
+}
 
 for (var entry in spriteDefs ){
     if (!spriteDefs[entry].parentOnly && spriteDefs[entry].name){

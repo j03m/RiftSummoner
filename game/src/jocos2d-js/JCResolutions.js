@@ -4,69 +4,70 @@ jc.assetWildCard = "{v}";
 
 //this assumes you want landscape. todo: mod for portrait
 jc.resolutions = {};
+
+
 jc.resolutions.iphone = cc.size(480,320);
+jc.resolutions.iphone.scale =   0.234375;
 jc.resolutions.iphone4 = cc.size(960,640);
+jc.resolutions.iphone4.scale = 0.46875;
+jc.resolutions.iphone4.adjusty = -30; //-80;
+jc.resolutions.iphone4.adjustx = 0;
+
 //jc.resolutions.iphone5 = cc.size(1136,640);
+//jc.resolutions.iphone5.scale = 0.554688;
 //jc.resolutions.ipad = cc.size(1024, 768);
-//jc.resolutions.ipadhd = cc.size(2048, 1536);
+jc.resolutions.ipadhd = cc.size(2048, 1536);
+jc.resolutions.ipadhd.scale = 1;
+
+
 
 jc.setDesignSize = function(size){
     jc.designSize = size;
 }
 
-jc.setActualSize = function(size){
-    jc.actualSize = size;
-}
 
 jc.bestAssetDirectory = function(){
-    if (!jc.isBrowser) {
-        return jc.bestAssetDirectoryNative();
-    }else{
-       return jc.bestAssetDirectoryWeb(window, screen);
-    }
-
-
-}
-
-jc.bestAssetDirectoryNative = function(){
-    var size = cc.Director.getInstance().getWinSize(); //dont do this in html5, it gets the canvas size, not what we want
-    jc.log(['resource'], "director winSize returned: ");
-    jc.log(['resource'], size);
-    return jc.bestAssetDirectoryWorker(size);
-}
-
-jc.bestAssetDirectoryWeb = function(window, screen){
-
     //height switched because screen always reports portrait,
     //you can use window.orientation to determine rotation, but I don't care
     //this game runs in landscape
-    var dpr = Math.ceil(window.devicePixelRatio);
-    var actualSize;
-    if (window.orientation){
-        actualSize = cc.size(screen.height*dpr, screen.width*dpr);
+    if (jc.isBrowser){
+        var dpr = Math.ceil(window.devicePixelRatio);
+
+        if (window.orientation){
+            jc.screenSize = cc.size(screen.height*dpr, screen.width*dpr);
+        }else{
+            jc.screenSize = cc.size(screen.width*dpr, screen.height*dpr);
+        }
+        jc.actualSize = cc.size(960,640); //CANVAS SIZE MUST GO HERE
     }else{
-        actualSize = cc.size(screen.width*dpr, screen.height*dpr);
+        jc.actualSize = cc.Director.getInstance().getWinSize();
+        jc.screenSize = jc.actualSize;
     }
 
-    return jc.bestAssetDirectoryWorker(actualSize);
-
-}
-
-jc.bestAssetDirectoryWorker = function(actualSize){
+    var actualSize = jc.actualSize;
     //determine what asset size we should be using.
     //in our game we follow http://www.codeandweb.com/blog/2012/12/14/scaling-content-for-retina-display-iphone-and-ipad
     //we are designing for iphone 5, but scaling down from ipad 3
     //so we mostly care about width, our height will get cut.
     var maxSet = "";
     var max = 0;
+    var scaleFactor;
     for(var res in jc.resolutions){
         if (jc.resolutions[res].width<= actualSize.width){
             if (jc.resolutions[res].width > max){
                 max = jc.resolutions[res].width;
                 maxSet = res;
+                scaleFactor = jc.resolutions[res].scale;
             }
         }
     }
     jc.log(['resource'], "selected: " + maxSet + " for assets dir.");
-    return maxSet;
+    jc.assetCategory = maxSet;
+    jc.assetScaleFactor = scaleFactor;
+    jc.assetCategoryData = jc.resolutions[maxSet];
+
+};
+
+if (!jc.isBrowser){
+    jc.bestAssetDirectory();
 }

@@ -10,7 +10,7 @@ jc.TouchLayer = cc.Layer.extend({
     init: function() {
         if (this._super()) {
 
-            this.winSize = cc.Director.getInstance().getWinSize();
+            this.winSize =  jc.actualSize;
             this.superDraw = this.draw;
             this.draw = this.childDraw;
             this.superOnEnter = this.onEnter;
@@ -120,6 +120,10 @@ jc.TouchLayer = cc.Layer.extend({
                 cs.x = pos.x - cs.width/2;
                 cs.y = pos.y; //y should be bottom already
 
+            }else if ( this.touchTargets[i] instanceof cc.LabelTTF){
+                var cs = this.touchTargets[i].getBoundingBox();
+                cs.width*=2;
+                cs.height*=2;
             }else{
                 var cs = this.touchTargets[i].getBoundingBox();
             }

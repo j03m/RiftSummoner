@@ -19,16 +19,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     onShow:function(){
         this.letterBoxVertical();
         this.start();
-        this.infoDialog = jc.makeSpriteWithPlist(uiPlist, uiPng, "titleDescription.png");
-        this.addChild(this.infoDialog);
-        if (jc.isBrowser){
-            this.infoPos = cc.p((this.winSize.width/2) + 230, (this.winSize.height/2)+145);
-        }else{
-            this.infoPos = cc.p((this.winSize.width/2) + 225, (this.winSize.height/2)+140);
-        }
-
-        this.infoDialog.setPosition(this.infoPos);
-        jc.fadeOut(this.infoDialog);
+        this.infoFadeWorker();
 
         if (!this.tableView){
             this.tableView = new jc.ScrollingLayer();
@@ -53,13 +44,10 @@ var EditTeam = jc.UiElementsLayer.extend({
         }
     },
     inTransitionsComplete:function(){
-        if (this.statsFrame.card){
-            jc.fadeIn(this.statsFrame.card, 255);
+        if (this.card){
+            jc.fadeIn(this.card, 255);
         }
-        this.characterPortraitsLeft.setZOrder(9);
-        this.characterPortraitsRight.setZOrder(9);
-        this.mainFrame.setZOrder(-1);
-        this.statsFrame.setZOrder(2);
+
     },
     outTransitionsComplete:function(){
         jc.layerManager.popLayer();
@@ -78,7 +66,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     },
     makeScrollSprite: function(name){
         var sprite = jc.makeSimpleSprite("characterPortraitFrame.png");
-        sprite.pic = jc.getCharacterPortrait(name, sprite.getContentSize());
+        sprite.pic = jc.getCharacterCard(name);
         sprite.addChild(sprite.pic);
         this.scaleTo(sprite.pic, sprite);
         jc.scaleCard(sprite.pic);
@@ -117,12 +105,17 @@ var EditTeam = jc.UiElementsLayer.extend({
     selectionCallback:function(index, sprite, data){
         if (data){
             //index of card, data = character id
+
+            this.card.setVisible(true);
+            this.element.setVisible(true);
+            this.info.setVisible(true);
+
             var characterEntry = hotr.blobOperations.getEntryWithId(data);
 
             this.lastSelection = characterEntry
 
             //get card image from jc.getCharacterCard
-            var card = jc.getCharacterCard(characterEntry.name);
+            var card = jc.getCharacterCardFrame(characterEntry.name);
 
             //put this card sprite in the frame
             this.swapCharacterCard(card);
@@ -134,88 +127,68 @@ var EditTeam = jc.UiElementsLayer.extend({
             //update labels
             this.updateStats(characterEntry);
         }else{
-            this.mainFrame.removeChild(this.statsFrame.card,false);
+            this.card.setVisible(false);
             this.lastSelection=undefined;
-            this.statsFrame.card=undefined;
-            this.removeChild(this.statsFrame.element,false);
-            this.removeChild(this.statsFrame.info,false);
-            this.clearStats();
+            this.element.setVisible(false);
+            this.info.setVisible(false);
+
+            this.hideStats();
             this.clearAttackTypes();
         }
     },
     clearAttackTypes:function(){
-        if (this.ground){
-            this.removeChild(this.ground,false);
-        }
-        if (this.air){
-            this.removeChild(this.air,false);
-        }
-
+        this.ground.setVisible(false);
+        this.air.setVisible(false);
     },
     placeAttackTypes:function(entry){
         this.clearAttackTypes();
 
-        var caps = jc.getCapability(entry.name);
-        if (caps.ground){
-            this.ground = caps.ground;
-            this.addChild(caps.ground)
-            if (jc.isBrowser){
-                this.ground.setPosition(cc.p(205,545));
-            }else{
-
-            }   this.ground.setPosition(cc.p(105,535));
-
+        var def = spriteDefs[entry.name];
+        if (def.gameProperties.targets == 0){
+            this.ground.setVisible(false);
+            this.air.setVisible(true);
         }
 
-        if (caps.air){
-            this.air = caps.air;
-            this.addChild(caps.air)
-            if (jc.isBrowser){
-                this.air.setPosition(cc.p(275,545));
-            }else{
-                this.air.setPosition(cc.p(175,535));
-            }
+        if (def.gameProperties.targets == 1){
+            this.ground.setVisible(true);
+            this.air.setVisible(false);
+        }
+
+        if (def.gameProperties.targets == 2){
+            this.ground.setVisible(true);
+            this.air.setVisible(true);
         }
     },
-    clearStats:function(){
+    hideStats:function(){
         var stats = jc.makeStats();
         var prefix = "lbl";
         for (var stat in stats){
             var lblName = prefix+stat;
             if (this[lblName]){
-                this.removeChild(this[lblName],false);
+                this[lblName].setVisible(false);
+            }
+        }
+    },
+    showStats:function(){
+        var stats = jc.makeStats();
+        var prefix = "lbl";
+        for (var stat in stats){
+            var lblName = prefix+stat;
+            if (this[lblName]){
+                this[lblName].setVisible(true);
             }
         }
     },
     updateStats:function(entry){
+        this.showStats();
         var stats = jc.makeStats(entry.name);
         stats = this.makeStringStats(stats);
-
-        var size = cc.size(80, 20);
-        var align = cc.TEXT_ALIGNMENT_LEFT;
-        var fntSize = 16;
-        var fntName = "gow";
-        if (jc.isBrowser){
-            var firstPos = cc.p(230, 490);
-        }else{
-            var firstPos = cc.p(165, 480);
-        }
-
-        var spacing = 37;
-        var zorder = this.statsFrame.getZOrder()+1;
 
         var prefix = "lbl";
         for (var stat in stats){
             var lblName = prefix+stat
-            if (this[lblName]){
-                this.removeChild(this[lblName],false);
-            }
-
-            this[lblName] = this.makeAndPlaceLabel(stats[stat], fntName, fntSize, size, align, firstPos,zorder);
-            firstPos.y-=spacing;
+            //this[lblName].setText(stats[stat]);
         }
-
-
     },
     makeStringStats:function(stats){
         for(var stat in stats){
@@ -228,58 +201,16 @@ var EditTeam = jc.UiElementsLayer.extend({
         }
         return stats;
     },
-    makeAndPlaceLabel:function(value,fntName, fntSize,size , align, pos, zorder, parent){
-        if (parent){
-            parent = this;
-        }
-        var lbl = cc.LabelTTF.create(value, fntName, fntSize, size, align);
-        this.addChild(lbl);
-        lbl.setPosition(pos);
-        lbl.setZOrder(zorder);
-        return lbl;
-    },
     placeElement:function(entry){
 
         //make elment
         var element = spriteDefs[entry.name].elementType;
         var elementSprite = jc.elementSprite(element);
-
-        //if set, remove
-        if (this.statsFrame.element){
-            this.removeChild(this.statsFrame.element,false);
-        }
-
-        if (!this.statsFrame.info){
-            this.statsFrame.info = new jc.CompositeButton();
-            this.statsFrame.info.initWithDefinition({
-                "main":"infoButton.png",
-                "pressed":"infoButton.png"
-            },this.infoTouch.bind(this), this.infoPress.bind(this));
-            if (jc.isBrowser){
-                this.statsFrame.info.setPosition(cc.p(330, 555));
-            }else{
-                this.statsFrame.info.setPosition(cc.p(240, 545));
-            }
-
-            this.addChild(this.statsFrame.info);
+        if (elementSprite == undefined){
+            this.element.setVisible(false);
         }else{
-            this.statsFrame.info.setZOrder(this.statsFrame.getZOrder()+2);
-        }
-
-        //if not none (undefined)
-        if (elementSprite){
-            this.statsFrame.element = elementSprite;
-            this.addChild(this.statsFrame.element);
-            var cardPos = this.statsFrame.getPosition();
-            var cardZOrder = this.statsFrame.getZOrder();
-            var cardTr = this.statsFrame.card.getTextureRect();
-            if (jc.isBrowser){
-                elementSprite.setPosition(cc.p(580, 275));
-            }else{
-                elementSprite.setPosition(cc.p(480, 265));
-            }
-
-            elementSprite.setZOrder(cardZOrder+2);
+            this.element.setVisible(true);
+            jc.swapSpriteFrameName(this.element, elementSprite);
         }
 
     },
@@ -287,63 +218,56 @@ var EditTeam = jc.UiElementsLayer.extend({
         this.buildInfoDialogForSelectedCharacter();
     },
     buildInfoDialogForSelectedCharacter:function(){
-        //title label
-        var sizeTitle = cc.size(200, 20);
-        var sizeDesc = cc.size(330, 200);
-        var align = cc.TEXT_ALIGNMENT_CENTER;
-        var fntSize = 16;
-        var fntName = "gow";
 
-        if(jc.isBrowser){
-            var titlePos = cc.p(795,600);
-            var descPos = cc.p(800,440);
-        }else{
-            var titlePos = cc.p(725,600);
-            var descPos = cc.p(730,440);
-
-        }
-
-
-        var zorder = 1;
-        var entry = spriteDefs[this.lastSelection.name];
-        if (this.infoDialog.title){
-            this.infoDialog.removeChild(this.infoDialog.title,false);
-        }
-        if (this.infoDialog.desc){
-            this.infoDialog.removeChild(this.infoDialog.desc,false);
-        }
-        this.infoDialog.title = this.makeAndPlaceLabel(entry.formalName, fntName, fntSize, sizeTitle, align, titlePos,zorder);
-        this.infoDialog.desc = this.makeAndPlaceLabel(entry.details, fntName, fntSize, sizeDesc, align, descPos,zorder);
-
-        jc.fadeIn(this.infoDialog,255, jc.defaultTransitionTime*2, function(){
-            this.scheduleOnce(this.infoFade.bind(this),2);
-        }.bind(this));
+        //this.infoTitle.setText(entry.formalName);
+        //this.infoText.setText(entry.details);
+        this.doInfoFadeOut = false;
+        this.infoFadeIn();
     },
     infoTouch:function(){
         this.doInfoFadeOut = true;
     },
+    infoFadeIn:function(){
+        this.powerFade('out');
+        jc.fadeIn(this.infoTitle, 255,jc.defaultTransitionTime*2);
+        jc.fadeIn(this.infoText, 255,jc.defaultTransitionTime*2);
+        jc.fadeIn(this.infoDialog, 255, jc.defaultTransitionTime*2, function(){
+            this.scheduleOnce(this.infoFade.bind(this),2);
+        }.bind(this));
+    },
     infoFade:function(){
         if (this.doInfoFadeOut){
-            jc.fadeOut(this.infoDialog,jc.defaultTransitionTime*2);
-            jc.fadeOut(this.infoDialog.title,jc.defaultTransitionTime*2);
-            jc.fadeOut(this.infoDialog.desc,jc.defaultTransitionTime*2);
+            this.infoFadeWorker();
             this.doInfoFadeOut = false;
         }else{
             this.scheduleOnce(this.infoFade.bind(this),2);
         }
     },
-    swapCharacterCard:function(card){
-        var pos = this.statsFrame.getPosition();
-        card.setPosition(cc.p(360,pos.y-10));
-        if (this.statsFrame.card){
-            var swapFade = jc.swapFade.bind(this.mainFrame);
-            swapFade(this.statsFrame.card, card, false);
-        }else{
-            this.mainFrame.addChild(card);
+    powerFade:function(how){
+        for(var i =0;i<5;i++){
+            if (how == 'in'){
+                jc.fadeIn(this["powerIcons"+i], 255,jc.defaultTransitionTime*2);
+                jc.fadeIn(this["powerLevels"+i], 255,jc.defaultTransitionTime*2);
+            }
+
+            if (how == 'out'){
+                jc.fadeOut(this["powerIcons"+i], jc.defaultTransitionTime*2);
+                jc.fadeOut(this["powerLevels"+i],jc.defaultTransitionTime*2);
+            }
+
         }
-        this.statsFrame.card = card;
-        card.setZOrder(1);
-        this.statsFrame.setZOrder(2);
+    },
+    infoFadeWorker:function(){
+        this.powerFade('in');
+        jc.fadeOut(this.infoDialog,jc.defaultTransitionTime*2);
+        jc.fadeOut(this.infoTitle,jc.defaultTransitionTime*2);
+        jc.fadeOut(this.infoText,jc.defaultTransitionTime*2);
+    },
+    swapCharacterCard:function(card){
+        jc.fadeOut(this.card, jc.defaultTransitionTime, function(){
+            jc.swapSpriteFrame(this.card, card);
+            jc.fadeIn(this.card, 255);
+        }.bind(this));
 
     },
     previousChar:function(){
@@ -354,174 +278,339 @@ var EditTeam = jc.UiElementsLayer.extend({
     },
     close:function(){
         this.done();
-        if (this.statsFrame.card){
-            jc.fadeOut(this.statsFrame.card,1);
+        if (this.card){
+            jc.fadeOut(this.card,1);
         }
 
     },
-    windowConfig:{
-        "mainFrame":{
-            "cell":5,
-            "type":"sprite",
-            "transitionIn":"top",
-            "transitionOut":"top",
-            "sprite":"genericBackground.png",
-            "padding":{
-                "top":-10,
-                "left":0
-            },
-            "kids":{
-                "closeButton":{
-                    "cell":9,
-                    "anchor":['center', 'right'],
-                    "padding":{
-                        "top":0,
-                        "left":0
-                    },
-                    "type":"button",
-                    "main":"closeButton.png",
-                    "pressed":"closeButtonPressed.png",
-                    "touchDelegateName":"close"
-
+    windowConfig: {
+        "mainFrame": {
+            "type": "sprite",
+            "applyAdjustments": true,
+            "rect": {
+                "origin": {
+                    "x": 220,
+                    "y": 220
                 },
-                "statsFrame":{
-                    "cell":4,
-                    "anchor":['center', 'left'],
-                    "type":"sprite",
-                    "sprite":"statsFrame.png",
-                    "padding":{
-                        "top":-125,
-                        "left":55,
-                    }
-                },
-                "powerLevels":{
-                    "isGroup":true,
-                    "type":"grid",
-                    "cols":5,
-                    "cell":8,
-                    "anchor":['center'],
-                    "padding":{
-                        "top":9,
-                        "left":65
-                    },
-                    "itemPadding":{
-                        "top":0,
-                        "left":11
-                    },
-                    "members":[
-                        {
-                            "type":"sprite",
-                            "sprite":"level_0000_Layer-6.png"
-                        }
-                    ],
-                    "membersTotal":5
-                },
-                "powerIcons":{
-                    "isGroup":true,
-                    "type":"grid",
-                    "cols":5,
-                    "cell":8,
-                    "anchor":['center', 'bottom'],
-                    "padding":{
-                        "top":-60,
-                        "left":77
-                    },
-                    "itemPadding":{
-                        "top":0,
-                        "left":-2
-                    },
-                    "input":true,
-                    "members":[
-                        {
-                            "type":"sprite",
-                            "input":true,
-                            "sprite":"powerIconSmallFrame.png"
-                        }
-                    ],
-                    "membersTotal":5
-                },
-                "powerDesc":{
-                    "type":"sprite",
-                    "sprite":"powerIconsDescription.png",
-                    "cell":5,
-                    "anchor":['left'],
-                    "padding":{
-                        "top":-45,
-                        "left":145
-                    }
-                },
-                "nextLevel":{
-                    "cell":5,
-                    "anchor":['right'],
-                    "padding":{
-                        "top":45,
-                        "left":5
-                    },
-                    "type":"sprite",
-                    "sprite":"nextLevelCostFrame.png"
-                },
-                "trainButton":{
-                    "type":"button",
-                    "main":"buttonTrain.png",
-                    "pressed":"buttonTrainPressed.png",
-                    "touchDelegateName":"trainPower",
-                    "cell":6,
-                    "anchor":['left'],
-                    "padding":{
-                        "top":50,
-                        "left":5
-                    }
-                },
-                "doneButton":{
-                    "type":"button",
-                    "main":"buttonDone.png",
-                    "pressed":"buttonDonePressed.png",
-                    "touchDelegateName":"doneButton",
-                    "cell":3,
-                    "anchor":['left'],
-                    "padding":{
-                        "top":25,
-                        "left":-30
-                    }
-                },
-                "characterPortraitsFrame":{
-                    "type":"sprite",
-                    "sprite":"characterPortraitsFrame.png",
-                    "cell":2,
-                    "anchor":['top'],
-                    "padding":{
-                        "top":-20,
-                        "left":-90
-                    }
-                },
-                "characterPortraitsLeft":{
-                    "type":"button",
-                    "main":"characterPortraitsButtonLeft.png",
-                    "pressed":"characterPortraitsButtonLeftPressed.png",
-                    "touchDelegateName":"previousChar",
-                    "cell":1,
-                    "anchor":['top', 'left'],
-                    "padding":{
-                        "top":-15,
-                        "left":0
-                    },
-                    z:10,
-                },
-                "characterPortraitsRight":{
-                    "type":"button",
-                    "main":"characterPortraitsButtonRight.png",
-                    "pressed":"characterPortraitsButtonRightPressed.png",
-                    "touchDelegateName":"nextChar",
-                    "cell":3,
-                    "anchor":['top'],
-                    "padding":{
-                        "top":-20,
-                        "left":-30
-                    },
-                    z:10,
+                "size": {
+                    "width": 293,
+                    "height": 293
                 }
+            },
+            "transitionIn": "top",
+            "transitionOut": "top",
+            "sprite": "genericBackground.png",
+            "z": 0,
+            "kids": {
+                "closeButton": {
+                    "type": "button",
+                    "main": "closeButton.png",
+                    "pressed": "closeButtonPressed.png",
+                    "touchDelegateName":"close",
+                    "z": 1,
+                    "pos": {
+                        "x": 1952,
+                        "y": 1340
+                    }
+                },
+                "statsFrame": {
+                    "type": "sprite",
+                    "sprite": "statsFrame.png",
+                    "z": 2,
+                    "pos": {
+                        "x": 604,
+                        "y": 950
+                    }
+                },
+                "powerLevels": {
+                    "isGroup": true,
+                    "type": "grid",
+                    "cols": 5,
+                    "itemPadding": {
+                        "top": 0,
+                        "left": 12
+                    },
+                    "members": [
+                        {
+                            "type": "sprite",
+                            "sprite": "level_0000_Layer-6.png"
+                        }
+                    ],
+                    "membersTotal": 5,
+                    "sprite": "level_0000_Layer-6.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 1189,
+                        "y": 1077
+                    }
+                },
+                "powerIcons": {
+                    "isGroup": true,
+                    "type": "grid",
+                    "cols": 5,
+                    "itemPadding": {
+                        "top": 0,
+                        "left": -2
+                    },
+                    "input": true,
+                    "members": [
+                        {
+                            "type": "sprite",
+                            "input": true,
+                            "sprite": "powerIconSmallFrame.png"
+                        }
+                    ],
+                    "membersTotal": 5,
+                    "sprite": "powerIconSmallFrame.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 1189,
+                        "y": 900
+                    }
+                },
+                "powerDesc": {
+                    "type": "sprite",
+                    "sprite": "powerIconsDescription.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 1519,
+                        "y": 762
+                    }
+                },
+                "nextLevel": {
+                    "type": "sprite",
+                    "sprite": "nextLevelCostFrame.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 1393,
+                        "y": 594
+                    }
+                },
+                "trainButton": {
+                    "type": "button",
+                    "main": "buttonTrain.png",
+                    "pressed": "buttonTrainPressed.png",
+                    "touchDelegateName":"trainPower",
+                    "z": 1,
+                    "pos": {
+                        "x": 1756,
+                        "y": 576
+                    }
+                },
+                "doneButton": {
+                    "type": "button",
+                    "main": "buttonDone.png",
+                    "pressed": "buttonDonePressed.png",
+                    "touchDelegateName":"doneButton",
+                    "z": 1,
+                    "pos": {
+                        "x": 1723,
+                        "y": 153
+                    }
+                },
+                "characterPortraitsFrame": {
+                    "type": "sprite",
+                    "sprite": "characterPortraitsFrame.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 1024,
+                        "y": 371
+                    }
+                },
+                "characterPortraitsLeft": {
+                    "type": "button",
+                    "main": "characterPortraitsButtonLeft.png",
+                    "pressed": "characterPortraitsButtonLeftPressed.png",
+                    "z": 10,
+                    "pos": {
+                        "x": 95,
+                        "y": 375
+                    }
+                },
+                "characterPortraitsRight": {
+                    "type": "button",
+                    "main": "characterPortraitsButtonRight.png",
+                    "pressed": "characterPortraitsButtonRightPressed.png",
+                    "z": 10,
+                    "pos": {
+                        "x": 1955,
+                        "y": 366
+                    }
+                },
+                "info": {
+                    "type": "button",
+                    "main": "infoButton.png",
+                    "pressDelegateName":"infoPress",
+                    "touchDelegateName":"infoTouch",
+                    "z": 5,
+                    "pos": {
+                        "x": 511,
+                        "y": 1218
+                    }
+                },
+                "card": {
+                    "type": "sprite",
+                    "sprite": "gargoyleFire_bg.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 784,
+                        "y": 917
+                    }
+                },
+                "element": {
+                    "type": "sprite",
+                    "sprite": "elements_0000_void.png",
+                    "z": 5,
+                    "pos": {
+                        "x": 1021,
+                        "y": 648
+                    }
+                },
+                "air": {
+                    "type": "sprite",
+                    "sprite": "canAttackAir.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 403,
+                        "y": 1209
+                    }
+                },
+                "ground": {
+                    "type": "sprite",
+                    "sprite": "canAttackGround.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 246,
+                        "y": 1206
+                    }
+                },
+                "lblhp": {
+                    "type": "label",
+                    "text": "HEALTH",
+                    "width": 80,
+                    "height": 80,
+                    "alignment": 0,
+                    "fontSize": 20,
+                    "fontName": "gow",
+                    "z": 3,
+                    "pos": {
+                        "x": 297,
+                        "y": 1060
+                    }
+                },
+                "lbldamage": {
+                    "type": "label",
+                    "text": "DAMAGE",
+                    "width": 80,
+                    "height": 80,
+                    "alignment": 0,
+                    "fontSize": 20,
+                    "fontName": "gow",
+                    "z": 3,
+                    "pos": {
+                        "x": 294,
+                        "y": 978
+                    }
+                },
+                "lblspeed": {
+                    "type": "label",
+                    "text": "SPEED",
+                    "width": 80,
+                    "height": 80,
+                    "alignment": 0,
+                    "fontSize": 20,
+                    "fontName": "gow",
+                    "z": 0,
+                    "pos": {
+                        "x": 301,
+                        "y": 817
+                    }
+                },
+                "lblpower": {
+                    "type": "label",
+                    "text": "POWER",
+                    "width": 80,
+                    "height": 80,
+                    "alignment": 0,
+                    "fontSize": 20,
+                    "fontName": "gow",
+                    "z": 3,
+                    "pos": {
+                        "x": 302,
+                        "y": 741
+                    }
+                },
+                "lblrange": {
+                    "type": "label",
+                    "text": "RANGE",
+                    "width": 80,
+                    "height": 80,
+                    "alignment": 0,
+                    "fontSize": 20,
+                    "fontName": "gow",
+                    "z": 3,
+                    "pos": {
+                        "x": 306,
+                        "y": 661
+                    }
+                },
+                "lblarmor": {
+                    "type": "label",
+                    "text": "ARMOR",
+                    "width": 80,
+                    "height": 80,
+                    "alignment": 0,
+                    "fontSize": 20,
+                    "fontName": "gow",
+                    "z": 3,
+                    "pos": {
+                        "x": 298,
+                        "y": 897
+                    }
+                },
+                "infoDialog": {
+                    "type": "sprite",
+                    "sprite": "titleDescription.png",
+                    "z": 3,
+                    "pos": {
+                        "x": 1508,
+                        "y": 1023
+                    }
+                },
+                "infoTitle": {
+                    "type": "label",
+                    "text": "TITLE",
+                    "width": 200,
+                    "height": 80,
+                    "alignment": 0,
+                    "fontSize": 20,
+                    "fontName": "gow",
+                    "z": 4,
+                    "pos": {
+                        "x": 1565,
+                        "y": 1278
+                    }
+                },
+                "infoText": {
+                    "type": "label",
+                    "text": "DESC",
+                    "width": 200,
+                    "height": 200,
+                    "alignment": 0,
+                    "fontSize": 20,
+                    "fontName": "gow",
+                    "z": 4,
+                    "pos": {
+                        "x": 1291,
+                        "y": 1051
+                    }
+                }
+            },
+            "pos": {
+                "x": 1026.0000000000005,
+                "y": 755.9999999999994
             }
-        },
+        }
     }
 });
 
@@ -530,23 +619,6 @@ EditTeam.getInstance = function() {
     if (!hotr.editTeam){
         hotr.editTeam = new EditTeam();
         hotr.editTeam.retain();
-        if (!jc.isBrowser){
-
-            //native layout mods here
-            hotr.editTeam.windowConfig.mainFrame.padding.top = 0;
-            hotr.editTeam.windowConfig.mainFrame.kids.characterPortraitsRight.padding.left = 116;
-            hotr.editTeam.windowConfig.mainFrame.kids.characterPortraitsFrame.padding.left = 0;
-            hotr.editTeam.windowConfig.mainFrame.kids.powerDesc.padding.left = 200;
-            hotr.editTeam.windowConfig.mainFrame.kids.powerDesc.padding.top = -45;
-            hotr.editTeam.windowConfig.mainFrame.kids.nextLevel.padding.left = 110;
-            hotr.editTeam.windowConfig.mainFrame.kids.trainButton.padding.left = 110;
-            hotr.editTeam.windowConfig.mainFrame.kids.nextLevel.padding.top = 25;
-            hotr.editTeam.windowConfig.mainFrame.kids.trainButton.padding.top = 35;
-            hotr.editTeam.windowConfig.mainFrame.kids.powerLevels.padding.top = 30;
-            hotr.editTeam.windowConfig.mainFrame.kids.powerIcons.padding.top = -5;
-            hotr.editTeam.windowConfig.mainFrame.kids.closeButton.padding.top = -100;
-
-        }
         hotr.editTeam.init();
     }
     return hotr.editTeam;

@@ -23,6 +23,7 @@ cards.ready(function(){
         '../src/jocos2d-js/JCPowerTile.js',
         '../src/jocos2d-js/JCTouchLayer.js',
         '../src/jocos2d-js/JcUiElements.js',
+        '../src/jocos2d-js/JcDesigner.js',
         '../src/jocos2d-js/JCScrollingLayer.js',
         '../src/jocos2d-js/JCWorldLayer.js',
         '../src/jocos2d-js/JCTrace.js',

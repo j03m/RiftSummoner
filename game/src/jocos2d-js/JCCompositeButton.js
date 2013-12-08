@@ -8,7 +8,7 @@ jc.CompositeButton = cc.Sprite.extend({
             throw "Must supply main button state.";
         }
         if (!def.pressed){
-            throw "Must supply pressed button state.";
+            def.pressed = def.main;
         }
         this.def = def;
         this.onTouch = onTouch;

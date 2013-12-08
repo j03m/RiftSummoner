@@ -31,23 +31,22 @@ var cocos2dApp = cc.Application.extend({
         director.setAnimationInterval(1.0 / 60);
 
         cc.LoaderScene.preload(g_maingame, function () {
-            console.log("StartScene");
             director.replaceScene(new this.startScene());
-
-//            hotr.asyncLoader = new cc.Loader();
-//            hotr.asyncLoader.setAsync(true);
-//            hotr.asyncLoader.initWithResources(g_everything, function(){
-//                console.log("***ASYNC LOAD DONE");
-//            }, this);
         }, this);
 
         return true;
     }
 });
 
+//design mode
+if (jc.designMode){
+    var myApp = new cocos2dApp(jc.Designer.scene);
+}else{
+    var myApp = new cocos2dApp(MainGame.scene);
+}
 
-var myApp = new cocos2dApp(MainGame.scene);
-//var myApp = new cocos2dApp(RetinaTest.scene);
+
+
 
 window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
     console.log("Error occured: " + errorMsg);

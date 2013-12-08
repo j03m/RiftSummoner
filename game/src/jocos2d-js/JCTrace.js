@@ -35,7 +35,7 @@ jc.log = function(categories, msg){
 	if (typeof msg == 'string' || msg instanceof String){
 		cc.log(JSON.stringify(categories) + ': ' + msg);
 	}else{
-		cc.log(JSON.stringify(categories) + ': ' + JSON.stringify(msg));
+		cc.log(JSON.stringify(categories) + ': ' + JSON.stringify(msg, null,'\t'));
 	}
 
 };

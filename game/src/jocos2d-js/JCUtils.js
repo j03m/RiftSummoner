@@ -71,7 +71,6 @@ jc.getPowerRating= function(def){
 }
 
 jc.valuePerSecond = function(value, interval){
-
         if (!interval){
             interval = 1;
         }
@@ -79,51 +78,39 @@ jc.valuePerSecond = function(value, interval){
 
 }
 
-jc.getCapability = function(name){
-    var def = spriteDefs[name];
-    var rtrn = {};
-    if (def.gameProperties.targets == 1){ //ground
-        rtrn.ground = jc.makeSpriteWithPlist(uiPlist, uiPng, "canAttackGround.png");
-        rtrn.air = undefined;
-    }
 
-    if (def.gameProperties.targets == 0){ //air
-        rtrn.ground = undefined;
-        rtrn.air = jc.makeSpriteWithPlist(uiPlist, uiPng, "canAttackAir.png");
-    }
+jc.swapSpriteFrameName = function(sprite, frameName){
+    var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(frameName);
+    sprite.setDisplayFrame(frame);
+}
 
-    if (def.gameProperties.targets == 2){ //both
-        rtrn.ground = jc.makeSpriteWithPlist(uiPlist, uiPng, "canAttackGround.png");
-        rtrn.air = jc.makeSpriteWithPlist(uiPlist, uiPng, "canAttackAir.png");;
-    }
-
-    return rtrn;
-
+jc.swapSpriteFrame= function(sprite, frame){
+    sprite.setDisplayFrame(frame);
 }
 
 jc.elementSprite = function(name){
     if (name == "void"){
-        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0000_void.png");
+        return "elements_0000_void.png";
     }
 
     if (name == "water"){
-        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0001_water.png");
+        return "elements_0001_water.png";
     }
 
     if (name == "fire"){
-        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0002_fire.png");
+        return "elements_0002_fire.png";
     }
 
     if (name == "life"){
-        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0003_life.png");
+        return "elements_0003_life.png";
     }
 
     if (name == "earth"){
-        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0004_earth.png");
+        return "elements_0004_earth.png";
     }
 
     if (name == "air"){
-        return jc.makeSpriteWithPlist(uiPlist, uiPng, "elements_0005_air.png");
+        return "elements_0005_air.png";
     }
 
     if (name == "none"){
@@ -163,6 +150,13 @@ jc.cap = function(point, rect){
 jc.makeSimpleSprite = function (image){
     var sprite = new cc.Sprite();
     sprite.initWithSpriteFrameName(image);
+    sprite.retain();
+    return sprite;
+}
+
+jc.makeSpriteFromFile = function (image){
+    var sprite = new cc.Sprite();
+    sprite.initWithFile(image);
     sprite.retain();
     return sprite;
 }
@@ -517,6 +511,11 @@ jc.genericPower = function(name, value, attacker, target, config, element){
     target.addEffect(effect);
 }
 
+jc.toggleVisible=function(element){
+    var visible = element.isVisible();
+    element.setVisible(!visible);
+}
+
 jc.genericPowerApply = function(effectData, effectName, varName,bObj){
     //examine the effect config and apply burning to the victim
     if (GeneralBehavior.applyDamage(bObj.owner, effectData.origin, effectData.damage, effectData.element)){
@@ -580,14 +579,9 @@ jc.insideEllipse = function(major, minor, point, center){
     return final <1;
 }
 
-jc.getCharacterPortrait = function(name, size){
-    var card =  jc.getCharacterCard(name);
-    return card; //todo - revisit - this code is broken
-    return jc.portraitFromCard(name, card,size);
-}
 
 jc.getCharacterCardFrame = function(name){
-    var frame = name+".pic.png";
+    var frame = jc.getCardFrameName(name);
     var indexNumber = spriteDefs[name].cardIndex;
     if (indexNumber == undefined){
         indexNumber = 0;
@@ -598,6 +592,7 @@ jc.getCharacterCardFrame = function(name){
 
     return cc.SpriteFrameCache.getInstance().getSpriteFrame(frame);
 }
+
 
 jc.getCorrectPortraitPosition = function(position){
     //portraits coords are ipadhd
@@ -611,33 +606,20 @@ jc.getCorrectPortraitPosition = function(position){
     return newPos;
 }
 
-jc.portraitFromCard = function(name,card, size){
-    var capturePos = jc.getCorrectPortraitPosition(spriteDefs[name].portraitXy);
-    if (!capturePos){
-        var cardSize = card.getContentSize();
-        capturePos = cc.p(cardSize.width/2,cardSize.height/2);
-    }
-    var tr = card.getTextureRect();
-    var cs = card.getContentSize();
-    var widthDiff = cs.width - tr.width;
-    var heightDiff = cs.height - tr.height;
-    capturePos.x-=widthDiff;
-    capturePos.y-=heightDiff;
-    var rect = cc.rect(capturePos.x, capturePos.y,size.width,size.height);
-    card.setTextureRect(rect);
-    card.setContentSize(size);
-    return card;
-}
 
 jc.getCharacterCard = function(name){
-    var frame = name+"" +
-        "_bg.png";
+    var frame = jc.getCardFrameName(name);
     var indexNumber = spriteDefs[name].cardIndex;
     if (indexNumber == undefined){
         indexNumber = 0;
     }
     return jc.makeSpriteWithPlist(cardsPlists[indexNumber], cardsPngs[indexNumber], frame);
 }
+
+jc.getCardFrameName = function(name){
+    return name + "_bg.png";
+}
+
 
 
 jc.formations = {
