@@ -64,21 +64,15 @@ jc.WorldLayer = jc.TouchLayer.extend({
         var scale = this.getScaleWorld();
         scale = this.getClosestCorrectScale(scale);
         var converted = this.convertToLayerPosition(cc.p(this.worldSize.width/2, this.worldSize.height/2));
-        if (jc.isBrowser){
-            var action = jc.PanAndZoom.create(rate, converted, scale.x, scale.y );
-            this.runActionWithCallback(action, done);
-        }else{
-            done();
-        }
-    },
 
+        this.doScale(scale, converted, rate, done);
+
+    },
     doScale:function(scale, pos, rate, callback){
-        if (jc.isBrowser){
-            var action = jc.PanAndZoom.create(rate, pos , scale.x, scale.y );
-            this.runActionWithCallback(action, callback);
-        }else{
-            callback();
-        }
+        var actionMove = cc.MoveTo.create(rate, pos);
+        var scaleTo = cc.ScaleTo.create(rate, scale.x, scale.y);
+        this.runActionWithCallback(actionMove, callback);
+        this.runAction(scaleTo);
 
     },
     getClosestCorrectScale:function(scale){

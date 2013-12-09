@@ -1,4 +1,4 @@
 # Can ignore specific files
 .DS_Store
 workspace.iml
-game/.idea
+game/.idea/*
