@@ -16,7 +16,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
             this.addChild(this.highlight);
             this.name = "SelectTeam";
             jc.layerManager.pushLayer(this);
-            ;
+
 
             //if blob formation is not set
             //use it
@@ -184,135 +184,114 @@ var SelectTeam = jc.UiElementsLayer.extend({
         return true;
     },
     windowConfig:{
-        "mainFrame":{
-            "cell":5,
-            "type":"sprite",
-            "transitionIn":"top",
-            "transitionOut":"top",
-            "sprite":"genericBackground.png",
-            "padding":{
-                "top":-10,
-                "left":0
-            },
-            "z":1,
-            "kids":{
-//                "closeButton":{
-//                    "cell":9,
-//                    "anchor":['center', 'right'],
-//                    "padding":{
-//                        "top":-15,
-//                        "left":0
-//                    },
-//                    "type":"button",
-//                    "main":"closeButton.png",
-//                    "pressed":"closeButton.png",
-//                    "touchDelegateName":"close",
-//                    "z":2,
-//
-//                },
-                "gridCells":{
-                    "isGroup":true,
-                    "z":2,
-                    "type":"grid",
-                    "cols":4,
-                    "cell":7,
-                    "anchor":['top'],
-                    "padding":{
-                        "top":50,
-                        "left":10
+        "mainFrame": {
+            "type": "sprite",
+            "transitionIn": "top",
+            "transitionOut": "top",
+            "sprite": "genericBackground.png",
+            "z": 0,
+            "kids": {
+                "gridCells": {
+                    "isGroup": true,
+                    "z": 1,
+                    "type": "grid",
+                    "cols": 4,
+                    "itemPadding": {
+                        "top": 3,
+                        "left": 4
                     },
-                    "itemPadding":{
-                        "top":3,
-                        "left":4
-                    },
-
-                    "input":true,
-                    "members":[
+                    "input": true,
+                    "members": [
                         {
-                            "type":"sprite",
-                            "input":true,
-                            "sprite":"portraitSmallDarkBackground.png"
+                            "type": "sprite",
+                            "input": true,
+                            "sprite": "portraitSmallDarkBackground.png"
                         }
                     ],
-                    "membersTotal":12
+                    "membersTotal": 12,
+                    "sprite": "portraitSmallDarkBackground.png",
+                    "pos": {
+                        "x": 236,
+                        "y": 1098
+                    }
                 },
-                "formation":{
-                    "cell":9,
-                    "anchor":['left'],
-                    "padding":{
-                        "top":50,
-                        "left":-200
-                    },
-                    "type":"sprite",
-                    "sprite":"formationFrame.png",
-                    "z":2,
+                "formation": {
+                    "type": "sprite",
+                    "sprite": "formationFrame.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 1574,
+                        "y": 1006
+                    }
                 },
-                "description":{
-                    "cell":5,
-                    "anchor":['right'],
-                    "padding":{
-                        "top":40,
-                        "left":123
-                    },
-                    "type":"sprite",
-                    "sprite":"descriptionWindow.png"
+                "description": {
+                    "type": "sprite",
+                    "sprite": "descriptionWindow.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 1570,
+                        "y": 574
+                    }
                 },
-//                "formationSelect":{
-//                    "isGroup":true,
-//                    "type":"line",
-//                    "cell":2,
-//                    "anchor":['roght', 'top'],
-//                    "padding":{
-//                        "top":10,
-//                        "left":70
-//                    },
-//
-//                    "members":[
-//                        {
-//                            "type":"button",
-//                            "main":"leftArrowFormationName.png",
-//                            "pressed":"leftArrowFormationName.png",
-//                            "touchDelegateName":"previousFormation"
-//                        },
-//                        {
-//                            "type":"sprite",
-//                            "sprite":"formationNameFrame.png"
-//                        },
-//                        {
-//                            "type":"button",
-//                            "main":"rightArrowFormationName.png",
-//                            "pressed":"rightArrowFormationName.png",
-//                            "touchDelegateName":"nextFormation"
-//                        }
-//                    ]
-//                },
-                "fightButton":{
-                    "cell":2,
-                    "anchor":['right'],
-                    "padding":{
-                        "top":0,
-                        "left":0
-                    },
-                    "type":"button",
-                    "main":"buttonFight.png",
-                    "pressed":"buttonFight.png",
-                    "touchDelegateName":"fightStart"
+                "prevFormation": {
+                    "type": "button",
+                    "main": "leftArrowFormationName.png",
+                    "pressed": "leftArrowFormationName.png",
+                    "touchDelegateName": "previousFormation",
+                    "z": 2,
+                    "pos": {
+                        "x": 1238,
+                        "y": 346
+                    }
                 },
-                "kikButton":{
-                    "cell":3,
-                    "anchor":['left'],
-                    "padding":{
-                        "top":0,
-                        "left":-10
-                    },
-                    "type":"button",
-                    "main":"buttonKikNormal.png",
-                    "pressed":"buttonKikPressed.png",
-                    "touchDelegateName":"kikStart"
-
+                "theFormation": {
+                    "type": "sprite",
+                    "sprite": "formationNameFrame.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 1570,
+                        "y": 348
+                    }
+                },
+                "nextFormation": {
+                    "type": "button",
+                    "main": "rightArrowFormationName.png",
+                    "pressed": "rightArrowFormationName.png",
+                    "touchDelegateName": "nextFormation",
+                    "z": 2,
+                    "pos": {
+                        "x": 1904,
+                        "y": 346
+                    }
+                },
+                "fightButton": {
+                    "type": "button",
+                    "main": "buttonFight.png",
+                    "pressed": "buttonFight.png",
+                    "touchDelegateName": "fightStart",
+                    "z": 1,
+                    "pos": {
+                        "x": 1478,
+                        "y": 172
+                    }
+                },
+                "kikButton": {
+                    "type": "button",
+                    "main": "buttonKikNormal.png",
+                    "pressed": "buttonKikPressed.png",
+                    "touchDelegateName": "kikStart",
+                    "z": 1,
+                    "pos": {
+                        "x": 1712,
+                        "y": 172
+                    }
                 }
+            },
+            "pos": {
+                "x": 1020,
+                "y": 679
             }
-        },
+        }
     }
 });
 
@@ -325,24 +304,7 @@ SelectTeam.scene = function() {
         hotr.selectTeamScene.layer = new SelectTeam();
         hotr.selectTeamScene.layer.retain();
         hotr.selectTeamScene.addChild(hotr.selectTeamScene.layer);
-
-        if (!jc.isBrowser){
-
-            //native layout mods here
-            hotr.selectTeamScene.layer.windowConfig.mainFrame.padding.top = -20;
-            hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.gridCells.padding.left = -35;
-            hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.formation.padding.left = -100;
-            hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.description.padding.left = 225;
-            hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.fightButton.padding.left = 125;
-            hotr.selectTeamScene.layer.windowConfig.mainFrame.padding.top = 0;
-            delete hotr.selectTeamScene.layer.windowConfig.mainFrame.kids.kikButton;
-        }else{
-            //todo: kik button delete for facebook/twitter
-        }
-
-
         hotr.selectTeamScene.layer.init();
-
     }
     return hotr.selectTeamScene;
 };

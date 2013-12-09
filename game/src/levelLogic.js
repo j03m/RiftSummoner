@@ -84,11 +84,7 @@ var temp =  [
         "data":{}
     },
     {
-        "name":"goblin",
-        "data":{}
-    },
-    {
-        "name":"goblin",
+        "name":"orc",
         "data":{}
     },
     {
@@ -96,21 +92,25 @@ var temp =  [
         "data":{}
     },
     {
-        "name":"wizard",
+        "name":"orc",
         "data":{}
     },
-    {
-        "name":"wizard",
-        "data":{}
-    },
-    {
-        "name":"wizard",
-        "data":{}
-    },
-    {
-        "name":"wizard",
-        "data":{}
-    }
+//    {
+//        "name":"wizard",
+//        "data":{}
+//    },
+//    {
+//        "name":"wizard",
+//        "data":{}
+//    },
+//    {
+//        "name":"wizard",
+//        "data":{}
+//    },
+//    {
+//        "name":"wizard",
+//        "data":{}
+//    }
 ]
 
 hotr.levelLogic.getTeamForLevel = function(level){

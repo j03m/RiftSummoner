@@ -67,6 +67,8 @@ jc.WorldLayer = jc.TouchLayer.extend({
         if (jc.isBrowser){
             var action = jc.PanAndZoom.create(rate, converted, scale.x, scale.y );
             this.runActionWithCallback(action, done);
+        }else{
+            done();
         }
     },
 

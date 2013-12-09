@@ -277,9 +277,15 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 window.setScaleY(config.scale/100);
             }
         }else if (type == "label"){
-            var lblSize = cc.size(config.width, config.height);
-
-            window = cc.LabelTTF.create(config.text, config.fontName, config.fontSize, lblSize, config.alignment);
+            var fntSize, lblSize;
+            if (!this.designMode){
+                fntSize = config.fontSize*jc.assetScaleFactor;
+                lblSize = cc.size(config.width*jc.assetScaleFactor, config.height*jc.assetScaleFactor);
+            }else{
+                fntSize = config.fontSize;
+                lblSize = cc.size(config.width, config.height);
+            }
+            window = cc.LabelTTF.create(config.text, config.fontName, fntSize, lblSize, config.alignment);
             if (config.color){
                 window.setColor(config.color);
             }

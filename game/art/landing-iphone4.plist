@@ -7,11 +7,11 @@
             <key>battleButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{222,1118},{218,96}}</string>
+                <string>{{716,724},{218,96}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{218,96}}</string>
                 <key>sourceSize</key>
@@ -20,28 +20,15 @@
             <key>battleButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{688,934},{226,103}}</string>
+                <string>{{317,724},{226,103}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{226,103}}</string>
                 <key>sourceSize</key>
                 <string>{226,103}</string>
-            </dict>
-            <key>landingBackground.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,724},{684,392}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{684,392}}</string>
-                <key>sourceSize</key>
-                <string>{684,392}</string>
             </dict>
             <key>landingScreen.png</key>
             <dict>
@@ -59,7 +46,7 @@
             <key>musicButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{685,1137},{79,77}}</string>
+                <string>{{665,944},{79,77}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +59,7 @@
             <key>musicButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{604,1118},{79,77}}</string>
+                <string>{{584,944},{79,77}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,11 +72,11 @@
             <key>questButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1118},{218,96}}</string>
+                <string>{{618,724},{218,96}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{218,96}}</string>
                 <key>sourceSize</key>
@@ -98,11 +85,11 @@
             <key>questButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{688,829},{226,103}}</string>
+                <string>{{212,724},{226,103}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{226,103}}</string>
                 <key>sourceSize</key>
@@ -111,7 +98,7 @@
             <key>soundButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{523,1118},{79,77}}</string>
+                <string>{{503,944},{79,77}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +111,7 @@
             <key>soundButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{442,1118},{79,77}}</string>
+                <string>{{422,944},{79,77}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,11 +124,11 @@
             <key>storeButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{688,1039},{218,96}}</string>
+                <string>{{520,724},{218,96}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{218,96}}</string>
                 <key>sourceSize</key>
@@ -150,7 +137,7 @@
             <key>storeButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{916,724},{226,103}}</string>
+                <string>{{107,724},{226,103}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +150,7 @@
             <key>summonButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{916,952},{218,96}}</string>
+                <string>{{422,724},{218,96}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -176,11 +163,11 @@
             <key>summonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{688,724},{226,103}}</string>
+                <string>{{2,724},{226,103}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{226,103}}</string>
                 <key>sourceSize</key>
@@ -194,9 +181,9 @@
             <key>realTextureFileName</key>
             <string>landing-iphone4.png</string>
             <key>size</key>
-            <string>{1024,2048}</string>
+            <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e351e7314612e5d730979c96fdb1e0da:f2149a96cf4e1b7481331338967135b4:7629672902ef72e6540dbd10c0f4d8e8$</string>
+            <string>$TexturePacker:SmartUpdate:bcd21afee01cdf8b0f39c29c04b0a6af:67950c39f0c183f7b9d390a2aa428bba:7629672902ef72e6540dbd10c0f4d8e8$</string>
             <key>textureFileName</key>
             <string>landing-iphone4.png</string>
         </dict>

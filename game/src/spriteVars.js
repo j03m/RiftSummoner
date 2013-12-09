@@ -54,7 +54,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 150,
+			"speed": 160,
 			"damage": 250,
 			"missile": "fireball",
 			"missileOffset": {
@@ -88,7 +88,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 700,
-			"speed": 250,
+			"speed": 260,
 			"movementType": 0,
 			"missile": "greenbullet",
 			"missileOffset": {
@@ -161,7 +161,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"gameProperties": {
 			"MaxHP": 1300,
-			"speed": 100,
+			"speed": 50,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 25,
@@ -770,7 +770,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 75
+			"targetRadius": 125
 		},
 		"animations": {
 			"move": {
@@ -1171,7 +1171,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"MaxHP": 1500,
-			"speed": 50,
+			"speed": 15,
 			"damage": 300,
 			"actionDelays": {
 				"attack": 1
@@ -1311,14 +1311,14 @@ var spriteDefs = {
 		},
 		"animations": {
 			"move": {
-				"start": 170,
-				"end": 190,
+				"start": 11,
+				"end": 30,
 				"delay": 0.03,
 				"type": 0
 			},
 			"attack": {
-				"start": 245,
-				"end": 320,
+				"start": 31,
+				"end": 70,
 				"delay": 0.025,
 				"type": 1
 			},
@@ -1329,8 +1329,8 @@ var spriteDefs = {
 				"type": 0
 			},
 			"dead": {
-				"start": 460,
-				"end": 560,
+				"start": 71,
+				"end": 95,
 				"delay": 0.03,
 				"type": 1
 			}

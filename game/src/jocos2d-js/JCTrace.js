@@ -23,7 +23,8 @@ var tracers = {
     'resource':0,
     'ui':0,
     'scroller':1,
-    'utilEffects':1
+    'utilEffects':1,
+    'rangeBehavior':1
 };
 
 jc.log = function(categories, msg){

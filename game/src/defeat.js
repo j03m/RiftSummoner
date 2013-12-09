@@ -36,28 +36,29 @@ var Defeat = jc.UiElementsLayer.extend({
     onDone:function(){},
     windowConfig:{
         "mainFrame":{
-            "cell":5,
-            "type":"sprite",
-            "transitionIn":"topToMid",
-            "transitionOut":"top",
-            "sprite":"defeatWindow.png",
-            "kids":{
-                "okButton":{
-                    "cell":1,
-                    "anchor":['center'],
-                    "padding":{
-                        "top":70,
-                        "left":53
-                    },
-                    "type":"button",
-                    "main":"buttonOk.png",
-                    "pressed":"buttonOk.png",
-                    "touchDelegateName":"close",
-                    "z":1
-
+            "cell": 5,
+            "type": "sprite",
+            "transitionIn": "topToMid",
+            "transitionOut": "top",
+            "sprite": "defeatWindow.png",
+            "kids": {
+                "okButton": {
+                    "type": "button",
+                    "main": "buttonOk.png",
+                    "pressed": "buttonOk.png",
+                    "touchDelegateName": "close",
+                    "z": 1,
+                    "pos": {
+                        "x": 510,
+                        "y": 125
+                    }
                 }
+            },
+            "z": 0,
+            "pos": {
+                "x": 1040,
+                "y": 792.0000000000005
             }
-
         }
     }
 });

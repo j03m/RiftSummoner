@@ -68,6 +68,7 @@ RangeBehavior.prototype.doMissile = function(){
         var vector = this.getVectorTo(this.locked.getBasePosition(), this.owner.getBasePosition());
         var timeToImpact = vector.distance/missileType.speed;
         if (!this.missile){
+            jc.log(['rangeBehavior'], 'Animating: ' + this.owner.name + ' missle: ' + missileName);
             this.missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
             this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
             this.missile.runAction(this.missileAnimation);
@@ -114,11 +115,11 @@ RangeBehavior.prototype.doMissile = function(){
         var callback = cc.CallFunc.create(function(){
             this.hitLogic();
             this.owner.layer.removeChild(this.missile, false);
-            this.firing = false;
+
             if (this.locked){
                 jc.playEffectOnTarget(missileType.effect, this.locked, this.owner.layer);
             }
-
+            this.firing = false;
 
         }.bind(this));
         var seq = cc.Sequence.create(moveTo, callback);

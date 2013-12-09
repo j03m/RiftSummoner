@@ -94,11 +94,11 @@ var powerConfig = {
         var config = spriteDefs[value].deathMods["explodePoison"];
         //initial explosion
         var effect = jc.playEffectOnTarget("explosion", this.locked, this.owner.layer);
-        var fillColor = new cc.Color3B();
-        fillColor.r = 0;
-        fillColor.b = 0;
-        fillColor.g = 255;
-        effect.setColor (fillColor);
+//        var fillColor = new cc.Color3B();
+//        fillColor.r = 0;
+//        fillColor.b = 0;
+//        fillColor.g = 255;
+//        effect.setColor (fillColor);
 
         var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.locked.getBasePosition());
 
@@ -159,38 +159,38 @@ var powerConfig = {
         jc.genericPower("burn", value, this.owner, this.locked);
     },
     "burn-apply":function(effectData){
-        var fillColor = new cc.Color3B();
-        fillColor.r = 255;
-        fillColor.b = 0;
-        fillColor.g = 0;
-        this.owner.setColor(fillColor);
+//        var fillColor = new cc.Color3B();
+//        fillColor.r = 255;
+//        fillColor.b = 0;
+//        fillColor.g = 0;
+//        this.owner.setColor(fillColor);
         jc.genericPowerApply(effectData, "fire", "burnEffect", this);
     },
     "burn-remove":function(){
-        var fillColor = new cc.Color3B();
-        fillColor.r = 255;
-        fillColor.b = 255;
-        fillColor.g = 255;
-        this.owner.setColor(fillColor);
+//        var fillColor = new cc.Color3B();
+//        fillColor.r = 255;
+//        fillColor.b = 255;
+//        fillColor.g = 255;
+//        this.owner.setColor(fillColor);
         jc.genericPowerRemove("burnEffect", "fire", this);
     },
     "poison":function(value){
         jc.genericPower("poison", value, this.owner, this.locked);
     },
     "poison-apply":function(effectData){
-        var fillColor = new cc.Color3B();
-        fillColor.r = 0;
-        fillColor.b = 0;
-        fillColor.g = 255;
-        this.owner.setColor(fillColor);
+//        var fillColor = new cc.Color3B();
+//        fillColor.r = 0;
+//        fillColor.b = 0;
+//        fillColor.g = 255;
+//        this.owner.setColor(fillColor);
         jc.genericPowerApply(effectData, "poison", "poisonEffect", this);
     },
     "poison-remove":function(){
-        var fillColor = new cc.Color3B();
-        fillColor.r = 255;
-        fillColor.b = 255;
-        fillColor.g = 255;
-        this.owner.setColor(fillColor);
+//        var fillColor = new cc.Color3B();
+//        fillColor.r = 255;
+//        fillColor.b = 255;
+//        fillColor.g = 255;
+//        this.owner.setColor(fillColor);
         jc.genericPowerRemove("poisonEffect", "poison", this)
     }
 

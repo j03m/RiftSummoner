@@ -1,5 +1,5 @@
 var jc = jc || {};
-jc.dataTarget = 'http://localhost/';
+jc.dataTarget = 'http://www.riftsummoner.com:1337/';
 if (!jc.isBrowser){
     var window = jc;
 

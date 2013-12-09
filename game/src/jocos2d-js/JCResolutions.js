@@ -8,14 +8,14 @@ jc.resolutions = {};
 
 jc.resolutions.iphone = cc.size(480,320);
 jc.resolutions.iphone.scale =   0.234375;
+jc.resolutions.iphone.adjusty = -30;
 jc.resolutions.iphone4 = cc.size(960,640);
 jc.resolutions.iphone4.scale = 0.46875;
-jc.resolutions.iphone4.adjusty = -30; //-80;
+jc.resolutions.iphone4.adjusty = -30;
 jc.resolutions.iphone4.adjustx = 0;
-
-//jc.resolutions.iphone5 = cc.size(1136,640);
-//jc.resolutions.iphone5.scale = 0.554688;
-//jc.resolutions.ipad = cc.size(1024, 768);
+jc.resolutions.iphone5 = cc.size(1136,640);
+jc.resolutions.iphone5.scale = 0.554688;
+jc.resolutions.iphone5.adjusty = -30;
 jc.resolutions.ipadhd = cc.size(2048, 1536);
 jc.resolutions.ipadhd.scale = 1;
 
@@ -38,7 +38,10 @@ jc.bestAssetDirectory = function(){
         }else{
             jc.screenSize = cc.size(screen.width*dpr, screen.height*dpr);
         }
-        jc.actualSize = cc.size(960,640); //CANVAS SIZE MUST GO HERE
+
+        var canvas =  window.document.getElementById("gameCanvas");
+        jc.actualSize = cc.size(canvas.width, canvas.height);
+
     }else{
         jc.actualSize = cc.Director.getInstance().getWinSize();
         jc.screenSize = jc.actualSize;

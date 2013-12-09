@@ -21,7 +21,7 @@ var Loading = jc.UiElementsLayer.extend({
     inTransitionsComplete:function(){
         //put the spinner in
         this.animationDone = true;
-        this.spinner = jc.makeSpriteWithPlist(loadingPlist,loadingPng, "loader1.png");
+        this.spinner = jc.makeSpriteWithPlist(loadingPlist,loadingPng, "loader.1.png");
         this.addChild(this.spinner);
         this.spinner.setPosition(cc.p((this.winSize.width/2)-3, (this.winSize.height/2) + 51));
         this.startLoading();
@@ -168,11 +168,11 @@ var Loading = jc.UiElementsLayer.extend({
             if (part > parts){
                 part = parts;
             }
-            var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader"+part+".png");
+            var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader."+part+".png");
             this.spinner.setDisplayFrame(frame)
 
             if (tempDoneCount >= this.totalItemsToLoad){
-                var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader20.png");
+                var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader.20.png");
                 this.spinner.setDisplayFrame(frame);
                 this.scheduleOnce(this.raiseComplete.bind(this));
 

@@ -199,7 +199,6 @@ jc.unshade = function(item){
 }
 
 jc.fadeIn= function(item, opacity , time, action){
-    jc.dumpStack(['fadeOut']);
     if (!time){
         time = jc.defaultTransitionTime;
     }
@@ -245,7 +244,6 @@ jc.swapFade = function(swapOut, swapIn){
 }
 
 jc.fadeOut=function(item, time, action){
-    jc.dumpStack(['fadeOut']);
     if (!time){
         time = jc.defaultTransitionTime;
     }
@@ -323,11 +321,11 @@ jc.makeAnimationFromRange = function(name, config){
 jc.playTintedEffectOnTarget = function(name, target, layer, child, r, g, b){
     var effect = jc.playEffectOnTarget(name, target, layer, child);
     if (effect){
-        var fillColor = new cc.Color3B();
-        fillColor.r =r;
-        fillColor.b = b;
-        fillColor.g = g;
-        effect.setColor(fillColor);
+//        var fillColor = new cc.Color3B();
+//        fillColor.r =r;
+//        fillColor.b = b;
+//        fillColor.g = g;
+//        effect.setColor(fillColor);
     }
 
     return effect;

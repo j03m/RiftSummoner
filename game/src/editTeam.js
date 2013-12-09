@@ -421,6 +421,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "type": "button",
                     "main": "characterPortraitsButtonLeft.png",
                     "pressed": "characterPortraitsButtonLeftPressed.png",
+                    "touchDelegateName":"previousChar",
                     "z": 10,
                     "pos": {
                         "x": 95,
@@ -431,6 +432,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "type": "button",
                     "main": "characterPortraitsButtonRight.png",
                     "pressed": "characterPortraitsButtonRightPressed.png",
+                    "touchDelegateName":"nextChar",
                     "z": 10,
                     "pos": {
                         "x": 1955,
@@ -508,7 +510,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "fontName": "gow",
                     "z": 3,
                     "pos": {
-                        "x": 294,
+                        "x": 297,
                         "y": 978
                     }
                 },
@@ -520,9 +522,9 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "alignment": 0,
                     "fontSize": 20,
                     "fontName": "gow",
-                    "z": 0,
+                    "z": 3,
                     "pos": {
-                        "x": 301,
+                        "x": 297,
                         "y": 817
                     }
                 },
@@ -536,7 +538,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "fontName": "gow",
                     "z": 3,
                     "pos": {
-                        "x": 302,
+                        "x": 297,
                         "y": 741
                     }
                 },
@@ -550,7 +552,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "fontName": "gow",
                     "z": 3,
                     "pos": {
-                        "x": 306,
+                        "x": 297,
                         "y": 661
                     }
                 },
@@ -564,7 +566,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "fontName": "gow",
                     "z": 3,
                     "pos": {
-                        "x": 298,
+                        "x": 297,
                         "y": 897
                     }
                 },
