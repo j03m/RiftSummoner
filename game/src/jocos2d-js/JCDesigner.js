@@ -3,6 +3,7 @@ jc.Designer = jc.UiElementsLayer.extend({
     init: function() {
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(cardsPlists[0]);
             var guideSprite = new cc.Sprite();
             guideSprite.initWithFile(guide);
             cc.SpriteFrameCache.getInstance().addSpriteFrame(guideSprite.displayFrame(), "guide");
@@ -17,10 +18,10 @@ jc.Designer = jc.UiElementsLayer.extend({
         this.start();
     },
     targetTouchHandler:function(type, touch, sprites) {
-        var theSprite = _.sortBy(sprites, function(sprite){
+        var sorted = _.sortBy(sprites, function(sprite){
            return sprite.getZOrder();
-        })[sprites.length-1];
-
+        });
+        var theSprite = sorted[sprites.length-1]
         if (type == jc.touchBegan){
             jc.log(['console'], theSprite.name);
             this.moving = theSprite;
@@ -66,29 +67,138 @@ jc.Designer = jc.UiElementsLayer.extend({
 
     },
     windowConfig:{
-        "mainFrame":{
+        "mainFrame": {
             "cell": 5,
             "type": "sprite",
-            "transitionIn": "topToMid",
+            "transitionIn": "top",
             "transitionOut": "top",
-            "sprite": "defeatWindow.png",
+            "applyAdjustments": true,
+            "sprite": "genericBackground.png",
+            "z": 1,
             "kids": {
-                "okButton": {
+                "backButton": {
                     "type": "button",
-                    "main": "buttonOk.png",
-                    "pressed": "buttonOk.png",
-                    "touchDelegateName": "close",
-                    "z": 1,
+                    "main": "backButton.png",
+                    "pressed": "backButtonPressed.png",
+                    "touchDelegateName": "back",
+                    "z": 2,
                     "pos": {
-                        "x": 510,
-                        "y": 85
+                        "x": 186,
+                        "y": 1059
+                    }
+                },
+                "facebookButton": {
+                    "type": "button",
+                    "main": "facebookButton.png",
+                    "pressed": "facebookButtonPressed.png",
+                    "touchDelegateName": "fb",
+                    "z": 2,
+                    "pos": {
+                        "x": 156,
+                        "y": 807
+                    }
+                },
+                "gameCenterButton": {
+                    "type": "button",
+                    "main": "gameCenterButton.png",
+                    "pressed": "gameCenterPressed.png",
+                    "touchDelegateName": "gameCenter",
+                    "z": 2,
+                    "pos": {
+                        "x": 157,
+                        "y": 626
+                    }
+                },
+                "storeButton": {
+                    "type": "button",
+                    "main": "mpstoreButton.png",
+                    "pressed": "mpstoreButtonPressed.png",
+                    "touchDelegateName": "store",
+                    "z": 2,
+                    "pos": {
+                        "x": 345,
+                        "y": 1059
+                    }
+                },
+                "twitterButton": {
+                    "type": "button",
+                    "main": "tweeterButton.png",
+                    "pressed": "tweeterButtonPressed.png",
+                    "touchDelegateName": "tweet",
+                    "z": 2,
+                    "pos": {
+                        "x": 336,
+                        "y": 807
+                    }
+                },
+                "itemWindow": {
+                    "type": "sprite",
+                    "sprite": "itemWindow.png",
+                    "z": 2,
+                    "pos": {
+                        "x": 1168,
+                        "y": 1164
+                    },
+                    "kids": {
+                        "pokeButton": {
+                            "type": "button",
+                            "main": "pokeButton.png",
+                            "pressed": "pokeButtonPressed.png",
+                            "touchDelegateName": "poke",
+                            "z": 3,
+                            "pos": {
+                                "x": 1072,
+                                "y": 135
+                            }
+                        },
+                        "itemFrame": {
+                            "type": "sprite",
+                            "sprite": "imageFrame.png",
+                            "z": 3,
+                            "pos": {
+                                "x": 156,
+                                "y": 138
+                            }
+                        },
+                        "closeButton": {
+                            "type": "button",
+                            "main": "closeButton.png",
+                            "pressed": "closeButtonPressed.png",
+                            "touchDelegateName": "close",
+                            "z": 3,
+                            "pos": {
+                                "x": 1333,
+                                "y": 135
+                            }
+                        }
+                    }
+                },
+                "startButton": {
+                    "type": "button",
+                    "main": "startButton.png",
+                    "pressed": "startButtonPressed.png",
+                    "touchDelegateName": "startGame",
+                    "z": 2,
+                    "pos": {
+                        "x": 264,
+                        "y": 1242
+                    }
+                },
+                "messageButton": {
+                    "type": "button",
+                    "main": "messageButton.png",
+                    "pressed": "messageButtonPressed.png",
+                    "touchDelegateName": "msg",
+                    "z": 2,
+                    "pos": {
+                        "x": 339,
+                        "y": 627
                     }
                 }
             },
-            "z": 0,
             "pos": {
-                "x": 1040,
-                "y": 792.0000000000005
+                "x": 1018,
+                "y": 778.0000000000002
             }
         }
     }

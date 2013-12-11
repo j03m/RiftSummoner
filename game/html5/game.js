@@ -1,8 +1,9 @@
-cards.ready(function(){
+
     var hotrSrc = [
         '../src/jocos2d-js/JCBrowser.js',
         '../src/kikClientMock.js',
         '../zerver/blobApi.js',
+        '../zerver/multiplayerApi.js',
         '../src/underscore-min.js',
         '../src/async.js',
         '../src/spriteVars.js',
@@ -14,6 +15,7 @@ cards.ready(function(){
         '../src/jocos2d-js/JCResolutions.js',
         '../src/resource.js',
         '../src/blobOperations.js',
+        '../src/multiplayerOperations.js',
         '../src/levelLogic.js',
         '../src/jocos2d-js/JCUtils.js',
         '../src/jocos2d-js/JCLocalStorage.js',
@@ -51,11 +53,9 @@ cards.ready(function(){
         '../src/retinaTest.js',
         '../src/Main.js',
         '../src/PowerHud.js',
-        'gameHtml5.js'
+        '../src/multiplayer.js',
+        'html5/gameHtml5.js'
     ]
-
-
-
 
     var d = document;
     var c = {
@@ -75,9 +75,8 @@ cards.ready(function(){
             '<a href="http://www.google.com/chrome" target="_blank"><img src="http://www.google.com/intl/zh-CN/chrome/assets/common/images/chrome_logo_2x.png" border="0"/></a>';
         var p = d.getElementById(c.tag).parentNode;
         p.insertBefore(s);
-        return;
-    }
 
+    }
 
     window.addEventListener('DOMContentLoaded', function () {
         //first load engine file if specified
@@ -101,4 +100,4 @@ cards.ready(function(){
         s.id = 'cocos2d-html5';
         //else if single file specified, load singlefile
     });
-});
+

@@ -1,9 +1,3 @@
-var hotrSrc = [
-    '../zerver/blobApi.js',
-    '../hotr.min.js?version=2',
-    'gameHtml5.js'
-]
-
 var cocos2dApp = cc.Application.extend({
     config:document['ccConfig'],
     ctor:function (scene) {

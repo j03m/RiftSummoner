@@ -43,15 +43,34 @@ var MainGame = cc.Layer.extend({
             case 'animationTest':
                 cc.Director.getInstance().replaceScene(AnimationTest.scene());
                 break;
+            case 'multiplayer':
+                cc.Director.getInstance().replaceScene(Multiplayer.scene());
+                break;
         }
-
-
     },
     showLoader:function(config){
         this.loader = new Loading();
         var runningScene = cc.Director.getInstance().getRunningScene();
         runningScene.addChild(this.loader);
         this.loader.init(config);
+
+    },
+    battlePre:function(){
+        //make api call to get multiplayer games
+
+        var assets = [];
+        assets = assets.concat(g_ui);
+        this.showLoader({
+            "assets":assets,
+            "apiCalls":[
+                function(callback){
+                    hotr.multiplayerOperations.getGames(function(){
+                        callback();
+                    });
+                }
+            ],
+            "nextScene":'multiplayer'
+        });
 
     },
     selectEditTeamPre: function(){
@@ -90,16 +109,10 @@ var MainGame = cc.Layer.extend({
         var teamAFormation = hotr.blobOperations.getFormation();
         var teamAPowers = hotr.blobOperations.getPowers();
 
-        if (cards.kik.message){
-            var teamB = cards.kik.message.team;
-            var teamBFormation = "4x4x4b";
-            var teamBPowers = cards.kik.message.powers;
+        var teamB = hotr.levelLogic.getTeamForLevel(level);
+        var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
+        var teamBPowers = hotr.levelLogic.getPowers();
 
-        }else{
-            var teamB = hotr.levelLogic.getTeamForLevel(level);
-            var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
-            var teamBPowers = hotr.levelLogic.getPowers();
-        }
 
         var fightConfig = {
             teamA:teamA,
@@ -130,10 +143,8 @@ var MainGame = cc.Layer.extend({
     },
     onEnter:function(){
          jc.log(['mainLayer'], "main starting")
-         cards.kik.getUser(function(token){
-             jc.log(['mainLayer'], "getUser:" + token);
-             this.startGame(token);
-         }.bind(this));
+        this.startGame();
+
     },
     doArenaDev:function(){
         ArenaGame.scene();
@@ -159,56 +170,45 @@ var MainGame = cc.Layer.extend({
         });
 
     },
-    startGame:function(kikUser){
+    startGame:function(){
 
         //get signed data from kik
         //if !cached blob token
         var hasPlayed = hotr.blobOperations.hasPlayed();
         var hasToken = hotr.blobOperations.hasToken();
-        var storedUser = hotr.blobOperations.getUserName();
 
         //if I have an auth token, I don't care, just go.
-        if (hasToken && kikUser == storedUser){
+        if (hasToken){
             jc.log(['mainLayer'], "hasToken");
-            this.initGame(kikUser);
-        }else if (hasPlayed && kikUser == storedUser) { //if I don't ahve a token, well - have I played? If so, don't create a user for me, just get a token and go
+            this.initGame();
+        }else if (hasPlayed) { //if I don't ahve a token, well - have I played? If so, don't create a user for me, just get a token and go
             jc.log(['mainLayer'], "hasPlayed");
             this.authorizeAndInitGame();
         }else{
             //I sort of look like a new player, take me through the new player flow
             jc.log(['mainLayer'], "newPlayer");
-            this.authorizeNewPlayer(kikUser);
+            this.authorizeNewPlayer();
         }
     },
     authorizeNewPlayer:function(){
         jc.log(['mainLayer'], "authorizeNewPlayer");
-        cards.kik.sign(this.signThis, function (signedData, username, host) {
-            //send these to us, for authtoken
-            jc.log(['mainLayer'], "sign");
-            jc.log(['mainLayer'], "signedData:" + JSON.stringify(signedData));
-            jc.log(['mainLayer'], "username:" + JSON.stringify(username));
-            jc.log(['mainLayer'], "host:" + JSON.stringify(host));
-            hotr.blobOperations.createNewPlayer(signedData, username, host, function(){
-                this.startingScene();
-            }.bind(this));
+        hotr.blobOperations.createNewPlayer(function(){
+            this.startingScene();
         }.bind(this));
     },
     authorizeAndInitGame:function(){
-        cards.kik.sign(this.signThis, function (signedData, username, host) {
-            //send these to us, for authtoken
-            hotr.blobOperations.getNewAuthTokenAndBlob(signedData, username, host, function(){
-                this.startingScene();
-            }.bind(this));
+        //send these to us, for authtoken
+        hotr.blobOperations.getNewAuthTokenAndBlob(function(){
+            this.startingScene();
         }.bind(this));
     },
-    initGame:function(kikUser){
+    initGame:function(){
         hotr.blobOperations.getBlob(function(result){
             if (result){
                 this.startingScene();
             }else{
-                this.authorizeNewPlayer(kikUser);
+                this.authorizeNewPlayer();
             }
-
         }.bind(this));
     },
     startingScene:function(){

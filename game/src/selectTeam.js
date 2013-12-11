@@ -13,7 +13,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
             this.initFromConfig(this.windowConfig);
             this.highlight = jc.makeSpriteWithPlist(uiPlist, uiPng, "portraitSmallSelected.png");
             this.highlight.setVisible(false);
-            this.addChild(this.highlight);
+            this.mainFrame.addChild(this.highlight);
             this.name = "SelectTeam";
             jc.layerManager.pushLayer(this);
 
@@ -92,7 +92,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
         if (this[cellName].pic){
             jc.swapFade.bind(this)(this[cellName].pic, card);
         }else{ //otherwise show it
-            this.addChild(card);
+            this.mainFrame.addChild(card);
             jc.fadeIn(card, 255);
         }
 
@@ -105,7 +105,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
         //add a border if it's not there
         if (!this[cellName].border) {
             this[cellName].border = jc.makeSpriteWithPlist(uiPlist, uiPng, "portraitSmall.png")
-            this.addChild(this[cellName].border);
+            this.mainFrame.addChild(this[cellName].border);
             this.centerThisPeer(this[cellName].border, this[cellName]);
             this.reorderChild(this[cellName].border, this[cellName].pic.getZOrder()+1);
         }
@@ -178,7 +178,6 @@ var SelectTeam = jc.UiElementsLayer.extend({
                 hotr.scratchBoard.currentCell = sprites[0].name;
                 this.nextEnabled = false;
                 jc.layerManager.pushLayer(EditTeam.getInstance(),10);
-
             }
         }
         return true;
@@ -186,6 +185,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
     windowConfig:{
         "mainFrame": {
             "type": "sprite",
+            "applyAdjustments": true,
             "transitionIn": "top",
             "transitionOut": "top",
             "sprite": "genericBackground.png",
@@ -211,8 +211,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "membersTotal": 12,
                     "sprite": "portraitSmallDarkBackground.png",
                     "pos": {
-                        "x": 236,
-                        "y": 1098
+                        "x": 230,
+                        "y": 1155
                     }
                 },
                 "formation": {
@@ -220,8 +220,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "sprite": "formationFrame.png",
                     "z": 1,
                     "pos": {
-                        "x": 1574,
-                        "y": 1006
+                        "x": 1565,
+                        "y": 964
                     }
                 },
                 "description": {
@@ -229,8 +229,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "sprite": "descriptionWindow.png",
                     "z": 1,
                     "pos": {
-                        "x": 1570,
-                        "y": 574
+                        "x": 1567,
+                        "y": 529
                     }
                 },
                 "prevFormation": {
@@ -241,7 +241,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "z": 2,
                     "pos": {
                         "x": 1238,
-                        "y": 346
+                        "y": 307
                     }
                 },
                 "theFormation": {
@@ -249,8 +249,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "sprite": "formationNameFrame.png",
                     "z": 1,
                     "pos": {
-                        "x": 1570,
-                        "y": 348
+                        "x": 1573,
+                        "y": 306
                     }
                 },
                 "nextFormation": {
@@ -261,7 +261,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "z": 2,
                     "pos": {
                         "x": 1904,
-                        "y": 346
+                        "y": 301
                     }
                 },
                 "fightButton": {
@@ -271,8 +271,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "touchDelegateName": "fightStart",
                     "z": 1,
                     "pos": {
-                        "x": 1478,
-                        "y": 172
+                        "x": 1535,
+                        "y": 151
                     }
                 },
                 "kikButton": {
@@ -282,14 +282,14 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "touchDelegateName": "kikStart",
                     "z": 1,
                     "pos": {
-                        "x": 1712,
-                        "y": 172
+                        "x": 1817,
+                        "y": 145
                     }
                 }
             },
             "pos": {
-                "x": 1020,
-                "y": 679
+                "x": 1026,
+                "y": 679.0000000000002
             }
         }
     }

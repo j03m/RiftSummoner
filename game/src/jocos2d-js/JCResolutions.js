@@ -9,13 +9,18 @@ jc.resolutions = {};
 jc.resolutions.iphone = cc.size(480,320);
 jc.resolutions.iphone.scale =   0.234375;
 jc.resolutions.iphone.adjusty = -30;
-jc.resolutions.iphone4 = cc.size(960,640);
-jc.resolutions.iphone4.scale = 0.46875;
-jc.resolutions.iphone4.adjusty = -30;
-jc.resolutions.iphone4.adjustx = 0;
+
 jc.resolutions.iphone5 = cc.size(1136,640);
 jc.resolutions.iphone5.scale = 0.554688;
-jc.resolutions.iphone5.adjusty = -30;
+jc.resolutions.iphone5.adjusty = -90;
+jc.resolutions.iphone5.adjustx = 0;
+
+
+jc.resolutions.iphone4 = cc.size(960,640);
+jc.resolutions.iphone4.scale = 0.46875;
+jc.resolutions.iphone4.adjusty = -50;
+jc.resolutions.iphone4.adjustx = 5;
+
 jc.resolutions.ipadhd = cc.size(2048, 1536);
 jc.resolutions.ipadhd.scale = 1;
 
@@ -45,6 +50,7 @@ jc.bestAssetDirectory = function(){
     }else{
         jc.actualSize = cc.Director.getInstance().getWinSize();
         jc.screenSize = jc.actualSize;
+
     }
 
     var actualSize = jc.actualSize;
@@ -68,6 +74,11 @@ jc.bestAssetDirectory = function(){
     jc.assetCategory = maxSet;
     jc.assetScaleFactor = scaleFactor;
     jc.assetCategoryData = jc.resolutions[maxSet];
+
+    //iphone 5 center hack
+    if (jc.assetCategory == 'iphone4' && jc.actualSize.width > jc.resolutions.iphone4.width){
+        jc.resolutions.iphone4.adjustx = 100;
+    }
 
 };
 

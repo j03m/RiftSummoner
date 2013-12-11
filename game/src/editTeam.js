@@ -9,6 +9,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     init: function() {
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(cardsPlists[0]);
             this.initFromConfig(this.windowConfig);
             this.name = "EditTeam";
             return true;
@@ -44,9 +45,9 @@ var EditTeam = jc.UiElementsLayer.extend({
         }
     },
     inTransitionsComplete:function(){
-        if (this.card){
-            jc.fadeIn(this.card, 255);
-        }
+//        if (this.card){
+//           // jc.fadeIn(this.card, 255);
+//        }
 
     },
     outTransitionsComplete:function(){
@@ -278,15 +279,18 @@ var EditTeam = jc.UiElementsLayer.extend({
     },
     close:function(){
         this.done();
-        if (this.card){
-            jc.fadeOut(this.card,1);
-        }
+//        if (this.card){
+//            //jc.fadeOut(this.card,1);
+//        }
 
     },
     windowConfig: {
         "mainFrame": {
-            "type": "sprite",
-            "applyAdjustments": true,
+            "size": {
+                "width": 2048,
+                "height": 1365
+            },
+            "type": "scale9",
             "rect": {
                 "origin": {
                     "x": 220,
@@ -297,20 +301,21 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "height": 293
                 }
             },
+            "applyAdjustments":true,
             "transitionIn": "top",
             "transitionOut": "top",
-            "sprite": "genericBackground.png",
+            "sprite": "fullWindow.png",
             "z": 0,
             "kids": {
                 "closeButton": {
                     "type": "button",
                     "main": "closeButton.png",
                     "pressed": "closeButtonPressed.png",
-                    "touchDelegateName":"close",
+                    "touchDelegateName": "close",
                     "z": 1,
                     "pos": {
-                        "x": 1952,
-                        "y": 1340
+                        "x": 1928,
+                        "y": 1240
                     }
                 },
                 "statsFrame": {
@@ -318,8 +323,8 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "sprite": "statsFrame.png",
                     "z": 2,
                     "pos": {
-                        "x": 604,
-                        "y": 950
+                        "x": 608,
+                        "y": 956
                     }
                 },
                 "powerLevels": {
@@ -341,8 +346,9 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "z": 1,
                     "pos": {
                         "x": 1189,
-                        "y": 1077
-                    }
+                        "y": 1135
+                    },
+                    "applyAdjustments":true,
                 },
                 "powerIcons": {
                     "isGroup": true,
@@ -365,16 +371,17 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "z": 1,
                     "pos": {
                         "x": 1189,
-                        "y": 900
-                    }
+                        "y": 958
+                    },
+                    "applyAdjustments":true,
                 },
                 "powerDesc": {
                     "type": "sprite",
                     "sprite": "powerIconsDescription.png",
                     "z": 1,
                     "pos": {
-                        "x": 1519,
-                        "y": 762
+                        "x": 1511,
+                        "y": 786
                     }
                 },
                 "nextLevel": {
@@ -390,7 +397,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "type": "button",
                     "main": "buttonTrain.png",
                     "pressed": "buttonTrainPressed.png",
-                    "touchDelegateName":"trainPower",
+                    "touchDelegateName": "trainPower",
                     "z": 1,
                     "pos": {
                         "x": 1756,
@@ -401,7 +408,7 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "type": "button",
                     "main": "buttonDone.png",
                     "pressed": "buttonDonePressed.png",
-                    "touchDelegateName":"doneButton",
+                    "touchDelegateName": "doneButton",
                     "z": 1,
                     "pos": {
                         "x": 1723,
@@ -413,37 +420,37 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "sprite": "characterPortraitsFrame.png",
                     "z": 1,
                     "pos": {
-                        "x": 1024,
+                        "x": 1028,
                         "y": 371
                     }
                 },
                 "characterPortraitsLeft": {
                     "type": "button",
-                    "main": "characterPortraitsButtonLeft.png",
-                    "pressed": "characterPortraitsButtonLeftPressed.png",
-                    "touchDelegateName":"previousChar",
+                    "main": "characterPortraitsButtonLeftBrown.png",
+                    "pressed": "characterPortraitsButtonLeftPressedBrown.png",
+                    "touchDelegateName": "previousChar",
                     "z": 10,
                     "pos": {
-                        "x": 95,
-                        "y": 375
+                        "x": 133,
+                        "y": 373
                     }
                 },
                 "characterPortraitsRight": {
                     "type": "button",
-                    "main": "characterPortraitsButtonRight.png",
-                    "pressed": "characterPortraitsButtonRightPressed.png",
-                    "touchDelegateName":"nextChar",
+                    "main": "characterPortraitsButtonRightBrown.png",
+                    "pressed": "characterPortraitsButtonRightPressedBrown.png",
+                    "touchDelegateName": "nextChar",
                     "z": 10,
                     "pos": {
-                        "x": 1955,
+                        "x": 1917,
                         "y": 366
                     }
                 },
                 "info": {
                     "type": "button",
                     "main": "infoButton.png",
-                    "pressDelegateName":"infoPress",
-                    "touchDelegateName":"infoTouch",
+                    "pressDelegateName": "infoPress",
+                    "touchDelegateName": "infoTouch",
                     "z": 5,
                     "pos": {
                         "x": 511,
@@ -575,8 +582,8 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "sprite": "titleDescription.png",
                     "z": 3,
                     "pos": {
-                        "x": 1508,
-                        "y": 1023
+                        "x": 1498,
+                        "y": 965
                     }
                 },
                 "infoTitle": {
@@ -589,8 +596,8 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "fontName": "gow",
                     "z": 4,
                     "pos": {
-                        "x": 1565,
-                        "y": 1278
+                        "x": 1563,
+                        "y": 1220
                     }
                 },
                 "infoText": {
@@ -604,13 +611,13 @@ var EditTeam = jc.UiElementsLayer.extend({
                     "z": 4,
                     "pos": {
                         "x": 1291,
-                        "y": 1051
+                        "y": 1021
                     }
                 }
             },
             "pos": {
-                "x": 1026.0000000000005,
-                "y": 755.9999999999994
+                "x": 1002.0000000000005,
+                "y": 713.9999999999991
             }
         }
     }

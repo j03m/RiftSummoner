@@ -174,6 +174,23 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 break;
         }
     },
+    getWindowFromConfig:function(config){
+
+            var window = this.makeWindowByType(config);
+            var kids = config.kids;
+            for(var kid in kids){
+                var kid = config.kids[kid];
+                var kidWindow = this.makeWindowByType(kid);
+                if (!kid.pos){
+                    kidWindow.setPosition(cc.p(0,0));
+                }else{
+                    kidWindow.setPosition(cc.p(kid.pos.x*jc.assetCategoryData.scale, kid.pos.y*jc.assetCategoryData.scale));
+                }
+                window.addChild(kidWindow);
+            }
+            return window;
+
+    },
     initFromConfig:function(configs, parent){
         for (var configName in configs){
 
@@ -369,7 +386,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 config.z = parent.getZOrder()+1;
             }
             jc.log(['ui'], "reordering child:" + config.z);
-            this.addChild(window);
+            parent.addChild(window);
             if (config.z !=0){
                 this.reorderChild(window, config.z);
             }

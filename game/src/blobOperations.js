@@ -5,6 +5,7 @@ hotr.formationSize = 12;
 hotr.authTokenLocalStoreKey = "x1xauthTokenx1x";
 hotr.haveSeenLocalStoreKey = "x1xhaveseenx1x";
 hotr.userNameKey = "x1xusernamex1x";
+hotr.credsKey = "x1xcredsx1x";
 
 //check for web vs native
 if (typeof blobApi !== 'undefined') {
@@ -13,10 +14,45 @@ if (typeof blobApi !== 'undefined') {
     }
 }
 
+makeGuid = function(){
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+
+}
+
+makeSig = function(creds){
+    //make random data
+    var random = makeGuid();
+    //append password to it
+    var random2 = creds.pass + random;
+
+    //md5 it
+    var hash = md5(random2);
+    return {
+          "data":random,
+          "hash":hash,
+    };
+}
+
+hotr.blobOperations.getCreds = function(){
+    return jc.getLocalStorage(hotr.credsKey);
+}
+
+hotr.blobOperations.generateCreds = function(){
+    var creds = {};
+    creds.id = makeGuid();
+    creds.pass = makeGuid();
+    jc.setLocalStorage(hotr.credsKey, creds);
+    return creds;
+}
+
+
 
 hotr.blobOperations.getBlob = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
-    jc.blobApi.getBlob(authToken.token,function(err, data){
+    jc.blobApi.getBlob(authToken.token,function(data){
         if (data != undefined){
             hotr.playerBlob = data;
             callback(true);
@@ -29,8 +65,8 @@ hotr.blobOperations.getBlob = function(callback){
 hotr.blobOperations.saveBlob = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
     hotr.playerBlob.version++;
-    jc.blobApi.saveBlob(authToken.token, hotr.playerBlob, function(err, res){
-        callback(err, res);
+    jc.blobApi.saveBlob(authToken.token, hotr.playerBlob, function(res){
+        callback(res);
     });
 }
 
@@ -57,18 +93,20 @@ hotr.blobOperations.getTeam = function(){
     return team;
 }
 
-hotr.blobOperations.createNewPlayer = function(signedData, userToken, host,  callback){
-    jc.blobApi.createNewPlayer(signedData, userToken, host, function(blob, token){
+hotr.blobOperations.createNewPlayer = function(callback){
+    var creds = hotr.blobOperations.generateCreds();
+    jc.blobApi.createNewPlayer(creds.id, creds.pass, function(blob, token){
         hotr.playerBlob = blob;
         hotr.blobOperations.setAuthToken(token);
         hotr.blobOperations.setHasPlayed();
-        hotr.blobOperations.setUserName(userToken);
         callback();
     });
 }
 
-hotr.blobOperations.getNewAuthTokenAndBlob = function(signedData, userToken, host, callback){
-    jc.blobApi.getNewAuthTokenAndBlob(signedData, userToken, host, function(authToken, blob){
+hotr.blobOperations.getNewAuthTokenAndBlob = function(callback){
+    var creds = hotr.blobOperations.getCreds();
+    var sig = makeSig(creds);
+    jc.blobApi.getNewAuthTokenAndBlob(creds.id, sig.data, sig.hash, function(authToken, blob){
         hotr.playerBlob = blob;
         hotr.blobOperations.setAuthToken(authToken);
         callback();
@@ -76,9 +114,10 @@ hotr.blobOperations.getNewAuthTokenAndBlob = function(signedData, userToken, hos
 }
 
 
-
-hotr.blobOperations.getNewAuthToken = function(signedData, userToken, host, callback){
-    jc.blobApi.getAuthToken(signedData, userToken, host, callback);
+hotr.blobOperations.getNewAuthToken = function(callback){
+    var creds = hotr.blobOperations.getCreds();
+    var sig = makeSig(creds);
+    jc.blobApi.getAuthToken(creds.id, sig.data, sig.hash, callback);
 }
 
 hotr.blobOperations.setAuthToken = function(token){

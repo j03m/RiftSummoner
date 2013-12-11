@@ -101,15 +101,20 @@ jc.TouchLayer = cc.Layer.extend({
         touch = this.touchToPoint(touch);
         jc.log(['touchcore'], "Raw Touch Point:" + JSON.stringify(touch));
 
-        var converted = this.convertToNodeSpace(touch);
-        jc.log(['touchcore'], "Converted Touch:" + JSON.stringify(converted));
-
-        if (this.doConvert){
-            jc.log(['touchcore'], "Using converted touch.");
-            touch = converted;
-        }
+//        var converted = this.convertToNodeSpace(touch);
+//        jc.log(['touchcore'], "Converted Touch:" + JSON.stringify(converted));
+//
+//        if (this.doConvert){
+//            jc.log(['touchcore'], "Using converted touch.");
+//            touch = converted;
+//        }
         var handled = [];
         for (var i=0;i<this.touchTargets.length;i++){
+            var parent = this.touchTargets[i].getParent();
+            var tmpTouch = parent.convertToNodeSpace(touch);
+            if (!tmpTouch){
+                tmpTouch = this;
+            }
 
             if ( this.touchTargets[i] instanceof jc.Sprite){ //jc.sprites in this game ahve like 512x512 - contentSize + boudningbox are unusable
                 var rect = this.touchTargets[i].getTextureRect(); //texture rect gives us a width
@@ -130,7 +135,7 @@ jc.TouchLayer = cc.Layer.extend({
 
             jc.log(['touchcore'], "Sprite:" + this.touchTargets[i].name);
             jc.log(['touchcore'], "Position:" + JSON.stringify(cs));
-            var contains = cc.rectContainsPoint(cs, touch);
+            var contains = cc.rectContainsPoint(cs, tmpTouch);
 
             if (contains){
                 handled.push(this.touchTargets[i]);

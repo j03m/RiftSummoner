@@ -1,22 +1,9 @@
-console.log("file running");
-cards.ready(function(){
-    console.log("card ready");
+
     var hotrSrc = [
         '../zerver/blobApi.js',
-        '../hotr.min.js?version=2',
-        'gameHtml5.js'
+        'hotr.min.js?version=2',
+        'html5/gameHtml5.js'
     ]
-
-    var kik;
-    if (!cards.kik){
-        console.log("no kik mock");
-        cards = mckCards; //auto shim in the mock
-        kik = false;
-    }else{
-        console.log("kik, no mock");
-        cards.browser.setOrientationLock('landscape');
-        kik = true;
-    }
 
     var d = document;
     var c = {
@@ -25,7 +12,7 @@ cards.ready(function(){
         loadExtension:true,
         frameRate:60,
         tag:'gameCanvas', //the dom element to run cocos2d on
-        SingleEngineFile:'../cocos2d-html5.min.js',
+        engineDir:'platform/HTML5/cocos2d/',
         appFiles:hotrSrc
     };
 
@@ -36,11 +23,9 @@ cards.ready(function(){
             '<a href="http://www.google.com/chrome" target="_blank"><img src="http://www.google.com/intl/zh-CN/chrome/assets/common/images/chrome_logo_2x.png" border="0"/></a>';
         var p = d.getElementById(c.tag).parentNode;
         p.insertBefore(s);
-        return;
     }
 
-
-    function runGame () {
+    window.addEventListener('DOMContentLoaded', function () {
         //first load engine file if specified
         var s = d.createElement('script');
         /*********Delete this section if you have packed all files into one*******/
@@ -61,15 +46,5 @@ cards.ready(function(){
         document.ccConfig = c;
         s.id = 'cocos2d-html5';
         //else if single file specified, load singlefile
-     };
+    });
 
-    if (kik){
-        runGame();
-    }else{
-        window.addEventListener('DOMContentLoaded', runGame);
-    }
-
-
-
-
-});

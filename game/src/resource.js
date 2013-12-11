@@ -13,6 +13,7 @@ var landingPlist = transformAsset(dirImg + "landing{v}.plist");
 var loadingPng = transformAsset(dirImg + "loading{v}.png");
 var loadingPlist = transformAsset(dirImg + "loading{v}.plist");
 
+
 var cardsPngs = [transformAsset(dirImg + "cards{v}.png")];
 var cardsPlists = [transformAsset(dirImg + "cards{v}.plist")];
 var uiPng = transformAsset(dirImg + "uiElements{v}.png");
@@ -49,7 +50,7 @@ if (jc.designMode){
     var uiPlist = transformAsset(dirImg + "uiElements-ipadhd.plist");
     var landingPng = transformAsset(dirImg + "landing-ipadhd.png");
     var landingPlist = transformAsset(dirImg + "landing-ipadhd.plist");
-    var guide = dirImg + "selectTeamScreenS.png";
+    var guide = dirImg + "selectTeamScreen.png";
     var g_maingame = [
     {src:guide},
     {src:uiPng},
@@ -58,6 +59,7 @@ if (jc.designMode){
     {src:cardsPngs[0]},
     {src:landingPng},
     {src:landingPlist},
+
 
     {fontName:"gow",
         src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
@@ -95,13 +97,9 @@ var g_battleStuff =[
 
 var g_ui =[
     {src:uiPlist},
-    {src:uiPng}];
+    {src:uiPng},
+];
 
-//todo async background loading
-var g_everything = [];
-g_everything = g_everything.concat(_.map(g_characterPngs, function(item){ return {src:item};}));
-g_everything = g_everything.concat(_.map(g_characterPlists, function(item){ return {src:item};}));
-g_everything = g_everything.concat(_.map(g_battleStuff, function(item){ return item;}));
 
 function transformAsset(input){
     var token = "-" + jc.assetCategory;

@@ -1,23 +1,28 @@
 post idiots guide to cocos2dx javascript bindings
 build backend
     random game
-        if in redis ! empty, shift make match
-        else no games available
+        pick multiplayer queue based on level + hash of username
+        hit redis, get player
+            if player
+                make match
+                    blob - myuser+theiruser (alphabatized)
+                        user1 last team
+                        user2 last team
+                        stats (wins/losses)
+                    addkey to games list
 
     friend
         check username
         make match
-
-
     sms - send txt to all contacts
     facebook - read docs for ios
     twitter - read docs for ios, send tweet app store link, username?
     game center - read docs?
 
 
-*get a native build
-    provision iphone
-    fix positioning
-    fix scroll
-    move on with your life
-read ios provisioning stuff
+Auth scheme
+    Check for token
+    if not there, generate token, generate pass - send as new player (https)
+    if they are there, generate random data. Sign with pass.
+    Send to server - if checks out, register session token.
+

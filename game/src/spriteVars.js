@@ -1282,7 +1282,6 @@ var spriteDefs = {
 		"details": "Weak, dog-like creatures that are trained to rush archers and healers. When killed the scowerer will burst and a poison acid will cover anyone nearby.",
 		"elementType": "life",
 		"unitType": 3,
-		"flip": true,
 		"special": "None",
 		"deathMods": {
 			"explodePoison": {

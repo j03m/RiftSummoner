@@ -98,8 +98,16 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
 
     },
     edgeAdjust:function(){
-        var fsX = this.calcAbsolutePos(0).x;
-        if (fsX> this.midPoint){
+        var pos = this.calcAbsolutePos(0);
+
+        var fs = 0;;
+        if (this.def.isVertical){
+            fs = pos.y;
+        }else{
+            fs = pos.x;
+        }
+
+        if (fs> this.midPoint){
             this.doUpdate = false;
             this.isMoving = false;
             this.setIndex(0);
@@ -108,12 +116,19 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         }
 
         //if last sprite is past middle rect, stop adjust to last cell middle on center line
-        var lsX = this.calcAbsolutePos(this.sprites.length-1).x;
-        if (lsX < this.midPoint){
+        var pos =this.calcAbsolutePos(this.sprites.length-1);
+        var ls = 0;
+
+        if (this.def.isVertcal){
+            ls = pos.y;
+        }else{
+            ls = pos.x;
+        }
+
+        if (ls < this.midPoint){
             this.doUpdate = false;
             this.isMoving = false;
             this.setIndex(this.sprites.length-1);
-            //this.runEndingAdjustment(cc.p(this.midPoint-lsX , 0));
             jc.log(['scroller'],"edge2");
             return true;
         }
@@ -122,7 +137,12 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     centerOn: function(sprite){
         var pos = sprite.getPosition();
         var worldPos = this.convertToWorldSpace(pos);
-        var augment = this.midPoint - worldPos.x;
+        if (this.def.isVertical){
+            var augment = this.midPoint - worldPos.y;
+        }else{
+            var augment = this.midPoint - worldPos.x;
+        }
+
         jc.log(['scroller'],"Center needs:" + augment);
         if (augment !=0){
             this.runEndingAdjustment(cc.p(augment,0));
@@ -146,24 +166,6 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         jc.log(['scroller'],"raiseSelected:" + this.doUpdate);
         this.doUpdate=false;
         this.endAdjustmentRunning = false;
-//        for(var i =0;i<this.sprites.length;i++){ //todo: change to math based
-//            var sprite = this.sprites[i];
-//            var data = this.metaData[i];
-//            var bb = sprite.getBoundingBox();
-//            if (cc.rectContainsPoint(bb, cc.p(this.midPoint, bb.origin.y))){
-//                this.applyHighlight(sprite);
-//                if (i != this.selectedIndex){
-//                    this.selectedIndex = i;
-//                    this.def.selectionCallback(i, sprite, data);
-//                }
-//                jc.log(['scroller'],"Found:"+i);
-//                return;
-//            }
-//        }
-//
-//        //if we're here we're really far out and need to readjust
-//        this.setIndex(this.selectedIndex);
-
         this.applyHighlight(this.sprites[this.selectedIndex]);
         this.def.selectionCallback(this.selectedIndex, this.sprites[this.selectedIndex], this.metaData[this.selectedIndex]);
 
@@ -180,12 +182,15 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
                 this.doUpdate = false;
                 return;
             }
-
-
-            if (this.scrollDistance.x/this.def.cellWidth > 3){
-                //cap this
-                this.scrollDistance.x = 3 * this.def.cellWidth;
+            var scrollDistance =0;
+            var cellSize = 0;
+            if (this.def.isVertical){
+                scrollDistance = this.scrollDistance.y;
+                cellSize = this.def.cellHeight;
             }
+
+            this.scrollDistance.x = 3 * this.def.cellWidth;
+
             this.setPosition(cc.pAdd(this.getPosition(), this.scrollDistance));
             if (!this.isMoving){
                 var SCROLL_DEACCEL_RATE = 0.75;

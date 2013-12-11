@@ -22,7 +22,8 @@ var Landing = jc.UiElementsLayer.extend({
     },
     quest:function(){},
     battle:function(){
-        hotr.mainScene.layer.selectEditTeamPre();
+          //hotr.mainScene.layer.selectEditTeamPre();
+         hotr.mainScene.layer.battlePre();
     },
     summon:function(){},
     store:function(){},
