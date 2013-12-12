@@ -11,8 +11,7 @@ var Multiplayer = jc.UiElementsLayer.extend({
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
             this.initFromConfig(this.windowConfig);
-            this.items = [];
-
+            this.items = [];			
             return true;
         } else {
             return false;
@@ -20,45 +19,40 @@ var Multiplayer = jc.UiElementsLayer.extend({
     },
     onShow:function(){
         this.start();
-        this.initFromMultiplayerData({});
+        this.tableView = new jc.ScrollingLayer();
+        this["mainFrame"].addChild(this.tableView);
+        var scrollData = this.getGames();
+		
+        this.tableView.init({
+        	isVertical:true,
+		    sprites:scrollData,
+            cellHeight:scrollData[0].getContentSize().height*2,
+            selectionCallback:this.selectionCallback.bind(this),
+            height:this.winSize.height
+        });
+		
+		
+
+		var position = cc.p(this.itemWindow.pos.x, this.itemWindow.pos.y);
+        position.x *=jc.assetCategoryData.scale;
+        position.y *=jc.assetCategoryData.scale;        
+		this.tableView.setPosition(position);
+        this.reorderChild(this.tableView, 3);
+        this.tableView.hackOn();
+        this.tableView.setIndex(0);
     },
-    initFromMultiplayerData:function(){
+	selectionCallback:function(){
+		console.log("Touch");
+	},
+    getGames:function(){
+		var returnme = [];
         for(var i =0;i<10;i++){
             var recordUi = this.getWindowFromConfig(this.itemWindow);
-            var position = cc.p(this.itemWindow.pos.x, this.itemWindow.pos.y);
-            position.x *=jc.assetCategoryData.scale;
-            position.y *=jc.assetCategoryData.scale;
-            var size = recordUi.getContentSize();
-            position.y -= size.height*i;
-            recordUi.setPosition(position);
-            this.mainFrame.addChild(recordUi);
-            this["record"+i]=recordUi;
-            this.items.push(recordUi);
-            this.touchTargets.push(recordUi);
+			returnme.push(recordUi);
         }
-    },
-    shiftAll: function(value){
-
-
-        for (var i=0;i<this.items.length;i++){
-            var pos = this.items[i].getPosition();
-            pos.y+=value;
-            this.items[i].setPosition(pos);
-        }
+		return returnme;
     },
     targetTouchHandler: function(type, touch, sprites) {
-        if (type == jc.touchBegan){
-            this.touchStart = touch;
-        }
-
-        if (type == jc.touchMoved){
-            var shift = touch.y - this.touchStart.y;
-            this.shiftAll(shift);
-        }
-
-        if (type == jc.touchEnded){
-            this.touchStart = undefined;
-        }
     },
     back:function(){
         hotr.changeScene('landing');

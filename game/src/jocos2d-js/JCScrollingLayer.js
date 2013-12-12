@@ -7,20 +7,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             this.metaData = this.def.metaData;
             this.doConvert = true;
             this.name = "JCScrollingLayer";
-            var h=0;
-            for(var i=0;i<this.sprites.length;i++){
-                this.touchTargets.push(this.sprites[i]);
-                this.addChild(this.sprites[i]);
-                var x = ((this.def.cellWidth/2) * i) + this.def.cellWidth;
-                this.sprites[i].setPosition(cc.p(x,0));
-                if (this.sprites[i].getTextureRect().height >h){
-                    h =  this.sprites[i].getTextureRect().height;
-                }
-                this.reorderChild(this.sprites[i],3);
-            }
-            var w = this.sprites.length*this.def.cellWidth;
-            this.midPoint = this.def.width/2;
-            this.setContentSize(cc.size(w,h));
+			this.configure();
             this.selectedIndex = 1;
             this.doUpdate = false;
             this.scheduleUpdate();
@@ -29,6 +16,48 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             return false;
         }
     },
+	configure:function(){
+		var maxValue =0;
+        var cellSize = 0;
+		if (this.def.isVertical){
+			cellSize = this.def.cellHeight;
+		}else{
+			cellSize = this.def.cellWidth;
+		}
+		
+		for(var i=0;i<this.sprites.length;i++){
+            this.touchTargets.push(this.sprites[i]);
+            this.addChild(this.sprites[i]);
+            var pos = ((cellSize/2) * i) + cellSize;
+			if (this.def.isVertical){
+				this.sprites[i].setPosition(cc.p(0,pos));	
+			}else{
+				this.sprites[i].setPosition(cc.p(pos,0));	
+			}
+
+			if (this.def.isVertical){
+	            if (this.sprites[i].getTextureRect().width > maxValue){
+	                maxValue =  this.sprites[i].getTextureRect().width;
+	            }				
+			}else{
+	            if (this.sprites[i].getTextureRect().height > maxValue){
+	                maxValue =  this.sprites[i].getTextureRect().height;
+	            }								
+			}
+            this.reorderChild(this.sprites[i],3);
+        }
+
+		if (this.def.isVertical){
+	        var h = this.sprites.length*this.def.cellHeight;
+	        this.midPoint = this.def.height/2;
+	        this.setContentSize(cc.size(maxValue,h));		
+			
+		}else{
+	        var w = this.sprites.length*this.def.cellWidth;
+	        this.midPoint = this.def.width/2;
+	        this.setContentSize(cc.size(w,maxValue));					
+		}
+	},
     setIndex: function(val){
         jc.log(['scroller'],"set on: "+val);
         this.doUpdate = false;
@@ -42,18 +71,30 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         this.centerOn(this.sprites[val]);
 
     },
-    left:function(){
+    previous:function(){
         if (this.selectedIndex!=0){
             var next = this.selectedIndex-1;
             this.setIndex(next);
         }
     },
-    right:function(){
+    next:function(){
         if (this.selectedIndex<this.sprites.length-1){
             var next = this.selectedIndex+1;
             this.setIndex(next);
         }
     },
+	left:function(){
+		this.previous();
+	},
+	right:function(){
+		this.next();
+	},
+	up:function(){
+		this.previous();
+	},
+	down:function(){
+		this.next();
+	},
     targetTouchHandler: function(type, touch, sprites) {
         if (!this.isVisible()){
             return;
@@ -119,7 +160,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         var pos =this.calcAbsolutePos(this.sprites.length-1);
         var ls = 0;
 
-        if (this.def.isVertcal){
+        if (this.def.isVertical){
             ls = pos.y;
         }else{
             ls = pos.x;
@@ -145,7 +186,12 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
 
         jc.log(['scroller'],"Center needs:" + augment);
         if (augment !=0){
-            this.runEndingAdjustment(cc.p(augment,0));
+			if (this.def.isVertical){
+				this.runEndingAdjustment(cc.p(0,augment));
+			}else{
+				this.runEndingAdjustment(cc.p(augment,0));
+			}
+
         }else{
             this.raiseSelected();
         }
@@ -167,7 +213,11 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         this.doUpdate=false;
         this.endAdjustmentRunning = false;
         this.applyHighlight(this.sprites[this.selectedIndex]);
-        this.def.selectionCallback(this.selectedIndex, this.sprites[this.selectedIndex], this.metaData[this.selectedIndex]);
+		var md;
+		if (this.metaData){
+			md = this.metaData[this.selectedIndex];
+		}
+        this.def.selectionCallback(this.selectedIndex, this.sprites[this.selectedIndex], md);
 
     },
     applyHighlight:function(sprite){
@@ -187,15 +237,26 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             if (this.def.isVertical){
                 scrollDistance = this.scrollDistance.y;
                 cellSize = this.def.cellHeight;
+            }else{
+            	scrollDistance = this.scrollDistance.x;
+				cellSize = this.def.cellWidth;
             }
 
-            this.scrollDistance.x = 3 * this.def.cellWidth;
+			if (scrollDistance/cellSize > 3){
+				if (this.def.isVertical){
+					this.scrollDistance.y = 3 * this.def.cellHeight;	
+				}else{
+					this.scrollDistance.x = 3 * this.def.cellWidth;	
+				}
+				
+			}
+
 
             this.setPosition(cc.pAdd(this.getPosition(), this.scrollDistance));
             if (!this.isMoving){
                 var SCROLL_DEACCEL_RATE = 0.75;
                 this.scrollDistance = cc.pMult(this.scrollDistance, SCROLL_DEACCEL_RATE);
-                if (Math.abs(this.scrollDistance.x)<=1){
+                if (Math.abs(scrollDistance)<=1){
                     this.doUpdate = false;
                     this.adjust();
                 }
@@ -215,15 +276,28 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             var sprite = this.sprites[i];
             var bb = sprite.getBoundingBox();
             bb.origin = this.convertToWorldSpace(bb.origin);
-            var diff = Math.abs(bb.origin.x - this.midPoint);
+			if (this.def.isVertical){
+				var diff = Math.abs(bb.origin.y + this.midPoint);
+			}else{
+				var diff = Math.abs(bb.origin.x - this.midPoint);				
+			}
+
             if (min==-1 || min>diff){
                 min = diff;
                 closest = i;
             }
-            if (cc.rectContainsPoint(bb, cc.p(this.midPoint, bb.origin.y))){
-                this.setIndex(i);
-                return;
-            }
+			
+			if (this.def.isVertical){
+	            if (cc.rectContainsPoint(bb, cc.p(bb.origin.x, this.midPoint))){
+	                this.setIndex(i);
+	                return;
+	            }				
+			}else{
+	            if (cc.rectContainsPoint(bb, cc.p(this.midPoint, bb.origin.y))){
+	                this.setIndex(i);
+	                return;
+	            }				
+			}
         }
 
         //if no one is on the rect, move the closest
@@ -233,7 +307,12 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         jc.log(['scroller'],"scroll");
         var bb = this.getBoundingBox();
         var moveDistance = cc.pSub(touch, this.initialTouch);
-        var change = cc.p(moveDistance.x,0 );
+		if (this.def.isVertical){
+			var change = cc.p(0,moveDistance.y );
+		}else{
+			var change = cc.p(moveDistance.x,0 );			
+		}
+
         this.scrollDistance = change;
         this.doUpdate= true;
         this.isMoving = true;
