@@ -192,8 +192,9 @@ var EditTeam = jc.UiElementsLayer.extend({
 
         var prefix = "lbl";
         for (var stat in stats){
-            var lblName = prefix+stat
+            var lblName = prefix+stat			
             this[lblName].setString(stats[stat]);
+			this[lblName].enableStroke(cc.black(), 8*jc.assetScaleFactor);
         }
     },
     makeStringStats:function(stats){
@@ -226,7 +227,9 @@ var EditTeam = jc.UiElementsLayer.extend({
     buildInfoDialogForSelectedCharacter:function(entry){
 
         this.infoTitle.setString(entry.formalName);
+        this.infoTitle.enableStroke(cc.black(), 8*jc.assetScaleFactor);
         this.infoText.setString(entry.details);
+		this.infoText.enableStroke(cc.black(), 8*jc.assetScaleFactor);
         this.doInfoFadeOut = false;
         this.infoFadeIn();
     },
@@ -509,7 +512,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"z": 3,
 				"pos": {
 					"x": 297,
-					"y": 880
+					"y": 860
 				}
 			},
 			"lbldamage": {
@@ -523,7 +526,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"z": 3,
 				"pos": {
 					"x": 297,
-					"y": 798
+					"y": 778
 				}
 			},
 			"lblspeed": {
@@ -537,7 +540,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"z": 3,
 				"pos": {
 					"x": 297,
-					"y": 646
+					"y": 626
 				}
 			},
 			"lblpower": {
@@ -551,7 +554,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"z": 3,
 				"pos": {
 					"x": 297,
-					"y": 561
+					"y": 541
 				}
 			},
 			"lblrange": {
@@ -565,7 +568,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"z": 3,
 				"pos": {
 					"x": 297,
-					"y": 481
+					"y": 461
 				}
 			},
 			"lblarmor": {
@@ -579,7 +582,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"z": 3,
 				"pos": {
 					"x": 297,
-					"y": 723
+					"y": 703
 				}
 			},
 			"infoDialog": {
