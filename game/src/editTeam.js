@@ -193,7 +193,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         var prefix = "lbl";
         for (var stat in stats){
             var lblName = prefix+stat
-            //this[lblName].setText(stats[stat]);
+            this[lblName].setString(stats[stat]);
         }
     },
     makeStringStats:function(stats){
@@ -221,12 +221,12 @@ var EditTeam = jc.UiElementsLayer.extend({
 
     },
     infoPress: function(){
-        this.buildInfoDialogForSelectedCharacter();
+        this.buildInfoDialogForSelectedCharacter(spriteDefs[this.lastSelection.name]);
     },
-    buildInfoDialogForSelectedCharacter:function(){
+    buildInfoDialogForSelectedCharacter:function(entry){
 
-        //this.infoTitle.setText(entry.formalName);
-        //this.infoText.setText(entry.details);
+        this.infoTitle.setString(entry.formalName);
+        this.infoText.setString(entry.details);
         this.doInfoFadeOut = false;
         this.infoFadeIn();
     },
@@ -508,7 +508,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
-					"x": 285,
+					"x": 297,
 					"y": 880
 				}
 			},
@@ -522,7 +522,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
-					"x": 288,
+					"x": 297,
 					"y": 798
 				}
 			},
@@ -536,7 +536,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
-					"x": 288,
+					"x": 297,
 					"y": 646
 				}
 			},
@@ -550,7 +550,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
-					"x": 291,
+					"x": 297,
 					"y": 561
 				}
 			},
@@ -564,7 +564,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
-					"x": 294,
+					"x": 297,
 					"y": 481
 				}
 			},
@@ -594,7 +594,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 			"infoTitle": {
 				"type": "label",
 				"text": "TITLE",
-				"width": 200,
+				"width": 400,
 				"height": 80,
 				"alignment": 0,
 				"fontSize": 20,
@@ -608,14 +608,14 @@ var EditTeam = jc.UiElementsLayer.extend({
 			"infoText": {
 				"type": "label",
 				"text": "DESC",
-				"width": 200,
+				"width": 600,
 				"height": 200,
 				"alignment": 0,
 				"fontSize": 20,
 				"fontName": "gow",
 				"z": 4,
 				"pos": {
-					"x": 1286,
+					"x": 1525,
 					"y": 831
 				}
 			}
