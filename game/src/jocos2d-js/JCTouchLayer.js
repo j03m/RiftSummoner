@@ -252,6 +252,24 @@ jc.TouchLayer = cc.Layer.extend({
         var to = cc.p(toX, toY);
         this.slide(this.mainFrame, cc.p(fromX,fromY), to, jc.defaultTransitionTime, cc.p(0,jc.defaultNudge), "after",doneDelegate);
     },
+	slideLeftToMid:function(item, time, doneDelegate){
+        var itemRect = item.getTextureRect();
+        var fromX = (0 - itemRect.width); //offscreen left
+        var fromY = this.winSize.height/2;
+        var toX = (this.winSize.width/2)-itemRect.width/2;
+        var toY = fromY;
+        var to = cc.p(toX, toY);
+        this.slide(item, cc.p(fromX,fromY), to, time, cc.p(jc.defaultNudge*-1,0), 'before',doneDelegate);		
+	},
+	slideRightToMid:function(item, time, doneDelegate){
+        var itemRect = item.getTextureRect();
+        var fromX = (this.winSize.width + itemRect.width); //offscreen right
+        var fromY = this.winSize.height/2;
+        var toX = (this.winSize.width/2)+itemRect.width/2;
+        var toY = fromY;
+        var to = cc.p(toX, toY);
+        this.slide(this.rightDoor, cc.p(fromX,fromY), to, time,  cc.p(jc.defaultNudge,0), 'before',doneDelegate);		
+	},
     slideOutToTop:function(item, time,to,doneDelegate){
         var itemRect = this.getCorrectRect(item);
         if (!to){

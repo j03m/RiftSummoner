@@ -50,7 +50,9 @@ if (jc.designMode){
     var uiPlist = transformAsset(dirImg + "uiElements-ipadhd.plist");
     var landingPng = transformAsset(dirImg + "landing-ipadhd.png");
     var landingPlist = transformAsset(dirImg + "landing-ipadhd.plist");
-    var guide = dirImg + "selectTeamScreen.png";
+    var loadingPng = transformAsset(dirImg + "loading-ipadhd.png");
+    var loadingPlist = transformAsset(dirImg + "loading-ipadhd.plist");
+    var guide = dirImg + "loadingScreen.png";
     var g_maingame = [
     {src:guide},
     {src:uiPng},
@@ -59,8 +61,8 @@ if (jc.designMode){
     {src:cardsPngs[0]},
     {src:landingPng},
     {src:landingPlist},
-
-
+    {src:loadingPng},
+    {src:loadingPlist},
     {fontName:"gow",
         src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
     }

@@ -5,14 +5,12 @@ var Loading = jc.UiElementsLayer.extend({
         this.nextScene = config.nextScene;
         this.apiCalls = config.apiCalls;
         this.assetFunc = config.assetFunc;
-
-
-
+		this.loaderAdjust = cc.p(-8*jc.assetScaleFactor,13*jc.assetScaleFactor);
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(loadingPlist);
             this.initFromConfig(this.windowConfig);
-            this.start();
-            this.letterBoxVertical();
+            this.start();           
+			this.spinner.setVisible(false);
             return true;
         } else {
             return false;
@@ -21,9 +19,10 @@ var Loading = jc.UiElementsLayer.extend({
     inTransitionsComplete:function(){
         //put the spinner in
         this.animationDone = true;
-        this.spinner = jc.makeSpriteWithPlist(loadingPlist,loadingPng, "loader.1.png");
-        this.addChild(this.spinner);
-        this.spinner.setPosition(cc.p((this.winSize.width/2)-3, (this.winSize.height/2) + 51));
+        this.spinner.setVisible(true);
+		var pos = this.spinner.getPosition();
+		pos = cc.pAdd(this.loaderAdjust, pos);
+		this.spinner.setPosition(pos);
         this.startLoading();
 
     },
@@ -92,28 +91,6 @@ var Loading = jc.UiElementsLayer.extend({
         hotr.changeScene(this.nextScene);
 
     },
-    slideWallLeft:function(doneDelegate){
-        var itemRect = this.leftDoor.getTextureRect();
-        var fromX = (0 - itemRect.width); //offscreen left
-        var fromY = this.winSize.height/2;
-        var toX = (this.winSize.width/2)-itemRect.width/2;
-        var toY = fromY;
-        var to = cc.p(toX, toY);
-
-        this.slide(this.leftDoor, cc.p(fromX,fromY), to, jc.defaultTransitionTime, undefined, undefined,doneDelegate);
-
-    },
-    slideWallRight:function(doneDelegate){
-        var itemRect = this.rightDoor.getTextureRect();
-        var fromX = (this.winSize.width + itemRect.width); //offscreen right
-        var fromY = this.winSize.height/2;
-        var toX = (this.winSize.width/2)+itemRect.width/2;
-        var toY = fromY;
-        var to = cc.p(toX, toY);
-
-        this.slide(this.rightDoor, cc.p(fromX,fromY), to, jc.defaultTransitionTime, undefined, undefined,doneDelegate);
-
-    },
     getPercentage:function(){
         return 100;
     },
@@ -130,8 +107,6 @@ var Loading = jc.UiElementsLayer.extend({
             }else{
                 getPercentage = this.getPercentage;
             }
-
-
 
             //ccLoader is a bit of a piece, so - we need to patch it up with some stuff...
             //first if it finished, it will report getPercentage lower than 100 forever. so we track that
@@ -180,32 +155,34 @@ var Loading = jc.UiElementsLayer.extend({
         }
     },
     windowConfig:{
-        "leftDoor":{
-            "type":"sprite",
-            "transitionIn":"custom",
-            "executeIn":"slideWallLeft",
-            "transitionOut":"left",
-            "cell":4,
-            "anchor":['left'],
-            "sprite":"leftDoor.png",
-            "padding":{
-                left:10,
-            }
-
-        },
-        "rightDoor":{
-            "type":"sprite",
-            "transitionIn":"custom",
-            "executeIn":"slideWallRight",
-            "transitionOut":"right",
-            "cell":6,
-            "anchor":['right'],
-            "sprite":"rightDoor.png",
-            "padding":{
-                left:-10,
-            }
-
-        }
-    }
+	"leftDoor": {
+		
+	"type": "sprite",		
+			"transitionIn": "leftToMid",		
+			"transitionOut": "left",		
+			"sprite": "leftDoor.png",		
+			"z": 0,		
+			"pos": {	
+						"x": 509.5,
+						"y": 768
+					}
+	},
+	"rightDoor": {
+		"type": "sprite",
+		"transitionIn": "rightToMid",
+		"transitionOut": "right",
+		"sprite": "rightDoor.png",
+		"z": 0,
+		"pos": {
+			"x": 1533.500000000001,
+			"y": 768
+		}
+	},
+	"spinner": {
+		"type": "sprite",
+		"sprite": "loader.1.png",
+		"z": 1
+		}
+} 
 });
 

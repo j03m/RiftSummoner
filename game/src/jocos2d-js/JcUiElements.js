@@ -146,6 +146,12 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             case 'topToMid':
                 this.slideTopToMid(windowConfig.window, windowConfig.config.transitionInTime, doneDelegate);
                 break;
+            case 'leftToMid':
+                this.slideLeftToMid(windowConfig.window, windowConfig.config.transitionInTime, doneDelegate);
+                break;
+            case 'rightToMid':
+                this.slideRightToMid(windowConfig.window, windowConfig.config.transitionInTime, doneDelegate);
+                break;
             case 'bottom':
                 this.slideInFromBottom(windowConfig.window, windowConfig.config.transitionInTime, windowConfig.position,doneDelegate);
                 break;   case 'topToMid':
@@ -487,7 +493,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         }
 
 
-        if (!this.designMode){
+        if (!this.designMode && config.pos){
             //if we are not in designmode, translate cooridinates based on our adjusted scale
             x*=jc.assetScaleFactor;
             y*=jc.assetScaleFactor;

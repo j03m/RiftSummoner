@@ -24,7 +24,7 @@ jc.resolutions.iphone4.adjustx = 0;
 
 jc.resolutions.ipadhd = cc.size(2048, 1536);
 jc.resolutions.ipadhd.scale = 1;
-jc.resolutions.ipadhd.adjusty = -100;
+jc.resolutions.ipadhd.adjusty = 0;
 jc.resolutions.ipadhd.adjustx = 0;
 
 
