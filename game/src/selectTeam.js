@@ -182,117 +182,117 @@ var SelectTeam = jc.UiElementsLayer.extend({
         }
         return true;
     },
-    windowConfig:{
-        "mainFrame": {
-            "type": "sprite",
-            "applyAdjustments": true,
-            "transitionIn": "top",
-            "transitionOut": "top",
-            "sprite": "genericBackground.png",
-            "z": 0,
-            "kids": {
-                "gridCells": {
-                    "isGroup": true,
-                    "z": 1,
-                    "type": "grid",
-                    "cols": 4,
-                    "itemPadding": {
-                        "top": 3,
-                        "left": 4
-                    },
-                    "input": true,
-                    "members": [
-                        {
-                            "type": "sprite",
-                            "input": true,
-                            "sprite": "portraitSmallDarkBackground.png"
-                        }
-                    ],
-                    "membersTotal": 12,
-                    "sprite": "portraitSmallDarkBackground.png",
-                    "pos": {
-                        "x": 230,
-                        "y": 1155
-                    }
-                },
-                "formation": {
-                    "type": "sprite",
-                    "sprite": "formationFrame.png",
-                    "z": 1,
-                    "pos": {
-                        "x": 1565,
-                        "y": 964
-                    }
-                },
-                "description": {
-                    "type": "sprite",
-                    "sprite": "descriptionWindow.png",
-                    "z": 1,
-                    "pos": {
-                        "x": 1567,
-                        "y": 529
-                    }
-                },
-                "prevFormation": {
-                    "type": "button",
-                    "main": "leftArrowFormationName.png",
-                    "pressed": "leftArrowFormationName.png",
-                    "touchDelegateName": "previousFormation",
-                    "z": 2,
-                    "pos": {
-                        "x": 1238,
-                        "y": 307
-                    }
-                },
-                "theFormation": {
-                    "type": "sprite",
-                    "sprite": "formationNameFrame.png",
-                    "z": 1,
-                    "pos": {
-                        "x": 1573,
-                        "y": 306
-                    }
-                },
-                "nextFormation": {
-                    "type": "button",
-                    "main": "rightArrowFormationName.png",
-                    "pressed": "rightArrowFormationName.png",
-                    "touchDelegateName": "nextFormation",
-                    "z": 2,
-                    "pos": {
-                        "x": 1904,
-                        "y": 301
-                    }
-                },
-                "fightButton": {
-                    "type": "button",
-                    "main": "buttonFight.png",
-                    "pressed": "buttonFight.png",
-                    "touchDelegateName": "fightStart",
-                    "z": 1,
-                    "pos": {
-                        "x": 1535,
-                        "y": 151
-                    }
-                },
-                "kikButton": {
-                    "type": "button",
-                    "main": "buttonKikNormal.png",
-                    "pressed": "buttonKikPressed.png",
-                    "touchDelegateName": "kikStart",
-                    "z": 1,
-                    "pos": {
-                        "x": 1817,
-                        "y": 145
-                    }
-                }
-            },
-            "pos": {
-                "x": 1026,
-                "y": 679.0000000000002
-            }
-        }
-    }
+    windowConfig: {
+	"mainFrame": {
+		"type": "sprite",
+		"applyAdjustments": true,
+		"transitionIn": "top",
+		"transitionOut": "top",
+		"sprite": "genericBackground.png",
+		"z": 0,
+		"kids": {
+			"gridCells": {
+				"isGroup": true,
+				"z": 1,
+				"type": "grid",
+				"cols": 4,
+				"itemPadding": {
+					"top": 3,
+					"left": 4
+				},
+				"input": true,
+				"members": [
+					{
+						"type": "sprite",
+						"input": true,
+						"sprite": "portraitSmallDarkBackground.png"
+					}
+				],
+				"membersTotal": 12,
+				"sprite": "portraitSmallDarkBackground.png",
+				"pos": {
+					"x": 182,
+					"y": 987
+				}
+			},
+			"formation": {
+				"type": "sprite",
+				"sprite": "formationFrame.png",
+				"z": 1,
+				"pos": {
+					"x": 1505,
+					"y": 824
+				}
+			},
+			"description": {
+				"type": "sprite",
+				"sprite": "descriptionWindow.png",
+				"z": 1,
+				"pos": {
+					"x": 1507,
+					"y": 465
+				}
+			},
+			"prevFormation": {
+				"type": "button",
+				"main": "leftArrowFormationName.png",
+				"pressed": "leftArrowFormationName.png",
+				"touchDelegateName": "previousFormation",
+				"z": 2,
+				"pos": {
+					"x": 1174,
+					"y": 291
+				}
+			},
+			"theFormation": {
+				"type": "sprite",
+				"sprite": "formationNameFrame.png",
+				"z": 1,
+				"pos": {
+					"x": 1505,
+					"y": 294
+				}
+			},
+			"nextFormation": {
+				"type": "button",
+				"main": "rightArrowFormationName.png",
+				"pressed": "rightArrowFormationName.png",
+				"touchDelegateName": "nextFormation",
+				"z": 2,
+				"pos": {
+					"x": 1844,
+					"y": 293
+				}
+			},
+			"fightButton": {
+				"type": "button",
+				"main": "buttonFight.png",
+				"pressed": "buttonFight.png",
+				"touchDelegateName": "fightStart",
+				"z": 1,
+				"pos": {
+					"x": 1507,
+					"y": 139
+				}
+			},
+			"kikButton": {
+				"type": "button",
+				"main": "buttonKikNormal.png",
+				"pressed": "buttonKikPressed.png",
+				"touchDelegateName": "kikStart",
+				"z": 1,
+				"pos": {
+					"x": 1837,
+					"y": 137
+				}
+			}
+		},
+		"pos": {
+			"x": 1029.0000000000005,
+			"y": 775.9999999999993
+		}
+	}
+}
 });
 
 

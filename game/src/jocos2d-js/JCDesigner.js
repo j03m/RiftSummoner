@@ -66,142 +66,343 @@ jc.Designer = jc.UiElementsLayer.extend({
         }
 
     },
-    windowConfig:{
-        "mainFrame": {
-            "cell": 5,
-            "type": "sprite",
-            "transitionIn": "top",
-            "transitionOut": "top",
-            "applyAdjustments": true,
-            "sprite": "genericBackground.png",
-            "z": 1,
-            "kids": {
-                "backButton": {
-                    "type": "button",
-                    "main": "backButton.png",
-                    "pressed": "backButtonPressed.png",
-                    "touchDelegateName": "back",
-                    "z": 2,
-                    "pos": {
-                        "x": 186,
-                        "y": 1059
-                    }
-                },
-                "facebookButton": {
-                    "type": "button",
-                    "main": "facebookButton.png",
-                    "pressed": "facebookButtonPressed.png",
-                    "touchDelegateName": "fb",
-                    "z": 2,
-                    "pos": {
-                        "x": 156,
-                        "y": 807
-                    }
-                },
-                "gameCenterButton": {
-                    "type": "button",
-                    "main": "gameCenterButton.png",
-                    "pressed": "gameCenterPressed.png",
-                    "touchDelegateName": "gameCenter",
-                    "z": 2,
-                    "pos": {
-                        "x": 157,
-                        "y": 626
-                    }
-                },
-                "storeButton": {
-                    "type": "button",
-                    "main": "mpstoreButton.png",
-                    "pressed": "mpstoreButtonPressed.png",
-                    "touchDelegateName": "store",
-                    "z": 2,
-                    "pos": {
-                        "x": 345,
-                        "y": 1059
-                    }
-                },
-                "twitterButton": {
-                    "type": "button",
-                    "main": "tweeterButton.png",
-                    "pressed": "tweeterButtonPressed.png",
-                    "touchDelegateName": "tweet",
-                    "z": 2,
-                    "pos": {
-                        "x": 336,
-                        "y": 807
-                    }
-                },
-                "itemWindow": {
-                    "type": "sprite",
-                    "sprite": "itemWindow.png",
-                    "z": 2,
-                    "pos": {
-                        "x": 1168,
-                        "y": 1164
-                    },
-                    "kids": {
-                        "pokeButton": {
-                            "type": "button",
-                            "main": "pokeButton.png",
-                            "pressed": "pokeButtonPressed.png",
-                            "touchDelegateName": "poke",
-                            "z": 3,
-                            "pos": {
-                                "x": 1072,
-                                "y": 135
-                            }
-                        },
-                        "itemFrame": {
-                            "type": "sprite",
-                            "sprite": "imageFrame.png",
-                            "z": 3,
-                            "pos": {
-                                "x": 156,
-                                "y": 138
-                            }
-                        },
-                        "closeButton": {
-                            "type": "button",
-                            "main": "closeButton.png",
-                            "pressed": "closeButtonPressed.png",
-                            "touchDelegateName": "close",
-                            "z": 3,
-                            "pos": {
-                                "x": 1333,
-                                "y": 135
-                            }
-                        }
-                    }
-                },
-                "startButton": {
-                    "type": "button",
-                    "main": "startButton.png",
-                    "pressed": "startButtonPressed.png",
-                    "touchDelegateName": "startGame",
-                    "z": 2,
-                    "pos": {
-                        "x": 264,
-                        "y": 1242
-                    }
-                },
-                "messageButton": {
-                    "type": "button",
-                    "main": "messageButton.png",
-                    "pressed": "messageButtonPressed.png",
-                    "touchDelegateName": "msg",
-                    "z": 2,
-                    "pos": {
-                        "x": 339,
-                        "y": 627
-                    }
-                }
-            },
-            "pos": {
-                "x": 1018,
-                "y": 778.0000000000002
-            }
-        }
-    }
+    windowConfig: 	{
+	"mainFrame": {
+		"size": {
+			"width": 2048,
+			"height": 1365
+		},
+		"type": "sprite",
+		"rect": {
+			"origin": {
+				"x": 220,
+				"y": 220
+			},
+			"size": {
+				"width": 293,
+				"height": 293
+			}
+		},
+		"applyAdjustments": true,
+		"transitionIn": "top",
+		"transitionOut": "top",
+		"sprite": "genericBackground.png",
+		"z": 0,
+		"kids": {
+			"closeButton": {
+				"type": "button",
+				"main": "closeButton.png",
+				"pressed": "closeButtonPressed.png",
+				"touchDelegateName": "close",
+				"z": 1,
+				"pos": {
+					"x": 1973,
+					"y": 1081
+				}
+			},
+			"statsFrame": {
+				"type": "sprite",
+				"sprite": "statsFrame.png",
+				"z": 2,
+				"pos": {
+					"x": 596,
+					"y": 731
+				}
+			},
+			"powerLevels": {
+				"isGroup": true,
+				"type": "grid",
+				"cols": 5,
+				"itemPadding": {
+					"top": 0,
+					"left": 12
+				},
+				"members": [
+					{
+						"type": "sprite",
+						"sprite": "level_0000_Layer-6.png"
+					}
+				],
+				"membersTotal": 5,
+				"sprite": "level_0000_Layer-6.png",
+				"z": 1,
+				"pos": {
+					"x": 1210,
+					"y": 967
+				},
+				"applyAdjustments": true
+			},
+			"powerIcons": {
+				"isGroup": true,
+				"type": "grid",
+				"cols": 5,
+				"itemPadding": {
+					"top": 0,
+					"left": -2
+				},
+				"input": true,
+				"members": [
+					{
+						"type": "sprite",
+						"input": true,
+						"sprite": "powerIconSmallFrame.png"
+					}
+				],
+				"membersTotal": 5,
+				"sprite": "powerIconSmallFrame.png",
+				"z": 1,
+				"pos": {
+					"x": 1213,
+					"y": 797
+				},
+				"applyAdjustments": true
+			},
+			"powerDesc": {
+				"type": "sprite",
+				"sprite": "powerIconsDescription.png",
+				"z": 1,
+				"pos": {
+					"x": 1535,
+					"y": 630
+				}
+			},
+			"nextLevel": {
+				"type": "sprite",
+				"sprite": "nextLevelCostFrame.png",
+				"z": 1,
+				"pos": {
+					"x": 1363,
+					"y": 456
+				}
+			},
+			"trainButton": {
+				"type": "button",
+				"main": "buttonTrain.png",
+				"pressed": "buttonTrainPressed.png",
+				"touchDelegateName": "trainPower",
+				"z": 1,
+				"pos": {
+					"x": 1249,
+					"y": 386
+				}
+			},
+			"doneButton": {
+				"type": "button",
+				"main": "buttonDone.png",
+				"pressed": "buttonDonePressed.png",
+				"touchDelegateName": "doneButton",
+				"z": 1,
+				"pos": {
+					"x": 1759,
+					"y": 457
+				}
+			},
+			"characterPortraitsFrame": {
+				"type": "sprite",
+				"sprite": "characterPortraitsFrame.png",
+				"z": 1,
+				"pos": {
+					"x": 1019,
+					"y": 200
+				}
+			},
+			"characterPortraitsLeft": {
+				"type": "button",
+				"main": "characterPortraitsButtonLeftBrown.png",
+				"pressed": "characterPortraitsButtonLeftPressedBrown.png",
+				"touchDelegateName": "previousChar",
+				"z": 10,
+				"pos": {
+					"x": 97,
+					"y": 208
+				}
+			},
+			"characterPortraitsRight": {
+				"type": "button",
+				"main": "characterPortraitsButtonRightBrown.png",
+				"pressed": "characterPortraitsButtonRightPressedBrown.png",
+				"touchDelegateName": "nextChar",
+				"z": 10,
+				"pos": {
+					"x": 1956,
+					"y": 198
+				}
+			},
+			"info": {
+				"type": "button",
+				"main": "infoButton.png",
+				"pressDelegateName": "infoPress",
+				"touchDelegateName": "infoTouch",
+				"z": 5,
+				"pos": {
+					"x": 496,
+					"y": 981
+				}
+			},
+			"card": {
+				"type": "sprite",
+				"sprite": "gargoyleFire_bg.png",
+				"z": 1,
+				"pos": {
+					"x": 781,
+					"y": 680
+				}
+			},
+			"element": {
+				"type": "sprite",
+				"sprite": "elements_0000_void.png",
+				"z": 5,
+				"pos": {
+					"x": 1015,
+					"y": 420
+				}
+			},
+			"air": {
+				"type": "sprite",
+				"sprite": "canAttackAir.png",
+				"z": 1,
+				"pos": {
+					"x": 238,
+					"y": 1029
+				}
+			},
+			"ground": {
+				"type": "sprite",
+				"sprite": "canAttackGround.png",
+				"z": 1,
+				"pos": {
+					"x": 384,
+					"y": 1023
+				}
+			},
+			"lblhp": {
+				"type": "label",
+				"text": "HEALTH",
+				"width": 80,
+				"height": 80,
+				"alignment": 0,
+				"fontSize": 20,
+				"fontName": "gow",
+				"z": 3,
+				"pos": {
+					"x": 285,
+					"y": 880
+				}
+			},
+			"lbldamage": {
+				"type": "label",
+				"text": "DAMAGE",
+				"width": 80,
+				"height": 80,
+				"alignment": 0,
+				"fontSize": 20,
+				"fontName": "gow",
+				"z": 3,
+				"pos": {
+					"x": 288,
+					"y": 798
+				}
+			},
+			"lblspeed": {
+				"type": "label",
+				"text": "SPEED",
+				"width": 80,
+				"height": 80,
+				"alignment": 0,
+				"fontSize": 20,
+				"fontName": "gow",
+				"z": 3,
+				"pos": {
+					"x": 288,
+					"y": 646
+				}
+			},
+			"lblpower": {
+				"type": "label",
+				"text": "POWER",
+				"width": 80,
+				"height": 80,
+				"alignment": 0,
+				"fontSize": 20,
+				"fontName": "gow",
+				"z": 3,
+				"pos": {
+					"x": 291,
+					"y": 561
+				}
+			},
+			"lblrange": {
+				"type": "label",
+				"text": "RANGE",
+				"width": 80,
+				"height": 80,
+				"alignment": 0,
+				"fontSize": 20,
+				"fontName": "gow",
+				"z": 3,
+				"pos": {
+					"x": 294,
+					"y": 481
+				}
+			},
+			"lblarmor": {
+				"type": "label",
+				"text": "ARMOR",
+				"width": 80,
+				"height": 80,
+				"alignment": 0,
+				"fontSize": 20,
+				"fontName": "gow",
+				"z": 3,
+				"pos": {
+					"x": 297,
+					"y": 723
+				}
+			},
+			"infoDialog": {
+				"type": "sprite",
+				"sprite": "titleDescription.png",
+				"z": 3,
+				"pos": {
+					"x": 1525,
+					"y": 787
+				}
+			},
+			"infoTitle": {
+				"type": "label",
+				"text": "TITLE",
+				"width": 200,
+				"height": 80,
+				"alignment": 0,
+				"fontSize": 20,
+				"fontName": "gow",
+				"z": 4,
+				"pos": {
+					"x": 1567,
+					"y": 1031
+				}
+			},
+			"infoText": {
+				"type": "label",
+				"text": "DESC",
+				"width": 200,
+				"height": 200,
+				"alignment": 0,
+				"fontSize": 20,
+				"fontName": "gow",
+				"z": 4,
+				"pos": {
+					"x": 1286,
+					"y": 831
+				}
+			}
+		},
+		"pos": {
+			"x": 1029.0000000000005,
+			"y": 775.9999999999989
+		}
+	}
+} 
 });
 
 

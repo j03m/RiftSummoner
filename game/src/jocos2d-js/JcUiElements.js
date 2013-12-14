@@ -409,10 +409,10 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             if (colCount!=0){
                 if (config.itemPadding){
                     if (config.itemPadding.all){
-                        x+=config.itemPadding.all;
+                        x+=(config.itemPadding.all*jc.assetScaleFactor);
                     }else{
                         if (config.itemPadding.left){
-                            x+=config.itemPadding.left;
+                            x+=(config.itemPadding.left*jc.assetScaleFactor);
                         }
                     }
                 }
@@ -435,10 +435,10 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 y-=itemSize.height;
                 if (config.itemPadding){
                     if (config.itemPadding.all){
-                        y-=config.itemPadding.all;
+                        y-=(config.itemPadding.all*jc.assetScaleFactor);
                     }else{
                         if (config.itemPadding.top){
-                            y-=config.itemPadding.top;
+                            y-=(config.itemPadding.top*jc.assetScaleFactor);
                         }
                     }
                 }
@@ -533,7 +533,8 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         centerMe.setPosition(centerOn.getPosition());
     },
     centerThisChild:function(centerMe, centerOn){
-        centerMe.setPosition(cc.p(50,50));
+		var dim = centerOn.getContentSize();
+        centerMe.setPosition(cc.p(dim.width/2,dim.height/2));
     },
     scaleTo:function(scaleMe, toMe){
         var currentSize = scaleMe.getContentSize();

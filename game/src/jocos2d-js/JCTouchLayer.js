@@ -111,11 +111,12 @@ jc.TouchLayer = cc.Layer.extend({
         var handled = [];
         for (var i=0;i<this.touchTargets.length;i++){
             var parent = this.touchTargets[i].getParent();
-            var tmpTouch = parent.convertToNodeSpace(touch);
-            if (!tmpTouch){
-                tmpTouch = this;
-            }
-
+			if (parent){
+				var tmpTouch = parent.convertToNodeSpace(touch);					
+			}else{
+				var tmpTouch = this.convertToNodeSpace(touch);								
+			}
+			
             if ( this.touchTargets[i] instanceof jc.Sprite){ //jc.sprites in this game ahve like 512x512 - contentSize + boudningbox are unusable
                 var rect = this.touchTargets[i].getTextureRect(); //texture rect gives us a width
                 var pos = this.touchTargets[i].getBasePosition(); //base pos gives us bottom middle of sprite
