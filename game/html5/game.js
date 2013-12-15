@@ -2,8 +2,6 @@
     var hotrSrc = [
         '../src/jocos2d-js/JCBrowser.js',
         '../src/kikClientMock.js',
-        '../zerver/blobApi.js',
-        '../zerver/multiplayerApi.js',
         '../src/underscore-min.js',
         '../src/async.js',
         '../src/spriteVars.js',

@@ -4,7 +4,7 @@ var dirImg = "art/";
 var dirMusic = "sounds/";
 
 jc.bestAssetDirectory();
-jc.setDesignSize(jc.resolutions.iphone4);
+jc.setDesignSize(cc.size(2048,1154));
 
 //todo {v}-ify these
 var arenaSheet = transformAsset(dirImg + "arena.png");
@@ -52,7 +52,7 @@ if (jc.designMode){
     var landingPlist = transformAsset(dirImg + "landing-ipadhd.plist");
     var loadingPng = transformAsset(dirImg + "loading-ipadhd.png");
     var loadingPlist = transformAsset(dirImg + "loading-ipadhd.plist");
-    var guide = dirImg + "loadingScreen.png";
+    var guide = dirImg + "multiplayerScreen.png";
     var g_maingame = [
     {src:guide},
     {src:uiPng},

@@ -30,6 +30,9 @@ jc.CompositeButton = cc.Sprite.extend({
         }
         this.scheduleUpdate();
     },
+	setData:function(data){
+		this.data = data;
+	},
     onEnter: function(){
         if ('mouse' in sys.capabilities) {
             cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 0);
@@ -51,7 +54,7 @@ jc.CompositeButton = cc.Sprite.extend({
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(this.def.pressed);
             this.setDisplayFrame(frame);
             if (this.onPress){
-                this.onPress();
+                this.onPress(this.data);
             }
             return true;
         }else{
@@ -90,7 +93,7 @@ jc.CompositeButton = cc.Sprite.extend({
             var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(this.def.main);
             this.setDisplayFrame(frame);
             if (this.onTouch && !this.paused){
-                this.onTouch();
+                this.onTouch(this.data);
             }
             return true;
         }else{

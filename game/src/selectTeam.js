@@ -32,7 +32,6 @@ var SelectTeam = jc.UiElementsLayer.extend({
         }
     },
     onShow:function(){
-        this.nextEnabled = true;
         if (!this.first){
             //llp through characters
             this.start();
@@ -46,6 +45,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
             }
             this.first = true;
         }else if (hotr.scratchBoard.selectedCharacter!=undefined && hotr.scratchBoard.currentCell!=undefined){
+			this.nextEnabled = true;
             var id = hotr.blobOperations.indexToId(hotr.scratchBoard.selectedCharacter);
             var cell = parseInt(hotr.scratchBoard.currentCell.replace(this.cellPrefix, ""));
             if (id){
@@ -59,8 +59,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     jc.fadeOut(this[hotr.scratchBoard.currentCell].pic);
                     hotr.blobOperations.clearFormationPosition(cell);
                 }
-            }
-
+            }			
         }
     },
     removeExistingVisual:function(id,cell){
@@ -185,6 +184,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
     windowConfig: {
 	"mainFrame": {
 		"type": "sprite",
+		"blackBox":true,
 		"applyAdjustments": true,
 		"transitionIn": "top",
 		"transitionOut": "top",
@@ -288,8 +288,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
 			}
 		},
 		"pos": {
-			"x": 1029.0000000000005,
-			"y": 775.9999999999993
+			"x": 1024,
+			"y": 768			
 		}
 	}
 }

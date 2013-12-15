@@ -28,6 +28,8 @@ var MainGame = cc.Layer.extend({
         }
 
         switch(key){
+			case 'selectEditTeamPre':
+				this.selectEditTeamPre();
             case 'selectTeam':
                 cc.Director.getInstance().replaceScene(SelectTeam.scene());
                 break;
@@ -56,8 +58,7 @@ var MainGame = cc.Layer.extend({
 
     },
     battlePre:function(){
-        //make api call to get multiplayer games
-
+        //make api call to get multiplayer games		
         var assets = [];
         assets = assets.concat(g_ui);
         this.showLoader({
@@ -74,25 +75,6 @@ var MainGame = cc.Layer.extend({
 
     },
     selectEditTeamPre: function(){
-
-//        var testLoader =             {
-//            "assets":[{src:g_characterPngs['blueKnight']}],
-//            "assetFunc":function(callback){
-//                hotr.blobOperations.getBlob(function(){
-//                    var cardAssets = this.makeCardDictionary();
-//                    callback(cardAssets);
-//                }.bind(this))
-//            }.bind(this),
-//            "nextScene":'selectTeam',
-//            "apiCalls":[
-//                function(callback){
-//                    hotr.blobOperations.getBlob(function(){
-//                        console.log("aoi done");
-//                        callback();
-//                    })
-//                },
-//            ]
-//        }
         var assets = this.makeCardDictionary();
         assets = assets.concat(g_ui);
         this.showLoader({
@@ -101,7 +83,56 @@ var MainGame = cc.Layer.extend({
         });
     },
     arenaPre:function(){
-        //todo: what level, get team
+		if (hotr.newOpponent){
+			this.arenaMP();
+		}else{
+	    	this.arenaQuest();			
+		}
+		
+    	
+	},
+	mpPre:function(){		
+        this.showLoader({           
+            "apiCalls":[ //get opponent
+                function(callback){                    				   
+				    hotr.multiplayerOperations.getOpponent(function(){
+                        callback();
+                    });
+                }
+            ],
+            "nextScene":'selectEditTeamPre'
+        });				
+	},
+	arenaMP:function(){
+        ArenaGame.scene();
+        var teamA = hotr.blobOperations.getTeam();
+        var level = hotr.blobOperations.getLevel();
+        var teamAFormation = hotr.blobOperations.getFormation();
+        var teamAPowers = hotr.blobOperations.getPowers();
+
+		//teamB from hotr.newOpponent
+        var teamB = hotr.newOpponent.team;
+        var teamBFormation = hotr.newOpponent.formation;
+        var teamBPowers = hotr.newOpponent.powers();
+		
+		//go to arena - show team dropdown attacker - VS -  defender
+
+        var fightConfig = {
+            teamA:teamA,
+            teamAFormation:teamAFormation,
+            teamB:teamB,
+            teamBFormation:teamBFormation,
+            teamAPowers:teamAPowers,
+            teamBPowers:teamBPowers,
+            offense:'a'
+        };
+		
+		//arena goes back to mp
+		this.doArena(fightConfig);
+
+	},
+	arenaQuest:function(){	
+	    //todo: what level, get team
         //fight config
         ArenaGame.scene();
         var teamA = hotr.blobOperations.getTeam();

@@ -2,10 +2,17 @@ var jc = jc || {};
 
 jc.UiConf = {};
 jc.woodRect = cc.rect(220,220,293,293);
+jc.topMost = 10000;
+cc.LabelTTF.prototype.setText = cc.LabelTTF.prototype.setString;
+cc.LabelTTF.prototype.setString = function(txt){
+	this.setText(txt);
+	this.enableStroke(cc.black(), 8*jc.assetScaleFactor);
+}
+
 jc.UiElementsLayer = jc.TouchLayer.extend({
     windowConfig:{
         "window":{
-            "cell":8,
+
             "type":"scale9",
             "anchor":['top'],
             "transitionIn":"top",
@@ -64,23 +71,49 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             }
         }
     },
-    letterBoxVertical:function(){
-        var size = jc.designSize;
-        var barWidth = (this.winSize.width - size.width)/2;
+    blackBoxElement:function(elementName){
+        var size = this[elementName].getContentSize();
+		this.blackBox(size);
+	},
+	blackBox:function(inSize){
+		var width=inSize.width*jc.assetScaleFactor;
+		var height=inSize.height*jc.assetScaleFactor;
+		var size = cc.size(width,height);
+        var verticalBarThickness= (this.winSize.width - size.width)/2;
+		var horizontalBarThickness = (this.winSize.height - size.height)/2;
         this.leftBar = cc.DrawNode.create();
         this.rightBar = cc.DrawNode.create();
+        this.topBar = cc.DrawNode.create();
+        this.bottomBar = cc.DrawNode.create();
+
         this.addChild(this.leftBar);
         this.addChild(this.rightBar);
+        this.addChild(this.topBar);
+        this.addChild(this.bottomBar);
+		
         var color = cc.c4f(0,0,0,1);
         var border = cc.c4f(0, 0, 0 , 1);
         this.leftBar.clear();
         this.rightBar.clear();
+        this.topBar.clear();
+        this.topBar.clear();
         this.leftBar.setPosition(cc.p(0,0));
-        this.leftBar.setPosition(cc.p(this.winSize.width - barWidth,0));
-        this.drawRect(this.leftBar, cc.rect(0,0,barWidth,this.winSize.height) , color, border,1);
-        this.drawRect(this.rightBar, cc.rect(0,0,barWidth,this.winSize.height) , color, border,1);
-        this.leftBar.setZOrder(100);
-        this.rightBar.setZOrder(100);
+		var rbPos = cc.p(this.winSize.width - verticalBarThickness,0);
+        this.rightBar.setPosition(rbPos);
+		var tbPos = cc.p(0,this.winSize.height - horizontalBarThickness);
+        this.topBar.setPosition(tbPos);
+        this.bottomBar.setPosition(cc.p(0,0));
+
+        this.drawRect(this.leftBar, cc.rect(0,0,verticalBarThickness,this.winSize.height) , cc.black(), border,1);
+        this.drawRect(this.rightBar, cc.rect(rbPos.x,rbPos.y,verticalBarThickness,this.winSize.height) , cc.black(), border,1);
+        this.drawRect(this.topBar, cc.rect(tbPos.x,tbPos.y,this.winSize.width,horizontalBarThickness) , cc.black(), border,1);
+        this.drawRect(this.bottomBar, cc.rect(0,0,this.winSize.width,horizontalBarThickness) , cc.black(), border,1);
+
+        this.leftBar.setZOrder(jc.topMost);
+        this.rightBar.setZOrder(jc.topMost);
+        this.topBar.setZOrder(jc.topMost);
+        this.bottomBar.setZOrder(jc.topMost);
+		
 
     },
     drawRect:function(poly, rect, fill, border, borderWidth){
@@ -104,7 +137,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             this.transitions = 0;
             if (this.runningType == 'out'){
                 this.outTransitionsComplete();
-            }else{
+            }else{				
                 this.inTransitionsComplete();
             }
         }
@@ -117,6 +150,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
     },
     start: function(){
         //transition windows in
+		this.blackBox(jc.designSize);
         this.runningType = 'in';
         for(var i =0; i< this.windowConfigs.length; i++){
             var windowConfig = this.windowConfigs[i];
@@ -184,14 +218,15 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
 
             var window = this.makeWindowByType(config);
             var kids = config.kids;
-            for(var kid in kids){
-                var kid = config.kids[kid];
+            for(var name in kids){
+                var kid = config.kids[name];
                 var kidWindow = this.makeWindowByType(kid);
                 if (!kid.pos){
                     kidWindow.setPosition(cc.p(0,0));
                 }else{
                     kidWindow.setPosition(cc.p(kid.pos.x*jc.assetCategoryData.scale, kid.pos.y*jc.assetCategoryData.scale));
                 }
+				window[name] = kidWindow;
                 window.addChild(kidWindow);
             }
             return window;

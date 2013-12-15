@@ -4,8 +4,9 @@ var express = require('express');
 var app = express();
 var https = require('https');
 var http = require('http');
-var zerver = require('zerver');
 var config = require('./private/config.js').hotrConfig;
+var auth = require('./private/auth.js');
+//var blobApi = require('./private/blobApi.js');
 
 if (config.prod){
     //This line is from the Node.js HTTPS documentation.
@@ -16,13 +17,73 @@ if (config.prod){
 
 }
 
+function log(obj){
+	console.log(JSON.stringify(obj));
+}
+
+function logError(err){
+	console.error(err.stack);	
+}
+
+function logErrors(err, req, res, next) {
+	console.error(err);
+  	next(err);
+}
+
+function errorHandler(err, req, res, next) {
+	logError(err);
+	res.send(500);
+}
+
+function handler(err, res){
+	if (err){
+		log(err);
+		res.json(err.code, err.msg);
+	}else{
+		res.json(200,res);					
+	}
+}
+
 app.use(express.compress());
 app.use('/src', express.static(__dirname + "/src"));  //game src
 app.use(express.static(__dirname + "/public")); //html and built js files
 app.use('/html5', express.static(__dirname + "/html5"));  //html5 specific stuff
 app.use('/platform', express.static(__dirname + "/platform")); //cocos2d raw
 app.use('/art', express.static(__dirname + "/art")); //art - tbd replaced by urls to cdn
-app.use(zerver.middleware());
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+app.use(app.router);
+app.use(logErrors);
+app.use(errorHandler);
+
+var validate = auth.validate;
+var verify = auth.verifyRequest;
+var convert = auth.convert;
+
+app.get('/app/createplayer/:id/:pass', validate(['id','pass']), function(req, res){
+	if (config.prod){
+		if (!req.connection.encrypted){
+			res.json(403.4, "SSL Required.");
+			return;
+		}
+	}
+
+	blobApi.createNewPlayer(req.params.id, req.params.pass, function(err, res){
+		handler(err, res);
+	});
+});
+
+app.get('/app/gettokenandblob/:id/:data/:hash', validate(['id', 'data','hash']), verify, function(req, res){
+	blobApi.getNewAuthTokenAndBlob(req.params.id, function(err, res){
+		handler(err, res);
+	});
+});
+
+app.get('/app/getblob/:token', validate(['token']), convert, function(req, res){
+	blobApi.getBlob(req.userToken,function(err, res){
+		handler(err, res);
+	});
+});
 
 // Create an HTTP service.
 http.createServer(app).listen(80);
@@ -32,28 +93,8 @@ if (config.prod){
     https.createServer(options, app).listen(443);
 }
 
-//require controllers, pass app, create restful targets
-
-
-
 util.puts('Press Ctrl + C to stop.');
 
 
-//app.use(zerver.middleware());
-//app.use(express.compress());
-//app.use(express.static(__dirname + "/src"));
-//fs.readdir(__dirname, function(err, results){
-//    for (var i =0; i<results.length; i++){
-//        console.log(results[i]);
-//        app.use(express.static(results[i]));
-//    }
-//    // Create an HTTP service.
-//    http.createServer(app).listen(80);
-//    // Create an HTTPS service identical to the HTTP service.
-//    if (config.prod){
-//        https.createServer(options, app).listen(443);
-//    }
-//
-//    util.puts('Press Ctrl + C to stop.');
-//});
+
 

@@ -17,10 +17,8 @@ var EditTeam = jc.UiElementsLayer.extend({
         }
     },
     onShow:function(){
-        if (jc.assetCategory == 'iphone'){
-			this.letterBoxVertical();        	
-        }
         this.start();
+
         this.infoFadeWorker();
 
         if (!this.tableView){
@@ -39,11 +37,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 			var tableDim = this.tableView.getContentSize();
 			var y = tableDim.height/2;
 			y += 25 * jc.assetScaleFactor;
-			this.tableView.setPosition(cc.p(tableDim.width/2,y ));
-			
-
-
-            
+			this.tableView.setPosition(cc.p(tableDim.width/2,y ));		            
             this.reorderChild(this.tableView, 3);
             this.tableView.hackOn();
             this.tableView.setIndex(0);
@@ -194,7 +188,6 @@ var EditTeam = jc.UiElementsLayer.extend({
         for (var stat in stats){
             var lblName = prefix+stat			
             this[lblName].setString(stats[stat]);
-			this[lblName].enableStroke(cc.black(), 8*jc.assetScaleFactor);
         }
     },
     makeStringStats:function(stats){
@@ -227,9 +220,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     buildInfoDialogForSelectedCharacter:function(entry){
 
         this.infoTitle.setString(entry.formalName);
-        this.infoTitle.enableStroke(cc.black(), 8*jc.assetScaleFactor);
         this.infoText.setString(entry.details);
-		this.infoText.enableStroke(cc.black(), 8*jc.assetScaleFactor);
         this.doInfoFadeOut = false;
         this.infoFadeIn();
     },
@@ -294,6 +285,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     },
     windowConfig: 	{
 	"mainFrame": {
+		"blackBox":true,
 		"size": {
 			"width": 2048,
 			"height": 1365
@@ -624,8 +616,8 @@ var EditTeam = jc.UiElementsLayer.extend({
 			}
 		},
 		"pos": {
-			"x": 1029.0000000000005,
-			"y": 775.9999999999989
+			"x": 1024,
+			"y": 768
 		}
 	}
 } 

@@ -9,7 +9,8 @@ var Loading = jc.UiElementsLayer.extend({
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(loadingPlist);
             this.initFromConfig(this.windowConfig);
-            this.start();           
+            this.start();      
+			this.blackBox(jc.designSize);     
 			this.spinner.setVisible(false);
             return true;
         } else {
