@@ -20,7 +20,7 @@ hotr.multiplayerOperations.getGames = function(callback){
     });
 }
 
-hotr.multiplayer.Operations.getOpponent = function(callback){
+hotr.multiplayerOperations.getOpponent = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
     jc.multiplayerApi.findGame(authToken.token,function(err, data){
         if (data != undefined){

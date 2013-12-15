@@ -2,15 +2,9 @@
 var auth = require('./auth.js');
 var cardGen = require('./cardGen.js').generateCards;
 var getEveryone = require('./cardGen.js').getEveryone;
-var uuid = require('node-uuid');
 var redisWrap = require('./redisWrapper.js');
-var crypto = require('crypto');
-var errors = require('./errors.js');
+var error = require('./errors.js').error;
 
-var sessionTTL = 24*60*60;
-var sessionTTLMS = sessionTTL*1000;
-var sessionNameSpace = "hotr:session:";
-var credentialsNameSpace = "hotr:creds:";
 var blobNameSpace = "hotr:blob:";
 
 
@@ -18,7 +12,7 @@ function newPlayer(userId, callback){
     //make 6 cards for this player
     cardGen(3,6, function(err, res){
 		if (err){
-			errors(500, "failed on card gen", err, callback);
+			error(500, "failed on card gen", err, callback);
 		}else{
 	        var blob = {};
 	        blob["id"] = userId;
@@ -36,12 +30,12 @@ function setBlob(userToken, blob, callback){
     //save it
     redisWrap.set(blobNameSpace+userToken, JSON.stringify(blob), function(err, setResult){
         if (err){
-            throw err;
+            error(500, "Could not set: " + userToken + " blob in storage.", err, callback)
+        }else if (setResult.toLowerCase()!="ok"){
+			error(500, "Failed to set blob: " + setResult + " for user:" + userToken + " blob:" + blob, undefined, callback);
+        }else{
+			callback(undefined, setResult);        	
         }
-        if (setResult.toLowerCase()!="ok"){
-            throw "Failed to set blob: " + setResult + " for user:" + userToken + " blob:" + blob;
-        }
-        callback(setResult);
     });
 }
 
@@ -59,10 +53,10 @@ function newPlayerApi(userToken, callback){
 function readBlob(userToken, callback){
     redisWrap.get(blobNameSpace+userToken, function(err, blob){
         if (err){
-			errors(500, "Failed to read blob from redis", err, callback);
+			error(500, "Failed to read blob from redis", err, callback);
         }else{
 	        if (blob){
-	            callback(JSON.parse(blob));
+	            callback(undefined, JSON.parse(blob));
 	        }else{
 	            error(500, "Couldn't find a blob for: " + userToken, undefined, callback);
 	        }        	
@@ -70,20 +64,15 @@ function readBlob(userToken, callback){
     });
 }
 
-exports.saveBlob =  function(authToken, blob, callback){
+exports.saveBlob =  function(userToken, blob, callback){
     //first, we need to get the current blob
-    auth.convertToken(authToken, function(userToken){
-        if(!userToken){
-            callback({error:"session invalid"});
+    readBlob(userToken, function(err, storedBlob){
+		if (err){
+			error(500, "Could not read: " + userToken + " blob from storage.", err, callback)
+		}else if (storedBlob.version >= blob.version){
+            error(400, "Stored blob is version: " + storedBlob.version + " attempting to overwrite with: " + blob.version, undefined, callback);
         }else{
-            readBlob(userToken, function(storedBlob){
-                if (storedBlob.version < blob.version){
-                    setBlob(userToken, blob, callback);
-                }else{
-                    console.log("Stored blob is version: " + storedBlob.version + " attempting to overwrite with: " + blob.version);
-                    callback(undefined);
-                }
-            });
+            setBlob(userToken, blob, callback);			
         }
     });
 }
@@ -118,7 +107,7 @@ exports.getNewAuthTokenAndBlob = function(userToken, callback){
 			callback(err);
 		}else{
 			readBlob(userToken, function(err, blob){
-                callback(err, authTokenObj, blob);
+                callback(err, {'token':authTokenObj, 'blob':blob});
             });					
 		}
     });            
@@ -131,8 +120,8 @@ exports.getBlob = function(authToken, callback){
             callback({error:"session invalid"});
         }else{
             //get blob
-            readBlob(userToken, function(blob){
-                callback(blob);
+            readBlob(userToken, function(err, blob){
+                callback(err, blob);
             });
         }
     });

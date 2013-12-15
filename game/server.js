@@ -6,7 +6,7 @@ var https = require('https');
 var http = require('http');
 var config = require('./private/config.js').hotrConfig;
 var auth = require('./private/auth.js');
-//var blobApi = require('./private/blobApi.js');
+var blobApi = require('./private/blobApi.js');
 
 if (config.prod){
     //This line is from the Node.js HTTPS documentation.
@@ -35,12 +35,14 @@ function errorHandler(err, req, res, next) {
 	res.send(500);
 }
 
-function handler(err, res){
+function handler(res, err, data){
 	if (err){
 		log(err);
 		res.json(err.code, err.msg);
 	}else{
-		res.json(200,res);					
+		console.log("data:");
+		console.log(data);
+		res.json(200,data);					
 	}
 }
 
@@ -74,14 +76,20 @@ app.get('/app/createplayer/:id/:pass', validate(['id','pass']), function(req, re
 });
 
 app.get('/app/gettokenandblob/:id/:data/:hash', validate(['id', 'data','hash']), verify, function(req, res){
-	blobApi.getNewAuthTokenAndBlob(req.params.id, function(err, res){
-		handler(err, res);
+	blobApi.getNewAuthTokenAndBlob(req.params.id, function(err, data){
+		handler(res, err, data);
 	});
 });
 
 app.get('/app/getblob/:token', validate(['token']), convert, function(req, res){
-	blobApi.getBlob(req.userToken,function(err, res){
-		handler(err, res);
+	blobApi.getBlob(req.userToken,function(err, data){
+		handler(res, err, data);
+	});
+});
+
+app.post('/app/saveblob/:token', validate(['token']), convert, function(req,res){
+	blobApi.saveBlob(req.userToken, function(err, data){
+		handler(res, err, data);
 	});
 });
 
@@ -94,7 +102,3 @@ if (config.prod){
 }
 
 util.puts('Press Ctrl + C to stop.');
-
-
-
-

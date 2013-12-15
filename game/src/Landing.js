@@ -22,8 +22,9 @@ var Landing = jc.UiElementsLayer.extend({
     },
     quest:function(){},
     battle:function(){         
-		 hotr.multiplayerGame = true;
-         hotr.mainScene.layer.battlePre();
+		 // hotr.multiplayerGame = true;
+		 //          hotr.mainScene.layer.battlePre();
+		 hotr.mainScene.layer.selectEditPre();
     },
     summon:function(){},
     store:function(){},
