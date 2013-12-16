@@ -4,6 +4,7 @@ var cardGen = require('./cardGen.js').generateCards;
 var getEveryone = require('./cardGen.js').getEveryone;
 var redisWrap = require('./redisWrapper.js');
 var error = require('./errors.js').error;
+var mpApi = require('./multiplayerApi.js');
 
 var blobNameSpace = "hotr:blob:";
 
@@ -102,8 +103,13 @@ exports.createNewPlayer = function(id, pass, callback){
 					callback(err);
 					return;
 				}else{
-					console.log("new player");
-					callback(undefined, {blob:newBlob, token:tokenObj});
+					mpApi.register(id, function(err, res){
+						//if err, don't block but log
+						if (err){
+							console.log("Could not register: " + id + " for multiplayer");
+						}
+						callback(undefined, {blob:newBlob, token:tokenObj});						
+					})
 				}
             });
         });

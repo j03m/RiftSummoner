@@ -7,6 +7,7 @@ var http = require('http');
 var config = require('./private/config.js').hotrConfig;
 var auth = require('./private/auth.js');
 var blobApi = require('./private/blobApi.js');
+var multiplayerApi = require('./private/multiplayerApi.js');
 
 if (config.prod){
     //This line is from the Node.js HTTPS documentation.
@@ -91,8 +92,13 @@ app.get('/app/getblob/:token', validate(['token']), convert, function(req, res){
 });
 
 app.post('/app/saveblob/:token', validate(['token']), convert, function(req,res){
-	console.log(req.body);  
 	blobApi.saveBlob(req.userToken, req.body,function(err, data){
+		handler(res, err, data);
+	});
+});
+
+app.get('/app/findgame/:token', validate(['token']), convert, function(req,res){
+	multiplayerApi.findGame(req.userToken function(err, data){
 		handler(res, err, data);
 	});
 });
