@@ -17,28 +17,41 @@ hotr.api.do = function(method, url,data,cb) {
     }
     
     xhr.onreadystatechange = function(){
+		console.log("readystatechange");
 			if (xhr.readyState == 4) {
-				var response;
+				console.log("readystatechange 4");
+				var response = xhr.responseText;
+				var responseObj;
 				try{
-					response = JSON.parse(xhr.responseText);
+					responseObj = JSON.parse(response);
 				}catch(e){
-					console.log("failed to parse:" + e);
-					response = xhr.responseText;
+					console.log("failed to parse:" + response + " with " + e);
+					responseObj = response;
 				}
 					
 	            if (xhr.status == 200) {
-	                cb(undefined, response);
+	                cb(undefined, responseObj);
 	            } else {
-	                cb(xhr.status,response);
+					var errStatus;
+					if (xhr.status == 0){
+						errStatus = 500;
+						responseObj = "connection dropped.";
+					}else{
+						errStatus = xhr.status;
+					}
+	                cb(errStatus,responseObj);
 	            }
 	        }	
 	}
     
 
 	xhr.open(method, url);
-	xhr.setRequestHeader("Content-type", "application/json")    	
+
+	 	
 	if (data){
-		xhr.send(JSON.stringify(data));
+		xhr.setRequestHeader("Content-type","application/json");
+		var jsonString = JSON.stringify(data);
+		xhr.send(jsonString);
 	}else{
 		xhr.send();
 	}
@@ -65,7 +78,7 @@ hotr.api.getBlob = function(token, callback){
 	hotr.api.get(url, callback);
 }
 
-hotr.api.createPlayer = function(id, pass, callback){	
+hotr.api.createNewPlayer = function(id, pass, callback){	
 	var url = hotr.api.makeUrl(hotr.api.target,'/app/createplayer/:id/:pass',arguments);
 	hotr.api.get(url, callback);
 }
@@ -76,7 +89,7 @@ hotr.api.getNewAuthTokenAndBlob = function(id, data, hash, callback){
 }
 
 hotr.api.saveBlob = function(token, blob, callback){
-	var url = hotr.api.makeUrl(hotr.api.target, 'app/saveblob/:token', arguments);
+	var url = hotr.api.makeUrl(hotr.api.target, '/app/saveblob/:token', arguments);
 	var data = blob;
 	hotr.api.post(url,data,callback)
 }

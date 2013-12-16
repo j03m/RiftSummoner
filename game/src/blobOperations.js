@@ -46,12 +46,12 @@ hotr.blobOperations.generateCreds = function(){
 
 hotr.blobOperations.getBlob = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
-    hotr.api.getBlob(authToken.token,function(err, res){
+    hotr.api.getBlob(authToken.token,function(err, data){
 		if (err){
 			throw err;
 		}
         if (data != undefined){
-            hotr.playerBlob = res;
+            hotr.playerBlob = data;
             callback(true);
         }else{
             callback(false);
@@ -62,6 +62,7 @@ hotr.blobOperations.getBlob = function(callback){
 hotr.blobOperations.saveBlob = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
     hotr.playerBlob.version++;
+	console.log("save me:" + JSON.stringify(hotr.playerBlob));
     hotr.api.saveBlob(authToken.token, hotr.playerBlob, function(err,res){
 		if (err){
 			throw err;

@@ -70,8 +70,11 @@ app.get('/app/createplayer/:id/:pass', validate(['id','pass']), function(req, re
 		}
 	}
 
-	blobApi.createNewPlayer(req.params.id, req.params.pass, function(err, res){
-		handler(err, res);
+	blobApi.createNewPlayer(req.params.id, req.params.pass, function(err, data){
+		console.log("err:" + err);
+		console.log("data:" + data);
+		console.log("res:" + res);
+		handler(res, err, data);
 	});
 });
 
@@ -82,13 +85,14 @@ app.get('/app/gettokenandblob/:id/:data/:hash', validate(['id', 'data','hash']),
 });
 
 app.get('/app/getblob/:token', validate(['token']), convert, function(req, res){
-	blobApi.getBlob(req.userToken,function(err, data){
+	blobApi.getBlob(req.userToken, function(err, data){
 		handler(res, err, data);
 	});
 });
 
 app.post('/app/saveblob/:token', validate(['token']), convert, function(req,res){
-	blobApi.saveBlob(req.userToken, function(err, data){
+	console.log(req.body);  
+	blobApi.saveBlob(req.userToken, req.body,function(err, data){
 		handler(res, err, data);
 	});
 });

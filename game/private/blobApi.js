@@ -8,7 +8,7 @@ var error = require('./errors.js').error;
 var blobNameSpace = "hotr:blob:";
 
 
-function newPlayer(userId, callback){
+function makePlayerData(userId, callback){
     //make 6 cards for this player
     cardGen(3,6, function(err, res){
 		if (err){
@@ -28,6 +28,7 @@ function newPlayer(userId, callback){
 
 function setBlob(userToken, blob, callback){
     //save it
+	console.log("setting:" + blobNameSpace+userToken);
     redisWrap.set(blobNameSpace+userToken, JSON.stringify(blob), function(err, setResult){
         if (err){
             error(500, "Could not set: " + userToken + " blob in storage.", err, callback)
@@ -39,12 +40,18 @@ function setBlob(userToken, blob, callback){
     });
 }
 
-function newPlayerApi(userToken, callback){
-    newPlayer(userToken, function(err, newBlob){
+function newPlayer(userToken, callback){
+    makePlayerData(userToken, function(err, newBlob){
         if (err){
 			callback(err);
         }else{
-			setBlob(userToken, newBlob, callback);        	
+			setBlob(userToken, newBlob, function(err, res){
+				if (err){
+					callback(err);
+				}else{
+					callback(undefined, newBlob);
+				}
+			});        	
         }
 
     });
@@ -72,7 +79,8 @@ exports.saveBlob =  function(userToken, blob, callback){
 		}else if (storedBlob.version >= blob.version){
             error(400, "Stored blob is version: " + storedBlob.version + " attempting to overwrite with: " + blob.version, undefined, callback);
         }else{
-            setBlob(userToken, blob, callback);			
+            console.log("Setting:" + JSON.stringify(blob)+ " for:" + userToken);
+			setBlob(userToken, blob, callback);			
         }
     });
 }
@@ -94,7 +102,8 @@ exports.createNewPlayer = function(id, pass, callback){
 					callback(err);
 					return;
 				}else{
-					callback(err, {blob:newBlob, token:tokenObj});
+					console.log("new player");
+					callback(undefined, {blob:newBlob, token:tokenObj});
 				}
             });
         });
@@ -113,23 +122,9 @@ exports.getNewAuthTokenAndBlob = function(userToken, callback){
     });            
 }
 
-exports.getBlob = function(authToken, callback){
-    //get usertoken from session token
-    convertToken(authToken, function(userToken){
-        if(!userToken){
-            callback({error:"session invalid"});
-        }else{
-            //get blob
-            readBlob(userToken, function(err, blob){
-                callback(err, blob);
-            });
-        }
+exports.getBlob = function(userToken, callback){
+    readBlob(userToken, function(err, blob){
+        callback(err, blob);
     });
 }
-
-
-exports.newPlayer = newPlayerApi;
-exports.setBlob = setBlob;
-exports.newPlayer = newPlayer;
-exports.readBlob = readBlob;
 

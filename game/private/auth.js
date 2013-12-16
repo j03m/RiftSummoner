@@ -44,7 +44,7 @@ exports.verifyRequest = function(req, res, next){
 }
 
 exports.convert = function(req, res, next){
-	convertToken(authToken,function(err, response){
+	convertToken(req.params.token,function(err, response){
 		if(err){
 			res.send(err.code);
 		}else{
