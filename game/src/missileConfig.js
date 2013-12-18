@@ -7,8 +7,7 @@ var missileConfig = {
                          "frames":27,
                          "delay":0.02 ,
                          "first":9,
-                         "speed":100,
-						 "path":"jump",
+                         "speed":300,
 						 "height":150
                          
                      },
@@ -17,11 +16,18 @@ var missileConfig = {
                          "simple":true,
 						 "hasDirection":true,
 						 "rotation":"arrow",
-						 "path":"bezier",
+                         "initialAngle":-45,
+						 "path":"arrow",
                          "speed":350,
 						 "height":200
 						 
                      },
+                    "bomb":{
+                        "png":"art/bomb.png",
+                        "simple":true,
+                        "path":"jump",
+                        "speed":100
+                    },
                     "fireball":{
                         "png":"art/fireball.png",
                         "plist":"art/fireball.plist",

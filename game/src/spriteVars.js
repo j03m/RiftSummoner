@@ -522,7 +522,8 @@ var spriteDefs = {
 			"targets": 2,
 			"damage": 35,
 			"speed": 85,
-			"actionDelays": {
+            "missile": "arrow",
+            "actionDelays": {
 				"attack": 0.5
 			},
 			"effectDelays": {
@@ -550,6 +551,7 @@ var spriteDefs = {
 			"MaxHP": 100,
 			"movementType": 1,
 			"targets": 2,
+            "missile": "arrow",
 			"damage": 35,
 			"speed": 55,
 			"actionDelays": {
@@ -579,8 +581,8 @@ var spriteDefs = {
 			"MaxHP": 100,
 			"damage": 25,
 			"movementType": 1,
+            "missile": "arrow",
 			"targets": 2,
-			"missile": "greenbullet",
 			"poisonDamage": 10,
 			"speed": 55,
 			"actionDelays": {
@@ -607,7 +609,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 200,
+			"MaxHP": 100,
 			"damage": 45,
 			"missile":"arrow",
 			"movementType": 1,
@@ -759,10 +761,10 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 50,
+			"MaxHP": 200,
 			"movementType": 1,
 			"targets": 1,
-			"missile": "greenbullet",
+			"missile": "bomb",
 			"damage": 80,
 			"speed": 55,
 			"actionDelays": {

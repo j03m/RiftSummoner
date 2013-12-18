@@ -33,6 +33,8 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
         return;
     }
 
+
+
     //get the action delay for attacking
     var actionDelay = this.owner.gameObject.actionDelays['attack'];
     var effectDelay = this.owner.gameObject.effectDelays['attack'];
@@ -42,12 +44,22 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
     }
 
     //if time is past the actiondelay and im not in another animation other than idle or damage
-    if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1){
+    if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1 && !this.firing){
         this.setAttackAnim('fighting');
         this.owner.scheduleOnce(this.doMissile.bind(this),effectDelay);
         this.lastAttack = 0;
     }else{
         this.lastAttack+=dt;
+        var point = this.seekEnemy();
+        if (!point){
+            this.setState('move', 'move');
+            return;
+        }
+        if (point.x != 0 || point.y != 0){
+            //out of range, they fled or we got knocked back
+            this.setState('move', 'move');
+            return;
+        }
     }
 }
 
@@ -76,6 +88,8 @@ RangeBehavior.prototype.doMissile = function(){
 	            this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
 	            this.missile.runAction(this.missileAnimation);            	
             }
+            this.missile.setFlippedX(this.owner.isFlippedX());
+
 
         }
 
@@ -98,9 +112,6 @@ RangeBehavior.prototype.doMissile = function(){
             ownerPos = cc.pAdd(ownerPos, this.owner.gameObject.missileOffset);
         }
 
-
-        this.missile.setFlippedX(this.owner.isFlippedX());
-
         this.missile.setPosition(ownerPos);
 
 
@@ -116,48 +127,82 @@ RangeBehavior.prototype.doMissile = function(){
 
 		
         var moveTo;
-
-		if (!missileConfig[missileName].path){
+        var rotateTo;
+        var missileStart = this.missile.getPosition();
+        var v = this.getVectorTo(targetPos, missileStart);
+		if (!missileType.path){
 			moveTo = cc.MoveTo.create(timeToImpact, targetPos);			
-		}else if (missileConfig[missileName].path=="bezier"){
+		}else if (missileType.path=="bezier"){
 			
 			var bezier = [];
-			var missileStart = this.missile.getPosition();
 			bezier.push(missileStart);
 
 			var pos2 = cc.pMidpoint(missileStart, targetPos);
-			if (!missileConfig[missileName].height){
-				throw "Missile path bezier must have a height property as well: " + missileName;
-			}
-			pos2.y += missileConfig[missileName].height;
+			pos2.y += v.distance/2;
 			bezier.push(pos2);
 			
 			bezier.push(targetPos);				
 			moveTo = cc.BezierTo.create(timeToImpact, bezier);
-		}else if (missileConfig[missileName].path =="jump"){
-			if (!missileConfig[missileName].height){
-				throw "Missile path jump must have a height property as well: " + missileName;
-			}
-			moveTo = cc.JumpTo.create(timeToImpact, targetPos, missileConfig[missileName].height, 1);
-		}
+		}else if (missileType.path =="jump"){
+			moveTo = cc.JumpTo.create(timeToImpact, targetPos, v.distance/2, 1);
+		}else if (missileType.path =="arrow"){
+            moveTo = cc.JumpTo.create(timeToImpact, targetPos, v.distance/4, 1);
+        }
+
+        if (missileType.rotation){
+            //todo: set initial angel - based on sprite direction
+            if (this.owner.isFlippedX()){
+                this.missile.setRotation(missileType.initialAngle *-1);
+                rotateTo = cc.RotateTo.create(timeToImpact, -45);
+            }else{
+                this.missile.setRotation(missileType.initialAngle);
+                rotateTo = cc.RotateTo.create(timeToImpact, 45);
+            }
+
+
+        }
 
 
         var callback = cc.CallFunc.create(function(){
-            this.hitLogic();
-            this.owner.layer.removeChild(this.missile, false);
 
-            if (this.locked && missileType.effect){
-                jc.playEffectOnTarget(missileType.effect, this.locked, this.owner.layer);
+            if (this.locked){
+                this.hitLogic();
+                if (missileType.effect){
+                    jc.playEffectOnTarget(missileType.effect, this.locked, this.owner.layer);
+                }
             }
+            this.owner.layer.removeChild(this.missile, false);
             this.firing = false;
 
         }.bind(this));
         var seq = cc.Sequence.create(moveTo, callback);
         this.missile.runAction(seq);
+        if (rotateTo){
+            this.missile.runAction(rotateTo);
+        }
 
+
+    }else{
+        //make sure I'm not attacking
+        var state = this.getState();
+        this.setState(state.brain, 'idle');
     }
 
 }
+
+//RangeBehavior.prototype.strikeSuccess = function(){
+//    var mbb = this.missile.getBoundingBox();
+//    mbb.width*=2;
+//    var tbb = this.locked.getBoundingBox();
+//
+//    if (cc.rectContainsRect(tbb, mbb)){
+//        jc.log(['console'], this.owner.name + " hit " + this.locked.name);
+//        return true;
+//    }else{
+//        jc.log(['console'], this.owner.name + " missed " + this.locked.name);
+//        return false;
+//    }
+//}
 
 RangeBehavior.prototype.handleRangeIdle = function(dt){
     //always lock on who-ever is closest

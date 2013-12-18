@@ -40,14 +40,10 @@ var EditTeam = jc.UiElementsLayer.extend({
 			this.tableView.setPosition(cc.p(tableDim.width/2,y ));		            
             this.reorderChild(this.tableView, 3);
             this.tableView.hackOn();
-            this.tableView.setIndex(0);
         }
     },
     inTransitionsComplete:function(){
-//        if (this.card){
-//           // jc.fadeIn(this.card, 255);
-//        }
-
+        this.tableView.setIndex(1);
     },
     outTransitionsComplete:function(){
         jc.layerManager.popLayer();

@@ -633,7 +633,6 @@ jc.getCardFrameName = function(name){
 }
 
 
-
 jc.formations = {
     "4x3":[
         {"x":225,"y":225},

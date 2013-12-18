@@ -236,7 +236,7 @@ GeneralBehavior.prototype.seekEnemy = function(){
     attackPosition = this.adjustFlock(attackPosition);
 
     //apply a position augment if it's there - usually for flying animals to be far off their targets
-    if (this.owner.gameObject.flightAug){
+    if (this.owner.gameObject.flightAug && this.locked.gameObject.movementType == jc.movementType.ground){
         if (!this.owner.isFlippedX()){
             this.owner.gameObject.flightAug.x*=-1;
         }
