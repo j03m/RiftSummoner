@@ -466,7 +466,7 @@ var ArenaGame = jc.WorldLayer.extend({
         this.victory = new Victory();
         this.victory.onDone = function(){
             this.removeChild(this.victory,false);
-            hotr.mainScene.layer.selectEditTeamPre();
+            hotr.mainScene.layer.goToReturnPoint();
         }.bind(this);
         this.victory.init();
 
@@ -481,7 +481,7 @@ var ArenaGame = jc.WorldLayer.extend({
         this.defeat = new Defeat();
         this.defeat.onDone = function(){
             this.removeChild(this.defeat,false);
-            hotr.mainScene.layer.selectEditTeamPre();
+            hotr.mainScene.layer.goToReturnPoint();
         }.bind(this);
         this.defeat.init(); //todo pass stats
 

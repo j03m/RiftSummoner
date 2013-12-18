@@ -128,6 +128,16 @@ jc.moveActionWithCallback = function(point, rate, callback){
 }
 
 jc.cap = function(point, rect){
+	if (!point || !rect){
+		console.log("Point or rect not passed to cap?");
+		console.log("point:")
+		console.log(point);
+		console.log("rect:")
+		console.log(point);
+		jc.dumpStack(['console']);
+		return;
+		
+	}
     if (point.x < rect.x){
         point.x = rect.x;
     }
@@ -334,7 +344,9 @@ jc.playTintedEffectOnTarget = function(name, target, layer, child, r, g, b){
 
 
 jc.playEffectOnTarget = function(name, target, layer, child){
-
+	if (!target){
+		return;
+	}
     var config = effectsConfig[name];
 
     if (!target.effectAnimations){
@@ -528,7 +540,9 @@ jc.genericPowerRemove = function(varName,effectName, bObj){
         bObj.owner.removeChild(bObj.owner[varName], false);
     }
     delete bObj.owner[varName];
-    bObj.owner.effectAnimations[effectName].playing = false;
+	if (bObj.owner.effectAnimations[effectName]){
+		bObj.owner.effectAnimations[effectName].playing = false;		
+	}
 }
 
 jc.movementType = {

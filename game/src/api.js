@@ -91,5 +91,20 @@ hotr.api.getNewAuthTokenAndBlob = function(id, data, hash, callback){
 hotr.api.saveBlob = function(token, blob, callback){
 	var url = hotr.api.makeUrl(hotr.api.target, '/app/saveblob/:token', arguments);
 	var data = blob;
-	hotr.api.post(url,data,callback)
+	hotr.api.post(url,data,callback);
+}
+
+hotr.api.getGames = function(token, callback){
+	var url = hotr.api.makeUrl(hotr.api.target, '/app/getgames/:token', arguments);
+	hotr.api.get(url,callback);
+}
+
+hotr.api.findGame = function(token, callback){
+	var url = hotr.api.makeUrl(hotr.api.target, '/app/findgame/:token', arguments);
+	hotr.api.get(url,callback);
+}
+
+hotr.api.getTeam = function(token, op, callback){
+	var url = hotr.api.makeUrl(hotr.api.target, '/app/getteam/:token/:opponent', arguments);
+	hotr.api.get(url, callback);
 }

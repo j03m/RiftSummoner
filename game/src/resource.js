@@ -78,12 +78,17 @@ for (var entry in spriteDefs ){
 
 for (var entry in missileConfig){
     g_characterPngs[entry] = transformAsset(missileConfig[entry].png);
-    g_characterPlists[entry] = transformAsset(missileConfig[entry].plist);
+	if (missileConfig[entry].plist){
+		g_characterPlists[entry] = transformAsset(missileConfig[entry].plist);		
+	}
+
 }
 
 for (var entry in effectsConfig){
     g_characterPngs[entry] = transformAsset(effectsConfig[entry].png);
-    g_characterPlists[entry] = transformAsset(effectsConfig[entry].plist);
+	if (effectsConfig[entry].plist){
+		g_characterPlists[entry] = transformAsset(effectsConfig[entry].plist);
+	}
 }
 
 var g_battleStuff =[
@@ -104,6 +109,9 @@ var g_ui =[
 
 
 function transformAsset(input){
+	if (!input){
+		return; 
+	}
     var token = "-" + jc.assetCategory;
     if (token == "-iphone"){
         token = "";

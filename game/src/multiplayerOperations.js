@@ -1,28 +1,26 @@
 var hotr = hotr || {};
 hotr.multiplayerOperations = {};
 
-//check for web vs native
-if (typeof multiplayerApi !== 'undefined') {
-    if (!jc.multiplayerApi){
-        jc.multiplayerApi = multiplayerApi;
-    }
-}
-
 hotr.multiplayerOperations.getGames = function(callback){
-    var authToken = hotr.blobOperations.getCachedAuthToken()
-    jc.multiplayerApi.getGames(authToken.token,function(err, data){
+    var authToken = hotr.blobOperations.getCachedAuthToken();
+    hotr.api.getGames(authToken.token,function(err, data){
         if (data != undefined){
             hotr.multiplayerData = data;
-            callback(true);
         }else{
-            callback(false);
+            hotr.multiplayerData = undefined; //no games        	
         }
+		callback();
     });
 }
 
-hotr.multiplayerOperations.getOpponent = function(callback){
+hotr.multiplayerOperations.getTeam = function(op, callback){
+    var authToken = hotr.blobOperations.getCachedAuthToken();	
+	hotr.api.getTeam(authToken.token, op, callback);
+}
+
+hotr.multiplayerOperations.findGame = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()
-    jc.multiplayerApi.findGame(authToken.token,function(err, data){
+    hotr.api.findGame(authToken.token,function(err, data){
         if (data != undefined){
             hotr.newOpponent = data;
             callback(true);

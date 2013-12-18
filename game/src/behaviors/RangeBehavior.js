@@ -69,9 +69,13 @@ RangeBehavior.prototype.doMissile = function(){
         var timeToImpact = vector.distance/missileType.speed;
         if (!this.missile){
             jc.log(['rangeBehavior'], 'Animating: ' + this.owner.name + ' missle: ' + missileName);
-            this.missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
-            this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
-            this.missile.runAction(this.missileAnimation);
+            if (missileType.simple){
+            	this.missile = jc.makeSpriteFromFile(missileType.png);
+            }else{
+				this.missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
+	            this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
+	            this.missile.runAction(this.missileAnimation);            	
+            }
 
         }
 
@@ -110,13 +114,39 @@ RangeBehavior.prototype.doMissile = function(){
             targetPos.y += targetTr.height/2;
         }
 
+		
+        var moveTo;
 
-        var moveTo = cc.MoveTo.create(timeToImpact, targetPos);
+		if (!missileConfig[missileName].path){
+			moveTo = cc.MoveTo.create(timeToImpact, targetPos);			
+		}else if (missileConfig[missileName].path=="bezier"){
+			
+			var bezier = [];
+			var missileStart = this.missile.getPosition();
+			bezier.push(missileStart);
+
+			var pos2 = cc.pMidpoint(missileStart, targetPos);
+			if (!missileConfig[missileName].height){
+				throw "Missile path bezier must have a height property as well: " + missileName;
+			}
+			pos2.y += missileConfig[missileName].height;
+			bezier.push(pos2);
+			
+			bezier.push(targetPos);				
+			moveTo = cc.BezierTo.create(timeToImpact, bezier);
+		}else if (missileConfig[missileName].path =="jump"){
+			if (!missileConfig[missileName].height){
+				throw "Missile path jump must have a height property as well: " + missileName;
+			}
+			moveTo = cc.JumpTo.create(timeToImpact, targetPos, missileConfig[missileName].height, 1);
+		}
+
+
         var callback = cc.CallFunc.create(function(){
             this.hitLogic();
             this.owner.layer.removeChild(this.missile, false);
 
-            if (this.locked){
+            if (this.locked && missileType.effect){
                 jc.playEffectOnTarget(missileType.effect, this.locked, this.owner.layer);
             }
             this.firing = false;

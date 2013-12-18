@@ -609,6 +609,7 @@ var spriteDefs = {
 		"gameProperties": {
 			"MaxHP": 200,
 			"damage": 45,
+			"missile":"arrow",
 			"movementType": 1,
 			"targets": 2,
 			"speed": 55,
@@ -765,7 +766,7 @@ var spriteDefs = {
 			"damage": 80,
 			"speed": 55,
 			"actionDelays": {
-				"attack": 0.5
+				"attack": 1.5
 			},
 			"effectDelays": {
 				"attack": 0.5
@@ -1344,7 +1345,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 400,
+			"MaxHP": 1000,
 			"movementType": 1,
 			"targets": 1,
 			"speed": 200,

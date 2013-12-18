@@ -1,7 +1,7 @@
 var hotr = hotr || {};
 hotr.blobOperations = {};
 hotr.scratchBoard = {};
-hotr.formationSize = 12;
+hotr.teamformationSize = 12;
 hotr.authTokenLocalStoreKey = "x1xauthTokenx1x";
 hotr.haveSeenLocalStoreKey = "x1xhaveseenx1x";
 hotr.userNameKey = "x1xusernamex1x";
@@ -81,7 +81,7 @@ hotr.blobOperations.getTeam = function(){
         characterMap[character.id] = character;
     });
 
-    var formation = hotr.playerBlob.formation;
+    var formation = hotr.playerBlob.teamformation;
     var team = [];
     for (var i=0;i<formation.length; i++){
         if (formation[i]!=undefined){
@@ -181,23 +181,23 @@ hotr.blobOperations.indexToId = function(index){
 
 hotr.blobOperations.getFormationOrder = function(){
     hotr.blobOperations.validate();
-    if (!hotr.playerBlob.formation){
-        hotr.playerBlob.formation=[];
+    if (!hotr.playerBlob.teamformation){
+        hotr.playerBlob.teamformation=[];
     }
-    return hotr.playerBlob.formation;
+    return hotr.playerBlob.teamformation;
 }
 
 hotr.blobOperations.getCurrentFormationPosition = function(id){
     hotr.blobOperations.validate();
-    if (!hotr.playerBlob.formation){
+    if (!hotr.playerBlob.teamformation){
         return -1;
     }else{
-        return hotr.playerBlob.formation.indexOf(id);
+        return hotr.playerBlob.teamformation.indexOf(id);
     }
 }
 
 hotr.blobOperations.clearFormationPosition = function(cell){
-    hotr.playerBlob.formation[cell]=undefined;
+    hotr.playerBlob.teamformation[cell]=undefined;
 }
 
 hotr.blobOperations.placeCharacterFormation = function(id, cell){
@@ -207,15 +207,15 @@ hotr.blobOperations.placeCharacterFormation = function(id, cell){
         characterMap[character.id] = character;
     });
 
-    if (!hotr.playerBlob.formation){
-        hotr.playerBlob.formation = [];
+    if (!hotr.playerBlob.teamformation){
+        hotr.playerBlob.teamformation = [];
     }
-    var index = hotr.playerBlob.formation.indexOf(id);
+    var index = hotr.playerBlob.teamformation.indexOf(id);
     if (index!=-1){
-        hotr.playerBlob.formation[index]=undefined;
+        hotr.playerBlob.teamformation[index]=undefined;
     }
     if (characterMap[id]){ //no illegal ids
-        hotr.playerBlob.formation[cell]=id;
+        hotr.playerBlob.teamformation[cell]=id;
     }else{
         throw "Id: " + id + " not valid for player";
     }

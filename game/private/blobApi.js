@@ -8,7 +8,7 @@ var mpApi = require('./multiplayerApi.js');
 
 var blobNameSpace = "hotr:blob:";
 
-
+exports.makePlayerData = makePlayerData;
 function makePlayerData(userId, callback){
     //make 6 cards for this player
     cardGen(3,6, function(err, res){

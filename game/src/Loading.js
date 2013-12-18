@@ -67,9 +67,13 @@ var Loading = jc.UiElementsLayer.extend({
         this.schedule(this.checkPercent);
     },
     startLoadingAssets:function(){
-        cc.Loader.preload(this.assets, function(){
-            this.ccLoaderDone = true;
-        }.bind(this));
+		if (!this.assets){
+			this.ccLoaderDone = true;			
+		}else{
+	        cc.Loader.preload(this.assets, function(){
+	            this.ccLoaderDone = true;
+	        }.bind(this));			
+		}
     },
     startLoadingApiCalls:function(){
         var q = async.queue(function(task,callback){

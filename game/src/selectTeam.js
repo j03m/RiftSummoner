@@ -32,6 +32,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
         }
     },
     onShow:function(){
+		this.nextEnabled = true;
         if (!this.first){
             //llp through characters
             this.start();
@@ -45,7 +46,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
             }
             this.first = true;
         }else if (hotr.scratchBoard.selectedCharacter!=undefined && hotr.scratchBoard.currentCell!=undefined){
-			this.nextEnabled = true;
+
             var id = hotr.blobOperations.indexToId(hotr.scratchBoard.selectedCharacter);
             var cell = parseInt(hotr.scratchBoard.currentCell.replace(this.cellPrefix, ""));
             if (id){
@@ -119,10 +120,14 @@ var SelectTeam = jc.UiElementsLayer.extend({
         jc.log(['selectTeam'], "nextButton");
     },
     fightStart:function(){
-        if (this.nextEnabled){
-            hotr.mainScene.layer.arenaPre();
+        if (!this.nextEnabled){
+            return;
         }
 
+		var formationOrder = hotr.blobOperations.getFormationOrder();
+		if (formationOrder.length!=0){
+			hotr.mainScene.layer.arenaPre();			
+		}      
     },
     kikStart:function(){
         if (!this.nextEnabled){

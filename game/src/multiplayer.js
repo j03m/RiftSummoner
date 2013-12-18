@@ -22,7 +22,7 @@ var Multiplayer = jc.UiElementsLayer.extend({
         this.start();
         this.addChild(this.tableView);
         var scrollData = this.getGames();		
-        if (!this.tableInit){
+        if (!this.tableInit && scrollData.length >0){
 			this.tableInit = true;
 			this.tableView.init({
 	        	isVertical:true,
@@ -46,34 +46,25 @@ var Multiplayer = jc.UiElementsLayer.extend({
 		console.log("Touch");
 	},
     getGames:function(){
-		var multiplayerMock = {
-			"id1vsid2":{
-				"turn":"id1",
-				"me":"id1",
-				"op":"id2",			
-				"id1":{
-					"name":"J03m",
-					"wins":10
-				},
-				"id2":{
-					"wins":1
-				}
-			}
-		}
-		var myId = "id1";
 		var returnme = [];		
-        for(var gameId in multiplayerMock){
-			var game = multiplayerMock[gameId];
+		var mpData =hotr.multiplayerData;
+
+		if (!mpData){
+			return returnme;
+		}
+		var creds = hotr.blobOperations.getCreds();
+        for(var gameId in mpData){
+			var game = mpData[gameId];
             var recordUi = this.getWindowFromConfig(this.itemWindow);				
-			recordUi.lblWins.setString(game[game.me].wins);
-			recordUi.lblLosses.setString(game[game.op].wins);
-			if (game[game.op].name){
-				recordUi.lblName.setString(game[game.op].name);
+			recordUi.lblWins.setString(game[creds.id].wins);
+			recordUi.lblLosses.setString(game[gameId].wins);
+			if (game[gameId].name){
+				recordUi.lblName.setString(game[gameId].name);
 			}else{
 				recordUi.lblName.setString("Anonymous");
 			}
 			
-			if (game.turn == game.me){
+			if (game.turn == creds.id){
 				//set poke to fight
 				recordUi.pokeButton.setVisible(false);
 				recordUi.fightButton.setVisible(true);
@@ -101,10 +92,22 @@ var Multiplayer = jc.UiElementsLayer.extend({
     tweet:function(){},
     poke:function(data){},
 	fight:function(data){
-		
+		hotr.newOpponent = data;
+		hotr.mainScene.layer.mpTakeTurn();			
 	},
-    startGame:function(){		
-		hotr.mainScene.layer.mpPre();
+	countGames:function(){
+		var count=0;
+        for(var gameId in hotr.multiplayerData){
+			count++;
+        }
+		return count;	
+	},
+    startGame:function(){	
+		if (this.countGames()<25){
+			hotr.mainScene.layer.mpStartGame();			
+		}else{
+			//todo: msgbox - too many games. delete some
+		}			
     },
     msg:function(){},
     close:function(data){},
@@ -302,13 +305,19 @@ var Multiplayer = jc.UiElementsLayer.extend({
 
 
 Multiplayer.scene = function() {
-    if (!hotr.multiplayer){
+		if (hotr.multiplayer){
+			hotr.multiplayer.removeChild(hotr.multiplayer.layer);
+			hotr.multiplayer.layer.release();
+			hotr.multiplayer.layer=null;
+			hotr.multiplayer.release();
+			hotr.multiplayer = null;			
+		}
+		
         hotr.multiplayer = cc.Scene.create();
         hotr.multiplayer.layer = new Multiplayer();
         hotr.multiplayer.addChild(hotr.multiplayer.layer);
         hotr.multiplayer.layer.init();
 
-    }
-    return hotr.multiplayer;
+		return hotr.multiplayer;
 };
 

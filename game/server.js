@@ -98,7 +98,19 @@ app.post('/app/saveblob/:token', validate(['token']), convert, function(req,res)
 });
 
 app.get('/app/findgame/:token', validate(['token']), convert, function(req,res){
-	multiplayerApi.findGame(req.userToken function(err, data){
+	multiplayerApi.findGame(req.userToken, function(err, data){
+		handler(res, err, data);
+	});
+});
+
+app.get('/app/getgames/:token', validate(['token']), convert, function(req,res){
+	multiplayerApi.getGames(req.userToken, function(err, data){
+		handler(res, err, data);
+	});
+});
+
+app.get('/app/getteam/:token/:opponent', validate(['token', 'opponent']), convert, function(req,res){
+	multiplayerApi.getTeam(req.params.opponent, function(err, data){
 		handler(res, err, data);
 	});
 });

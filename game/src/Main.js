@@ -21,15 +21,31 @@ var MainGame = cc.Layer.extend({
             return false;
         }
     },
+	goToReturnPoint:function(){
+		if (!this.returnPoint){
+			jc.log(['console'], "return point not defined, going to landing");
+			this.changeScene('landing');			
+		}else{
+			this.returnPoint();			
+		}
+
+
+	},
     changeScene:function(key, assets, data){         //todo: change to layer manager
 
         if(this.loader){
             cc.Director.getInstance().getRunningScene().removeChild(this.loader,true)
         }
-
-        switch(key){
+		if (!this.lastScene){
+			this.lastScene = key;
+		}else{
+			this.lastScene =this.currentScene;
+		}
+        
+		switch(key){
 			case 'selectEditTeamPre':
 				this.selectEditTeamPre();
+				break;
             case 'selectTeam':
                 cc.Director.getInstance().replaceScene(SelectTeam.scene());
                 break;
@@ -49,29 +65,13 @@ var MainGame = cc.Layer.extend({
                 cc.Director.getInstance().replaceScene(Multiplayer.scene());
                 break;
         }
+		this.currentScene = key;
     },
     showLoader:function(config){
         this.loader = new Loading();
         var runningScene = cc.Director.getInstance().getRunningScene();
         runningScene.addChild(this.loader);
         this.loader.init(config);
-
-    },
-    battlePre:function(){
-        //make api call to get multiplayer games		
-        var assets = [];
-        assets = assets.concat(g_ui);
-        this.showLoader({
-            "assets":assets,
-            "apiCalls":[
-                function(callback){
-                    hotr.multiplayerOperations.getGames(function(){
-                        callback();
-                    });
-                }
-            ],
-            "nextScene":'multiplayer'
-        });
 
     },
     selectEditTeamPre: function(){
@@ -91,16 +91,45 @@ var MainGame = cc.Layer.extend({
 		
     	
 	},
-	mpPre:function(){		
-        this.showLoader({           
-            "apiCalls":[ //get opponent
-                function(callback){                    				   
-				    hotr.multiplayerOperations.getOpponent(function(){
+	mpGetGames:function(){
+        //make api call to get multiplayer games		
+        var assets = [];
+        assets = assets.concat(g_ui);
+        this.showLoader({
+            "assets":assets,
+            "apiCalls":[
+                function(callback){
+                    hotr.multiplayerOperations.getGames(function(){
                         callback();
                     });
                 }
             ],
-            "nextScene":'selectEditTeamPre'
+            "nextScene":'multiplayer'
+        });       		
+	},
+	mpTakeTurn:function(){
+		this.returnPoint = this.mpGetGames.bind(this);
+        var assets = this.makeCardDictionary();
+        assets = assets.concat(g_ui);
+		this.showLoader({           
+            "assets":assets,
+            "nextScene":'selectTeam'
+        });						
+	},
+	mpStartGame:function(){		
+		this.returnPoint = this.mpGetGames.bind(this);
+        var assets = this.makeCardDictionary();
+        assets = assets.concat(g_ui);
+		this.showLoader({           
+            "assets":assets,
+            "apiCalls":[ //get opponent
+                function(callback){                    				   
+				    hotr.multiplayerOperations.findGame(function(){
+                        callback();
+                    });
+                }
+            ],
+            "nextScene":'selectTeam'
         });				
 	},
 	arenaMP:function(){
@@ -109,26 +138,39 @@ var MainGame = cc.Layer.extend({
         var level = hotr.blobOperations.getLevel();
         var teamAFormation = hotr.blobOperations.getFormation();
         var teamAPowers = hotr.blobOperations.getPowers();
-
-		//teamB from hotr.newOpponent
-        var teamB = hotr.newOpponent.team;
-        var teamBFormation = hotr.newOpponent.formation;
-        var teamBPowers = hotr.newOpponent.powers();
 		
 		//go to arena - show team dropdown attacker - VS -  defender
-
-        var fightConfig = {
-            teamA:teamA,
-            teamAFormation:teamAFormation,
-            teamB:teamB,
-            teamBFormation:teamBFormation,
-            teamAPowers:teamAPowers,
-            teamBPowers:teamBPowers,
-            offense:'a'
-        };
-		
-		//arena goes back to mp
-		this.doArena(fightConfig);
+		this.showLoader(            {
+			"assetFunc":function(assetCallback){
+					hotr.multiplayerOperations.getTeam(hotr.newOpponent, function(err, data){
+						//if fail, go back from whence we came.
+						if (err){
+							hotr.changeScene('landing');
+						}else{
+					        var fightConfig = {
+					            teamA:teamA,
+					            teamAFormation:teamAFormation,
+					            teamB:data.team,
+					            teamBFormation:data.formation,
+					            teamAPowers:teamAPowers,
+					            teamBPowers:[],
+					            offense:'a'
+					        };	
+							var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);	
+							hotr.arenaScene.data = fightConfig;
+							assetCallback(assets);
+						}											
+					}.bind(this));	
+			}.bind(this),
+            "apiCalls":[
+                function(callback){
+                    hotr.blobOperations.saveBlob(function(){
+                        callback();
+                    });
+                }
+            ],
+            "nextScene":'arena'
+        });
 
 	},
 	arenaQuest:function(){	
@@ -143,7 +185,6 @@ var MainGame = cc.Layer.extend({
         var teamB = hotr.levelLogic.getTeamForLevel(level);
         var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
         var teamBPowers = hotr.levelLogic.getPowers();
-
 
         var fightConfig = {
             teamA:teamA,
@@ -332,7 +373,10 @@ var MainGame = cc.Layer.extend({
         }
 
         if (spriteDefs[name].gameProperties && spriteDefs[name].gameProperties.missile){
-            assetAry.pushUnique(g_characterPlists[spriteDefs[name].gameProperties.missile]);
+			//missile may not have plists
+			if (g_characterPlists[spriteDefs[name].gameProperties.missile]){
+				assetAry.pushUnique(g_characterPlists[spriteDefs[name].gameProperties.missile]);				
+			}
             assetAry.pushUnique(g_characterPngs[spriteDefs[name].gameProperties.missile]);
 
             //missiles, have effects - we need to add the missile effect here.
