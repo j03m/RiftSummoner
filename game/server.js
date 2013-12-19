@@ -12,8 +12,8 @@ var multiplayerApi = require('./private/multiplayerApi.js');
 if (config.prod){
     //This line is from the Node.js HTTPS documentation.
     var options = {
-        key: fs.readFileSync('cert/riftsummoner-key.pem'),
-        cert: fs.readFileSync('cert/final.crt')
+        key: fs.readFileSync('certs/riftsummoner-key.pem'),
+        cert: fs.readFileSync('certs/final.crt')
     };
 
 }

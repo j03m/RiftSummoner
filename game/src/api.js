@@ -1,7 +1,7 @@
 var hotr = hotr || {};
 hotr.api = {};
-hotr.api.target = "http://localhost";
-hotr.api.sTarget = "http://localhost";
+hotr.api.target = "http://www.riftsummoner.com";
+hotr.api.sTarget = "https://www.riftsummoner.com";
 hotr.api.get = function(url, cb){
 	hotr.api.do("GET",url,undefined,cb);
 }
@@ -82,17 +82,17 @@ hotr.api.makeUrl = function(target, path, args ){
 }
 
 hotr.api.getBlob = function(token, callback){
-	var url = hotr.api.makeUrl(hotr.api.sTarget,'/app/getblob/:token',arguments);
+	var url = hotr.api.makeUrl(hotr.api.target,'/app/getblob/:token',arguments);
 	hotr.api.get(url, callback);
 }
 
 hotr.api.createNewPlayer = function(id, pass, callback){	
-	var url = hotr.api.makeUrl(hotr.api.target,'/app/createplayer/:id/:pass',arguments);
+	var url = hotr.api.makeUrl(hotr.api.sTarget,'/app/createplayer/:id/:pass',arguments);
 	hotr.api.get(url, callback);
 }
 
 hotr.api.getNewAuthTokenAndBlob = function(id, data, hash, callback){
-	var url = hotr.api.makeUrl(hotr.api.target,'/app/gettokenandblob/:id/:data/:hash',arguments);
+	var url = hotr.api.makeUrl(hotr.api.sTarget,'/app/gettokenandblob/:id/:data/:hash',arguments);
 	hotr.api.get(url, callback);
 }
 
