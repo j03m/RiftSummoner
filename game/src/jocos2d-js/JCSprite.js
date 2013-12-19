@@ -437,15 +437,6 @@ jc.Sprite = cc.Sprite.extend({
     updateShadowPosition:function(){
         if (this.type!='background'){
             var pos = this.getBasePosition();
-            var cs = this.getContentSize();
-
-            pos.y += 5;
-            if (!this.isFlippedX()){
-                pos.x = (pos.x - cs.width) + 240;
-            }else{
-                pos.x = (pos.x - cs.width) + 250;
-            }
-
             if (this.gameObject && this.gameObject.flightAug){
                 pos.y-= this.gameObject.flightAug.y/2; //for flight, shadow should be further away
             }

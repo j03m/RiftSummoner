@@ -1,5 +1,6 @@
 var jc = jc || {};
-jc.dataTarget = 'http://www.riftsummoner.com:1337/';
+//jc.dataTarget = 'http://www.riftsummoner.com:1337/';
+jc.dataTarget = 'http://localhost/';
 if (!jc.isBrowser){
     var window = jc;
 
@@ -29,9 +30,97 @@ if (!jc.isBrowser){
     }
 
     if (typeof console === 'undefined') {
-        var console = function(printme){
+        var console = {}
+        console.log = function(printme){
             jc.log(['console'], printme);
         }
     }
+
+    cc.Color3B = function(a,b,c){
+        return cc.c4f(a/255.0, b/255.0, c/255.0, 1.0);
+    }
+
+    /**
+     *  White color (255,255,255)
+     * @constant
+     * @type {Number,Number,Number}
+     */
+    cc.white = function () {
+        return new cc.Color3B(255, 255, 255);
+    };
+
+    /**
+     *  Yellow color (255,255,0)
+     * @constant
+     * @type {Number,Number,Number}
+     */
+    cc.yellow = function () {
+        return new cc.Color3B(255, 255, 0);
+    };
+
+    /**
+     *  Blue color (0,0,255)
+     * @constant
+     * @type {Number,Number,Number}
+     */
+    cc.blue = function () {
+        return new cc.Color3B(0, 0, 255);
+    };
+
+    /**
+     *  Green Color (0,255,0)
+     * @constant
+     * @type {Number,Number,Number}
+     */
+    cc.green = function () {
+        return new cc.Color3B(0, 255, 0);
+    };
+
+    /**
+     *  Red Color (255,0,0,)
+     * @constant
+     * @type {Number,Number,Number}
+     */
+    cc.red = function () {
+        return new cc.Color3B(255, 0, 0);
+    };
+
+    /**
+     *  Magenta Color (255,0,255)
+     * @constant
+     * @type {Number,Number,Number}
+     */
+    cc.magenta = function () {
+        return new cc.Color3B(255, 0, 255);
+    };
+
+    /**
+     *  Black Color (0,0,0)
+     * @constant
+     * @type {Number,Number,Number}
+     */
+    cc.black = function () {
+        return new cc.Color3B(0, 0, 0);
+    };
+
+    /**
+     *  Orange Color (255,127,0)
+     * @constant
+     * @type {Number,Number,Number}
+     */
+    cc.orange = function () {
+        return new cc.Color3B(255, 127, 0);
+    };
+
+    /**
+     *  Gray Color (166,166,166)
+     * @constant
+     * @type {Number,Number,Number}
+     */
+    cc.gray = function () {
+        return new cc.Color3B(166, 166, 166);
+    };
+
+
 
 }

@@ -95,6 +95,7 @@ var Landing = jc.UiElementsLayer.extend({
 Landing.scene = function() {
     if (!hotr.landingScene){
         hotr.landingScene = cc.Scene.create();
+        hotr.landingScene.retain();
         hotr.landingScene.layer = new Landing();
 
         hotr.landingScene.addChild(hotr.landingScene.layer);

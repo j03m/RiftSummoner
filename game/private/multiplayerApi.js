@@ -11,7 +11,7 @@ var mpQueueKey = mpNameSpace + "queue:";
 var ROBOT = "superumibot_";
 var TOTAL_ALLOWED_GAMES = 25;
 
-exports.getGames =  function(userToken, callback){
+var getGames =  function(userToken, callback){
     var key = mpBlobsKey+userToken;
     redisWrap.getClient(key).hgetall(key, function(err, data){
         if (err){
@@ -36,6 +36,7 @@ var countGames = function(userToken, callback){
     	}
     });   	
 }
+exports.getGames = getGames;
 
 exports.getTeam = function(playerId, callback){
 
@@ -51,6 +52,7 @@ exports.getTeam = function(playerId, callback){
             var formation = res.teamformation;
 
             var team = [];
+
             for (var i=0;i<formation.length; i++){
                 if (formation[i]!=undefined){
                     if (characterMap[formation[i]]){       //no invalid ids
@@ -91,8 +93,12 @@ exports.getTeam = function(playerId, callback){
 
 
 exports.findGame =  function(userToken,  callback){
-		countGames(userToken, function(err, res){
-			if (err || res > TOTAL_ALLOWED_GAMES){
+        getGames(userToken, function(err, games){
+			var count = 0;
+            for (var game in games){
+                count++;
+            }
+            if (err || count > TOTAL_ALLOWED_GAMES){
 				console.log("TOO MANY GAMES");
 				error(403, "too many games", err, callback)
 			}else{
@@ -105,8 +111,11 @@ exports.findGame =  function(userToken,  callback){
 						error(500, "Pop from multiplayer queue failed.", err, callback)
 		            }else{
                         var op = undefined;
+                        if (!games){
+                            games = {};
+                        }
                         for (var i=0;i<data.length;i++){
-                            if (data[i]!= userToken){
+                            if (data[i]!= userToken && games[data[i]]==undefined){
                                 op = data[i];
                                 break;
                             }

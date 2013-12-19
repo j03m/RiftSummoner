@@ -71,15 +71,13 @@ RangeBehavior.prototype.doMissile = function(){
         if (!this.missile){
             jc.log(['rangeBehavior'], 'Animating: ' + this.owner.name + ' missle: ' + missileName);
             if (missileType.simple){
-            	this.missile = jc.makeSpriteFromFile(missileType.png);
+            	this.missile = jc.makeSpriteWithPlist(missileType.plist,missileType.png, missileType.start);
             }else{
 				this.missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
 	            this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
 	            this.missile.runAction(this.missileAnimation);            	
             }
             this.missile.setFlippedX(this.owner.isFlippedX());
-
-
         }
 
         this.owner.layer.addChild(this.missile);
@@ -165,9 +163,12 @@ RangeBehavior.prototype.doMissile = function(){
             this.firing = false;
 
         }.bind(this));
+        moveTo.retain();
         var seq = cc.Sequence.create(moveTo, callback);
+        seq.retain();
         this.missile.runAction(seq);
         if (rotateTo){
+            rotateTo.retain();
             this.missile.runAction(rotateTo);
         }
 

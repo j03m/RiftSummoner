@@ -39,13 +39,14 @@ var effectsConfig = {
 
     },
     "heal":{
-        "png":"art/heal.png",
-        "plist":"art/heal.plist",
-        "start":"heal.5.png",
-        "frames":17,
+        "png":"art/heal{v}.png",
+        "plist":"art/heal{v}.plist",
+        "start":"heal.1.png",
+        "frames":50,
         "delay":0.05,
-        "placement":"bottom",
-        "times":5,
+        "placement":"center",
+        "times":2,
+        "scaleToTarget":true
     },
     "teleport":{
         "png":"art/teleport.png",
@@ -117,21 +118,18 @@ var effectsConfig = {
         "start":"fire.1.png",
         "frames":44,
         "delay":0.02,
-        "placement":"bottom",
+        "placement":"center",
         "zorder":"behind",
         "times":15,
     },
     "poison":{
-        "png":"art/poison.png",
-        "plist":"art/poison.plist",
+        "png":"art/poison{v}.png",
+        "plist":"art/poison{v}.plist",
         "start":"poison.1.png",
-        "frames":50,
-        "delay":0.02,
-//        "offset":{
-//            "x":0,
-//            "y":100
-//        },
-        "placement":"bottom",
+        "frames":24,
+        "delay":0.05,
+        "placement":"center",
+        "scaleToTarget":false
     }
 }
 

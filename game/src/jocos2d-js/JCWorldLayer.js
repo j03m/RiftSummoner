@@ -85,7 +85,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
 
     },
     shake:function(){
-        if (!this.shake){
+        if (!this.shaking){
             var rot1 = cc.RotateBy.create(0.04,4);
             var rot2 = cc.RotateBy.create(0.04,-4);
             var vibrateAction = cc.Sequence.create(rot1,rot2);
@@ -93,13 +93,13 @@ jc.WorldLayer = jc.TouchLayer.extend({
             var vb = cc.Repeat.create(vibrateAction,10);
             var dt = cc.DelayTime.create(0.05);
 
-            var cb = cc.Func.create(function(){
-                this.shake=false;
+            var cb = cc.CallFunc.create(function(){
+                this.shaking=false;
             }.bind(this));
             var vibrateAndWait = cc.Sequence.create(vb,dt,cb);
 
-
             this.runAction(vibrateAndWait);
+            this.shaking = true;
         }
 
     },

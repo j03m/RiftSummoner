@@ -17,16 +17,19 @@ hotr.api.do = function(method, url,data,cb) {
     }
     
     xhr.onreadystatechange = function(){
-		console.log("readystatechange");
+		jc.log(['console'], "readystatechange");
 			if (xhr.readyState == 4) {
-				console.log("readystatechange 4");
+                jc.log(['console'],"readystatechange 4");
 				var response = xhr.responseText;
 				var responseObj;
 				try{
 					responseObj = JSON.parse(response);
 				}catch(e){
-					console.log("failed to parse:" + response + " with " + e);
+					jc.log(['console'],"failed to parse:" + response + " with " + e);
 					responseObj = response;
+                    if (responseObj == "" || responseObj == false || responseObj == null){
+                        responseObj = undefined;
+                    }
 				}
 					
 	            if (xhr.status == 200) {

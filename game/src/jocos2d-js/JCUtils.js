@@ -3,9 +3,9 @@ var jc = jc || {};
 //Fixes
 if (jc.isBrowser){
     //dont' do this on the web, crushes perf
-    cc.Sprite.prototype.setColor = function(){
-        jc.log(['console'], "setColor called on the web - don't do it man.");
-    };
+//    cc.Sprite.prototype.setColor = function(){
+//        jc.log(['console'], "setColor called on the web - don't do it man.");
+//    };
 
     jc.dumpStack = function(who){
         jc.log(who, console.trace());
@@ -168,7 +168,11 @@ jc.makeSimpleSprite = function (image){
 }
 
 jc.makeSpriteFromFile = function (image){
+    var frame = cc.SpriteFrame
+    cc.SpriteFrameCache.getInstance().addSpriteFrame()
+
     var sprite = new cc.Sprite();
+
     sprite.initWithFile(image);
     sprite.retain();
     return sprite;
@@ -337,17 +341,34 @@ jc.makeAnimationFromRange = function(name, config){
 jc.playTintedEffectOnTarget = function(name, target, layer, child, r, g, b){
     var effect = jc.playEffectOnTarget(name, target, layer, child);
     if (effect){
-//        var fillColor = new cc.Color3B();
-//        fillColor.r =r;
-//        fillColor.b = b;
-//        fillColor.g = g;
-//        effect.setColor(fillColor);
+        var fillColor = new cc.Color3B();
+        fillColor.r =r;
+        fillColor.b = b;
+        fillColor.g = g;
+        effect.setColor(fillColor);
     }
 
     return effect;
 }
 
 
+jc.scaleTo = function(scaleMe, toMe){
+    var currentSize = scaleMe.getContentSize();
+    var toSize = toMe.getContentSize();
+    var scalex = toSize.width/currentSize.width;
+    var scaley = toSize.height/currentSize.height;
+    scaleMe.setScaleX(scalex)
+    scaleMe.setScaleY(scaley);
+}
+
+jc.scaleToCharacter = function(scaleMe, toMe){
+    var currentSize = scaleMe.getContentSize();
+    var toSize = toMe.getTextureRect();
+    var scalex = toSize.width/currentSize.width;
+    var scaley = toSize.height/currentSize.height;
+    scaleMe.setScaleX(scalex)
+    scaleMe.setScaleY(scaley);
+}
 
 jc.playEffectOnTarget = function(name, target, layer, child){
 	if (!target){
@@ -380,9 +401,12 @@ jc.playEffectOnTarget = function(name, target, layer, child){
 
     var effect = target.effectAnimations[name].sprite;
     var effectAnimation = target.effectAnimations[name].animation;
-    effect.setVisible(true);
-    parent.addChild(effect);
 
+    parent.addChild(effect);
+    if (config.scaleToTarget){
+        jc.scaleToCharacter(effect, target);
+    }
+    effect.setVisible(true);
     if (config.zorder == "behind" && !child){
         parent.reorderChild(effect,target.getZOrder()-1);
     }else if (config.zorder == "behind" && child) {
@@ -434,7 +458,6 @@ jc.playEffectAtLocation = function(name, location, z, layer){
     var etr = effect.getTextureRect();
     var effectAnimation = jc.makeAnimationFromRange(name, config );
     //adjust location so we center ourselves on it...?
-
     effect.setPosition(location);
     effect.setVisible(true);
     layer.addChild(effect);
@@ -457,7 +480,7 @@ jc.setChildEffectPosition = function(effect, parent, config){
     var effectPos = cc.p(0,0);
     var cs = parent.getContentSize();
     var tr = parent.getTextureRect();
-    var etr = effect.getContentSize();
+    var etr = effect.getBoundingBox();
 
     if (placement){
         if (placement == 'bottom') {
@@ -469,7 +492,7 @@ jc.setChildEffectPosition = function(effect, parent, config){
 
         }else if (placement == 'center'){
             effectPos.x += cs.width/2;
-            effectPos.y += etr.height;
+            effectPos.y += tr.height/2;
         }
         else if (placement == 'base2base'){
             effectPos.x += cs.width/2;
@@ -494,7 +517,7 @@ jc.setEffectPosition = function(effect, parent, config){
     var placement = config.placement;
     var base = parent.getBasePosition();
     var tr = parent.getTextureRect();
-    var etr = effect.getTextureRect();
+    var etr = effect.getBoundingBox();
 
     if (placement){
         if (placement == 'bottom') {

@@ -1,7 +1,7 @@
 var missileConfig = {
                      "greenbullet":{
-                         "png":"art/greenbullet.png",
-                         "plist":"art/greenbullet.plist",
+                         "png":"art/missiles.png",
+                         "plist":"art/missiles.plist",
                          "start":"greenbullet.1.png",
                          "effect":"greenBang",
                          "frames":27,
@@ -12,7 +12,9 @@ var missileConfig = {
                          
                      },
                      "arrow":{
-                         "png":"art/arrow.png",
+                         "png":"art/missiles.png",
+                         "plist":"art/missiles.plist",
+                         "start":"arrow.png",
                          "simple":true,
 						 "hasDirection":true,
 						 "rotation":"arrow",
@@ -23,14 +25,16 @@ var missileConfig = {
 						 
                      },
                     "bomb":{
-                        "png":"art/bomb.png",
+                        "png":"art/missiles.png",
+                        "plist":"art/missiles.plist",
+                        "start":"bomb.png",
                         "simple":true,
                         "path":"jump",
                         "speed":100
                     },
                     "fireball":{
-                        "png":"art/fireball.png",
-                        "plist":"art/fireball.plist",
+                        "png":"art/missiles.png",
+                        "plist":"art/missiles.plist",
                         "start":"fireball.1.png",
                         "effect":"explosion",
                         "frames":10,

@@ -578,12 +578,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         centerMe.setPosition(cc.p(dim.width/2,dim.height/2));
     },
     scaleTo:function(scaleMe, toMe){
-        var currentSize = scaleMe.getContentSize();
-        var toSize = toMe.getContentSize();
-        var scalex = toSize.width/currentSize.width;
-        var scaley = toSize.height/currentSize.height;
-        scaleMe.setScaleX(scalex)
-        scaleMe.setScaleY(scaley);
+      jc.scaleTo(scaleMe, toMe);
     }
 
 });

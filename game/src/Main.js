@@ -184,6 +184,7 @@ var MainGame = cc.Layer.extend({
 	    //todo: what level, get team
         //fight config
         ArenaGame.scene();
+        this.returnPoint = this.selectEditTeamPre.bind(this);
         var teamA = hotr.blobOperations.getTeam();
         var level = hotr.blobOperations.getLevel();
         var teamAFormation = hotr.blobOperations.getFormation();
