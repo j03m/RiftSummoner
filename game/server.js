@@ -64,12 +64,12 @@ var verify = auth.verifyRequest;
 var convert = auth.convert;
 
 app.get('/app/createplayer/:id/:pass', validate(['id','pass']), function(req, res){
-	if (config.prod){
-		if (!req.connection.encrypted){
-			res.json(403.4, "SSL Required.");
-			return;
-		}
-	}
+//	if (config.prod){
+//		if (!req.connection.encrypted){
+//			res.json(403.4, "SSL Required.");
+//			return;
+//		}
+//	}
 
 	blobApi.createNewPlayer(req.params.id, req.params.pass, function(err, data){
 		console.log("err:" + err);
