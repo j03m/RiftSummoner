@@ -39,6 +39,14 @@ function setBlob(userToken, blob, callback){
 			callback(undefined, setResult);        	
         }
     });
+
+
+    //register me
+    mpApi.register(userToken, function(err, res){
+        if (err){
+            error(0, "failed to register " + userToken + " for multiplayer.", err);
+        }
+    });
 }
 
 function newPlayer(userToken, callback){

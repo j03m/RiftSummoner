@@ -81,6 +81,9 @@ jc.valuePerSecond = function(value, interval){
 
 jc.swapSpriteFrameName = function(sprite, frameName){
     var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(frameName);
+    if (!frame){
+        throw "Frame: " + frameName +  " not in cache.";
+    }
     sprite.setDisplayFrame(frame);
 }
 
@@ -178,6 +181,9 @@ jc.makeSpriteWithPlist = function(plist, png, startFrame){
 
     //todo change to size of sprite
     var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(startFrame);
+    if (!frame){
+        throw "Frame: " + startFrame +  " not in cache.";
+    }
     sprite.initWithSpriteFrame(frame);
     sprite.retain();
     return sprite;
@@ -408,6 +414,14 @@ jc.playEffectOnTarget = function(name, target, layer, child){
     }
 
     target.effectAnimations[name].playing =true;
+
+    if (config.flash){
+        layer.flash();
+    }
+
+    if (config.shake){
+        layer.shake();
+    }
 
     return effect;
 

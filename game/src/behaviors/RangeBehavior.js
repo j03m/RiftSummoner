@@ -33,8 +33,6 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
         return;
     }
 
-
-
     //get the action delay for attacking
     var actionDelay = this.owner.gameObject.actionDelays['attack'];
     var effectDelay = this.owner.gameObject.effectDelays['attack'];
@@ -44,22 +42,13 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
     }
 
     //if time is past the actiondelay and im not in another animation other than idle or damage
+    var state = this.getState();
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1 && !this.firing){
         this.setAttackAnim('fighting');
         this.owner.scheduleOnce(this.doMissile.bind(this),effectDelay);
         this.lastAttack = 0;
     }else{
         this.lastAttack+=dt;
-        var point = this.seekEnemy();
-        if (!point){
-            this.setState('move', 'move');
-            return;
-        }
-        if (point.x != 0 || point.y != 0){
-            //out of range, they fled or we got knocked back
-            this.setState('move', 'move');
-            return;
-        }
     }
 }
 
@@ -146,7 +135,8 @@ RangeBehavior.prototype.doMissile = function(){
 		}else if (missileType.path =="jump"){
 			moveTo = cc.JumpTo.create(timeToImpact, targetPos, v.distance/2, 1);
 		}else if (missileType.path =="arrow"){
-            moveTo = cc.JumpTo.create(timeToImpact, targetPos, v.distance/4, 1);
+
+            moveTo = cc.JumpTo.create(timeToImpact, targetPos,v.distance/3 , 1);
         }
 
         if (missileType.rotation){

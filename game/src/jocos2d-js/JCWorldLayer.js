@@ -75,6 +75,34 @@ jc.WorldLayer = jc.TouchLayer.extend({
         this.runAction(scaleTo);
 
     },
+    flash:function(){
+        //layer color, full screen to white
+        //fade out
+        var white = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
+        this.addChild(white);
+        white.setPosition(cc.p(0,0));
+        jc.fadeOut(white, jc.defaultTransitionTime);
+
+    },
+    shake:function(){
+        if (!this.shake){
+            var rot1 = cc.RotateBy.create(0.04,4);
+            var rot2 = cc.RotateBy.create(0.04,-4);
+            var vibrateAction = cc.Sequence.create(rot1,rot2);
+
+            var vb = cc.Repeat.create(vibrateAction,10);
+            var dt = cc.DelayTime.create(0.05);
+
+            var cb = cc.Func.create(function(){
+                this.shake=false;
+            }.bind(this));
+            var vibrateAndWait = cc.Sequence.create(vb,dt,cb);
+
+
+            this.runAction(vibrateAndWait);
+        }
+
+    },
     getClosestCorrectScale:function(scale){
         //don't allow a zoom further in than 1
         var minEntry=undefined;

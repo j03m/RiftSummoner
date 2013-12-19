@@ -124,10 +124,16 @@ var MainGame = cc.Layer.extend({
             "assets":assets,
             "apiCalls":[ //get opponent
                 function(callback){                    				   
-				    hotr.multiplayerOperations.findGame(function(){
-                        callback();
-                    });
-                }
+				    hotr.multiplayerOperations.findGame(function(result){
+                        if (result){
+                            callback();
+                        }else{
+                            //back to multiplayer
+                            this.mpGetGames();
+                        }
+
+                    }.bind(this));
+                }.bind(this)
             ],
             "nextScene":'selectTeam'
         });				
@@ -148,7 +154,8 @@ var MainGame = cc.Layer.extend({
 							hotr.changeScene('landing');
 						}else{
 					        var fightConfig = {
-					            teamA:teamA,
+                                op:hotr.newOpponent,
+                                teamA:teamA,
 					            teamAFormation:teamAFormation,
 					            teamB:data.team,
 					            teamBFormation:data.formation,
@@ -197,6 +204,29 @@ var MainGame = cc.Layer.extend({
         };
 
         this.doArena(fightConfig);
+    },
+    arenaReplay:function(data){
+        ArenaGame.scene();
+
+        var fightConfig = {
+            type:"replay",
+            teamA:data.teamB,
+            teamAFormation:"4x4x4a",
+            teamB:data.teamA,
+            teamBFormation:"4x4x4b",
+            teamAPowers:[],
+            teamBPowers:[],
+            offense:'a'
+        };
+
+        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
+        hotr.arenaScene.data = fightConfig;
+        //go to arena - show team dropdown attacker - VS -  defender
+        this.showLoader(            {
+            "assets":assets,
+            "nextScene":'arena'
+        });
+
     },
     doArena:function(fightConfig){
         hotr.arenaScene.data = fightConfig;
@@ -362,6 +392,12 @@ var MainGame = cc.Layer.extend({
             }
         }
     },
+    addAnimationChain: function (animations, assetAry) {
+        for (var i = 0; i < animations.length; i++) {
+            assetAry.pushUnique(g_characterPlists[animations[i]]);
+            assetAry.pushUnique(g_characterPngs[animations[i]]);
+        }
+    },
     addAssetChain:function(assetAry, name){
         assetAry.pushUnique(g_characterPlists[name]);
         assetAry.pushUnique(g_characterPngs[name]);
@@ -391,11 +427,7 @@ var MainGame = cc.Layer.extend({
             var powers = spriteDefs[name].powers;
             for(var power in powers){
                 var animations = powerAnimationsRequired[power];
-                for (var i =0;i<animations.length;i++){
-                    assetAry.pushUnique(g_characterPlists[animations[i]]);
-                    assetAry.pushUnique(g_characterPngs[animations[i]]);
-
-                }
+                this.addAnimationChain(animations, assetAry);
             }
 
         }
@@ -404,11 +436,7 @@ var MainGame = cc.Layer.extend({
             var powers = spriteDefs[name].damageMods;
             for(var power in powers){
                 var animations = powerAnimationsRequired[power];
-                for (var i =0;i<animations.length;i++){
-                    assetAry.pushUnique(g_characterPlists[animations[i]]);
-                    assetAry.pushUnique(g_characterPngs[animations[i]]);
-
-                }
+                this.addAnimationChain(animations, assetAry);
             }
         }
 
@@ -416,11 +444,15 @@ var MainGame = cc.Layer.extend({
             var powers = spriteDefs[name].deathMods;
             for(var power in powers){
                 var animations = powerAnimationsRequired[power];
-                for (var i =0;i<animations.length;i++){
-                    assetAry.pushUnique(g_characterPlists[animations[i]]);
-                    assetAry.pushUnique(g_characterPngs[animations[i]]);
+                this.addAnimationChain(animations, assetAry);
+                for (var power2 in powers[power]){ // power can be an object
+                    var animations2 = powerAnimationsRequired[power2];
+                    if (animations2){
+                        this.addAnimationChain(animations2, assetAry);
+                    }
 
                 }
+
             }
         }
 

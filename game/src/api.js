@@ -30,7 +30,10 @@ hotr.api.do = function(method, url,data,cb) {
 				}
 					
 	            if (xhr.status == 200) {
-	                cb(undefined, responseObj);
+	                if (cb){
+                        cb(undefined, responseObj);
+                    }
+
 	            } else {
 					var errStatus;
 					if (xhr.status == 0){
@@ -39,7 +42,9 @@ hotr.api.do = function(method, url,data,cb) {
 					}else{
 						errStatus = xhr.status;
 					}
-	                cb(errStatus,responseObj);
+                    if (cb){
+                        cb(errStatus,responseObj);
+                    }
 	            }
 	        }	
 	}
@@ -107,4 +112,14 @@ hotr.api.findGame = function(token, callback){
 hotr.api.getTeam = function(token, op, callback){
 	var url = hotr.api.makeUrl(hotr.api.target, '/app/getteam/:token/:opponent', arguments);
 	hotr.api.get(url, callback);
+}
+
+hotr.api.victory = function(token, op,data, callback){
+    var url = hotr.api.makeUrl(hotr.api.target, '/app/victory/:token/:opponent', arguments);
+    hotr.api.post(url, data,callback);
+}
+
+hotr.api.defeat = function(token, op, data,callback){
+    var url = hotr.api.makeUrl(hotr.api.target, '/app/defeat/:token/:opponent', arguments);
+    hotr.api.post(url, data, callback);
 }

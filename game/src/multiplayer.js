@@ -53,11 +53,13 @@ var Multiplayer = jc.UiElementsLayer.extend({
 			return returnme;
 		}
 		var creds = hotr.blobOperations.getCreds();
+        this.replayData = {};
         for(var gameId in mpData){
 			var game = mpData[gameId];
             var recordUi = this.getWindowFromConfig(this.itemWindow);				
 			recordUi.lblWins.setString(game[creds.id].wins);
 			recordUi.lblLosses.setString(game[gameId].wins);
+            this.replayData[gameId] = game.lastMatchData;
 			if (game[gameId].name){
 				recordUi.lblName.setString(game[gameId].name);
 			}else{
@@ -68,14 +70,17 @@ var Multiplayer = jc.UiElementsLayer.extend({
 				//set poke to fight
 				recordUi.pokeButton.setVisible(false);
 				recordUi.fightButton.setVisible(true);
+                recordUi.replayButton.setVisible(true);
 			}else{
 				recordUi.pokeButton.setVisible(true);
-				recordUi.fightButton.setVisible(false);				
+				recordUi.fightButton.setVisible(false);
+                recordUi.replayButton.setVisible(false);
 			}
 			
 			recordUi.pokeButton.setData(gameId);
 			recordUi.fightButton.setData(gameId);
 			recordUi.closeButton.setData(gameId);
+            recordUi.replayButton.setData(gameId);
 			
 			returnme.push(recordUi);
         }
@@ -95,6 +100,10 @@ var Multiplayer = jc.UiElementsLayer.extend({
 		hotr.newOpponent = data;
 		hotr.mainScene.layer.mpTakeTurn();			
 	},
+    replay:function(data){
+        var thisReplay = this.replayData[data];
+        hotr.mainScene.layer.arenaReplay(thisReplay);
+    },
 	countGames:function(){
 		var count=0;
         for(var gameId in hotr.multiplayerData){
@@ -102,6 +111,7 @@ var Multiplayer = jc.UiElementsLayer.extend({
         }
 		return count;	
 	},
+
     startGame:function(){	
 		if (this.countGames()<25){
 			hotr.mainScene.layer.mpStartGame();			
@@ -233,9 +243,20 @@ var Multiplayer = jc.UiElementsLayer.extend({
 				"z": 3,
 				"pos": {
 					"x": 1147,
-					"y": 123
+					"y": 183
 				}
 			},
+            "replayButton":{
+                "type": "button",
+                "main": "buttonFight.png",
+                "pressed": "buttonFightPressed.png",
+                "touchDelegateName": "replay",
+                "z": 3,
+                "pos": {
+                    "x": 1147,
+                    "y": 53
+                }
+            },
 			"itemFrame": {
 				"type": "sprite",
 				"sprite": "imageFrame.png",

@@ -43,7 +43,11 @@ var EditTeam = jc.UiElementsLayer.extend({
         }
     },
     inTransitionsComplete:function(){
-        this.tableView.setIndex(1);
+        if (!this.firstShow){
+            this.tableView.setIndex(1);
+            this.firstShow = true;
+        }
+
     },
     outTransitionsComplete:function(){
         jc.layerManager.popLayer();

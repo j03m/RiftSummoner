@@ -742,11 +742,6 @@ var spriteDefs = {
 			"splashDamage": {
 				"damage": 100,
 				"radius": 100
-			},
-			"burn": {
-				"damage": 40,
-				"duration": 1,
-				"interval": 0.5
 			}
 		},
 		"deathMods": {
@@ -1281,7 +1276,7 @@ var spriteDefs = {
 	},
 	"scowerer": {
 		"name": "scowerer",
-		"formalName": "Void Scavenger",
+		"formalName": "Scowerer",
 		"details": "Weak, dog-like creatures that are trained to rush archers and healers. When killed the scowerer will burst and a poison acid will cover anyone nearby.",
 		"elementType": "life",
 		"unitType": 3,

@@ -441,26 +441,29 @@ var ArenaGame = jc.WorldLayer.extend({
 
         //hey no team is fully dead. But, how long have been running?
         if (this.timeExpired()){
-//            if (aliveA > aliveB){
-//                //pause game, display victory
-//                this.showVictory();
-//
-//            }
-//
-//            if (aliveB > aliveA){
-//                //pause game, display defeat
-//                this.showDefeat();
-//            }
-//
-//
-//            if (aliveB == aliveA){
-//                //pause game, display defeat
-//                this.showDefeat();
-//            }
+            if (aliveA > aliveB){
+                //pause game, display victory
+                this.showVictory();
+
+            }
+
+            if (aliveB > aliveA){
+                //pause game, display defeat
+                this.showDefeat();
+            }
+
+
+            if (aliveB == aliveA){
+                //pause game, display defeat
+                this.showDefeat();
+            }
         }
     },
     showVictory:function(){
         this.started = false;
+        if (hotr.arenaScene.data.op){
+            hotr.multiplayerOperations.victory(hotr.arenaScene.data.op,hotr.arenaScene.data);
+        }
         this.setScale(1);
         this.setPosition(cc.p(0,0));
         this.victory = new Victory();
@@ -476,6 +479,9 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     showDefeat:function(){
         this.started = false;
+        if (hotr.arenaScene.data.op){
+            hotr.multiplayerOperations.defeat(hotr.arenaScene.data.op, hotr.arenaScene.data);
+        }
         this.setScale(1);
         this.setPosition(cc.p(0,0));
         this.defeat = new Defeat();

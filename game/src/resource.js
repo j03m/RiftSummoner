@@ -77,17 +77,26 @@ for (var entry in spriteDefs ){
 }
 
 for (var entry in missileConfig){
-    g_characterPngs[entry] = transformAsset(missileConfig[entry].png);
+    var png = transformAsset(missileConfig[entry].png);
+    g_characterPngs[entry] = png;
+    missileConfig[entry].png = png;
 	if (missileConfig[entry].plist){
-		g_characterPlists[entry] = transformAsset(missileConfig[entry].plist);		
+		var missile = transformAsset(missileConfig[entry].plist);
+        g_characterPlists[entry] = missile;
+        missileConfig[entry].plist = missile;
+
 	}
 
 }
 
 for (var entry in effectsConfig){
-    g_characterPngs[entry] = transformAsset(effectsConfig[entry].png);
+    var png = transformAsset(effectsConfig[entry].png);
+    g_characterPngs[entry] =png;
+    effectsConfig[entry].png = png;
 	if (effectsConfig[entry].plist){
-		g_characterPlists[entry] = transformAsset(effectsConfig[entry].plist);
+        var effect = transformAsset(effectsConfig[entry].plist);
+        g_characterPlists[entry] = effect;
+        effectsConfig[entry].plist = effect;
 	}
 }
 

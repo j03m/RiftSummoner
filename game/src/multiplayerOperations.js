@@ -29,3 +29,14 @@ hotr.multiplayerOperations.findGame = function(callback){
         }
     });
 }
+
+hotr.multiplayerOperations.victory = function(op, data, callback){
+    var authToken = hotr.blobOperations.getCachedAuthToken()
+    hotr.api.victory(authToken.token, op, data, callback);
+}
+
+hotr.multiplayerOperations.defeat = function(op, data, callback){
+    var authToken = hotr.blobOperations.getCachedAuthToken()
+    hotr.api.defeat(authToken.token, op, data, callback);
+}
+

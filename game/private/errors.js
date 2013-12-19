@@ -5,7 +5,11 @@ exports.error = function(code, msg, obj, callback){
 		debug += " Additional details: " + additional;
 	}
 	console.error(debug);
+    if (callback){
+        callback({code:code, msg:msg, obj:obj}, undefined);
+    }else{
+        console.log("Warning! No callback passed to error func!");
+    }
 
-	callback({code:code, msg:msg, obj:obj}, undefined);
 	return;
 }

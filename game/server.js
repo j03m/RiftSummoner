@@ -115,6 +115,20 @@ app.get('/app/getteam/:token/:opponent', validate(['token', 'opponent']), conver
 	});
 });
 
+
+app.post('/app/defeat/:token/:opponent', validate(['token', 'opponent']), convert, function(req,res){
+    multiplayerApi.defeat(req.userToken, req.params.opponent,  req.body, function(err, data){
+        handler(res, err, data);
+    });
+});
+
+app.post('/app/victory/:token/:opponent', validate(['token', 'opponent']), convert, function(req,res){
+    multiplayerApi.victory(req.userToken, req.params.opponent, req.body, function(err, data){
+        handler(res, err, data);
+    });
+});
+
+
 // Create an HTTP service.
 http.createServer(app).listen(80);
 
