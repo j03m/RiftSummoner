@@ -361,11 +361,11 @@ jc.scaleTo = function(scaleMe, toMe){
     scaleMe.setScaleY(scaley);
 }
 
-jc.scaleToCharacter = function(scaleMe, toMe){
+jc.scaleToCharacter = function(scaleMe, toMe, factor){
     var currentSize = scaleMe.getContentSize();
     var toSize = toMe.getTextureRect();
-    var scalex = toSize.width/currentSize.width;
-    var scaley = toSize.height/currentSize.height;
+    var scalex = (toSize.width*factor)/currentSize.width;
+    var scaley = (toSize.height* factor)/currentSize.height;
     scaleMe.setScaleX(scalex)
     scaleMe.setScaleY(scaley);
 }
@@ -404,13 +404,15 @@ jc.playEffectOnTarget = function(name, target, layer, child){
 
     parent.addChild(effect);
     if (config.scaleToTarget){
-        jc.scaleToCharacter(effect, target);
+        jc.scaleToCharacter(effect, target, config.scaleToTarget);
     }
     effect.setVisible(true);
     if (config.zorder == "behind" && !child){
         parent.reorderChild(effect,target.getZOrder()-1);
     }else if (config.zorder == "behind" && child) {
         parent.reorderChild(effect,-1);
+    }else if (config.zorder == "front" && child) {
+        parent.reorderChild(effect,2);
     }
     else{
         parent.reorderChild(effect,target.getZOrder());
@@ -505,7 +507,10 @@ jc.setChildEffectPosition = function(effect, parent, config){
     }
 
     if (config.offset){
-        var newPos = cc.pAdd(effectPos, config.offset);
+        var tmp = cc.p(config.offset.x, config.offset.y);
+        tmp.x*=jc.assetScaleFactor;
+        tmp.y*=jc.assetScaleFactor;
+        var newPos = cc.pAdd(effectPos, tmp);
         effect.setPosition(newPos);
     }else{
         effect.setPosition(effectPos);
@@ -534,7 +539,11 @@ jc.setEffectPosition = function(effect, parent, config){
     }
 
     if (config.offset){
-        var newPos = cc.pAdd(base, config.offset);
+        var tmp = cc.p(config.offset.x, config.offset.y);
+        tmp.x*=jc.assetScaleFactor;
+        tmp.y*=jc.assetScaleFactor;
+
+        var newPos = cc.pAdd(base, tmp);
         effect.setPosition(newPos);
     }else{
         effect.setPosition(base);
@@ -577,9 +586,10 @@ jc.genericPowerRemove = function(varName,effectName, bObj){
         bObj.owner.removeChild(bObj.owner[varName], false);
     }
     delete bObj.owner[varName];
-	if (bObj.owner.effectAnimations[effectName]){
-		bObj.owner.effectAnimations[effectName].playing = false;		
-	}
+//	if (bObj.owner.effectAnimations[effectName]){
+//        bObj.
+//		bObj.owner.effectAnimations[effectName].playing = false;
+//	}
 }
 
 jc.movementType = {

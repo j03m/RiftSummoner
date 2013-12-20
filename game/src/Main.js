@@ -441,6 +441,11 @@ var MainGame = cc.Layer.extend({
             }
         }
 
+        if (spriteDefs[name].gameProperties.heal){
+            var animations = powerAnimationsRequired['heal'];
+            this.addAnimationChain(animations, assetAry);
+        }
+
         if (spriteDefs[name].deathMods){
             var powers = spriteDefs[name].deathMods;
             for(var power in powers){

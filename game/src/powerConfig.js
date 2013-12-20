@@ -3,6 +3,7 @@ var powerAnimationsRequired = {
     "healingRadius":["heal"],
     "vampireRadius":["fire","heal"],
     "regeneration":['heal'],
+    "heal":['heal'],
     "splashDamage":['explosion'],
     "vampireDistro":["fire","heal"],
     "vampireDrain":["fire","heal"],
@@ -43,7 +44,7 @@ var powerConfig = {
         var heal = 0;
         for(var i =0;i<foes.length;i++){
             if (GeneralBehavior.applyDamage( foes[i], this.owner, config.damage)){
-                jc.playTintedEffectOnTarget("fireLoop", foes[i], this.owner.layer, true, 255, 255, 0);
+                jc.playTintedEffectOnTarget("fire", foes[i], this.owner.layer, true, 255, 255, 0);
                 heal+=config.damage;
             }
         }
@@ -115,7 +116,7 @@ var powerConfig = {
         var config = spriteDefs[value].damageMods["vampireDistro"];
         var allies = this.owner.homeTeam();
         if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
-            jc.playTintedEffectOnTarget("fireLoop", this.locked, this.owner.layer, true, 255,0,255);
+            jc.playTintedEffectOnTarget("fire", this.locked, this.owner.layer, true, 255,0,255);
         }
 
         for(var i=0;i<allies.length;i++){
@@ -131,7 +132,7 @@ var powerConfig = {
         jc.checkPower(value, "vampireDrain");
         var config = spriteDefs[value].damageMods["vampireDrain"];
         if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
-            jc.playTintedEffectOnTarget("fireLoop", this.locked, this.owner.layer, true, 255, 0, 255);
+            jc.playTintedEffectOnTarget("fire", this.locked, this.owner.layer, true, 255, 0, 255);
         }
 
         if (GeneralBehavior.heal(this.owner, this.owner, config.heal)){

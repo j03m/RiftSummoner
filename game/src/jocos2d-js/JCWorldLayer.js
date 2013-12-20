@@ -79,8 +79,9 @@ jc.WorldLayer = jc.TouchLayer.extend({
         //layer color, full screen to white
         //fade out
         var white = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
+        white.setPosition(cc.p(this.worldSize.width/2, this.worldSize.height/2));
+        white.setContentSize(this.worldSize);
         this.addChild(white);
-        white.setPosition(cc.p(0,0));
         jc.fadeOut(white, jc.defaultTransitionTime);
 
     },
@@ -95,6 +96,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
 
             var cb = cc.CallFunc.create(function(){
                 this.shaking=false;
+                this.setRotation(0);
             }.bind(this));
             var vibrateAndWait = cc.Sequence.create(vb,dt,cb);
 

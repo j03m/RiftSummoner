@@ -2,25 +2,33 @@ var HealerBehavior =  function(sprite){
     _.extend(this, new GeneralBehavior());
     this.handleTankIdle = this.handleIdle;
     this.think = this.healThink;
+    this.handleNormalMove = this.handleMove;
+    this.handleMove = this.handleHealerMove;
     this.init(sprite);
 }
 
+HealerBehavior.prototype.handleHealerMove = function(dt){
+    var state = this.getState();
+    if (state.brain != "move"){
+        return;
+    }
+    if (this.support){
+        this.handleHealMove(dt);
+    }else{
+        this.handleNormalMove(dt);
+    }
+}
 
 HealerBehavior.prototype.healThink = function(dt){
 
     var state= this.getState();
     this.handleDeath();
-
+    console.log(state);
     switch(state.brain){
         case 'idle':this.handleHealerIdle(dt);
             break;
-        case 'move':
-            if (this.support){
-                this.handleHealMove(dt);
-            }else{
-                this.handleMove(dt);
-            }
-            break;
+//        case 'move':
+
         case 'fighting':this.handleFight(dt);
             break;
         case 'healing':this.handleHeal(dt);
@@ -58,15 +66,15 @@ HealerBehavior.prototype.handleHealerIdle = function(dt){
 
 
 HealerBehavior.prototype.handleHealMove = function(dt){
+    var state = this.getState();
     var point = this.getWhereIShouldBe('behind', 'facing', this.support);
     point = this.seek(point);
     if (point.x == 0 && point.y == 0){
         //arrived - heal
-        this.setState('healing', 'idle');
+        this.setState('healing',state.anim );
         return;
     }
 
-    this.setState('move', 'move');
     this.moveToward(point, dt);
 
 }
@@ -90,10 +98,14 @@ HealerBehavior.prototype.handleHeal = function(dt){
         return;
     }
 
-    if (this.support.gameObject.hp >= this.support.gameObject.MaxHP){
-        //does not needs a heal.
-        this.setState('idle', 'idle');
+    var point = this.getWhereIShouldBe('behind', 'facing', this.support);
+    point = this.seek(point);
+    if (point.x != 0 && point.y != 0){
+        //arrived - heal
+        this.setState('move', 'move');
+        return;
     }
+
 
     //get the action delay for attacking
     var actionDelay = this.owner.gameObject.actionDelays['heal'];
@@ -104,19 +116,19 @@ HealerBehavior.prototype.handleHeal = function(dt){
     }
 
 
-    //can heal?
-    if (this.support.gameObject.hp<0 || this.support.gameObject.hp >= this.support.gameObject.MaxHP){
-        this.setState('idle', 'idle');
-        this.lastHeal+=dt;
-        return;
-    }
-
-
     //if time is past the actiondelay and im not in another animation other than idle or damage
     if (this.lastHeal >= actionDelay && state.anim != 'attack'){
-        this.owner.scheduleOnce(this.healLogic.bind(this), damageDelay);
+        //can heal?
+        if (this.support.gameObject.hp<0 || this.support.gameObject.hp >= this.support.gameObject.MaxHP){
+            this.lastHeal+=dt;
+        }else{
+            this.owner.scheduleOnce(this.healLogic.bind(this), damageDelay);
+            jc.playEffectOnTarget('heal', this.support, this.support.getZOrder(), this.owner.layer, true);
+            this.lastHeal = 0;
+        }
+
         this.setState('healing', 'attack');
-        this.lastHeal = 0;
+
     }else{
         this.lastHeal+=dt;
         this.setState('healing', state.anim);

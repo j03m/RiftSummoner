@@ -1513,7 +1513,7 @@ var spriteDefs = {
 				"attack": 0.05,
 				"heal": 0.05
 			},
-			"targetRadius": 25
+			"targetRadius": 100
 		},
 		"baseOffset": {
 			"x": 0,

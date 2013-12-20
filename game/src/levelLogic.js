@@ -5,63 +5,68 @@ hotr.levelLogic = {};
 
 var temp =  [
     {
-        "name":"ogre",
+        "name":"orc",
         "id":"id1",
         "data":{}
     },
     {
-        "name":"ogre",
+        "name":"troll",
         "id":"id2",
         "data":{}
     },
-    {
-        "name":"ogre",
-        "id":"id3",
-        "data":{}
-    },
-    {
-        "name":"ogre",
-        "id":"id4",
-        "data":{}
-    },
-    {
-        "name":"orc",
-        "id":"id5",
-        "data":{}
-    },
-    {
-        "name":"orc",
-        "data":{}
-    },
-    {
-        "name":"orc",
-        "data":{}
-    },
-    {
-        "name":"orc",
-        "data":{}
-    },
-    {
-        "name":"wizard",
-        "data":{}
-    },
-    {
-        "name":"wizard",
-        "data":{}
-    },
-    {
-        "name":"wizard",
-        "data":{}
-    },
-    {
-        "name":"wizard",
-        "data":{}
-    }
+//    {
+//        "name":"ogre",
+//        "id":"id2",
+//        "data":{}
+//    },
+//    {
+//        "name":"ogre",
+//        "id":"id3",
+//        "data":{}
+//    },
+//    {
+//        "name":"ogre",
+//        "id":"id4",
+//        "data":{}
+//    },
+//    {
+//        "name":"orc",
+//        "id":"id5",
+//        "data":{}
+//    },
+//    {
+//        "name":"orc",
+//        "data":{}
+//    },
+//    {
+//        "name":"orc",
+//        "data":{}
+//    },
+//    {
+//        "name":"orc",
+//        "data":{}
+//    },
+//    {
+//        "name":"wizard",
+//        "data":{}
+//    },
+//    {
+//        "name":"wizard",
+//        "data":{}
+//    },
+//    {
+//        "name":"wizard",
+//        "data":{}
+//    },
+//    {
+//        "name":"wizard",
+//        "data":{}
+//    }
 ]
 
 hotr.levelLogic.getTeamForLevel = function(level){
-    //return temp;
-    return makeRandomTeam();
+    return temp;
+    //return makeRandomTeam();
 }
 
 hotr.levelLogic.getFormationForLevel = function(level){
@@ -87,8 +92,9 @@ function makeRandomTeam(){
     }
     var team = [];
     for(var i =0;i<characters;i++){
-        var myname = allChars[Math.floor((Math.random()*allChars.length-1))];
-        console.log("random char:" + myname);
+        var val = Math.floor((Math.random()*allChars.length-1)+1);
+        var myname = allChars[val];
+        console.log("random char:" + myname + val);
         team.push({name:myname});
     }
     return team;

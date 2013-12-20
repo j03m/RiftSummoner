@@ -4,6 +4,7 @@ var DefenderBehavior = function(sprite){
     this.init(sprite);
     this.handleTankIdle = this.handleIdle;
     this.handleIdle = this.handleDefenderIdle;
+    this.handleMove = this.handleDefenderMove;
     this.think = this.defendThink;
 }
 
@@ -38,14 +39,37 @@ DefenderBehavior.prototype.handleSeek = function(dt){
 }
 
 DefenderBehavior.prototype.handleDefenderMove = function(dt){
-    var point = this.getWhereIShouldBe('front', 'away', this.support);
-    point = this.seek(point);
-    if (point.x == 0 && point.y == 0){
-        this.setState('seek', 'idle');
+    var state = this.getState();
+    if (state.brain != "move" && state.brain != "attackmove"){
         return;
     }
-    this.setState('idle', 'move');
-    this.moveToward(point, dt);
+
+    if (state.brain == "attackmove"){
+        var point = this.seekEnemy();
+        if (!point){
+            this.setState('idle','idle');
+            this.forceLocked = false;
+            return;
+        }
+        if (point.x == 0 && point.y == 0){
+            //arrived - attack
+            this.setState('fighting', 'move'); //switch to fight, but keep animation the same
+            return;
+        }
+        this.moveToward(point, dt);
+        return;
+    }else{
+        var point = this.getWhereIShouldBe('front', 'away', this.support);
+        point = this.seek(point);
+        if (point.x == 0 && point.y == 0){
+            this.setState('seek', 'idle');
+            return;
+        }
+        //this.setState('idle', 'move');
+        this.moveToward(point, dt);
+    }
+
+
 }
 
 
@@ -67,12 +91,12 @@ DefenderBehavior.prototype.defendThink = function(dt){
     switch(state.brain){
         case 'idle':this.handleDefenderIdle(dt);
             break;
-        case 'move':
-            this.handleDefenderMove(dt);
-            break;
-        case 'attackmove':
-            this.handleMove(dt);
-            break;
+//        case 'move':
+//            this.handleDefenderMove(dt);
+//            break;
+//        case 'attackmove':
+//            this.handleAttackMove(dt);
+//            break;
         case 'fighting':this.handleFight(dt);
             break;
         case 'seek':this.handleSeek(dt);

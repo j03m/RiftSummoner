@@ -18,13 +18,14 @@ var tracers = {
     'mainLayer':0,
     'resource':0,
     'camera':0,
-    'console':1,
+    'console':0,
     'zerverpipe':0,
     'resource':0,
     'ui':0,
-    'scroller':1,
-    'utilEffects':1,
-    'rangeBehavior':1
+    'scroller':0,
+    'utilEffects':0,
+    'rangeBehavior':0,
+    'defenderBehavior':1
 };
 
 jc.log = function(categories, msg){

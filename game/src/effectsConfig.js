@@ -45,8 +45,9 @@ var effectsConfig = {
         "frames":50,
         "delay":0.05,
         "placement":"center",
-        "times":2,
-        "scaleToTarget":true
+        "scaleToTarget":2,
+        "zorder":"front",
+
     },
     "teleport":{
         "png":"art/teleport.png",
@@ -111,17 +112,6 @@ var effectsConfig = {
             "y":65
         }
     },
-    "fireLoop":{
-        "name":"fire",
-        "png":"art/fire.png",
-        "plist":"art/fire.plist",
-        "start":"fire.1.png",
-        "frames":44,
-        "delay":0.02,
-        "placement":"center",
-        "zorder":"behind",
-        "times":15,
-    },
     "poison":{
         "png":"art/poison{v}.png",
         "plist":"art/poison{v}.plist",
@@ -129,7 +119,13 @@ var effectsConfig = {
         "frames":24,
         "delay":0.05,
         "placement":"center",
-        "scaleToTarget":false
+        "zorder":"front",
+        "scaleToTarget":2,
+        "offset":{
+            "x":0,
+            "y":25
+        }
+
     }
 }
 

@@ -575,6 +575,8 @@ GeneralBehavior.prototype.handleState = function(dt){
     switch(state.brain){
         case 'idle':this.handleIdle(dt);
             break;
+//        case 'move':this.handleMove(dt);
+//            break;
         case 'fighting':this.handleFight(dt);
             break;
         case 'damage':this.handleDamage(dt);

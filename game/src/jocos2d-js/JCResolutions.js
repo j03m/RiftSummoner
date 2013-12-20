@@ -9,7 +9,7 @@ jc.resolutions = {};
 jc.resolutions.iphone = cc.size(480,320);
 jc.resolutions.iphone.scale =   0.234375;
 jc.resolutions.iphone.adjusty = -30;
-jc.resolutions.iphone.adjustx = 80;
+jc.resolutions.iphone.adjustx = 0;
 
 jc.resolutions.iphone5 = cc.size(1136,640);
 jc.resolutions.iphone5.scale = 0.554688;
