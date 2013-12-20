@@ -78,11 +78,21 @@ jc.WorldLayer = jc.TouchLayer.extend({
     flash:function(){
         //layer color, full screen to white
         //fade out
-        var white = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
-        white.setPosition(cc.p(this.worldSize.width/2, this.worldSize.height/2));
-        white.setContentSize(this.worldSize);
-        this.addChild(white);
-        jc.fadeOut(white, jc.defaultTransitionTime);
+        if (!this.whiteFlash){
+            this.whiteFlash = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
+            var worldPos = cc.p(this.worldSize.width/2, this.worldSize.height/2);
+            worldPos.x -= this.worldSize.width/2;
+            worldPos.y -= this.worldSize.height/2;
+            var nodePos = this.convertToItemPosition(worldPos);
+            this.whiteFlash.setPosition(nodePos);
+            this.whiteFlash.setContentSize(this.worldSize);
+            this.whiteFlash.setOpacity(255);
+            this.addChild(this.whiteFlash);
+        }else{
+            this.whiteFlash.setOpacity(255);
+        }
+
+        jc.fadeOut(this.whiteFlash, jc.defaultTransitionTime);
 
     },
     shake:function(){
@@ -95,6 +105,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
             var dt = cc.DelayTime.create(0.05);
 
             var cb = cc.CallFunc.create(function(){
+                console.log("shake done!");
                 this.shaking=false;
                 this.setRotation(0);
             }.bind(this));

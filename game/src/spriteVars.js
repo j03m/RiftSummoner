@@ -520,6 +520,7 @@ var spriteDefs = {
 			"MaxHP": 300,
 			"movementType": 1,
 			"targets": 2,
+			"missile": "arrow",
 			"damage": 35,
 			"speed": 85,
 			"actionDelays": {
@@ -550,6 +551,7 @@ var spriteDefs = {
 			"MaxHP": 100,
 			"movementType": 1,
 			"targets": 2,
+			"missile": "arrow",
 			"damage": 35,
 			"speed": 55,
 			"actionDelays": {
@@ -580,7 +582,7 @@ var spriteDefs = {
 			"damage": 25,
 			"movementType": 1,
 			"targets": 2,
-			"missile": "greenbullet",
+			"missile": "arrow",
 			"poisonDamage": 10,
 			"speed": 55,
 			"actionDelays": {
@@ -610,6 +612,7 @@ var spriteDefs = {
 			"MaxHP": 200,
 			"damage": 45,
 			"movementType": 1,
+			"missile": "arrow",
 			"targets": 2,
 			"speed": 55,
 			"actionDelays": {
