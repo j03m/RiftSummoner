@@ -1,7 +1,7 @@
 var hotr = hotr || {};
 hotr.api = {};
-hotr.api.target = "http://localhost";
-hotr.api.sTarget = "http://localhost";
+hotr.api.target = "http://www.riftsummoner.com";
+hotr.api.sTarget = "http://www.riftsummoner.com";
 hotr.api.get = function(url, cb){
 	hotr.api.do("GET",url,undefined,cb);
 }
