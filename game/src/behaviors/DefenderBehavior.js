@@ -30,7 +30,9 @@ DefenderBehavior.prototype.handleSeek = function(dt){
     }
 
     if (this.support){
-        if(!this.targetWithinSeekRadius(this.support)){
+        var point = this.getWhereIShouldBe('front', 'away', this.support);
+        point = this.seek(point);
+        if (point.x != 0 && point.y != 0){
             this.setState('move', 'move');
         }
     }

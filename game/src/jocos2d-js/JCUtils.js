@@ -365,7 +365,8 @@ jc.scaleToCharacter = function(scaleMe, toMe, factor){
     var currentSize = scaleMe.getContentSize();
     var toSize = toMe.getTextureRect();
     var scalex = (toSize.width*factor)/currentSize.width;
-    var scaley = (toSize.height* factor)/currentSize.height;
+    //var scaley = (toSize.height* factor)/currentSize.height;
+    var scaley = scalex;
     scaleMe.setScaleX(scalex)
     scaleMe.setScaleY(scaley);
 }

@@ -1,12 +1,12 @@
 //Every function in here expects to be bound to an instance of GeneralBehavior, or something that extends it!
 var powerAnimationsRequired = {
     "healingRadius":["heal"],
-    "vampireRadius":["fire","heal"],
+    "vampireRadius":["lifeDrain","heal"],
     "regeneration":['heal'],
     "heal":['heal'],
     "splashDamage":['explosion'],
-    "vampireDistro":["fire","heal"],
-    "vampireDrain":["fire","heal"],
+    "vampireDistro":["lifeDrain","heal"],
+    "vampireDrain":["lifeDrain","heal"],
     "knockBack":["greenBang"],
     "burn":["fire"],
     "poison":["poison"],
@@ -44,7 +44,7 @@ var powerConfig = {
         var heal = 0;
         for(var i =0;i<foes.length;i++){
             if (GeneralBehavior.applyDamage( foes[i], this.owner, config.damage)){
-                jc.playTintedEffectOnTarget("fire", foes[i], this.owner.layer, true, 255, 255, 0);
+                jc.playEffectOnTarget("lifeDrain", foes[i], this.owner.layer, true);
                 heal+=config.damage;
             }
         }
@@ -116,7 +116,7 @@ var powerConfig = {
         var config = spriteDefs[value].damageMods["vampireDistro"];
         var allies = this.owner.homeTeam();
         if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
-            jc.playTintedEffectOnTarget("fire", this.locked, this.owner.layer, true, 255,0,255);
+            jc.playEffectOnTarget("lifeDrain", this.locked, this.owner.layer, true);
         }
 
         for(var i=0;i<allies.length;i++){
@@ -132,7 +132,7 @@ var powerConfig = {
         jc.checkPower(value, "vampireDrain");
         var config = spriteDefs[value].damageMods["vampireDrain"];
         if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
-            jc.playTintedEffectOnTarget("fire", this.locked, this.owner.layer, true, 255, 0, 255);
+            jc.playEffectOnTarget("lifeDrain", this.locked, this.owner.layer, true);
         }
 
         if (GeneralBehavior.heal(this.owner, this.owner, config.heal)){

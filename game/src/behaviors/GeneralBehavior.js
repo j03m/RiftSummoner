@@ -125,7 +125,7 @@ GeneralBehavior.prototype.lockOnClosestUnlocked = function(){
 }
 
 GeneralBehavior.prototype.lockOnClosestFriendlyNonTank = function(){
-    return this.lockOnClosest(this.is.bind(this, ['healer', 'range']), this.owner.homeTeam());
+    return this.lockOnClosest(this.isUndefended.bind(this), this.owner.homeTeam());
 }
 
 GeneralBehavior.prototype.lockOnClosestNonTank = function(){
@@ -165,6 +165,24 @@ GeneralBehavior.prototype.isUnlocked = function(target){
     }
     return true;
 }
+
+GeneralBehavior.prototype.isUndefended = function(target){
+    if (target.behaviorType != 'range' && target.behaviorType != 'healer'){
+        return false;
+    }
+
+    for (var i =0; i< this.owner.homeTeam().length; i++){
+        var sprite = this.owner.homeTeam()[i];
+        if (sprite!=this.owner){
+            //check locked
+            if (sprite.behavior.support == target){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 
 //lock onto the closest bad guy but use the check function for exceptions
 GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){

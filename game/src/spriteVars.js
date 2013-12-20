@@ -62,7 +62,7 @@ var spriteDefs = {
 				"y": 10
 			},
 			"flightAug": {
-				"x": 25,
+				"x": 100,
 				"y": 100
 			},
 			"missleTarget": "base",
@@ -1215,64 +1215,63 @@ var spriteDefs = {
 	},
 	"orc": {
 		"name": "orc",
-		"flip": true,
-		"formalName": "Orc Warrior",
-		"details": "Orcs are fast, fierce attackers. What they lack in heavy armor, they make up for in pure tenacity.",
-		"elementType": "none",
-		"unitType": 3,
-		"special": "None",
-		"gameProperties": {
-			"MaxHP": 400,
-			"speed": 55,
-			"movementType": 1,
-			"targets": 1,
-			"damage": 50,
-			"actionDelays": {
-				"attack": 0.25
-			},
-			"effectDelays": {
-				"attack": 0.5
-			},
-			"targetRadius": 30
-		},
-		"baseOffset": {
-			"x": -20,
-			"y": -5
-		},
-		"byStep": 1,
-		"animations": {
-			"move": {
-				"start": 18,
-				"end": 41,
-				"delay": 0.04,
-				"type": 0
-			},
-			"attack": {
-				"start": 42,
-				"end": 64,
-				"delay": 0.03,
-				"type": 1
-			},
-			"attack2": {
-				"start": 66,
-				"end": 90,
-				"delay": 0.03,
-				"type": 1
-			},
-			"idle": {
-				"start": 1,
-				"end": 12,
-				"delay": 0.04,
-				"type": 0
-			},
-			"dead": {
-				"start": 103,
-				"end": 130,
-				"delay": 0.04,
-				"type": 1
-			}
-		},
-		"behavior": "tank"
+        "sheetSize":2048,
+        "flip":true,
+        "formalName":"Orc Warrior",
+        "details":"Orcs are fast, fierce attackers. What they lack in heavy armor, they make up for in pure tenacity.",
+        "elementType":"none",
+        "unitType":3,
+        "special":"None",
+        "gameProperties":{
+            "MaxHP":400,
+            "speed":55,
+            "movementType":1,
+            "targets":1,
+
+            "damage":50,
+            "actionDelays":{
+                "attack":0.25
+            },
+            "effectDelays":{
+                "attack":0.5
+            },
+            "targetRadius": 30
+        },
+        "baseOffset":{"x":-20,"y":-5},
+        "byStep":1,
+        "animations": {
+            "move":{
+                "start":18,
+                "end":40,
+                "delay":0.04,
+                "type":0
+            },
+            "attack":{
+                "start":42,
+                "end":63,
+                "delay":0.03,
+                "type":1
+            },
+            "attack2":{
+                "start":66,
+                "end":89,
+                "delay":0.03,
+                "type":1
+            },
+            "idle":{
+                "start":1,
+                "end":17,
+                "delay":0.04,
+                "type":0
+            },
+            "dead":{
+                "start":102,
+                "end":130,
+                "delay":0.04,
+                "type":1
+            }
+        },
+        "behavior":"tank"
 	},
 	"scowerer": {
 		"name": "scowerer",
@@ -1335,54 +1334,55 @@ var spriteDefs = {
 		"behavior": "flanker"
 	},
 	"shellback": {
-		"name": "shellback",
-		"formalName": "Shellback Raider",
-		"details": "Heavily armored and fast, shellbacks are mindless attack animals trained to lock onto and kill weaker archers and healers.",
-		"elementType": "none",
-		"unitType": 3,
-		"special": "None",
-		"gameProperties": {
-			"MaxHP": 1000,
-			"movementType": 1,
-			"targets": 1,
-			"speed": 200,
-			"damage": 25,
-			"actionDelays": {
-				"attack": 0.01
-			},
-			"effectDelays": {
-				"attack": 0.01
-			},
-			"targetRadius": 20
-		},
-		"animations": {
-			"move": {
-				"start": 70,
-				"end": 88,
-				"delay": 0.02,
-				"type": 0
-			},
-			"attack": {
-				"start": 198,
-				"end": 249,
-				"delay": 0.025,
-				"type": 1
-			},
-			"idle": {
-				"start": 91,
-				"end": 151,
-				"delay": 0.02,
-				"type": 0
-			},
-			"dead": {
-				"start": 283,
-				"end": 340,
-				"delay": 0.02,
-				"type": 1
-			}
-		},
-		"behavior": "flanker"
-	},
+        "name":"shellback",
+        "formalName":"Shellback Raider",
+        "details":"Heavily armored and fast, shellbacks are mindless attack animals trained to lock onto and kill weaker archers and healers.",
+        "elementType":"none",
+        "unitType":3,
+        "sheetSize":2048,
+        "special":"None",
+        "gameProperties":{
+            "MaxHP":400,
+            "movementType":1,
+            "targets":1,
+
+            "speed":200,
+            "damage":25,
+            "actionDelays":{
+                "attack":0.01
+            },
+            "effectDelays":{
+                "attack":0.01
+            },
+            "targetRadius":20
+        },
+        "animations": {
+            "move":{
+                "start":72,
+                "end":88,
+                "delay":0.02,
+                "type":0
+            },
+            "attack":{
+                "start":198,
+                "end":249,
+                "delay":0.025,
+                "type":1
+            },
+            "idle":{
+                "start":91,
+                "end":151,
+                "delay":0.02,
+                "type":0
+            },
+            "dead":{
+                "start":283,
+                "end":320,
+                "delay":0.02,
+                "type":1
+            }
+        },"behavior":"flanker"
+    },
 	"snakeThing": {
 		"name": "snakeThing",
 		"formalName": "Serpent Guardian",

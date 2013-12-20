@@ -14,11 +14,11 @@ var temp =  [
         "id":"id2",
         "data":{}
     },
-//    {
-//        "name":"ogre",
-//        "id":"id2",
-//        "data":{}
-//    },
+    {
+        "name":"ogre",
+        "id":"id2",
+        "data":{}
+    },
 //    {
 //        "name":"ogre",
 //        "id":"id3",
@@ -44,10 +44,6 @@ var temp =  [
 //    },
 //    {
 //        "name":"orc",
-//        "data":{}
-//    },
-//    {
-//        "name":"wizard",
 //        "data":{}
 //    },
 //    {

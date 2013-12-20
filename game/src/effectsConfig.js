@@ -47,6 +47,7 @@ var effectsConfig = {
         "placement":"center",
         "scaleToTarget":2,
         "zorder":"front",
+        "times":1
 
     },
     "teleport":{
@@ -117,6 +118,21 @@ var effectsConfig = {
         "plist":"art/poison{v}.plist",
         "start":"poison.1.png",
         "frames":24,
+        "delay":0.05,
+        "placement":"center",
+        "zorder":"front",
+        "scaleToTarget":2,
+        "offset":{
+            "x":0,
+            "y":25
+        }
+
+    },
+    "lifeDrain":{
+        "png":"art/lifeDrain{v}.png",
+        "plist":"art/lifeDrain{v}.plist",
+        "start":"lifeDrain.1.png",
+        "frames":38,
         "delay":0.05,
         "placement":"center",
         "zorder":"front",
