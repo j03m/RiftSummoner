@@ -95,11 +95,9 @@ var powerConfig = {
         var config = spriteDefs[value].deathMods["explodePoison"];
         //initial explosion
         var effect = jc.playEffectOnTarget("explosion", this.locked, this.owner.layer);
-        var fillColor = new cc.Color3B();
-        fillColor.r = 0;
-        fillColor.b = 0;
-        fillColor.g = 255;
-        effect.setColor (fillColor);
+        if (effect){
+            effect.setColor (cc.green());
+        }
 
         var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.locked.getBasePosition());
 
@@ -116,6 +114,7 @@ var powerConfig = {
         var config = spriteDefs[value].damageMods["vampireDistro"];
         var allies = this.owner.homeTeam();
         if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
+
             jc.playEffectOnTarget("lifeDrain", this.locked, this.owner.layer, true);
         }
 
@@ -175,11 +174,8 @@ var powerConfig = {
         jc.genericPower("poison", value, this.owner, this.locked);
     },
     "poison-apply":function(effectData){
-        var fillColor = new cc.Color3B();
-        fillColor.r = 0;
-        fillColor.b = 0;
-        fillColor.g = 255;
-        this.owner.setColor(fillColor);
+
+        this.owner.setColor(cc.green());
         jc.genericPowerApply(effectData, "poison", "poisonEffect", this);
     },
     "poison-remove":function(){

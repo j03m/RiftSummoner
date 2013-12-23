@@ -123,10 +123,10 @@ var SelectTeam = jc.UiElementsLayer.extend({
         if (!this.nextEnabled){
             return;
         }
-
+        this.nextEnabled = false;
 		var formationOrder = hotr.blobOperations.getFormationOrder();
 		if (formationOrder.length!=0){
-			hotr.mainScene.layer.arenaPre();			
+		    hotr.mainScene.layer.arenaPre();
 		}      
     },
     kikStart:function(){

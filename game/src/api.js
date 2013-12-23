@@ -1,13 +1,22 @@
 var hotr = hotr || {};
 hotr.api = {};
-hotr.api.target = "http://localhost";
-hotr.api.sTarget = "http://localhost";
+
+if (jc.isBrowser){
+    hotr.api.target = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+    hotr.api.sTarget = hotr.api.target;
+}else{
+    hotr.api.target = "http://www.riftsummoner.com";
+    hotr.api.sTarget = "http://www.riftsummoner.com";
+}
+
 hotr.api.get = function(url, cb){
 	hotr.api.do("GET",url,undefined,cb);
 }
+
 hotr.api.post = function(url, data, cb){
 	hotr.api.do("POST",url,data,cb);
 }
+
 hotr.api.do = function(method, url,data,cb) {
     var xhr;    
     try {

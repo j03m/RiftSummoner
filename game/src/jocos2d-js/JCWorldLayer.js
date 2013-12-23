@@ -34,7 +34,16 @@ jc.WorldLayer = jc.TouchLayer.extend({
                 this.scaleTable.push({x:myScaleX, y:myScaleX/this.aspectRatio});
                 i+=inc;
             }
-            //this.scaleTable.push({x:1, y:1}); //make sure 1:1 is in there
+            this.whiteFlash = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
+            var worldPos = cc.p(this.worldSize.width/2, this.worldSize.height/2);
+            worldPos.x -= this.winSize.width/2;
+            worldPos.y -= this.winSize.height/2;
+            var nodePos = this.convertToItemPosition(worldPos);
+            this.whiteFlash.setPosition(nodePos);
+            this.whiteFlash.setContentSize(this.winSize);
+            this.whiteFlash.setVisible(false);
+            this.addChild(this.whiteFlash);
+
             return true;
         } else {
             return false;
@@ -62,7 +71,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
     },
     fullZoomOut:function(rate, done){
         var scale = this.getScaleWorld();
-        scale = this.getClosestCorrectScale(scale);
+        //scale = this.getClosestCorrectScale(scale);
         var converted = this.convertToLayerPosition(cc.p(this.worldSize.width/2, this.worldSize.height/2));
 
         this.doScale(scale, converted, rate, done);
@@ -78,19 +87,8 @@ jc.WorldLayer = jc.TouchLayer.extend({
     flash:function(){
         //layer color, full screen to white
         //fade out
-        if (!this.whiteFlash){
-            this.whiteFlash = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
-            var worldPos = cc.p(this.worldSize.width/2, this.worldSize.height/2);
-            worldPos.x -= this.worldSize.width/2;
-            worldPos.y -= this.worldSize.height/2;
-            var nodePos = this.convertToItemPosition(worldPos);
-            this.whiteFlash.setPosition(nodePos);
-            this.whiteFlash.setContentSize(this.worldSize);
-            this.whiteFlash.setOpacity(255);
-            this.addChild(this.whiteFlash);
-        }else{
-            this.whiteFlash.setOpacity(255);
-        }
+        this.whiteFlash.setVisible(true);
+        this.whiteFlash.setOpacity(255);
 
         jc.fadeOut(this.whiteFlash, jc.defaultTransitionTime);
 

@@ -196,7 +196,24 @@ var ArenaGame = jc.WorldLayer.extend({
             this.nextChar = 0;
         }
 
-        this.placeCharacter(team[this.nextChar], formation[this.nextChar], function(){
+
+        var point = cc.p(formation.x, formation.y);
+        point.x *= jc.assetScaleFactor;
+        point.y *= jc.assetScaleFactor;
+
+        var col = (this.nextChar)% 4;
+        var row = Math.floor(this.nextChar/4);
+        var valueX = 75;
+        var valueY = -50;
+        if (!team[this.nextChar].isFlippedX()){
+             valueX *=-1;
+        }
+        var colAdjust = col * valueX;
+        var rowAdjust = row * valueY;
+        point.x+=colAdjust;
+        point.y+=rowAdjust;
+
+        this.placeCharacter(team[this.nextChar],point , function(){
             this.nextChar++;
             if (this.nextChar>=team.length){
                 this.nextChar = undefined

@@ -1,12 +1,12 @@
 var jc = jc || {};
 
 //Fixes
+cc.Sprite.prototype.setColor = function(){
+    jc.log(['console'], "setColor called on the web - don't do it man.");
+};
+
 if (jc.isBrowser){
     //dont' do this on the web, crushes perf
-//    cc.Sprite.prototype.setColor = function(){
-//        jc.log(['console'], "setColor called on the web - don't do it man.");
-//    };
-
     jc.dumpStack = function(who){
         jc.log(who, console.trace());
     }
@@ -692,35 +692,11 @@ jc.formations = {
         {"x":75,"y":600},
 
     ],
-    "4x4x4a":[
-        {"x":800,"y":400},
-        {"x":800,"y":500},
-        {"x":800,"y":600},
-        {"x":800,"y":700},
-        {"x":700,"y":400},
-        {"x":700,"y":500},
-        {"x":700,"y":600},
-        {"x":700,"y":700},
-        {"x":550,"y":400},
-        {"x":550,"y":500},
-        {"x":550,"y":600},
-        {"x":550,"y":700},
-    ],
+    "4x4x4a":{"x":3000,"y":2750},
 
-    "4x4x4b":[
-        {"x":1100,"y":400},
-        {"x":1100,"y":500},
-        {"x":1100,"y":600},
-        {"x":1100,"y":700},
-        {"x":1200,"y":400},
-        {"x":1200,"y":500},
-        {"x":1200,"y":600},
-        {"x":1200,"y":700},
-        {"x":1350,"y":400},
-        {"x":1350,"y":500},
-        {"x":1350,"y":600},
-        {"x":1350,"y":700},
-    ]
+
+    "4x4x4b":{"x":4500,"y":2750},
+
 
 };
 

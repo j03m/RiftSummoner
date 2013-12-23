@@ -9,6 +9,7 @@ var tracers = {
 	'mouse':0,
 	'states':0,
 	'sprite':0,
+    'healthbar':0,
     'move':0,
     'updatetime':0,
 	'memory':0,
@@ -25,7 +26,7 @@ var tracers = {
     'scroller':0,
     'utilEffects':0,
     'rangeBehavior':0,
-    'defenderBehavior':1
+    'defenderBehavior':0
 };
 
 jc.log = function(categories, msg){

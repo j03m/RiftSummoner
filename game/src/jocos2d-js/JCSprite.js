@@ -40,10 +40,9 @@ jc.Sprite = cc.Sprite.extend({
         this.retain(); //j03m fix leak
         this.type = config.type;
         if(this.type != 'background'){
-            this.superDraw = this.draw;
-            this.draw = this.customDraw;
             this.initHealthBar();
             this.initShadow();
+            this.scheduleUpdate();
         }
 
         this.debug = false;
@@ -361,15 +360,6 @@ jc.Sprite = cc.Sprite.extend({
     think:function(dt){
         this.behavior.think(dt);
     },
-    customDraw:function(){
-        if (!this.imdeadman){
-            this.superDraw();
-            if (this.debug){
-                this.drawBorders();
-            }
-            this.drawHealthBar();
-        }
-    },
     drawBorders:function(){
 
         var position = this.getBasePosition();
@@ -395,7 +385,9 @@ jc.Sprite = cc.Sprite.extend({
         poly.drawPoly(vertices, fill, borderWidth, border);
     },
     drawHealthBar: function(){
+        jc.log(['healthbar'], "hide health bar?" + this.hideHealthbar);
         if (!this.hideHealthbar){
+            jc.log(['healthbar'], "healthbar");
             this.healthBar.clear();
             var verts = [];
             verts[0] = cc.p(0.0, 0.0);
@@ -422,7 +414,11 @@ jc.Sprite = cc.Sprite.extend({
 
 
             this.healthBar.drawPoly(verts2,fillColor,0.7, borderColor);
+            jc.log(['healthbar'], "healthbar");
         }
+    },
+    update:function(){
+        this.drawHealthBar();
     },
     updateHealthBarPos:function(){
         if (this.type != 'background'){

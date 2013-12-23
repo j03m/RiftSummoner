@@ -7,7 +7,7 @@ jc.bestAssetDirectory();
 jc.setDesignSize(cc.size(2048,1154));
 
 //todo {v}-ify these
-var arenaSheet = transformAsset(dirImg + "arena.png");
+var arenaSheet = transformAsset(dirImg + "arena{v}.png");
 var landingPng = transformAsset(dirImg + "landing{v}.png");
 var landingPlist = transformAsset(dirImg + "landing{v}.plist");
 var loadingPng = transformAsset(dirImg + "loading{v}.png");

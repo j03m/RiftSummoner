@@ -75,7 +75,7 @@ RangeBehavior.prototype.doMissile = function(){
             }else{
 				this.missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
 	            this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
-	            this.missile.runAction(this.missileAnimation);            	
+	            this.missile.runAction(this.missileAnimation);
             }
             this.missile.setFlippedX(this.owner.isFlippedX());
         }
@@ -112,23 +112,23 @@ RangeBehavior.prototype.doMissile = function(){
             targetPos.y += targetTr.height/2;
         }
 
-		
+
         var moveTo;
         var rotateTo;
         var missileStart = this.missile.getPosition();
         var v = this.getVectorTo(targetPos, missileStart);
 		if (!missileType.path){
-			moveTo = cc.MoveTo.create(timeToImpact, targetPos);			
+			moveTo = cc.MoveTo.create(timeToImpact, targetPos);
 		}else if (missileType.path=="bezier"){
-			
+
 			var bezier = [];
 			bezier.push(missileStart);
 
 			var pos2 = cc.pMidpoint(missileStart, targetPos);
 			pos2.y += v.distance/2;
 			bezier.push(pos2);
-			
-			bezier.push(targetPos);				
+
+			bezier.push(targetPos);
 			moveTo = cc.BezierTo.create(timeToImpact, bezier);
 		}else if (missileType.path =="jump"){
 			moveTo = cc.JumpTo.create(timeToImpact, targetPos, v.distance/2, 1);

@@ -1449,7 +1449,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 100,
+			"MaxHP": 500,
 			"speed": 200,
 			"movementType": 1,
 			"targets": 1,

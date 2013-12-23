@@ -37,7 +37,7 @@ if (!jc.isBrowser){
     }
 
     cc.Color3B = function(a,b,c){
-        return cc.c4f(a/255.0, b/255.0, c/255.0, 1.0);
+        return cc.c4f(a, b, c, 1.0);
     }
 
     /**
