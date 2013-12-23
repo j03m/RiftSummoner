@@ -164,6 +164,9 @@ jc.WorldLayer = jc.TouchLayer.extend({
     getScale8x:function(){
         return this.getScale(this.worldSize.width/16, this.worldSize.height/16);
     },
+    getScaleFloor:function(){
+        return this.getScale(this.worldSize.width * 0.5, this.worldSize.height * 0.5);
+    },
     getScaleWorld:function(){
         return this.getScale(this.worldSize.width *0.9, this.worldSize.height*0.9);
     },

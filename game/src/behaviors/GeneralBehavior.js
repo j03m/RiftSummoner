@@ -266,7 +266,7 @@ GeneralBehavior.prototype.seekEnemy = function(){
     //this sort of blows.
     if (this.owner.gameObject.movementType == jc.movementType.ground){
         var center = cc.p(this.owner.layer.winSize.width/2, this.owner.layer.winSize.height/2);
-        if (!jc.insideEllipse(jc.elMajor,jc.elMinor, attackPosition,center)){
+        if (!jc.insideEllipse(attackPosition,center)){
             attackPosition = center;
         }
     }

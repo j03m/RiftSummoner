@@ -75,10 +75,12 @@ hotr.levelLogic.getPowers = function(){
 }
 
 function makeRandomTeam(){
-    var characters = Math.floor((Math.random()*48-1)+1);
-    if (characters>12){
-        characters = 12;
-    }
+//    var characters = Math.floor((Math.random()*48-1)+1);
+//    if (characters>12){
+//        characters = 12;
+//    }
+
+    var characters = 12;
     var allChars = [];
     for(var entry in spriteDefs){
         if (!spriteDefs[entry].parentOnly){

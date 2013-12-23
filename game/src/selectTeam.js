@@ -200,7 +200,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
 				"isGroup": true,
 				"z": 1,
 				"type": "grid",
-				"cols": 4,
+				"cols": 6,
 				"itemPadding": {
 					"top": 3,
 					"left": 4
@@ -213,60 +213,11 @@ var SelectTeam = jc.UiElementsLayer.extend({
 						"sprite": "portraitSmallDarkBackground.png"
 					}
 				],
-				"membersTotal": 12,
+				"membersTotal": 18,
 				"sprite": "portraitSmallDarkBackground.png",
 				"pos": {
 					"x": 182,
 					"y": 987
-				}
-			},
-			"formation": {
-				"type": "sprite",
-				"sprite": "formationFrame.png",
-				"z": 1,
-				"pos": {
-					"x": 1505,
-					"y": 824
-				}
-			},
-			"description": {
-				"type": "sprite",
-				"sprite": "descriptionWindow.png",
-				"z": 1,
-				"pos": {
-					"x": 1507,
-					"y": 465
-				}
-			},
-			"prevFormation": {
-				"type": "button",
-				"main": "leftArrowFormationName.png",
-				"pressed": "leftArrowFormationName.png",
-				"touchDelegateName": "previousFormation",
-				"z": 2,
-				"pos": {
-					"x": 1174,
-					"y": 291
-				}
-			},
-			"theFormation": {
-				"type": "sprite",
-				"sprite": "formationNameFrame.png",
-				"z": 1,
-				"pos": {
-					"x": 1505,
-					"y": 294
-				}
-			},
-			"nextFormation": {
-				"type": "button",
-				"main": "rightArrowFormationName.png",
-				"pressed": "rightArrowFormationName.png",
-				"touchDelegateName": "nextFormation",
-				"z": 2,
-				"pos": {
-					"x": 1844,
-					"y": 293
 				}
 			},
 			"fightButton": {
@@ -280,17 +231,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
 					"y": 139
 				}
 			},
-			"kikButton": {
-				"type": "button",
-				"main": "buttonKikNormal.png",
-				"pressed": "buttonKikPressed.png",
-				"touchDelegateName": "kikStart",
-				"z": 1,
-				"pos": {
-					"x": 1837,
-					"y": 137
-				}
-			}
+
 		},
 		"pos": {
 			"x": 1024,

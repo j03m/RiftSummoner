@@ -20,6 +20,7 @@ var ArenaGame = jc.WorldLayer.extend({
         if (this._super(arenaSheet)) {
             this.teams['a'] = [];
             this.teams['b'] = [];
+            this.squadNumbers = 9;
             this.scheduleUpdate();
             this.doConvert = true;
 			return true;
@@ -44,6 +45,12 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamBFormation = jc.formations[hotr.arenaScene.data.teamBFormation];
         this.teamBPowers = hotr.arenaScene.data.teamBPowers;
         this.setUp();
+        this.placementTouches = 1;
+        this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
+            this.nextTouchDo(this.initialSetupAction,true);
+        }.bind(this));
+
+
     },
     runScenario0:function(){
 
@@ -82,6 +89,69 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamBSprites.push('voidElf');
         this.teamBFormation = jc.formations["4x4x4b"];
         this.setUp();
+    },
+    initialSetupAction:function(touch){
+
+        this.startPos = this.screenToWorld(touch);
+        var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+        if (jc.insideEllipse(touch, center) && this.startPos.x < this.worldMidPoint.x){
+            //play animation
+            this.placePlayerTeam();
+            if (this.placementTouches==2){
+                //place enemy team
+                this.nextTouchAction = undefined;
+                this.placeEnemyTeam();
+                this.placeEnemyTeam();
+                function goodSprite(sprite){
+                    return sprite!=undefined;
+                }
+                this.teams['a']=_.filter(this.teams['a'],goodSprite);
+                this.teams['b']=_.filter(this.teams['b'],goodSprite);
+                this.sprites = this.teams['a'].concat(this.teams['b']);
+                this.startedAt = Date.now();
+                this.started = true;
+                this.schedule(function(dt){
+                    this.doUpdate(0.10);
+                }, 0.10);
+            }else{
+                this.placementTouches++;
+            }
+        }
+        this.nextTouchDo(this.initialSetupAction,true);
+    },
+
+    placeEnemyTeam:function(){
+        this.startPos = cc.p(this.worldSize.width/2, this.worldSize.height/2);
+        this.startPos.x+=500*jc.assetScaleFactor;
+        this.placeTeamPosition(this.teams['b'], this.squadNumbers);
+        this.startPos.x+=500*jc.assetScaleFactor;
+        this.placeTeamPosition(this.teams['b'], this.squadNumbers*2);
+    },
+    placePlayerTeam:function(){
+        jc.playEffectAtLocation("movement", this.startPos, jc.shadowZOrder,this);
+        this.placeTeamPosition(this.teams['a'], this.placementTouches * this.squadNumbers);
+    },
+    placeTeamPosition:function(team, squadSize){
+        for(var i=squadSize-this.squadNumbers; i< squadSize-1; i++){
+            var sprite = team[i];
+            var point = cc.p(this.startPos.x, this.startPos.y);
+            var col = (i)% 4;
+            var row = Math.floor(i/4);
+            var valueX = 200 * jc.assetScaleFactor;
+            var valueY = -175* jc.assetScaleFactor;
+            if (!team[i].isFlippedX()){
+                valueX *=-1;
+            }
+            var colAdjust = col * valueX;
+            var rowAdjust = row * valueY;
+            point.x+=colAdjust;
+            point.y+=rowAdjust;
+            var worldPos = point;
+            var nodePos = this.convertToItemPosition(worldPos);
+            sprite.setBasePosition(nodePos);
+            sprite.setVisible(true);
+            jc.playEffectOnTarget("teleport", sprite, this);
+        }
     },
     getSprite:function(nameCreate){
         var sprite;
@@ -127,24 +197,6 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.touchTargets.push(sprite);
             }
         }
-
-        this.present(function(){
-            function goodSprite(sprite){
-                return sprite!=undefined;
-            }
-            this.teams['a']=_.filter(this.teams['a'],goodSprite);
-            this.teams['b']=_.filter(this.teams['b'],goodSprite);
-            this.sprites = this.teams['a'].concat(this.teams['b']);
-
-            this.startedAt = Date.now();
-            this.started = true;
-            this.schedule(function(dt){
-//                var diff = Date.now() - this.startedAt;
-//                this.startedAt = Date.now();
-                this.doUpdate(0.10);
-            }, 0.10);
-        }.bind(this));
-
     },
     getTeam:function(who){
         return this.teams[who];
@@ -160,8 +212,9 @@ var ArenaGame = jc.WorldLayer.extend({
         }.bind(this));
 
     },
-    nextTouchDo:function(action){
+    nextTouchDo:function(action, manualErase){
         this.nextTouchAction = action;
+        this.nextTouchAction.manualErase = manualErase;
     },
     presentHud:function(powers, callback){
         this.panToWorldPoint(this.worldMidPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
@@ -197,9 +250,7 @@ var ArenaGame = jc.WorldLayer.extend({
         }
 
 
-        var point = cc.p(formation.x, formation.y);
-        point.x *= jc.assetScaleFactor;
-        point.y *= jc.assetScaleFactor;
+        var point = cc.p(this.startPos.x, this.startPos.y);
 
         var col = (this.nextChar)% 4;
         var row = Math.floor(this.nextChar/4);
@@ -219,7 +270,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.nextChar = undefined
                 callback();
             }else{
-                this.placeNextCharacter(team, formation, callback);
+                this.placeNextCharacter(team, point, callback);
             }
         }.bind(this));
 
@@ -231,6 +282,7 @@ var ArenaGame = jc.WorldLayer.extend({
                     this.panToWorldPoint(formationPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
                         var worldPos = formationPoint;
                         var nodePos = this.convertToItemPosition(worldPos);
+
                         sprite.setBasePosition(nodePos);
                         sprite.setVisible(true);
                         jc.playEffectOnTarget("teleport", sprite, this);
@@ -257,6 +309,7 @@ var ArenaGame = jc.WorldLayer.extend({
         var shouldScale = false;
         if (this.started){
             //check for winner
+            this.gameTime+=dt;
             if (this.checkWinner()){
                 return;
             }
@@ -390,7 +443,10 @@ var ArenaGame = jc.WorldLayer.extend({
             var nodePos = touch; //this.convertToNodeSpace(touch);
             if (this.nextTouchAction){
                 this.nextTouchAction(nodePos, sprites);
-                this.nextTouchAction = undefined;
+                if (!this.nextTouchAction.manualErase){
+                    this.nextTouchAction = undefined;
+                }
+
 
             } else if (sprites){
 
@@ -511,7 +567,7 @@ var ArenaGame = jc.WorldLayer.extend({
         this.addChild(this.defeat);
     },
     timeExpired:function(){
-        var time = Date.now() - this.startedAt;
+        var time = this.gameTime;
         if (time>this.timeLimit){
             return true;
         }else{

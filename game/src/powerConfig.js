@@ -149,8 +149,8 @@ var powerConfig = {
         }
         var targetPos = this.locked.getBasePosition();
         targetPos.x+=distance;
-        var center = cc.p(this.owner.layer.winSize.width/2, this.owner.layer.winSize.height/2);
-        if (jc.insideEllipse(jc.elMajor,jc.elMinor, targetPos,center)){
+        var center = cc.p(this.owner.layer.worldSize.width/2, this.owner.layer.worldSize.height/2);
+        if (jc.insideEllipse(targetPos,center)){
             this.locked.setBasePosition(targetPos);
         }
         jc.playEffectOnTarget("greenBang", this.locked, this.owner.layer);

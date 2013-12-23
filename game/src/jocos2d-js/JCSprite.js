@@ -421,7 +421,7 @@ jc.Sprite = cc.Sprite.extend({
         this.drawHealthBar();
     },
     updateHealthBarPos:function(){
-        if (this.type != 'background'){
+        if (this.type != 'background' && this.isVisible()){
             var myPos = this.getBasePosition();
             var tr = this.getTextureRect();
             myPos.y += tr.height + 10;
