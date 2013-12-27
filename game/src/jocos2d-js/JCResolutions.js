@@ -8,22 +8,26 @@ jc.resolutions = {};
 
 jc.resolutions.iphone = cc.size(480,320);
 jc.resolutions.iphone.scale =   0.234375;
+jc.resolutions.iphone.charScale =   0.1171875;
 jc.resolutions.iphone.adjusty = -30;
 jc.resolutions.iphone.adjustx = 0;
 
 jc.resolutions.iphone5 = cc.size(1136,640);
 jc.resolutions.iphone5.scale = 0.554688;
+jc.resolutions.iphone5.charScale =   0.277344;
 jc.resolutions.iphone5.adjusty = -120;
 jc.resolutions.iphone5.adjustx = 0;
 
 
 jc.resolutions.iphone4 = cc.size(960,640);
 jc.resolutions.iphone4.scale = 0.46875;
+jc.resolutions.iphone4.charScale = 0.234375;
 jc.resolutions.iphone4.adjusty = -60;
 jc.resolutions.iphone4.adjustx = 0;
 
 jc.resolutions.ipadhd = cc.size(2048, 1536);
 jc.resolutions.ipadhd.scale = 1;
+jc.resolutions.ipadhd.charScale = .5;
 jc.resolutions.ipadhd.adjusty = 0;
 jc.resolutions.ipadhd.adjustx = 0;
 
@@ -64,18 +68,21 @@ jc.bestAssetDirectory = function(){
     var maxSet = "";
     var max = 0;
     var scaleFactor;
+    var charScaleFactor;
     for(var res in jc.resolutions){
         if (jc.resolutions[res].width<= actualSize.width){
             if (jc.resolutions[res].width > max){
                 max = jc.resolutions[res].width;
                 maxSet = res;
                 scaleFactor = jc.resolutions[res].scale;
+                charScaleFactor = jc.resolutions[res].charScale;
             }
         }
     }
     jc.log(['resource'], "selected: " + maxSet + " for assets dir.");
     jc.assetCategory = maxSet;
     jc.assetScaleFactor = scaleFactor;
+    jc.characterScaleFactor =  charScaleFactor
     jc.assetCategoryData = jc.resolutions[maxSet];
 
 

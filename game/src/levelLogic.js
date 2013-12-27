@@ -5,17 +5,17 @@ hotr.levelLogic = {};
 
 var temp =  [
     {
-        "name":"orc",
+        "name":"dwarvenKnightFire",
         "id":"id1",
         "data":{}
     },
     {
-        "name":"troll",
+        "name":"elementalEarth",
         "id":"id2",
         "data":{}
     },
     {
-        "name":"ogre",
+        "name":"dragonFire",
         "id":"id2",
         "data":{}
     },
@@ -61,8 +61,8 @@ var temp =  [
 ]
 
 hotr.levelLogic.getTeamForLevel = function(level){
-    //return temp;
-    return makeRandomTeam();
+    return temp;
+    //return makeRandomTeam();
 }
 
 hotr.levelLogic.getFormationForLevel = function(level){
@@ -80,7 +80,7 @@ function makeRandomTeam(){
 //        characters = 12;
 //    }
 
-    var characters = 12;
+    var characters = 18;
     var allChars = [];
     for(var entry in spriteDefs){
         if (!spriteDefs[entry].parentOnly){

@@ -68,18 +68,18 @@ jc.Designer = jc.UiElementsLayer.extend({
     windowConfig: {
         "mainFrame": {
             "type": "sprite",
-            "blackBox": true,
+            "blackBox":true,
             "applyAdjustments": true,
             "transitionIn": "top",
             "transitionOut": "top",
             "sprite": "genericBackground.png",
             "z": 0,
             "kids": {
-                "gridCells": {
+                "squad1Cells": {
                     "isGroup": true,
                     "z": 1,
                     "type": "grid",
-                    "cols": 6,
+                    "cols": 3,
                     "itemPadding": {
                         "top": 3,
                         "left": 4
@@ -92,14 +92,37 @@ jc.Designer = jc.UiElementsLayer.extend({
                             "sprite": "portraitSmallDarkBackground.png"
                         }
                     ],
-                    "membersTotal": 24,
+                    "membersTotal": 9,
                     "sprite": "portraitSmallDarkBackground.png",
                     "pos": {
-                        "x": 314,
-                        "y": 873
+                        "x": 182,
+                        "y": 987
                     }
                 },
-
+                "squad2Cells": {
+                    "isGroup": true,
+                    "z": 1,
+                    "type": "grid",
+                    "cols": 3,
+                    "itemPadding": {
+                        "top": 3,
+                        "left": 4
+                    },
+                    "input": true,
+                    "members": [
+                        {
+                            "type": "sprite",
+                            "input": true,
+                            "sprite": "portraitSmallDarkBackground.png"
+                        }
+                    ],
+                    "membersTotal": 9,
+                    "sprite": "portraitSmallDarkBackground.png",
+                    "pos": {
+                        "x": 582,
+                        "y": 987
+                    }
+                },
                 "fightButton": {
                     "type": "button",
                     "main": "buttonFight.png",
@@ -107,14 +130,15 @@ jc.Designer = jc.UiElementsLayer.extend({
                     "touchDelegateName": "fightStart",
                     "z": 1,
                     "pos": {
-                        "x": 994,
-                        "y": 157
+                        "x": 1507,
+                        "y": 139
                     }
-                }
+                },
+
             },
             "pos": {
                 "x": 1024,
-                "y": 777.9999999999999
+                "y": 768
             }
         }
     }

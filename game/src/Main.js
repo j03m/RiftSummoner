@@ -195,7 +195,7 @@ var MainGame = cc.Layer.extend({
         var teamBPowers = hotr.levelLogic.getPowers();
 
 
-        teamB = teamB.concat(teamB);
+        //teamB = teamB.concat(teamB);
 
         var fightConfig = {
             teamA:teamA,

@@ -6,7 +6,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
     cells:20,
     cardLayer:undefined,
     playMap:{},
-    cellPrefix:"gridCells",
+    squad1Prefix:"squad1Cells",
+    squad2Prefix:"squad2Cells",
     init: function() {
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
@@ -37,20 +38,32 @@ var SelectTeam = jc.UiElementsLayer.extend({
             //llp through characters
             this.start();
             var formationOrder = hotr.blobOperations.getFormationOrder();
-            for (var i =0; i<formationOrder.length; i++){
+            var length = hotr.teamformationSize/2;
+
+            //first 9 characters == squad 1
+            for (var i =0; i<length; i++){
                 if (formationOrder[i]!=undefined){
                     var cell = i;
                     this.doSelectionData(formationOrder[i], cell);
-                    this.doSelectionVisual(formationOrder[i], cell, this.cellPrefix+i);
+                    this.doSelectionVisual(formationOrder[i], cell, this.squad1Prefix+i);
                 }
             }
+
+            for (var i=length; i<hotr.teamformationSize; i++){
+                if (formationOrder[i]!=undefined){
+                    var cell = i;
+                    this.doSelectionData(formationOrder[i], cell);
+                    this.doSelectionVisual(formationOrder[i], cell, this.squad2Prefix+(i-length));
+                }
+            }
+
             this.first = true;
         }else if (hotr.scratchBoard.selectedCharacter!=undefined && hotr.scratchBoard.currentCell!=undefined){
 
             var id = hotr.blobOperations.indexToId(hotr.scratchBoard.selectedCharacter);
-            var cell = parseInt(hotr.scratchBoard.currentCell.replace(this.cellPrefix, ""));
+            var cell = this.cellFromCellName(hotr.scratchBoard.currentCell);
             if (id){
-                this.removeExistingVisual(id, cell);
+                this.removeExistingVisual(id, hotr.scratchBoard.currentCell);
                 this.doSelectionData(id, cell);
                 this.doSelectionVisual(id, cell, hotr.scratchBoard.currentCell);
                 hotr.scratchBoard.selectedCharacter = undefined;
@@ -63,16 +76,30 @@ var SelectTeam = jc.UiElementsLayer.extend({
             }			
         }
     },
-    removeExistingVisual:function(id,cell){
+    cellFromCellName:function(name){
+      if (name.indexOf(this.squad1Prefix)!=-1){
+          return parseInt(name.replace(this.squad1Prefix, ""));
+      }
+
+      return parseInt(name.replace(this.squad2Prefix, "")) + (hotr.teamformationSize/2);
+    },
+
+    removeExistingVisual:function(id){
         var oldCell = hotr.blobOperations.getCurrentFormationPosition(id);
         if (oldCell != -1){
-            var cellName = this.cellPrefix + oldCell;
+            var cellName = this.getCellName(oldCell);
             if (this[cellName].pic){
                 jc.fadeOut(this[cellName].pic);
             }
         }
     },
-
+    getCellName:function(id){
+        if (id >= hotr.teamformationSize/2){
+            return this.squad2Prefix+(id - (hotr.teamformationSize/2 ));
+        }else{
+            return this.squad1Prefix+id;
+        }
+    },
     doSelectionVisual:function(id, cell, cellName){
         var characterEntry = hotr.blobOperations.getEntryWithId(id);
 
@@ -187,58 +214,81 @@ var SelectTeam = jc.UiElementsLayer.extend({
         return true;
     },
     windowConfig: {
-	"mainFrame": {
-		"type": "sprite",
-		"blackBox":true,
-		"applyAdjustments": true,
-		"transitionIn": "top",
-		"transitionOut": "top",
-		"sprite": "genericBackground.png",
-		"z": 0,
-		"kids": {
-			"gridCells": {
-				"isGroup": true,
-				"z": 1,
-				"type": "grid",
-				"cols": 6,
-				"itemPadding": {
-					"top": 3,
-					"left": 4
-				},
-				"input": true,
-				"members": [
-					{
-						"type": "sprite",
-						"input": true,
-						"sprite": "portraitSmallDarkBackground.png"
-					}
-				],
-				"membersTotal": 18,
-				"sprite": "portraitSmallDarkBackground.png",
-				"pos": {
-					"x": 182,
-					"y": 987
-				}
-			},
-			"fightButton": {
-				"type": "button",
-				"main": "buttonFight.png",
-				"pressed": "buttonFight.png",
-				"touchDelegateName": "fightStart",
-				"z": 1,
-				"pos": {
-					"x": 1507,
-					"y": 139
-				}
-			},
-
-		},
-		"pos": {
-			"x": 1024,
-			"y": 768			
-		}
-	}
-}
+        "mainFrame": {
+            "type": "sprite",
+            "blackBox": true,
+            "applyAdjustments": true,
+            "transitionIn": "top",
+            "transitionOut": "top",
+            "sprite": "genericBackground.png",
+            "z": 0,
+            "kids": {
+                "squad1Cells": {
+                    "isGroup": true,
+                    "z": 1,
+                    "type": "grid",
+                    "cols": 3,
+                    "itemPadding": {
+                        "top": 3,
+                        "left": 4
+                    },
+                    "input": true,
+                    "members": [
+                        {
+                            "type": "sprite",
+                            "input": true,
+                            "sprite": "portraitSmallDarkBackground.png"
+                        }
+                    ],
+                    "membersTotal": 9,
+                    "sprite": "portraitSmallDarkBackground.png",
+                    "pos": {
+                        "x": 307,
+                        "y": 804
+                    }
+                },
+                "squad2Cells": {
+                    "isGroup": true,
+                    "z": 1,
+                    "type": "grid",
+                    "cols": 3,
+                    "itemPadding": {
+                        "top": 3,
+                        "left": 4
+                    },
+                    "input": true,
+                    "members": [
+                        {
+                            "type": "sprite",
+                            "input": true,
+                            "sprite": "portraitSmallDarkBackground.png"
+                        }
+                    ],
+                    "membersTotal": 9,
+                    "sprite": "portraitSmallDarkBackground.png",
+                    "pos": {
+                        "x": 1285,
+                        "y": 804
+                    }
+                },
+                "fightButton": {
+                    "type": "button",
+                    "main": "buttonFight.png",
+                    "pressed": "buttonFight.png",
+                    "touchDelegateName": "fightStart",
+                    "z": 1,
+                    "pos": {
+                        "x": 1023,
+                        "y": 133
+                    }
+                }
+            },
+            "pos": {
+                "x": 1024,
+                "y": 777.9999999999999
+            }
+        }
+    }
 });
 
 

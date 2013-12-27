@@ -73,6 +73,13 @@ jc.Sprite = cc.Sprite.extend({
 
 		return this;
 	},
+    ready: function(){
+        this.isReady = true;
+        this.updateHealthBarPos();
+        this.updateShadowPosition();
+        this.setVisible(true);
+
+    },
     die:function(){
         this.imdeadman=true;
         this.layer.removeChild(this, true);
@@ -94,12 +101,11 @@ jc.Sprite = cc.Sprite.extend({
     },
     initShadow:function(){
         this.shadow = new cc.Sprite();
-        cc.SpriteFrameCache.getInstance().addSpriteFrames(shadowPlist);
-        cc.SpriteBatchNode.create(shadowPng);
         //todo change to size of sprite
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("shadowSmall.png");
         this.shadow.initWithSpriteFrame(frame);
         this.shadow.setScaleX(0.5);
+        this.shadow.name = "shadow";
         this.shadow.retain();
         this.layer.addChild(this.shadow);
         this.layer.reorderChild(this.shadow, jc.shadowZOrder);
@@ -109,6 +115,7 @@ jc.Sprite = cc.Sprite.extend({
         this.healthBar = cc.DrawNode.create();
         this.healthBar.retain(); //j03m fix leak
         this.healthBar.contentSize = cc.size(this.HealthBarWidth, this.HealthBarHeight);
+        this.healthBar.name = "healthBar";
         this.layer.addChild(this.healthBar);
         this.updateHealthBarPos();
     },

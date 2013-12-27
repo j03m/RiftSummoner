@@ -1,7 +1,7 @@
 var hotr = hotr || {};
 hotr.blobOperations = {};
 hotr.scratchBoard = {};
-hotr.teamformationSize = 12;
+hotr.teamformationSize = 18;
 hotr.authTokenLocalStoreKey = "x1xauthTokenx1x";
 hotr.haveSeenLocalStoreKey = "x1xhaveseenx1x";
 hotr.userNameKey = "x1xusernamex1x";
@@ -67,7 +67,10 @@ hotr.blobOperations.saveBlob = function(callback){
 		if (err){
 			throw err;
 		}
-        callback(res);
+        if (callback){
+            callback(res);
+        }
+
     });
 }
 
@@ -198,6 +201,14 @@ hotr.blobOperations.getCurrentFormationPosition = function(id){
 
 hotr.blobOperations.clearFormationPosition = function(cell){
     hotr.playerBlob.teamformation[cell]=undefined;
+}
+
+hotr.blobOperations.setSquadLocations = function(squad, point){
+    if (!hotr.playerBlob.squadPositions){
+        hotr.playerBlob.squadPositions = {};
+    }
+
+    hotr.playerBlob.squadPositions[squad]=point;
 }
 
 hotr.blobOperations.placeCharacterFormation = function(id, cell){

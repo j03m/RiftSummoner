@@ -14,21 +14,50 @@ var ArenaGame = jc.WorldLayer.extend({
     teamAPowers:undefined,
     teamBPowers:undefined,
     presentationSpeed:0.2,
-    timeLimit:60000,
+    timeLimit:45,
     init: function() {
         this.name = "Arena";
         if (this._super(arenaSheet)) {
             this.teams['a'] = [];
             this.teams['b'] = [];
-            this.squadNumbers = 9;
+            this.teamSize = 18;
+            this.squadNumbers = this.teamSize/2;
             this.scheduleUpdate();
             this.doConvert = true;
+            this.gameTime = 0;
 			return true;
 		} else {
 			return false;
 		}
 	},
+    dumpChildren:function(){
+        var wtf = this.getChildren();
+        for(var i=0;i<wtf.length;i++){
+            console.log("Name:" + wtf[i].name)
+            console.log("JCSprite: " + (wtf[i] instanceof jc.Sprite));
+            console.log("CCSprite: " + (wtf[i] instanceof cc.Sprite));
+            console.log("CCDrawNode: " + (wtf[i] instanceof cc.DrawNode));
+            console.log("Is: " + typeof wtf[i]);
+
+
+            if (wtf[i]._originalTexture){
+                if (wtf[i]._originalTexture._htmlElementObj){
+                    console.log("Texture:" + wtf[i]._originalTexture._htmlElementObj.src);
+                }
+            }
+        }
+    },
+    makePowerBar:function(){
+        //this.powerBar = jc.makeSpriteWithPlist(uiPlist, uiPng, "powersBackground.png");
+        //this.addChild(this.powerBar);
+    },
     onShow:function(){
+        cc.SpriteFrameCache.getInstance().addSpriteFrames(shadowPlist);
+        cc.SpriteBatchNode.create(shadowPng);
+
+        //place power tile
+        this.makePowerBar();
+
         if(!hotr.arenaScene.data){
             this.runScenario0();
         }else{
@@ -96,12 +125,21 @@ var ArenaGame = jc.WorldLayer.extend({
         var center = cc.p(this.winSize.width/2, this.winSize.height/2);
         if (jc.insideEllipse(touch, center) && this.startPos.x < this.worldMidPoint.x){
             //play animation
-            this.placePlayerTeam();
-            if (this.placementTouches==2){
+            if (this.placementTouches == 1){
+                this.placePlayerTeam('a');
+            }
+
+            if (this.placementTouches == 2){
+                this.placePlayerTeam('b');
+            }
+
+
+            if (this.placementTouches==2 || this.teams['a'].length<=9){
                 //place enemy team
+                hotr.blobOperations.saveBlob();
                 this.nextTouchAction = undefined;
                 this.placeEnemyTeam();
-                this.placeEnemyTeam();
+
                 function goodSprite(sprite){
                     return sprite!=undefined;
                 }
@@ -122,35 +160,45 @@ var ArenaGame = jc.WorldLayer.extend({
 
     placeEnemyTeam:function(){
         this.startPos = cc.p(this.worldSize.width/2, this.worldSize.height/2);
-        this.startPos.x+=500*jc.assetScaleFactor;
+        this.startPos.x+=500*jc.characterScaleFactor;
         this.placeTeamPosition(this.teams['b'], this.squadNumbers);
-        this.startPos.x+=500*jc.assetScaleFactor;
-        this.placeTeamPosition(this.teams['b'], this.squadNumbers*2);
+        this.startPos.x+=500*jc.characterScaleFactor;
+        this.placeTeamPosition(this.teams['b'], this.teamSize);
     },
-    placePlayerTeam:function(){
-        jc.playEffectAtLocation("movement", this.startPos, jc.shadowZOrder,this);
+    placePlayerTeam:function(squad){
+
+        var nodePos = this.convertToItemPosition(this.startPos);
+        hotr.blobOperations.setSquadLocations(squad, this.startPos);
+        jc.playEffectAtLocation("movement", nodePos, jc.shadowZOrder,this);
         this.placeTeamPosition(this.teams['a'], this.placementTouches * this.squadNumbers);
     },
     placeTeamPosition:function(team, squadSize){
-        for(var i=squadSize-this.squadNumbers; i< squadSize-1; i++){
+        for(var i=squadSize-this.squadNumbers; i< squadSize; i++){
             var sprite = team[i];
-            var point = cc.p(this.startPos.x, this.startPos.y);
-            var col = (i)% 4;
-            var row = Math.floor(i/4);
-            var valueX = 200 * jc.assetScaleFactor;
-            var valueY = -175* jc.assetScaleFactor;
-            if (!team[i].isFlippedX()){
-                valueX *=-1;
+            if (sprite){
+                var point = cc.p(this.startPos.x, this.startPos.y);
+                var pos = i;
+                if (i>this.squadNumbers){
+                    pos -= this.squadNumbers;
+                }
+                var col = (pos)% 4;
+                var row = Math.floor(pos/4);
+                var valueX = 200 * jc.characterScaleFactor;
+                var valueY = -175* jc.characterScaleFactor;
+                if (!team[i].isFlippedX()){
+                    valueX *=-1;
+                }
+                var colAdjust = col * valueX;
+                var rowAdjust = row * valueY;
+                point.x+=colAdjust;
+                point.y+=rowAdjust;
+                var worldPos = point;
+                var nodePos = this.convertToItemPosition(worldPos);
+                sprite.setBasePosition(nodePos);
+                sprite.ready(true);
+                jc.playEffectOnTarget("teleport", sprite, this);
             }
-            var colAdjust = col * valueX;
-            var rowAdjust = row * valueY;
-            point.x+=colAdjust;
-            point.y+=rowAdjust;
-            var worldPos = point;
-            var nodePos = this.convertToItemPosition(worldPos);
-            sprite.setBasePosition(nodePos);
-            sprite.setVisible(true);
-            jc.playEffectOnTarget("teleport", sprite, this);
+
         }
     },
     getSprite:function(nameCreate){
@@ -159,6 +207,7 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite.setState('idle');
 		this.addChild(sprite.batch);
 		this.addChild(sprite);
+        sprite.isVisible(false);
         sprite.layer = this;
         return sprite;
 	},
@@ -537,6 +586,8 @@ var ArenaGame = jc.WorldLayer.extend({
         if (hotr.arenaScene.data.op){
             hotr.multiplayerOperations.victory(hotr.arenaScene.data.op,hotr.arenaScene.data);
         }
+        hotr.blobOperations.saveBlob();
+
         this.setScale(1);
         this.setPosition(cc.p(0,0));
         this.victory = new Victory();
@@ -555,6 +606,7 @@ var ArenaGame = jc.WorldLayer.extend({
         if (hotr.arenaScene.data.op){
             hotr.multiplayerOperations.defeat(hotr.arenaScene.data.op, hotr.arenaScene.data);
         }
+        hotr.blobOperations.saveBlob();
         this.setScale(1);
         this.setPosition(cc.p(0,0));
         this.defeat = new Defeat();
