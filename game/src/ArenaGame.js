@@ -47,23 +47,21 @@ var ArenaGame = jc.WorldLayer.extend({
             }
         }
     },
-    makePowerBar:function(){
-        //this.powerBar = jc.makeSpriteWithPlist(uiPlist, uiPng, "powersBackground.png");
-        //this.addChild(this.powerBar);
-    },
     onShow:function(){
         cc.SpriteFrameCache.getInstance().addSpriteFrames(shadowPlist);
         cc.SpriteBatchNode.create(shadowPng);
 
-        //place power tile
-        this.makePowerBar();
+        //todo: remove this, go back to sprite added to scene, add to touch handlers, handle events in here
+        // this.placePowerTokens();
+
+        this.showTutorialStep("Quick! Click anywhere to deploy your squads!");
 
         if(!hotr.arenaScene.data){
             this.runScenario0();
         }else{
             this.runScenario();
         }
-       // this.showVictory();
+
 
     },
     runScenario:function(){
@@ -125,6 +123,8 @@ var ArenaGame = jc.WorldLayer.extend({
         var center = cc.p(this.winSize.width/2, this.winSize.height/2);
         if (jc.insideEllipse(touch, center) && this.startPos.x < this.worldMidPoint.x){
             //play animation
+            this.removeTutorialStep();
+
             if (this.placementTouches == 1){
                 this.placePlayerTeam('a');
             }
@@ -154,7 +154,16 @@ var ArenaGame = jc.WorldLayer.extend({
             }else{
                 this.placementTouches++;
             }
+        }else{
+            if (!this.invalidMsg){
+                this.invalidMsg = true;
+                this.showTutorialStep("Click on the left side of the arena. You can't place troops there.", function(){
+                    this.invalidMsg = false;
+                });
+            }
+
         }
+
         this.nextTouchDo(this.initialSetupAction,true);
     },
 
@@ -207,7 +216,7 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite.setState('idle');
 		this.addChild(sprite.batch);
 		this.addChild(sprite);
-        sprite.isVisible(false);
+        sprite.setVisible(false);
         sprite.layer = this;
         return sprite;
 	},
@@ -265,29 +274,25 @@ var ArenaGame = jc.WorldLayer.extend({
         this.nextTouchAction = action;
         this.nextTouchAction.manualErase = manualErase;
     },
-    presentHud:function(powers, callback){
-        this.panToWorldPoint(this.worldMidPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
-            this.placePowerTokens(powers, callback);
+    placePowerTokens:function(){
 
-        }.bind(this));
-    },
-    placePowerTokens:function(powers, callback){
+        var powers = ["fireBall", "poisonCloud", "healing"];
 
         //create power layer
-//        this.powerLayer = new PowerHud();
-//
-//        //place layer  add to scene
-//        hotr.arenaScene.addChild(this.powerLayer, this.getZOrder()+1);
-//
-//        this.powerLayer.init(powers);
-//
-//        this.powerLayer.inTransitionsComplete = function(){
-//            this.powerLayer.hackOn();
-//            callback();
-//        }.bind(this);
-//
-//        this.powerLayer.start();
-        callback();
+        this.powerLayer = new PowerHud();
+
+        //place layer  add to scene
+        hotr.arenaScene.addChild(this.powerLayer, this.getZOrder()+1);
+
+        this.powerLayer.init(powers);
+
+        this.powerLayer.inTransitionsComplete = function(){
+            this.powerLayer.hackOn();
+        }.bind(this);
+
+
+        this.powerLayer.start();
+
 
     },
     presentTeam:function(team, formation, point, callback){
@@ -485,7 +490,6 @@ var ArenaGame = jc.WorldLayer.extend({
             this.selectedSprite.behavior.followCommand(touch);
         }
 
-
     },
     targetTouchHandler:function(type, touch,sprites){
         if (type == jc.touchEnded){
@@ -495,17 +499,13 @@ var ArenaGame = jc.WorldLayer.extend({
                 if (!this.nextTouchAction.manualErase){
                     this.nextTouchAction = undefined;
                 }
-
-
             } else if (sprites){
-
                 var minSprite = this.getBestSpriteForTouch(nodePos, sprites, this.getTeam('a'));
                 if (minSprite){
                     jc.playEffectOnTarget("characterSelect", minSprite, this, true );
                     this.selectedSprite = minSprite;
                     this.nextTouchAction = this.setSpriteTargetLocation.bind(this)
                 }
-
             }
         }
 
@@ -568,12 +568,10 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.showVictory();
 
             }
-
             if (aliveB > aliveA){
                 //pause game, display defeat
                 this.showDefeat();
             }
-
 
             if (aliveB == aliveA){
                 //pause game, display defeat
@@ -588,18 +586,13 @@ var ArenaGame = jc.WorldLayer.extend({
         }
         hotr.blobOperations.saveBlob();
 
-        this.setScale(1);
-        this.setPosition(cc.p(0,0));
         this.victory = new Victory();
         this.victory.onDone = function(){
             this.removeChild(this.victory,false);
             hotr.mainScene.layer.goToReturnPoint();
         }.bind(this);
         this.victory.init();
-
-        this.addChild(this.victory);
-
-
+        hotr.arenaScene.addChild(this.victory);
     },
     showDefeat:function(){
         this.started = false;
@@ -607,8 +600,6 @@ var ArenaGame = jc.WorldLayer.extend({
             hotr.multiplayerOperations.defeat(hotr.arenaScene.data.op, hotr.arenaScene.data);
         }
         hotr.blobOperations.saveBlob();
-        this.setScale(1);
-        this.setPosition(cc.p(0,0));
         this.defeat = new Defeat();
         this.defeat.onDone = function(){
             this.removeChild(this.defeat,false);
@@ -616,7 +607,7 @@ var ArenaGame = jc.WorldLayer.extend({
         }.bind(this);
         this.defeat.init(); //todo pass stats
 
-        this.addChild(this.defeat);
+        hotr.arenaScene.addChild(this.defeat);
     },
     timeExpired:function(){
         var time = this.gameTime;

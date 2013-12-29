@@ -1,6 +1,24 @@
 var jc = jc || {};
 
-//Fixes
+jc.font = {};
+jc.font.labelSize=cc.size(400,80);
+jc.font.alignment=0;
+jc.font.fontSize=20;
+jc.font.fontName='gow';
+
+cc.Sprite.prototype.adjustPosition = function(x,y){
+    var pos = this.getPosition();
+    pos.x+=x;
+    pos.y+=y;
+    this.setPosition(pos);
+}
+
+cc.LabelTTF.prototype.setText = cc.LabelTTF.prototype.setString;
+cc.LabelTTF.prototype.setString = function(txt){
+    this.setText(txt);
+    this.enableStroke(cc.black(), 8*jc.assetScaleFactor);
+}
+
 cc.Sprite.prototype.setColor = function(){
     jc.log(['console'], "setColor called on the web - don't do it man.");
 };
@@ -359,6 +377,14 @@ jc.scaleTo = function(scaleMe, toMe){
     var scaley = toSize.height/currentSize.height;
     scaleMe.setScaleX(scalex)
     scaleMe.setScaleY(scaley);
+}
+
+jc.scaleXTo = function(scaleMe, toMe){
+    var currentSize = scaleMe.getContentSize();
+    var toSize = toMe.getContentSize();
+    var scalex = toSize.width/currentSize.width;
+    scaleMe.setScaleX(scalex)
+    scaleMe.setScaleY(scalex);
 }
 
 jc.scaleToCharacter = function(scaleMe, toMe, factor){

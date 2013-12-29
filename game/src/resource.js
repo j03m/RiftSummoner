@@ -22,8 +22,8 @@ var uiPlist = transformAsset(dirImg + "uiElements{v}.plist");
 
 var shadowPlist = transformAsset(dirImg + "shadowSheet.plist");
 var shadowPng = transformAsset(dirImg + "shadowSheet.png");
-var powerTilesPng= transformAsset(dirImg + "powerTiles.png");
-var powerTilesPlist= transformAsset(dirImg + "powerTiles.plist");
+var powerTilesPng= transformAsset(dirImg + "powerTiles{v}.png");
+var powerTilesPlist= transformAsset(dirImg + "powerTiles{v}.plist");
 
 
 var g_characterPngs = {};
@@ -63,7 +63,11 @@ if (jc.designMode){
     {src:landingPlist},
     {src:loadingPng},
     {src:loadingPlist},
-    {fontName:"gow",
+    {src:arenaSheet},
+        {src:powerTilesPlist},
+        {src:powerTilesPng},
+
+        {fontName:"gow",
         src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
     }
 ];
@@ -98,6 +102,18 @@ for (var entry in effectsConfig){
         g_characterPlists[entry] = effect;
         effectsConfig[entry].plist = effect;
 	}
+}
+
+
+for (var entry in powerTiles){
+    var png = transformAsset(powerTiles[entry].png);
+    g_characterPngs[entry] =png;
+    powerTiles[entry].png = png;
+    if (powerTiles[entry].plist){
+        var effect = transformAsset(powerTiles[entry].plist);
+        g_characterPlists[entry] = effect;
+        powerTiles[entry].plist = effect;
+    }
 }
 
 var g_battleStuff =[

@@ -61,8 +61,8 @@ var temp =  [
 ]
 
 hotr.levelLogic.getTeamForLevel = function(level){
-    return temp;
-    //return makeRandomTeam();
+    //return temp;
+    return makeRandomTeam();
 }
 
 hotr.levelLogic.getFormationForLevel = function(level){

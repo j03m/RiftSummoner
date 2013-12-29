@@ -3,11 +3,7 @@ var jc = jc || {};
 jc.UiConf = {};
 jc.woodRect = cc.rect(220,220,293,293);
 jc.topMost = 10000;
-cc.LabelTTF.prototype.setText = cc.LabelTTF.prototype.setString;
-cc.LabelTTF.prototype.setString = function(txt){
-	this.setText(txt);
-	this.enableStroke(cc.black(), 8*jc.assetScaleFactor);
-}
+
 
 jc.UiElementsLayer = jc.TouchLayer.extend({
     windowConfig:{
@@ -569,16 +565,6 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
             return 2;
         }
         throw "Cell must be 1-9";
-    },
-    centerThisPeer:function(centerMe, centerOn){
-        centerMe.setPosition(centerOn.getPosition());
-    },
-    centerThisChild:function(centerMe, centerOn){
-		var dim = centerOn.getContentSize();
-        centerMe.setPosition(cc.p(dim.width/2,dim.height/2));
-    },
-    scaleTo:function(scaleMe, toMe){
-      jc.scaleTo(scaleMe, toMe);
     }
 
 });

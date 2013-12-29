@@ -5,15 +5,10 @@ var PowerHud = jc.UiElementsLayer.extend({
         this.myTiles = [];
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(powerTilesPlist);
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(windowPlist);
-            this.initFromConfig(PowerHud.windowConfig);
-
-            var len = this.tiles>powers.length?powers.length:this.tiles;
-            for(var i=0;i<len;i++){
-                var name = "tile"+i;
-                this[name].initFromName(powers[i], this);
-                this.myTiles.push(this[name]);
-            }
+            this.initFromConfig(this.windowConfig);
+            this.powerBarOpenPos = cc.p(413* jc.assetScaleFactor, 287*jc.assetScaleFactor);
+            this.powerBarClosePos = cc.p(-305* jc.assetScaleFactor, 287*jc.assetScaleFactor);
+            this.powers = powers;
 
             return true;
         }else{
@@ -35,53 +30,55 @@ var PowerHud = jc.UiElementsLayer.extend({
         return false; //the tiles are swallowing touches, so this should never get called.
     },
     onShow:function(){
-        jc.log(['powerHud'], "show");
-    }
-});
 
-PowerHud.windowConfig={
-    "portraitFrame":{
-        "cell":1,
-        "anchor":['left'],
-        "type":"scale9",
-        "transitionIn":"bottom",
-        "transitionOut":"bottom",
-        "scaleRect":jc.UiConf.frame19Rect,
-        "size":{ "width":50, "height":25},
-        "sprite":"frame 19.png",
-        "padding":{
-            "left":0
-        },
-        "kids":{
-            "tiles":{
-                "isGroup":true,
-                "type":"line",
-                "cell":1,
-                "size":{ "width":33, "height":33},
-                "anchor":['left'],
-                "padding":{
-                    "left":15,
-                    "top":-3
-                },
-                "itemPadding":{
-                    "left":10,
-                    "top":-25
-                },
-                "members":[
-                    {
-                        "type":"tile",
-                        "name":"tile0"
-                    },
-                    {
-                        "type":"tile",
-                        "name":"tile1"
-                    },
-                    {
-                        "type":"tile",
-                        "name":"tile2"
+        var len = this.tiles>this.powers.length?this.powers.length:this.tiles;
+        for(var i=0;i<len;i++){
+            var name = "tile"+i;
+            this[name].initFromName(this.powers[i], this);
+            this.myTiles.push(this[name]);
+        }
+
+
+    },
+    windowConfig: {
+        "powerBar": {
+            "type": "sprite",
+            "sprite": "powersBackground.png",
+            "kids": {
+                "tiles": {
+                    "isGroup": true,
+                    "type": "line",
+                    "members": [
+                        {
+                            "type": "tile",
+                            "name": "tile0",
+                            "sprite": "powerFrame.png"
+                        },
+                        {
+                            "type": "tile",
+                            "name": "tile1",
+                            "sprite": "powerFrame.png"
+                        },
+                        {
+                            "type": "tile",
+                            "name": "tile2",
+                            "sprite": "powerFrame.png"
+                        }
+                    ],
+                    "sprite": "powerFrame.png",
+                    "z": 0,
+                    "pos": {
+                        "x": 159,
+                        "y": 99
                     }
-                ]
+                }
+            },
+            "z": 0,
+            "pos": {
+                "x": 413,
+                "y": 287
             }
         }
     }
-}
+});
+

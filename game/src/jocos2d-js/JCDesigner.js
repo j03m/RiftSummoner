@@ -3,6 +3,7 @@ jc.Designer = jc.UiElementsLayer.extend({
     init: function() {
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(powerTilesPlist);
             var guideSprite = new cc.Sprite();
             guideSprite.initWithFile(guide);
             cc.SpriteFrameCache.getInstance().addSpriteFrame(guideSprite.displayFrame(), "guide");
@@ -66,79 +67,42 @@ jc.Designer = jc.UiElementsLayer.extend({
 
     },
     windowConfig: {
-        "mainFrame": {
+        "powerBar": {
             "type": "sprite",
-            "blackBox":true,
-            "applyAdjustments": true,
-            "transitionIn": "top",
-            "transitionOut": "top",
-            "sprite": "genericBackground.png",
-            "z": 0,
+            "sprite": "powersBackground.png",
             "kids": {
-                "squad1Cells": {
+                "tiles": {
                     "isGroup": true,
-                    "z": 1,
-                    "type": "grid",
-                    "cols": 3,
-                    "itemPadding": {
-                        "top": 3,
-                        "left": 4
-                    },
-                    "input": true,
+                    "type": "line",
                     "members": [
                         {
                             "type": "sprite",
-                            "input": true,
-                            "sprite": "portraitSmallDarkBackground.png"
-                        }
-                    ],
-                    "membersTotal": 9,
-                    "sprite": "portraitSmallDarkBackground.png",
-                    "pos": {
-                        "x": 182,
-                        "y": 987
-                    }
-                },
-                "squad2Cells": {
-                    "isGroup": true,
-                    "z": 1,
-                    "type": "grid",
-                    "cols": 3,
-                    "itemPadding": {
-                        "top": 3,
-                        "left": 4
-                    },
-                    "input": true,
-                    "members": [
+                            "name": "tile0",
+                            "sprite": "powerFrame.png"
+                        },
                         {
                             "type": "sprite",
-                            "input": true,
-                            "sprite": "portraitSmallDarkBackground.png"
+                            "name": "tile1",
+                            "sprite": "powerFrame.png"
+                        },
+                        {
+                            "type": "sprite",
+                            "name": "tile2",
+                            "sprite": "powerFrame.png"
                         }
                     ],
-                    "membersTotal": 9,
-                    "sprite": "portraitSmallDarkBackground.png",
+                    "sprite": "powerFrame.png",
+                    "z": 0,
                     "pos": {
-                        "x": 582,
-                        "y": 987
+                        "x": 159,
+                        "y": 99
                     }
-                },
-                "fightButton": {
-                    "type": "button",
-                    "main": "buttonFight.png",
-                    "pressed": "buttonFight.png",
-                    "touchDelegateName": "fightStart",
-                    "z": 1,
-                    "pos": {
-                        "x": 1507,
-                        "y": 139
-                    }
-                },
-
+                }
             },
+            "z": 0,
             "pos": {
-                "x": 1024,
-                "y": 768
+                "x": 413,
+                "y": 287
             }
         }
     }

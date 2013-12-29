@@ -1,7 +1,7 @@
 var jc = jc || {};
 jc.defaultTransitionTime = 0.25;
 jc.defaultFadeLevel = 140;
-jc.defaultNudge = 10;
+jc.defaultNudge = 150 * jc.assetScaleFactor;
 jc.touchEnded = 'end';
 jc.touchBegan = 'began';
 jc.touchMoved = 'moved';
@@ -200,7 +200,7 @@ jc.TouchLayer = cc.Layer.extend({
         }
         item.setPosition(from);
         item.setVisible(true);
-        var moveAction = cc.MoveTo.create(time, to);
+        var moveAction;
         var nudgeAction;
 
         if (!doneDelegate){
@@ -211,9 +211,14 @@ jc.TouchLayer = cc.Layer.extend({
         //apply the inNudge first, then main move, then the out nudge
         if (nudge && when=='before'){
             var nudgePos = cc.pAdd(from, nudge); //apply inNudge to from
+            moveAction = cc.MoveTo.create(time, to);
             nudgeAction = cc.MoveTo.create(time/2, nudgePos);
+
         }else if (nudge && when == 'after'){
-            var nudgePos = cc.pAdd(to, nudge); //apply inNudge to from
+            var antiNudge = cc.p(nudge.x*-1, nudge.y*-1);
+            var extended = cc.pAdd(to, antiNudge);
+            var nudgePos = cc.pAdd(extended, nudge); //apply inNudge to from
+            moveAction = cc.MoveTo.create(time, extended);
             nudgeAction = cc.MoveTo.create(time/2, nudgePos);
         }
 
@@ -413,6 +418,75 @@ jc.TouchLayer = cc.Layer.extend({
         var callbackAction = cc.CallFunc.create(callback);
         var seq = cc.Sequence.create(action, callbackAction);
         this.runAction(seq);
+    },
+    showTutorialStep:function(msg, callback){
+        this.guideCharacter = jc.makeSpriteWithPlist(cardsPlists[0], cardsPngs[0], "tutorialChar.png");
+        this.addChild(this.guideCharacter);
+        var itemRect = this.guideCharacter.getContentSize();
+        var fromX = (this.winSize.width + itemRect.width);
+        var fromY = this.winSize.height/2 -  (itemRect.height/4.5);
+        var toX = this.winSize.width - ((itemRect.width/2) + jc.defaultNudge);
+        var toY = fromY -  (itemRect.height/4.5);
+        var to = cc.p(toX, toY);
+        this.slide(this.guideCharacter, cc.p(fromX,fromY), to, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), 'after',function(){
+            //show ms
+            this.attachMsgTo(msg, this.guideCharacter, 'left');
+            this.scheduleOnce(function(){
+                   this.removeTutorialStep();
+                   if(callback){
+                       callback();
+                   }
+            }.bind(this), 2);
+        }.bind(this));
+    },
+    removeTutorialStep: function(){
+        if (this.bubble){
+            this.removeChild(this.bubble);
+            this.bubble.removeChild(this.bubble.msg);
+            this.bubble.msg.release();
+            this.bubble.msg = undefined;
+            this.bubble.release();
+            this.bubble = undefined;
+        }
+        if (this.guideCharacter){
+            this.slideOutToRight(this.guideCharacter, jc.defaultTransitionTime);
+        }
+    },
+    attachMsgTo:function(msg, element, where){
+        this.bubble = jc.makeSpriteWithPlist(uiPlist, uiPng, "dialog1.png");
+        var elPos = element.getPosition();
+        var elSize = element.getContentSize();
+        if (where == 'left'){
+            this.bubble.setFlippedX(true);
+            var myPos = cc.p(elPos.x - elSize.width, elPos.y);
+            this.bubble.setPosition(myPos)
+        }else{
+            var myPos = cc.p(elPos.x + elSize.width, elPos.y);
+            this.bubble.setPosition(myPos)
+
+        }
+        this.bubble.msg = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, jc.font.labelSize, cc.TEXT_ALIGNMENT_LEFT);
+        this.bubble.msg.setColor(cc.gray());
+        this.bubble.msg.setString(msg);
+        this.addChild(this.bubble);
+        this.bubble.addChild(this.bubble.msg);
+        this.centerThisChild(this.bubble.msg, this.bubble);
+        jc.scaleXTo(this.bubble.msg, this.bubble);
+        this.bubble.msg.adjustPosition(20*jc.assetScaleFactor, 50*jc.assetScaleFactor);
+        this.bubble.adjustPosition(0, 300*jc.assetScaleFactor);
+
+
+    },
+    centerThisPeer:function(centerMe, centerOn){
+        centerMe.setPosition(centerOn.getPosition());
+    },
+    centerThisChild:function(centerMe, centerOn){
+        var dim = centerOn.getContentSize();
+        centerMe.setPosition(cc.p(dim.width/2,dim.height/2));
+    },
+    scaleTo:function(scaleMe, toMe){
+        jc.scaleTo(scaleMe, toMe);
     }
+
 
 });

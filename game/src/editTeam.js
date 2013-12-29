@@ -19,7 +19,7 @@ var EditTeam = jc.UiElementsLayer.extend({
     onShow:function(){
         this.start();
 
-        this.infoFadeWorker();
+        //this.infoFadeWorker();
 
         if (!this.tableView){
             this.tableView = new jc.ScrollingLayer();
@@ -108,7 +108,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 
             this.card.setVisible(true);
             this.element.setVisible(true);
-            this.info.setVisible(true);
+            //this.info.setVisible(true);
 
             var characterEntry = hotr.blobOperations.getEntryWithId(data);
 
@@ -126,11 +126,13 @@ var EditTeam = jc.UiElementsLayer.extend({
 
             //update labels
             this.updateStats(characterEntry);
+
+            this.infoPress();
         }else{
             this.card.setVisible(false);
             this.lastSelection=undefined;
             this.element.setVisible(false);
-            this.info.setVisible(false);
+            //this.info.setVisible(false);
 
             this.hideStats();
             this.clearAttackTypes();
@@ -221,8 +223,8 @@ var EditTeam = jc.UiElementsLayer.extend({
 
         this.infoTitle.setString(entry.formalName);
         this.infoText.setString(entry.details);
-        this.doInfoFadeOut = false;
-        this.infoFadeIn();
+//        this.doInfoFadeOut = false;
+//        this.infoFadeIn();
     },
     infoTouch:function(){
         this.doInfoFadeOut = true;
@@ -327,91 +329,91 @@ var EditTeam = jc.UiElementsLayer.extend({
 					"y": 731
 				}
 			},
-			"powerLevels": {
-				"isGroup": true,
-				"type": "grid",
-				"cols": 5,
-				"itemPadding": {
-					"top": 0,
-					"left": 30
-				},
-				"members": [
-					{
-						"type": "sprite",
-						"sprite": "level_0000_Layer-6.png"
-					}
-				],
-				"membersTotal": 5,
-				"sprite": "level_0000_Layer-6.png",
-				"z": 1,
-				"pos": {
-					"x": 1210,
-					"y": 967
-				},
-
-			},
-			"powerIcons": {
-				"isGroup": true,
-				"type": "grid",
-				"cols": 5,
-				"itemPadding": {
-					"top": 0,
-					"left": 0
-				},
-				"input": true,
-				"members": [
-					{
-						"type": "sprite",
-						"input": true,
-						"sprite": "powerIconSmallFrame.png"
-					}
-				],
-				"membersTotal": 5,
-				"sprite": "powerIconSmallFrame.png",
-				"z": 1,
-				"pos": {
-					"x": 1213,
-					"y": 797
-				},
-
-			},
-			"powerDesc": {
-				"type": "sprite",
-				"sprite": "powerIconsDescription.png",
-				"z": 1,
-				"pos": {
-					"x": 1535,
-					"y": 630
-				}
-			},
-			"nextLevel": {
-				"type": "sprite",
-				"sprite": "nextLevelCostFrame.png",
-				"z": 1,
-				"pos": {
-					"x": 1363,
-					"y": 456
-				}
-			},
-			"trainButton": {
-				"type": "button",
-				"main": "buttonTrain.png",
-				"pressed": "buttonTrainPressed.png",
-				"touchDelegateName": "trainPower",
-				"z": 1,
-				"pos": {
-					"x": 1249,
-					"y": 386
-				}
-			},
+//			"powerLevels": {
+//				"isGroup": true,
+//				"type": "grid",
+//				"cols": 5,
+//				"itemPadding": {
+//					"top": 0,
+//					"left": 30
+//				},
+//				"members": [
+//					{
+//						"type": "sprite",
+//						"sprite": "level_0000_Layer-6.png"
+//					}
+//				],
+//				"membersTotal": 5,
+//				"sprite": "level_0000_Layer-6.png",
+//				"z": 1,
+//				"pos": {
+//					"x": 1210,
+//					"y": 967
+//				},
+//
+//			},
+//			"powerIcons": {
+//				"isGroup": true,
+//				"type": "grid",
+//				"cols": 5,
+//				"itemPadding": {
+//					"top": 0,
+//					"left": 0
+//				},
+//				"input": true,
+//				"members": [
+//					{
+//						"type": "sprite",
+//						"input": true,
+//						"sprite": "powerIconSmallFrame.png"
+//					}
+//				],
+//				"membersTotal": 5,
+//				"sprite": "powerIconSmallFrame.png",
+//				"z": 1,
+//				"pos": {
+//					"x": 1213,
+//					"y": 797
+//				},
+//
+//			},
+//			"powerDesc": {
+//				"type": "sprite",
+//				"sprite": "powerIconsDescription.png",
+//				"z": 1,
+//				"pos": {
+//					"x": 1535,
+//					"y": 630
+//				}
+//			},
+//			"nextLevel": {
+//				"type": "sprite",
+//				"sprite": "nextLevelCostFrame.png",
+//				"z": 1,
+//				"pos": {
+//					"x": 1363,
+//					"y": 456
+//				}
+//			},
+//			"trainButton": {
+//				"type": "button",
+//				"main": "buttonTrain.png",
+//				"pressed": "buttonTrainPressed.png",
+//				"touchDelegateName": "trainPower",
+//				"z": 1,
+//				"pos": {
+//					"x": 1249,
+//					"y": 386
+//				}
+//			},
 			"doneButton": {
 				"type": "button",
 				"main": "buttonDone.png",
 				"pressed": "buttonDonePressed.png",
 				"touchDelegateName": "doneButton",
-				"z": 1,
+				"z": 4,
 				"pos": {
-					"x": 1759,
+					"x": 1500,
 					"y": 457
 				}
 			},
@@ -446,17 +448,17 @@ var EditTeam = jc.UiElementsLayer.extend({
 					"y": 198
 				}
 			},
-			"info": {
-				"type": "button",
-				"main": "infoButton.png",
-				"pressDelegateName": "infoPress",
-				"touchDelegateName": "infoTouch",
-				"z": 5,
-				"pos": {
-					"x": 496,
-					"y": 981
-				}
-			},
+//			"info": {
+//				"type": "button",
+//				"main": "infoButton.png",
+//				"pressDelegateName": "infoPress",
+//				"touchDelegateName": "infoTouch",
+//				"z": 5,
+//				"pos": {
+//					"x": 496,
+//					"y": 981
+//				}
+//			},
 			"card": {
 				"type": "sprite",
 				"sprite": "gargoyleFire_bg.png",
@@ -583,7 +585,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"z": 3,
 				"pos": {
 					"x": 1525,
-					"y": 787
+					"y": 750
 				}
 			},
 			"infoTitle": {
@@ -592,12 +594,12 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 400,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 20,
+				"fontSize": 25,
 				"fontName": "gow",
 				"z": 4,
 				"pos": {
-					"x": 1567,
-					"y": 1031
+					"x": 1590,
+					"y": 980
 				}
 			},
 			"infoText": {
@@ -606,12 +608,12 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 600,
 				"height": 200,
 				"alignment": 0,
-				"fontSize": 20,
+				"fontSize": 25,
 				"fontName": "gow",
 				"z": 4,
 				"pos": {
 					"x": 1525,
-					"y": 831
+					"y": 780
 				}
 			}
 		},

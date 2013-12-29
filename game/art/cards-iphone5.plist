@@ -433,6 +433,19 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
+            <key>tutorialChar.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1567,1386},{303,338}}</string>
+                <key>offset</key>
+                <string>{4,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{8,6},{303,338}}</string>
+                <key>sourceSize</key>
+                <string>{311,344}</string>
+            </dict>
             <key>wizard_bg.png</key>
             <dict>
                 <key>frame</key>
@@ -456,7 +469,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:3ee0a6e842186086975577196a5bf185:b33d9af779e8c0f3fb2720c84c9d3da9:0afd5d88c1d04885828391deeb2050d9$</string>
+            <string>$TexturePacker:SmartUpdate:f21b11eb0947697a7ab9da8b2811ece4:96443d74b27eac9ac8578edb2989f93c:0afd5d88c1d04885828391deeb2050d9$</string>
             <key>textureFileName</key>
             <string>cards-iphone5.png</string>
         </dict>

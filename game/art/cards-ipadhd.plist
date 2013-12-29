@@ -433,6 +433,19 @@
                 <key>sourceSize</key>
                 <string>{560,620}</string>
             </dict>
+            <key>tutorialChar.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2872,2250},{544,608}}</string>
+                <key>offset</key>
+                <string>{8,-6}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{16,12},{544,608}}</string>
+                <key>sourceSize</key>
+                <string>{560,620}</string>
+            </dict>
             <key>wizard_bg.png</key>
             <dict>
                 <key>frame</key>
@@ -456,7 +469,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:3ee0a6e842186086975577196a5bf185:b33d9af779e8c0f3fb2720c84c9d3da9:0afd5d88c1d04885828391deeb2050d9$</string>
+            <string>$TexturePacker:SmartUpdate:f21b11eb0947697a7ab9da8b2811ece4:96443d74b27eac9ac8578edb2989f93c:0afd5d88c1d04885828391deeb2050d9$</string>
             <key>textureFileName</key>
             <string>cards-ipadhd.png</string>
         </dict>
