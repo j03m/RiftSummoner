@@ -220,6 +220,8 @@ jc.TouchLayer = cc.Layer.extend({
             var nudgePos = cc.pAdd(extended, nudge); //apply inNudge to from
             moveAction = cc.MoveTo.create(time, extended);
             nudgeAction = cc.MoveTo.create(time/2, nudgePos);
+        }else{
+            moveAction = cc.MoveTo.create(time, to);
         }
 
         if (nudgeAction && when == 'before'){
@@ -420,24 +422,30 @@ jc.TouchLayer = cc.Layer.extend({
         this.runAction(seq);
     },
     showTutorialStep:function(msg, callback){
-        this.guideCharacter = jc.makeSpriteWithPlist(cardsPlists[0], cardsPngs[0], "tutorialChar.png");
-        this.addChild(this.guideCharacter);
-        var itemRect = this.guideCharacter.getContentSize();
-        var fromX = (this.winSize.width + itemRect.width);
-        var fromY = this.winSize.height/2 -  (itemRect.height/4.5);
-        var toX = this.winSize.width - ((itemRect.width/2) + jc.defaultNudge);
-        var toY = fromY -  (itemRect.height/4.5);
-        var to = cc.p(toX, toY);
-        this.slide(this.guideCharacter, cc.p(fromX,fromY), to, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), 'after',function(){
-            //show ms
-            this.attachMsgTo(msg, this.guideCharacter, 'left');
-            this.scheduleOnce(function(){
-                   this.removeTutorialStep();
-                   if(callback){
-                       callback();
-                   }
-            }.bind(this), 2);
-        }.bind(this));
+        if (!this.guideCharacter){
+            this.guideCharacter = jc.makeSpriteWithPlist(cardsPlists[0], cardsPngs[0], "tutorialChar.png");
+            this.addChild(this.guideCharacter);
+        }
+
+        if (!this.guideVisible){
+            var itemRect = this.guideCharacter.getContentSize();
+            var fromX = (this.winSize.width + itemRect.width);
+            var fromY = this.winSize.height/2 -  (itemRect.height/4.5);
+            var toX = this.winSize.width - ((itemRect.width/2) + jc.defaultNudge);
+            var toY = fromY -  (itemRect.height/4.5);
+            var to = cc.p(toX, toY);
+            this.slide(this.guideCharacter, cc.p(fromX,fromY), to, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), 'after',function(){
+                //show ms
+                this.guideVisible = true;
+                this.attachMsgTo(msg, this.guideCharacter, 'left');
+                this.scheduleOnce(function(){
+                    this.removeTutorialStep();
+                    if(callback){
+                        callback();
+                    }
+                }.bind(this), 2);
+            }.bind(this));
+        }
     },
     removeTutorialStep: function(){
         if (this.bubble){
@@ -449,7 +457,9 @@ jc.TouchLayer = cc.Layer.extend({
             this.bubble = undefined;
         }
         if (this.guideCharacter){
-            this.slideOutToRight(this.guideCharacter, jc.defaultTransitionTime);
+            this.slideOutToRight(this.guideCharacter, jc.defaultTransitionTime, undefined, function(){
+                this.guideVisible = false;
+            });
         }
     },
     attachMsgTo:function(msg, element, where){
@@ -475,6 +485,30 @@ jc.TouchLayer = cc.Layer.extend({
         this.bubble.msg.adjustPosition(20*jc.assetScaleFactor, 50*jc.assetScaleFactor);
         this.bubble.adjustPosition(0, 300*jc.assetScaleFactor);
 
+
+    },
+    floatMsg: function(msg){
+        if (!this.msgStack){
+            this.msgStack = [];
+        }
+        var floater = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, jc.font.labelSize, cc.TEXT_ALIGNMENT_LEFT);
+        floater.setColor(cc.red());
+        floater.setString(msg);
+        if (this.msgStack.length!=0){
+            var lastLabel = this.msgStack[this.msgStack.length-1];
+            var pos = lastLabel.getPosition();
+            var nextPos = cc.p(pos.x, pos.y + (50*jc.assetScaleFactor));
+            floater.setPosition(nextPos);
+        }else{
+            floater.setPosition(this.winSize.width/2, this.winSize.height/2);
+        }
+        floater.setZOrder(jc.topMost);
+        this.addChild(floater);
+        this.scheduleOnce(function(){
+            jc.fadeOut(floater, undefined, function(){
+                this.removeChild(floater);
+            }.bind(this));
+        }.bind(this),1);
 
     },
     centerThisPeer:function(centerMe, centerOn){
