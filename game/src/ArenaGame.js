@@ -276,6 +276,17 @@ var ArenaGame = jc.WorldLayer.extend({
         this.nextTouchAction = action;
         this.nextTouchAction.manualErase = manualErase;
     },
+    placeSquadTokens:function(){
+
+        //todo: replace with new bar
+        this.squadBar = jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powersBackground.png");
+        this.squadBar.setFlippedX(true);
+        hotr.arenaScene.addChild(this.squadBar);
+        this.touchTargets.push(this.squadBar);
+        this["squadA"].tile = jc.makeSpriteWithPlist(powerTiles[powerName].plist, powerTiles[powerName].png, powerTiles[powerName].icon);
+
+
+    },
     placePowerTokens:function(){
         this.availablePowers={};
         this.powerBar = jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powersBackground.png");
