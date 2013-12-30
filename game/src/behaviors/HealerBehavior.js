@@ -23,7 +23,7 @@ HealerBehavior.prototype.healThink = function(dt){
 
     var state= this.getState();
     this.handleDeath();
-    console.log(state);
+
     switch(state.brain){
         case 'idle':this.handleHealerIdle(dt);
             break;
@@ -125,9 +125,10 @@ HealerBehavior.prototype.handleHeal = function(dt){
             this.owner.scheduleOnce(this.healLogic.bind(this), damageDelay);
             jc.playEffectOnTarget('heal', this.support, this.support.getZOrder(), this.owner.layer, true);
             this.lastHeal = 0;
+            this.setState('healing', 'attack');
         }
 
-        this.setState('healing', 'attack');
+
 
     }else{
         this.lastHeal+=dt;

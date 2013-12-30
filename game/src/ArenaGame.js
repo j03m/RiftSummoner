@@ -30,6 +30,11 @@ var ArenaGame = jc.WorldLayer.extend({
             this.powerTilePosition = cc.p(159*jc.assetScaleFactor, 100*jc.assetScaleFactor);
             this.powerTileSpacing = 200 * jc.assetScaleFactor;
 
+            this.squadBarOpenPos = cc.p(1700* jc.assetScaleFactor, 187*jc.assetScaleFactor);
+            this.squadBarClosePos = cc.p(2300 * jc.assetScaleFactor, 187*jc.assetScaleFactor);
+            this.squadTilePosition = cc.p(250*jc.assetScaleFactor, 100*jc.assetScaleFactor);
+            this.squadTileSpacing = 200 * jc.assetScaleFactor;
+
             return true;
 		} else {
 			return false;
@@ -73,7 +78,9 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamBSprites = hotr.arenaScene.data.teamB;
         this.teamBFormation = jc.formations[hotr.arenaScene.data.teamBFormation];
         this.teamBPowers = hotr.arenaScene.data.teamBPowers;
+
         this.placePowerTokens();
+        this.placeSquadTokens();
         this.setUp();
         this.placementTouches = 1;
         this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
@@ -212,6 +219,34 @@ var ArenaGame = jc.WorldLayer.extend({
 
         }
     },
+    getSquadMovePositions:function(whichSquad, location){
+        var returnMe = [];
+        var squadSize = 0;
+        var team = this.teams['a'];
+        if (whichSquad == 'a'){
+            squadSize = this.squadNumbers;
+        }else{
+            squadSize = this.teamSize;
+        }
+
+        for(var i=squadSize-this.squadNumbers; i< squadSize; i++){
+            var point = cc.p(location.x, location.y);
+            var pos = i;
+            if (i>this.squadNumbers){
+                pos -= this.squadNumbers;
+            }
+            var col = (pos)% 4;
+            var row = Math.floor(pos/4);
+            var valueX = 200 * jc.characterScaleFactor;
+            var valueY = -175* jc.characterScaleFactor;
+            var colAdjust = col * valueX;
+            var rowAdjust = row * valueY;
+            point.x+=colAdjust;
+            point.y+=rowAdjust;
+            returnMe.push({'member':team[i], 'pos':point});
+        }
+        return returnMe;
+    },
     getSprite:function(nameCreate){
         var sprite;
         sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
@@ -261,17 +296,6 @@ var ArenaGame = jc.WorldLayer.extend({
     getTeam:function(who){
         return this.teams[who];
     },
-    present:function(cb){
-        //todo modify this to use teamASprites to know what formation slots are actually filled
-        this.presentTeam(this.teams['a'], this.teamAFormation, cc.p(this.worldSize.width/4, this.worldSize.height/2), function(){
-            this.presentTeam(this.teams['b'], this.teamBFormation, cc.p((this.worldSize.width/4)*3, this.worldSize.height/2), function(){
-                this.presentHud(this.teamAPowers, function(){
-                    cb();
-                }.bind(this));
-            }.bind(this));
-        }.bind(this));
-
-    },
     nextTouchDo:function(action, manualErase){
         this.nextTouchAction = action;
         this.nextTouchAction.manualErase = manualErase;
@@ -282,9 +306,21 @@ var ArenaGame = jc.WorldLayer.extend({
         this.squadBar = jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powersBackground.png");
         this.squadBar.setFlippedX(true);
         hotr.arenaScene.addChild(this.squadBar);
-        this.touchTargets.push(this.squadBar);
-        this["squadA"].tile = jc.makeSpriteWithPlist(powerTiles[powerName].plist, powerTiles[powerName].png, powerTiles[powerName].icon);
+        this.squadBar.setPosition(this.squadBarOpenPos)
 
+        this.touchTargets.push(this.squadBar);
+
+        this.squadA = jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powerFrame.png");
+        this.squadBar.addChild(this.squadA);
+        this.squadA.setPosition(this.squadTilePosition);
+        this.touchTargets.push(this.squadA);
+
+        this.squadB = jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powerFrame.png");
+        this.squadBar.addChild(this.squadB);
+        this.squadB.setPosition(cc.p(this.squadTilePosition.x + this.squadTileSpacing,this.squadTilePosition.y));
+        this.touchTargets.push(this.squadB);
+
+        this.closeSquadBar();
 
     },
     placePowerTokens:function(){
@@ -313,6 +349,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.availablePowers[powerTileName]=powerName;
         }
         this.closeBar();
+
     },
     closeBar: function(){
         //function(item, from, to, time, nudge, when, doneDelegate){
@@ -323,57 +360,14 @@ var ArenaGame = jc.WorldLayer.extend({
         this.barOpen = true;
         this.slide(this.powerBar, this.powerBarClosePos, this.powerBarOpenPos, jc.defaultTransitionTime, cc.p(jc.defaultNudge*-1,0), "after");
     },
-    presentTeam:function(team, formation, point, callback){
-            this.placeNextCharacter(team, formation, callback);
+    closeSquadBar: function(){
+        //function(item, from, to, time, nudge, when, doneDelegate){
+        this.squadBarOpen = false;
+        this.slide(this.squadBar, this.squadBarOpenPos, this.squadBarClosePos, jc.defaultTransitionTime, cc.p(jc.defaultNudge*-1,0), "before");
     },
-    placeNextCharacter:function(team, formation, callback){
-        if (this.nextChar==undefined){
-            this.nextChar = 0;
-        }
-
-        var point = cc.p(this.startPos.x, this.startPos.y);
-
-        var col = (this.nextChar)% 4;
-        var row = Math.floor(this.nextChar/4);
-        var valueX = 75;
-        var valueY = -50;
-        if (!team[this.nextChar].isFlippedX()){
-             valueX *=-1;
-        }
-        var colAdjust = col * valueX;
-        var rowAdjust = row * valueY;
-        point.x+=colAdjust;
-        point.y+=rowAdjust;
-
-        this.placeCharacter(team[this.nextChar],point , function(){
-            this.nextChar++;
-            if (this.nextChar>=team.length){
-                this.nextChar = undefined
-                callback();
-            }else{
-                this.placeNextCharacter(team, point, callback);
-            }
-        }.bind(this));
-
-
-    },
-    placeCharacter:function(sprite, formationPoint, done){
-            if (sprite){
-                this.scheduleOnce(function(){
-                    this.panToWorldPoint(formationPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
-                        var worldPos = formationPoint;
-                        var nodePos = this.convertToItemPosition(worldPos);
-
-                        sprite.setBasePosition(nodePos);
-                        sprite.setVisible(true);
-                        jc.playEffectOnTarget("teleport", sprite, this);
-                        done();
-                    }.bind(this));
-                }, this.presentationSpeed);
-            }
-            else{
-                done();
-            }
+    openSquadBar: function(){
+        this.squadBarOpen = true;
+        this.slide(this.squadBar, this.squadBarClosePos, this.squadBarOpenPos, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), "after");
     },
     update:function(dt){
         for (var i =0; i<this.sprites.length;i++){
@@ -458,21 +452,6 @@ var ArenaGame = jc.WorldLayer.extend({
 
         }
     },
-    doBlood:function(sprite){
-//        var flower = cc.ParticleSystem.create(bloodPlist);
-//        this.addChild( flower );
-//        flower.setPosition( this.getRandomBloodSpot(sprite));
-    },
-    getRandomBloodSpot:function(sprite){
-        var pos = sprite.getPosition();    //explicity use getPosition, not getBasePoisition here
-        var rect = sprite.getTextureRect();
-        var offset = jc.randomNum((rect.width/2)*-1, rect.width/2);
-        pos.x+=offset;
-        offset = jc.randomNum((rect.height/2)*-1, rect.height/2);
-        pos.y+=offset;
-        return pos;
-
-    },
     setSpriteTargetLocation:function(touch, sprites){
         //play tap effect at touch
         if (sprites){
@@ -490,33 +469,26 @@ var ArenaGame = jc.WorldLayer.extend({
                 doGenericTouch.bind(this)();
             }
         }else{
-            doGenericTouch.bind(this)();
+            this.doGenericTouch.bind(this)();
         }
-
-        function doFriendTouch(sprite){
-            jc.playEffectAtLocation("allySelection", touch, jc.shadowZOrder,this);
-            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["characterSelect"].sprite);
-            this.selectedSprite.effectAnimations["characterSelect"].playing = false;
-            this.nextTouchAction = undefined;
-            this.selectedSprite.behavior.supportCommand(sprite);
-        }
-
-        function doEnemyTouch(sprite){
-            jc.playEffectAtLocation("enemySelection", touch, jc.shadowZOrder,this);
-            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["characterSelect"].sprite);
-            this.selectedSprite.effectAnimations["characterSelect"].playing = false;
-            this.nextTouchAction = undefined;
-            this.selectedSprite.behavior.attackCommand(sprite);
-        }
-
-        function doGenericTouch(){
-            jc.playEffectAtLocation("movement", touch, jc.shadowZOrder,this);
-            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["characterSelect"].sprite);
-            this.selectedSprite.effectAnimations["characterSelect"].playing = false;
-            this.nextTouchAction = undefined;
-            this.selectedSprite.behavior.followCommand(touch);
-        }
-
+    },
+    doGenericTouch:function(who, touch){
+        this.nextTouchAction = undefined;
+        who.behavior.followCommand(touch);
+    },
+    doFriendTouch:function (sprite, touch){
+        jc.playEffectAtLocation("allySelection", touch, jc.shadowZOrder,this);
+        this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["characterSelect"].sprite);
+        this.selectedSprite.effectAnimations["characterSelect"].playing = false;
+        this.nextTouchAction = undefined;
+        this.selectedSprite.behavior.supportCommand(sprite);
+    },
+    doEnemyTouch:function (sprite, touch){
+        jc.playEffectAtLocation("enemySelection", touch, jc.shadowZOrder,this);
+        this.selectedSprite.removeChild(this.selectedSprite.effectAnimations["characterSelect"].sprite);
+        this.selectedSprite.effectAnimations["characterSelect"].playing = false;
+        this.nextTouchAction = undefined;
+        this.selectedSprite.behavior.attackCommand(sprite);
     },
     targetTouchHandler:function(type, touch,sprites){
         if (type == jc.touchEnded){
@@ -539,8 +511,39 @@ var ArenaGame = jc.WorldLayer.extend({
 
         return true;
     },
-    checkSquadBar:function(){
+    checkSquadBar:function(sprites){
+        for(var i=0;i<sprites.length;i++){
+            if (sprites[i]==this.squadA){
+                this.nextTouchDo(this.moveSquad.bind(this, 'a'));
+                return;
+            }
 
+            if(sprites[i]==this.squadB){
+                this.nextTouchDo(this.moveSquad.bind(this, 'b'));
+                return;
+            }
+        }
+
+        for(var i=0;i<sprites.length;i++){
+            if (sprites[i]==this.squadBar){
+                if (this.squadBarOpen){
+                    this.closeSquadBar();
+                }else{
+                    this.openSquadBar();
+                }
+            }
+        }
+
+    },
+    moveSquad:function(squad, touch){
+        //play anim
+        var worldPos = this.screenToWorld(touch);
+        var nodePos = this.convertToItemPosition(worldPos);
+        jc.playEffectAtLocation("movement", nodePos, jc.shadowZOrder,this);
+        var positions = this.getSquadMovePositions(squad, nodePos);
+        _.each(positions, function(entry){
+            this.doGenericTouch(entry.member, entry.pos);
+        }.bind(this));
     },
     checkPowerBar:function(sprites){
         for (var power in this.availablePowers){

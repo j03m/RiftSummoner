@@ -59,7 +59,7 @@ var globalPowers = {
         var behavior = hotr.arenaScene.layer.teams['a'][0].behavior;
         var foes = behavior.allFoesWithinRadiusOfPoint(150, touch);
 
-        var effect = jc.playEffectAtLocation("explosion", touch , 1, hotr.arenaScene.layer);
+        var effect = jc.playEffectAtLocation("explo", touch , 1, hotr.arenaScene.layer);
 
         //this function doesn't position us correctly, we need to add to it
         var pos = effect.getPosition();

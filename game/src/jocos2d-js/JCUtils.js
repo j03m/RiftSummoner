@@ -196,12 +196,15 @@ jc.makeSpriteFromFile = function (image){
     return sprite;
 }
 
+jc.parsed = {};
 jc.makeSpriteWithPlist = function(plist, png, startFrame){
     var sprite = new cc.Sprite();
-    cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
-    cc.SpriteBatchNode.create(png);
+    if (!jc.parsed[plist]){
+        cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
+        cc.SpriteBatchNode.create(png);
+        jc.parsed[plist]=true;
+    }
 
-    //todo change to size of sprite
     var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(startFrame);
     if (!frame){
         throw "Frame: " + startFrame +  " not in cache.";
@@ -613,10 +616,10 @@ jc.genericPowerRemove = function(varName,effectName, bObj){
         bObj.owner.removeChild(bObj.owner[varName], false);
     }
     delete bObj.owner[varName];
-//	if (bObj.owner.effectAnimations[effectName]){
-//        bObj.
-//		bObj.owner.effectAnimations[effectName].playing = false;
-//	}
+
+    if (bObj.owner && bObj.owner.effectAnimations && bObj.owner.effectAnimations[effectName]){
+		bObj.owner.effectAnimations[effectName].playing = false;
+	}
 }
 
 jc.movementType = {

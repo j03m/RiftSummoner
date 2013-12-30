@@ -1,45 +1,137 @@
 var missileConfig = {
                      "greenbullet":{
-                         "png":"art/missiles.png",
+                         "png":"art/missiles{v}.png",
                          "plist":"art/missiles.plist",
                          "start":"greenbullet.1.png",
-                         "effect":"greenBang",
+                         "effect":"hit",
                          "frames":27,
                          "delay":0.02 ,
                          "first":9,
                          "speed":300,
 						 "height":150
-                         
                      },
-                     "arrow":{
-                         "png":"art/missiles.png",
+                     "arrowFire":{
+                         "png":"art/missiles{v}.png",
                          "plist":"art/missiles.plist",
-                         "start":"arrow.png",
-                         "simple":true,
+                         "start":"arrowFire.1.png",
 						 "hasDirection":true,
 						 "rotation":"arrow",
                          "initialAngle":-45,
 						 "path":"arrow",
                          "speed":350,
-						 "height":200
-						 
+						 "height":200,
+                         "frames":6,
+                         "delay":0.02
                      },
-                    "bomb":{
-                        "png":"art/missiles.png",
+                    "arrowPoison":{
+                        "png":"art/missiles{v}.png",
                         "plist":"art/missiles.plist",
-                        "start":"bomb.png",
-                        "simple":true,
+                        "start":"arrowPoison.1.png",
+                        "hasDirection":true,
+                        "rotation":"arrow",
+                        "initialAngle":-45,
+                        "path":"arrow",
+                        "speed":350,
+                        "height":200,
+                        "frames":6,
+                        "delay":0.02
+                    },
+                    "arrowVoid":{
+                        "png":"art/missiles{v}.png",
+                        "plist":"art/missiles.plist",
+                        "start":"arrowVoid.1.png",
+                        "hasDirection":true,
+                        "rotation":"arrow",
+                        "initialAngle":-45,
+                        "path":"arrow",
+                        "speed":350,
+                        "height":200,
+                        "frames":6,
+                        "delay":0.02
+                    },
+                    "arrowNormal":{
+                        "png":"art/missiles{v}.png",
+                        "plist":"art/missiles.plist",
+                        "start":"arrowNormal.png",
+                        "hasDirection":true,
+                        "initialAngle":-45,
+                        "path":"arrow",
+                        "rotation":"arrow",
+                        "speed":350,
+                        "height":200,
+                        "simple":true
+                    },
+                    "bomb":{
+                        "png":"art/missiles{v}.png",
+                        "plist":"art/missiles.plist",
+                        "start":"bomb.1.png",
+                        "frames":8,
+                        "delay":0.01,
                         "path":"jump",
+                        "effect":"explo",
                         "speed":100
                     },
-                    "fireball":{
-                        "png":"art/missiles.png",
+                    "magicFire":{
+                        "png":"art/missiles{v}.png",
                         "plist":"art/missiles.plist",
-                        "start":"fireball.1.png",
-                        "effect":"explosion",
-                        "frames":10,
-                        "delay":0.01,
-                        "speed":500
+                        "start":"magicFire.1.png",
+                        "frames":6,
+                        "delay":0.03,
+                        "path":"bullet",
+                        "speed":800,
+                        "hasDirection":true,
+                        "effect":"hit",
                     },
+                    "magicVoid":{
+                        "png":"art/missiles{v}.png",
+                        "plist":"art/missiles.plist",
+                        "start":"magicVoid.1.png",
+                        "frames":6,
+                        "delay":0.03,
+                        "speed":800,
+                        "hasDirection":true,
+                        "path":"bullet",
+                        "effect":"hit",
+                    },
+                    "magicNormal":{
+                        "png":"art/missiles{v}.png",
+                        "plist":"art/missiles.plist",
+                        "start":"magicNormal.1.png",
+                        "frames":6,
+                        "delay":0.03,
+                        "speed":800,
+                        "hasDirection":true,
+                        "path":"bullet",
+                        "effect":"hit",
+                    },
+                    "ballFire":{
+                        "png":"art/missiles{v}.png",
+                        "plist":"art/missiles.plist",
+                        "start":"ballFire.1.png",
+                        "frames":7,
+                        "delay":0.01,
+                        "effect":"explo",
+                        "speed":300,
+                    },
+                    "ballVoid":{
+                        "png":"art/missiles{v}.png",
+                        "plist":"art/missiles.plist",
+                        "start":"ballVoid.1.png",
+                        "frames":6,
+                        "delay":0.01,
+                        "speed":300,
+                    },
+                    "cannonball":{
+                        "png":"art/missiles{v}.png",
+                        "plist":"art/missiles.plist",
+                        "start":"cannonball.1.png",
+                        "frames":6,
+                        "delay":0.01,
+                        "effect":"explo",
+                        "speed":100,
+                        "path":"jump"
+                    },
+
+
 }
 

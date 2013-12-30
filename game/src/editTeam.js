@@ -483,7 +483,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"z": 1,
 				"pos": {
 					"x": 238,
-					"y": 1029
+					"y": 1039
 				}
 			},
 			"ground": {
@@ -492,7 +492,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"z": 1,
 				"pos": {
 					"x": 384,
-					"y": 1023
+					"y": 1039
 				}
 			},
 			"lblhp": {
@@ -501,7 +501,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 80,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 20,
+				"fontSize": 23,
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
@@ -515,7 +515,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 80,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 20,
+				"fontSize": 23,
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
@@ -529,7 +529,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 80,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 20,
+				"fontSize": 23,
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
@@ -543,7 +543,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 80,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 20,
+				"fontSize": 23,
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
@@ -557,7 +557,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 80,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 20,
+				"fontSize": 23,
 				"fontName": "gow",
 				"z": 3,
 				"pos": {
@@ -571,7 +571,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 80,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 20,
+				"fontSize": 23,
 				"fontName": "gow",
 				"z": 3,
 				"pos": {

@@ -5,7 +5,21 @@ var RangeBehavior =  function(sprite){
     this.handleIdle = this.handleRangeIdle;
     this.handleFight = this.handleRangeFight;
     this.withinRadius= this.withinRangeRadius;
-
+    if (!this.missile){
+        var missileName = this.owner.gameObject.missile;
+        if (!missileName){
+            missileName = "greenbullet"; //todo temp, remove
+        }
+        var missileType = missileConfig[missileName];
+        if (missileType.simple){
+            this.missile = jc.makeSpriteWithPlist(missileType.plist,missileType.png, missileType.start);
+        }else{
+            this.missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
+            this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
+            this.missile.runAction(this.missileAnimation);
+        }
+        this.missile.setFlippedX(!this.owner.isFlippedX());
+    }
 }
 
 
@@ -77,7 +91,7 @@ RangeBehavior.prototype.doMissile = function(){
 	            this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
 	            this.missile.runAction(this.missileAnimation);
             }
-            this.missile.setFlippedX(this.owner.isFlippedX());
+            this.missile.setFlippedX(!this.owner.isFlippedX());
         }
 
         this.owner.layer.addChild(this.missile);
@@ -100,6 +114,7 @@ RangeBehavior.prototype.doMissile = function(){
         }
 
         this.missile.setPosition(ownerPos);
+        this.missile.setFlippedX(!this.owner.isFlippedX());
 
 
         //move it to the target at damageDelay speed
@@ -133,9 +148,14 @@ RangeBehavior.prototype.doMissile = function(){
 		}else if (missileType.path =="jump"){
 			moveTo = cc.JumpTo.create(timeToImpact, targetPos, v.distance/2, 1);
 		}else if (missileType.path =="arrow"){
-
             moveTo = cc.JumpTo.create(timeToImpact, targetPos,v.distance/3 , 1);
+        }else if (missileType.path =="bullet"){
+            var angle = cc.pToAngle(cc.pSub(missileStart, targetPos));
+            this.missile.setRotation(angle);
+            moveTo = cc.MoveTo.create(timeToImpact, targetPos);
+
         }
+
 
         if (missileType.rotation){
             //todo: set initial angel - based on sprite direction

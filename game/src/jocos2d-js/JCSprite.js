@@ -58,18 +58,20 @@ jc.Sprite = cc.Sprite.extend({
             throw 'Unrecognized behavior name: ' + config.behavior;
         }
 
-        //set it
-        var behavior = new behaviorClass(this);
-
-        this.behavior = behavior;
-        this.behaviorType = config.behavior;
-
 
         this.gameObject = new jc.GameObject();
         if(config.gameProperties){
             _.extend(this.gameObject, config.gameProperties);
         }
         this.gameObject.init();
+
+
+        var behavior = new behaviorClass(this);
+
+        this.behavior = behavior;
+        this.behaviorType = config.behavior;
+
+
 
 		return this;
 	},

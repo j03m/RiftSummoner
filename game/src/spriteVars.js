@@ -56,7 +56,7 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"speed": 160,
 			"damage": 250,
-			"missile": "fireball",
+			"missile": "ballFire",
 			"missileOffset": {
 				"x": 0,
 				"y": 10
@@ -90,7 +90,7 @@ var spriteDefs = {
 			"MaxHP": 700,
 			"speed": 260,
 			"movementType": 0,
-			"missile": "greenbullet",
+			"missile": "ballVoid",
 			"missileOffset": {
 				"x": 0,
 				"y": 10
@@ -520,7 +520,7 @@ var spriteDefs = {
 			"MaxHP": 300,
 			"movementType": 1,
 			"targets": 2,
-			"missile": "arrow",
+			"missile": "arrowNormal",
 			"damage": 35,
 			"speed": 85,
 			"actionDelays": {
@@ -551,7 +551,7 @@ var spriteDefs = {
 			"MaxHP": 100,
 			"movementType": 1,
 			"targets": 2,
-			"missile": "arrow",
+			"missile": "arrowFire",
 			"damage": 35,
 			"speed": 55,
 			"actionDelays": {
@@ -582,7 +582,7 @@ var spriteDefs = {
 			"damage": 25,
 			"movementType": 1,
 			"targets": 2,
-			"missile": "arrow",
+			"missile": "arrowPoison",
 			"poisonDamage": 10,
 			"speed": 55,
 			"actionDelays": {
@@ -612,7 +612,7 @@ var spriteDefs = {
 			"MaxHP": 200,
 			"damage": 45,
 			"movementType": 1,
-			"missile": "arrow",
+			"missile": "arrowVoid",
 			"targets": 2,
 			"speed": 55,
 			"actionDelays": {
@@ -680,7 +680,7 @@ var spriteDefs = {
 			"movementType": 0,
 			"targets": 2,
 			"damage": 50,
-			"missile": "greenbullet",
+			"missile": "magicFire",
 			"splashDamage": 5,
 			"actionDelays": {
 				"attack": 0.05
@@ -708,7 +708,7 @@ var spriteDefs = {
 			"targets": 2,
 			"speed": 100,
 			"damage": 100,
-			"missile": "greenbullet",
+			"missile": "magicVoid",
 			"vsAirDamage": 5,
 			"actionDelays": {
 				"attack": 0.01
@@ -1047,7 +1047,7 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
 		"elementType": "void",
 		"unitType": 3,
-		"effect": "blueRadius",
+		"effect": "vampireRadius",
 		"powers": {
 			"vampireRadius": {
 				"damage": 10,
@@ -1077,7 +1077,7 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of water, this unit also heals any units nearby.",
 		"elementType": "water",
 		"unitType": 3,
-		"effect": "blueRadius",
+		"effect": "healingRadius",
 		"gameProperties": {
 			"MaxHP": 500,
 			"movementType": 1,
@@ -1561,7 +1561,7 @@ var spriteDefs = {
 			"targets": 2,
 			"speed": 50,
 			"damage": 80,
-			"missile": "greenbullet",
+			"missile": "magicNormal",
 			"actionDelays": {
 				"attack": 0.05
 			},

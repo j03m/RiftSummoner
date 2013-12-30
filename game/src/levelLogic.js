@@ -5,64 +5,68 @@ hotr.levelLogic = {};
 
 var temp =  [
     {
-        "name":"dwarvenKnightFire",
-        "id":"id1",
-        "data":{}
+        "name":"orc",
     },
     {
-        "name":"elementalEarth",
-        "id":"id2",
-        "data":{}
+        "name":"orc",
     },
     {
-        "name":"dragonFire",
-        "id":"id2",
-        "data":{}
+        "name":"elfFire",
+    },
+    {
+        "name":"elfFire",
+    },
+    {
+        "name":"elfFire",
+    },
+    {
+        "name":"elfFire",
     },
 //    {
-//        "name":"ogre",
-//        "id":"id3",
-//        "data":{}
+//        "name":"dragonFire",
 //    },
 //    {
-//        "name":"ogre",
-//        "id":"id4",
-//        "data":{}
+//        "name":"dragonFire",
 //    },
 //    {
-//        "name":"orc",
-//        "id":"id5",
-//        "data":{}
+//        "name":"dragonFire",
+//    },
+//    {
+//        "name":"dragonFire",
 //    },
 //    {
 //        "name":"orc",
-//        "data":{}
 //    },
 //    {
 //        "name":"orc",
-//        "data":{}
 //    },
 //    {
 //        "name":"orc",
-//        "data":{}
+//    },
+//    {
+//        "name":"orc",
+//    },
+//    {
+//        "name":"orc",
+//    },
+//    {
+//        "name":"orc",
 //    },
 //    {
 //        "name":"wizard",
-//        "data":{}
 //    },
 //    {
 //        "name":"wizard",
-//        "data":{}
 //    },
 //    {
 //        "name":"wizard",
-//        "data":{}
 //    }
+
 ]
 
 hotr.levelLogic.getTeamForLevel = function(level){
-    //return temp;
-    return makeRandomTeam();
+    return temp;
+    //return makeRandomTeam();
 }
 
 hotr.levelLogic.getFormationForLevel = function(level){
