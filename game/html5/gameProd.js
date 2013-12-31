@@ -1,7 +1,6 @@
 
     var hotrSrc = [
-        '../zerver/blobApi.js',
-        'hotr.min.js?version=2',
+        '../src/riftsummoner.js',
         'html5/gameHtml5.js'
     ]
 
@@ -12,7 +11,7 @@
         loadExtension:true,
         frameRate:60,
         tag:'gameCanvas', //the dom element to run cocos2d on
-        engineDir:'platform/HTML5/cocos2d/',
+        SingleEngineFile:'../cocos2d-html5.min.js',
         appFiles:hotrSrc
     };
 
@@ -23,6 +22,7 @@
             '<a href="http://www.google.com/chrome" target="_blank"><img src="http://www.google.com/intl/zh-CN/chrome/assets/common/images/chrome_logo_2x.png" border="0"/></a>';
         var p = d.getElementById(c.tag).parentNode;
         p.insertBefore(s);
+
     }
 
     window.addEventListener('DOMContentLoaded', function () {

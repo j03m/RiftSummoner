@@ -226,7 +226,8 @@
 		3EC20B8218331CB000F2C4D6 /* jsb_cocos2dx_studio_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EC20B7F18331CB000F2C4D6 /* jsb_cocos2dx_studio_auto.cpp */; };
 		3EC20B8518331CC100F2C4D6 /* jsb_cocos2dx_studio_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EC20B8318331CC100F2C4D6 /* jsb_cocos2dx_studio_manual.cpp */; };
 		3EC20B8618331D7400F2C4D6 /* jsb_cocos2d_studio.js in Resources */ = {isa = PBXBuildFile; fileRef = 3EC20B7C18331CA200F2C4D6 /* jsb_cocos2d_studio.js */; };
-		5D1EF349187273BC00C4E3B7 /* riftsummoner.js in Sources */ = {isa = PBXBuildFile; fileRef = 5D1EF348187273BC00C4E3B7 /* riftsummoner.js */; };
+		5D1EF34B18727EFD00C4E3B7 /* riftsummoner.js in Sources */ = {isa = PBXBuildFile; fileRef = 5D1EF34A18727EFD00C4E3B7 /* riftsummoner.js */; };
+		5D1EF34C18727F0500C4E3B7 /* riftsummoner.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D1EF34A18727EFD00C4E3B7 /* riftsummoner.js */; };
 		5D96F48D1850492E00ED2564 /* cocos2d-jsb.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D96F48C1850492E00ED2564 /* cocos2d-jsb.js */; };
 		5D96F48F1850D4CA00ED2564 /* art in Resources */ = {isa = PBXBuildFile; fileRef = 5D96F48E1850D4CA00ED2564 /* art */; };
 		A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275411517C094001B78AA /* QuartzCore.framework */; };
@@ -689,7 +690,7 @@
 		3EC20B8018331CB000F2C4D6 /* jsb_cocos2dx_studio_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_cocos2dx_studio_auto.hpp; sourceTree = "<group>"; };
 		3EC20B8318331CC100F2C4D6 /* jsb_cocos2dx_studio_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_cocos2dx_studio_manual.cpp; sourceTree = "<group>"; };
 		3EC20B8418331CC100F2C4D6 /* jsb_cocos2dx_studio_manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsb_cocos2dx_studio_manual.h; sourceTree = "<group>"; };
-		5D1EF348187273BC00C4E3B7 /* riftsummoner.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = riftsummoner.js; path = ../game/riftsummoner.js; sourceTree = "<group>"; };
+		5D1EF34A18727EFD00C4E3B7 /* riftsummoner.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = riftsummoner.js; path = ../game/src/riftsummoner.js; sourceTree = "<group>"; };
 		5D96F48C1850492E00ED2564 /* cocos2d-jsb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "cocos2d-jsb.js"; path = "../Resources/cocos2d-jsb.js"; sourceTree = "<group>"; };
 		5D96F48E1850D4CA00ED2564 /* art */ = {isa = PBXFileReference; lastKnownFileType = folder; name = art; path = ../game/art; sourceTree = "<group>"; };
 		A922753D1517C094001B78AA /* RiftSummoner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiftSummoner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -745,7 +746,7 @@
 		15628F5B15F0F5C2000CF24B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5D1EF348187273BC00C4E3B7 /* riftsummoner.js */,
+				5D1EF34A18727EFD00C4E3B7 /* riftsummoner.js */,
 				5D96F48E1850D4CA00ED2564 /* art */,
 				5D96F48C1850492E00ED2564 /* cocos2d-jsb.js */,
 				D446FDA616102D86000ADA7B /* Default-568h@2x.png */,
@@ -1709,6 +1710,7 @@
 				1A5E74CF17F0874400B9ACAE /* json_internalarray.inl in Resources */,
 				1A5E74D017F0874400B9ACAE /* json_internalmap.inl in Resources */,
 				1A5E74D317F0874400B9ACAE /* json_valueiterator.inl in Resources */,
+				5D1EF34C18727F0500C4E3B7 /* riftsummoner.js in Resources */,
 				5D96F48F1850D4CA00ED2564 /* art in Resources */,
 				1A5E74D517F0874400B9ACAE /* sconscript in Resources */,
 			);
@@ -1742,7 +1744,7 @@
 				15A3D3901682F0B6002FB0C5 /* cpDampedSpring.c in Sources */,
 				15A3D3911682F0B6002FB0C5 /* cpGearJoint.c in Sources */,
 				15A3D3921682F0B6002FB0C5 /* cpGrooveJoint.c in Sources */,
-				5D1EF349187273BC00C4E3B7 /* riftsummoner.js in Sources */,
+				5D1EF34B18727EFD00C4E3B7 /* riftsummoner.js in Sources */,
 				15A3D3931682F0B6002FB0C5 /* cpPinJoint.c in Sources */,
 				15A3D3941682F0B6002FB0C5 /* cpPivotJoint.c in Sources */,
 				3EC20B8118331CB000F2C4D6 /* jsb_cocos2dx_studio_auto_api.js in Sources */,

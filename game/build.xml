@@ -5,8 +5,8 @@
              classpath="${basedir}/../tools/compiler/compiler.jar"/>
 
     <target name="compile_Canvas">
-        <jscomp compilationLevel="advanced" warning="quiet"
-                debug="false" output="riftsummoner.js"
+        <jscomp compilationLevel="simple" warning="quiet"
+                debug="false" output="src/riftsummoner.js"
                 sourceMapOutputFile="sourcemap" languageIn='ECMASCRIPT5'
                 sourceMapFormat="V3">
             <sources dir="${basedir}">
