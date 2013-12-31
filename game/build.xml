@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project name="Javascript compress project" basedir="." default="compile_Canvas">
+
+    <taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
+             classpath="${basedir}/../tools/compiler/compiler.jar"/>
+
+    <target name="compile_Canvas">
+        <jscomp compilationLevel="advanced" warning="quiet"
+                debug="false" output="riftsummoner.js"
+                sourceMapOutputFile="sourcemap" languageIn='ECMASCRIPT5'
+                sourceMapFormat="V3">
+            <sources dir="${basedir}">
+                <file name="src/jocos2d-js/JCBrowser.js"/>
+                <file name="src/underscore-min.js"/>
+                <file name="src/async.js"/>
+                <file name="src/spriteVars.js"/>
+                <file name="src/missileConfig.js"/>
+                <file name="src/effectsConfig.js"/>
+                <file name="src/powerTileConfig.js"/>
+                <file name="src/powerConfig.js"/>
+                <file name="src/jocos2d-js/JCTrace.js"/>
+                <file name="src/jocos2d-js/JCResolutions.js"/>
+                <file name="src/resource.js"/>
+                <file name="src/md5.js"/>
+                <file name="src/blobOperations.js"/>
+                <file name="src/multiplayerOperations.js"/>
+                <file name="src/levelLogic.js"/>
+                <file name="src/jocos2d-js/JCUtils.js"/>
+                <file name="src/jocos2d-js/JCLocalStorage.js"/>
+                <file name="src/jocos2d-js/JCPanAndZoomAction.js"/>
+                <file name="src/jocos2d-js/JCLayerManager.js"/>
+                <file name="src/jocos2d-js/JCCompositeButton.js"/>
+                <file name="src/jocos2d-js/JCPowerTile.js"/>
+                <file name="src/jocos2d-js/JCTouchLayer.js"/>
+                <file name="src/jocos2d-js/JcUiElements.js"/>
+                <file name="src/jocos2d-js/JCDesigner.js"/>
+                <file name="src/jocos2d-js/JCScrollingLayer.js"/>
+                <file name="src/jocos2d-js/JCWorldLayer.js"/>
+                <file name="src/jocos2d-js/JCGameObject.js"/>
+                <file name="src/jocos2d-js/JCSprite.js"/>
+                <file name="src/jocos2d-js/eventemitter2.js"/>
+                <file name="src/behaviors/GeneralBehavior.js"/>
+                <file name="src/behaviors/RangeBehavior.js"/>
+                <file name="src/behaviors/DefenderBehavior.js"/>
+                <file name="src/behaviors/FlankerBehavior.js"/>
+                <file name="src/behaviors/HealerBehavior.js"/>
+                <file name="src/behaviors/TankBehavior.js"/>
+                <file name="src/behaviors/BehaviorMap.js"/>
+                <file name="src/api.js"/>
+                <file name="src/selectTeam.js"/>
+                <file name="src/editTeam.js"/>
+                <file name="src/victory.js"/>
+                <file name="src/defeat.js"/>
+                <file name="src/Landing.js"/>
+                <file name="src/ArenaGame.js"/>
+                <file name="src/AnimationTest.js"/>
+                <file name="src/Loading.js"/>
+                <file name="src/Main.js"/>
+                <file name="src/PowerHud.js"/>
+                <file name="src/multiplayer.js"/>
+            </sources>
+        </jscomp>
+    </target>
+</project>

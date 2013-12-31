@@ -171,8 +171,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "dwarvenKnight"
 	},
@@ -197,8 +197,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "dwarvenKnight"
 	},
@@ -223,8 +223,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "dwarvenKnight"
 	},
@@ -255,8 +255,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "dwarvenKnight"
 	},
@@ -284,8 +284,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "dwarvenKnight"
 	},
@@ -381,8 +381,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "elemental1"
 	},
@@ -411,8 +411,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "elemental1"
 	},
@@ -442,7 +442,7 @@ var spriteDefs = {
 				"attack": 1
 			},
 			"targetRadius": 250,
-			"seekRadius": 25
+			"seekRadius": 50
 		},
 		"inherit": "elemental2"
 	},
@@ -470,7 +470,7 @@ var spriteDefs = {
 				"attack": 1
 			},
 			"targetRadius": 250,
-			"seekRadius": 25
+			"seekRadius": 50
 		},
 		"inherit": "elemental2"
 	},
@@ -692,7 +692,7 @@ var spriteDefs = {
 				"x": 25,
 				"y": 100
 			},
-			"targetRadius": 25
+			"targetRadius": 50
 		},
 		"inherit": "gargoyle"
 	},
@@ -720,8 +720,8 @@ var spriteDefs = {
 				"x": 25,
 				"y": 100
 			},
-			"targetRadius": 25,
-			"seekRadius": 25
+			"targetRadius": 50,
+			"seekRadius": 50
 		},
 		"inherit": "gargoyle"
 	},
@@ -768,7 +768,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 75
+			"targetRadius": 125
 		},
 		"animations": {
 			"move": {
@@ -861,8 +861,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "goblinKnight"
 	},
@@ -890,8 +890,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "goblinKnight"
 	},
@@ -917,8 +917,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "goblinKnight"
 	},
@@ -941,8 +941,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 40,
+			"seekRadius": 50
 		},
 		"inherit": "goblinKnight"
 	},
@@ -1007,7 +1007,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 25
+			"targetRadius": 50
 		},
 		"inherit": "knight"
 	},
@@ -1036,8 +1036,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
-			"seekRadius": 25
+			"targetRadius": 50
 		},
 		"inherit": "knight"
 	},
@@ -1067,7 +1066,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 25
+			"targetRadius": 50
 		},
 		"inherit": "knight"
 	},
@@ -1090,7 +1089,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 20,
+			"targetRadius": 50,
 			"seekRadius": 25,
 			"heal": 30
 		},
@@ -1177,7 +1176,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.9
 			},
-			"targetRadius": 30
+			"targetRadius": 60
 		},
 		"animations": {
 			"move": {
@@ -1233,7 +1232,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 30
+			"targetRadius": 60
 		},
 		"baseOffset": {
 			"x": -20,
@@ -1304,7 +1303,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.01
 			},
-			"targetRadius": 20
+			"targetRadius": 40
 		},
 		"animations": {
 			"move": {
@@ -1353,7 +1352,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.01
 			},
-			"targetRadius": 20
+			"targetRadius": 40
 		},
 		"animations": {
 			"move": {
@@ -1402,7 +1401,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 20,
+			"targetRadius": 40,
 			"seekRadius": 150
 		},
 		"animations": {
@@ -1460,8 +1459,8 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 20,
-			"seekRadius": 150
+			"targetRadius": 40,
+			"seekRadius": 300
 		},
 		"animations": {
 			"move": {
@@ -1513,7 +1512,7 @@ var spriteDefs = {
 				"attack": 0.05,
 				"heal": 0.05
 			},
-			"targetRadius": 100
+			"targetRadius": 200
 		},
 		"baseOffset": {
 			"x": 0,

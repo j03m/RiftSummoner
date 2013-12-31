@@ -630,7 +630,7 @@ jc.movementType = {
 jc.targetType = {
     "air":0,
     "ground":1,
-    "both":2,
+    "both":2
 }
 
 jc.elementTypes = {
@@ -666,8 +666,8 @@ jc.insideEllipse = function(point, center){
     var majorSq = major*major;
     var minorSq = minor*minor;
 
-    var final = ((xDiff*xDiff)/majorSq) + ((yDiff*yDiff)/minorSq);
-    return final <1;
+    var finalRes = ((xDiff*xDiff)/majorSq) + ((yDiff*yDiff)/minorSq);
+    return finalRes <1;
 }
 
 
@@ -710,26 +710,6 @@ jc.getCharacterCard = function(name){
 jc.getCardFrameName = function(name){
     return name + "_bg.png";
 }
-
-
-jc.formations = {
-    "4x3":[
-        {"x":225,"y":225},
-        {"x":225,"y":375},
-        {"x":225,"y":525},
-        {"x":225,"y":675},
-        {"x":75,"y":300},
-        {"x":75,"y":450},
-        {"x":75,"y":600},
-
-    ],
-    "4x4x4a":{"x":3000,"y":2750},
-
-
-    "4x4x4b":{"x":4500,"y":2750},
-
-
-};
 
 
 jc.backDropZOrder = -99999999;

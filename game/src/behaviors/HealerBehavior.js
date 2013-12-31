@@ -9,9 +9,15 @@ var HealerBehavior =  function(sprite){
 
 HealerBehavior.prototype.handleHealerMove = function(dt){
     var state = this.getState();
-    if (state.brain != "move"){
+    if (state.brain != "move" && state.brain != "followUserCommand"){
         return;
     }
+
+    if (state.brain == "followUserCommand"){
+        this.followUserCommand(dt);
+        return;
+    }
+
     if (this.support){
         this.handleHealMove(dt);
     }else{

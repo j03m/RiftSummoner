@@ -204,13 +204,13 @@ jc.Sprite = cc.Sprite.extend({
 		return action;
 	},
     getTargetRadius:function(){
-        return this.gameObject.targetRadius;
+        return this.gameObject.targetRadius * jc.characterScaleFactor;
     },
     getTargetRadiusY:function(){
         if (this.behaviorType == 'range'){
-            return this.gameObject.targetRadius;
+            return this.gameObject.targetRadius* jc.characterScaleFactor;
         }else{
-            return this.gameObject.targetRadius/2;
+            return (this.gameObject.targetRadius/2) *  jc.characterScaleFactor;
 
         }
 

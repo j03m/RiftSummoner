@@ -42,7 +42,12 @@ DefenderBehavior.prototype.handleSeek = function(dt){
 
 DefenderBehavior.prototype.handleDefenderMove = function(dt){
     var state = this.getState();
-    if (state.brain != "move" && state.brain != "attackmove"){
+    if (state.brain != "move" && state.brain != "attackmove" && state.brain!= "followUserCommand"){
+        return;
+    }
+
+    if (state.brain == "followUserCommand"){
+        this.followUserCommand(dt);
         return;
     }
 

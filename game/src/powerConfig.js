@@ -23,7 +23,7 @@ var powerConfig = {
 
         var config = spriteDefs[value].powers["healingRadius"];
         //get all allies in range
-        var friends = this.allFriendsWithinRadius(config.radius);
+        var friends = this.allFriendsWithinRadius(config.radius*jc.characterScaleFactor);
 
         //heal them
         for(var i =0;i<friends.length;i++){
@@ -38,7 +38,7 @@ var powerConfig = {
 
         var config = spriteDefs[value].powers["vampireRadius"];
         //get all allies in range
-        var foes = this.allFoesWithinRadius(config.radius);
+        var foes = this.allFoesWithinRadius(config.radius*jc.characterScaleFactor);
 
         //damage them and heal me this amount
         var heal = 0;
@@ -69,7 +69,7 @@ var powerConfig = {
         //initial explosion
         jc.playEffectOnTarget("explo", this.locked, this.owner.layer);
 
-        var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.locked.getBasePosition());
+        var foes = this.allFoesWithinRadiusOfPoint(config.radius*jc.characterScaleFactor, this.locked.getBasePosition());
         //damage them
         for(var i=0;i<foes.length;i++){
             if (GeneralBehavior.applyDamage(foes[i], this.owner, config.damage)){
@@ -79,7 +79,7 @@ var powerConfig = {
     },
     "explodeFire":function(value){
         var config = spriteDefs[value].deathMods["explodeFire"];
-        var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.owner.getBasePosition());
+        var foes = this.allFoesWithinRadiusOfPoint(config.radius*jc.characterScaleFactor, this.owner.getBasePosition());
 
         //initial explosion
         jc.playEffectOnTarget("explo", this.locked, this.owner.layer);
@@ -99,7 +99,7 @@ var powerConfig = {
             effect.setColor (cc.green());
         }
 
-        var foes = this.allFoesWithinRadiusOfPoint(config.radius, this.locked.getBasePosition());
+        var foes = this.allFoesWithinRadiusOfPoint(config.radius*jc.characterScaleFactor, this.locked.getBasePosition());
 
         //damage them
         for(var i=0;i<foes.length;i++){

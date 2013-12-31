@@ -73,10 +73,8 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     runScenario:function(){
         this.teamASprites = hotr.arenaScene.data.teamA;
-        this.teamAFormation = jc.formations[hotr.arenaScene.data.teamAFormation];
         this.teamAPowers = hotr.arenaScene.data.teamAPowers;
         this.teamBSprites = hotr.arenaScene.data.teamB;
-        this.teamBFormation = jc.formations[hotr.arenaScene.data.teamBFormation];
         this.teamBPowers = hotr.arenaScene.data.teamBPowers;
 
         this.placePowerTokens();
@@ -153,6 +151,13 @@ var ArenaGame = jc.WorldLayer.extend({
                 function goodSprite(sprite){
                     return sprite!=undefined;
                 }
+
+                this.originalPositions = {
+                    'a':[].concat(this.teams['a']),
+                    'b':[].concat(this.teams['b'])
+                };
+
+
                 this.teams['a']=_.filter(this.teams['a'],goodSprite);
                 this.teams['b']=_.filter(this.teams['b'],goodSprite);
                 this.sprites = this.teams['a'].concat(this.teams['b']);
@@ -222,7 +227,7 @@ var ArenaGame = jc.WorldLayer.extend({
     getSquadMovePositions:function(whichSquad, location){
         var returnMe = [];
         var squadSize = 0;
-        var team = this.teams['a'];
+        var team = this.originalPositions['a'];
         if (whichSquad == 'a'){
             squadSize = this.squadNumbers;
         }else{
@@ -230,20 +235,22 @@ var ArenaGame = jc.WorldLayer.extend({
         }
 
         for(var i=squadSize-this.squadNumbers; i< squadSize; i++){
-            var point = cc.p(location.x, location.y);
-            var pos = i;
-            if (i>this.squadNumbers){
-                pos -= this.squadNumbers;
+            if (team[i]){
+                var point = cc.p(location.x, location.y);
+                var pos = i;
+                if (i>this.squadNumbers){
+                    pos -= this.squadNumbers;
+                }
+                var col = (pos)% 4;
+                var row = Math.floor(pos/4);
+                var valueX = 200 * jc.characterScaleFactor;
+                var valueY = -175* jc.characterScaleFactor;
+                var colAdjust = col * valueX;
+                var rowAdjust = row * valueY;
+                point.x+=colAdjust;
+                point.y+=rowAdjust;
+                returnMe.push({'member':team[i], 'pos':point});
             }
-            var col = (pos)% 4;
-            var row = Math.floor(pos/4);
-            var valueX = 200 * jc.characterScaleFactor;
-            var valueY = -175* jc.characterScaleFactor;
-            var colAdjust = col * valueX;
-            var rowAdjust = row * valueY;
-            point.x+=colAdjust;
-            point.y+=rowAdjust;
-            returnMe.push({'member':team[i], 'pos':point});
         }
         return returnMe;
     },

@@ -27,7 +27,7 @@ var tracers = {
     'utilEffects':0,
     'rangeBehavior':0,
     'defenderBehavior':0,
-    'designerout':1,
+    'designerout':1
 };
 
 jc.log = function(categories, msg){

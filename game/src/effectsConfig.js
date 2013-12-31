@@ -46,8 +46,7 @@ var effectsConfig = {
         "delay":0.05,
         "placement":"center",
         "scaleToTarget":2,
-        "zorder":"behind",
-        "times":1
+        "zorder":"behind"
 
     },
     "teleport":{
@@ -57,7 +56,7 @@ var effectsConfig = {
         "frames":14,
         "delay":0.02,
         "placement":"base2base",
-        "times":1,
+        "times":1
     },
     "movement":{
         "png":"art/touch.png",
@@ -66,7 +65,7 @@ var effectsConfig = {
         "frames":8,
         "delay":0.05,
         "placement":"bottom",
-        "times":2,
+        "times":2
     },
     "characterSelect":{
         "png":"art/touch.png",
@@ -75,8 +74,7 @@ var effectsConfig = {
         "frames":7,
         "delay":0.05,
         "placement":"bottom",
-        "zorder":"behind",
-
+        "zorder":"behind"
     },
     "enemySelection":{
         "png":"art/touch.png",
@@ -86,8 +84,7 @@ var effectsConfig = {
         "delay":0.05,
         "placement":"base2base",
         "zorder":"behind",
-        "times":2,
-
+        "times":2
     },
     "allySelection":{
         "png":"art/touch.png",
@@ -97,8 +94,7 @@ var effectsConfig = {
         "delay":0.05,
         "placement":"base2base",
         "zorder":"behind",
-        "times":2,
-
+        "times":2
     },
     "burning":{
         "png":"art/effects{v}.png",
@@ -112,7 +108,7 @@ var effectsConfig = {
             "x":0,
             "y":65
         },
-        "times":6,
+        "times":6
     },
     "poisoned2":{
         "png":"art/effects{v}.png",

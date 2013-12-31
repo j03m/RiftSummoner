@@ -26,7 +26,7 @@ makeSig = function(creds){
     var hash = md5(random2);
     return {
           "data":random,
-          "hash":hash,
+          "hash":hash
     };
 }
 

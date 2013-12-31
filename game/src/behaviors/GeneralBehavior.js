@@ -599,8 +599,8 @@ GeneralBehavior.prototype.handleState = function(dt){
             break;
         case 'damage':this.handleDamage(dt);
             break;
-        case 'followUserCommand':this.followUserCommand(dt);
-            break;
+//        case 'followUserCommand':this.followUserCommand(dt);
+//            break;
     }
     this.afterEffects();
 }
@@ -718,7 +718,12 @@ GeneralBehavior.prototype.handleMove = function(dt){
     //give me a chance to retarget closer;
 
     var state = this.getState();
-    if (state.brain != "move"){
+    if (state.brain != "move" && state.brain != 'followUserCommand'){
+        return;
+    }
+
+    if (state.brain ==  'followUserCommand'){
+        this.followUserCommand(dt);
         return;
     }
 
@@ -746,6 +751,8 @@ GeneralBehavior.prototype.followUserCommand = function(dt){
     var point = this.seek(this.followPoint);
     if (point.x == 0 && point.y == 0){
         //arrived - attack
+        this.locked = undefined;
+        this.support = undefined;
         this.setState('idle', 'idle'); //switch to idle - user command is done
         return;
     }
