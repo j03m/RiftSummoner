@@ -1,3 +1,4 @@
+
 var cocos2dApp = cc.Application.extend({
     config:document['ccConfig'],
     ctor:function (scene) {
@@ -41,12 +42,5 @@ if (jc.designMode){
 
 
 
-
-window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
-    console.log("Error occured: " + errorMsg);
-    console.log("url:" + url);
-    console.log("line:" + lineNumber);
-    return false;
-}
 
 

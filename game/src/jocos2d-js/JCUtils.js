@@ -19,15 +19,17 @@ cc.LabelTTF.prototype.setString = function(txt){
     this.enableStroke(cc.black(), 8*jc.assetScaleFactor);
 }
 
-cc.Sprite.prototype.setColor = function(){
-    jc.log(['console'], "setColor called on the web - don't do it man.");
-};
 
 if (jc.isBrowser){
     //dont' do this on the web, crushes perf
     jc.dumpStack = function(who){
         jc.log(who, console.trace());
     }
+
+    cc.Sprite.prototype.setColor = function(){
+        jc.log(['console'], "setColor called on the web - don't do it man.");
+    };
+
 }
 
 
@@ -43,6 +45,7 @@ if (!jc.isBrowser){
     cc.Sprite.prototype.getBoundingBox = function(){
         var bb = this.nativeBoundingBox();
         bb.origin = cc.p(bb.x, bb.y);
+        bb.size = cc.size(bb.width, bb.height);
         return bb;
     }
     jc.dumpStack = function (who) {
@@ -214,10 +217,21 @@ jc.makeSpriteWithPlist = function(plist, png, startFrame){
     return sprite;
 }
 
+jc.shadow = function(item, op){
+    if (this.isBrowser){
+        jc.shade(item,op);
+    }else{
+        item.setColor(cc.black());
+    }
+}
 jc.shade = function(item, op){
     if (!item.shade){
+        jc.log(['jc.shade'], 'layercolor creation');
         item.shade = cc.LayerColor.create(cc.c4(15, 15, 15, 255));
-        item.getParent().addChild(item.shade);
+        jc.log(['jc.shade'], 'getParent');
+        var parent = item.getParent();
+        jc.log(['jc.shade'], 'is parent undefined? ' + (parent == undefined));
+        parent.addChild(item.shade);
     }
     var pos = item.getPosition();
     var size = item.getBoundingBox().size;
@@ -236,6 +250,10 @@ jc.shade = function(item, op){
 }
 
 jc.unshade = function(item){
+    if (!jc.isBrowser){
+        jc.unshadeNative(item);
+        return;
+    }
     jc.fadeOut(item.shade);
 }
 
@@ -372,10 +390,18 @@ jc.playTintedEffectOnTarget = function(name, target, layer, child, r, g, b){
     return effect;
 }
 
+jc.centerThisPeer=function(centerMe, centerOn){
+    centerMe.setPosition(centerOn.getPosition());
+},
+
+jc.centerThisChild=function(centerMe, centerOn){
+    var dim = centerOn.getContentSize();
+    centerMe.setPosition(cc.p(dim.width/2,dim.height/2));
+},
 
 jc.scaleTo = function(scaleMe, toMe){
-    var currentSize = scaleMe.getContentSize();
-    var toSize = toMe.getContentSize();
+    var currentSize = scaleMe.getBoundingBox().size;
+    var toSize = toMe.getBoundingBox().size;
     var scalex = toSize.width/currentSize.width;
     var scaley = toSize.height/currentSize.height;
     scaleMe.setScaleX(scalex)
@@ -383,8 +409,8 @@ jc.scaleTo = function(scaleMe, toMe){
 }
 
 jc.scaleXTo = function(scaleMe, toMe){
-    var currentSize = scaleMe.getContentSize();
-    var toSize = toMe.getContentSize();
+    var currentSize = scaleMe.getBoundingBox().size;
+    var toSize = toMe.getBoundingBox().size;
     var scalex = toSize.width/currentSize.width;
     scaleMe.setScaleX(scalex)
     scaleMe.setScaleY(scalex);

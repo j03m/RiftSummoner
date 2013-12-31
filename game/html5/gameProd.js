@@ -1,5 +1,12 @@
+window.onerror = function myErrorHandler(errorMsg, url, lineNumber, column) {
+    console.log("Error occured: " + errorMsg);
+    console.log("url:" + url);
+    console.log("line:" + lineNumber);
+    console.log("col:" + column);
+    return false;
+}
 
-    var hotrSrc = [
+var hotrSrc = [
         '../src/riftsummoner.js',
         'html5/gameHtml5.js'
     ]

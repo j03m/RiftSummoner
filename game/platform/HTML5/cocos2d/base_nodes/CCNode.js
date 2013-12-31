@@ -1039,6 +1039,9 @@ cc.Node = cc.Class.extend(/** @lends cc.Node# */{
      * @param {Boolean|null} [cleanup=null]  true if all running actions and callbacks on the child node will be cleanup, false otherwise.
      */
     removeChild:function (child, cleanup) {
+        if (cleanup == undefined){
+            throw "Sorry, joe, you need to supply that clean up parameter! If you don't you'll be tracking them down in native all week. :)";
+        }
         // explicit nil handling
         if (this._children.length === 0)
             return;

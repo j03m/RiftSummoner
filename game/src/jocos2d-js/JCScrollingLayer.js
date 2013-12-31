@@ -276,28 +276,30 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             var sprite = this.sprites[i];
             var bb = sprite.getBoundingBox();
             bb.origin = this.convertToWorldSpace(bb.origin);
+            jc.log(['scroller'],"origin:" + JSON.stringify(bb.origin));
 			if (this.def.isVertical){
 				var diff = Math.abs(bb.origin.y + this.midPoint);
 			}else{
 				var diff = Math.abs(bb.origin.x - this.midPoint);				
 			}
-
+            jc.log(['scroller'],"diff:" + diff);
             if (min==-1 || min>diff){
                 min = diff;
                 closest = i;
             }
 			
-			if (this.def.isVertical){
-	            if (cc.rectContainsPoint(bb, cc.p(bb.origin.x, this.midPoint))){
-	                this.setIndex(i);
-	                return;
-	            }				
-			}else{
-	            if (cc.rectContainsPoint(bb, cc.p(this.midPoint, bb.origin.y))){
-	                this.setIndex(i);
-	                return;
-	            }				
-			}
+//			if (this.def.isVertical){
+//	            if (cc.rectContainsPoint(bb, cc.p(bb.origin.x, this.midPoint))){
+//	                this.setIndex(i);
+//	                return;
+//	            }
+//			}else{
+//                jc.log(['scroller'],"midpoint:" + JSON.stringify(this.midPoint));
+//                if (cc.rectContainsPoint(bb, cc.p(this.midPoint, bb.origin.y))){
+//	                this.setIndex(i);
+//	                return;
+//	            }
+//			}
         }
 
         //if no one is on the rect, move the closest

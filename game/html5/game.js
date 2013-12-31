@@ -1,5 +1,11 @@
+window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
+    console.log("Error occured: " + errorMsg);
+    console.log("url:" + url);
+    console.log("line:" + lineNumber);
+    return false;
+}
 
-    var hotrSrc = [
+var hotrSrc = [
         '../src/jocos2d-js/JCBrowser.js',
         '../src/jocos2d-js/JCBrowserMock.js',
         '../src/underscore-min.js',

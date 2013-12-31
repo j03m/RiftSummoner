@@ -12,7 +12,7 @@ var Multiplayer = jc.UiElementsLayer.extend({
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
             this.initFromConfig(this.windowConfig);
 			this.tableView = new jc.ScrollingLayer();
-            this.items = [];			
+            this.items = [];
             return true;
         } else {
             return false;

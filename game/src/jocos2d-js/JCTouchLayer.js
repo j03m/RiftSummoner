@@ -198,6 +198,14 @@ jc.TouchLayer = cc.Layer.extend({
         if (!time){
             time = jc.defaultTransitionTime;
         }
+        if (!from){
+            throw "From point required."
+        }
+
+        if (!to){
+            throw "To point required."
+        }
+
         item.setPosition(from);
         item.setVisible(true);
         var moveAction;
@@ -213,27 +221,33 @@ jc.TouchLayer = cc.Layer.extend({
             var nudgePos = cc.pAdd(from, nudge); //apply inNudge to from
             moveAction = cc.MoveTo.create(time, to);
             nudgeAction = cc.MoveTo.create(time/2, nudgePos);
-
+            moveAction.retain();
+            nudgeAction.retain();
         }else if (nudge && when == 'after'){
             var antiNudge = cc.p(nudge.x*-1, nudge.y*-1);
             var extended = cc.pAdd(to, antiNudge);
             var nudgePos = cc.pAdd(extended, nudge); //apply inNudge to from
             moveAction = cc.MoveTo.create(time, extended);
             nudgeAction = cc.MoveTo.create(time/2, nudgePos);
+            moveAction.retain();
         }else{
             moveAction = cc.MoveTo.create(time, to);
+            moveAction.retain();
         }
 
         if (nudgeAction && when == 'before'){
             action = cc.Sequence.create(nudgeAction, moveAction, callFunc);
             item.runAction(action);
+            jc.log(['touchlayer'], 'running action - nudge before');
         }else if (nudgeAction && when == 'after'){
             action = cc.Sequence.create(moveAction, nudgeAction, callFunc);
             item.runAction(action);
+            jc.log(['touchlayer'], 'running action - nudge after');
         }else if (nudgeAction){
             throw "when var must be before or after";
         }else{
             action = cc.Sequence.create(moveAction, callFunc);
+            jc.log(['touchlayer'], 'running action - sans nudge');
             item.runAction(action);
         }
 
@@ -438,19 +452,20 @@ jc.TouchLayer = cc.Layer.extend({
                 //show ms
                 this.guideVisible = true;
                 this.attachMsgTo(msg, this.guideCharacter, 'left');
+                jc.log(['touchlayer'], 'scheduling tutorial removal');
                 this.scheduleOnce(function(){
-                    this.removeTutorialStep();
-                    if(callback){
-                        callback();
-                    }
-                }.bind(this), 2);
+                                            this.removeTutorialStep();
+                                            if(callback){
+                                                callback();
+                                            }
+                                }.bind(this), 2);
             }.bind(this));
         }
     },
     removeTutorialStep: function(){
         if (this.bubble){
-            this.removeChild(this.bubble);
-            this.bubble.removeChild(this.bubble.msg);
+            this.removeChild(this.bubble, false);
+            this.bubble.removeChild(this.bubble.msg, false);
             this.bubble.msg.release();
             this.bubble.msg = undefined;
             this.bubble.release();
@@ -478,6 +493,7 @@ jc.TouchLayer = cc.Layer.extend({
         this.bubble.msg = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, jc.font.labelSize, cc.TEXT_ALIGNMENT_LEFT);
         this.bubble.msg.setColor(cc.gray());
         this.bubble.msg.setString(msg);
+        this.bubble.msg.retain();
         this.addChild(this.bubble);
         this.bubble.addChild(this.bubble.msg);
         this.centerThisChild(this.bubble.msg, this.bubble);
@@ -494,6 +510,7 @@ jc.TouchLayer = cc.Layer.extend({
         var floater = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, jc.font.labelSize, cc.TEXT_ALIGNMENT_LEFT);
         floater.setColor(cc.red());
         floater.setString(msg);
+        floater.retain();
         if (this.msgStack.length!=0){
             var lastLabel = this.msgStack[this.msgStack.length-1];
             var pos = lastLabel.getPosition();
@@ -506,17 +523,17 @@ jc.TouchLayer = cc.Layer.extend({
         this.addChild(floater);
         this.scheduleOnce(function(){
             jc.fadeOut(floater, undefined, function(){
-                this.removeChild(floater);
+                floater.release();
+                this.removeChild(floater,true);
             }.bind(this));
         }.bind(this),1);
 
     },
     centerThisPeer:function(centerMe, centerOn){
-        centerMe.setPosition(centerOn.getPosition());
+        jc.centerThisPeer(centerMe, centerOn);
     },
     centerThisChild:function(centerMe, centerOn){
-        var dim = centerOn.getContentSize();
-        centerMe.setPosition(cc.p(dim.width/2,dim.height/2));
+        jc.centerThisChild(centerMe, centerOn);
     },
     scaleTo:function(scaleMe, toMe){
         jc.scaleTo(scaleMe, toMe);
