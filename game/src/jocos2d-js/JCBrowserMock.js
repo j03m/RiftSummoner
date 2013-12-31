@@ -1,6 +1,4 @@
 var jc = jc || {};
-//jc.dataTarget = 'http://www.riftsummoner.com:1337/';
-jc.dataTarget = 'http://localhost/';
 if (!jc.isBrowser){
     var window = jc;
 
@@ -123,4 +121,8 @@ if (!jc.isBrowser){
 
 
 
+}
+else{
+    setInterval=jc.oldSetInterval;
+    setTimeout=jc.oldSetTimeout;
 }
