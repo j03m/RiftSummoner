@@ -13,7 +13,6 @@ var landingPlist = transformAsset(dirImg + "landing{v}.plist");
 var loadingPng = transformAsset(dirImg + "loading{v}.png");
 var loadingPlist = transformAsset(dirImg + "loading{v}.plist");
 
-
 var cardsPngs = [transformAsset(dirImg + "cards{v}.png")];
 var cardsPlists = [transformAsset(dirImg + "cards{v}.plist")];
 var uiPng = transformAsset(dirImg + "uiElements{v}.png");
@@ -24,6 +23,9 @@ var shadowPlist = transformAsset(dirImg + "shadowSheet.plist");
 var shadowPng = transformAsset(dirImg + "shadowSheet.png");
 var powerTilesPng= transformAsset(dirImg + "powerTiles{v}.png");
 var powerTilesPlist= transformAsset(dirImg + "powerTiles{v}.plist");
+
+var touchUiPlist = transformAsset(dirImg + "touch{v}.plist");
+var touchUiPng = transformAsset(dirImg + "touch{v}.png");
 
 
 var g_characterPngs = {};
@@ -36,10 +38,18 @@ var g_maingame = [
     {src:loadingPng},
     {src:landingPng},
     {src:landingPlist},
-    {fontName:"gow",
+    {fontName:"GODOFWAR",
         src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
     }
 ];
+
+jc.mainFont = "GODOFWAR";
+jc.font = {};
+jc.font.labelSize=cc.size(400*jc.assetScaleFactor,80*jc.assetScaleFactor);
+jc.font.alignment=0;
+jc.font.fontSize=25*jc.assetScaleFactor;
+jc.font.fontSizeRaw = 40;
+jc.font.fontName='GODOFWAR';
 
 //*****uncomment for designmode
 if (jc.designMode){
@@ -67,7 +77,7 @@ if (jc.designMode){
         {src:powerTilesPlist},
         {src:powerTilesPng},
 
-        {fontName:"gow",
+        {fontName:jc.mainFont,
         src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
     }
 ];
@@ -119,8 +129,8 @@ for (var entry in powerTiles){
 var g_battleStuff =[
     {src:g_characterPngs['teleport']},
     {src:g_characterPlists['teleport']},
-    {src:g_characterPngs['characterSelect']},
-    {src:g_characterPlists['characterSelect']},
+    {src:touchUiPlist},
+    {src:touchUiPng},
     {src:powerTilesPlist},
     {src:powerTilesPng},
     {src:shadowPlist},

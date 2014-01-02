@@ -30,7 +30,9 @@ var tracers = {
     'rangeBehavior':0,
     'defenderBehavior':0,
     'designerout':1,
-    'jc.shade':1
+    'jc.shade':1,
+    'setText':1,
+    'missile':1
 };
 
 jc.log = function(categories, msg){

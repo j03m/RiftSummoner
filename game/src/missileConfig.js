@@ -69,7 +69,7 @@ var missileConfig = {
                         "delay":0.01,
                         "path":"jump",
                         "effect":"explo",
-                        "speed":100
+                        "speed":170
                     },
                     "magicFire":{
                         "png":"art/missiles{v}.png",
@@ -126,9 +126,9 @@ var missileConfig = {
                         "plist":"art/missiles.plist",
                         "start":"cannonball.1.png",
                         "frames":6,
-                        "delay":0.01,
+                        "delay":0.05,
                         "effect":"explo",
-                        "speed":100,
+                        "speed":170,
                         "path":"jump"
                     },
 

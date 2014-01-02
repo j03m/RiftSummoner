@@ -168,7 +168,7 @@ hotr.blobOperations.getLevel = function(){
 
 hotr.blobOperations.getPowers = function(){
     //todo implement me
-    return ['poisonCloud', 'healing'];
+    return ['poisonCloud', 'cannon'];
 }
 
 hotr.blobOperations.indexToId = function(index){

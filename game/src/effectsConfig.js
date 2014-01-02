@@ -43,11 +43,20 @@ var effectsConfig = {
         "plist":"art/effects{v}.plist",
         "start":"heal.1.png",
         "frames":50,
-        "delay":0.05,
+        "delay":0.03,
         "placement":"center",
-        "scaleToTarget":2,
-        "zorder":"behind"
+        "zorder":"behind",
+        "times":1
 
+    },
+    "arrow":{
+        "png":"art/uiElements{v}.png",
+        "plist":"art/uiElements{v}.plist",
+        "start":"arrow.1.png",
+        "frames":16,
+        "delay":0.04,
+        "placement":"center",
+        "times":7
     },
     "teleport":{
         "png":"art/teleport.png",
@@ -59,42 +68,42 @@ var effectsConfig = {
         "times":1
     },
     "movement":{
-        "png":"art/touch.png",
-        "plist":"art/touch.plist",
+        "png":"art/touch{v}.png",
+        "plist":"art/touch{v}.plist",
         "start":"movement.1.png",
         "frames":8,
         "delay":0.05,
-        "placement":"bottom",
-        "times":2
+        "placement":"center",
+        "times":4
     },
     "characterSelect":{
-        "png":"art/touch.png",
-        "plist":"art/touch.plist",
+        "png":"art/touch{v}.png",
+        "plist":"art/touch{v}.plist",
         "start":"characterSelect.1.png",
-        "frames":7,
+        "frames":16,
         "delay":0.05,
         "placement":"bottom",
-        "zorder":"behind"
+
     },
     "enemySelection":{
-        "png":"art/touch.png",
-        "plist":"art/touch.plist",
+        "png":"art/touch{v}.png",
+        "plist":"art/touch{v}.plist",
         "start":"enemySelection.1.png",
-        "frames":7,
+        "frames":16,
         "delay":0.05,
         "placement":"base2base",
         "zorder":"behind",
-        "times":2
+
     },
     "allySelection":{
-        "png":"art/touch.png",
-        "plist":"art/touch.plist",
+        "png":"art/touch{v}.png",
+        "plist":"art/touch{v}.plist",
         "start":"allySelection.1.png",
-        "frames":7,
+        "frames":16,
         "delay":0.05,
         "placement":"base2base",
         "zorder":"behind",
-        "times":2
+
     },
     "burning":{
         "png":"art/effects{v}.png",
@@ -122,7 +131,8 @@ var effectsConfig = {
         "offset":{
             "x":0,
             "y":25
-        }
+        },
+        times:5
 
     },
     "lifeDrain":{
@@ -137,7 +147,8 @@ var effectsConfig = {
         "offset":{
             "x":0,
             "y":25
-        }
+        },
+        times:5
     },
     "vampireRadius":{
         "png":"art/effects{v}.png",
@@ -165,7 +176,8 @@ var effectsConfig = {
         "offset":{
             "x":0,
             "y":25
-        }
+        },
+        times:5
     },
     "hit":{
         "png":"art/effects{v}.png",

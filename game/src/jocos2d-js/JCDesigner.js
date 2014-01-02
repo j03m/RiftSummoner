@@ -67,45 +67,95 @@ jc.Designer = jc.UiElementsLayer.extend({
 
     },
     windowConfig: {
-        "powerBar": {
+        "mainFrame": {
             "type": "sprite",
-            "sprite": "powersBackground.png",
+            "blackBox": true,
+            "applyAdjustments": true,
+            "transitionIn": "top",
+            "transitionOut": "top",
+            "sprite": "guide",
+            "z": 0,
             "kids": {
-                "tiles": {
+                "squad1Cells": {
                     "isGroup": true,
-                    "type": "line",
+                    "z": 1,
+                    "type": "grid",
+                    "cols": 3,
+                    "itemPadding": {
+                        "top": 3,
+                        "left": 4
+                    },
+                    "input": true,
                     "members": [
                         {
                             "type": "sprite",
-                            "name": "tile0",
-                            "sprite": "powerFrame.png"
-                        },
-                        {
-                            "type": "sprite",
-                            "name": "tile1",
-                            "sprite": "powerFrame.png"
-                        },
-                        {
-                            "type": "sprite",
-                            "name": "tile2",
-                            "sprite": "powerFrame.png"
+                            "input": true,
+                            "sprite": "portraitSmallDarkBackground.png"
                         }
                     ],
-                    "sprite": "powerFrame.png",
-                    "z": 0,
+                    "membersTotal": 9,
+                    "sprite": "portraitSmallDarkBackground.png",
                     "pos": {
-                        "x": 159,
-                        "y": 99
+                        "x": 307,
+                        "y": 804
                     }
+                },
+                "squad2Cells": {
+                    "isGroup": true,
+                    "z": 1,
+                    "type": "grid",
+                    "cols": 3,
+                    "itemPadding": {
+                        "top": 3,
+                        "left": 4
+                    },
+                    "input": true,
+                    "members": [
+                        {
+                            "type": "sprite",
+                            "input": true,
+                            "sprite": "portraitSmallDarkBackground.png"
+                        }
+                    ],
+                    "membersTotal": 9,
+                    "sprite": "portraitSmallDarkBackground.png",
+                    "pos": {
+                        "x": 1285,
+                        "y": 804
+                    }
+                },
+                "fightButton": {
+                    "type": "button",
+                    "main": "buttonFight.png",
+                    "pressed": "buttonFight.png",
+                    "touchDelegateName": "fightStart",
+                    "z": 1,
+                    "pos": {
+                        "x": 1023,
+                        "y": 133
+                    }
+                },
+                "leftSquadFrame":{
+                    "type":"sprite",
+                    "sprite":"frameA.png"
+                },
+                "rightSquadFrame":{
+                    "type":"sprite",
+                    "sprite":"frameB.png"
+                },
+                "banner":{
+                    "type":"sprite",
+                    "sprite":"buildYourTeamTitle.png"
                 }
             },
-            "z": 0,
             "pos": {
-                "x": 413,
-                "y": 287
+                "x": 1024,
+                "y": 777.9999999999999
             }
+
         }
     }
+
 
 });
 

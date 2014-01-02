@@ -83,7 +83,13 @@ var SelectTeam = jc.UiElementsLayer.extend({
 
       return parseInt(name.replace(this.squad2Prefix, "")) + (hotr.teamformationSize/2);
     },
-
+    inTransitionsComplete:function(){
+        if (this.first){
+            this.showTutorialStep("We need to build your team - click here to select your troops!");
+            var position = cc.p(300 * jc.assetScaleFactor ,1000 * jc.assetScaleFactor);
+            this.placeArrow(position, "down");
+        }
+    },
     removeExistingVisual:function(id){
         var oldCell = hotr.blobOperations.getCurrentFormationPosition(id);
         if (oldCell != -1){
@@ -150,6 +156,9 @@ var SelectTeam = jc.UiElementsLayer.extend({
         if (!this.nextEnabled){
             return;
         }
+        if (this.arrow){
+            this.removeChild(this.arrow, true);
+        }
         this.nextEnabled = false;
 		var formationOrder = hotr.blobOperations.getFormationOrder();
 		if (formationOrder.length!=0){
@@ -208,6 +217,9 @@ var SelectTeam = jc.UiElementsLayer.extend({
                 //put cell # into scratchboard
                 hotr.scratchBoard.currentCell = sprites[0].name;
                 this.nextEnabled = false;
+                if (this.arrow){
+                    this.arrow.setVisible(false);
+                }
                 jc.layerManager.pushLayer(EditTeam.getInstance(),10);
             }
         }
@@ -243,8 +255,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "membersTotal": 9,
                     "sprite": "portraitSmallDarkBackground.png",
                     "pos": {
-                        "x": 307,
-                        "y": 804
+                        "x": 310,
+                        "y": 834
                     }
                 },
                 "squad2Cells": {
@@ -267,8 +279,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "membersTotal": 9,
                     "sprite": "portraitSmallDarkBackground.png",
                     "pos": {
-                        "x": 1285,
-                        "y": 804
+                        "x": 1234,
+                        "y": 831
                     }
                 },
                 "fightButton": {
@@ -279,7 +291,34 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "z": 1,
                     "pos": {
                         "x": 1023,
-                        "y": 133
+                        "y": 145
+                    }
+                },
+                "leftSquadFrame": {
+                    "type": "sprite",
+                    "sprite": "frameA.png",
+                    "z": 0,
+                    "pos": {
+                        "x": 535,
+                        "y": 597
+                    }
+                },
+                "rightSquadFrame": {
+                    "type": "sprite",
+                    "sprite": "frameB.png",
+                    "z": 0,
+                    "pos": {
+                        "x": 1502,
+                        "y": 593
+                    }
+                },
+                "banner": {
+                    "type": "sprite",
+                    "sprite": "buildYourTeamTitle.png",
+                    "z": 0,
+                    "pos": {
+                        "x": 1021,
+                        "y": 1020
                     }
                 }
             },

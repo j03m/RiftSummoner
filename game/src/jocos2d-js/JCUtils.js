@@ -1,10 +1,6 @@
 var jc = jc || {};
 
-jc.font = {};
-jc.font.labelSize=cc.size(400,80);
-jc.font.alignment=0;
-jc.font.fontSize=20;
-jc.font.fontName='gow';
+
 
 cc.Sprite.prototype.adjustPosition = function(x,y){
     var pos = this.getPosition();
@@ -13,10 +9,16 @@ cc.Sprite.prototype.adjustPosition = function(x,y){
     this.setPosition(pos);
 }
 
-cc.LabelTTF.prototype.setText = cc.LabelTTF.prototype.setString;
-cc.LabelTTF.prototype.setString = function(txt){
-    this.setText(txt);
-    this.enableStroke(cc.black(), 8*jc.assetScaleFactor);
+cc.LabelTTF.prototype.setText = function(txt){
+    this.setString(txt);
+    jc.log(['setText'], 'setting text');
+    if (jc.isBrowser){
+        this.enableStroke(cc.black(), 8*jc.assetScaleFactor);
+    }else{
+        this.enableStroke(cc.black(), 1*jc.assetScaleFactor);
+    }
+
+    jc.log(['setText'], 'enabled stroke');
 }
 
 
@@ -67,7 +69,7 @@ jc.makeStats = function(name){
         var def = spriteDefs[name];
         var stats ={};
         stats.hp = def.gameProperties.MaxHP;
-        stats.damage = jc.valuePerSecond(def.gameProperties.damage, def.gameProperties.actionDelays.attack);
+        stats.damage = def.gameProperties.damage;
         stats.armor = 0; //todo: implement
         stats.speed = def.gameProperties.speed;
         stats.power = jc.getPowerRating(def);
@@ -377,14 +379,10 @@ jc.makeAnimationFromRange = function(name, config){
 
 }
 
-jc.playTintedEffectOnTarget = function(name, target, layer, child, r, g, b){
+jc.playTintedEffectOnTarget = function(name, target, layer, child, color){
     var effect = jc.playEffectOnTarget(name, target, layer, child);
     if (effect){
-        var fillColor = new cc.Color3B();
-        fillColor.r =r;
-        fillColor.b = b;
-        fillColor.g = g;
-        effect.setColor(fillColor);
+        effect.setColor(color);
     }
 
     return effect;
@@ -529,6 +527,15 @@ jc.playEffectAtLocation = function(name, location, z, layer){
     }else{
         effect.runAction(effectAnimation);
     }
+
+    if (config.flash){
+        layer.flash();
+    }
+
+    if (config.shake){
+        layer.shake();
+    }
+
     return effect;
 
 }

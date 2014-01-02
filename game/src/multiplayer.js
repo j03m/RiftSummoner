@@ -57,13 +57,13 @@ var Multiplayer = jc.UiElementsLayer.extend({
         for(var gameId in mpData){
 			var game = mpData[gameId];
             var recordUi = this.getWindowFromConfig(this.itemWindow);				
-			recordUi.lblWins.setString(game[creds.id].wins);
-			recordUi.lblLosses.setString(game[gameId].wins);
+			recordUi.lblWins.setText(game[creds.id].wins);
+			recordUi.lblLosses.setText(game[gameId].wins);
             this.replayData[gameId] = game.lastMatchData;
 			if (game[gameId].name){
-				recordUi.lblName.setString(game[gameId].name);
+				recordUi.lblName.setText(game[gameId].name);
 			}else{
-				recordUi.lblName.setString("Anonymous");
+				recordUi.lblName.setText("Anonymous");
 			}
 			
 			if (game.turn == creds.id){
@@ -284,7 +284,7 @@ var Multiplayer = jc.UiElementsLayer.extend({
 				"height": 80,
 				"alignment": 0,
 				"fontSize": 50,
-				"fontName": "gow",
+				"fontName": jc.mainFont,
 				"z": 3,
 				"pos": {
 										"x": 775,
@@ -298,7 +298,7 @@ var Multiplayer = jc.UiElementsLayer.extend({
 				"height": 80,
 				"alignment": 0,
 				"fontSize": 40,
-				"fontName": "gow",
+				"fontName": jc.mainFont,
 				"z": 3,
 				"pos": {
 					"x": 456,
@@ -312,7 +312,7 @@ var Multiplayer = jc.UiElementsLayer.extend({
 				"height": 80,
 				"alignment": 0,
 				"fontSize": 40,
-				"fontName": "gow",
+				"fontName": jc.mainFont,
 				"z": 3,
 				"pos": {
 					"x": 745,

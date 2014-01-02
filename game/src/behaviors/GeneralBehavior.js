@@ -522,6 +522,18 @@ GeneralBehavior.applyDamage = function(target, attacker, amount, elementType){
         }
     }
 
+    if (attacker){
+        if (attacker.behaviorType == 'range'){
+            if (target.gameObject.resistsRange){
+                var reduction = amount * target.gameObject.resistsRange/100;
+                amount -=reduction;
+                if (amount<0){
+                    amount = 0;
+                }
+            }
+        }
+    }
+
     //apply flank bonus
     if (attacker){
         if (target.behavior.locked != attacker && attacker.behaviorType != "range"){

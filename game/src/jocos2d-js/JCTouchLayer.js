@@ -435,6 +435,19 @@ jc.TouchLayer = cc.Layer.extend({
         var seq = cc.Sequence.create(action, callbackAction);
         this.runAction(seq);
     },
+    placeArrow:function(position, direction){
+        //play effect at location
+        if (this.arrow){
+            this.removeChild(this.arrow, true)
+        }
+        this.arrow = jc.playEffectAtLocation("arrow", position, jc.topMost, this);
+
+        //rotate
+        if (direction == "down"){
+            this.arrow.setRotation(90);
+        }
+
+    },
     showTutorialStep:function(msg, callback){
         if (!this.guideCharacter){
             this.guideCharacter = jc.makeSpriteWithPlist(cardsPlists[0], cardsPngs[0], "tutorialChar.png");
@@ -462,7 +475,7 @@ jc.TouchLayer = cc.Layer.extend({
             }.bind(this));
         }
     },
-    removeTutorialStep: function(){
+    removeTutorialStep: function(callback){
         if (this.bubble){
             this.removeChild(this.bubble, false);
             this.bubble.removeChild(this.bubble.msg, false);
@@ -474,6 +487,9 @@ jc.TouchLayer = cc.Layer.extend({
         if (this.guideCharacter){
             this.slideOutToRight(this.guideCharacter, jc.defaultTransitionTime, undefined, function(){
                 this.guideVisible = false;
+                if (callback){
+                    callback();
+                }
             });
         }
     },
@@ -492,7 +508,7 @@ jc.TouchLayer = cc.Layer.extend({
         }
         this.bubble.msg = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, jc.font.labelSize, cc.TEXT_ALIGNMENT_LEFT);
         this.bubble.msg.setColor(cc.gray());
-        this.bubble.msg.setString(msg);
+        this.bubble.msg.setText(msg);
         this.bubble.msg.retain();
         this.addChild(this.bubble);
         this.bubble.addChild(this.bubble.msg);
@@ -509,7 +525,7 @@ jc.TouchLayer = cc.Layer.extend({
         }
         var floater = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, jc.font.labelSize, cc.TEXT_ALIGNMENT_LEFT);
         floater.setColor(cc.red());
-        floater.setString(msg);
+        floater.setText(msg);
         floater.retain();
         if (this.msgStack.length!=0){
             var lastLabel = this.msgStack[this.msgStack.length-1];

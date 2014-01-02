@@ -26,13 +26,13 @@ var ArenaGame = jc.WorldLayer.extend({
             this.doConvert = true;
             this.gameTime = 0;
             this.powerBarOpenPos = cc.p(400* jc.assetScaleFactor, 187*jc.assetScaleFactor);
-            this.powerBarClosePos = cc.p(-305* jc.assetScaleFactor, 187*jc.assetScaleFactor);
+            this.powerBarClosePos = cc.p(-255* jc.assetScaleFactor, 187*jc.assetScaleFactor);
             this.powerTilePosition = cc.p(159*jc.assetScaleFactor, 100*jc.assetScaleFactor);
             this.powerTileSpacing = 200 * jc.assetScaleFactor;
 
             this.squadBarOpenPos = cc.p(1700* jc.assetScaleFactor, 187*jc.assetScaleFactor);
-            this.squadBarClosePos = cc.p(2300 * jc.assetScaleFactor, 187*jc.assetScaleFactor);
-            this.squadTilePosition = cc.p(250*jc.assetScaleFactor, 100*jc.assetScaleFactor);
+            this.squadBarClosePos = cc.p(2310 * jc.assetScaleFactor, 187*jc.assetScaleFactor);
+            this.squadTilePosition = cc.p(250*jc.assetScaleFactor, 85*jc.assetScaleFactor);
             this.squadTileSpacing = 200 * jc.assetScaleFactor;
 
             return true;
@@ -62,6 +62,7 @@ var ArenaGame = jc.WorldLayer.extend({
         cc.SpriteBatchNode.create(shadowPng);
 
         this.showTutorialStep("Quick! Click anywhere to deploy your squads!");
+        this.placeArrow(cc.p(600*jc.assetScaleFactor, 800*jc.assetScaleFactor), "down");
 
         if(!hotr.arenaScene.data){
             this.runScenario0();
@@ -131,14 +132,26 @@ var ArenaGame = jc.WorldLayer.extend({
         var center = cc.p(this.winSize.width/2, this.winSize.height/2);
         if (jc.insideEllipse(touch, center) && this.startPos.x < this.worldMidPoint.x){
             //play animation
-            this.removeTutorialStep();
 
             if (this.placementTouches == 1){
-                this.placePlayerTeam('a');
+                var placement = this.placePlayerTeam('a');
+                if (!placement){
+                    this.placePlayerTeam('b');
+                }else{
+                    this.removeTutorialStep(function(){
+                        this.guideVisible = false;
+                        if (this.teams['a'].length>9){
+                            this.showTutorialStep("Quick! Okay, now place your second squad!");
+                            this.placeArrow(cc.p(600*jc.assetScaleFactor, 600*jc.assetScaleFactor), "down");
+                        }
+                    }.bind(this));
+                }
             }
 
             if (this.placementTouches == 2){
                 this.placePlayerTeam('b');
+                this.removeTutorialStep();
+                this.removeChild(this.arrow, true);
             }
 
 
@@ -193,12 +206,14 @@ var ArenaGame = jc.WorldLayer.extend({
         var nodePos = this.convertToItemPosition(this.startPos);
         hotr.blobOperations.setSquadLocations(squad, this.startPos);
         jc.playEffectAtLocation("movement", nodePos, jc.shadowZOrder,this);
-        this.placeTeamPosition(this.teams['a'], this.placementTouches * this.squadNumbers);
+        return this.placeTeamPosition(this.teams['a'], this.placementTouches * this.squadNumbers);
     },
     placeTeamPosition:function(team, squadSize){
+        var placement = false;
         for(var i=squadSize-this.squadNumbers; i< squadSize; i++){
             var sprite = team[i];
             if (sprite){
+                placement = true;
                 var point = cc.p(this.startPos.x, this.startPos.y);
                 var pos = i;
                 if (i>this.squadNumbers){
@@ -223,6 +238,7 @@ var ArenaGame = jc.WorldLayer.extend({
             }
 
         }
+        return placement;
     },
     getSquadMovePositions:function(whichSquad, location){
         var returnMe = [];
@@ -310,29 +326,30 @@ var ArenaGame = jc.WorldLayer.extend({
     placeSquadTokens:function(){
 
         //todo: replace with new bar
-        this.squadBar = jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powersBackground.png");
-        this.squadBar.setFlippedX(true);
+        this.squadBar = jc.makeSpriteWithPlist(uiPlist, uiPng, "squadsBackground.png");
+
         hotr.arenaScene.addChild(this.squadBar);
-        this.squadBar.setPosition(this.squadBarClosePos)
+        this.squadBar.setPosition(this.squadBarClosePos);
 
         this.touchTargets.push(this.squadBar);
 
-        this.squadA = jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powerFrame.png");
+        this.squadA = jc.makeSpriteWithPlist(uiPlist, uiPng, "iconA.png");
         this.squadBar.addChild(this.squadA);
         this.squadA.setPosition(this.squadTilePosition);
         this.touchTargets.push(this.squadA);
 
-        this.squadB = jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powerFrame.png");
+        this.squadB = jc.makeSpriteWithPlist(uiPlist, uiPng, "iconB.png");
         this.squadBar.addChild(this.squadB);
         this.squadB.setPosition(cc.p(this.squadTilePosition.x + this.squadTileSpacing,this.squadTilePosition.y));
         this.touchTargets.push(this.squadB);
 
         //this.scheduleOnce(this.closeSquadBar.bind(this));
+        this.squadBarOpen = false;
 
     },
     placePowerTokens:function(){
         this.availablePowers={};
-        this.powerBar = jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powersBackground.png");
+        this.powerBar = jc.makeSpriteWithPlist(uiPlist, uiPng, "powersBackground.png");
         hotr.arenaScene.addChild(this.powerBar);
         this.powerBar.setPosition(this.powerBarClosePos);
         this.touchTargets.push(this.powerBar);
@@ -343,7 +360,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
         for (var i =0;i<this.teamAPowers.length;i++){
             var powerTileName = "power"+i;
-            this[powerTileName]=jc.makeSpriteWithPlist(powerTilesPlist, powerTilesPng, "powerFrame.png");
+            this[powerTileName]=jc.makeSpriteWithPlist(uiPlist, uiPng, "powerFrame.png");
             var powerName = this.teamAPowers[i];
             this.powerBar.addChild(this[powerTileName]);
             this[powerTileName].tile = jc.makeSpriteWithPlist(powerTiles[powerName].plist, powerTiles[powerName].png, powerTiles[powerName].icon);
@@ -357,27 +374,58 @@ var ArenaGame = jc.WorldLayer.extend({
         }
 //        jc.log(['arena'], 'placetokens done, closing bar');
 //        this.scheduleOnce(this.closeBar.bind(this));
+        this.barOpen = false;
 
     },
     closeBar: function(){
         //function(item, from, to, time, nudge, when, doneDelegate){
         this.barOpen = false;
         jc.log(['arena'], 'Closing powerbar');
-        this.slide(this.powerBar, this.powerBarOpenPos, this.powerBarClosePos, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), "before");
+        this.setPowerBarFrameTouch();
+        this.slide(this.powerBar, this.powerBarOpenPos, this.powerBarClosePos, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), "before", this.setPowerBarFrameNormal.bind(this));
     },
     openBar: function(){
         this.barOpen = true;
         jc.log(['arena'], 'opening powerbar');
-        this.slide(this.powerBar, this.powerBarClosePos, this.powerBarOpenPos, jc.defaultTransitionTime, cc.p(jc.defaultNudge*-1,0), "after");
+        this.setPowerBarFrameTouch();
+        this.slide(this.powerBar, this.powerBarClosePos, this.powerBarOpenPos, jc.defaultTransitionTime, cc.p(jc.defaultNudge*-1,0), "after", this.setPowerBarFrameNormal.bind(this));
+    },
+    setPowerBarFrameTouch:function(){
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("powersBackgroundPressed.png");
+        this.powerBar.setDisplayFrame(frame);
+    },
+    setPowerBarFrameNormal:function(){
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("powersBackground.png");
+        this.powerBar.setDisplayFrame(frame);
+    },
+    setSquadBarTouched:function(){
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("squadsBackgroundPressed.png");
+        this.squadBar.setDisplayFrame(frame);
+
+    },
+    setSquadBarNormal:function(){
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("squadsBackground.png");
+        this.squadBar.setDisplayFrame(frame);
+
+    },
+    setFrameTouched:function(item){
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("powerFrameSelected.png");
+        item.setDisplayFrame(frame);
+    },
+    setFrameNormal:function(item){
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("powerFrame.png");
+        item.setDisplayFrame(frame);
     },
     closeSquadBar: function(){
         //function(item, from, to, time, nudge, when, doneDelegate){
         this.squadBarOpen = false;
-        this.slide(this.squadBar, this.squadBarOpenPos, this.squadBarClosePos, jc.defaultTransitionTime, cc.p(jc.defaultNudge*-1,0), "before");
+        this.setSquadBarTouched();
+        this.slide(this.squadBar, this.squadBarOpenPos, this.squadBarClosePos, jc.defaultTransitionTime, cc.p(jc.defaultNudge*-1,0), "before", this.setSquadBarNormal.bind(this));
     },
     openSquadBar: function(){
         this.squadBarOpen = true;
-        this.slide(this.squadBar, this.squadBarClosePos, this.squadBarOpenPos, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), "after");
+        this.setSquadBarTouched();
+        this.slide(this.squadBar, this.squadBarClosePos, this.squadBarOpenPos, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), "after", this.setSquadBarNormal.bind(this));
     },
     update:function(dt){
         for (var i =0; i<this.sprites.length;i++){
@@ -563,12 +611,16 @@ var ArenaGame = jc.WorldLayer.extend({
                     //power token touched -
                     if (!sprites[i].used){
                         jc.log(['arena'], 'touch - execute');
+                        this.setFrameTouched(sprites[i]);
                         this.executeOffensivePower(this.availablePowers[power],sprites[i]);
                         return;
                     }else{
                         jc.log(['arena'], 'touch - used');
                         return; //still don't let this become a bar
                     }
+
+
+
                 }
             }
         }
@@ -601,16 +653,20 @@ var ArenaGame = jc.WorldLayer.extend({
         var func = globalPowers[config['offense']].bind(this);
         if (config.type == "direct"){
             hotr.arenaScene.layer.nextTouchDo(function(touch, sprites){
-                func(touch, sprites);
+                var worldPos = this.screenToWorld(touch);
+                var nodePos = this.convertToItemPosition(worldPos);
+                func(nodePos, sprites);
                 jc.log(['arena'], 'fading out!');
                 jc.shadow(frame);
                 jc.shadow(tile);
+                this.setFrameNormal(frame);
             }.bind(this));
 
         }else if (config.type == "global"){
             func();
             jc.shadow(frame);
             jc.shadow(tile);
+            this.setFrameNormal(frame);
         }else{
             throw "Unknown power type.";
         }

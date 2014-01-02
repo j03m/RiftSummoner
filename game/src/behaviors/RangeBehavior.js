@@ -149,11 +149,22 @@ RangeBehavior.prototype.doMissile = function(){
 			moveTo = cc.JumpTo.create(timeToImpact, targetPos, v.distance/2, 1);
 		}else if (missileType.path =="arrow"){
             moveTo = cc.JumpTo.create(timeToImpact, targetPos,v.distance/3 , 1);
-        }else if (missileType.path =="bullet"){
-            var angle = cc.pToAngle(cc.pSub(missileStart, targetPos));
-            this.missile.setRotation(angle);
+        }else if (missileType.path == "bullet"){
+            var subbed = cc.pSub(missileStart, cc.p(targetPos.x, targetPos.y));
+            var myangle = Math.atan2(subbed.y, subbed.x);
+            jc.log(['missile'],"angle raw atan2:" + myangle);
+            myangle *= (180 / Math.PI);
+//            if (myangle>45){
+//                myangle = 45;
+//            }
+//            if (myangle<-45){
+//                myangle = -45;
+//            }
+            jc.log(['missile'],"angle:" + myangle);
+            this.missile.setRotation(myangle);
             moveTo = cc.MoveTo.create(timeToImpact, targetPos);
-
+        }else{
+            throw missileType.path
         }
 
 

@@ -45,6 +45,10 @@ var EditTeam = jc.UiElementsLayer.extend({
     inTransitionsComplete:function(){
         if (!this.firstShow){
             this.tableView.setIndex(1);
+            this.showTutorialStep("Okay, now select a character for the fight.")
+            var position = cc.p(1200 * jc.assetScaleFactor , 500 * jc.assetScaleFactor);
+            this.placeArrow(position, "down");
+
             this.firstShow = true;
         }
 
@@ -189,7 +193,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         var prefix = "lbl";
         for (var stat in stats){
             var lblName = prefix+stat			
-            this[lblName].setString(stats[stat]);
+            this[lblName].setText(stats[stat]);
         }
     },
     makeStringStats:function(stats){
@@ -221,8 +225,8 @@ var EditTeam = jc.UiElementsLayer.extend({
     },
     buildInfoDialogForSelectedCharacter:function(entry){
 
-        this.infoTitle.setString(entry.formalName);
-        this.infoText.setString(entry.details);
+        this.infoTitle.setText(entry.formalName);
+        this.infoText.setText(entry.details);
 //        this.doInfoFadeOut = false;
 //        this.infoFadeIn();
     },
@@ -498,43 +502,57 @@ var EditTeam = jc.UiElementsLayer.extend({
 			"lblhp": {
 				"type": "label",
 				"text": "HEALTH",
-				"width": 80,
+				"width": 160,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 23,
-				"fontName": "gow",
+				"fontSize": jc.font.fontSizeRaw,
+				"fontName": jc.mainFont,
 				"z": 3,
 				"pos": {
-					"x": 297,
-					"y": 860
+					"x": 335,
+					"y": 875
 				}
 			},
 			"lbldamage": {
 				"type": "label",
 				"text": "DAMAGE",
-				"width": 80,
+				"width": 160,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 23,
-				"fontName": "gow",
+				"fontSize": jc.font.fontSizeRaw,
+				"fontName": jc.mainFont,
 				"z": 3,
 				"pos": {
-					"x": 297,
-					"y": 778
+					"x": 335,
+					"y": 795
 				}
 			},
+            "lblarmor": {
+                "type": "label",
+                "text": "ARMOR",
+                "width": 160,
+                "height": 80,
+                "alignment": 0,
+                "fontSize": jc.font.fontSizeRaw,
+                "fontName": jc.mainFont,
+                "z": 3,
+                "pos": {
+                    "x": 335,
+                    "y": 715
+                }
+            },
 			"lblspeed": {
 				"type": "label",
 				"text": "SPEED",
 				"width": 80,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 23,
-				"fontName": "gow",
+				"fontSize": jc.font.fontSizeRaw,
+				"fontName": jc.mainFont,
 				"z": 3,
 				"pos": {
 					"x": 297,
-					"y": 626
+					"y": 635
 				}
 			},
 			"lblpower": {
@@ -543,12 +561,12 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 80,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 23,
-				"fontName": "gow",
+				"fontSize": jc.font.fontSizeRaw,
+				"fontName": jc.mainFont,
 				"z": 3,
 				"pos": {
 					"x": 297,
-					"y": 541
+					"y": 555
 				}
 			},
 			"lblrange": {
@@ -557,28 +575,15 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 80,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 23,
-				"fontName": "gow",
+				"fontSize": jc.font.fontSizeRaw,
+				"fontName": jc.mainFont,
 				"z": 3,
 				"pos": {
 					"x": 297,
-					"y": 461
+					"y": 475
 				}
 			},
-			"lblarmor": {
-				"type": "label",
-				"text": "ARMOR",
-				"width": 80,
-				"height": 80,
-				"alignment": 0,
-				"fontSize": 23,
-				"fontName": "gow",
-				"z": 3,
-				"pos": {
-					"x": 297,
-					"y": 703
-				}
-			},
+
 			"infoDialog": {
 				"type": "sprite",
 				"sprite": "titleDescription.png",
@@ -594,26 +599,26 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"width": 400,
 				"height": 80,
 				"alignment": 0,
-				"fontSize": 25,
-				"fontName": "gow",
+				"fontSize": jc.font.fontSizeRaw,
+				"fontName": jc.mainFont,
 				"z": 4,
 				"pos": {
-					"x": 1590,
-					"y": 980
+					"x": 1560,
+					"y": 1000
 				}
 			},
 			"infoText": {
 				"type": "label",
 				"text": "DESC",
 				"width": 600,
-				"height": 200,
+				"height": 400,
 				"alignment": 0,
-				"fontSize": 25,
-				"fontName": "gow",
+				"fontSize": jc.font.fontSizeRaw,
+				"fontName": jc.mainFont,
 				"z": 4,
 				"pos": {
 					"x": 1525,
-					"y": 780
+					"y": 680
 				}
 			}
 		},

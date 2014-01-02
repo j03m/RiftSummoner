@@ -44,7 +44,7 @@ var powerConfig = {
         var heal = 0;
         for(var i =0;i<foes.length;i++){
             if (GeneralBehavior.applyDamage( foes[i], this.owner, config.damage)){
-                jc.playEffectOnTarget("lifeDrain", foes[i], this.owner.layer, true);
+                jc.playTintedEffectOnTarget("lifeDrain", foes[i], this.owner.layer, true, cc.magenta());
                 heal+=config.damage;
             }
         }
@@ -94,10 +94,8 @@ var powerConfig = {
     "explodePoison":function(value){
         var config = spriteDefs[value].deathMods["explodePoison"];
         //initial explosion
-        var effect = jc.playEffectOnTarget("explo", this.locked, this.owner.layer);
-        if (effect){
-            effect.setColor (cc.green());
-        }
+        var effect = jc.playTintedEffectOnTarget("explo", this.locked, this.owner.layer, false, cc.green());
+
 
         var foes = this.allFoesWithinRadiusOfPoint(config.radius*jc.characterScaleFactor, this.locked.getBasePosition());
 
@@ -115,7 +113,7 @@ var powerConfig = {
         var allies = this.owner.homeTeam();
         if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
 
-            jc.playEffectOnTarget("lifeDrain", this.locked, this.owner.layer, true);
+            jc.playTintedEffectOnTarget("lifeDrain", this.locked, this.owner.layer, true, cc.magenta());
         }
 
         for(var i=0;i<allies.length;i++){
@@ -131,7 +129,7 @@ var powerConfig = {
         jc.checkPower(value, "vampireDrain");
         var config = spriteDefs[value].damageMods["vampireDrain"];
         if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
-            jc.playEffectOnTarget("lifeDrain", this.locked, this.owner.layer, true);
+            jc.playTintedEffectOnTarget("lifeDrain", this.locked, this.owner.layer, true, cc.magenta());
         }
 
         if (GeneralBehavior.heal(this.owner, this.owner, config.heal)){

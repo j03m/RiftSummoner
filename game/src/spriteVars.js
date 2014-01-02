@@ -518,6 +518,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 300,
+			"resistsRange": 50,
 			"movementType": 1,
 			"targets": 2,
 			"missile": "arrowNormal",
@@ -680,6 +681,7 @@ var spriteDefs = {
 			"movementType": 0,
 			"targets": 2,
 			"damage": 50,
+			"resistsRange": 25,
 			"missile": "magicFire",
 			"splashDamage": 5,
 			"actionDelays": {
@@ -709,6 +711,7 @@ var spriteDefs = {
 			"speed": 100,
 			"damage": 100,
 			"missile": "magicVoid",
+			"resistsRange": 25,
 			"vsAirDamage": 5,
 			"actionDelays": {
 				"attack": 0.01
@@ -854,6 +857,7 @@ var spriteDefs = {
 			"speed": 170,
 			"movementType": 1,
 			"targets": 1,
+			"resistsRange": 50,
 			"damage": 25,
 			"actionDelays": {
 				"attack": 0.5
@@ -1452,6 +1456,7 @@ var spriteDefs = {
 			"speed": 200,
 			"movementType": 1,
 			"targets": 1,
+			"resistsRange": 50,
 			"damage": 55,
 			"actionDelays": {
 				"attack": 0.2

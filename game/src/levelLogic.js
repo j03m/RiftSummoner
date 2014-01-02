@@ -5,23 +5,23 @@ hotr.levelLogic = {};
 
 var temp =  [
     {
-        "name":"orc"
+        "name":"ogre"
     },
     {
         "name":"orc"
     },
-    {
-        "name":"elfFire"
-    },
-    {
-        "name":"elfFire"
-    },
-    {
-        "name":"elfFire"
-    },
-    {
-        "name":"elfFire"
-    }
+//    {
+//        "name":"elfFire"
+//    },
+//    {
+//        "name":"elfFire"
+//    },
+//    {
+//        "name":"elfFire"
+//    },
+//    {
+//        "name":"elfFire"
+//    }
 //    {
 //        "name":"dragonFire",
 //    },
