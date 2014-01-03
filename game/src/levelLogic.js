@@ -5,10 +5,10 @@ hotr.levelLogic = {};
 
 var temp =  [
     {
-        "name":"ogre"
+        "name":"goblinKnightNormal"
     },
     {
-        "name":"orc"
+        "name":"goblinKnightNormal"
     },
 //    {
 //        "name":"elfFire"

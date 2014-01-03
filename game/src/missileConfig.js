@@ -52,21 +52,22 @@ var missileConfig = {
                     "arrowNormal":{
                         "png":"art/missiles{v}.png",
                         "plist":"art/missiles.plist",
-                        "start":"arrowNormal.png",
+                        "start":"arrowNormal.1.png",
                         "hasDirection":true,
                         "initialAngle":-45,
                         "path":"arrow",
                         "rotation":"arrow",
                         "speed":350,
-                        "height":200,
-                        "simple":true
+                        "frames":2,
+                        "delay":0.02
+
                     },
                     "bomb":{
                         "png":"art/missiles{v}.png",
                         "plist":"art/missiles.plist",
                         "start":"bomb.1.png",
                         "frames":8,
-                        "delay":0.01,
+                        "delay":0.1,
                         "path":"jump",
                         "effect":"explo",
                         "speed":170

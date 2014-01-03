@@ -16,6 +16,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
             this.highlight.setVisible(false);
             this.mainFrame.addChild(this.highlight);
             this.name = "SelectTeam";
+            this.bubbleAllTouches(true);
             jc.layerManager.pushLayer(this);
 
 
@@ -73,7 +74,24 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     jc.fadeOut(this[hotr.scratchBoard.currentCell].pic);
                     hotr.blobOperations.clearFormationPosition(cell);
                 }
-            }			
+            }
+
+            this.step = hotr.blobOperations.getTutorialStep();
+            if (this.level == 1){
+                if (this.step == 13){
+                    this.showTutorialStep("Now let's show these goblins who they're messing with.",undefined, "left", "girl");
+                    this.placeArrowOn(this.fightButton, "down");
+                    this.step = 14;
+                    hotr.blobOperations.setTutorialStep(14);
+                }
+
+                if (this.step == 9){
+                    this.showTutorialStep("Okay, now place a second character in Squad B. Using two squads allows for advanced tactics.", undefined,"left", "girl");
+                    this.step = 10;
+                    hotr.blobOperations.setTutorialStep(10);
+                }
+
+            }
         }
     },
     cellFromCellName:function(name){
@@ -84,10 +102,13 @@ var SelectTeam = jc.UiElementsLayer.extend({
       return parseInt(name.replace(this.squad2Prefix, "")) + (hotr.teamformationSize/2);
     },
     inTransitionsComplete:function(){
+        this.level = hotr.blobOperations.getTutorialLevel();
+        this.step = hotr.blobOperations.getTutorialStep();
         if (this.first){
-            this.showTutorialStep("We need to build your team - click here to select your troops!");
-            var position = cc.p(300 * jc.assetScaleFactor ,1000 * jc.assetScaleFactor);
-            this.placeArrow(position, "down");
+            if (this.level == 1 && this.step == 4){
+                this.showTutorialStep("We need to build your team - click here to select a fighter.", undefined, "right", "girl");
+                this.step = 5;
+            }
         }
     },
     removeExistingVisual:function(id){
@@ -153,10 +174,16 @@ var SelectTeam = jc.UiElementsLayer.extend({
         jc.log(['selectTeam'], "nextButton");
     },
     fightStart:function(){
+
+        if (this.level == 1 && this.step != 14){
+            return;
+        }
+
         if (!this.nextEnabled){
             return;
         }
         if (this.arrow){
+            this.removeTutorialStep('girl', 'left');
             this.removeChild(this.arrow, true);
         }
         this.nextEnabled = false;
@@ -205,11 +232,13 @@ var SelectTeam = jc.UiElementsLayer.extend({
         jc.log(['selectTeam'], "close");
     },
     targetTouchHandler: function(type, touch, sprites) {
-        if (sprites[0]){
+        if (this.handleTutorialTouches(type, touch, sprites)){
+            return;
+        }
 
+
+        if (sprites[0]){
             if (type == jc.touchEnded){
-                //on grid cell touch
-                //place highlight border
                 this.highlight.setVisible(true);
                 var pos = sprites[0].getPosition();
                 this.highlight.setPosition(pos);
@@ -221,9 +250,42 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     this.arrow.setVisible(false);
                 }
                 jc.layerManager.pushLayer(EditTeam.getInstance(),10);
+
             }
         }
         return true;
+    },
+    handleTutorialTouches:function(type, touch, sprites){
+        if (this.level == 1){
+            if (this.step == 5){
+                this.removeTutorialStep('girl', 'left');
+                this.placeArrowOn(this.squad1Cells0, "down");
+                this.step =6;
+                return true;
+            }else if (this.step == 6){
+                if (!sprites || !sprites[0] || sprites[0].name != "squad1Cells0"){
+                    return true;
+                }else{
+                    this.step = 7;
+                    hotr.blobOperations.setTutorialStep(7);
+                    return false;
+                }
+            }else if (this.step == 10){
+                this.removeTutorialStep('girl', 'left');
+                this.placeArrowOn(this.squad2Cells0, "down");
+                this.step = 11;
+            }else if (this.step == 11){
+                if (!sprites || !sprites[0] || sprites[0].name != "squad2Cells0"){
+                    return true;
+                }else{
+                    this.step = 12;
+                    hotr.blobOperations.setTutorialStep(12);
+                    return false;
+                }
+            }
+
+        }
+
     },
     windowConfig: {
         "mainFrame": {

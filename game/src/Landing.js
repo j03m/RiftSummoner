@@ -21,7 +21,7 @@ var Landing = jc.UiElementsLayer.extend({
         this.start();
     },
     quest:function(){
-        hotr.mainScene.layer.selectEditTeamPre();
+        hotr.mainScene.layer.map();
     },
     battle:function(){         
 		 // hotr.multiplayerGame = true;

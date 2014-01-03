@@ -11,6 +11,7 @@ var EditTeam = jc.UiElementsLayer.extend({
             cc.SpriteFrameCache.getInstance().addSpriteFrames(cardsPlists[0]);
             this.initFromConfig(this.windowConfig);
             this.name = "EditTeam";
+            //this.bubbleAllTouches(true);
             return true;
         } else {
             return false;
@@ -43,13 +44,20 @@ var EditTeam = jc.UiElementsLayer.extend({
         }
     },
     inTransitionsComplete:function(){
+        this.level = hotr.blobOperations.getTutorialLevel();
+        this.step = hotr.blobOperations.getTutorialStep();
         if (!this.firstShow){
             this.tableView.setIndex(1);
-            this.showTutorialStep("Okay, now select a character for the fight.")
-            var position = cc.p(1200 * jc.assetScaleFactor , 500 * jc.assetScaleFactor);
-            this.placeArrow(position, "down");
-
+            if (this.level == 1 && this.step == 7){
+                this.showTutorialStep("Okay, now select a character for the fight below - choose wisely.", 1.5 , "left", "girl");
+            }
             this.firstShow = true;
+        }else{
+            this.step = hotr.blobOperations.getTutorialStep();
+            if (this.step == 12){
+                var position = cc.p(1450 * jc.assetScaleFactor , 400 * jc.assetScaleFactor);
+                this.placeArrow(position, "down");
+            }
         }
 
     },
@@ -97,12 +105,13 @@ var EditTeam = jc.UiElementsLayer.extend({
         return returnme;
     },
     targetTouchHandler: function(type, touch, sprites) {
+
         return true;
     },
     "trainPower": function(){
         jc.log(['editTeam'], "train");
     },
-    "doneButton": function(){
+    "doneTouch": function(){
         hotr.scratchBoard.selectedCharacter = this.tableView.selectedIndex;
         this.close();
     },
@@ -132,6 +141,22 @@ var EditTeam = jc.UiElementsLayer.extend({
             this.updateStats(characterEntry);
 
             this.infoPress();
+
+
+
+            if (this.level == 1 && this.step == 7){
+                var position = cc.p(825 * jc.assetScaleFactor , 400 * jc.assetScaleFactor);
+                this.placeArrow(position, "down");
+                this.step = 8;
+            }else if (this.level == 1 && this.step ==8){
+                this.step = 9;
+                hotr.blobOperations.setTutorialStep(9);
+                this.placeArrowOn(this.doneButton, "down");
+            }else if (this.level == 1 && this.step == 12){
+                this.step = 13;
+                hotr.blobOperations.setTutorialStep(13);
+                this.placeArrowOn(this.doneButton, "down");
+            }
         }else{
             this.card.setVisible(false);
             this.lastSelection=undefined;
@@ -283,6 +308,11 @@ var EditTeam = jc.UiElementsLayer.extend({
         this.tableView.right();
     },
     close:function(){
+        if (this.level == 1){
+            if (this.step != 9 && this.step != 13){
+                return;
+            }
+        }
         this.done();
 //        if (this.card){
 //            //jc.fadeOut(this.card,1);
@@ -414,7 +444,7 @@ var EditTeam = jc.UiElementsLayer.extend({
 				"type": "button",
 				"main": "buttonDone.png",
 				"pressed": "buttonDonePressed.png",
-				"touchDelegateName": "doneButton",
+				"touchDelegateName": "doneTouch",
 				"z": 4,
 				"pos": {
 					"x": 1500,

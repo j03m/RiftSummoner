@@ -35,42 +35,25 @@ var ArenaGame = jc.WorldLayer.extend({
             this.squadTilePosition = cc.p(250*jc.assetScaleFactor, 85*jc.assetScaleFactor);
             this.squadTileSpacing = 200 * jc.assetScaleFactor;
 
+            this.tutorialPoint1 = cc.p(600*jc.assetScaleFactor, 600*jc.assetScaleFactor);
+            this.tutorialPoint2 = cc.p(800*jc.assetScaleFactor, 800*jc.assetScaleFactor);
+
             return true;
 		} else {
 			return false;
 		}
 	},
-    dumpChildren:function(){
-        var wtf = this.getChildren();
-        for(var i=0;i<wtf.length;i++){
-            console.log("Name:" + wtf[i].name)
-            console.log("JCSprite: " + (wtf[i] instanceof jc.Sprite));
-            console.log("CCSprite: " + (wtf[i] instanceof cc.Sprite));
-            console.log("CCDrawNode: " + (wtf[i] instanceof cc.DrawNode));
-            console.log("Is: " + typeof wtf[i]);
-
-
-            if (wtf[i]._originalTexture){
-                if (wtf[i]._originalTexture._htmlElementObj){
-                    console.log("Texture:" + wtf[i]._originalTexture._htmlElementObj.src);
-                }
-            }
-        }
-    },
     onShow:function(){
         cc.SpriteFrameCache.getInstance().addSpriteFrames(shadowPlist);
         cc.SpriteBatchNode.create(shadowPng);
-
-        this.showTutorialStep("Quick! Click anywhere to deploy your squads!");
-        this.placeArrow(cc.p(600*jc.assetScaleFactor, 800*jc.assetScaleFactor), "down");
-
+        this.level = hotr.blobOperations.getTutorialLevel();
         if(!hotr.arenaScene.data){
             this.runScenario0();
-        }else{
+        }else if (this.level!=1){
             this.runScenario();
+        }else{
+            this.runTutorial();
         }
-
-
     },
     runScenario:function(){
         this.teamASprites = hotr.arenaScene.data.teamA;
@@ -86,6 +69,30 @@ var ArenaGame = jc.WorldLayer.extend({
             this.nextTouchDo(this.initialSetupAction,true);
         }.bind(this));
 
+
+    },
+    runTutorial:function(){
+
+        this.teamASprites = hotr.arenaScene.data.teamA;
+        this.teamAPowers = hotr.arenaScene.data.teamAPowers;
+        this.teamBSprites = hotr.arenaScene.data.teamB;
+        this.teamBPowers = hotr.arenaScene.data.teamBPowers;
+        this.step = hotr.blobOperations.getTutorialStep();
+
+        if (this.level==1 && this.step==1){
+            this.showTutorialStep("Arg! Prepare to die, summoner!", undefined, 'right', 'orc');
+            this.setUp();
+        }else if (this.step == 14){
+            //we selected teams
+            this.setUp();
+            this.placeEnemyTeam();
+            var scaleData = this.calculateScaleForSprites(this.teams['b']);
+            this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
+                this.showTutorialStep("Alright, there they are. Get ready to fight!", undefined, 'left', 'girl');
+                this.step =15;
+            }.bind(this));
+
+        }
 
     },
     runScenario0:function(){
@@ -130,21 +137,13 @@ var ArenaGame = jc.WorldLayer.extend({
 
         this.startPos = this.screenToWorld(touch);
         var center = cc.p(this.winSize.width/2, this.winSize.height/2);
-        if (jc.insideEllipse(touch, center) && this.startPos.x < this.worldMidPoint.x){
+        if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
             //play animation
 
             if (this.placementTouches == 1){
                 var placement = this.placePlayerTeam('a');
                 if (!placement){
                     this.placePlayerTeam('b');
-                }else{
-                    this.removeTutorialStep(function(){
-                        this.guideVisible = false;
-                        if (this.teams['a'].length>9){
-                            this.showTutorialStep("Quick! Okay, now place your second squad!");
-                            this.placeArrow(cc.p(600*jc.assetScaleFactor, 600*jc.assetScaleFactor), "down");
-                        }
-                    }.bind(this));
                 }
             }
 
@@ -160,27 +159,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 hotr.blobOperations.saveBlob();
                 this.nextTouchAction = undefined;
                 this.placeEnemyTeam();
-
-                function goodSprite(sprite){
-                    return sprite!=undefined;
-                }
-
-                this.originalPositions = {
-                    'a':[].concat(this.teams['a']),
-                    'b':[].concat(this.teams['b'])
-                };
-
-
-                this.teams['a']=_.filter(this.teams['a'],goodSprite);
-                this.teams['b']=_.filter(this.teams['b'],goodSprite);
-                this.sprites = this.teams['a'].concat(this.teams['b']);
-                this.startedAt = Date.now();
-
-                this.started = true;
-                this.schedule(function(dt){
-                    this.doUpdate(0.10);
-                }, 0.10);
-
+                this.finalActions();
             }else{
                 this.placementTouches++;
                 this.nextTouchDo(this.initialSetupAction,true);
@@ -193,7 +172,27 @@ var ArenaGame = jc.WorldLayer.extend({
 
 
     },
+    finalActions:function(){
+        function goodSprite(sprite){
+            return sprite!=undefined;
+        }
 
+        this.originalPositions = {
+            'a':[].concat(this.teams['a']),
+            'b':[].concat(this.teams['b'])
+        };
+
+
+        this.teams['a']=_.filter(this.teams['a'],goodSprite);
+        this.teams['b']=_.filter(this.teams['b'],goodSprite);
+        this.sprites = this.teams['a'].concat(this.teams['b']);
+        this.startedAt = Date.now();
+
+        this.started = true;
+        this.schedule(function(dt){
+            this.doUpdate(0.10);
+        }, 0.10);
+    },
     placeEnemyTeam:function(){
         this.startPos = cc.p(this.worldSize.width/2, this.worldSize.height/2);
         this.startPos.x+=500*jc.characterScaleFactor;
@@ -202,11 +201,17 @@ var ArenaGame = jc.WorldLayer.extend({
         this.placeTeamPosition(this.teams['b'], this.teamSize);
     },
     placePlayerTeam:function(squad){
+        var touches = 0;
+        if (squad == 'a'){
+            touches = 1;
+        }else{
+            touches = 2;
+        }
 
         var nodePos = this.convertToItemPosition(this.startPos);
         hotr.blobOperations.setSquadLocations(squad, this.startPos);
         jc.playEffectAtLocation("movement", nodePos, jc.shadowZOrder,this);
-        return this.placeTeamPosition(this.teams['a'], this.placementTouches * this.squadNumbers);
+        return this.placeTeamPosition(this.teams['a'], touches * this.squadNumbers);
     },
     placeTeamPosition:function(team, squadSize){
         var placement = false;
@@ -285,10 +290,12 @@ var ArenaGame = jc.WorldLayer.extend({
         var sprite;
 
         //todo refactor these loops into 1 funcN
+        this.teamASprites.reverse();
         for (var i =0; i<this.teamASprites.length;i++){
             if (this.teamASprites[i])
             {
                 sprite = this.getSprite(this.teamASprites[i].name);
+                sprite.healthBarColor = cc.c4f(26.0/255.0, 245.0/255.0, 15.0/255.0, 1.0);
                 //todo: augment sprite using data fetched via the id
                 sprite.homeTeam = this.getTeam.bind(this,'a');
                 sprite.enemyTeam = this.getTeam.bind(this, 'b');
@@ -300,12 +307,13 @@ var ArenaGame = jc.WorldLayer.extend({
 
         }
 
-
+        this.teamBSprites.reverse();
         for (var i =0; i<this.teamBSprites.length;i++){
             if (this.teamBSprites[i])
             {
                 sprite = this.getSprite(this.teamBSprites[i].name);
                 //todo: augment sprite using data fetched via the id
+                sprite.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
                 sprite.setFlippedX(true);
                 sprite.homeTeam = this.getTeam.bind(this,'b');
                 sprite.enemyTeam = this.getTeam.bind(this, 'a');
@@ -343,7 +351,6 @@ var ArenaGame = jc.WorldLayer.extend({
         this.squadB.setPosition(cc.p(this.squadTilePosition.x + this.squadTileSpacing,this.squadTilePosition.y));
         this.touchTargets.push(this.squadB);
 
-        //this.scheduleOnce(this.closeSquadBar.bind(this));
         this.squadBarOpen = false;
 
     },
@@ -372,8 +379,6 @@ var ArenaGame = jc.WorldLayer.extend({
             this.touchTargets.push(this[powerTileName]);
             this.availablePowers[powerTileName]=powerName;
         }
-//        jc.log(['arena'], 'placetokens done, closing bar');
-//        this.scheduleOnce(this.closeBar.bind(this));
         this.barOpen = false;
 
     },
@@ -435,80 +440,85 @@ var ArenaGame = jc.WorldLayer.extend({
     doUpdate:function (dt){
         //pulse each sprite
 
-        var minX=this.worldSize.width;
-        var maxX=0;
-        var minY=this.worldSize.height;
-        var maxY=0;
-        var shouldScale = false;
         if (this.started){
             //check for winner
             this.gameTime+=dt;
             if (this.checkWinner()){
                 return;
             }
-            for (var i =0; i<this.sprites.length;i++){
-                if (this.sprites[i].getParent()==this){
-                    var position = this.sprites[i].getBasePosition(); //where am i in the layer
-                    var shouldScale = true;
-                    var tr = this.sprites[i].getTextureRect();
-                    var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
-                    var worldPos = this.screenToWorld(nodePos); //where is that in the world?
-                    var compareMaxX = worldPos.x + tr.width;
-                    var compareMinX = worldPos.x - tr.width;
-                    var compareMaxY = worldPos.y + tr.height*1.5;
-                    var compareMinY = worldPos.y - (tr.height/2);
-
-
-                    if (compareMaxX > maxX){
-                        maxX = compareMaxX;
-                        //cosole.log("MaxX:"+this.sprites[i].name);
-                    }
-
-                    if (compareMinX < minX){
-                        minX = compareMinX;
-                        //cosole.log("MinX:"+this.sprites[i].name);
-                    }
-
-                    if (compareMaxY > maxY){
-                        maxY = compareMaxY;
-                        //cosole.log("MaxY:"+this.sprites[i].name);
-                    }
-
-                    if (compareMinY < minY){
-                        minY = compareMinY;
-                        //cosole.log("MinY:"+this.sprites[i].name);
-                    }
-                }
-
-                this.sprites[i].think(dt);
-            }
+            var scaleData = this.calculateScaleForSprites(this.sprites, true, dt);
             var scaleLimit = 50;
-            if (!this.scaleGate && shouldScale){
 
-                var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
-                var scale = this.getOkayScale(maxX-minX, maxY-minY);
-
-                //todo: based on characterMid, select camera 1-9                                             d
-                //todo: based on scale, select right scale ratio
-
+            if (!this.scaleGate){
                 //smooth
                 if (!this.lastPan){
-                    this.lastPan = characterMid;
+                    this.lastPan = scaleData.mid;
                     var diff = cc.p(scaleLimit+1,scaleLimit+1);
                 }else{
-                    var diff = cc.pSub(this.lastPan, characterMid);
+                    var diff = cc.pSub(this.lastPan, scaleData.mid);
                 }
-                if (Math.abs(diff.x) > scaleLimit || Math.abs(diff.y)>scaleLimit){
-                    this.lastPan = characterMid;
 
-                    this.panToWorldPoint(characterMid, scale, jc.defaultTransitionTime, function(){
+                if (Math.abs(diff.x) > scaleLimit || Math.abs(diff.y)>scaleLimit){
+                    this.lastPan = scaleData.mid;
+
+                    this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
                         this.scaleGate = false;
                     }.bind(this));
                 }
+            }
+        }
+    },
+    calculateScaleForSprites:function(sprites, shouldThink, dt){
+        var minX=this.worldSize.width;
+        var maxX=0;
+        var minY=this.worldSize.height;
+        var maxY=0;
 
+        for (var i =0; i<sprites.length;i++){
+            if (sprites[i].getParent()==this){
+                var position = sprites[i].getBasePosition(); //where am i in the layer
+                var tr = sprites[i].getTextureRect();
+                var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
+                var worldPos = this.screenToWorld(nodePos); //where is that in the world?
+                var compareMaxX = worldPos.x + tr.width;
+                var compareMinX = worldPos.x - tr.width;
+                var compareMaxY = worldPos.y + tr.height*1.5;
+                var compareMinY = worldPos.y - (tr.height/2);
+
+                if (shouldThink){
+                    sprites[i].think(dt);
+                }
+
+
+                if (compareMaxX > maxX){
+                    maxX = compareMaxX;
+                    //cosole.log("MaxX:"+this.sprites[i].name);
+                }
+
+                if (compareMinX < minX){
+                    minX = compareMinX;
+                    //cosole.log("MinX:"+this.sprites[i].name);
+                }
+
+                if (compareMaxY > maxY){
+                    maxY = compareMaxY;
+                    //cosole.log("MaxY:"+this.sprites[i].name);
+                }
+
+                if (compareMinY < minY){
+                    minY = compareMinY;
+                    //cosole.log("MinY:"+this.sprites[i].name);
+                }
             }
 
         }
+
+        var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
+        var scale = this.getOkayScale(maxX-minX, maxY-minY);
+
+        return {mid:characterMid, scale:scale};
+
+
     },
     setSpriteTargetLocation:function(touch, sprites){
         //play tap effect at touch
@@ -550,6 +560,10 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     targetTouchHandler:function(type, touch,sprites){
         if (type == jc.touchEnded){
+            if (this.level == 1){ //tutorial
+                this.handleTutorialTouches(type, touch, sprites);
+                return;
+            }
             var nodePos = touch; //this.convertToNodeSpace(touch);
             if (this.nextTouchAction){
                 this.nextTouchAction(nodePos, sprites);
@@ -568,6 +582,76 @@ var ArenaGame = jc.WorldLayer.extend({
         }
 
         return true;
+    },
+    handleTutorialTouches:function(type, touch, sprites){
+        if (this.level == 1){
+            this.handleLevel1Tutorial(type, touch, sprites);
+        }
+    },
+    handleLevel1Tutorial:function(type, touch, sprites){
+        if (this.step==1){
+            this.step =1.5;
+            this.removeTutorialStep('orc', 'right', function(){
+                this.placeEnemyTeam();
+                var scaleData = this.calculateScaleForSprites(this.teams['b']);
+                this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
+                    this.showTutorialStep("Look, our enemies have summoned two goblins. You have to defeat them!", undefined, 'left', 'girl');
+                    this.step=2;
+                }.bind(this));
+            }.bind(this));
+
+        }else if (this.step == 2){
+            this.attachMsgTo("You'll need to summon your own monsters into battle. Let's pick them now", this.guideCharacters['girl'], 'right');
+            this.step = 3;
+        }else if (this.step == 3){
+            this.removeTutorialStep('girl', 'left');
+            hotr.blobOperations.setTutorialStep(4);
+            hotr.mainScene.layer.selectEditTeamPre();
+            this.step = 4;
+        }else if (this.step == 6){
+            this.attachMsgTo("Okay, now place your second squad!");
+            this.placeArrow(cc.p(600*jc.assetScaleFactor, 400*jc.assetScaleFactor), "down");
+            this.step == 7;
+        }else if (this.step == 15){
+            this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
+                this.attachMsgTo("Place your units on the arrows!", this.guideCharacters['girl'], 'right');
+                this.step = 16;
+            }.bind(this));
+        }else if (this.step == 16){
+            this.removeTutorialStep('girl', 'left');
+            this.placeArrow(this.tutorialPoint1,'down');
+            this.step = 17;
+        }else if (this.step == 17){
+            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            this.startPos = this.screenToWorld(touch);
+            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+                var placement = this.placePlayerTeam('a');
+                if(placement){
+                    this.placeArrow(this.tutorialPoint2, 'down');
+                    this.step = 18
+                }
+            }
+        }else if (this.step == 18){
+            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            this.startPos = this.screenToWorld(touch);
+            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+                var placement = this.placePlayerTeam('b');
+                if(placement){
+                    this.showTutorialStep("You dare challenge us? Now you die!", undefined, 'right', 'orc');
+                    if(this.arrow){
+                        this.removeChild(this.arrow, true);
+                    }
+                    this.step = 19
+                }
+            }
+        }else if (this.step == 19){
+            this.removeTutorialStep('orc', 'right');
+            this.finalActions();
+        }else if (this.step == 20){
+            this.removeTutorialStep ('girl', 'left');
+            this.showVictory(); //show it again
+            this.step = 21;
+        }
     },
     checkSquadBar:function(sprites){
         for(var i=0;i<sprites.length;i++){
@@ -749,9 +833,18 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     showVictory:function(){
         this.started = false;
+        if (this.level == 1 && this.step == 19){ //show some tutorial stuff first.
+            this.showTutorialStep("You did it! We're safe! But that won't be the last of them. Let's head back quickly.", undefined, 'left', 'girl');
+            this.step = 20;
+            return;
+        }
+
         if (hotr.arenaScene.data.op){
             hotr.multiplayerOperations.victory(hotr.arenaScene.data.op,hotr.arenaScene.data);
+        }else{
+            hotr.blobOperations.incrementLevel();
         }
+
         hotr.blobOperations.saveBlob();
 
         this.victory = new Victory();

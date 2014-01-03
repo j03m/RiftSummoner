@@ -56,7 +56,6 @@ var effectsConfig = {
         "frames":16,
         "delay":0.04,
         "placement":"center",
-        "times":7
     },
     "teleport":{
         "png":"art/teleport.png",

@@ -163,7 +163,44 @@ hotr.blobOperations.setHasPlayed=function(){
 
 hotr.blobOperations.getLevel = function(){
     //todo implement me
-    return 0;
+    if(!hotr.playerBlob.questLevel){
+        hotr.playerBlob.questLevel=0;
+    }
+
+    return hotr.playerBlob.questLevel;
+}
+
+hotr.inMultiplayer = 0; //until it's set otherwise, disables tutorial steps
+
+hotr.blobOperations.getTutorialLevel = function(){
+    //todo implement me
+    if (hotr.inMultiplayer){
+        return -1;
+    }
+
+    if(!hotr.playerBlob.questLevel){
+        hotr.playerBlob.questLevel=1;
+    }
+
+    return hotr.playerBlob.questLevel;
+}
+
+hotr.blobOperations.getTutorialStep= function(){
+    if (!hotr.playerBlob.tutortialStep){
+        hotr.playerBlob.tutortialStep=1;
+    }
+    return hotr.playerBlob.tutortialStep;
+}
+
+hotr.blobOperations.setTutorialStep= function(val){
+    hotr.playerBlob.tutortialStep = val;
+}
+
+hotr.blobOperations.incrementLevel = function(){
+    if(!hotr.playerBlob.questLevel){
+        hotr.playerBlob.questLevel=0;
+    }
+    hotr.playerBlob.questLevel++;
 }
 
 hotr.blobOperations.getPowers = function(){

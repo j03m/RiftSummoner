@@ -43,12 +43,18 @@ var g_maingame = [
     }
 ];
 
+
 jc.mainFont = "GODOFWAR";
 jc.font = {};
 jc.font.labelSize=cc.size(400*jc.assetScaleFactor,80*jc.assetScaleFactor);
 jc.font.alignment=0;
-jc.font.fontSize=25*jc.assetScaleFactor;
-jc.font.fontSizeRaw = 40;
+if (jc.isBrowser){
+    jc.font.fontSize=35*jc.assetScaleFactor;
+    jc.font.fontSizeRaw = 40;
+}else{
+    jc.font.fontSize=40*jc.assetScaleFactor;
+    jc.font.fontSizeRaw = 40;
+}
 jc.font.fontName='GODOFWAR';
 
 //*****uncomment for designmode
@@ -64,23 +70,24 @@ if (jc.designMode){
     var loadingPlist = transformAsset(dirImg + "loading-ipadhd.plist");
     var guide = dirImg + "multiplayerScreen.png";
     var g_maingame = [
-    {src:guide},
-    {src:uiPng},
-    {src:uiPlist},
-    {src:cardsPlists[0]},
-    {src:cardsPngs[0]},
-    {src:landingPng},
-    {src:landingPlist},
-    {src:loadingPng},
-    {src:loadingPlist},
-    {src:arenaSheet},
-        {src:powerTilesPlist},
-        {src:powerTilesPng},
-
-        {fontName:jc.mainFont,
-        src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
-    }
-];
+        {src:guide},
+        {src:uiPng},
+        {src:uiPlist},
+        {src:touchUiPng},
+        {src:touchUiPlist},
+        {src:cardsPlists[0]},
+        {src:cardsPngs[0]},
+        {src:landingPng},
+        {src:landingPlist},
+        {src:loadingPng},
+        {src:loadingPlist},
+        {src:arenaSheet},
+            {src:powerTilesPlist},
+            {src:powerTilesPng},
+            {fontName:jc.mainFont,
+            src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
+        }
+    ];
 }
 
 for (var entry in spriteDefs ){
@@ -140,6 +147,8 @@ var g_battleStuff =[
 var g_ui =[
     {src:uiPlist},
     {src:uiPng},
+    {src:cardsPlists[0]},
+    {src:cardsPngs[0]},
 ];
 
 

@@ -52,6 +52,7 @@ var hotrSrc = [
         '../src/ArenaGame.js',
         '../src/AnimationTest.js',
         '../src/Loading.js',
+        '../src/mapLayer.js',
         '../src/Main.js',
         '../src/PowerHud.js',
         '../src/multiplayer.js',

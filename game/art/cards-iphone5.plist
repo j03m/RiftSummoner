@@ -368,6 +368,19 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
+            <key>orc_pose.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1732,1726},{301,316}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{4,14},{301,316}}</string>
+                <key>sourceSize</key>
+                <string>{311,344}</string>
+            </dict>
             <key>scowerer_bg.png</key>
             <dict>
                 <key>frame</key>
@@ -469,7 +482,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f21b11eb0947697a7ab9da8b2811ece4:96443d74b27eac9ac8578edb2989f93c:0afd5d88c1d04885828391deeb2050d9$</string>
+            <string>$TexturePacker:SmartUpdate:82c66c5749da87ab832a6c972484dd86:ced0d792d6147f78a3dddbaa991af4ee:0afd5d88c1d04885828391deeb2050d9$</string>
             <key>textureFileName</key>
             <string>cards-iphone5.png</string>
         </dict>

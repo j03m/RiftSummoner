@@ -64,6 +64,8 @@ var MainGame = cc.Layer.extend({
             case 'multiplayer':
                 cc.Director.getInstance().replaceScene(Multiplayer.scene());
                 break;
+            case 'map':
+                cc.Director.getInstance().replaceScene(MapLayer.scene());
         }
 		this.currentScene = key;
     },
@@ -81,6 +83,19 @@ var MainGame = cc.Layer.extend({
             "assets":assets,
             "nextScene":'selectTeam'
         });
+    },
+    map:function(){
+        var assets = [];
+        for (var i=0;i<g_battleStuff.length;i++){
+            assets.pushUnique(g_battleStuff[i]);
+        }
+        assets = assets.concat(g_ui);
+
+        this.showLoader({
+            "assets":assets,
+            "nextScene":'map'
+        });
+
     },
     arenaPre:function(){
 		if (hotr.newOpponent){
@@ -184,7 +199,7 @@ var MainGame = cc.Layer.extend({
 	    //todo: what level, get team
         //fight config
         ArenaGame.scene();
-        this.returnPoint = this.selectEditTeamPre.bind(this);
+        this.returnPoint = this.map.bind(this);
         var teamA = hotr.blobOperations.getTeam();
         var level = hotr.blobOperations.getLevel();
         var teamAFormation = hotr.blobOperations.getFormation();

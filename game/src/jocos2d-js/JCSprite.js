@@ -405,7 +405,13 @@ jc.Sprite = cc.Sprite.extend({
             verts[3] = cc.p(this.HealthBarWidth - 1.0, 0.0);
 
             var clearColor = cc.c4f(255.0/255, 0.0, 0.0, 1.0);
-            var fillColor = cc.c4f(26.0/255.0, 245.0/255.0, 15.0/255.0, 1.0);
+            var fillColor;
+            if (!this.healthBarColor){
+                fillColor = cc.c4f(26.0/255.0, 245.0/255.0, 15.0/255.0, 1.0);
+            }else{
+                fillColor = this.healthBarColor;
+            }
+
             var borderColor = cc.c4f(35.0/255.0, 28.0/255.0, 40.0/255.0, 1.0);
 
             this.healthBar.drawPoly(verts,clearColor,0.7, borderColor);

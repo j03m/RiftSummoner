@@ -334,13 +334,14 @@ jc.TouchLayer = cc.Layer.extend({
     },
     slideOutToLeft:function(item, time, to, doneDelegate){
         var itemRect = this.getCorrectRect(item);
+        var from = item.getPosition();
         if (!to){
             var toX = (0 - itemRect.width); //offscreen left
-            var toY = this.winSize.height/2;
-            to = cc.p(toX,toY);
+
+            to = cc.p(toX,from.y);
         }
 
-        this.slide(item, item.getPosition(), to, time, cc.p(jc.defaultNudge,0), 'before',doneDelegate);
+        this.slide(item, from, to, time, cc.p(jc.defaultNudge,0), 'before',doneDelegate);
     },
 
     slideInFromRight:function(item, time,to,doneDelegate){
@@ -356,12 +357,13 @@ jc.TouchLayer = cc.Layer.extend({
     },
     slideOutToRight:function(item, time,to,doneDelegate){
         var itemRect = this.getCorrectRect(item);
+        var from = item.getPosition();
         if (!to){
             var toX = (this.winSize.width + itemRect.width); //offscreen left
-            var toY = this.winSize.height/2;
-            to = cc.p(toX, toY);
+
+            to = cc.p(toX, from.y);
         }
-        this.slide(item, item.getPosition(), to, time, cc.p(jc.defaultNudge * -1,0), 'before',doneDelegate);
+        this.slide(item, from, to, time, cc.p(jc.defaultNudge * -1,0), 'before',doneDelegate);
     },
     getCorrectRect:function(item){
         if (item instanceof jc.Sprite){
@@ -435,6 +437,27 @@ jc.TouchLayer = cc.Layer.extend({
         var seq = cc.Sequence.create(action, callbackAction);
         this.runAction(seq);
     },
+    placeArrowOn:function(item, direction){
+        if (direction == "down"){
+            var pos = item.getPosition();
+
+            if (this.arrow){
+                this.removeChild(this.arrow, true)
+            }
+            this.arrow = jc.playEffectAtLocation("arrow", cc.p(0,0), jc.topMost, this);
+
+            //rotate
+            if (direction == "down"){
+                this.arrow.setRotation(90);
+            }
+
+            var size = this.arrow.getContentSize();
+
+            pos.y +=size.height/2;
+            pos.y+=50*jc.assetScaleFactor;
+            this.arrow.setPosition(pos);
+        }
+    },
     placeArrow:function(position, direction){
         //play effect at location
         if (this.arrow){
@@ -448,76 +471,202 @@ jc.TouchLayer = cc.Layer.extend({
         }
 
     },
-    showTutorialStep:function(msg, callback){
-        if (!this.guideCharacter){
-            this.guideCharacter = jc.makeSpriteWithPlist(cardsPlists[0], cardsPngs[0], "tutorialChar.png");
-            this.addChild(this.guideCharacter);
+    getGuide:function(char){
+        if (char == 'girl'){
+            return "tutorialChar.png";
+        }else if (char == 'orc'){
+            return "orc_pose.png";
+        }else{
+            throw "unknown tutorial character...";
         }
 
-        if (!this.guideVisible){
-            var itemRect = this.guideCharacter.getContentSize();
-            var fromX = (this.winSize.width + itemRect.width);
-            var fromY = this.winSize.height/2 -  (itemRect.height/4.5);
-            var toX = this.winSize.width - ((itemRect.width/2) + jc.defaultNudge);
-            var toY = fromY -  (itemRect.height/4.5);
-            var to = cc.p(toX, toY);
-            this.slide(this.guideCharacter, cc.p(fromX,fromY), to, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), 'after',function(){
-                //show ms
-                this.guideVisible = true;
-                this.attachMsgTo(msg, this.guideCharacter, 'left');
-                jc.log(['touchlayer'], 'scheduling tutorial removal');
-                this.scheduleOnce(function(){
-                                            this.removeTutorialStep();
-                                            if(callback){
-                                                callback();
-                                            }
-                                }.bind(this), 2);
-            }.bind(this));
-        }
+
     },
-    removeTutorialStep: function(callback){
-        if (this.bubble){
-            this.removeChild(this.bubble, false);
-            this.bubble.removeChild(this.bubble.msg, false);
-            this.bubble.msg.release();
-            this.bubble.msg = undefined;
-            this.bubble.release();
-            this.bubble = undefined;
+    showTutorialStep:function(msg, time, direction, character, callbackIn, callbackOut){
+
+        if (!this.guideCharacters){
+            this.guideCharacters={};
         }
-        if (this.guideCharacter){
-            this.slideOutToRight(this.guideCharacter, jc.defaultTransitionTime, undefined, function(){
-                this.guideVisible = false;
-                if (callback){
-                    callback();
-                }
-            });
+
+        if (!this.guideCharacters[character]){
+            this.guideCharacters[character] = jc.makeSpriteWithPlist(cardsPlists[0], cardsPngs[0], this.getGuide(character));
+            this.guideCharacters[character].setZOrder(jc.topMost);
+            this.getParent().addChild(this.guideCharacters[character]);
+        }
+
+        var itemRect = this.guideCharacters[character].getContentSize();
+        if (character == 'girl'){
+            var adjust = 4.5;
+        }else{
+            var adjust = 3.5;
+        }
+
+        if (direction == 'right'){
+            var fromX = (this.winSize.width + itemRect.width);
+            var fromY = this.winSize.height/2 -  (itemRect.height/adjust);
+            var toX = this.winSize.width - (itemRect.width );
+            var toY = fromY -  (itemRect.height/adjust);
+            var to = cc.p(toX, toY);
+            var nudge =  cc.p(jc.defaultNudge,0);
+        }else{
+            var fromX = (0 - itemRect.width);
+            var fromY = this.winSize.height/2 -  (itemRect.height/adjust);
+            var toX = ((itemRect.width) - jc.defaultNudge);
+            var toY = fromY -  (itemRect.height/adjust);
+            var to = cc.p(toX, toY);
+            var nudge =  cc.p(jc.defaultNudge*-1,0);
+        }
+
+
+        this.slide(this.guideCharacters[character], cc.p(fromX,fromY), to, jc.defaultTransitionTime,nudge, 'after',function(){
+            //show ms
+            this.guideVisible = true;
+            this.attachMsgTo(msg, this.guideCharacters[character], direction=='left'?'right':'left');
+            jc.log(['touchlayer'], 'scheduling tutorial removal');
+            if(callbackIn){
+                callbackIn();
+            }
+            if (time){
+                this.scheduleOnce(function(){
+                    this.removeTutorialStep(undefined, callbackOut);
+                }.bind(this), time);
+            }
+
+        }.bind(this));
+    },
+    removeTutorialStep: function(character,direction, callback){
+        if (!character){
+            character = 'girl';
+        }
+        if (!direction){
+            direction = 'left';
+        }
+        if (this.guideCharacters[character]){
+            this.shrinkBubble();
+            if (direction == 'right'){
+                this.slideOutToRight(this.guideCharacters[character], jc.defaultTransitionTime, undefined, function(){
+                    this.guideVisible = false;
+                    if (callback){
+                        callback();
+                    }
+                }.bind(this));
+            }
+
+            if (direction =='left'){
+                this.slideOutToLeft(this.guideCharacters[character], jc.defaultTransitionTime, undefined, function(){
+                    this.guideVisible = false;
+                    if (callback){
+                        callback();
+                    }
+                }.bind(this));
+            }
+
         }
     },
     attachMsgTo:function(msg, element, where){
+        if (this.bubble){
+            this.shrinkBubble(function(){
+                this.doBubble(msg, element, where);
+            }.bind(this));
+        }else{
+            this.doBubble(msg, element, where);
+        }
+    },
+    doBubble:function(msg, element, where){
         this.bubble = jc.makeSpriteWithPlist(uiPlist, uiPng, "dialog1.png");
+
+        if(!element) {
+            throw "nope, need character now.";
+        }
+
+        if (!where){
+            throw "nope, need where now.";
+        }
+
         var elPos = element.getPosition();
         var elSize = element.getContentSize();
+
         if (where == 'left'){
             this.bubble.setFlippedX(true);
             var myPos = cc.p(elPos.x - elSize.width, elPos.y);
             this.bubble.setPosition(myPos)
         }else{
             var myPos = cc.p(elPos.x + elSize.width, elPos.y);
-            this.bubble.setPosition(myPos)
-
+            this.bubble.setPosition(myPos);
         }
-        this.bubble.msg = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, jc.font.labelSize, cc.TEXT_ALIGNMENT_LEFT);
-        this.bubble.msg.setColor(cc.gray());
-        this.bubble.msg.setText(msg);
-        this.bubble.msg.retain();
-        this.addChild(this.bubble);
-        this.bubble.addChild(this.bubble.msg);
-        this.centerThisChild(this.bubble.msg, this.bubble);
-        jc.scaleXTo(this.bubble.msg, this.bubble);
-        this.bubble.msg.adjustPosition(20*jc.assetScaleFactor, 50*jc.assetScaleFactor);
+
         this.bubble.adjustPosition(0, 300*jc.assetScaleFactor);
 
 
+        this.bubble.msg = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, this.bubbleMsgSize(msg), cc.TEXT_ALIGNMENT_CENTER);
+        this.bubble.msg.setColor(cc.gray());
+        this.bubble.msg.setText(msg);
+        this.bubble.msg.retain();
+        this.getParent().addChild(this.bubble);
+        this.bubble.setZOrder(jc.topMost);
+        this.getParent().addChild(this.bubble.msg);
+        this.bubble.msg.setZOrder(jc.topMost+1);
+        this.bubble.setScale(0.01, 0.01);
+        this.centerThisPeer(this.bubble.msg, this.bubble);
+//        this.bubble.msg.adjustPosition(20*jc.assetScaleFactor, 50*jc.assetScaleFactor);
+        this.popBubble();
+
+    },
+    bubbleMsgSize:function(msg){
+        var bubbleSize = this.bubble.getContentSize();
+        if (jc.font.fontSize* msg.length < bubbleSize.width){
+            return cc.size(jc.font.fontSize* msg.length, jc.font.fontSize);
+        }else{
+            var times = (jc.font.fontSize* msg.length)/bubbleSize.width;
+            return cc.size(bubbleSize.width, jc.font.fontSize*times);
+        }
+
+    },
+    popBubble:function(cb){
+        var scale = cc.ScaleTo.create(1,1.3,1.3);
+        scale.retain();
+        var elastic = cc.EaseElasticOut.create(scale, 0.3);
+        elastic.retain();
+        var func = cc.CallFunc.create(function(){
+            if (cb){
+                cb();
+            }
+            jc.log(['bubble'], 'bubble popped!')
+            scale.release();
+            elastic.release();
+            seq.release();
+            func.release;
+        }.bind(this));
+        func.retain();
+        var seq = cc.Sequence.create(elastic, func);
+        seq.retain();
+        this.bubble.runAction(seq);
+
+    },
+    shrinkBubble:function(cb){
+        if (!this.bubble){
+            if (cb){
+                cb();
+            }
+            return;
+        }
+        var scale = cc.ScaleTo.create(0.25,0.01,0.01);
+        var elastic = cc.EaseElasticOut.create(scale, 0.3);
+        this.getParent().removeChild(this.bubble.msg, true);
+        var func = cc.CallFunc.create(function(){
+            this.getParent().removeChild(this.bubble, true);
+            this.bubble.msg.release();
+            this.bubble.msg = undefined;
+            this.bubble.release();
+            this.bubble = undefined;
+            jc.log(['bubble'], 'bubble shrunk!')
+            if (cb){
+                cb();
+            }
+        }.bind(this));
+        var seq = cc.Sequence.create(elastic, func);
+        this.bubble.runAction(seq);
+        this.bubble.msg.runAction(elastic);
     },
     floatMsg: function(msg){
         if (!this.msgStack){

@@ -154,12 +154,12 @@ RangeBehavior.prototype.doMissile = function(){
             var myangle = Math.atan2(subbed.y, subbed.x);
             jc.log(['missile'],"angle raw atan2:" + myangle);
             myangle *= (180 / Math.PI);
-//            if (myangle>45){
-//                myangle = 45;
-//            }
-//            if (myangle<-45){
-//                myangle = -45;
-//            }
+            if (!this.owner.isFlippedX()){
+                myangle+=180;
+                myangle*=-1
+            }else{
+                myangle*=-1
+            }
             jc.log(['missile'],"angle:" + myangle);
             this.missile.setRotation(myangle);
             moveTo = cc.MoveTo.create(timeToImpact, targetPos);
