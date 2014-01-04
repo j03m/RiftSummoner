@@ -16,6 +16,17 @@ exports.generateCards = function(stones, cards, callback){
     });
 }
 
+exports.getDefault = function(){
+    var result = [];
+    var card = {name:"dwarvenKnightLife", id:uuid.v4()};
+    result.push(card);
+    card = {name:"goblinKnightBlood", id:uuid.v4()};
+    result.push(card);
+    card = {name:"elfLife", id:uuid.v4()};
+    result.push(card);
+    return result;
+}
+
 exports.getEveryone = function(){
     var result = []
     for (var tier in characterTiers){

@@ -196,8 +196,10 @@ var ArenaGame = jc.WorldLayer.extend({
     placeEnemyTeam:function(){
         this.startPos = cc.p(this.worldSize.width/2, this.worldSize.height/2);
         this.startPos.x+=500*jc.characterScaleFactor;
+        this.startPos.y-=500*jc.characterScaleFactor;
         this.placeTeamPosition(this.teams['b'], this.squadNumbers);
         this.startPos.x+=500*jc.characterScaleFactor;
+        this.startPos.y-=500*jc.characterScaleFactor;
         this.placeTeamPosition(this.teams['b'], this.teamSize);
     },
     placePlayerTeam:function(squad){

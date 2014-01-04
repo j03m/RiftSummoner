@@ -1,7 +1,7 @@
 
 var auth = require('./auth.js');
 var cardGen = require('./cardGen.js').generateCards;
-var getEveryone = require('./cardGen.js').getEveryone;
+var getDefault = require('./cardGen.js').getDefault;
 var redisWrap = require('./redisWrapper.js');
 var error = require('./errors.js').error;
 var mpApi = require('./multiplayerApi.js');
@@ -17,7 +17,7 @@ function makePlayerData(userId, callback){
 		}else{
 	        var blob = {};
 	        blob["id"] = userId;
-	        blob.myguys = getEveryone();
+	        blob.myguys = getDefault();
 	        blob.coins = 50;
 	        blob.stones = 3;
 	        blob.version = 0;

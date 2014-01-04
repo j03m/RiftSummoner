@@ -33,8 +33,10 @@ var tracers = {
     'jc.shade':0,
     'setText':0,
     'missile':0,
-    'map':1,
-    'bubble':1
+    'map':0,
+    'bubble':0,
+    'tutorials':0,
+    'blobOperations':1
 };
 
 jc.log = function(categories, msg){

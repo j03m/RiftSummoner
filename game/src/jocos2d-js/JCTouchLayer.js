@@ -483,12 +483,14 @@ jc.TouchLayer = cc.Layer.extend({
 
     },
     showTutorialStep:function(msg, time, direction, character, callbackIn, callbackOut){
-
+        jc.log(['tutorials'], 'showing:' + character);
         if (!this.guideCharacters){
+            jc.log(['tutorials'], 'init');
             this.guideCharacters={};
         }
 
         if (!this.guideCharacters[character]){
+            jc.log(['tutorials'], 'making:'+character);
             this.guideCharacters[character] = jc.makeSpriteWithPlist(cardsPlists[0], cardsPngs[0], this.getGuide(character));
             this.guideCharacters[character].setZOrder(jc.topMost);
             this.getParent().addChild(this.guideCharacters[character]);
@@ -502,22 +504,33 @@ jc.TouchLayer = cc.Layer.extend({
         }
 
         if (direction == 'right'){
+            jc.log(['tutorials'], 'direction:right');
             var fromX = (this.winSize.width + itemRect.width);
+            jc.log(['tutorials'], 'fromX:'+fromX);
             var fromY = this.winSize.height/2 -  (itemRect.height/adjust);
+            jc.log(['tutorials'], 'fromY:'+fromY);
             var toX = this.winSize.width - (itemRect.width );
+            jc.log(['tutorials'], 'toX:'+toX);
             var toY = fromY -  (itemRect.height/adjust);
+            jc.log(['tutorials'], 'toY:'+toY);
             var to = cc.p(toX, toY);
             var nudge =  cc.p(jc.defaultNudge,0);
+            jc.log(['tutorials'], 'nudge:'+  jc.defaultNudge);
         }else{
             var fromX = (0 - itemRect.width);
+            jc.log(['tutorials'], 'fromX:'+fromX);
             var fromY = this.winSize.height/2 -  (itemRect.height/adjust);
+            jc.log(['tutorials'], 'fromY:'+fromY);
             var toX = ((itemRect.width) - jc.defaultNudge);
+            jc.log(['tutorials'], 'toX:'+toX);
             var toY = fromY -  (itemRect.height/adjust);
+            jc.log(['tutorials'], 'toY:'+toY);
             var to = cc.p(toX, toY);
             var nudge =  cc.p(jc.defaultNudge*-1,0);
+            jc.log(['tutorials'], 'nudge:' + jc.defaultNudge);
         }
 
-
+        jc.log(['tutorials'], 'sliding');
         this.slide(this.guideCharacters[character], cc.p(fromX,fromY), to, jc.defaultTransitionTime,nudge, 'after',function(){
             //show ms
             this.guideVisible = true;

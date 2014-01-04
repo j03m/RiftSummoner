@@ -30,12 +30,14 @@ var MapLayer = jc.UiElementsLayer.extend({
             jc.log(['map'], 'ftue');
             //(msg, time, direction, character, callbackIn, callbackOut){
             hotr.blobOperations.setTutorialStep(1);
-            this.showTutorialStep("Summoner, we've been waiting for you. The enemy approaches!",
-                                   undefined,
-                                   "left",
-                                   "girl");
-            this.step = 1;
+            this.scheduleOnce(function(){
+                this.showTutorialStep("Summoner, we've been waiting for you. The enemy approaches!",
+                    undefined,
+                    "left",
+                    "girl");
+            }.bind(this));
 
+            this.step = 1;
         }
 
     },
@@ -55,7 +57,7 @@ var MapLayer = jc.UiElementsLayer.extend({
     },
     level1Tutorial:function(){
         if (this.step == 1){
-            this.showTutorialStep("Yea, son! We're gonna burn your village and steal your girl friend!",
+            this.showTutorialStep("Yarg! We're gonna burn your city and everyone in it!",
                 undefined,
                 "right",
                 "orc");

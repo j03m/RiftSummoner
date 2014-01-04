@@ -78,21 +78,33 @@ hotr.blobOperations.getFormation = function(){
 }
 
 hotr.blobOperations.getTeam = function(){
+    jc.log(['bloboperations'], 'getteam');
     var characterMap = {};
+    jc.log(['bloboperations'], 'characterMap');
     _.each(hotr.playerBlob.myguys, function(character){
+        jc.log(['bloboperations'], 'characterMap:' + character.name);
         characterMap[character.id] = character;
     });
 
+    jc.log(['bloboperations'], 'teamformation');
+    if (!hotr.playerBlob.teamformation){
+        hotr.playerBlob.teamformation = [];
+    }
+
     var formation = hotr.playerBlob.teamformation;
     var team = [];
+    jc.log(['bloboperations'], 'team loop');
+
     for (var i=0;i<formation.length; i++){
         if (formation[i]!=undefined){
+
             if (characterMap[formation[i]]){       //no invalid ids
                 team[i]=characterMap[formation[i]];
             }
 
         }
     }
+    jc.log(['bloboperations'], 'return');
     return team;
 }
 
