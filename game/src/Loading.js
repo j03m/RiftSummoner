@@ -91,9 +91,12 @@ var Loading = jc.UiElementsLayer.extend({
         }.bind(this);
     },
     raiseComplete:function(){
-        this.done();
+        //this.done();
         this.unschedule(this.checkPercent);
-        hotr.changeScene(this.nextScene);
+        this.scheduleOnce(function(){
+            hotr.changeScene(this.nextScene);
+        },1);
+
 
     },
     getPercentage:function(){

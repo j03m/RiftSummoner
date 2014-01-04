@@ -47,13 +47,16 @@ var ArenaGame = jc.WorldLayer.extend({
         cc.SpriteFrameCache.getInstance().addSpriteFrames(shadowPlist);
         cc.SpriteBatchNode.create(shadowPng);
         this.level = hotr.blobOperations.getTutorialLevel();
-        if(!hotr.arenaScene.data){
-            this.runScenario0();
-        }else if (this.level!=1){
-            this.runScenario();
-        }else{
-            this.runTutorial();
-        }
+        this.scheduleOnce(function(){
+            if(!hotr.arenaScene.data){
+                this.runScenario0();
+            }else if (this.level!=1){
+                this.runScenario();
+            }else{
+                this.runTutorial();
+            }
+        }.bind(this));
+
     },
     runScenario:function(){
         this.teamASprites = hotr.arenaScene.data.teamA;

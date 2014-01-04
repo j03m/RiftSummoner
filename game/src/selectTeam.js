@@ -175,11 +175,14 @@ var SelectTeam = jc.UiElementsLayer.extend({
     },
     fightStart:function(){
 
+        jc.log(['selectTeam'], 'fightStart')
         if (this.level == 1 && this.step != 14){
+            jc.log(['selectTeam'], 'fightStart before ready');
             return;
         }
 
         if (!this.nextEnabled){
+            jc.log(['selectTeam'], 'fightStart invalid state');
             return;
         }
         if (this.arrow){
@@ -189,8 +192,11 @@ var SelectTeam = jc.UiElementsLayer.extend({
         this.nextEnabled = false;
 		var formationOrder = hotr.blobOperations.getFormationOrder();
 		if (formationOrder.length!=0){
-		    hotr.mainScene.layer.arenaPre();
-		}      
+            jc.log(['selectTeam'], 'fightStart!!!!');
+            hotr.mainScene.layer.arenaPre();
+		}else{
+            jc.log(['selectTeam'], 'fightStart no dudes');
+        }
     },
     kikStart:function(){
         if (!this.nextEnabled){
@@ -250,10 +256,10 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     this.arrow.setVisible(false);
                 }
                 jc.layerManager.pushLayer(EditTeam.getInstance(),10);
-
             }
+            return true;
         }
-        return true;
+        return false;
     },
     handleTutorialTouches:function(type, touch, sprites){
         if (this.level == 1){

@@ -26,7 +26,7 @@ var Landing = jc.UiElementsLayer.extend({
     battle:function(){         
 		 // hotr.multiplayerGame = true;
 		 //          hotr.mainScene.layer.battlePre();
-		 hotr.mainScene.layer.mpGetGames();
+		 //hotr.mainScene.layer.mpGetGames();
     },
     summon:function(){},
     store:function(){},
