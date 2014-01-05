@@ -116,7 +116,8 @@ var MapLayer = jc.UiElementsLayer.extend({
             this.step = 3;
         }else if (this.step == 3){
             this.attachMsgTo("To be continued.....", this.guideCharacters['girl'], 'right');
-            this.step = 4;
+            hotr.playerBlob.questLevel = 1;
+            hotr.blobOperations.saveBlob();
         }
     },
     level3Tutorial:function(){
