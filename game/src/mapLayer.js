@@ -142,7 +142,7 @@ var MapLayer = jc.UiElementsLayer.extend({
             this.step=2;
         }else if(this.step == 2){
             this.removeTutorialStep('orc', 'right', function(){
-                this.attachMsgTo("Hmm, these fiends are much more aggressive then usual... No matter, let us drive them off.", this.guideCharacters['girl'], 'right');
+                this.attachMsgTo("Hmm, these fiends are much more aggressive than usual... No matter, let us drive them off.", this.guideCharacters['girl'], 'right');
                 this.step =3;
             }.bind(this));
         }else if (this.step == 3){
