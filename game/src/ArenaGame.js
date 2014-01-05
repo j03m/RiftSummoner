@@ -655,13 +655,13 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.step = 4.5;
             }.bind(this));
         }else if (this.step ==4.5){
-            this.showTutorialStep("Gai! The city is lost, you must flee! We will buy you what time we can. Take the summoner into the mountains. Commander Vandie, will meet you there to prepare for the coming war!", undefined, 'right', 'dwarf');
+            this.showTutorialStep("Priestess! The city is lost, you must flee! We will buy you what time we can. Take the summoner into the mountains. Commander Vandie, will meet you there to prepare for the coming war!", undefined, 'right', 'dwarf');
             this.step = 4.6;
         }else if (this.step ==4.6){
             this.attachMsgTo("Your sacrifice won't be forgotten, brave soldier.", this.guideCharacters['girl'], 'right');
             this.step = 4.7;
         }else if (this.step ==4.7){
-            this.attachMsgTo("It is as good day as any to die. Do not let it be for not.", this.guideCharacters['dwarf'], 'left');
+            this.attachMsgTo("It is as good day as any to die. Do not let it be in vain.", this.guideCharacters['dwarf'], 'left');
             this.step = 5;
         }else if (this.step ==5){
             this.removeTutorialStep('girl', 'left');
@@ -737,7 +737,7 @@ var ArenaGame = jc.WorldLayer.extend({
         }else if (this.step == 5){
             this.placePowerTokens();
             this.removeTutorialStep('orc', 'right');
-            this.showTutorialStep("I have a plan. Let's call in the calvary. Open the powers tray below.", undefined, 'right', 'girl');
+            this.showTutorialStep("I have a plan. Let's call in the cavalry. Open the powers tray below.", undefined, 'right', 'girl');
             this.step = 5.5;
         }else if (this.step == 5.5){
             this.attachMsgTo('The power tray contains extra powers that can turn the tide of a battle to your favor.', this.guideCharacters['girl'], 'left');

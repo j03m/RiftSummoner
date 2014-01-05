@@ -33,7 +33,7 @@ var MapLayer = jc.UiElementsLayer.extend({
             //(msg, time, direction, character, callbackIn, callbackOut){
             hotr.blobOperations.setTutorialStep(1);
             this.scheduleOnce(function(){
-                this.showTutorialStep("Summoner, we've been waiting for you. I am honored. It seems a raiding party approaches. It will be good training for you. ",
+                this.showTutorialStep("Summoner, we've been waiting for you. I am honored. We have not had one such as yourself in Old Vallation for many years. But, it seems a raiding party approaches. Our greeting need be short. ",
                     undefined,
                     "left",
                     "girl");
@@ -74,7 +74,7 @@ var MapLayer = jc.UiElementsLayer.extend({
             jc.log(['map'], 'ftue3');
             hotr.blobOperations.setTutorialStep(1);
             this.scheduleOnce(function(){
-                this.showTutorialStep("The great city of Vallation...ruined. Hundreds of lives lost...",
+                this.showTutorialStep("The great city of Old Vallation...destroyed. Hundreds of lives sacrificed...But there is no time to dwell on those lost.",
                     undefined,
                     "left",
                     "girl");
