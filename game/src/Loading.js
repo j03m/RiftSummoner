@@ -106,7 +106,7 @@ var Loading = jc.UiElementsLayer.extend({
         //implement loading bar once we have the sprites
         if (this.animationDone){
 
-            var parts = 20; //we have 20 animation states for the bar
+            var parts = 21; //we have 21 animation states for the bar
 
             //first, what is the asset loader at?
             var getPercentage;
@@ -155,7 +155,7 @@ var Loading = jc.UiElementsLayer.extend({
             this.spinner.setDisplayFrame(frame)
 
             if (tempDoneCount >= this.totalItemsToLoad){
-                var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader.20.png");
+                var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader.21.png");
                 this.spinner.setDisplayFrame(frame);
                 this.scheduleOnce(this.raiseComplete.bind(this));
 

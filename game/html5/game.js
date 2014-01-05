@@ -14,6 +14,7 @@ var hotrSrc = [
         '../src/missileConfig.js',
         '../src/effectsConfig.js',
         '../src/powerTileConfig.js',
+        '../src/levelConfig.js',
         '../src/powerConfig.js',
         '../src/jocos2d-js/JCTrace.js',
         '../src/jocos2d-js/JCResolutions.js',

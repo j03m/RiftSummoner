@@ -238,6 +238,11 @@ var SelectTeam = jc.UiElementsLayer.extend({
         jc.log(['selectTeam'], "close");
     },
     targetTouchHandler: function(type, touch, sprites) {
+
+        if (this.level == 1 && this.step == 14){
+            return; //locks clicks to fight start button
+        }
+
         if (this.handleTutorialTouches(type, touch, sprites)){
             return;
         }

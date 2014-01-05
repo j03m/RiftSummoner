@@ -18,9 +18,23 @@ exports.generateCards = function(stones, cards, callback){
 
 exports.getDefault = function(){
     var result = [];
-    var card = {name:"dwarvenKnightLife", id:uuid.v4()};
+    var card = {name:"dwarvenKnightEarth", id:uuid.v4()};
     result.push(card);
-    card = {name:"goblinKnightBlood", id:uuid.v4()};
+    card = {name:"dwarvenKnightEarth", id:uuid.v4()};
+    result.push(card);
+    card = {name:"dwarvenKnightEarth", id:uuid.v4()};
+    result.push(card);
+    card = {name:"dwarvenKnightEarth", id:uuid.v4()};
+    result.push(card);
+    card = {name:"dwarvenKnightEarth", id:uuid.v4()};
+    result.push(card);
+    card = {name:"dwarvenKnightEarth", id:uuid.v4()};
+    result.push(card);
+    card = {name:"dwarvenKnightEarth", id:uuid.v4()};
+    result.push(card);
+    card = {name:"dwarvenKnightEarth", id:uuid.v4()};
+    result.push(card);
+    card = {name:"dwarvenKnightEarth", id:uuid.v4()};
     result.push(card);
     card = {name:"elfLife", id:uuid.v4()};
     result.push(card);

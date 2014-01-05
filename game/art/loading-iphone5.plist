@@ -20,6 +20,19 @@
             <key>loader.1.png</key>
             <dict>
                 <key>frame</key>
+                <string>{{1499,310},{309,306}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{309,306}}</string>
+                <key>sourceSize</key>
+                <string>{309,306}</string>
+            </dict>
+            <key>loader.10.png</key>
+            <dict>
+                <key>frame</key>
                 <string>{{1191,310},{309,306}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
@@ -30,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.10.png</key>
+            <key>loader.11.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1493,2},{309,306}}</string>
@@ -43,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.11.png</key>
+            <key>loader.12.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1185,935},{309,306}}</string>
@@ -56,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.12.png</key>
+            <key>loader.13.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1185,624},{309,306}}</string>
@@ -69,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.13.png</key>
+            <key>loader.14.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{926,1557},{309,306}}</string>
@@ -82,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.14.png</key>
+            <key>loader.15.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{926,1246},{309,306}}</string>
@@ -95,7 +108,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.15.png</key>
+            <key>loader.16.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{883,313},{309,306}}</string>
@@ -108,7 +121,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.16.png</key>
+            <key>loader.17.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{883,2},{309,306}}</string>
@@ -121,7 +134,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.17.png</key>
+            <key>loader.18.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{877,935},{309,306}}</string>
@@ -134,7 +147,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.18.png</key>
+            <key>loader.19.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{877,624},{309,306}}</string>
@@ -147,7 +160,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.19.png</key>
+            <key>loader.2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{618,1577},{309,306}}</string>
@@ -160,7 +173,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.2.png</key>
+            <key>loader.20.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{618,1266},{309,306}}</string>
@@ -173,7 +186,7 @@
                 <key>sourceSize</key>
                 <string>{309,306}</string>
             </dict>
-            <key>loader.20.png</key>
+            <key>loader.21.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{575,313},{309,306}}</string>
@@ -300,7 +313,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2b1bb6c20d10d95829220989c308bf48:29a7a41c471973209500935787d4e196:a93e996566f17c3875bb5062c2300cc5$</string>
+            <string>$TexturePacker:SmartUpdate:a0deda6d5cafb748363221214c39cc96:48cc8eb793e0e45dfcd07f10911e11c4:a93e996566f17c3875bb5062c2300cc5$</string>
             <key>textureFileName</key>
             <string>loading-iphone5.png</string>
         </dict>

@@ -135,20 +135,21 @@ RangeBehavior.prototype.doMissile = function(){
 		if (!missileType.path){
 			moveTo = cc.MoveTo.create(timeToImpact, targetPos);
 		}else if (missileType.path=="bezier"){
-
 			var bezier = [];
 			bezier.push(missileStart);
-
 			var pos2 = cc.pMidpoint(missileStart, targetPos);
 			pos2.y += v.distance/2;
 			bezier.push(pos2);
-
 			bezier.push(targetPos);
 			moveTo = cc.BezierTo.create(timeToImpact, bezier);
 		}else if (missileType.path =="jump"){
 			moveTo = cc.JumpTo.create(timeToImpact, targetPos, v.distance/2, 1);
 		}else if (missileType.path =="arrow"){
-            moveTo = cc.JumpTo.create(timeToImpact, targetPos,v.distance/3 , 1);
+            var height = v.distance/2;
+            if (missileStart.y + height <= targetPos.y){
+                height = targetPos.y+height/2;
+            }
+            moveTo = cc.JumpTo.create(timeToImpact, targetPos, height, 1);
         }else if (missileType.path == "bullet"){
             var subbed = cc.pSub(missileStart, cc.p(targetPos.x, targetPos.y));
             var myangle = Math.atan2(subbed.y, subbed.x);

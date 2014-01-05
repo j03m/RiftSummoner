@@ -458,6 +458,11 @@ jc.TouchLayer = cc.Layer.extend({
             this.arrow.setPosition(pos);
         }
     },
+    removeArrow: function(){
+        if (this.arrow){
+            this.removeChild(this.arrow, true);
+        }
+    },
     placeArrow:function(position, direction){
         //play effect at location
         if (this.arrow){
@@ -470,12 +475,24 @@ jc.TouchLayer = cc.Layer.extend({
             this.arrow.setRotation(90);
         }
 
+        if (direction == 'left'){
+            this.arrow.setRotation(180);
+        }
+
+        if (direction == 'up'){
+            this.arrow.setRotation(270);
+        }
+
     },
     getGuide:function(char){
         if (char == 'girl'){
             return "tutorialChar.png";
         }else if (char == 'orc'){
             return "orc_pose.png";
+        }else if (char == 'demon'){
+            return "gargoyleFire_pose.png";
+        }else if (char == 'dwarf'){
+            return "dwarvenKnightEarth_pose.png";
         }else{
             throw "unknown tutorial character...";
         }
@@ -491,7 +508,7 @@ jc.TouchLayer = cc.Layer.extend({
 
         if (!this.guideCharacters[character]){
             jc.log(['tutorials'], 'making:'+character);
-            this.guideCharacters[character] = jc.makeSpriteWithPlist(cardsPlists[0], cardsPngs[0], this.getGuide(character));
+            this.guideCharacters[character] = jc.makeSpriteWithPlist(tutorialPlist, tutorialPng, this.getGuide(character));
             this.guideCharacters[character].setZOrder(jc.topMost);
             this.getParent().addChild(this.guideCharacters[character]);
         }
@@ -499,6 +516,8 @@ jc.TouchLayer = cc.Layer.extend({
         var itemRect = this.guideCharacters[character].getContentSize();
         if (character == 'girl'){
             var adjust = 4.5;
+        }else if (character == 'orc'){
+            var adjust = 3.5;
         }else{
             var adjust = 3.5;
         }
@@ -611,7 +630,8 @@ jc.TouchLayer = cc.Layer.extend({
         this.bubble.adjustPosition(0, 300*jc.assetScaleFactor);
 
 
-        this.bubble.msg = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, this.bubbleMsgSize(msg), cc.TEXT_ALIGNMENT_CENTER);
+        var size = this.bubbleMsgSize(msg);
+        this.bubble.msg = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, size , cc.TEXT_ALIGNMENT_CENTER);
         this.bubble.msg.setColor(cc.gray());
         this.bubble.msg.setText(msg);
         this.bubble.msg.retain();
@@ -633,10 +653,22 @@ jc.TouchLayer = cc.Layer.extend({
             var times = (jc.font.fontSize* msg.length)/bubbleSize.width;
             return cc.size(bubbleSize.width, jc.font.fontSize*times);
         }
-
+    },
+    msgSize:function(msg){
+        return cc.size(jc.font.fontSize* msg.length, jc.font.fontSize);
     },
     popBubble:function(cb){
-        var scale = cc.ScaleTo.create(1,1.3,1.3);
+        var cs = this.bubble.getContentSize();
+        var cs2 = this.bubble.msg.getContentSize();
+        var scaleVal = (cs2.width/cs.width);
+        var scaleValY = (cs2.height)/(cs.height-100*jc.assetScaleFactor);
+        scaleVal = Math.max(scaleVal, scaleValY);
+
+        if (scaleVal < 1.3){
+            scaleVal = 1.3;
+        }
+
+        var scale = cc.ScaleTo.create(1,scaleVal,scaleVal);
         scale.retain();
         var elastic = cc.EaseElasticOut.create(scale, 0.3);
         elastic.retain();
@@ -685,7 +717,7 @@ jc.TouchLayer = cc.Layer.extend({
         if (!this.msgStack){
             this.msgStack = [];
         }
-        var floater = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, jc.font.labelSize, cc.TEXT_ALIGNMENT_LEFT);
+        var floater = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, this.msgSize(msg), cc.TEXT_ALIGNMENT_CENTER);
         floater.setColor(cc.red());
         floater.setText(msg);
         floater.retain();

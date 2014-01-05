@@ -8,7 +8,7 @@ var MapLayer = jc.UiElementsLayer.extend({
 
             jc.log(['map'], 'init');
             this.tutorialStep1 = cc.p(500 * jc.assetScaleFactor,500* jc.assetScaleFactor);
-            this.tutorialStep2 = cc.p(400 * jc.assetScaleFactor,600* jc.assetScaleFactor);
+            this.tutorialStep2 = cc.p(800 * jc.assetScaleFactor,500* jc.assetScaleFactor);
             this.tutorialStep3 = cc.p(400 * jc.assetScaleFactor,600* jc.assetScaleFactor);
             this.start();
             return true;
@@ -26,12 +26,14 @@ var MapLayer = jc.UiElementsLayer.extend({
             hotr.blobOperations.incrementLevel();
             this.level =1;
         }
+
+        //remove this:
         if (this.level == 1){
             jc.log(['map'], 'ftue');
             //(msg, time, direction, character, callbackIn, callbackOut){
             hotr.blobOperations.setTutorialStep(1);
             this.scheduleOnce(function(){
-                this.showTutorialStep("Summoner, we've been waiting for you. The enemy approaches!",
+                this.showTutorialStep("Summoner, we've been waiting for you. I am honored. It seems a raiding party approaches. It will be good training for you. ",
                     undefined,
                     "left",
                     "girl");
@@ -40,6 +42,50 @@ var MapLayer = jc.UiElementsLayer.extend({
             this.step = 1;
         }
 
+        if (this.level == 2){
+            jc.log(['map'], 'ftue2');
+            //(msg, time, direction, character, callbackIn, callbackOut){
+            hotr.blobOperations.setTutorialStep(1);
+            this.scheduleOnce(function(){
+                this.showTutorialStep("There's more! We need to fight again.",
+                    undefined,
+                    "left",
+                    "girl");
+            }.bind(this));
+
+            this.step = 1;
+        }
+
+        if (this.level == 3){
+            jc.log(['map'], 'ftue3');
+            hotr.blobOperations.setTutorialStep(1);
+            this.scheduleOnce(function(){
+                this.showTutorialStep("Wait, something is wrong. There's a strange power amassing outside the city gates. We need to hurry.",
+                    undefined,
+                    "left",
+                    "girl");
+            }.bind(this));
+
+            this.step = 1;
+
+        }
+
+        if (this.level == 4){
+            jc.log(['map'], 'ftue3');
+            hotr.blobOperations.setTutorialStep(1);
+            this.scheduleOnce(function(){
+                this.showTutorialStep("The great city of Vallation...ruined. Hundreds of lives lost...",
+                    undefined,
+                    "left",
+                    "girl");
+            }.bind(this));
+
+            this.step = 1;
+
+        }
+
+
+
     },
     targetTouchHandler:function(type, touch, sprites) {
         //any touch -
@@ -47,24 +93,81 @@ var MapLayer = jc.UiElementsLayer.extend({
         if (type == jc.touchEnded){
             if (this.level==1){
                 this.level1Tutorial();
+            }else if (this.level == 2){
+                this.level2Tutorial();
+            }else if (this.level == 3){
+                this.level3Tutorial();
+            }else if (this.level == 4){
+                this.level4Tutorial();
+            }else{
+                hotr.mainScene.layer.selectEditTeamPre();
             }
-
-
         }
 
         return true;
 
     },
+    level4Tutorial:function(){
+        if (this.step == 1){
+            this.attachMsgTo("Your coming is omen then. Only a summoner can bring forth the creatures of The Rift. With your help we must raise an army to defeat the Dark One.", this.guideCharacters['girl'], 'right');
+            this.step = 2;
+        }else if (this.step == 2){
+            this.attachMsgTo("We will need to build your strength. The Rift stones you've collected will allow us to summon minions to your cause.", this.guideCharacters['girl'], 'right');
+            this.step = 3;
+        }else if (this.step == 3){
+            this.attachMsgTo("To be continued.....", this.guideCharacters['girl'], 'right');
+            this.step = 4;
+        }
+    },
+    level3Tutorial:function(){
+        if (this.step == 1){
+            this.removeTutorialStep('girl', 'left');
+            this.placeArrow(this.tutorialStep2, "down");
+            this.step = 2;
+        }else if (this.step == 2){
+            if (!this.allowOnce){
+                this.allowOnce = true;
+                jc.log(['map'], 'going to team');
+                this.removeChild(this.arrow, true);
+                hotr.mainScene.layer.arenaPre();
+            }
+        }
+    },
+    level2Tutorial:function(){
+        if (this.step == 1){
+            this.showTutorialStep("Do you think because you killed some puny goblins that we would run away scared? You wil die, summoner.",
+                undefined,
+                "right",
+                "orc");
+            this.step=2;
+        }else if(this.step == 2){
+            this.removeTutorialStep('orc', 'right', function(){
+                this.attachMsgTo("Hmm, these fiends are much more aggressive then usual... No matter, let us drive them off.", this.guideCharacters['girl'], 'right');
+                this.step =3;
+            }.bind(this));
+        }else if (this.step == 3){
+            this.removeTutorialStep ('girl', 'left');
+            this.placeArrow(this.tutorialStep2, "down");
+            this.step = 4;
+        }else if (this.step == 4){
+            if (!this.allowOnce){
+                this.allowOnce = true;
+                jc.log(['map'], 'going to team');
+                this.removeChild(this.arrow, true);
+                hotr.mainScene.layer.arenaPre();
+            }
+        }
+    },
     level1Tutorial:function(){
         if (this.step == 1){
-            this.showTutorialStep("Yarg! We're gonna burn your city and everyone in it!",
+            this.showTutorialStep("Our master wants your head, summoner. Come with us and we'll spare the city.",
                 undefined,
                 "right",
                 "orc");
             this.step=2;
         }else if (this.step == 2){
            this.removeTutorialStep('orc', 'right', function(){
-               this.attachMsgTo("We can't let that happen, click the map to head them off at the old arena!", this.guideCharacters['girl'], 'right');
+               this.attachMsgTo("Orc bravado. Pathetic. Click the map to head them off at the old arena!", this.guideCharacters['girl'], 'right');
                this.step =3;
            }.bind(this));
 

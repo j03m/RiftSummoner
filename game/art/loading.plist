@@ -20,7 +20,7 @@
             <key>loader.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{505,401},{131,129}}</string>
+                <string>{{507,2},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>loader.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{505,268},{131,129}}</string>
+                <string>{{505,401},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>loader.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{395,534},{131,129}}</string>
+                <string>{{505,268},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>loader.12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{264,806},{131,129}}</string>
+                <string>{{395,534},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>loader.13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{264,673},{131,129}}</string>
+                <string>{{264,806},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>loader.14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,135},{131,129}}</string>
+                <string>{{264,673},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>loader.15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,2},{131,129}}</string>
+                <string>{{376,135},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>loader.16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{374,401},{131,129}}</string>
+                <string>{{376,2},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>loader.17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{374,268},{131,129}}</string>
+                <string>{{374,401},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>loader.18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{264,540},{131,129}}</string>
+                <string>{{374,268},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>loader.19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{133,812},{131,129}}</string>
+                <string>{{264,540},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +163,7 @@
             <key>loader.2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{133,679},{131,129}}</string>
+                <string>{{133,812},{131,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -174,6 +174,19 @@
                 <string>{131,129}</string>
             </dict>
             <key>loader.20.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{133,679},{131,129}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{131,129}}</string>
+                <key>sourceSize</key>
+                <string>{131,129}</string>
+            </dict>
+            <key>loader.21.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{245,135},{131,129}}</string>
@@ -300,7 +313,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2b1bb6c20d10d95829220989c308bf48:29a7a41c471973209500935787d4e196:a93e996566f17c3875bb5062c2300cc5$</string>
+            <string>$TexturePacker:SmartUpdate:a0deda6d5cafb748363221214c39cc96:48cc8eb793e0e45dfcd07f10911e11c4:a93e996566f17c3875bb5062c2300cc5$</string>
             <key>textureFileName</key>
             <string>loading.png</string>
         </dict>

@@ -3,70 +3,16 @@ hotr.levelLogic = {};
 
 
 
-var temp =  [
-    {
-        "name":"goblinKnightNormal"
-    },
-    {
-        "name":"goblinKnightNormal"
-    },
-//    {
-//        "name":"elfFire"
-//    },
-//    {
-//        "name":"elfFire"
-//    },
-//    {
-//        "name":"elfFire"
-//    },
-//    {
-//        "name":"elfFire"
-//    }
-//    {
-//        "name":"dragonFire",
-//    },
-//    {
-//        "name":"dragonFire",
-//    },
-//    {
-//        "name":"dragonFire",
-//    },
-//    {
-//        "name":"dragonFire",
-//    },
-//    {
-//        "name":"orc",
-//    },
-//    {
-//        "name":"orc",
-//    },
-//    {
-//        "name":"orc",
-//    },
-//    {
-//        "name":"orc",
-//    },
-//    {
-//        "name":"orc",
-//    },
-//    {
-//        "name":"orc",
-//    },
-//    {
-//        "name":"wizard",
-//    },
-//    {
-//        "name":"wizard",
-//    },
-//    {
-//        "name":"wizard",
-//    }
-
-]
 
 hotr.levelLogic.getTeamForLevel = function(level){
-    return temp;
-    //return makeRandomTeam();
+    var baddies = questLevels[level];
+    if (baddies){
+        return baddies;
+    }else{
+        return makeRandomTeam();
+    }
+
+
 }
 
 hotr.levelLogic.getFormationForLevel = function(level){

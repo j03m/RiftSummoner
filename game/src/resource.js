@@ -18,6 +18,8 @@ var cardsPlists = [transformAsset(dirImg + "cards{v}.plist")];
 var uiPng = transformAsset(dirImg + "uiElements{v}.png");
 var uiPlist = transformAsset(dirImg + "uiElements{v}.plist");
 
+var tutorialPng = transformAsset(dirImg + "tutorial{v}.png")
+var tutorialPlist = transformAsset(dirImg + "tutorial{v}.plist")
 
 var shadowPlist = transformAsset(dirImg + "shadowSheet.plist");
 var shadowPng = transformAsset(dirImg + "shadowSheet.png");
@@ -52,7 +54,7 @@ if (jc.isBrowser){
     jc.font.fontSize=35*jc.assetScaleFactor;
     jc.font.fontSizeRaw = 40;
 }else{
-    jc.font.fontSize=40*jc.assetScaleFactor;
+    jc.font.fontSize=45*jc.assetScaleFactor;
     jc.font.fontSizeRaw = 40;
 }
 jc.font.fontName='GODOFWAR';
@@ -149,6 +151,8 @@ var g_ui =[
     {src:uiPng},
     {src:cardsPlists[0]},
     {src:cardsPngs[0]},
+    {src:tutorialPng},
+    {src:tutorialPlist},
 ];
 
 

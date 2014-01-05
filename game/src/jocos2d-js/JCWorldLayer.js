@@ -143,11 +143,11 @@ jc.WorldLayer = jc.TouchLayer.extend({
     },
     getScale:function(width,height){
         var scale = {x:this.winSize.width/width, y:this.winSize.height/height};
-        if (scale.x > 2){
-            scale.x = 2;
+        if (scale.x > 1.5){
+            scale.x = 1.5;
         }
-        if (scale.y > 2){
-            scale.y=2;
+        if (scale.y > 1.5){
+            scale.y=1.5;
         }
         return scale;
 
@@ -168,7 +168,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
         return this.getScale(this.worldSize.width * 0.5, this.worldSize.height * 0.5);
     },
     getScaleWorld:function(){
-        return this.getScale(this.worldSize.width *0.9, this.worldSize.height*0.9);
+        return this.getScale(this.worldSize.width *0.7, this.worldSize.height*0.7);
     },
     convertToLayerPosition:function(point){
         jc.cap(point, this.worldBoundary);

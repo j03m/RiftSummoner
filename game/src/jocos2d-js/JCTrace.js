@@ -37,7 +37,9 @@ var tracers = {
     'bubble':0,
     'tutorials':0,
     'blobOperations':0,
-    'selectTeam':1
+    'selectTeam':0,
+    'Arena':1
+
 };
 
 jc.log = function(categories, msg){

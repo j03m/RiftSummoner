@@ -38,6 +38,13 @@ var ArenaGame = jc.WorldLayer.extend({
             this.tutorialPoint1 = cc.p(600*jc.assetScaleFactor, 600*jc.assetScaleFactor);
             this.tutorialPoint2 = cc.p(800*jc.assetScaleFactor, 800*jc.assetScaleFactor);
 
+            this.tutorial2Point1 = cc.p(400* jc.assetScaleFactor, 250*jc.assetScaleFactor);
+            this.tutorial2Point2 = cc.p(425* jc.assetScaleFactor, 450*jc.assetScaleFactor);
+            this.tutorial2Point3 = cc.p(this.winSize.width/2,this.winSize.height/2);
+
+
+            this.enemyStartPos = cc.p((this.worldSize.width/2)+ 500 * jc.assetScaleFactor, (this.worldSize.height/2) - 300 *jc.assetScaleFactor);
+
             return true;
 		} else {
 			return false;
@@ -50,7 +57,7 @@ var ArenaGame = jc.WorldLayer.extend({
         this.scheduleOnce(function(){
             if(!hotr.arenaScene.data){
                 this.runScenario0();
-            }else if (this.level!=1){
+            }else if (this.level>3){
                 this.runScenario();
             }else{
                 this.runTutorial();
@@ -69,6 +76,7 @@ var ArenaGame = jc.WorldLayer.extend({
         this.setUp();
         this.placementTouches = 1;
         this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
+            this.placeEnemyTeam();
             this.nextTouchDo(this.initialSetupAction,true);
         }.bind(this));
 
@@ -82,19 +90,29 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamBPowers = hotr.arenaScene.data.teamBPowers;
         this.step = hotr.blobOperations.getTutorialStep();
 
-        if (this.level==1 && this.step==1){
-            this.showTutorialStep("Arg! Prepare to die, summoner!", undefined, 'right', 'orc');
+        if (this.level==1){
+            if (this.step==1)
+            {
+                this.showTutorialStep("Arg! Prepare to die, summoner!", undefined, 'right', 'orc');
+                this.setUp();
+            }else if (this.step == 14){
+                //we selected teams
+                this.setUp();
+                this.placeEnemyTeam();
+                var scaleData = this.calculateScaleForSprites(this.teams['b']);
+                this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
+                    this.showTutorialStep("Alright, there they are. Get ready to fight!", undefined, 'left', 'girl');
+                    this.step =15;
+                }.bind(this));
+            }
+        }else if (this.level == 2){
+            this.showTutorialStep("This time you're going to pay!", undefined, 'right', 'orc');
             this.setUp();
-        }else if (this.step == 14){
-            //we selected teams
+        }else if (this.level == 3){
+            var count = 0;
+            this.showTutorialStep("We have come for the summoner. Your powers will serve our Dark Lord.", undefined, 'right', 'demon');
+            this.step = 1;
             this.setUp();
-            this.placeEnemyTeam();
-            var scaleData = this.calculateScaleForSprites(this.teams['b']);
-            this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
-                this.showTutorialStep("Alright, there they are. Get ready to fight!", undefined, 'left', 'girl');
-                this.step =15;
-            }.bind(this));
-
         }
 
     },
@@ -144,16 +162,22 @@ var ArenaGame = jc.WorldLayer.extend({
             //play animation
 
             if (this.placementTouches == 1){
+                jc.log(['Arena'], 'placement a!');
                 var placement = this.placePlayerTeam('a');
                 if (!placement){
+                    jc.log(['Arena'], 'failed placement a!, placing b');
                     this.placePlayerTeam('b');
                 }
             }
 
             if (this.placementTouches == 2){
+                jc.log(['Arena'], 'pre placement b');
                 this.placePlayerTeam('b');
-                this.removeTutorialStep();
-                this.removeChild(this.arrow, true);
+                jc.log(['Arena'], 'post placement b');
+                if (this.arrow){
+                    this.removeChild(this.arrow, true);
+                }
+                jc.log(['Arena'], 'post placement b');
             }
 
 
@@ -161,48 +185,56 @@ var ArenaGame = jc.WorldLayer.extend({
                 //place enemy team
                 hotr.blobOperations.saveBlob();
                 this.nextTouchAction = undefined;
-                this.placeEnemyTeam();
+                jc.log(['Arena'], 'before final actions!');
                 this.finalActions();
             }else{
+                jc.log(['Arena'], 'waiting for next touch!');
                 this.placementTouches++;
                 this.nextTouchDo(this.initialSetupAction,true);
             }
 
-
         }else{
+                jc.log(['Arena'], 'invalid location msg');
                 this.floatMsg("Click on the left side of the arena. You can't place troops there.");
         }
-
-
     },
     finalActions:function(){
         function goodSprite(sprite){
             return sprite!=undefined;
         }
 
+        jc.log(['Arena'], 'finalActions');
         this.originalPositions = {
             'a':[].concat(this.teams['a']),
             'b':[].concat(this.teams['b'])
         };
 
-
+        jc.log(['Arena'], 'filtering');
         this.teams['a']=_.filter(this.teams['a'],goodSprite);
         this.teams['b']=_.filter(this.teams['b'],goodSprite);
-        this.sprites = this.teams['a'].concat(this.teams['b']);
-        this.startedAt = Date.now();
 
+        jc.log(['Arena'], 'sprites');
+        this.sprites = this.teams['a'].concat(this.teams['b']);
+
+        jc.log(['Arena'], 'started');
+        this.startedAt = Date.now();
         this.started = true;
+
+        jc.log(['Arena'], 'schedule');
         this.schedule(function(dt){
+            jc.log(['Arena'], 'updating...');
             this.doUpdate(0.10);
         }, 0.10);
     },
-    placeEnemyTeam:function(){
-        this.startPos = cc.p(this.worldSize.width/2, this.worldSize.height/2);
-        this.startPos.x+=500*jc.characterScaleFactor;
-        this.startPos.y-=500*jc.characterScaleFactor;
+    placeEnemyTeam:function(pos){
+        if (!pos){
+            this.startPos = cc.p(this.enemyStartPos.x, this.enemyStartPos.y);
+        }else{
+            this.startPos = pos;
+        }
+
         this.placeTeamPosition(this.teams['b'], this.squadNumbers);
-        this.startPos.x+=500*jc.characterScaleFactor;
-        this.startPos.y-=500*jc.characterScaleFactor;
+        this.startPos.y-=800*jc.characterScaleFactor;
         this.placeTeamPosition(this.teams['b'], this.teamSize);
     },
     placePlayerTeam:function(squad){
@@ -233,7 +265,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 var row = Math.floor(pos/4);
                 var valueX = 200 * jc.characterScaleFactor;
                 var valueY = -175* jc.characterScaleFactor;
-                if (!team[i].isFlippedX()){
+                if (team[i].isFlippedX()){
                     valueX *=-1;
                 }
                 var colAdjust = col * valueX;
@@ -295,7 +327,7 @@ var ArenaGame = jc.WorldLayer.extend({
         var sprite;
 
         //todo refactor these loops into 1 funcN
-        this.teamASprites.reverse();
+//        this.teamASprites = this.fixOrder(this.teamASprites);
         for (var i =0; i<this.teamASprites.length;i++){
             if (this.teamASprites[i])
             {
@@ -312,7 +344,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
         }
 
-        this.teamBSprites.reverse();
+//        this.teamBSprites = this.fixOrder(this.teamBSprites);
         for (var i =0; i<this.teamBSprites.length;i++){
             if (this.teamBSprites[i])
             {
@@ -328,6 +360,9 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.touchTargets.push(sprite);
             }
         }
+    },
+    fixOrder:function(ary){
+
     },
     getTeam:function(who){
         return this.teams[who];
@@ -565,9 +600,10 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     targetTouchHandler:function(type, touch,sprites){
         if (type == jc.touchEnded){
-            if (this.level == 1){ //tutorial
-                this.handleTutorialTouches(type, touch, sprites);
-                return;
+            if (this.level <= 3){ //tutorial
+                if (!this.handleTutorialTouches(type, touch, sprites)){
+                    return;
+                }
             }
             var nodePos = touch; //this.convertToNodeSpace(touch);
             if (this.nextTouchAction){
@@ -591,6 +627,143 @@ var ArenaGame = jc.WorldLayer.extend({
     handleTutorialTouches:function(type, touch, sprites){
         if (this.level == 1){
             this.handleLevel1Tutorial(type, touch, sprites);
+        }else if (this.level == 2){
+            this.handleLevel2Tutorial(type, touch, sprites);
+        }else if (this.level == 3){
+            this.handleLevel3Tutorial(type, touch, sprites);
+        }
+    },
+    handleLevel3Tutorial:function(type, touch, sprites){
+        if (this.step == 1){
+            this.showTutorialStep('Moloch? But your master was banished to The Rift a century ago - how...?', undefined, 'left', 'girl');
+            this.step = 2;
+        }else if (this.step == 2){
+            this.attachMsgTo('How is of little consequence, dear priestess. My master has returned and he will overtake this realm. Give us the Summoner and spare your pathetic lives for a short time.', this.guideCharacters['demon'], 'left');
+            this.step = 3;
+        }else if (this.step == 3){
+            this.attachMsgTo('You cannot defeat us. RESISTANCE IS FUTILE!', this.guideCharacters['demon'], 'left');
+            this.placeEnemyTeam(cc.p(this.worldSize.width/2 + 500 * jc.assetScaleFactor, this.worldSize.height/2 + 100 * jc.assetScaleFactor));
+            var scaleData = this.calculateScaleForSprites(this.teams['b']);
+            this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
+                this.step=4;
+            }.bind(this));
+        }else if (this.step == 4){
+            this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
+                this.removeTutorialStep('demon', 'right', function(){
+                    this.attachMsgTo("Dragons? If the Dark One has returned and has raised an army within The Rift....", this.guideCharacters['girl'], 'right');
+                }.bind(this));
+                this.step = 4.5;
+            }.bind(this));
+        }else if (this.step ==4.5){
+            this.showTutorialStep("Gai! The city is lost, you must flee! We will buy you what time we can. Take the summoner into the mountains. Commander Vandie, will meet you there to prepare for the coming war!", undefined, 'right', 'dwarf');
+            this.step = 4.6;
+        }else if (this.step ==4.6){
+            this.attachMsgTo("Your sacrifice won't be forgotten, brave soldier.", this.guideCharacters['girl'], 'right');
+            this.step = 4.7;
+        }else if (this.step ==4.7){
+            this.attachMsgTo("It is as good day as any to die. Do not let it be for not.", this.guideCharacters['dwarf'], 'left');
+            this.step = 5;
+        }else if (this.step ==5){
+            this.removeTutorialStep('girl', 'left');
+            this.removeTutorialStep('dwarf', 'right');
+            this.placeArrow(this.tutorialPoint1, 'down');
+            this.step =6;
+        }else if (this.step == 6){
+            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            this.startPos = this.screenToWorld(touch);
+            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+                var placement = this.placePlayerTeam('a');
+                if(placement){
+                    this.placeArrow(this.tutorialPoint2, 'down');
+                    this.step = 7
+                }
+            }
+        }else if (this.step == 7){
+            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            this.startPos = this.screenToWorld(touch);
+            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+                var placement = this.placePlayerTeam('b');
+                if(placement){
+                    this.removeArrow();
+                    this.placePowerTokens();
+                    this.finalActions();
+                    this.step = 8
+                }
+            }
+        }else if (this.step == 8){
+            return true;
+        }
+    },
+    handleLevel2Tutorial:function(type, touch, sprites){
+        if (this.step == 1){
+            this.removeTutorialStep('orc', 'right', function(){
+                this.placeEnemyTeam();
+                var scaleData = this.calculateScaleForSprites(this.teams['b']);
+                this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
+                    this.showTutorialStep("Don't worry, I've arranged for help! Let summon your troops.", undefined, 'left', 'girl');
+                    this.step=2;
+                }.bind(this));
+            }.bind(this));
+        }else if (this.step == 2){
+            this.removeTutorialStep('girl', 'left');
+            this.step = 2.5;
+            this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
+                this.placeArrow(this.tutorialPoint1, 'down');
+                this.step = 3;
+            }.bind(this));
+        }else if (this.step == 3){
+            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            this.startPos = this.screenToWorld(touch);
+            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+                var placement = this.placePlayerTeam('a');
+                if(placement){
+                    this.placeArrow(this.tutorialPoint2, 'down');
+                    this.step = 4
+                }
+            }
+        }else if (this.step == 4){
+            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            this.startPos = this.screenToWorld(touch);
+            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+                var placement = this.placePlayerTeam('b');
+                if(placement){
+                    this.showTutorialStep("Hahahaha! You're massively out numbered!", undefined, 'right', 'orc');
+                    if(this.arrow){
+                        this.removeChild(this.arrow, true);
+                    }
+                    this.step = 5
+                }
+            }
+        }else if (this.step == 5){
+            this.placePowerTokens();
+            this.removeTutorialStep('orc', 'right');
+            this.showTutorialStep("I have a plan. Let's call in the calvary. Open the powers tray below.", undefined, 'right', 'girl');
+            this.step = 5.5;
+        }else if (this.step == 5.5){
+            this.attachMsgTo('The power tray contains extra powers that can turn the tide of a battle to your favor.', this.guideCharacters['girl'], 'left');
+            this.step = 6;
+        }else if (this.step == 6){
+            this.removeTutorialStep('girl', 'right');
+            this.placeArrow(this.tutorial2Point1, 'left');
+            this.step = 7;
+        }else if (this.step == 7){
+            this.openBar();
+            this.placeArrow(this.tutorial2Point2, 'down');
+            this.step = 8;
+        }else if (this.step ==8){
+            this.doPower('power1', this['power1']);
+            this.placeArrow(this.tutorial2Point3, 'down');
+            this.step = 9;
+        }else if (this.step == 9){
+            this.removeArrow();
+            this.finalActions();
+            this.nextTouchAction(touch, sprites);
+            this.step = 10;
+        }else if (this.step == 11){
+            this.step = 12;
+            this.removeTutorialStep ('girl', 'right');
+            this.showVictory(); //show it again
+
         }
     },
     handleLevel1Tutorial:function(type, touch, sprites){
@@ -613,10 +786,6 @@ var ArenaGame = jc.WorldLayer.extend({
             hotr.blobOperations.setTutorialStep(4);
             hotr.mainScene.layer.selectEditTeamPre();
             this.step = 4;
-        }else if (this.step == 6){
-            this.attachMsgTo("Okay, now place your second squad!");
-            this.placeArrow(cc.p(600*jc.assetScaleFactor, 400*jc.assetScaleFactor), "down");
-            this.step == 7;
         }else if (this.step == 15){
             this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
                 this.attachMsgTo("Place your units on the arrows!", this.guideCharacters['girl'], 'right');
@@ -700,16 +869,12 @@ var ArenaGame = jc.WorldLayer.extend({
                     //power token touched -
                     if (!sprites[i].used){
                         jc.log(['arena'], 'touch - execute');
-                        this.setFrameTouched(sprites[i]);
-                        this.executeOffensivePower(this.availablePowers[power],sprites[i]);
+                        this.doPower(power, sprites[i]);
                         return;
                     }else{
                         jc.log(['arena'], 'touch - used');
                         return; //still don't let this become a bar
                     }
-
-
-
                 }
             }
         }
@@ -728,8 +893,12 @@ var ArenaGame = jc.WorldLayer.extend({
         }
 
     },
+    doPower: function(name, sprite){
+        this.setFrameTouched(sprite);
+        this.executeOffensivePower(this.availablePowers[name],sprite);
+    },
     executeOffensivePower: function(name, frame){
-        if (!this.started){
+        if (!this.started && this.level > 2){
             return;
         }
         frame.used = true;
@@ -842,7 +1011,12 @@ var ArenaGame = jc.WorldLayer.extend({
             this.showTutorialStep("You did it! We're safe! But that won't be the last of them. Let's head back quickly.", undefined, 'left', 'girl');
             this.step = 20;
             return;
+        }else if(this.level == 2 && this.step == 10){
+            this.showTutorialStep("Nothing like a little artillery fire to even the odds. We're not through yet though. Let's head back.", undefined, 'right', 'girl');
+            this.step = 11;
+            return;
         }
+
 
         if (hotr.arenaScene.data.op){
             hotr.multiplayerOperations.victory(hotr.arenaScene.data.op,hotr.arenaScene.data);
@@ -865,6 +1039,12 @@ var ArenaGame = jc.WorldLayer.extend({
         if (hotr.arenaScene.data.op){
             hotr.multiplayerOperations.defeat(hotr.arenaScene.data.op, hotr.arenaScene.data);
         }
+
+        //you cannot win level 3
+        if (this.level == 3){
+            hotr.blobOperations.incrementLevel();
+        }
+
         hotr.blobOperations.saveBlob();
         this.defeat = new Defeat();
         this.defeat.onDone = function(){

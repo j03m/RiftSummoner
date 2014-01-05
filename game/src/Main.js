@@ -205,6 +205,30 @@ var MainGame = cc.Layer.extend({
         var teamAFormation = hotr.blobOperations.getFormation();
         var teamAPowers = hotr.blobOperations.getPowers();
 
+        //for level 3 we need to fill in the city army
+        if (level == 3){
+            var count = 0;
+            for(var i =0;i<18; i++){
+                if (teamA[i] == undefined){
+                    if (count == 0){
+                        teamA[i] = {"name":"dwarvenKnightEarth"};
+                        count++;
+                    }else if (count == 1){
+                        teamA[i] = {"name":"dwarvenKnightFire"};
+                        count++;
+                    }else if (count == 2){
+                        teamA[i] = {"name":"dwarvenKnightLife"};
+                        count++;
+                    }else if (count == 3){
+                        teamA[i] = {"name":"elfEarth"};
+                        count =0;
+                    }
+                }
+            }
+        }
+
+
+
         var teamB = hotr.levelLogic.getTeamForLevel(level);
         var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
         var teamBPowers = hotr.levelLogic.getPowers();
