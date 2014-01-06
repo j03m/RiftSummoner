@@ -41,18 +41,19 @@
 
 <script type="text/javascript">
   var cv = document.getElementById('gameCanvas');
-  var width = window.innerWidth;
-  var height = window.innerHeight;
+  var width = window.screen.availWidth;
+  var height = window.screen.availHeight
+  var dpr = window.devicePixelRatio || 1;
   if (width > height){
     if (width < 1136){
-      cv.width  = width;
-      cv.height = height;
+      cv.width  = width * dpr;
+      cv.height = height* dpr;
     }
 
   }else{
     if (height< 1136){
-      cv.width  = height;
-      cv.height = width;
+      cv.width  = height* dpr;
+      cv.height = width* dpr;
     }
   }
 </script>
