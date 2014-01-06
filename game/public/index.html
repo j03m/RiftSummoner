@@ -16,6 +16,12 @@
   <meta name="x5-fullscreen" content="true"/>
   <meta name="360-fullscreen" content="true"/>
   <style>
+    html, body {
+      width:  100%;
+      height: 100%;
+      margin: 0px;
+    }
+
     body, canvas, div {
       -moz-user-select: none;
       -webkit-user-select: none;
@@ -33,7 +39,23 @@
       <p>Your browser doesn't support HTML5 canvas.</p>
     </canvas>
 
+<script type="text/javascript">
+  var cv = document.getElementById('gameCanvas');
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  if (width > height){
+    if (width < 1136){
+      cv.width  = width;
+      cv.height = height;
+    }
 
+  }else{
+    if (height< 1136){
+      cv.width  = height;
+      cv.height = width;
+    }
+  }
+</script>
 <script src="html5/gameProd.js"></script>
 
 </body>

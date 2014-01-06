@@ -617,6 +617,7 @@ jc.TouchLayer = cc.Layer.extend({
 
         var elPos = element.getPosition();
         var elSize = element.getContentSize();
+        elSize.width += 50 *jc.assetScaleFactor;
 
         if (where == 'left'){
             this.bubble.setFlippedX(true);
@@ -647,11 +648,13 @@ jc.TouchLayer = cc.Layer.extend({
     },
     bubbleMsgSize:function(msg){
         var bubbleSize = this.bubble.getContentSize();
-        if (jc.font.fontSize* msg.length < bubbleSize.width){
+        var lineLen = 25;
+        var lineSize = lineLen * jc.font.fontSize;
+        if (jc.font.fontSize* msg.length < lineSize){
             return cc.size(jc.font.fontSize* msg.length, jc.font.fontSize);
         }else{
-            var times = (jc.font.fontSize* msg.length)/bubbleSize.width;
-            return cc.size(bubbleSize.width, jc.font.fontSize*times);
+            var times = (jc.font.fontSize * msg.length)/lineSize;
+            return cc.size(lineSize, jc.font.fontSize*times);
         }
     },
     msgSize:function(msg){
@@ -660,15 +663,12 @@ jc.TouchLayer = cc.Layer.extend({
     popBubble:function(cb){
         var cs = this.bubble.getContentSize();
         var cs2 = this.bubble.msg.getContentSize();
-        var scaleVal = (cs2.width/cs.width);
-        var scaleValY = (cs2.height)/(cs.height-100*jc.assetScaleFactor);
-        scaleVal = Math.max(scaleVal, scaleValY);
+        var scaleVal = (cs2.width/(cs.width *0.75));
+        var scaleValY = (cs2.height)/(cs.height*0.55);
+        scaleVal = Math.max(scaleVal, 1);
+        scaleValY = Math.max(scaleValY, 1);
 
-        if (scaleVal < 1.3){
-            scaleVal = 1.3;
-        }
-
-        var scale = cc.ScaleTo.create(1,scaleVal,scaleVal);
+        var scale = cc.ScaleTo.create(1,scaleVal,scaleValY);
         scale.retain();
         var elastic = cc.EaseElasticOut.create(scale, 0.3);
         elastic.retain();
