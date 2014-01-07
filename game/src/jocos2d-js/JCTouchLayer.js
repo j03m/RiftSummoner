@@ -528,7 +528,7 @@ jc.TouchLayer = cc.Layer.extend({
             jc.log(['tutorials'], 'fromX:'+fromX);
             var fromY = this.winSize.height/2 -  (itemRect.height/adjust);
             jc.log(['tutorials'], 'fromY:'+fromY);
-            var toX = this.winSize.width - (itemRect.width );
+            var toX = (this.winSize.width +  jc.defaultNudge) - (itemRect.width);
             jc.log(['tutorials'], 'toX:'+toX);
             var toY = fromY -  (itemRect.height/adjust);
             jc.log(['tutorials'], 'toY:'+toY);
@@ -606,7 +606,9 @@ jc.TouchLayer = cc.Layer.extend({
     },
     doBubble:function(msg, element, where){
         this.bubble = jc.makeSpriteWithPlist(uiPlist, uiPng, "dialog1.png");
-
+        if (where == 'left'){
+            this.bubble.setFlippedX(true);
+        }
         if(!element) {
             throw "nope, need character now.";
         }
@@ -619,16 +621,7 @@ jc.TouchLayer = cc.Layer.extend({
         var elSize = element.getContentSize();
         elSize.width += 50 *jc.assetScaleFactor;
 
-        if (where == 'left'){
-            this.bubble.setFlippedX(true);
-            var myPos = cc.p(elPos.x - elSize.width, elPos.y);
-            this.bubble.setPosition(myPos)
-        }else{
-            var myPos = cc.p(elPos.x + elSize.width, elPos.y);
-            this.bubble.setPosition(myPos);
-        }
-
-        this.bubble.adjustPosition(0, 300*jc.assetScaleFactor);
+        this.bubble.setPosition(cc.p(this.winSize.width/2, this.winSize.height/2));
 
 
         var size = this.bubbleMsgSize(msg);
