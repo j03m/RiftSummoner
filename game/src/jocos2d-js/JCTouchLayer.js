@@ -486,7 +486,7 @@ jc.TouchLayer = cc.Layer.extend({
     },
     getGuide:function(char){
         if (char == 'girl'){
-            return "tutorialChar.png";
+            return "priestessEarth_pose.png";
         }else if (char == 'orc'){
             return "orc_pose.png";
         }else if (char == 'demon'){
@@ -626,8 +626,9 @@ jc.TouchLayer = cc.Layer.extend({
 
         var size = this.bubbleMsgSize(msg);
         this.bubble.msg = cc.LabelTTF.create(msg, jc.font.fontName, jc.font.fontSize, size , cc.TEXT_ALIGNMENT_CENTER);
-        this.bubble.msg.setColor(cc.gray());
-        this.bubble.msg.setText(msg);
+        this.bubble.msg.setColor(cc.black());
+        this.bubble.msg.setString(msg);
+
         this.bubble.msg.retain();
         this.getParent().addChild(this.bubble);
         this.bubble.setZOrder(jc.topMost);
@@ -636,7 +637,7 @@ jc.TouchLayer = cc.Layer.extend({
         this.bubble.setScale(0.01, 0.01);
         this.centerThisPeer(this.bubble.msg, this.bubble);
 //        this.bubble.msg.adjustPosition(20*jc.assetScaleFactor, 50*jc.assetScaleFactor);
-        this.popBubble();
+        this.popBubble(element, where);
 
     },
     bubbleMsgSize:function(msg){
@@ -653,15 +654,39 @@ jc.TouchLayer = cc.Layer.extend({
     msgSize:function(msg){
         return cc.size(jc.font.fontSize* msg.length, jc.font.fontSize);
     },
-    popBubble:function(cb){
+    popBubble:function(element, where, cb){
         var cs = this.bubble.getContentSize();
         var cs2 = this.bubble.msg.getContentSize();
         var scaleVal = (cs2.width/(cs.width *0.75));
         var scaleValY = (cs2.height)/(cs.height*0.55);
+        if (scaleValY < 0.5){
+            scaleValY = 0.5;
+        }
         scaleVal = Math.max(scaleVal, 1);
-        scaleValY = Math.max(scaleValY, 1);
 
+        var origPos = this.bubble.getPosition();
+        var origSize = this.bubble.getContentSize();
         var scale = cc.ScaleTo.create(1,scaleVal,scaleValY);
+
+        var diff = cs2.width - origSize.width;
+        var diffh = cs2.height - origSize.height;
+        if (where == 'left' && scaleVal>1){
+            origPos.x -= diff/2;
+        }else if (where == 'right' && scaleVal > 1){
+            origPos.x += diff/2;
+        }
+
+        if (scaleValY > 1){
+            if (diffh < 0){
+                diffh*=-1;
+            }
+            origPos.y += diffh/2;
+        }
+
+        this.bubble.setPosition(origPos);
+        origPos.y += 25* jc.assetScaleFactor;
+        this.bubble.msg.setPosition(origPos);
+
         scale.retain();
         var elastic = cc.EaseElasticOut.create(scale, 0.3);
         elastic.retain();
@@ -674,6 +699,16 @@ jc.TouchLayer = cc.Layer.extend({
             elastic.release();
             seq.release();
             func.release;
+
+//            var eleBox = element.getBoundingBox();
+//            var bubbleBox = this.bubble.getBoundingBox();
+
+//            if (where == 'left'){
+//                this.bubble.setPosition(cc.p(bubbleBox.size.width/2 - eleBox.origin.x, bubbleBox.origin.y));
+//            }else{
+//                this.bubble.setPosition(cc.p(eleBox.origin.x + eleBox.size.width + bubbleBox.size.width/2, bubbleBox.origin.y));
+//            }
+
         }.bind(this));
         func.retain();
         var seq = cc.Sequence.create(elastic, func);
