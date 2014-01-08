@@ -6,6 +6,7 @@
 #import "AppDelegate.h"
 
 #import "RootViewController.h"
+#import "TestFlight.h"
 
 @implementation AppController
 
@@ -18,7 +19,7 @@ static AppDelegate s_sharedApplication;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // Override point for customization after application launch.
-
+    [TestFlight takeOff:@"e35b6146-4cbd-447a-912f-b24475d71111"];
     // Add the view controller's view to the window and display.
     window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     EAGLView *__glView = [EAGLView viewWithFrame: [window bounds]

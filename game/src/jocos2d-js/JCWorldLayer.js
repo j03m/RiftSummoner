@@ -15,7 +15,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
             this.worldBoundary = cc.rect(this.worldSize.width/4, this.worldSize.height/4, this.worldSize.width/2 + this.worldSize.width/4, this.worldSize.height/2 + this.worldSize.height/4);
             this.setViewCenter(cc.p(this.worldSize.width/2,this.worldSize.height/2));
             this.bubbleAllTouches(true);
-            this.worldScale = {x:this.winSize.width/this.worldSize.width, y:this.winSize.height/this.worldSize.height};
+            this.worldScale = {x:this.winSize.width/this.worldSize.width, y:this.winSize.width/this.worldSize.width};
             var scaleX = 0;
             this.aspectRatio = this.winSize.width/this.winSize.height;
             this.scaleTable = [];

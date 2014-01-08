@@ -227,14 +227,10 @@ var MainGame = cc.Layer.extend({
             }
         }
 
-
-
         var teamB = hotr.levelLogic.getTeamForLevel(level);
         var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
         var teamBPowers = hotr.levelLogic.getPowers();
 
-
-        //teamB = teamB.concat(teamB);
 
         var fightConfig = {
             teamA:teamA,
@@ -409,10 +405,8 @@ var MainGame = cc.Layer.extend({
         }
 
 
-        assets.pushUnique(g_characterPlists["greenbullet"]);
-        assets.pushUnique(g_characterPngs["greenbullet"]);
-        assets.pushUnique(g_characterPlists["greenBang"]);
-        assets.pushUnique(g_characterPngs["greenBang"]);
+        assets.pushUnique(g_characterPlists["cannonball"]);
+        assets.pushUnique(g_characterPngs["cannonball"]);
 
         //transform
         for (var i =0;i<assets.length;i++){

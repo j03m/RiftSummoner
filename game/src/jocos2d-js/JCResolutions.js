@@ -86,6 +86,8 @@ jc.bestAssetDirectory = function(){
     jc.assetCategoryData = jc.resolutions[maxSet];
 
 
+
+
 };
 
 if (!jc.isBrowser){

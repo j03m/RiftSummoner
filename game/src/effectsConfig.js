@@ -1,13 +1,4 @@
 var effectsConfig = {
-    "greenBang":{
-        "png":"art/greenBang.png",
-        "plist":"art/greenBang.plist",
-        "start":"greenBang.1.png",
-        "placement":"center",
-        "frames":28,
-        "delay":0.02,
-        "times":1
-    },
     "explo":{
         "png":"art/effects{v}.png",
         "plist":"art/effects{v}.plist",

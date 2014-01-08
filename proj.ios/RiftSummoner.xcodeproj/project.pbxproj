@@ -228,6 +228,9 @@
 		3EC20B8618331D7400F2C4D6 /* jsb_cocos2d_studio.js in Resources */ = {isa = PBXBuildFile; fileRef = 3EC20B7C18331CA200F2C4D6 /* jsb_cocos2d_studio.js */; };
 		5D1EF34B18727EFD00C4E3B7 /* riftsummoner.js in Sources */ = {isa = PBXBuildFile; fileRef = 5D1EF34A18727EFD00C4E3B7 /* riftsummoner.js */; };
 		5D1EF34C18727F0500C4E3B7 /* riftsummoner.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D1EF34A18727EFD00C4E3B7 /* riftsummoner.js */; };
+		5D1EF3A7187C58C200C4E3B7 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1EF3A1187C58C200C4E3B7 /* libTestFlight.a */; };
+		5D1EF3A8187C58C200C4E3B7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D1EF3A2187C58C200C4E3B7 /* README.md */; };
+		5D1EF3A9187C58C200C4E3B7 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D1EF3A3187C58C200C4E3B7 /* release_notes.md */; };
 		5D96F48D1850492E00ED2564 /* cocos2d-jsb.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D96F48C1850492E00ED2564 /* cocos2d-jsb.js */; };
 		5D96F48F1850D4CA00ED2564 /* art in Resources */ = {isa = PBXBuildFile; fileRef = 5D96F48E1850D4CA00ED2564 /* art */; };
 		A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275411517C094001B78AA /* QuartzCore.framework */; };
@@ -691,9 +694,15 @@
 		3EC20B8318331CC100F2C4D6 /* jsb_cocos2dx_studio_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_cocos2dx_studio_manual.cpp; sourceTree = "<group>"; };
 		3EC20B8418331CC100F2C4D6 /* jsb_cocos2dx_studio_manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsb_cocos2dx_studio_manual.h; sourceTree = "<group>"; };
 		5D1EF34A18727EFD00C4E3B7 /* riftsummoner.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = riftsummoner.js; path = ../game/src/riftsummoner.js; sourceTree = "<group>"; };
+		5D1EF3A1187C58C200C4E3B7 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		5D1EF3A2187C58C200C4E3B7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		5D1EF3A3187C58C200C4E3B7 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		5D1EF3A4187C58C200C4E3B7 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		5D1EF3A5187C58C200C4E3B7 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		5D1EF3A6187C58C200C4E3B7 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		5D96F48C1850492E00ED2564 /* cocos2d-jsb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "cocos2d-jsb.js"; path = "../Resources/cocos2d-jsb.js"; sourceTree = "<group>"; };
 		5D96F48E1850D4CA00ED2564 /* art */ = {isa = PBXFileReference; lastKnownFileType = folder; name = art; path = ../game/art; sourceTree = "<group>"; };
-		A922753D1517C094001B78AA /* RiftSummoner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiftSummoner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A922753D1517C094001B78AA /* Rift Summoner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rift Summoner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92275411517C094001B78AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A92275431517C094001B78AA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A92275451517C094001B78AA /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -723,6 +732,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1EF3A7187C58C200C4E3B7 /* libTestFlight.a in Frameworks */,
 				1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */,
 				15A3D2F71682F08C002FB0C5 /* libcocos2dx.a in Frameworks */,
 				D454520C156E22BD00887EB5 /* libz.dylib in Frameworks */,
@@ -1552,9 +1562,23 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		5D1EF3A0187C58C200C4E3B7 /* TestFlightSDK */ = {
+			isa = PBXGroup;
+			children = (
+				5D1EF3A1187C58C200C4E3B7 /* libTestFlight.a */,
+				5D1EF3A2187C58C200C4E3B7 /* README.md */,
+				5D1EF3A3187C58C200C4E3B7 /* release_notes.md */,
+				5D1EF3A4187C58C200C4E3B7 /* TestFlight+AsyncLogging.h */,
+				5D1EF3A5187C58C200C4E3B7 /* TestFlight+ManualSessions.h */,
+				5D1EF3A6187C58C200C4E3B7 /* TestFlight.h */,
+			);
+			path = TestFlightSDK;
+			sourceTree = "<group>";
+		};
 		A92275321517C094001B78AA = {
 			isa = PBXGroup;
 			children = (
+				5D1EF3A0187C58C200C4E3B7 /* TestFlightSDK */,
 				15A3D2EC1682F076002FB0C5 /* cocos2dx.xcodeproj */,
 				15A3D2F81682F0A0002FB0C5 /* bindings */,
 				15A3D3311682F0B5002FB0C5 /* chipmunk */,
@@ -1572,7 +1596,7 @@
 		A922753E1517C094001B78AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A922753D1517C094001B78AA /* RiftSummoner.app */,
+				A922753D1517C094001B78AA /* Rift Summoner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1639,7 +1663,7 @@
 			);
 			name = RiftSummoner;
 			productName = RiftSummoner;
-			productReference = A922753D1517C094001B78AA /* RiftSummoner.app */;
+			productReference = A922753D1517C094001B78AA /* Rift Summoner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1649,6 +1673,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				TargetAttributes = {
+					A922753C1517C094001B78AA = {
+						DevelopmentTeam = UDL7JEM3SA;
+					};
+				};
 			};
 			buildConfigurationList = A92275371517C094001B78AA /* Build configuration list for PBXProject "RiftSummoner" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1692,6 +1721,7 @@
 				3EC20B8618331D7400F2C4D6 /* jsb_cocos2d_studio.js in Resources */,
 				1A5E740017F0870800B9ACAE /* jsb_deprecated.js in Resources */,
 				1AA51AEB16F71C3D000FDF05 /* jsb_chipmunk_constants.js in Resources */,
+				5D1EF3A9187C58C200C4E3B7 /* release_notes.md in Resources */,
 				1AA51AEC16F71C3D000FDF05 /* jsb_cocos2d_constants.js in Resources */,
 				1AA51AED16F71C3D000FDF05 /* jsb_opengl_constants.js in Resources */,
 				1A4B645416EE24A80025FE93 /* jsb_cocos2d_extension.js in Resources */,
@@ -1703,6 +1733,7 @@
 				1A2757C21697FBE500504026 /* jsb_opengl.js in Resources */,
 				1A2757C31697FBE500504026 /* jsb_sys.js in Resources */,
 				1A2757C41697FBE500504026 /* jsb.js in Resources */,
+				5D1EF3A8187C58C200C4E3B7 /* README.md in Resources */,
 				D446FDA316102D7D000ADA7B /* Default.png in Resources */,
 				D446FDA516102D82000ADA7B /* Default@2x.png in Resources */,
 				D446FDA716102D86000ADA7B /* Default-568h@2x.png in Resources */,
@@ -1958,7 +1989,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1985,7 +2017,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -2010,6 +2043,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 1;
@@ -2040,17 +2074,19 @@
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../../scripting/javascript/spidermonkey-ios/lib\"",
-					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
-					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
+					"/Users/jmordetsky/cocosprojects/cocos2d-x/scripting/javascript/spidermonkey-ios/lib",
+					"/Users/jmordetsky/cocosprojects/cocos2d-x/cocos2dx/platform/third_party/ios/libraries",
+					"/Users/jmordetsky/cocosprojects/cocos2d-x/external/libwebsockets/ios/lib",
+					"/Users/jmordetsky/cocosprojects/cocos2d-x/projects/RiftSummoner/proj.ios/TestFlightSDK",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lz",
 					"-ljs_static",
 				);
-				PRODUCT_NAME = RiftSummoner;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_NAME = "Rift Summoner";
+				PROVISIONING_PROFILE = "A82282D7-8330-43E6-B5F0-DFE336077587";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2059,6 +2095,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
@@ -2086,17 +2123,19 @@
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../../scripting/javascript/spidermonkey-ios/lib\"",
-					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
-					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
+					"/Users/jmordetsky/cocosprojects/cocos2d-x/scripting/javascript/spidermonkey-ios/lib",
+					"/Users/jmordetsky/cocosprojects/cocos2d-x/cocos2dx/platform/third_party/ios/libraries",
+					"/Users/jmordetsky/cocosprojects/cocos2d-x/external/libwebsockets/ios/lib",
+					"/Users/jmordetsky/cocosprojects/cocos2d-x/projects/RiftSummoner/proj.ios/TestFlightSDK",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lz",
 					"-ljs_static",
 				);
-				PRODUCT_NAME = RiftSummoner;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_NAME = "Rift Summoner";
+				PROVISIONING_PROFILE = "A82282D7-8330-43E6-B5F0-DFE336077587";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

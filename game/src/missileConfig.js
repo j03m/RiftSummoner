@@ -1,7 +1,7 @@
 var missileConfig = {
                      "greenbullet":{
                          "png":"art/missiles{v}.png",
-                         "plist":"art/missiles.plist",
+                         "plist":"art/missiles{v}.plist",
                          "start":"greenbullet.1.png",
                          "effect":"hit",
                          "frames":27,
@@ -12,7 +12,7 @@ var missileConfig = {
                      },
                      "arrowFire":{
                          "png":"art/missiles{v}.png",
-                         "plist":"art/missiles.plist",
+                         "plist":"art/missiles{v}.plist",
                          "start":"arrowFire.1.png",
 						 "hasDirection":true,
 						 "rotation":"arrow",
@@ -25,7 +25,7 @@ var missileConfig = {
                      },
                     "arrowPoison":{
                         "png":"art/missiles{v}.png",
-                        "plist":"art/missiles.plist",
+                        "plist":"art/missiles{v}.plist",
                         "start":"arrowPoison.1.png",
                         "hasDirection":true,
                         "rotation":"arrow",
@@ -38,7 +38,7 @@ var missileConfig = {
                     },
                     "arrowVoid":{
                         "png":"art/missiles{v}.png",
-                        "plist":"art/missiles.plist",
+                        "plist":"art/missiles{v}.plist",
                         "start":"arrowVoid.1.png",
                         "hasDirection":true,
                         "rotation":"arrow",
@@ -64,7 +64,7 @@ var missileConfig = {
                     },
                     "bomb":{
                         "png":"art/missiles{v}.png",
-                        "plist":"art/missiles.plist",
+                        "plist":"art/missiles{v}.plist",
                         "start":"bomb.1.png",
                         "frames":8,
                         "delay":0.1,
@@ -74,7 +74,7 @@ var missileConfig = {
                     },
                     "magicFire":{
                         "png":"art/missiles{v}.png",
-                        "plist":"art/missiles.plist",
+                        "plist":"art/missiles{v}.plist",
                         "start":"magicFire.1.png",
                         "frames":6,
                         "delay":0.03,
@@ -85,7 +85,7 @@ var missileConfig = {
                     },
                     "magicVoid":{
                         "png":"art/missiles{v}.png",
-                        "plist":"art/missiles.plist",
+                        "plist":"art/missiles{v}.plist",
                         "start":"magicVoid.1.png",
                         "frames":6,
                         "delay":0.03,
@@ -96,7 +96,7 @@ var missileConfig = {
                     },
                     "magicNormal":{
                         "png":"art/missiles{v}.png",
-                        "plist":"art/missiles.plist",
+                        "plist":"art/missiles{v}.plist",
                         "start":"magicNormal.1.png",
                         "frames":6,
                         "delay":0.03,
@@ -107,7 +107,7 @@ var missileConfig = {
                     },
                     "ballFire":{
                         "png":"art/missiles{v}.png",
-                        "plist":"art/missiles.plist",
+                        "plist":"art/missiles{v}.plist",
                         "start":"ballFire.1.png",
                         "frames":7,
                         "delay":0.01,
@@ -116,7 +116,7 @@ var missileConfig = {
                     },
                     "ballVoid":{
                         "png":"art/missiles{v}.png",
-                        "plist":"art/missiles.plist",
+                        "plist":"art/missiles{v}.plist",
                         "start":"ballVoid.1.png",
                         "frames":6,
                         "delay":0.01,
@@ -124,7 +124,7 @@ var missileConfig = {
                     },
                     "cannonball":{
                         "png":"art/missiles{v}.png",
-                        "plist":"art/missiles.plist",
+                        "plist":"art/missiles{v}.plist",
                         "start":"cannonball.1.png",
                         "frames":6,
                         "delay":0.05,

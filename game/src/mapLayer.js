@@ -191,7 +191,7 @@ var MapLayer = jc.UiElementsLayer.extend({
         "mainFrame": {
             "applyAdjustments":true,
             "type": "sprite",
-            "sprite": "map.png",
+            "sprite": "map2.png",
             "z": 1,
             "pos": {
                 "x": 1019,
