@@ -151,7 +151,7 @@ var powerConfig = {
         if (jc.insideEllipse(targetPos,center)){
             this.locked.setBasePosition(targetPos);
         }
-        jc.playEffectOnTarget("greenBang", this.locked, this.owner.layer);
+        jc.playEffectOnTarget("hit", this.locked, this.owner.layer);
     },
     "burn":function(value){
         jc.genericPower("burn", value, this.owner, this.locked);

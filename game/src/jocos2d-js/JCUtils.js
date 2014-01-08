@@ -688,8 +688,8 @@ jc.checkPower = function(charName, powerName){
 
 }
 
-jc.elMajor = 3600;
-jc.elMinor = 1800;
+jc.elMajor = 7384;
+jc.elMinor = 4157;
 jc.insideEllipse = function(point, center){
     //http://math.stackexchange.com/questions/76457/check-if-a-point-is-within-an-ellipse
     var major = jc.elMajor * jc.assetScaleFactor;

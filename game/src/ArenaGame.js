@@ -54,6 +54,7 @@ var ArenaGame = jc.WorldLayer.extend({
         cc.SpriteFrameCache.getInstance().addSpriteFrames(shadowPlist);
         cc.SpriteBatchNode.create(shadowPng);
         this.level = hotr.blobOperations.getTutorialLevel();
+
         this.scheduleOnce(function(){
             if(!hotr.arenaScene.data){
                 this.runScenario0();
@@ -63,6 +64,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.runTutorial();
             }
         }.bind(this));
+
 
     },
     runScenario:function(){
@@ -515,7 +517,7 @@ var ArenaGame = jc.WorldLayer.extend({
         var maxY=0;
 
         for (var i =0; i<sprites.length;i++){
-            if (sprites[i].getParent()==this){
+            if (sprites[i] && sprites[i].getParent()==this){
                 var position = sprites[i].getBasePosition(); //where am i in the layer
                 var tr = sprites[i].getTextureRect();
                 var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
@@ -648,7 +650,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.step=4;
             }.bind(this));
         }else if (this.step == 4){
-            this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
+            this.panToWorldPoint(this.worldMidPoint, this.getScaleWorld(), jc.defaultTransitionTime, function(){
                 this.removeTutorialStep('demon', 'right', function(){
                     this.attachMsgTo("Dragons? If the Dark One has returned and has raised an army within The Rift....", this.guideCharacters['girl'], 'right');
                 }.bind(this));
