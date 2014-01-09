@@ -7,7 +7,7 @@
             <key>dragonFire_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{797,881},{263,291}}</string>
+                <string>{{797,1174},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>dragonVoid_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1760,588},{263,291}}</string>
+                <string>{{797,881},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,11 +33,11 @@
             <key>dwarvenKnightEarth_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1467,532},{263,291}}</string>
+                <string>{{1760,588},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{263,291}}</string>
                 <key>sourceSize</key>
@@ -46,7 +46,7 @@
             <key>dwarvenKnightFire_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1174,532},{263,291}}</string>
+                <string>{{1467,532},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>dwarvenKnightLife_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{881,532},{263,291}}</string>
+                <string>{{1174,532},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>dwarvenKnightVoid_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{588,1760},{263,291}}</string>
+                <string>{{881,532},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,11 +85,11 @@
             <key>dwarvenKnightWater_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{532,1467},{263,291}}</string>
+                <string>{{588,1760},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{263,291}}</string>
                 <key>sourceSize</key>
@@ -98,7 +98,7 @@
             <key>elementalEarth_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{532,1174},{263,291}}</string>
+                <string>{{532,1467},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>elementalFire_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{532,881},{263,291}}</string>
+                <string>{{532,1174},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>elementalWater_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{532,588},{263,291}}</string>
+                <string>{{532,881},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>elementalWind_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1760,295},{263,291}}</string>
+                <string>{{532,588},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,11 +150,11 @@
             <key>elfEarth_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1467,267},{263,291}}</string>
+                <string>{{1760,295},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{263,291}}</string>
                 <key>sourceSize</key>
@@ -163,7 +163,7 @@
             <key>elfFire_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1174,267},{263,291}}</string>
+                <string>{{1467,267},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -176,7 +176,7 @@
             <key>elfLife_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{881,267},{263,291}}</string>
+                <string>{{1174,267},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -189,7 +189,7 @@
             <key>elfVoid_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{588,267},{263,291}}</string>
+                <string>{{881,267},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -202,7 +202,7 @@
             <key>gargoyleFire_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{295,1760},{263,291}}</string>
+                <string>{{588,267},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -215,11 +215,11 @@
             <key>gargoyleVoid_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{267,1467},{263,291}}</string>
+                <string>{{295,1760},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{263,291}}</string>
                 <key>sourceSize</key>
@@ -228,7 +228,7 @@
             <key>goblinKnightBile_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{267,1174},{263,291}}</string>
+                <string>{{267,1467},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -241,7 +241,7 @@
             <key>goblinKnightBlood_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{267,881},{263,291}}</string>
+                <string>{{267,1174},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -254,7 +254,7 @@
             <key>goblinKnightFire_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{267,588},{263,291}}</string>
+                <string>{{267,881},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -267,7 +267,7 @@
             <key>goblinKnightNormal_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{267,295},{263,291}}</string>
+                <string>{{267,588},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -280,7 +280,7 @@
             <key>goblin_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1760,2},{263,291}}</string>
+                <string>{{267,295},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -293,11 +293,11 @@
             <key>knightEarth_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1467,2},{263,291}}</string>
+                <string>{{1760,2},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{263,291}}</string>
                 <key>sourceSize</key>
@@ -306,7 +306,7 @@
             <key>knightFire_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1174,2},{263,291}}</string>
+                <string>{{1467,2},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -319,7 +319,7 @@
             <key>knightVoid_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{881,2},{263,291}}</string>
+                <string>{{1174,2},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -332,7 +332,7 @@
             <key>knightWater_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{588,2},{263,291}}</string>
+                <string>{{881,2},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -345,7 +345,7 @@
             <key>ogre_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{295,2},{263,291}}</string>
+                <string>{{588,2},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -356,6 +356,19 @@
                 <string>{263,291}</string>
             </dict>
             <key>orc_bg.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{295,2},{263,291}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{263,291}}</string>
+                <key>sourceSize</key>
+                <string>{263,291}</string>
+            </dict>
+            <key>priestessEarth_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1760},{263,291}}</string>
@@ -456,7 +469,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:3ee0a6e842186086975577196a5bf185:b33d9af779e8c0f3fb2720c84c9d3da9:0afd5d88c1d04885828391deeb2050d9$</string>
+            <string>$TexturePacker:SmartUpdate:62d650540ad1dab72c2c9eda73aba094:34f5b14a28e0379239e5aa6e01227713:0afd5d88c1d04885828391deeb2050d9$</string>
             <key>textureFileName</key>
             <string>cards-iphone4.png</string>
         </dict>

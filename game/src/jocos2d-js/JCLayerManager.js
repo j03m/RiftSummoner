@@ -20,6 +20,11 @@ LayerManager.prototype.pushLayer = function(layer, z){
 
 }
 
+LayerManager.prototype.wipe = function(){
+    this.layers = [];
+    this.currentLayer = undefined;
+}
+
 LayerManager.prototype.popLayer = function(){
     var layer = this.layers.pop();
     if (this.layers.length>0){

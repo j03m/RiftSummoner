@@ -7,7 +7,7 @@ jc.bestAssetDirectory();
 jc.setDesignSize(cc.size(2048,1154));
 
 //todo {v}-ify these
-var arenaSheet = transformAsset(dirImg + "arena{v}.png");
+var arenaSheet = transformAsset(dirImg + "arena{v}.png",'-iphone4');
 var landingPng = transformAsset(dirImg + "landing{v}.png");
 var landingPlist = transformAsset(dirImg + "landing{v}.plist");
 var loadingPng = transformAsset(dirImg + "loading{v}.png");
@@ -94,17 +94,17 @@ if (jc.designMode){
 
 for (var entry in spriteDefs ){
     if (!spriteDefs[entry].parentOnly && spriteDefs[entry].name){
-        g_characterPngs[entry] = transformAsset(dirImg + entry + 'Sheet{v}.png');
-        g_characterPlists[entry] = transformAsset(dirImg + entry + 'Sheet{v}.plist');
+        g_characterPngs[entry] = transformAsset(dirImg + entry + 'Sheet{v}.png', '-iphone4');
+        g_characterPlists[entry] = transformAsset(dirImg + entry + 'Sheet{v}.plist', '-iphone4');
     }
 }
 
 for (var entry in missileConfig){
-    var png = transformAsset(missileConfig[entry].png);
+    var png = transformAsset(missileConfig[entry].png, '-iphone4');
     g_characterPngs[entry] = png;
     missileConfig[entry].png = png;
 	if (missileConfig[entry].plist){
-		var missile = transformAsset(missileConfig[entry].plist);
+		var missile = transformAsset(missileConfig[entry].plist, '-iphone4');
         g_characterPlists[entry] = missile;
         missileConfig[entry].plist = missile;
 
@@ -156,13 +156,17 @@ var g_ui =[
 ];
 
 
-function transformAsset(input){
+function transformAsset(input, force){
 	if (!input){
 		return; 
 	}
     var token = "-" + jc.assetCategory;
     if (token == "-iphone"){
         token = "";
+    }
+
+    if (jc.isBrowser && force != undefined) {
+        token = force;
     }
 
     return input.replace(jc.assetWildCard, token);

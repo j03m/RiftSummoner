@@ -94,10 +94,10 @@ var powerConfig = {
     "explodePoison":function(value){
         var config = spriteDefs[value].deathMods["explodePoison"];
         //initial explosion
-        var effect = jc.playTintedEffectOnTarget("explo", this.locked, this.owner.layer, false, cc.green());
+        var effect = jc.playTintedEffectOnTarget("explo", this.owner, this.owner.layer, false, cc.green());
 
 
-        var foes = this.allFoesWithinRadiusOfPoint(config.radius*jc.characterScaleFactor, this.locked.getBasePosition());
+        var foes = this.allFoesWithinRadiusOfPoint(config.radius*jc.characterScaleFactor, this.owner.getBasePosition());
 
         //damage them
         for(var i=0;i<foes.length;i++){

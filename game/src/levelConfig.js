@@ -29,9 +29,9 @@ var questLevels = {
             {name:"knightVoid"},
             {name:"gargoyleFire"},
 
-            {name:"elfFire"},
+            {name:"scowerer"},
             {name:"dragonFire"},
-            {name:"gargoyleVoid"}
+            {name:"shellback"}
     ]
 }
 

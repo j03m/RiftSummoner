@@ -40,9 +40,7 @@ var MapLayer = jc.UiElementsLayer.extend({
             }.bind(this));
 
             this.step = 1;
-        }
-
-        if (this.level == 2){
+        } else if (this.level == 2){
             jc.log(['map'], 'ftue2');
             //(msg, time, direction, character, callbackIn, callbackOut){
             hotr.blobOperations.setTutorialStep(1);
@@ -54,9 +52,7 @@ var MapLayer = jc.UiElementsLayer.extend({
             }.bind(this));
 
             this.step = 1;
-        }
-
-        if (this.level == 3){
+        }else if (this.level == 3){
             jc.log(['map'], 'ftue3');
             hotr.blobOperations.setTutorialStep(1);
             this.scheduleOnce(function(){
@@ -68,9 +64,7 @@ var MapLayer = jc.UiElementsLayer.extend({
 
             this.step = 1;
 
-        }
-
-        if (this.level == 4){
+        }else if (this.level == 4){
             jc.log(['map'], 'ftue3');
             hotr.blobOperations.setTutorialStep(1);
             this.scheduleOnce(function(){
@@ -82,6 +76,12 @@ var MapLayer = jc.UiElementsLayer.extend({
 
             this.step = 1;
 
+        }else{
+
+            this.showTutorialStep("We've unlocked a random assortment of characters for you to fight. Have a play, enjoy the demo.",
+                undefined,
+                "left",
+                "girl");
         }
 
 
@@ -100,6 +100,7 @@ var MapLayer = jc.UiElementsLayer.extend({
             }else if (this.level == 4){
                 this.level4Tutorial();
             }else{
+                this.removeTutorialStep('girl', 'left');
                 hotr.mainScene.layer.selectEditTeamPre();
             }
         }
@@ -116,8 +117,19 @@ var MapLayer = jc.UiElementsLayer.extend({
             this.step = 3;
         }else if (this.step == 3){
             this.attachMsgTo("To be continued.....", this.guideCharacters['girl'], 'right');
-            hotr.playerBlob.questLevel = 1;
+            hotr.playerBlob.questLevel++;
+            hotr.playerBlob.teamformation = [];
+            hotr.playerBlob.myguys = hotr.makeRandomTeam();
             hotr.blobOperations.saveBlob();
+            hotr.selectTeamScene = undefined;
+            hotr.editTeam = undefined;
+            jc.layerManager.wipe();
+            this.level = 4;
+            this.step = 4;
+        }else if (this.step == 4){
+            this.level = 5;
+            this.attachMsgTo("We've unlocked a random assortment of characters for your deck. Have a play in some mock battles. Enjoy the demo.", this.guideCharacters['girl'], 'right');
+
         }
     },
     level3Tutorial:function(){

@@ -82,7 +82,7 @@ jc.bestAssetDirectory = function(){
     jc.log(['resource'], "selected: " + maxSet + " for assets dir.");
     jc.assetCategory = maxSet;
     jc.assetScaleFactor = scaleFactor;
-    jc.characterScaleFactor =  charScaleFactor
+    jc.characterScaleFactor =  scaleFactor
     jc.assetCategoryData = jc.resolutions[maxSet];
 
 

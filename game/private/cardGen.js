@@ -24,6 +24,8 @@ exports.getDefault = function(){
     result.push(card);
     card = {name:"elfLife", id:uuid.v4()};
     result.push(card);
+    card = {name:"priestessEarth", id:uuid.v4()};
+    result.push(card);
     return result;
 }
 

@@ -88,7 +88,7 @@ HealerBehavior.prototype.handleHealMove = function(dt){
 HealerBehavior.prototype.handleHeal = function(dt){
 
     var state= this.getState();
-    if (state.anim == 'attack'){
+    if (state.anim == 'attack' || state.anim == 'special') {
         //return - let it finish
         return;
     }
@@ -106,7 +106,7 @@ HealerBehavior.prototype.handleHeal = function(dt){
 
     var point = this.getWhereIShouldBe('behind', 'facing', this.support);
     point = this.seek(point);
-    if (point.x != 0 && point.y != 0){
+    if (point.x != 0 && point.y > 100){
         //arrived - heal
         this.setState('move', 'move');
         return;
@@ -131,7 +131,11 @@ HealerBehavior.prototype.handleHeal = function(dt){
             this.owner.scheduleOnce(this.healLogic.bind(this), damageDelay);
             jc.playEffectOnTarget('heal', this.support, this.support.getZOrder(), this.owner.layer, true);
             this.lastHeal = 0;
-            this.setState('healing', 'attack');
+            if (this.owner.animations['special']){
+                this.setState('healing', 'special');
+            }else{
+                this.setState('healing', this.getAttackAnim());
+          }
         }
 
 
