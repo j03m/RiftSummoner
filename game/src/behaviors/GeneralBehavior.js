@@ -332,7 +332,7 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
 }
 
 GeneralBehavior.prototype.adjustFlock = function(toPoint){
-    var friends = this.allFriendsWithinRadius(10);
+    var friends = this.allFriendsWithinRadius(300 * jc.characterScaleFactor);
     var pos = this.owner.getBasePosition();
     if (friends.length!=0){
         for (var i =0; i<friends.length;i++){
@@ -342,7 +342,7 @@ GeneralBehavior.prototype.adjustFlock = function(toPoint){
             if (diff<10 && this.owner.flockedOff !=friends[i]){
                 //adjust my seek position by 10px y north
                 friends[i].flockedOff = this.owner;
-                toPoint.y+=25;
+                toPoint.y+= 300 * jc.characterScaleFactor;
                 break;
             }
         }
@@ -375,6 +375,7 @@ GeneralBehavior.prototype.seek = function(toPoint){
 
 
     var speed = this.owner.gameObject.speed;
+    speed *= jc.characterScaleFactor;
     if (!speed){
         throw "Character: " + this.owner.name + " speed not defined.";
     }
@@ -690,6 +691,26 @@ GeneralBehavior.prototype.setAttackAnim = function(state, callback){
     }
     this.attackSequence++;
 }
+
+GeneralBehavior.prototype.getAttackAnim = function(){
+    if (this.attackSequence==undefined){
+        this.attackSequence = 1;
+    }
+
+    if (this.attackSequence == 1){
+        return 'attack';
+    }else{
+        var nextAttack = 'attack'+this.attackSequence;
+        if (this.owner.animations[nextAttack]){
+            return nextAttack;
+        }else{
+            this.attackSequence = 0;
+            return 'attack';
+        }
+    }
+    this.attackSequence++;
+}
+
 
 GeneralBehavior.prototype.handleIdle = function(dt){
     //lock on who-ever is closest

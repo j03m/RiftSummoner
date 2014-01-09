@@ -35,6 +35,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
     },
     onShow:function(){
 		this.nextEnabled = true;
+        this.level = hotr.blobOperations.getTutorialLevel();
         if (!this.first){
             //llp through characters
             this.start();
@@ -102,7 +103,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
       return parseInt(name.replace(this.squad2Prefix, "")) + (hotr.teamformationSize/2);
     },
     inTransitionsComplete:function(){
-        this.level = hotr.blobOperations.getTutorialLevel();
+
         this.step = hotr.blobOperations.getTutorialStep();
         if (this.first){
             if (this.level == 1 && this.step == 4){

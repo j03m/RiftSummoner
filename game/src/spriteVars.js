@@ -54,7 +54,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 160,
+			"speed": 320,
 			"damage": 250,
 			"missile": "ballFire",
 			"missileOffset": {
@@ -88,7 +88,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 700,
-			"speed": 260,
+			"speed": 320,
 			"movementType": 0,
 			"missile": "ballVoid",
 			"missileOffset": {
@@ -160,7 +160,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"gameProperties": {
 			"MaxHP": 1300,
-			"speed": 50,
+			"speed": 100,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 25,
@@ -183,7 +183,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"gameProperties": {
 			"MaxHP": 700,
-			"speed": 50,
+			"speed": 100,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 25,
@@ -209,7 +209,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"gameProperties": {
 			"MaxHP": 700,
-			"speed": 50,
+			"speed": 100,
 			"damage": 25,
 			"movementType": 1,
 			"targets": 1,
@@ -241,7 +241,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 700,
-			"speed": 50,
+			"speed": 100,
 			"damage": 35,
 			"movementType": 1,
 			"targets": 1,
@@ -273,7 +273,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 700,
-			"speed": 50,
+			"speed": 100,
 			"damage": 25,
 			"movementType": 1,
 			"targets": 1,
@@ -368,7 +368,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 2000,
-			"speed": 20,
+			"speed": 40,
 			"damage": 100,
 			"movementType": 1,
 			"targets": 1,
@@ -391,7 +391,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"damageMods": {
 			"burn": {
-				"damage": 20,
+				"damage": 40,
 				"duration": 1,
 				"interval": 0.25
 			}
@@ -428,7 +428,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 200,
-			"speed": 50,
+			"speed": 100,
 			"damage": 75,
 			"movementType": 1,
 			"targets": 2,
@@ -456,7 +456,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 70,
+			"speed": 200,
 			"damage": 50,
 			"movementType": 1,
 			"targets": 2,
@@ -519,7 +519,7 @@ var spriteDefs = {
 			"targets": 2,
 			"missile": "arrowNormal",
 			"damage": 35,
-			"speed": 85,
+			"speed": 250,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -550,7 +550,7 @@ var spriteDefs = {
 			"targets": 2,
 			"missile": "arrowFire",
 			"damage": 35,
-			"speed": 55,
+			"speed": 200,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -581,7 +581,7 @@ var spriteDefs = {
 			"targets": 2,
 			"missile": "arrowPoison",
 			"poisonDamage": 10,
-			"speed": 55,
+			"speed": 200,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -611,7 +611,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"missile": "arrowVoid",
 			"targets": 2,
-			"speed": 55,
+			"speed": 200,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -621,6 +621,50 @@ var spriteDefs = {
 			"targetRadius": 1200
 		},
 		"inherit": "elf"
+	},
+	"femaleSorcerer": {
+		"name": "femaleSorcerer",
+		"parentOnly": true,
+		"flip": true,
+		"byStep": 3,
+		"animations": {
+			"move": {
+				"start": 26,
+				"end": 49,
+				"delay": 0.03,
+				"type": 0
+			},
+			"attack": {
+				"start": 51,
+				"end": 80,
+				"delay": 0.03,
+				"type": 1
+			},
+			"attack2": {
+				"start": 82,
+				"end": 115,
+				"delay": 0.03,
+				"type": 1
+			},
+			"special": {
+				"start": 116,
+				"end": 149,
+				"delay": 0.03,
+				"type": 1
+			},
+			"dead": {
+				"start": 161,
+				"end": 176,
+				"delay": 0.05,
+				"type": 1
+			},
+			"idle": {
+				"start": 1,
+				"end": 24,
+				"delay": 0.04,
+				"type": 0
+			}
+		}
 	},
 	"gargoyle": {
 		"name": "gargoyle",
@@ -673,7 +717,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 200,
-			"speed": 100,
+			"speed": 300,
 			"movementType": 0,
 			"targets": 2,
 			"damage": 50,
@@ -704,7 +748,7 @@ var spriteDefs = {
 			"MaxHP": 200,
 			"movementType": 0,
 			"targets": 2,
-			"speed": 100,
+			"speed": 300,
 			"damage": 100,
 			"missile": "magicVoid",
 			"resistsRange": 25,
@@ -760,7 +804,7 @@ var spriteDefs = {
 			"targets": 1,
 			"missile": "bomb",
 			"damage": 80,
-			"speed": 55,
+			"speed": 110,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -849,7 +893,7 @@ var spriteDefs = {
 		"special": "Burn Damage",
 		"gameProperties": {
 			"MaxHP": 200,
-			"speed": 170,
+			"speed": 340,
 			"movementType": 1,
 			"targets": 1,
 			"resistsRange": 50,
@@ -879,7 +923,7 @@ var spriteDefs = {
 		"special": "Burn Damage",
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 80,
+			"speed": 160,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 35,
@@ -903,7 +947,7 @@ var spriteDefs = {
 		"special": "Resist Fire",
 		"gameProperties": {
 			"MaxHP": 200,
-			"speed": 80,
+			"speed": 160,
 			"movementType": 1,
 			"targets": 1,
 			"defense": {
@@ -930,7 +974,7 @@ var spriteDefs = {
 		"special": "Resist Fire",
 		"gameProperties": {
 			"MaxHP": 250,
-			"speed": 70,
+			"speed": 140,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 25,
@@ -995,7 +1039,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 1000,
-			"speed": 20,
+			"speed": 40,
 			"damage": 160,
 			"movementType": 1,
 			"targets": 1,
@@ -1025,7 +1069,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 20,
+			"speed": 40,
 			"damage": 200,
 			"movementType": 1,
 			"targets": 1,
@@ -1056,7 +1100,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 20,
+			"speed": 40,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 160,
@@ -1082,7 +1126,7 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"movementType": 1,
 			"targets": 1,
-			"speed": 20,
+			"speed": 40,
 			"damage": 160,
 			"actionDelays": {
 				"attack": 0.05
@@ -1169,7 +1213,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"MaxHP": 1500,
-			"speed": 15,
+			"speed": 40,
 			"damage": 300,
 			"actionDelays": {
 				"attack": 1
@@ -1223,7 +1267,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 400,
-			"speed": 55,
+			"speed": 110,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 50,
@@ -1274,6 +1318,38 @@ var spriteDefs = {
 		},
 		"behavior": "tank"
 	},
+	"priestessEarth": {
+		"name": "priestessEarth",
+		"formalName": "Priestess - Earth",
+		"details": "A priestess of the element earth. She will support your warriors with the healing arts.",
+		"elementType": "earth",
+		"unitType": 3,
+		"special": "Healing",
+		"gameProperties": {
+			"MaxHP": 200,
+			"speed": 200,
+			"movementType": 1,
+			"targets": 2,
+			"damage": 10,
+			"heal": 150,
+			"actionDelays": {
+				"attack": 0.5,
+				"heal": 0.4
+			},
+			"effectDelays": {
+				"attack": 0.05,
+				"heal": 0.05
+			},
+			"targetRadius": 200
+		},
+		"baseOffset": {
+			"x": 0,
+			"y": 10
+		},
+		"byStep": 1,
+		"inherit": "femaleSorcerer",
+		"behavior": "healer"
+	},
 	"scowerer": {
 		"name": "scowerer",
 		"formalName": "Void Scavenger",
@@ -1296,7 +1372,7 @@ var spriteDefs = {
 			"MaxHP": 10,
 			"movementType": 1,
 			"targets": 1,
-			"speed": 200,
+			"speed": 400,
 			"damage": 25,
 			"actionDelays": {
 				"attack": 0.01
@@ -1345,7 +1421,7 @@ var spriteDefs = {
 			"MaxHP": 400,
 			"movementType": 1,
 			"targets": 1,
-			"speed": 200,
+			"speed": 450,
 			"damage": 25,
 			"actionDelays": {
 				"attack": 0.01
@@ -1392,7 +1468,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 150,
-			"speed": 140,
+			"speed": 280,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 45,
@@ -1450,7 +1526,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 200,
+			"speed": 400,
 			"movementType": 1,
 			"targets": 1,
 			"resistsRange": 50,
@@ -1501,7 +1577,7 @@ var spriteDefs = {
 		"special": "Healing",
 		"gameProperties": {
 			"MaxHP": 100,
-			"speed": 100,
+			"speed": 110,
 			"movementType": 1,
 			"targets": 2,
 			"damage": 10,
@@ -1560,7 +1636,7 @@ var spriteDefs = {
 			"MaxHP": 100,
 			"movementType": 1,
 			"targets": 2,
-			"speed": 50,
+			"speed": 100,
 			"damage": 80,
 			"missile": "magicNormal",
 			"actionDelays": {

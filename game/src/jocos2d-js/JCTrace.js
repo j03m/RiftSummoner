@@ -38,7 +38,7 @@ var tracers = {
     'tutorials':0,
     'blobOperations':0,
     'selectTeam':0,
-    'Arena':1
+    'Arena':0
 
 };
 

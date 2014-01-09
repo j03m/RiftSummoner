@@ -34,15 +34,6 @@ jc.WorldLayer = jc.TouchLayer.extend({
                 this.scaleTable.push({x:myScaleX, y:myScaleX/this.aspectRatio});
                 i+=inc;
             }
-            this.whiteFlash = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
-            var worldPos = cc.p(this.worldSize.width/2, this.worldSize.height/2);
-            worldPos.x -= this.winSize.width/2;
-            worldPos.y -= this.winSize.height/2;
-            var nodePos = this.convertToItemPosition(worldPos);
-            this.whiteFlash.setPosition(nodePos);
-            this.whiteFlash.setContentSize(this.winSize);
-            this.whiteFlash.setVisible(false);
-            this.addChild(this.whiteFlash);
 
             return true;
         } else {
@@ -87,6 +78,17 @@ jc.WorldLayer = jc.TouchLayer.extend({
     flash:function(){
         //layer color, full screen to white
         //fade out
+
+        if (!this.whiteFlash){
+            this.whiteFlash = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
+            this.whiteFlash.setContentSize(this.winSize);
+            this.getParent().addChild(this.whiteFlash);
+            this.whiteFlash.setVisible(false);
+            this.whiteFlash.setPosition(cc.p(0,0));
+
+
+        }
+
         this.whiteFlash.setVisible(true);
         this.whiteFlash.setOpacity(255);
 

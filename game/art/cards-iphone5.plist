@@ -7,6 +7,19 @@
             <key>dragonFire_bg.png</key>
             <dict>
                 <key>frame</key>
+                <string>{{1567,1386},{311,344}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{311,344}}</string>
+                <key>sourceSize</key>
+                <string>{311,344}</string>
+            </dict>
+            <key>dragonVoid_bg.png</key>
+            <dict>
+                <key>frame</key>
                 <string>{{1386,1732},{311,344}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
@@ -17,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>dragonVoid_bg.png</key>
+            <key>dwarvenKnightEarth_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1254,1386},{311,344}}</string>
@@ -30,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>dwarvenKnightEarth_bg.png</key>
+            <key>dwarvenKnightFire_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1732,1040},{311,344}}</string>
@@ -43,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>dwarvenKnightFire_bg.png</key>
+            <key>dwarvenKnightLife_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1386,941},{311,344}}</string>
@@ -56,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>dwarvenKnightLife_bg.png</key>
+            <key>dwarvenKnightVoid_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1040,1732},{311,344}}</string>
@@ -69,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>dwarvenKnightVoid_bg.png</key>
+            <key>dwarvenKnightWater_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{941,1386},{311,344}}</string>
@@ -82,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>dwarvenKnightWater_bg.png</key>
+            <key>elementalEarth_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{941,1040},{311,344}}</string>
@@ -95,7 +108,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elementalEarth_bg.png</key>
+            <key>elementalFire_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1732,694},{311,344}}</string>
@@ -108,7 +121,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elementalFire_bg.png</key>
+            <key>elementalWater_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1386,628},{311,344}}</string>
@@ -121,7 +134,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elementalWater_bg.png</key>
+            <key>elementalWind_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1040,628},{311,344}}</string>
@@ -134,7 +147,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elementalWind_bg.png</key>
+            <key>elfEarth_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{694,1732},{311,344}}</string>
@@ -147,7 +160,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elfEarth_bg.png</key>
+            <key>elfFire_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{628,1386},{311,344}}</string>
@@ -160,7 +173,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elfFire_bg.png</key>
+            <key>elfLife_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{628,1040},{311,344}}</string>
@@ -173,7 +186,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elfLife_bg.png</key>
+            <key>elfVoid_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{628,694},{311,344}}</string>
@@ -186,7 +199,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elfVoid_bg.png</key>
+            <key>gargoyleFire_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1732,348},{311,344}}</string>
@@ -199,7 +212,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>gargoyleFire_bg.png</key>
+            <key>gargoyleVoid_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1386,315},{311,344}}</string>
@@ -212,7 +225,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>gargoyleVoid_bg.png</key>
+            <key>goblinKnightBile_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1040,315},{311,344}}</string>
@@ -225,7 +238,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>goblinKnightBile_bg.png</key>
+            <key>goblinKnightBlood_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{694,315},{311,344}}</string>
@@ -238,7 +251,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>goblinKnightBlood_bg.png</key>
+            <key>goblinKnightFire_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{348,1732},{311,344}}</string>
@@ -251,7 +264,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>goblinKnightFire_bg.png</key>
+            <key>goblinKnightNormal_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{315,1386},{311,344}}</string>
@@ -264,7 +277,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>goblinKnightNormal_bg.png</key>
+            <key>goblin_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{315,1040},{311,344}}</string>
@@ -277,7 +290,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>goblin_bg.png</key>
+            <key>knightEarth_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{315,694},{311,344}}</string>
@@ -290,7 +303,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>knightEarth_bg.png</key>
+            <key>knightFire_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{315,348},{311,344}}</string>
@@ -303,7 +316,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>knightFire_bg.png</key>
+            <key>knightVoid_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1732,2},{311,344}}</string>
@@ -316,7 +329,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>knightVoid_bg.png</key>
+            <key>knightWater_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1386,2},{311,344}}</string>
@@ -329,7 +342,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>knightWater_bg.png</key>
+            <key>ogre_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1040,2},{311,344}}</string>
@@ -342,7 +355,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>ogre_bg.png</key>
+            <key>orc_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{694,2},{311,344}}</string>
@@ -355,7 +368,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>orc_bg.png</key>
+            <key>priestessEarth_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{348,2},{311,344}}</string>
@@ -456,7 +469,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:3ee0a6e842186086975577196a5bf185:b33d9af779e8c0f3fb2720c84c9d3da9:0afd5d88c1d04885828391deeb2050d9$</string>
+            <string>$TexturePacker:SmartUpdate:62d650540ad1dab72c2c9eda73aba094:34f5b14a28e0379239e5aa6e01227713:0afd5d88c1d04885828391deeb2050d9$</string>
             <key>textureFileName</key>
             <string>cards-iphone5.png</string>
         </dict>

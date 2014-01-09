@@ -38,12 +38,13 @@ var ArenaGame = jc.WorldLayer.extend({
             this.tutorialPoint1 = cc.p(600*jc.assetScaleFactor, 600*jc.assetScaleFactor);
             this.tutorialPoint2 = cc.p(800*jc.assetScaleFactor, 800*jc.assetScaleFactor);
 
-            this.tutorial2Point1 = cc.p(400* jc.assetScaleFactor, 250*jc.assetScaleFactor);
-            this.tutorial2Point2 = cc.p(425* jc.assetScaleFactor, 450*jc.assetScaleFactor);
-            this.tutorial2Point3 = cc.p(this.winSize.width/2,this.winSize.height/2);
+            this.tutorial2Point1 = cc.p(300* jc.assetScaleFactor, 180*jc.assetScaleFactor);
+            this.tutorial2Point2 = cc.p(350* jc.assetScaleFactor, 425*jc.assetScaleFactor);
+            this.tutorial2Point3 = cc.p((this.winSize.width/2)+300*jc.assetScaleFactor,this.winSize.height/2);
 
 
-            this.enemyStartPos = cc.p((this.worldSize.width/2)+ 500 * jc.assetScaleFactor, (this.worldSize.height/2) - 300 *jc.assetScaleFactor);
+            this.enemyStartPos = cc.p((this.worldSize.width/2)+ 1000 * jc.assetScaleFactor, (this.worldSize.height/2) + 500 *jc.assetScaleFactor);
+            this.enemyStartPosTutorials = cc.p((this.worldSize.width/2)+ 1000 * jc.assetScaleFactor, (this.worldSize.height/2) - 300 *jc.assetScaleFactor);
 
             return true;
 		} else {
@@ -77,7 +78,7 @@ var ArenaGame = jc.WorldLayer.extend({
         this.placeSquadTokens();
         this.setUp();
         this.placementTouches = 1;
-        this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
+        this.panToWorldPoint(this.worldMidPoint, this.getScaleWorld(), jc.defaultTransitionTime, function(){
             this.placeEnemyTeam();
             this.nextTouchDo(this.initialSetupAction,true);
         }.bind(this));
@@ -100,7 +101,7 @@ var ArenaGame = jc.WorldLayer.extend({
             }else if (this.step == 14){
                 //we selected teams
                 this.setUp();
-                this.placeEnemyTeam();
+                this.placeEnemyTeam(this.enemyStartPosTutorials);
                 var scaleData = this.calculateScaleForSprites(this.teams['b']);
                 this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
                     this.showTutorialStep("Alright, there they are. Get ready to fight!", undefined, 'left', 'girl');
@@ -644,9 +645,9 @@ var ArenaGame = jc.WorldLayer.extend({
             this.step = 3;
         }else if (this.step == 3){
             this.attachMsgTo('You cannot defeat us. RESISTANCE IS FUTILE!', this.guideCharacters['demon'], 'left');
-            this.placeEnemyTeam(cc.p(this.worldSize.width/2 + 500 * jc.assetScaleFactor, this.worldSize.height/2 + 100 * jc.assetScaleFactor));
+            this.placeEnemyTeam(cc.p(this.worldSize.width/2 + 1000 * jc.assetScaleFactor, this.worldSize.height/2 + 600 *jc.assetScaleFactor));
             var scaleData = this.calculateScaleForSprites(this.teams['b']);
-            this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
+            this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime/2, function(){
                 this.step=4;
             }.bind(this));
         }else if (this.step == 4){
@@ -699,7 +700,7 @@ var ArenaGame = jc.WorldLayer.extend({
     handleLevel2Tutorial:function(type, touch, sprites){
         if (this.step == 1){
             this.removeTutorialStep('orc', 'right', function(){
-                this.placeEnemyTeam();
+                this.placeEnemyTeam(this.enemyStartPosTutorials);
                 var scaleData = this.calculateScaleForSprites(this.teams['b']);
                 this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
                     this.showTutorialStep("Don't worry, I've arranged for help! Let summon your troops.", undefined, 'left', 'girl');
@@ -772,7 +773,7 @@ var ArenaGame = jc.WorldLayer.extend({
         if (this.step==1){
             this.step =1.5;
             this.removeTutorialStep('orc', 'right', function(){
-                this.placeEnemyTeam();
+                this.placeEnemyTeam(this.enemyStartPosTutorials);
                 var scaleData = this.calculateScaleForSprites(this.teams['b']);
                 this.panToWorldPoint(scaleData.mid, scaleData.scale, jc.defaultTransitionTime, function(){
                     this.showTutorialStep("Look, our enemies have summoned two goblins. You have to defeat them!", undefined, 'left', 'girl');

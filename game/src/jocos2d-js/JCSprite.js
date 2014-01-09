@@ -305,6 +305,10 @@ jc.Sprite = cc.Sprite.extend({
         var currentState = this.state;
 		this.state = state;
 
+        if (this.state == 'dead'){
+            this.setZOrder(jc.shadowZOrder+1);
+        }
+
         jc.log(['sprite', 'state'],"State Change For:" + this.name + ' from:' + currentState + ' to:' + this.state);
 
         //no need to do anything
@@ -319,6 +323,7 @@ jc.Sprite = cc.Sprite.extend({
         }else{
             this.nextState = 'dead';
         }
+
 
         //make sure start state is known
         var startMe = this.animations[this.state];

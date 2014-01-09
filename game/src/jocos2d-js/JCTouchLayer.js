@@ -509,7 +509,7 @@ jc.TouchLayer = cc.Layer.extend({
         if (!this.guideCharacters[character]){
             jc.log(['tutorials'], 'making:'+character);
             this.guideCharacters[character] = jc.makeSpriteWithPlist(tutorialPlist, tutorialPng, this.getGuide(character));
-            this.guideCharacters[character].setZOrder(jc.topMost);
+            this.guideCharacters[character].setZOrder(jc.topMost+1);
             this.getParent().addChild(this.guideCharacters[character]);
         }
 
@@ -631,9 +631,9 @@ jc.TouchLayer = cc.Layer.extend({
 
         this.bubble.msg.retain();
         this.getParent().addChild(this.bubble);
-        this.bubble.setZOrder(jc.topMost);
+        this.bubble.setZOrder(jc.topMost-1);
         this.getParent().addChild(this.bubble.msg);
-        this.bubble.msg.setZOrder(jc.topMost+1);
+        this.bubble.msg.setZOrder(jc.topMost);
         this.bubble.setScale(0.01, 0.01);
         this.centerThisPeer(this.bubble.msg, this.bubble);
 //        this.bubble.msg.adjustPosition(20*jc.assetScaleFactor, 50*jc.assetScaleFactor);
