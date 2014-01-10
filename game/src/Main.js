@@ -28,8 +28,6 @@ var MainGame = cc.Layer.extend({
 		}else{
 			this.returnPoint();			
 		}
-
-
 	},
     changeScene:function(key, assets, data){         //todo: change to layer manager
 
@@ -214,7 +212,7 @@ var MainGame = cc.Layer.extend({
                         teamA[i] = {"name":"dwarvenKnightEarth"};
                         count++;
                     }else if (count == 1){
-                        teamA[i] = {"name":"dwarvenKnightFire"};
+                        teamA[i] = {"name":"goblinKnightBile"};
                         count++;
                     }else if (count == 2){
                         teamA[i] = {"name":"dwarvenKnightLife"};
@@ -284,6 +282,32 @@ var MainGame = cc.Layer.extend({
     },
     onEnter:function(){
          jc.log(['mainLayer'], "main starting")
+        this.startGame();
+
+    },
+    goArenaTest:function(){
+        ArenaGame.scene();
+        var fightConfig = {
+            //teamA:[{name:'dragonFire'}, {name:"priestessEarth"}],
+            teamA:[{name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}],
+            teamAFormation:"",
+            //teamB:[{name:'dwarvenKnightFire'}, {name:'troll'}, {name: 'gargoyleVoid'}],
+            teamB:[{name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}],
+            teamBFormation:"",
+            teamAPowers:[],
+            teamBPowers:[],
+            offense:'a'
+        };
+
+        hotr.arenaScene.data = fightConfig;
+        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
+        this.showLoader(            {
+            "assets":assets,
+            "nextScene":'arena'
+        });
+    },
+    onEnter:function(){
+        jc.log(['mainLayer'], "main starting")
         this.startGame();
 
     },

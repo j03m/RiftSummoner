@@ -18,6 +18,7 @@ var ArenaGame = jc.WorldLayer.extend({
     init: function() {
         this.name = "Arena";
         if (this._super(arenaSheet)) {
+            Math.seedrandom('yay i made a game');
             this.teams['a'] = [];
             this.teams['b'] = [];
             this.teamSize = 18;
@@ -121,40 +122,12 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     runScenario0:function(){
 
-        this.teamASprites.push('orge');
-        this.teamASprites.push('orge');
-        this.teamASprites.push('orge');
-        this.teamASprites.push('orge');
+        this.teamASprites.push({name:'orge'});
+        this.teamASprites.push({name:'priestessEarth'});
 
-        this.teamASprites.push('orge');
-        this.teamASprites.push('blueKnight');
-        this.teamASprites.push('blueKnight');
-        this.teamASprites.push('orge');
+        this.teamBSprites.push({name:'orge'});
+        this.teamBSprites.push({name:'troll'});
 
-        this.teamASprites.push('voidElf');
-        this.teamASprites.push('forestElf');
-        this.teamASprites.push('voidElf');
-        this.teamASprites.push('forestElf');
-
-
-
-        this.teamAFormation = jc.formations["4x4x4a"];
-
-        //this.teamBSprites.push('elementalWind');
-
-        this.teamBSprites.push('elementalStone');
-        this.teamBSprites.push('elementalStone');
-        this.teamBSprites.push('elementalStone');
-        this.teamBSprites.push('elementalStone');
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('voidElf');
-        this.teamBSprites.push('voidElf');
-        this.teamBFormation = jc.formations["4x4x4b"];
         this.setUp();
     },
     initialSetupAction:function(touch){

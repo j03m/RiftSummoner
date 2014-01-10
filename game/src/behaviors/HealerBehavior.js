@@ -56,10 +56,18 @@ HealerBehavior.prototype.handleHealerIdle = function(dt){
         this.handleTankIdle(dt);
     }else{
         //get close
-        if(!this.withinThisRadius(this.support.getBasePosition(), this.owner.getTargetRadius()*2, this.owner.getTargetRadiusY()/2)){
+//        if(!this.withinThisRadius(this.support.getBasePosition(), this.owner.getTargetRadius(), this.owner.getTargetRadiusY())){
+//            this.setState('move', 'move');
+//            return;
+//        }
+
+        var point = this.getWhereIShouldBe('behind', 'facing', this.support);
+        point = this.seek(point);
+        if (point.x != 0 && point.y != 0){
             this.setState('move', 'move');
             return;
         }
+
 
         if (this.support.gameObject.hp>0 && this.support.gameObject.hp < this.support.gameObject.MaxHP){
             //needs a heal.
@@ -106,7 +114,7 @@ HealerBehavior.prototype.handleHeal = function(dt){
 
     var point = this.getWhereIShouldBe('behind', 'facing', this.support);
     point = this.seek(point);
-    if (point.x != 0 && point.y > 100){
+    if (point.x != 0 || point.y > 100){
         //arrived - heal
         this.setState('move', 'move');
         return;
@@ -127,6 +135,7 @@ HealerBehavior.prototype.handleHeal = function(dt){
         //can heal?
         if (this.support.gameObject.hp<0 || this.support.gameObject.hp >= this.support.gameObject.MaxHP){
             this.lastHeal+=dt;
+            this.setState('healing', 'idle');
         }else{
             this.owner.scheduleOnce(this.healLogic.bind(this), damageDelay);
             jc.playEffectOnTarget('heal', this.support, this.support.getZOrder(), this.owner.layer, true);
@@ -142,7 +151,7 @@ HealerBehavior.prototype.handleHeal = function(dt){
 
     }else{
         this.lastHeal+=dt;
-        this.setState('healing', state.anim);
+        this.setState('healing', 'idle');
 
     }
 }

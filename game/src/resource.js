@@ -61,7 +61,7 @@ jc.font.fontName='GODOFWAR';
 
 //*****uncomment for designmode
 if (jc.designMode){
-
+    //var dirImg = "artIpad/";
     var cardsPngs = [transformAsset(dirImg + "cards-ipadhd.png")];
     var cardsPlists = [transformAsset(dirImg + "cards-ipadhd.plist")];
     var uiPng = transformAsset(dirImg + "uiElements-ipadhd.png");
@@ -70,7 +70,9 @@ if (jc.designMode){
     var landingPlist = transformAsset(dirImg + "landing-ipadhd.plist");
     var loadingPng = transformAsset(dirImg + "loading-ipadhd.png");
     var loadingPlist = transformAsset(dirImg + "loading-ipadhd.plist");
-    var guide = dirImg + "multiplayerScreen.png";
+    var touchUiPlist = transformAsset(dirImg + "touch-ipadhd.plist");
+    var touchUiPng = transformAsset(dirImg + "touch-ipadhd.png");
+    var guide = dirImg + "map.png";
     var g_maingame = [
         {src:guide},
         {src:uiPng},

@@ -8,30 +8,30 @@ var questLevels = {
             {name:"orc"}
     ],
     "3":[
-            {name:"ogre"},
             {name:"orc"},
-            {name:"dragonFire"},
-
             {name:"orc"},
-            {name:"elfFire"},
             {name:"orc"},
 
-            {name:"elementalFire"},
-            {name:"knightWater"},
-            {name:"knightFire"},
-
-
-            {name:"elementalEarth"},
             {name:"dragonFire"},
-            {name:"ogre"},
+            {name:"dragonFire"},
+            {name:"dragonFire"},
+
+            {name:"orc"},
+            {name:"orc"},
+            {name:"orc"},
 
             {name:"dragonFire"},
-            {name:"knightVoid"},
-            {name:"gargoyleFire"},
-
-            {name:"scowerer"},
             {name:"dragonFire"},
-            {name:"shellback"}
+            {name:"dragonFire"},
+
+
+            {name:"orc"},
+            {name:"orc"},
+            {name:"orc"},
+
+            {name:"dragonFire"},
+            {name:"dragonFire"},
+            {name:"dragonFire"}
     ]
 }
 
