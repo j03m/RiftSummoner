@@ -64,16 +64,85 @@ jc.Designer = jc.UiElementsLayer.extend({
                 }
             }
         }
-
     },
-    windowConfig:{
+    windowConfig:  {
         "mainFrame": {
             "type": "sprite",
-            "sprite": "map.png",
+            "applyAdjustments": true,
+            "sprite": "map2.png",
             "z": 1,
             "pos": {
                 "x": 1004,
                 "y": 756
+            },
+            "kids": {
+                "buttonStore": {
+                    "type": "button",
+                    "main": "buttonStore.png",
+                    "pressed": "buttonStorePressed.png",
+                    "touchDelegateName": "storeClick",
+                    "z": 1,
+                    "pos": {
+                        "x": 1707,
+                        "y": 99
+                    }
+                },
+                "buttonSummon": {
+                    "type": "button",
+                    "main": "buttonSummon.png",
+                    "pressed": "buttonSummonPressed.png",
+                    "touchDelegateName": "summon",
+                    "z": 1,
+                    "pos": {
+                        "x": 1878,
+                        "y": 102
+                    }
+                },
+                "flagAttack1": {
+                    "type": "sprite",
+                    "sprite": "flagAttack.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 1383,
+                        "y": 820
+                    }
+                },
+                "flagAttack2": {
+                    "type": "sprite",
+                    "sprite": "flagAttack.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 989,
+                        "y": 793
+                    }
+                },
+                "flagAttack3": {
+                    "type": "sprite",
+                    "sprite": "flagAttack.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 662,
+                        "y": 639
+                    }
+                },
+                "flagAttack4": {
+                    "type": "sprite",
+                    "sprite": "flagAttack.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 407,
+                        "y": 493
+                    }
+                },
+                "flagAttack5": {
+                    "type": "sprite",
+                    "sprite": "flagAttack.png",
+                    "z": 1,
+                    "pos": {
+                        "x": 600,
+                        "y": 241
+                    }
+                }
             }
         }
     }
