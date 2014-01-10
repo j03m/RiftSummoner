@@ -58,7 +58,18 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
     //if time is past the actiondelay and im not in another animation other than idle or damage
     var state = this.getState();
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1 && !this.firing){
-        this.setAttackAnim('fighting');
+        this.setAttackAnim('fighting', function(){
+            var point = this.seekEnemy();
+            if (!point){
+                this.setState('idle', 'idle');
+                return;
+            }
+            if (point.x != 0 || point.y != 0){
+                //out of range, they fled or we got knocked back
+                this.setState('move', 'move');
+                return;
+            }
+        }.bind(this));
         this.owner.scheduleOnce(this.doMissile.bind(this),effectDelay);
         this.lastAttack = 0;
     }else{
@@ -189,6 +200,10 @@ RangeBehavior.prototype.doMissile = function(){
                 this.hitLogic();
                 if (missileType.effect){
                     jc.playEffectOnTarget(missileType.effect, this.locked, this.owner.layer);
+                }
+            }else{
+                if (missileType.effect){
+                    jc.playEffectAtLocation(missileType.effect, this.missile.getPosition(), jc.shadowZOrder, this.owner.layer);
                 }
             }
             this.owner.layer.removeChild(this.missile, false);

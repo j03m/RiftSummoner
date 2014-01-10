@@ -250,6 +250,10 @@ GeneralBehavior.prototype.seekEnemy = function(){
         return;
     }
 
+    if (this.owner.name == "dwarvenKnightFire"){
+        console.log("");
+    }
+
     var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
     attackPosition = this.adjustFlock(attackPosition);
 
@@ -337,18 +341,24 @@ GeneralBehavior.prototype.adjustFlock = function(toPoint){
     if (friends.length!=0){
         for (var i =0; i<friends.length;i++){
             //if we're locked onto the same person
-            var diff = Math.abs(friends[i].getBasePosition().y-pos.y);
+            if (friends[i].gameObject.movementType == this.owner.gameObject.movementType){
+                var diff = Math.abs(friends[i].getBasePosition().y-pos.y);
+                if (diff<50* jc.characterScaleFactor && this.owner.flockedOff !=friends[i]){
+                    //adjust my seek position by 10px y north
+                    friends[i].flockedOff = this.owner;
+                    var num = jc.randomNum(0,1);
+                    if (num){
+                        toPoint.y+= 50 * jc.characterScaleFactor;
+                    }else{
+                        toPoint.y-= 50 * jc.characterScaleFactor;
+                    }
 
-            if (diff<10 && this.owner.flockedOff !=friends[i]){
-                //adjust my seek position by 10px y north
-                friends[i].flockedOff = this.owner;
-                toPoint.y+= 300 * jc.characterScaleFactor;
-                break;
+                    break;
+                }
             }
         }
     }
     return toPoint;
-
 }
 
 GeneralBehavior.prototype.seek = function(toPoint){
@@ -393,12 +403,8 @@ GeneralBehavior.prototype.getVectorTo= function(to, from){
 
 
 GeneralBehavior.prototype.moveToward = function(point, dt){
-
-    // Update position based on velocity
-//    var separate = this.separate();
-//    var point = cc.pAdd(separate, point);
-
-    var newPosition = cc.pAdd(this.owner.getBasePosition(), cc.pMult(point, dt));
+    var go =  cc.pMult(point, dt);
+    var newPosition = cc.pAdd(this.owner.getBasePosition(), go);
     this.owner.setBasePosition(newPosition);
 }
 
@@ -408,11 +414,12 @@ GeneralBehavior.prototype.getRandomFleePosition = function(){
     var direction = cc.pForAngle(randomAngle);
     var destination = cc.pMult(direction, this.owner.getTargetRadius());
     return this.clamp(destination);
-
 }
+
 GeneralBehavior.prototype.getWorldSize=function(){
     return this.owner.layer.worldSize;
 }
+
 GeneralBehavior.prototype.clamp=function(point){
     var winSize = this.getWorldSize();
     var mySize = this.owner.getTextureRect();
@@ -656,7 +663,7 @@ GeneralBehavior.prototype.handleFight = function(dt){
         this.setAttackAnim('fighting', function(){
             var point = this.seekEnemy();
             if (!point){
-                this.setState('move', 'move');
+                this.setState('idle', 'idle');
                 return;
             }
             if (point.x != 0 || point.y != 0){
@@ -754,6 +761,8 @@ GeneralBehavior.prototype.handleMove = function(dt){
     if (state.brain != "move" && state.brain != 'followUserCommand'){
         return;
     }
+
+
 
     if (state.brain ==  'followUserCommand'){
         this.followUserCommand(dt);

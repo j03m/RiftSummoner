@@ -12,6 +12,7 @@
             <sources dir="${basedir}">
                 <file name="src/jocos2d-js/JCBrowser.js"/>
                 <file name="src/jocos2d-js/JCBrowserMock.js"/>
+                <file name="src/seedrandom.js"/>
                 <file name="src/underscore-min.js"/>
                 <file name="src/async.js"/>
                 <file name="src/spriteVars.js"/>

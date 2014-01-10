@@ -501,6 +501,9 @@ cc.Sprite = cc.NodeRGBA.extend(/** @lends cc.Sprite# */{
     initWithSpriteFrameName:function (spriteFrameName) {
         cc.Assert(spriteFrameName != null, "");
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(spriteFrameName);
+        if (!frame){
+            throw "could not locate: " + spriteFrameName + " in the frame cache.";
+        }
         return this.initWithSpriteFrame(frame);
     },
 

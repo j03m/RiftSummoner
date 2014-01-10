@@ -207,7 +207,7 @@ jc.Sprite = cc.Sprite.extend({
         return this.gameObject.targetRadius * jc.characterScaleFactor;
     },
     getTargetRadiusY:function(){
-        if (this.behaviorType == 'range'){
+        if (this.behaviorType == 'range' || this.behaviorType == 'healer'){
             return this.gameObject.targetRadius* jc.characterScaleFactor;
         }else{
             return (this.gameObject.targetRadius/2) *  jc.characterScaleFactor;
