@@ -29,7 +29,7 @@ hotr.makeRandomTeam =  function makeRandomTeam(){
 //        characters = 12;
 //    }
 
-    var characters = 18;
+    var characters = jc.teamSize;
     var allChars = [];
     for(var entry in spriteDefs){
         if (!spriteDefs[entry].parentOnly && spriteDefs[entry].notplayable!=1){

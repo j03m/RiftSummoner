@@ -1,6 +1,6 @@
 var jc = jc || {};
 
-
+jc.teamSize = 9;
 
 jc.adjustPosition = function(x,y){
     var pos = this.getPosition();

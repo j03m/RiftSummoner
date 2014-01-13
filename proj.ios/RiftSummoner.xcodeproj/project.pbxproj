@@ -231,6 +231,7 @@
 		5D1EF3A7187C58C200C4E3B7 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1EF3A1187C58C200C4E3B7 /* libTestFlight.a */; };
 		5D1EF3A8187C58C200C4E3B7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D1EF3A2187C58C200C4E3B7 /* README.md */; };
 		5D1EF3A9187C58C200C4E3B7 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D1EF3A3187C58C200C4E3B7 /* release_notes.md */; };
+		5D5D242918806B4D00BA4604 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D242818806B4D00BA4604 /* Images.xcassets */; };
 		5D96F48D1850492E00ED2564 /* cocos2d-jsb.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D96F48C1850492E00ED2564 /* cocos2d-jsb.js */; };
 		5D96F48F1850D4CA00ED2564 /* art in Resources */ = {isa = PBXBuildFile; fileRef = 5D96F48E1850D4CA00ED2564 /* art */; };
 		A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275411517C094001B78AA /* QuartzCore.framework */; };
@@ -700,6 +701,7 @@
 		5D1EF3A4187C58C200C4E3B7 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		5D1EF3A5187C58C200C4E3B7 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		5D1EF3A6187C58C200C4E3B7 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		5D5D242818806B4D00BA4604 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RiftSummoner/Images.xcassets; sourceTree = "<group>"; };
 		5D96F48C1850492E00ED2564 /* cocos2d-jsb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "cocos2d-jsb.js"; path = "../Resources/cocos2d-jsb.js"; sourceTree = "<group>"; };
 		5D96F48E1850D4CA00ED2564 /* art */ = {isa = PBXFileReference; lastKnownFileType = folder; name = art; path = ../game/art; sourceTree = "<group>"; };
 		A922753D1517C094001B78AA /* Rift Summoner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rift Summoner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -756,6 +758,7 @@
 		15628F5B15F0F5C2000CF24B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5D5D242818806B4D00BA4604 /* Images.xcassets */,
 				5D1EF34A18727EFD00C4E3B7 /* riftsummoner.js */,
 				5D96F48E1850D4CA00ED2564 /* art */,
 				5D96F48C1850492E00ED2564 /* cocos2d-jsb.js */,
@@ -1743,6 +1746,7 @@
 				1A5E74D017F0874400B9ACAE /* json_internalmap.inl in Resources */,
 				1A5E74D317F0874400B9ACAE /* json_valueiterator.inl in Resources */,
 				5D1EF34C18727F0500C4E3B7 /* riftsummoner.js in Resources */,
+				5D5D242918806B4D00BA4604 /* Images.xcassets in Resources */,
 				5D96F48F1850D4CA00ED2564 /* art in Resources */,
 				1A5E74D517F0874400B9ACAE /* sconscript in Resources */,
 			);
@@ -1989,8 +1993,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2017,8 +2021,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -2043,10 +2047,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 1;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2085,7 +2091,7 @@
 					"-ljs_static",
 				);
 				PRODUCT_NAME = "Rift Summoner";
-				PROVISIONING_PROFILE = "A82282D7-8330-43E6-B5F0-DFE336077587";
+				PROVISIONING_PROFILE = "E9608D67-1C94-4147-99F5-2C17D5108F57";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2095,7 +2101,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
@@ -2134,7 +2142,7 @@
 					"-ljs_static",
 				);
 				PRODUCT_NAME = "Rift Summoner";
-				PROVISIONING_PROFILE = "A82282D7-8330-43E6-B5F0-DFE336077587";
+				PROVISIONING_PROFILE = "E9608D67-1C94-4147-99F5-2C17D5108F57";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

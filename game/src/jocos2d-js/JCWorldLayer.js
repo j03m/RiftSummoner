@@ -333,21 +333,30 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         var sub = cc.pSub(newPoint, this.lastLeadTouch);
         jc.log(['DragDetails'], 'diff move:' + JSON.stringify(sub) );
 
-        var kDragCoeff = .20;///100.0;
+
 
         var pos = this.getPosition();
         jc.log(['DragDetails'], 'position before adjustment:' + JSON.stringify(pos) );
-        pos.x+=sub.x * kDragCoeff;
-        pos.y+=sub.y*kDragCoeff;
+        pos.x+=sub.x * 0.6;
+        pos.y+=sub.y* 0.3;
         jc.log(['DragDetails'], 'position after adjustment:' + JSON.stringify(pos) );
+
         //cap - no further than furthest visible points
         var widthMax = (this.worldSize.width*this.getScale() - this.winSize.width)/2;
         var heightMax = (this.worldSize.height*this.getScale() - this.winSize.height)/2;
 
-
-        if (pos.x <= widthMax && pos.y <= heightMax && pos.x >= widthMax*-1 && pos.y >= heightMax*-1){
-            this.adjustPosition(sub.x, sub.y);
+        var adjustX = sub.x;
+        var adjustY = sub.y;
+        if (pos.x >= widthMax || pos.x <= widthMax*-1){
+            adjustX =0;
         }
+
+        if (pos.y >= heightMax || pos.y <= heightMax*-1){
+            adjustY =0;
+        }
+
+        this.adjustPosition(adjustX, adjustY);
+
         pos = this.getPosition();
         jc.log(['DragDetails'], 'position result:' + JSON.stringify(pos) );
         this.inDrag = true;

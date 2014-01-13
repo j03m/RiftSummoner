@@ -50,6 +50,7 @@ HealerBehavior.prototype.healThink = function(dt){
 HealerBehavior.prototype.handleHealerIdle = function(dt){
     if (!this.support || !this.support.isAlive()){
         this.support = this.getClosestFriendToSupport();
+
     }
 
     if (!this.support){

@@ -206,7 +206,7 @@ var MainGame = cc.Layer.extend({
         //for level 3 we need to fill in the city army
         if (level == 3){
             var count = 0;
-            for(var i =0;i<18; i++){
+            for(var i =0;i<jc.teamSize; i++){
                 if (teamA[i] == undefined){
                     if (count == 0){
                         teamA[i] = {"name":"dwarvenKnightEarth"};
