@@ -66,16 +66,21 @@ jc.TouchLayer = cc.Layer.extend({
         }
     },
     onTouchesBegan: function(touches) {
-        return this.hitSpriteTarget(jc.touchBegan, touches);
+        var claimed = this.hitSpriteTarget(jc.touchBegan, touches);
+        jc.log(['TouchClaims'], "Touch Began: " + claimed + " name: " + this.name);
+        return claimed;
 
     },
     onTouchesMoved: function(touches) {
-        return this.hitSpriteTarget(jc.touchMoved, touches);
+        var claimed = this.hitSpriteTarget(jc.touchMoved, touches);
+        jc.log(['TouchClaims'], "Touch Moved: " + claimed + " name: " + this.name);
+        return claimed;
 
     },
     onTouchesEnded: function(touches) {
-        return this.hitSpriteTarget(jc.touchEnded, touches);
-
+        var claimed = this.hitSpriteTarget(jc.touchEnded, touches);
+        jc.log(['TouchClaims'], "Touch Ended: " + claimed + " name: " + this.name);
+        return claimed;
     },
     onMouseDown: function(event) {
         return this.onTouchesBegan(event);
@@ -764,13 +769,13 @@ jc.TouchLayer = cc.Layer.extend({
             floater.setPosition(this.winSize.width/2, this.winSize.height/2);
         }
         floater.setZOrder(jc.topMost);
-        this.addChild(floater);
+        this.getParent().addChild(floater);
         this.scheduleOnce(function(){
             jc.fadeOut(floater, undefined, function(){
                 floater.release();
-                this.removeChild(floater,true);
+                this.getParent().removeChild(floater,true);
             }.bind(this));
-        }.bind(this),1);
+        }.bind(this),3);
 
     },
     centerThisPeer:function(centerMe, centerOn){

@@ -46,12 +46,28 @@ var ArenaGame = jc.WorldLayer.extend({
             this.tutorial2Point2 = cc.p(350* jc.assetScaleFactor, 425*jc.assetScaleFactor);
             this.tutorial2Point3 = cc.p((this.winSize.width/2)+300*jc.assetScaleFactor,this.winSize.height/2);
 
-            this.nexusAPoint = cc.p(0, this.worldMidPoint.y);
-            this.nexusBPoint = cc.p(this.worldSize.width, this.worldMidPoint.y);
-            this.spawnAPoint = this.nexusAPoint;
+            this.nexusAPoint = cc.p(550*jc.assetScaleFactor, 1150*jc.assetScaleFactor);
+            this.nexusBPoint = cc.p(3525*jc.assetScaleFactor, 1150*jc.assetScaleFactor);
+
+            var adjustX1 = 600 *jc.assetScaleFactor;
+            var adjustX2 = 400 *jc.assetScaleFactor;
+            var adjustY = 500 *jc.assetScaleFactor;
+            var adjustY1 = 75*jc.assetScaleFactor;
+            this.spawnA1 = cc.p(this.nexusAPoint.x + adjustX1, this.nexusAPoint.y + adjustY1);
+            this.spawnA2 = cc.p(this.nexusAPoint.x + adjustX2, this.nexusAPoint.y + adjustY);
+            this.spawnA3 = cc.p(this.nexusAPoint.x + adjustX2, this.nexusAPoint.y - adjustY);
+
+            this.spawnB1 = cc.p(this.nexusBPoint.x - adjustX1, this.nexusBPoint.y+ adjustY1);
+            this.spawnB2 = cc.p(this.nexusBPoint.x - adjustX2, this.nexusBPoint.y + adjustY);
+            this.spawnB3 = cc.p(this.nexusBPoint.x - adjustX2, this.nexusBPoint.y - adjustY);
+
+
+
             this.spawnBPoint = this.nexusBPoint;
             this.enemyStartPos = cc.p((this.worldSize.width/2)+ 1000 * jc.assetScaleFactor, (this.worldSize.height/2) + 500 *jc.assetScaleFactor);
             this.enemyStartPosTutorials = cc.p((this.worldSize.width/2)+ 1000 * jc.assetScaleFactor, (this.worldSize.height/2) - 300 *jc.assetScaleFactor);
+
+            this.nexusMsg = "You cannot summon so far from your nexus gem. Try touching closer to it.";
 
             return true;
 		} else {
@@ -85,7 +101,7 @@ var ArenaGame = jc.WorldLayer.extend({
 //        this.placeSquadTokens();
         this.setUp();
         this.placementTouches = 1;
-        this.panToWorldPoint(this.worldMidPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
+        this.panToWorldPoint(this.worldMidPoint, this.getScaleWorld(), jc.defaultTransitionTime, function(){
             //this.placeEnemyTeam();
             //this.nextTouchDo(this.initialSetupAction,true);
             this.finalActions();
@@ -154,7 +170,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.selectedSprite.effectAnimations[this.charSelect].playing = false;
             }
             this.selectedSprite = minSprite;
-            jc.playEffectOnTarget(this.charSelect, minSprite, this, true );
+            jc.playEffectOnTarget(this.charSelect, minSprite, this, true);
             this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
         }
 
@@ -162,10 +178,10 @@ var ArenaGame = jc.WorldLayer.extend({
     placeBarSprite:function(touch){
 
         var world = this.screenToWorld(touch);
-        var nodePos = this.convertToItemPosition(world);
-        var center = cc.p(this.winSize.width/2, this.winSize.height/2);
-        if (jc.insideEllipse(nodePos, center) && nodePos.x < this.worldMidPoint.x){
+        var center = this.worldMidPoint;
+        if (jc.insideCircle(world, center) && world.x < this.worldMidPoint.x){
             var sprite = this.makeTeamASprite(this.barSelection);
+            var nodePos = this.convertToItemPosition(world);
             sprite.setBasePosition(nodePos);
             sprite.ready(true);
             jc.playEffectOnTarget("teleport", sprite, this);
@@ -183,46 +199,44 @@ var ArenaGame = jc.WorldLayer.extend({
             }
             this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
         }else{
-            this.floatMsg("Click on the left side of the arena. You can't place troops there.");
+            this.floatMsg("You cannot summon so far from your nexus ge.");
         }
 
     },
     teamASpawn:function(){
         var spot = jc.randomNum(0,2);
-        var pos = this.teamANexus.getBasePosition();
+
         if (spot == 0){
-            pos.x += 50*jc.assetScaleFactor;
+            return this.convertToItemPosition(this.spawnA1);
         }
 
         if (spot == 1){
-            pos.x += 50*jc.assetScaleFactor;
-            pos.y += 500*jc.assetScaleFactor;
+            return this.convertToItemPosition(this.spawnA2);
         }
 
         if (spot == 2){
-            pos.x += 50*jc.assetScaleFactor;
-            pos.y -= 500*jc.assetScaleFactor;
+            return this.convertToItemPosition(this.spawnA3);
         }
 
         return pos;
     },
     teamBSpawn:function(){
         var spot = jc.randomNum(0,2);
-        var pos = this.teamBNexus.getBasePosition();
+
         if (spot == 0){
-            pos.x -= 50*jc.assetScaleFactor;
+            return this.convertToItemPosition(this.spawnB1);
         }
 
         if (spot == 1){
-            pos.x -= 50*jc.assetScaleFactor;
-            pos.y += 200*jc.assetScaleFactor;
+            return this.convertToItemPosition(this.spawnB2);
         }
 
         if (spot == 2){
-            pos.x -= 50*jc.assetScaleFactor;
-            pos.y -= 200*jc.assetScaleFactor;
+            return this.convertToItemPosition(this.spawnB3);
         }
-        return pos;
+
+        throw "did someone back randomNum? ";
+
     },
     getDisplaySpritesAndMetaData: function(){
         var characters = hotr.blobOperations.getCharacterIdsAndTypes();
@@ -278,8 +292,8 @@ var ArenaGame = jc.WorldLayer.extend({
     initialSetupAction:function(touch){
 
         this.startPos = this.screenToWorld(touch);
-        var center = cc.p(this.winSize.width/2, this.winSize.height/2);
-        if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+        var center = this.worldMidPoint;
+        if (jc.insideCircle(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
             //play animation
 
             if (this.placementTouches == 1){
@@ -316,7 +330,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
         }else{
                 jc.log(['Arena'], 'invalid location msg');
-                this.floatMsg("Click on the left side of the arena. You can't place troops there.");
+                this.floatMsg(this.nexusMsg);
         }
     },
     finalActions:function(){
@@ -486,9 +500,17 @@ var ArenaGame = jc.WorldLayer.extend({
 
         var sprite = this.makeTeamASprite({name:"nexus"});
         this.teamANexus = sprite;
-        this.nexusAPoint.x+=sprite.getTextureRect().width;
-        sprite.setBasePosition(this.nexusAPoint);
+        var point = cc.p(this.nexusAPoint.x+sprite.getTextureRect().width, this.nexusAPoint.y);
+        point = this.convertToItemPosition(point);
+        sprite.setBasePosition(point);
         sprite.ready(true);
+
+//        this.riftPool1 = jc.playEffectAtLocation('vampireRadius', this.convertToItemPosition(this.spawnA1), jc.topMost,this);
+//        this.riftPool1.setScale(2);
+//        this.riftPool2 = jc.playEffectAtLocation('vampireRadius', this.convertToItemPosition(this.spawnA2), jc.shadowZOrder,this);
+//        this.riftPool2.setScale(2);
+//        this.riftPool3 = jc.playEffectAtLocation('vampireRadius', this.convertToItemPosition(this.spawnA3), jc.shadowZOrder,this);
+//        this.riftPool3.setScale(2);
 
 //        for (var i =0; i<this.teamBSprites.length;i++){
 //            if (this.teamBSprites[i])
@@ -498,10 +520,20 @@ var ArenaGame = jc.WorldLayer.extend({
 //        }
 
         var sprite = this.makeTeamBSprite("nexus");
-        this.nexusBPoint.x-=sprite.getTextureRect().width;
-        sprite.setBasePosition(this.nexusBPoint);
+        var point = cc.p(this.nexusBPoint.x-sprite.getTextureRect().width, this.nexusBPoint.y);
+        point = this.convertToItemPosition(point);
+        sprite.setBasePosition(point);
         sprite.ready(true);
         this.teamBNexus = sprite;
+
+//        this.riftPool4 = jc.playEffectAtLocation('vampireRadius', this.convertToItemPosition(this.spawnB1), jc.shadowZOrder,this);
+//        this.riftPool4.setScale(2);
+//        this.riftPool5 = jc.playEffectAtLocation('vampireRadius', this.convertToItemPosition(this.spawnB2), jc.shadowZOrder,this);
+//        this.riftPool5.setScale(2);
+//        this.riftPool6 = jc.playEffectAtLocation('vampireRadius', this.convertToItemPosition(this.spawnB3), jc.shadowZOrder,this);
+//        this.riftPool6.setScale(2);
+
+
     },
     makeForGame:function(ary){
 
@@ -832,11 +864,15 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     targetTouchHandler:function(type, touch,sprites, touches){
 
+        jc.log(['ArenaMultiTouch'], 'touches:' + JSON.stringify(touches));
         if (touches.length>1){
+            jc.log(['ArenaMultiTouch'], 'touche > 1');
             if (this.handlePinchZoom(type, touches)){
                 return true;
             }
         }else{
+            jc.log(['ArenaMultiTouch'], 'touches = 1');
+            jc.log(['ArenaMultiTouch'], 'touch:' + JSON.stringify(touch));
             if (this.handlePinchZoom(type, [touch])){
                 return true;
             }
@@ -844,7 +880,21 @@ var ArenaGame = jc.WorldLayer.extend({
 
 
         if (type == jc.touchEnded){
-            this.dragStarted = false;
+
+            if (jc.isBrowser){ //todo - change this to mouse wheel zoom, double click is lame
+                if (this.checkDoubleClick(touch)){
+                    if (!this.dbcScale){
+                        this.panToWorldPoint(this.screenToWorld(touch),this.getScaleOne() , jc.defaultTransitionTime/2);
+                        this.dbcScale = true;
+                    }else{
+                        this.panToWorldPoint(this.worldMidPoint, this.getScaleWorld(), jc.defaultTransitionTime/2);
+                        this.dbcScale = false;
+                    }
+                    return true;
+                }
+            }
+
+
             if (this.level <= 3){ //tutorial
                 if (!this.handleTutorialTouches(type, touch, sprites)){
                     return true;
@@ -914,9 +964,9 @@ var ArenaGame = jc.WorldLayer.extend({
             this.placeArrow(this.tutorialPoint1, 'down');
             this.step =6;
         }else if (this.step == 6){
-            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            var center = this.worldMidPoint;
             this.startPos = this.screenToWorld(touch);
-            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+            if (jc.insideCircle(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
                 var placement = this.placePlayerTeam('a');
                 if(placement){
                     this.placeArrow(this.tutorialPoint2, 'down');
@@ -926,7 +976,7 @@ var ArenaGame = jc.WorldLayer.extend({
         }else if (this.step == 7){
             var center = cc.p(this.winSize.width/2, this.winSize.height/2);
             this.startPos = this.screenToWorld(touch);
-            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+            if (jc.insideCircle(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
                 var placement = this.placePlayerTeam('b');
                 if(placement){
                     this.removeArrow();
@@ -957,9 +1007,9 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.step = 3;
             }.bind(this));
         }else if (this.step == 3){
-            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            var center = this.worldMidPoint;
             this.startPos = this.screenToWorld(touch);
-            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+            if (jc.insideCircle(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
                 var placement = this.placePlayerTeam('a');
                 if(placement){
                     this.placeArrow(this.tutorialPoint2, 'down');
@@ -967,9 +1017,9 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
             }
         }else if (this.step == 4){
-            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            var center = this.worldMidPoint;
             this.startPos = this.screenToWorld(touch);
-            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+            if (jc.insideCircle(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
                 var placement = this.placePlayerTeam('b');
                 if(placement){
                     this.showTutorialStep("Hahahaha! You're massively out numbered!", undefined, 'right', 'orc');
@@ -1041,9 +1091,9 @@ var ArenaGame = jc.WorldLayer.extend({
             this.placeArrow(this.tutorialPoint1,'down');
             this.step = 17;
         }else if (this.step == 17){
-            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            var center = this.worldMidPoint;
             this.startPos = this.screenToWorld(touch);
-            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+            if (jc.insideCircle(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
                 var placement = this.placePlayerTeam('a');
                 if(placement){
                     this.placeArrow(this.tutorialPoint2, 'down');
@@ -1051,9 +1101,9 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
             }
         }else if (this.step == 18){
-            var center = cc.p(this.winSize.width/2, this.winSize.height/2);
+            var center = this.worldMidPoint;
             this.startPos = this.screenToWorld(touch);
-            if (jc.insideEllipse(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
+            if (jc.insideCircle(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
                 var placement = this.placePlayerTeam('b');
                 if(placement){
                     this.showTutorialStep("You dare challenge us? Now you die!", undefined, 'right', 'orc');

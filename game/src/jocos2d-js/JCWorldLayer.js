@@ -81,6 +81,27 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
             }
             this.currentActionMove.release();
         }
+
+        var widthMax = (this.worldSize.width*this.getScale() - this.winSize.width)/2;
+        var heightMax = (this.worldSize.height*this.getScale() - this.winSize.height)/2;
+
+        if (pos.x > widthMax){
+            pos.x = widthMax;
+        }
+
+        if (pos.y >= heightMax){
+            pos.y = heightMax;
+        }
+
+        if(pos.x < widthMax*-1){
+            pos.x = widthMax*-1;
+        }
+
+        if (pos.y < heightMax*-1){
+            pos.y = heightMax*-1;
+        }
+
+
         this.currentActionMove = cc.MoveTo.create(rate, pos);
         this.currentScaleTo = cc.ScaleTo.create(rate, scale.x, scale.y);
         this.currentScaleTo.retain();
@@ -238,6 +259,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         if (!this.multiTouches){
             this.multiTouches = [];
         }
+        jc.log(['MultiTouch'], 'type:' +  type);
         if (type == jc.touchMoved){
             jc.log(['MultiTouch'], 'moved');
             if (touches.length > 1){
@@ -260,20 +282,50 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
                     //equal, do nothing
                 }
                 this.lastDistance = distance;
-            }
-            if (this.lastLeadTouch){
+
+                return true;
+            }else if (this.lastLeadTouch){
                 this.handleDrag(touches[0]);
+                return true;
+            }else{
+                this.lastLeadTouch = touches[0];
+                return false;
             }
-            this.lastLeadTouch = touches[0];
-            return true;
+
+
         }
         if (type == jc.touchEnded){
             jc.log(['MultiTouch'], 'ended' );
-            this.multiTouches = [];
             this.lastDistance = undefined;
             this.lastLeadTouch = undefined;
-            return true;
+            if (this.inDrag){
+                this.inDrag = false;
+                return true;
+            }
+
         }
+        return false
+    },
+    checkDoubleClick:function(touch){
+        if( !this.dbTouchA){
+            this.dbTouchA = {touch:touch, when:Date.now()};
+            return;
+        }else{
+            if (Date.now() - this.dbTouchA.when < 2000){
+                if (Math.abs(this.dbTouchA.touch.x - touch.x) < 10 && Math.abs(this.dbTouchA.touch.y - touch.y) < 10){
+                    this.dbTouchA = undefined;
+                    return true;
+                }else{
+                    this.dbTouchA = undefined;
+                    return false;
+                }
+            }else{
+                this.dbTouchA = undefined;
+                return false;
+            }
+        }
+        return false;
+
     },
     handleDrag:function(newPoint){
         jc.log(['DragDetails'], 'move raw:' + JSON.stringify(newPoint) );
@@ -281,23 +333,24 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         var sub = cc.pSub(newPoint, this.lastLeadTouch);
         jc.log(['DragDetails'], 'diff move:' + JSON.stringify(sub) );
 
+        var kDragCoeff = .20;///100.0;
+
         var pos = this.getPosition();
         jc.log(['DragDetails'], 'position before adjustment:' + JSON.stringify(pos) );
-        pos.x+=sub.x;
-        pos.y+=sub.y;
+        pos.x+=sub.x * kDragCoeff;
+        pos.y+=sub.y*kDragCoeff;
         jc.log(['DragDetails'], 'position after adjustment:' + JSON.stringify(pos) );
         //cap - no further than furthest visible points
-        var widthMax = (this.worldSize.width - this.winSize.width)/2;
-        var heightMax = (this.worldSize.height - this.winSize.height)/2;
-        var scale = this.getScale();
-        widthMax*=this.getScale();
-        heightMax*=this.getScale();
+        var widthMax = (this.worldSize.width*this.getScale() - this.winSize.width)/2;
+        var heightMax = (this.worldSize.height*this.getScale() - this.winSize.height)/2;
+
 
         if (pos.x <= widthMax && pos.y <= heightMax && pos.x >= widthMax*-1 && pos.y >= heightMax*-1){
             this.adjustPosition(sub.x, sub.y);
         }
         pos = this.getPosition();
         jc.log(['DragDetails'], 'position result:' + JSON.stringify(pos) );
+        this.inDrag = true;
 
     },
     handlePinch:function(distance, shrink){
@@ -324,10 +377,32 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         }
         jc.log(['MultiTouchDetails'], 'scale post cap:' + scale );
         if (newscale!=scale){
-//            this.panToWorldPoint(this.worldMidPoint, cc.p(newscale, newscale), jc.defaultTransitionTime/4, function(){
-//                this.zoomGate = false;
+//            this.panToWorldPoint(this.pinchMidPoint, cc.p(newscale, newscale), jc.defaultTransitionTime*2, function(){
 //            }.bind(this));
             this.setScale(newscale);
+
+            //now we need to adjust positions in the event that scale has taken us over.
+            var pos = this.getPosition();
+            var widthMax = (this.worldSize.width*this.getScale() - this.winSize.width)/2;
+            var heightMax = (this.worldSize.height*this.getScale() - this.winSize.height)/2;
+
+            if (pos.x > widthMax){
+                pos.x = widthMax;
+            }
+
+            if (pos.y >= heightMax){
+                pos.y = heightMax;
+            }
+
+            if(pos.x < widthMax*-1){
+                pos.x = widthMax*-1;
+            }
+
+            if (pos.y < heightMax*-1){
+                pos.y = heightMax*-1;
+            }
+            this.setPosition(pos);
+
         }
 
     },

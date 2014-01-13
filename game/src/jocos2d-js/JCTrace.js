@@ -42,7 +42,8 @@ var tracers = {
     'ArenaMultiTouch':0,
     'MultiTouch':0,
     'MultiTouchDetails':1,
-    'DragDetails':1
+    'DragDetails':1,
+    'TouchClaims':1
 };
 
 jc.log = function(categories, msg){
