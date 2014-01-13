@@ -56,7 +56,8 @@ jc.TouchLayer = cc.Layer.extend({
             }
         } else {
             if (val){
-                cc.registerTargetedDelegate(0,true, this);
+                cc.registerStandardDelegate(this,0);
+                //cc.registerTargetedDelegate(0,true, this);
                 //cc.Director.getInstance().getTouchDispatcher()._addTargetedDelegate(this, 1, true);
             }else{
                 cc.unregisterTouchDelegate(this);
@@ -64,57 +65,62 @@ jc.TouchLayer = cc.Layer.extend({
             }
         }
     },
-    onTouchBegan: function(touch) {
-        return this.hitSpriteTarget(jc.touchBegan, touch);
+    onTouchesBegan: function(touches) {
+        return this.hitSpriteTarget(jc.touchBegan, touches);
 
     },
-    onTouchMoved: function(touch) {
-        return this.hitSpriteTarget(jc.touchMoved, touch);
+    onTouchesMoved: function(touches) {
+        return this.hitSpriteTarget(jc.touchMoved, touches);
 
     },
-    onTouchEnded: function(touch) {
-        return this.hitSpriteTarget(jc.touchEnded, touch);
+    onTouchesEnded: function(touches) {
+        return this.hitSpriteTarget(jc.touchEnded, touches);
 
     },
     onMouseDown: function(event) {
-        return this.onTouchBegan(event);
+        return this.onTouchesBegan(event);
 
     },
     onMouseDragged: function(event) {
-        return this.onTouchMoved(event);
+        return this.onTouchesMoved(event);
 
     },
     onMouseUp: function(event) {
-        return this.onTouchEnded(event);
+        return this.onTouchesEnded(event);
 
     },
     onTouchCancelled: function(touch, event,sprite) {
         return this.hitSpriteTarget(jc.touchCancelled, touch);
 
     },
-    targetTouchHandler: function(type, touch, sprites) {
+    targetTouchHandler: function(type, touch, sprites, touches) {
         throw "child must implement!"
     },
-    hitSpriteTarget:function(type, touch, event){
-        jc.log(['touchcore'], "Raw Touch:" + JSON.stringify(touch));
+    hitSpriteTarget:function(type, touches, event){
+        jc.log(['touchcore'], "Raw Touch:" + JSON.stringify(touches));
 
-        touch = this.touchToPoint(touch);
-        jc.log(['touchcore'], "Raw Touch Point:" + JSON.stringify(touch));
+        var firstTouch = undefined;
+        var convertedTouches = []
+        if (touches instanceof Array){
+            for (var i =0;i<touches.length;i++){
+                var convertedTouch = this.touchToPoint(touches[i]);
+                convertedTouches.push(convertedTouch);
+                if (i==0){
+                    firstTouch = convertedTouch;
+                }
+            }
+        }else{
+            firstTouch = this.touchToPoint(touches);
+        }
+        jc.log(['touchcore'], "First Raw Touch Point:" + JSON.stringify(firstTouch));
 
-//        var converted = this.convertToNodeSpace(touch);
-//        jc.log(['touchcore'], "Converted Touch:" + JSON.stringify(converted));
-//
-//        if (this.doConvert){
-//            jc.log(['touchcore'], "Using converted touch.");
-//            touch = converted;
-//        }
         var handled = [];
         for (var i=0;i<this.touchTargets.length;i++){
             var parent = this.touchTargets[i].getParent();
 			if (parent){
-				var tmpTouch = parent.convertToNodeSpace(touch);					
+				var tmpTouch = parent.convertToNodeSpace(firstTouch);
 			}else{
-				var tmpTouch = this.convertToNodeSpace(touch);								
+				var tmpTouch = this.convertToNodeSpace(firstTouch);
 			}
 			
             if ( this.touchTargets[i] instanceof jc.Sprite){ //jc.sprites in this game ahve like 512x512 - contentSize + boudningbox are unusable
@@ -144,7 +150,7 @@ jc.TouchLayer = cc.Layer.extend({
         }
         //if something of note was touched, raise it
         if ((handled.length>0 || this.bubbleAll) && !this.isPaused){
-            return this.targetTouchHandler(type, touch, handled);
+            return this.targetTouchHandler(type, firstTouch, handled, convertedTouches);
         }
         return false;
     },

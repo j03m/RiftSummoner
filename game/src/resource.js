@@ -168,7 +168,7 @@ function transformAsset(input, force){
     }
 
     if (jc.isBrowser && force != undefined) {
-        token = force;
+        //token = force;
     }
 
     return input.replace(jc.assetWildCard, token);

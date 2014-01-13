@@ -368,7 +368,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 2000,
-			"speed": 40,
+			"speed": 70,
 			"damage": 100,
 			"movementType": 1,
 			"targets": 1,
@@ -398,7 +398,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 1000,
-			"speed": 20,
+			"speed": 70,
 			"damage": 250,
 			"movementType": 1,
 			"targets": 1,
@@ -970,6 +970,7 @@ var spriteDefs = {
 		"formalName": "Goblin Knight",
 		"details": "Goblin Knights are fast and do reasonable damage.",
 		"elementType": "none",
+		"notplayable": 1,
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
@@ -1039,7 +1040,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 1000,
-			"speed": 40,
+			"speed": 80,
 			"damage": 160,
 			"movementType": 1,
 			"targets": 1,
@@ -1069,7 +1070,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 40,
+			"speed": 80,
 			"damage": 200,
 			"movementType": 1,
 			"targets": 1,
@@ -1100,7 +1101,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 500,
-			"speed": 40,
+			"speed": 80,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 160,
@@ -1126,7 +1127,7 @@ var spriteDefs = {
 			"MaxHP": 500,
 			"movementType": 1,
 			"targets": 1,
-			"speed": 40,
+			"speed": 80,
 			"damage": 160,
 			"actionDelays": {
 				"attack": 0.05
@@ -1192,6 +1193,80 @@ var spriteDefs = {
 			}
 		}
 	},
+	"necromancer": {
+		"name": "necromancer",
+		"formalName": "Necromancer",
+		"details": "Necromancers are light range units, but will summon back your dead team members as skeleton warriors.",
+		"elementType": "earth",
+		"unitType": 3,
+		"special": "Healing",
+		"gameProperties": {
+			"MaxHP": 200,
+			"speed": 200,
+			"movementType": 1,
+			"targets": 2,
+			"damage": 200,
+			"heal": 150,
+			"actionDelays": {
+				"attack": 0.5,
+				"heal": 0.4
+			},
+			"effectDelays": {
+				"attack": 0.05,
+				"heal": 0.05
+			},
+			"targetRadius": 200
+		},
+		"baseOffset": {
+			"x": 0,
+			"y": 10
+		},
+		"byStep": 1,
+		"inherit": "femaleSorcerer",
+		"behavior": "range"
+	},
+	"nexus": {
+		"name": "nexus",
+		"formalName": "Nexus",
+		"notplayable": 1,
+		"elementType": "none",
+		"unitType": 3,
+		"special": "None",
+		"gameProperties": {
+			"MaxHP": 2000,
+			"speed": 0,
+			"movementType": 1,
+			"targetRadius": 100
+		},
+		"byStep": 1,
+		"animations": {
+			"idle": {
+				"start": 1,
+				"end": 1,
+				"delay": 0.02,
+				"type": 0
+			},
+			"attack": {
+				"start": 1,
+				"end": 1,
+				"delay": 0.02,
+				"type": 0
+			},
+			"attack2": {
+				"start": 1,
+				"end": 1,
+				"delay": 0.02,
+				"type": 0
+			},
+			"dead": {
+				"start": 1,
+				"end": 1,
+				"delay": 0.02,
+				"type": 0
+			}
+		},
+		"behavior": "tank"
+	},
 	"ogre": {
 		"name": "ogre",
 		"formalName": "Ogre",
@@ -1213,7 +1288,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"MaxHP": 1500,
-			"speed": 40,
+			"speed": 80,
 			"damage": 300,
 			"actionDelays": {
 				"attack": 1
