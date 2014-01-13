@@ -158,6 +158,8 @@ var spriteDefs = {
 		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with earth magic these dwarves are particularly hard to kill.",
 		"elementType": "earth",
 		"unitType": 3,
+		"creep": true,
+		"number": 5,
 		"gameProperties": {
 			"MaxHP": 1300,
 			"speed": 100,
@@ -181,6 +183,8 @@ var spriteDefs = {
 		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with fire magic, this dwarf is completely immune to fire element attackers.",
 		"elementType": "fire",
 		"unitType": 3,
+		"creep": true,
+		"number": 5,
 		"gameProperties": {
 			"MaxHP": 700,
 			"speed": 100,
@@ -207,6 +211,8 @@ var spriteDefs = {
 		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with life magic, this dwarf is immune to poison and life based attackers.",
 		"elementType": "life",
 		"unitType": 3,
+		"creep": true,
+		"number": 5,
 		"gameProperties": {
 			"MaxHP": 700,
 			"speed": 100,
@@ -233,6 +239,8 @@ var spriteDefs = {
 		"details": "Dwarven Knights are known for being very difficult to kill. His armor embued with void magic, this dwarf is immune to void powers and drains the life of his targets.",
 		"elementType": "void",
 		"unitType": 3,
+		"creep": true,
+		"number": 5,
 		"damageMods": {
 			"vampireDrain": {
 				"heal": 20,
@@ -265,6 +273,8 @@ var spriteDefs = {
 		"details": "Dwarven Knights are known for being very difficult to kill. With armor embued with water magic, this dwarf regenerates health over time.",
 		"elementType": "water",
 		"unitType": 3,
+		"creep": true,
+		"number": 5,
 		"powers": {
 			"regeneration": {
 				"heal": 20,
@@ -889,6 +899,8 @@ var spriteDefs = {
 		"formalName": "Goblin Knight - Plains",
 		"details": "Goblin Knights are fast and do reasonable damage. Plains goblins are incredibly fast runners.",
 		"elementType": "none",
+		"creep": true,
+		"number": 7,
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
@@ -919,6 +931,8 @@ var spriteDefs = {
 		"formalName": "Goblin Knight - Blood",
 		"details": "Goblin Knights are fast and do reasonable damage. These blood goblins are tougher, faster then their cousins.",
 		"elementType": "none",
+		"creep": true,
+		"number": 7,
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
@@ -943,6 +957,8 @@ var spriteDefs = {
 		"formalName": "Goblin Knight - Fire",
 		"details": "Goblin Knights are fast and do reasonable damage. These fire goblins live near magma in deep caves are resist immune to fire based damage.",
 		"elementType": "fire",
+		"creep": true,
+		"number": 7,
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
@@ -1091,7 +1107,7 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
 		"elementType": "void",
 		"unitType": 3,
-		"effect": "vampireRadius",
+		"effect": "voidFire",
 		"powers": {
 			"vampireRadius": {
 				"damage": 10,
@@ -1137,7 +1153,7 @@ var spriteDefs = {
 			},
 			"targetRadius": 100,
 			"seekRadius": 100,
-			"heal": 30
+			"heal": 60
 		},
 		"powers": {
 			"healingRadius": {
@@ -1339,6 +1355,8 @@ var spriteDefs = {
 		"details": "Orcs are fast, fierce attackers. What they lack in heavy armor, they make up for in pure tenacity.",
 		"elementType": "none",
 		"unitType": 3,
+		"creep": true,
+		"number": 4,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 400,
@@ -1431,6 +1449,8 @@ var spriteDefs = {
 		"details": "Weak, dog-like creatures that are trained to rush archers and healers. When killed the scowerer will burst and a poison acid will cover anyone nearby.",
 		"elementType": "life",
 		"unitType": 3,
+		"creep": true,
+		"number": 3,
 		"special": "None",
 		"deathMods": {
 			"explodePoison": {
@@ -1447,6 +1467,7 @@ var spriteDefs = {
 			"MaxHP": 10,
 			"movementType": 1,
 			"targets": 1,
+			"resistsRange": 100,
 			"speed": 400,
 			"damage": 25,
 			"actionDelays": {
@@ -1491,6 +1512,8 @@ var spriteDefs = {
 		"details": "Heavily armored and fast, shellbacks are mindless attack animals trained to lock onto and kill weaker archers and healers.",
 		"elementType": "none",
 		"unitType": 3,
+		"creep": true,
+		"number": 3,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 400,
@@ -1498,6 +1521,7 @@ var spriteDefs = {
 			"targets": 1,
 			"speed": 450,
 			"damage": 25,
+			"resistsRange": 100,
 			"actionDelays": {
 				"attack": 0.01
 			},

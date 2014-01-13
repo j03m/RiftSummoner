@@ -17,7 +17,7 @@ var DefenderBehavior = function(sprite){
 DefenderBehavior.prototype.handleSeek = function(dt){
 
     //glade would not approve :(
-    if (this.support && this.support.behavior.damager && this.support.behavior.damager.isAlive()){
+    if (this.support && this.support.behavior.damager && this.support.behavior.damager.isAlive() && this.canTarget(this.support.behavior.damager)){
         this.locked = this.support.behavior.damager;
         this.setState('attackmove', 'move');
         return;

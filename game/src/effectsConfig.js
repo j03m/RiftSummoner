@@ -147,7 +147,7 @@ var effectsConfig = {
         "start":"vampireRadius.1.png",
         "frames":30,
         "delay":0.05,
-        "placement":"bottom",
+        "placement":"center",
         "zorder":"behind",
         "scaleToTarget":2,
         "offset":{
@@ -167,8 +167,7 @@ var effectsConfig = {
         "offset":{
             "x":0,
             "y":25
-        },
-        times:5
+        }
     },
     "hit":{
         "png":"art/effects{v}.png",
