@@ -348,9 +348,9 @@ GeneralBehavior.prototype.adjustFlock = function(toPoint){
                     friends[i].flockedOff = this.owner;
                     var num = jc.randomNum(0,1);
                     if (num){
-                        toPoint.y+= 50 * jc.characterScaleFactor;
+                        toPoint.y+= this.owner.getTargetRadiusY()/2 * jc.characterScaleFactor;
                     }else{
-                        toPoint.y-= 50 * jc.characterScaleFactor;
+                        toPoint.y-= this.owner.getTargetRadiusY()/2 * jc.characterScaleFactor;
                     }
 
                     break;

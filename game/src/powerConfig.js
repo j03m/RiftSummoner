@@ -139,12 +139,17 @@ var powerConfig = {
 
     },
     "knockBack":function(value){
+        if (this.locked.name == 'nexus'){
+            return;
+        }
+
         jc.checkPower(value, "knockBack");
         var config = spriteDefs[value].damageMods["knockBack"];
         var distance = config.distance;
         if (this.owner.isFlippedX()){
             distance*=-1;
         }
+
         var targetPos = this.locked.getBasePosition();
         targetPos.x+=distance;
         var center = cc.p(this.owner.layer.worldSize.width/2, this.owner.layer.worldSize.height/2);

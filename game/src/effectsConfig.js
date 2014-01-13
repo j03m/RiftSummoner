@@ -66,10 +66,10 @@ var effectsConfig = {
         "placement":"center",
         "times":4
     },
-    "characterSelect":{
+    "characterSelection":{
         "png":"art/touch{v}.png",
         "plist":"art/touch{v}.plist",
-        "start":"characterSelect.1.png",
+        "start":"characterSelection.1.png",
         "frames":16,
         "delay":0.05,
         "placement":"bottom",
@@ -83,6 +83,7 @@ var effectsConfig = {
         "delay":0.05,
         "placement":"base2base",
         "zorder":"behind",
+        "times":3
 
     },
     "allySelection":{

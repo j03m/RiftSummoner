@@ -33,7 +33,7 @@ DefenderBehavior.prototype.handleSeek = function(dt){
         var point = this.getWhereIShouldBe('front', 'away', this.support);
         var topoint = this.seek(point);
         if (topoint.x != 0 && topoint.y != 0){
-            this.setState('move', 'idle');
+            this.setState('move', 'move');
         }
     }
 

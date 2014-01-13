@@ -58,6 +58,15 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
 	        this.setContentSize(cc.size(w,maxValue));					
 		}
 	},
+    disableCell:function(index){
+        var darkgray = new cc.Color3B(100, 100, 100);;
+        this.sprites[index].oldSetColor(darkgray);
+        if (this.sprites[index].pic){
+            this.sprites[index].pic.oldSetColor(darkgray);
+        }
+
+        this.sprites[index].disabled = true;
+    },
     setIndex: function(val){
         jc.log(['scroller'],"set on: "+val);
         this.doUpdate = false;
@@ -210,15 +219,19 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     },
     raiseSelected:function(){
         jc.log(['scroller'],"raiseSelected:" + this.doUpdate);
+
         this.doUpdate=false;
         this.endAdjustmentRunning = false;
         this.applyHighlight(this.sprites[this.selectedIndex]);
-		var md;
-		if (this.metaData){
-			md = this.metaData[this.selectedIndex];
-		}
-        this.def.selectionCallback(this.selectedIndex, this.sprites[this.selectedIndex], md);
-
+        var md;
+        if (this.metaData){
+            md = this.metaData[this.selectedIndex];
+        }
+        if (!this.sprites[this.selectedIndex].disabled){
+            this.def.selectionCallback(this.selectedIndex, this.sprites[this.selectedIndex], md);
+        }else{
+            this.def.selectionCallback(this.selectedIndex, undefined, md);
+        }
     },
     applyHighlight:function(sprite){
         //todo: layer a nicer sprite
