@@ -35,7 +35,7 @@
 
   <link rel="kik-icon" href="art/icon.png"></head>
 <body>
-    <canvas id="gameCanvas" width="1136" height="640">
+    <canvas id="gameCanvas" width="960" height="640">
       <p>Your browser doesn't support HTML5 canvas.</p>
     </canvas>
 
@@ -45,13 +45,13 @@
   var height = window.screen.availHeight
   var dpr = window.devicePixelRatio || 1;
   if (width > height){
-    if (width < 1136){
+    if (width < 960){
       cv.width  = width * dpr;
       cv.height = height* dpr;
     }
 
   }else{
-    if (height< 1136){
+    if (height< 960){
       cv.width  = height* dpr;
       cv.height = width* dpr;
     }
