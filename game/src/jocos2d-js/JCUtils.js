@@ -2,12 +2,15 @@ var jc = jc || {};
 
 
 
-cc.Sprite.prototype.adjustPosition = function(x,y){
+jc.adjustPosition = function(x,y){
     var pos = this.getPosition();
     pos.x+=x;
     pos.y+=y;
     this.setPosition(pos);
 }
+
+cc.Layer.prototype.adjustPosition = jc.adjustPosition;
+cc.Sprite.prototype.adjustPosition = jc.adjustPosition;
 
 cc.LabelTTF.prototype.setText = function(txt){
     this.setString(txt);
@@ -21,12 +24,14 @@ cc.LabelTTF.prototype.setText = function(txt){
     jc.log(['setText'], 'enabled stroke');
 }
 
+cc.Sprite.prototype.oldSetColor = cc.Sprite.prototype.setColor;
 
 if (jc.isBrowser){
     //dont' do this on the web, crushes perf
     jc.dumpStack = function(who){
         jc.log(who, console.trace());
     }
+
 
     cc.Sprite.prototype.setColor = function(){
         jc.log(['console'], "setColor called on the web - don't do it man.");
@@ -221,7 +226,8 @@ jc.makeSpriteWithPlist = function(plist, png, startFrame){
 
 jc.shadow = function(item, op){
     if (this.isBrowser){
-        jc.shade(item,op);
+        //jc.shade(item,op);
+        item.setColor(cc.black());
     }else{
         item.setColor(cc.black());
     }
@@ -637,6 +643,9 @@ jc.toggleVisible=function(element){
 
 jc.genericPowerApply = function(effectData, effectName, varName,bObj){
     //examine the effect config and apply burning to the victim
+    if (bObj.owner.name == 'nexus'){
+        return; //no powers effect nexus, only direct
+    }
     if (GeneralBehavior.applyDamage(bObj.owner, effectData.origin, effectData.damage, effectData.element)){
         if (!bObj.owner[varName]){
             bObj.owner[varName] = jc.playEffectOnTarget(effectName, bObj.owner, bObj.owner.getZOrder(), bObj.owner.layer, true);
@@ -645,6 +654,9 @@ jc.genericPowerApply = function(effectData, effectName, varName,bObj){
 }
 
 jc.genericPowerRemove = function(varName,effectName, bObj){
+    if (bObj.owner.name == 'nexus'){
+        return; //no powers effect nexus, only direct
+    }
     if (bObj.owner[varName]){
         bObj.owner.removeChild(bObj.owner[varName], false);
     }

@@ -1,5 +1,5 @@
 var jc = jc || {};
-jc.WorldLayer = jc.TouchLayer.extend({
+jc.WorldLayer = jc.UiElementsLayer.extend({
     init: function(worldMap) {
         if (this._super()) {
             //set background layer
@@ -43,15 +43,14 @@ jc.WorldLayer = jc.TouchLayer.extend({
     getOkayScale:function(width,height){
         var okayHeight = width/this.aspectRatio;
         if (okayHeight >= height){
-            return this.getScale(width,okayHeight);
+            return this.getScaleValue(width,okayHeight);
         }else{
             while(okayHeight<height){
                 width+=10;
                 okayHeight = width/this.aspectRatio;
             }
-            return this.getScale(width,okayHeight);
+            return this.getScaleValue(width,okayHeight);
         }
-
     },
     panToWorldPoint:function(point, scale, rate, doneCallback){
         var converted = this.convertToLayerPosition(point)
@@ -69,11 +68,31 @@ jc.WorldLayer = jc.TouchLayer.extend({
 
     },
     doScale:function(scale, pos, rate, callback){
-        var actionMove = cc.MoveTo.create(rate, pos);
-        var scaleTo = cc.ScaleTo.create(rate, scale.x, scale.y);
-        this.runActionWithCallback(actionMove, callback);
-        this.runAction(scaleTo);
+        if (this.currentScaleTo){
+            if (this.panRunning){
+                this.stopAction(this.currentScaleTo);
+            }
+            this.currentScaleTo.release();
 
+        }
+        if (this.currentActionMove){
+            if (this.panRunning){
+                this.stopAction(this.currentActionMove);
+            }
+            this.currentActionMove.release();
+        }
+        this.currentActionMove = cc.MoveTo.create(rate, pos);
+        this.currentScaleTo = cc.ScaleTo.create(rate, scale.x, scale.y);
+        this.currentScaleTo.retain();
+        this.currentActionMove.retain();
+        this.panRunning = true;
+        this.runActionWithCallback(this.currentActionMove, function(){
+            this.panRunning = false;
+            if (callback){
+                callback();
+            }
+        }.bind(this));
+        this.runAction(this.currentScaleTo);
     },
     flash:function(){
         //layer color, full screen to white
@@ -143,7 +162,7 @@ jc.WorldLayer = jc.TouchLayer.extend({
         }
         return minEntry;   //return
     },
-    getScale:function(width,height){
+    getScaleValue:function(width,height){
         var scale = {x:this.winSize.width/width, y:this.winSize.height/height};
         if (scale.x > 1.5){
             scale.x = 1.5;
@@ -158,19 +177,19 @@ jc.WorldLayer = jc.TouchLayer.extend({
         return {"x":1, "y":1};
     },
     getScale2x:function(){
-        return this.getScale(this.worldSize.width/2, this.worldSize.height/2);
+        return this.getScaleValue(this.worldSize.width/2, this.worldSize.height/2);
     },
     getScale4x:function(){
-        return this.getScale(this.worldSize.width/4, this.worldSize.height/4);
+        return this.getScaleValue(this.worldSize.width/4, this.worldSize.height/4);
     },
     getScale8x:function(){
-        return this.getScale(this.worldSize.width/16, this.worldSize.height/16);
+        return this.getScaleValue(this.worldSize.width/16, this.worldSize.height/16);
     },
     getScaleFloor:function(){
-        return this.getScale(this.worldSize.width * 0.5, this.worldSize.height * 0.5);
+        return this.getScaleValue(this.worldSize.width *0.9, this.worldSize.height*0.9);
     },
     getScaleWorld:function(){
-        return this.getScale(this.worldSize.width *0.7, this.worldSize.height*0.7);
+        return this.getScaleValue(this.worldSize.width, this.worldSize.height);
     },
     convertToLayerPosition:function(point){
         jc.cap(point, this.worldBoundary);
@@ -214,5 +233,140 @@ jc.WorldLayer = jc.TouchLayer.extend({
     },
     targetTouchHandler:function(type, touch, sprites){
 
+    },
+    handlePinchZoom:function(type, touches){
+        if (!this.multiTouches){
+            this.multiTouches = [];
+        }
+        if (type == jc.touchMoved){
+            jc.log(['MultiTouch'], 'moved');
+            if (touches.length > 1){
+                //did the distance between two touches change?
+
+                var world1 = this.screenToWorld(touches[0]);
+                var world2 = this.screenToWorld(touches[1]);
+                this.pinchMidPoint = cc.pMidpoint(world1, world2);
+                var distance = this.sqrOfDistanceBetweenPoints(touches[0], touches[1]);
+                distance = Math.sqrt(distance);
+                if (this.lastDistance == undefined){
+                    this.lastDistance = distance;
+                }else if (distance > this.lastDistance){ //outward, grow
+                    jc.log(['MultiTouchDetails'], 'diff growing:' + distance + " vs " + this.lastDistance );
+                    this.handlePinch(distance);
+                }else if (distance < this.lastDistance){
+                    jc.log(['MultiTouchDetails'], 'diff shrinking:' + distance + " vs " + this.lastDistance );
+                    this.handlePinch(distance, true);
+                }else{
+                    //equal, do nothing
+                }
+                this.lastDistance = distance;
+            }
+            if (this.lastLeadTouch){
+                this.handleDrag(touches[0]);
+            }
+            this.lastLeadTouch = touches[0];
+            return true;
+        }
+        if (type == jc.touchEnded){
+            jc.log(['MultiTouch'], 'ended' );
+            this.multiTouches = [];
+            this.lastDistance = undefined;
+            this.lastLeadTouch = undefined;
+            return true;
+        }
+    },
+    handleDrag:function(newPoint){
+        jc.log(['DragDetails'], 'move raw:' + JSON.stringify(newPoint) );
+        jc.log(['DragDetails'], 'old move:' + JSON.stringify(this.lastLeadTouch) );
+        var sub = cc.pSub(newPoint, this.lastLeadTouch);
+        jc.log(['DragDetails'], 'diff move:' + JSON.stringify(sub) );
+
+        var pos = this.getPosition();
+        jc.log(['DragDetails'], 'position before adjustment:' + JSON.stringify(pos) );
+        pos.x+=sub.x;
+        pos.y+=sub.y;
+        jc.log(['DragDetails'], 'position after adjustment:' + JSON.stringify(pos) );
+        //cap - no further than furthest visible points
+        var widthMax = (this.worldSize.width - this.winSize.width)/2;
+        var heightMax = (this.worldSize.height - this.winSize.height)/2;
+        var scale = this.getScale();
+        widthMax*=this.getScale();
+        heightMax*=this.getScale();
+
+        if (pos.x <= widthMax && pos.y <= heightMax && pos.x >= widthMax*-1 && pos.y >= heightMax*-1){
+            this.adjustPosition(sub.x, sub.y);
+        }
+        pos = this.getPosition();
+        jc.log(['DragDetails'], 'position result:' + JSON.stringify(pos) );
+
+    },
+    handlePinch:function(distance, shrink){
+        var scale = this.getScale();
+        jc.log(['MultiTouchDetails'], 'scale pre:' + scale );
+        var kPinchZoomCoeff = 1.0/500.0;
+
+        var scaleAug = Math.abs((distance-this.lastDistance) * kPinchZoomCoeff);
+        jc.log(['MultiTouchDetails'], 'scaleAug:' + scaleAug );
+
+        if (!shrink){
+            var newscale = scale + scaleAug;
+        }else{
+            var newscale = scale - scaleAug;
+        }
+
+        jc.log(['MultiTouchDetails'], 'scale post raw:' + newscale );
+        var worldScale = this.getScaleWorld();
+        if (newscale>1){
+            newscale = 1;
+        }
+        if (newscale<worldScale.x){
+            newscale = worldScale.x;
+        }
+        jc.log(['MultiTouchDetails'], 'scale post cap:' + scale );
+        if (newscale!=scale){
+//            this.panToWorldPoint(this.worldMidPoint, cc.p(newscale, newscale), jc.defaultTransitionTime/4, function(){
+//                this.zoomGate = false;
+//            }.bind(this));
+            this.setScale(newscale);
+        }
+
+    },
+    pinchZoomWithMovedTouch: function (movedTouch)
+    {
+        var minDistSqr = Number.MAX_VALUE;
+        var nearestTouch = undefined;
+        jc.log(['MultiTouch'], 'handling moved touch:' + JSON.stringify(movedTouch) );
+        var worldTouchMoved = this.screenToWorld(movedTouch);
+        jc.log(['MultiTouch'], 'converted moved touch:' + JSON.stringify(worldTouchMoved) );
+        _.each(this.multiTouches, function(touch){
+            if (touch.x != worldTouchMoved.x && touch.y!= worldTouchMoved.y){
+                jc.log(['MultiTouch'], 'iterating:' + JSON.stringify(touch) );
+                var worldTouch = this.screenToWorld(touch);
+                jc.log(['MultiTouch'], 'converted iterated touch:' + JSON.stringify(worldTouch) );
+
+                jc.log(['MultiTouch'], 'distance:' + JSON.stringify(distSqr) );
+                if (distSqr < minDistSqr){
+                    jc.log(['MultiTouch'], 'is min' );
+                    minDistSqr = distSqr;
+                    nearestTouch = worldTouch;
+                }
+            }
+        }.bind(this));
+
+        if (nearestTouch)
+        {
+            var pinchDiff = Math.sqrt(minDistSqr);
+            jc.log(['MultiTouch'], 'pinchDiff:' + pinchDiff );
+            if (this.lastPinchDiff){
+                this.setScale(scale);
+            }
+
+            this.lastPinchDiff = pinchDiff;
+        }
+    },
+    sqrOfDistanceBetweenPoints:function(p1, p2)
+    {
+        var diff = cc.pSub(p1, p2);
+        return diff.x * diff.x + diff.y * diff.y;
     }
 });

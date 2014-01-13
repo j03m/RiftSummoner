@@ -32,7 +32,7 @@ hotr.makeRandomTeam =  function makeRandomTeam(){
     var characters = 18;
     var allChars = [];
     for(var entry in spriteDefs){
-        if (!spriteDefs[entry].parentOnly){
+        if (!spriteDefs[entry].parentOnly && spriteDefs[entry].notplayable!=1){
             allChars.push(entry);
         }
 

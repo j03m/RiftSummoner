@@ -212,7 +212,7 @@ var MainGame = cc.Layer.extend({
                         teamA[i] = {"name":"dwarvenKnightEarth"};
                         count++;
                     }else if (count == 1){
-                        teamA[i] = {"name":"goblinKnightBile"};
+                        teamA[i] = {"name":"dwarvenKnightFire"};
                         count++;
                     }else if (count == 2){
                         teamA[i] = {"name":"dwarvenKnightLife"};
@@ -288,11 +288,10 @@ var MainGame = cc.Layer.extend({
     goArenaTest:function(){
         ArenaGame.scene();
         var fightConfig = {
-            //teamA:[{name:'dragonFire'}, {name:"priestessEarth"}],
-            teamA:[{name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}, {name:'dragonFire'}],
+            //teamA:[{name:'dwarvenKnightFire'}, {name:"priestessEarth"}],
+            teamA:[],
             teamAFormation:"",
-            //teamB:[{name:'dwarvenKnightFire'}, {name:'troll'}, {name: 'gargoyleVoid'}],
-            teamB:[{name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}, {name:'goblinKnightBlood'}],
+            teamB:hotr.makeRandomTeam(),
             teamBFormation:"",
             teamAPowers:[],
             teamBPowers:[],
@@ -300,7 +299,7 @@ var MainGame = cc.Layer.extend({
         };
 
         hotr.arenaScene.data = fightConfig;
-        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
+        var assets = this.makeAssetDictionary(hotr.blobOperations.getCharacterIdsAndTypes(), fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
         this.showLoader(            {
             "assets":assets,
             "nextScene":'arena'
@@ -309,30 +308,6 @@ var MainGame = cc.Layer.extend({
     onEnter:function(){
         jc.log(['mainLayer'], "main starting")
         this.startGame();
-
-    },
-    doArenaDev:function(){
-        ArenaGame.scene();
-        //from hc data for dev purposes
-        var teamA = [{name:'dragonRed'}];
-        var teamAFormation = "4x4x4a";
-        var teamB = [{name:'orge'}];
-        var teamBFormation = "4x4x4b";
-        var fightConfig = {
-            teamA:teamA,
-            teamAFormation:teamAFormation,
-            teamB:teamB,
-            teamBFormation:teamBFormation,
-            teamAPowers:[],
-            teamBPowers:[],
-            offense:'a'
-        };
-        hotr.arenaScene.data = fightConfig;
-        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
-        this.showLoader(            {
-            "assets":assets,
-            "nextScene":'arena'
-        });
 
     },
     startGame:function(){
@@ -432,6 +407,9 @@ var MainGame = cc.Layer.extend({
         assets.pushUnique(g_characterPlists["cannonball"]);
         assets.pushUnique(g_characterPngs["cannonball"]);
 
+        this.addAssetChain(assets, 'goblinKnightNormal');
+        this.addAssetChain(assets, 'nexus');
+
         //transform
         for (var i =0;i<assets.length;i++){
             assets[i] = {src:assets[i]};
@@ -440,6 +418,9 @@ var MainGame = cc.Layer.extend({
         for (var i=0;i<g_battleStuff.length;i++){
             assets.pushUnique(g_battleStuff[i]);
         }
+
+
+
 
         return assets;
     },

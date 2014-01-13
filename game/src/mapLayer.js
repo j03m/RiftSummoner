@@ -20,7 +20,12 @@ var MapLayer = jc.UiElementsLayer.extend({
         this.allowOnce = false;
         jc.log(['map'], 'show');
         //play ftue step
-        this.level = hotr.blobOperations.getTutorialLevel();
+        hotr.playerBlob.questLevel = 5;
+        hotr.playerBlob.teamformation = [];
+        hotr.playerBlob.myguys = hotr.makeRandomTeam();
+        hotr.blobOperations.saveBlob();
+
+        this.level =5;
         jc.log(['map'], 'level:'+this.level);
         if (this.level == 0){
             hotr.blobOperations.incrementLevel();
@@ -101,8 +106,8 @@ var MapLayer = jc.UiElementsLayer.extend({
                 this.level4Tutorial();
             }else{
                 this.removeTutorialStep('girl', 'left');
-                //hotr.mainScene.layer.goArenaTest();
-                hotr.mainScene.layer.selectEditTeamPre();
+                hotr.mainScene.layer.goArenaTest();
+                //hotr.mainScene.layer.selectEditTeamPre();
 
             }
         }

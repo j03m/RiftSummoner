@@ -38,8 +38,11 @@ var tracers = {
     'tutorials':0,
     'blobOperations':0,
     'selectTeam':0,
-    'Arena':0
-
+    'Arena':0,
+    'ArenaMultiTouch':0,
+    'MultiTouch':0,
+    'MultiTouchDetails':1,
+    'DragDetails':1
 };
 
 jc.log = function(categories, msg){
