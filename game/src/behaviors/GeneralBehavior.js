@@ -167,7 +167,7 @@ GeneralBehavior.prototype.isUnlocked = function(target){
 }
 
 GeneralBehavior.prototype.isUndefended = function(target){
-    if (target.behaviorType != 'range' && target.behaviorType != 'healer'){
+    if (target.behaviorType != 'range' && target.behaviorType != 'healer' && target.behaviorType != 'nexus'){
         return false;
     }
 
@@ -209,6 +209,27 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
 
     return currentlyLocked;
 }
+
+
+GeneralBehavior.prototype.lockOnSomeoneClose = function(team){
+    var currentlyLocked = undefined;
+    var winSize = this.getWorldSize();
+    var possibles = [];
+    for (var i =0; i< team.length; i++){
+        var sprite = team[i];
+        if (sprite.isAlive() && this.canTarget(sprite)){
+            if (this.withinThisRadius(sprite.getBasePosition(), this.owner.getTargetRadius(), this.owner.getTargetRadius())){
+                possibles.push(sprite);
+            }
+        }
+    }
+    if (possibles.length !=0){
+        return possibles[jc.randomNum(0, possibles.length-1)];
+    }
+
+    return undefined;
+}
+
 
 GeneralBehavior.prototype.canTarget = function(sprite){
     if (sprite.gameObject.movementType == this.owner.gameObject.targets || this.owner.gameObject.targets == jc.targetType.both ){
@@ -736,6 +757,10 @@ GeneralBehavior.prototype.handleIdle = function(dt){
             //don't change anything for now, but check again later.
         }
 
+    }
+
+    if (!this.locked){
+        this.locked = this.lockOnSomeoneClose(this.owner.enemyTeam);
     }
 
     if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){

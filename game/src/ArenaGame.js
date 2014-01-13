@@ -21,7 +21,7 @@ var ArenaGame = jc.WorldLayer.extend({
             Math.seedrandom('yay i made a game');
             this.teams['a'] = [];
             this.teams['b'] = [];
-            this.teamSize = 18;
+            this.teamSize = jc.teamSize;
             this.squadNumbers = this.teamSize/2;
             this.scheduleUpdate();
             this.doConvert = true;
@@ -101,7 +101,7 @@ var ArenaGame = jc.WorldLayer.extend({
 //        this.placeSquadTokens();
         this.setUp();
         this.placementTouches = 1;
-        this.panToWorldPoint(this.worldMidPoint, this.getScaleWorld(), jc.defaultTransitionTime, function(){
+        this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
             //this.placeEnemyTeam();
             //this.nextTouchDo(this.initialSetupAction,true);
             this.finalActions();
@@ -130,7 +130,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.tableView.setPosition(cc.p(this.winSize.width/2, y));
             this.reorderChild(this.tableView, jc.topMost);
             this.tableView.hackOn();
-            this.tableView.setIndex(scrollData.sprites.length/2);
+            this.tableView.setIndex(Math.floor(scrollData.sprites.length/2));
         }
     },
     makeScrollSprites: function(names){
@@ -180,28 +180,56 @@ var ArenaGame = jc.WorldLayer.extend({
         var world = this.screenToWorld(touch);
         var center = this.worldMidPoint;
         if (jc.insideCircle(world, center) && world.x < this.worldMidPoint.x){
-            var sprite = this.makeTeamASprite(this.barSelection);
-            var nodePos = this.convertToItemPosition(world);
-            sprite.setBasePosition(nodePos);
-            sprite.ready(true);
-            jc.playEffectOnTarget("teleport", sprite, this);
-            if (!this.started){
-                this.finalActions();
-            }
-            this.tableView.disableCell(this.barIndex);
-            if (this.selectedSprite != sprite){
-                jc.playEffectOnTarget(this.charSelect, sprite, this, true );
-                if (this.selectedSprite){
-                    this.selectedSprite.removeChild(this.selectedSprite.effectAnimations[this.charSelect].sprite, false);
-                    this.selectedSprite.effectAnimations[this.charSelect].playing = false;
-                }
-                this.selectedSprite = sprite;
-            }
-            this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
-        }else{
-            this.floatMsg("You cannot summon so far from your nexus ge.");
-        }
 
+            var def = spriteDefs[this.barSelection.name];
+            if (def.creep){
+                this.placeCreeps(world);
+            }else{
+                this.placeHero(world)
+            }
+
+        }else{
+            this.floatMsg(this.nexusMsg);
+        }
+    },
+    placeCreeps:function(world){
+        var def = spriteDefs[this.barSelection.name];
+        this.schedule(function(data, index){
+            return function(){
+
+                var sprite = this.makeTeamASprite(data);
+                var nodePos = this.convertToItemPosition(world);
+                sprite.setBasePosition(nodePos);
+                sprite.ready(true);
+                jc.playEffectOnTarget("teleport", sprite, this);
+                if (!this.started){
+                    this.finalActions();
+                }
+                this.tableView.disableCell(index);
+            }.bind(this);
+        }.bind(this)(this.barSelection, this.barIndex),0.5, def.number-1);
+
+
+    },
+    placeHero:function(world){
+        var sprite = this.makeTeamASprite(this.barSelection);
+        var nodePos = this.convertToItemPosition(world);
+        sprite.setBasePosition(nodePos);
+        sprite.ready(true);
+        jc.playEffectOnTarget("teleport", sprite, this);
+        if (!this.started){
+            this.finalActions();
+        }
+        this.tableView.disableCell(this.barIndex);
+        if (this.selectedSprite != sprite){
+            jc.playEffectOnTarget(this.charSelect, sprite, this, true );
+            if (this.selectedSprite){
+                this.selectedSprite.removeChild(this.selectedSprite.effectAnimations[this.charSelect].sprite, false);
+                this.selectedSprite.effectAnimations[this.charSelect].playing = false;
+            }
+            this.selectedSprite = sprite;
+        }
+        this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
     },
     teamASpawn:function(){
         var spot = jc.randomNum(0,2);
@@ -672,7 +700,11 @@ var ArenaGame = jc.WorldLayer.extend({
             var scaleData = this.calculateScaleForSprites(this.sprites, true, dt);
             var scaleLimit = 50;
             this.lastcreep += dt;
-            if (this.lastcreep > 2){
+            var creeplimit = 2;
+            if (jc.isBrowser){
+                creeplimit = 4.5;
+            }
+            if (this.lastcreep > creeplimit){
                 if (this.creepCount < 100){
                     this.makeCreeps();
 
@@ -725,19 +757,38 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite2.homeTeam = this.getTeam.bind(this, 'b');
         sprite2.team = 'b';
 
+        for(var i =0; i< 3;i++){
+            this.summonEnemyHero();
+        }
+
+    },
+    summonEnemyHero:function(){
         if (!this.lastEnemyHero){
             this.lastEnemyHero = 0;
         }
 
-        if (this.lastEnemyHero< this.teamBSprites.length){
-            var enemyHero = this.makeTeamBSprite(this.teamBSprites[this.lastEnemyHero].name);
-            enemyHero.setBasePosition(this.teamBSpawn());
-            enemyHero.ready(true);
-            jc.playEffectOnTarget("teleport", enemyHero, this);
-            this.lastEnemyHero++;
+        if (this.lastEnemyHero < this.teamBSprites.length){
+            var name = this.teamBSprites[this.lastEnemyHero].name;
+            var def = spriteDefs[name];
+            if (def.creep){
+                this.schedule(function(){
+                    var enemyHero = this.makeTeamBSprite(name);
+                    enemyHero.setBasePosition(this.teamBSpawn());
+                    enemyHero.ready(true);
+                    jc.playEffectOnTarget("teleport", enemyHero, this);
+
+                }.bind(this), 0.5, def.number-1);
+
+                this.lastEnemyHero++;
+            }else{
+                var enemyHero = this.makeTeamBSprite(name);
+                enemyHero.setBasePosition(this.teamBSpawn());
+                enemyHero.ready(true);
+                jc.playEffectOnTarget("teleport", enemyHero, this);
+                this.lastEnemyHero++;
+            }
 
         }
-
 
 
     },

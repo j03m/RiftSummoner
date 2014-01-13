@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../cocos2dx/actions/CCActionManager.cpp"
-            timestampString = "408255440.976462"
+            timestampString = "411157701.344532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "192"
@@ -190,6 +190,376 @@
             startingLineNumber = "582"
             endingLineNumber = "582"
             landmarkName = "CCTexture2D::initWithString(const char *text, ccFontDefinition *textDefinition)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../scripting/javascript/bindings/cocos2d_specifics.cpp"
+            timestampString = "411328829.428091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "661"
+            endingLineNumber = "661"
+            landmarkName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext *cx, uint32_t argc, jsval *vp)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext*, unsigned int, JS::Value*)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/scripting/javascript/bindings/cocos2d_specifics.cpp"
+                  timestampString = "411195967.238609"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "638"
+                  endingLineNumber = "638"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext*, unsigned int, JS::Value*)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/scripting/javascript/bindings/cocos2d_specifics.cpp"
+                  timestampString = "411195967.239025"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "638"
+                  endingLineNumber = "638"
+                  offsetFromSymbolStart = "486">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../scripting/javascript/bindings/cocos2d_specifics.cpp"
+            timestampString = "411328829.428091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "663"
+            endingLineNumber = "663"
+            landmarkName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext *cx, uint32_t argc, jsval *vp)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../scripting/javascript/bindings/cocos2d_specifics.cpp"
+            timestampString = "411328829.428091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "670"
+            endingLineNumber = "670"
+            landmarkName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext *cx, uint32_t argc, jsval *vp)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext*, unsigned int, JS::Value*)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/scripting/javascript/bindings/cocos2d_specifics.cpp"
+                  timestampString = "411196212.206965"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "641"
+                  endingLineNumber = "641"
+                  offsetFromSymbolStart = "520">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext*, unsigned int, JS::Value*)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/scripting/javascript/bindings/cocos2d_specifics.cpp"
+                  timestampString = "411196212.207357"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "641"
+                  endingLineNumber = "641"
+                  offsetFromSymbolStart = "956">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext*, unsigned int, JS::Value*)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/scripting/javascript/bindings/cocos2d_specifics.cpp"
+                  timestampString = "411196212.207696"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "641"
+                  endingLineNumber = "641"
+                  offsetFromSymbolStart = "1400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../scripting/javascript/bindings/cocos2d_specifics.cpp"
+            timestampString = "411328829.428091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "666"
+            endingLineNumber = "666"
+            landmarkName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext *cx, uint32_t argc, jsval *vp)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext*, unsigned int, JS::Value*)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/scripting/javascript/bindings/cocos2d_specifics.cpp"
+                  timestampString = "411196416.596282"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "643"
+                  endingLineNumber = "643"
+                  offsetFromSymbolStart = "528">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "js_cocos2dx_JSTouchDelegate_registerStandardDelegate(JSContext*, unsigned int, JS::Value*)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/scripting/javascript/bindings/cocos2d_specifics.cpp"
+                  timestampString = "411196416.596703"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "643"
+                  endingLineNumber = "643"
+                  offsetFromSymbolStart = "956">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+            timestampString = "411325874.779095"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
+            landmarkName = "CCTouchDispatcher::touches(CCSet *pTouches, CCEvent *pEvent, unsigned int uIndex)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cocos2d::CCTouchDispatcher::touches(cocos2d::CCSet*, cocos2d::CCEvent*, unsigned int)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+                  timestampString = "411326886.446666"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "432"
+                  endingLineNumber = "432"
+                  offsetFromSymbolStart = "1082">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cocos2d::CCTouchDispatcher::touches(cocos2d::CCSet*, cocos2d::CCEvent*, unsigned int)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+                  timestampString = "411326887.81601"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "432"
+                  endingLineNumber = "432"
+                  offsetFromSymbolStart = "1088">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+            timestampString = "411325893.571023"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
+            landmarkName = "CCTouchDispatcher::touches(CCSet *pTouches, CCEvent *pEvent, unsigned int uIndex)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+            timestampString = "411325915.351947"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "419"
+            endingLineNumber = "419"
+            landmarkName = "CCTouchDispatcher::touches(CCSet *pTouches, CCEvent *pEvent, unsigned int uIndex)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cocos2d::CCTouchDispatcher::touches(cocos2d::CCSet*, cocos2d::CCEvent*, unsigned int)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+                  timestampString = "411326886.447267"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "419"
+                  endingLineNumber = "419"
+                  offsetFromSymbolStart = "962">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cocos2d::CCTouchDispatcher::touches(cocos2d::CCSet*, cocos2d::CCEvent*, unsigned int)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+                  timestampString = "411326887.816655"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "419"
+                  endingLineNumber = "419"
+                  offsetFromSymbolStart = "968">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+            timestampString = "411325929.138577"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
+            landmarkName = "CCTouchDispatcher::touches(CCSet *pTouches, CCEvent *pEvent, unsigned int uIndex)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cocos2d::CCTouchDispatcher::touches(cocos2d::CCSet*, cocos2d::CCEvent*, unsigned int)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+                  timestampString = "411326886.447866"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "420"
+                  endingLineNumber = "420"
+                  offsetFromSymbolStart = "994">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cocos2d::CCTouchDispatcher::touches(cocos2d::CCSet*, cocos2d::CCEvent*, unsigned int)"
+                  moduleName = "Rift Summoner"
+                  urlString = "file:///Users/jmordetsky/cocosprojects/cocos2d-x/cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+                  timestampString = "411326887.829233"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "420"
+                  endingLineNumber = "420"
+                  offsetFromSymbolStart = "1000">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../scripting/javascript/bindings/cocos2d_specifics.cpp"
+            timestampString = "411326020.024171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "JSTouchDelegate::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../scripting/javascript/bindings/cocos2d_specifics.cpp"
+            timestampString = "411326072.418456"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "JSTouchDelegate::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../cocos2dx/touch_dispatcher/CCTouchDispatcher.cpp"
+            timestampString = "411326910.151987"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
+            landmarkName = "CCTouchDispatcher::touches(CCSet *pTouches, CCEvent *pEvent, unsigned int uIndex)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

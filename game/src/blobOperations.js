@@ -1,7 +1,7 @@
 var hotr = hotr || {};
 hotr.blobOperations = {};
 hotr.scratchBoard = {};
-hotr.teamformationSize = 18;
+hotr.teamformationSize = jc.teamSize;
 hotr.authTokenLocalStoreKey = "x1xauthTokenx1x";
 hotr.haveSeenLocalStoreKey = "x1xhaveseenx1x";
 hotr.userNameKey = "x1xusernamex1x";
