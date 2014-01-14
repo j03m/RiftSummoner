@@ -84,7 +84,7 @@ var Landing = jc.UiElementsLayer.extend({
             },
             "pos": {
                 "x": 1004,
-                "y": 756
+                "y": 577
             }
         }
     }
