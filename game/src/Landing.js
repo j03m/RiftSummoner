@@ -34,7 +34,7 @@ var Landing = jc.UiElementsLayer.extend({
         "mainFrame": {
             "cell": 5,
             "type": "sprite",
-            "sprite": "landingScreen.png",
+            "sprite": "background.png",
             "z": 1,
             "kids": {
                 "questButton": {
@@ -44,43 +44,43 @@ var Landing = jc.UiElementsLayer.extend({
                     "touchDelegateName": "quest",
                     "z": 2,
                     "pos": {
-                        "x": 804,
-                        "y": 468
+                        "x": 1024,
+                        "y": 200
                     }
                 },
-                "battleButton": {
-                    "type": "button",
-                    "main": "battleButton.png",
-                    "pressed": "battleButtonPressed.png",
-                    "touchDelegateName": "battle",
-                    "z": 2,
-                    "pos": {
-                        "x": 1316,
-                        "y": 468
-                    }
-                },
-                "summonButton": {
-                    "type": "button",
-                    "main": "summonButton.png",
-                    "pressed": "summonPressed.png",
-                    "touchDelegateName": "summon",
-                    "z": 2,
-                    "pos": {
-                        "x": 808,
-                        "y": 220
-                    }
-                },
-                "storeButton": {
-                    "type": "button",
-                    "main": "storeButton.png",
-                    "pressed": "storeButtonPressed.png",
-                    "touchDelegateName": "summon",
-                    "z": 2,
-                    "pos": {
-                        "x": 1316,
-                        "y": 218
-                    }
-                }
+//                "battleButton": {
+//                    "type": "button",
+//                    "main": "battleButton.png",
+//                    "pressed": "battleButtonPressed.png",
+//                    "touchDelegateName": "battle",
+//                    "z": 2,
+//                    "pos": {
+//                        "x": 1316,
+//                        "y": 468
+//                    }
+//                },
+//                "summonButton": {
+//                    "type": "button",
+//                    "main": "summonButton.png",
+//                    "pressed": "summonPressed.png",
+//                    "touchDelegateName": "summon",
+//                    "z": 2,
+//                    "pos": {
+//                        "x": 808,
+//                        "y": 220
+//                    }
+//                },
+//                "storeButton": {
+//                    "type": "button",
+//                    "main": "storeButton.png",
+//                    "pressed": "storeButtonPressed.png",
+//                    "touchDelegateName": "summon",
+//                    "z": 2,
+//                    "pos": {
+//                        "x": 1316,
+//                        "y": 218
+//                    }
+//                }
             },
             "pos": {
                 "x": 1004,

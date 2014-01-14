@@ -46,7 +46,7 @@ var effectsConfig = {
         "start":"arrow.1.png",
         "frames":16,
         "delay":0.04,
-        "placement":"center",
+        "placement":"center"
     },
     "teleport":{
         "png":"art/teleport.png",
@@ -73,6 +73,7 @@ var effectsConfig = {
         "frames":16,
         "delay":0.05,
         "placement":"bottom",
+        "zorder":"shadow"
 
     },
     "enemySelection":{
@@ -82,7 +83,7 @@ var effectsConfig = {
         "frames":16,
         "delay":0.05,
         "placement":"base2base",
-        "zorder":"behind",
+        "zorder":"shadow",
         "times":3
 
     },
@@ -93,7 +94,7 @@ var effectsConfig = {
         "frames":16,
         "delay":0.05,
         "placement":"base2base",
-        "zorder":"behind",
+        "zorder":"shadow"
 
     },
     "burning":{

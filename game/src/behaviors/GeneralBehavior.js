@@ -276,7 +276,6 @@ GeneralBehavior.prototype.seekEnemy = function(){
     }
 
     var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
-    attackPosition = this.adjustFlock(attackPosition);
 
     //apply a position augment if it's there - usually for flying animals to be far off their targets
     if (this.owner.gameObject.flightAug && this.locked.gameObject.movementType == jc.movementType.ground){
@@ -356,30 +355,39 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
     return supportPos;
 }
 
-GeneralBehavior.prototype.adjustFlock = function(toPoint){
+GeneralBehavior.prototype.adjustFlock = function(){
+
     var friends = this.allFriendsWithinRadius(300 * jc.characterScaleFactor);
     var pos = this.owner.getBasePosition();
+    var augment = cc.p(0,0);
+    var shouldFlock = false;
     if (friends.length!=0){
         for (var i =0; i<friends.length;i++){
             //if we're locked onto the same person
             if (friends[i].gameObject.movementType == this.owner.gameObject.movementType){
                 var diff = Math.abs(friends[i].getBasePosition().y-pos.y);
-                if (diff<50* jc.characterScaleFactor && this.owner.flockedOff !=friends[i]){
+                if (diff<20* jc.characterScaleFactor){
                     //adjust my seek position by 10px y north
-                    friends[i].flockedOff = this.owner;
+                    shouldFlock = true;
                     var num = jc.randomNum(0,1);
+                    var val = jc.randomNum(1, this.owner.getTargetRadiusY()*jc.assetScaleFactor);
                     if (num){
-                        toPoint.y+= this.owner.getTargetRadiusY()/2 * jc.characterScaleFactor;
+                        augment.y+= val;
                     }else{
-                        toPoint.y-= this.owner.getTargetRadiusY()/2 * jc.characterScaleFactor;
+                        augment.y-= val;
                     }
-
                     break;
                 }
             }
         }
     }
-    return toPoint;
+    if (!this.flockAdjust){
+        this.flockAdjust = augment;
+    }
+
+    return shouldFlock;
+
+
 }
 
 GeneralBehavior.prototype.seek = function(toPoint){
@@ -412,8 +420,9 @@ GeneralBehavior.prototype.seek = function(toPoint){
     }
 
     var raw = cc.pMult(cc.pNormalize(vector.direction), speed);
-
-
+    if (this.adjustFlock()){
+        raw = cc.pAdd(raw, this.flockAdjust);
+    }
     return raw;
 }
 
@@ -701,23 +710,24 @@ GeneralBehavior.prototype.handleFight = function(dt){
 }
 
 GeneralBehavior.prototype.setAttackAnim = function(state, callback){
-    if (this.attackSequence==undefined){
-        this.attackSequence = 1;
-    }
 
-    if (this.attackSequence == 1){
-        this.setState(state, 'attack');
-
-    }else{
-        var nextAttack = 'attack'+this.attackSequence;
-        if (this.owner.animations[nextAttack]){
-            this.setState(state, nextAttack, callback);
-        }else{
-            this.attackSequence = 0;
-            this.setState(state, 'attack', callback);
+    var animation = '';
+    var foundOne = false;
+    for(var i=0;i<3;i++){
+        var num = jc.randomNum(0,5);
+        var animation = 'attack'+num;
+        if (this.owner.animations[animation]){
+            foundOne = true;
+            break
         }
     }
-    this.attackSequence++;
+
+    if(!foundOne){
+        animation = 'attack';
+    }
+
+    this.setState(state, animation, callback);
+
 }
 
 GeneralBehavior.prototype.getAttackAnim = function(){

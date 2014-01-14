@@ -1,6 +1,10 @@
 var jc = jc || {};
+if (jc.isBrowser){
+    jc.teamSize = 7;
+}else{
+    jc.teamSize = 10;
+}
 
-jc.teamSize = 9;
 
 jc.adjustPosition = function(x,y){
     var pos = this.getPosition();
@@ -461,8 +465,9 @@ jc.playEffectOnTarget = function(name, target, layer, child){
 
     var effect = target.effectAnimations[name].sprite;
     var effectAnimation = target.effectAnimations[name].animation;
-
-    parent.addChild(effect);
+    if (config.zorder != "shadow"){
+        parent.addChild(effect);
+    }else{}
     if (config.scaleToTarget){
         jc.scaleToCharacter(effect, target, config.scaleToTarget);
     }
@@ -473,6 +478,8 @@ jc.playEffectOnTarget = function(name, target, layer, child){
         parent.reorderChild(effect,-1);
     }else if (config.zorder == "front" && child) {
         parent.reorderChild(effect,2);
+    }else if (config.zorder == "shadow"){
+        layer.reorderChild(effect, jc.shadowZOrder)
     }
     else{
         parent.reorderChild(effect,target.getZOrder());
