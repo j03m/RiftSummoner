@@ -256,10 +256,11 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
 
     },
     handlePinchZoom:function(type, touches){
-        if (!this.multiTouches){
-            this.multiTouches = [];
-        }
         jc.log(['MultiTouch'], 'type:' +  type);
+        if (type == jc.touchBegan){
+            this.initialTouch = this.screenToWorld(touches[0]);
+        }
+
         if (type == jc.touchMoved){
             jc.log(['MultiTouch'], 'moved');
             if (touches.length > 1){
@@ -284,12 +285,10 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
                 this.lastDistance = distance;
 
                 return true;
-            }else if (this.lastLeadTouch){
-                this.handleDrag(touches[0]);
-                return true;
             }else{
-                this.lastLeadTouch = touches[0];
-                return false;
+                var worldPoint = this.screenToWorld(touches[0]);
+                this.handleDrag(worldPoint);
+                return true;
             }
 
 
@@ -298,8 +297,8 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
             jc.log(['MultiTouch'], 'ended' );
             this.lastDistance = undefined;
             this.lastLeadTouch = undefined;
+            this.initialTouch = false;
             if (this.inDrag){
-                this.inDrag = false;
                 return true;
             }
 
@@ -329,41 +328,63 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
     },
     handleDrag:function(newPoint){
         jc.log(['DragDetails'], 'move raw:' + JSON.stringify(newPoint) );
-        jc.log(['DragDetails'], 'old move:' + JSON.stringify(this.lastLeadTouch) );
-        var sub = cc.pSub(newPoint, this.lastLeadTouch);
+        jc.log(['DragDetails'], 'initial touch:' + JSON.stringify(this.initialTouch) );
+        var sub = cc.pSub(newPoint,this.initialTouch);
         jc.log(['DragDetails'], 'diff move:' + JSON.stringify(sub) );
 
 
+        this.capDrag(sub);
 
+        if (!this.dragUpdateSet){
+            this.dragUpdateSet = true;
+            this.schedule(this.handleDragMove.bind(this));
+        }
+        this.inDrag = true;
+    },
+    capDrag:function(delta){
         var pos = this.getPosition();
         jc.log(['DragDetails'], 'position before adjustment:' + JSON.stringify(pos) );
-        pos.x+=sub.x * 0.6;
-        pos.y+=sub.y* 0.3;
+        pos.x+=delta.x;
+        pos.y+=delta.y;
         jc.log(['DragDetails'], 'position after adjustment:' + JSON.stringify(pos) );
 
         //cap - no further than furthest visible points
         var widthMax = (this.worldSize.width*this.getScale() - this.winSize.width)/2;
         var heightMax = (this.worldSize.height*this.getScale() - this.winSize.height)/2;
 
-        var adjustX = sub.x;
-        var adjustY = sub.y;
+        this.adjustX = delta.x ;
+        this.adjustY = delta.y ;
+
+
         if (pos.x >= widthMax || pos.x <= widthMax*-1){
-            adjustX =0;
+            this.adjustX =0;
         }
 
         if (pos.y >= heightMax || pos.y <= heightMax*-1){
-            adjustY =0;
+            this.adjustY =0;
         }
-
-        this.adjustPosition(adjustX, adjustY);
-
-        pos = this.getPosition();
-        jc.log(['DragDetails'], 'position result:' + JSON.stringify(pos) );
-        this.inDrag = true;
-
+    },
+    handleDragMove:function(){
+        if (this.inDrag){
+            jc.log(['DragTaper'],"adj-x:" + this.adjustX + " adj-y:" + this.adjustY);
+            this.capDrag(cc.p(this.adjustX, this.adjustY));
+            this.adjustPosition(this.adjustX, this.adjustY);
+            this.adjustX*=0.95;
+            this.adjustY*=0.95;
+            if (Math.abs(this.adjustX) < 0.25){
+                this.adjustX = 0;
+            }
+            if (Math.abs(this.adjustY) <0.25){
+                this.adjustY =0;
+            }
+            if (this.adjustY == 0 && this.adjustX == 0){
+                this.inDrag = false;
+            }
+        }
     },
     handlePinch:function(distance, shrink){
         var scale = this.getScale();
+        this.inDrag = false;
         jc.log(['MultiTouchDetails'], 'scale pre:' + scale );
         var kPinchZoomCoeff = 1.0/500.0;
 
