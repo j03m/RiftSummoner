@@ -61,6 +61,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.spawnB2 = cc.p(this.nexusBPoint.x - adjustX2, this.nexusBPoint.y + adjustY);
             this.spawnB3 = cc.p(this.nexusBPoint.x - adjustX2, this.nexusBPoint.y - adjustY);
 
+            this.startViewPoint = cc.p(1500*jc.assetScaleFactor,1000*jc.assetScaleFactor);
 
 
             this.spawnBPoint = this.nexusBPoint;
@@ -101,7 +102,7 @@ var ArenaGame = jc.WorldLayer.extend({
 //        this.placeSquadTokens();
         this.setUp();
         this.placementTouches = 1;
-        this.panToWorldPoint(this.worldMidPoint, this.getScaleFloor(), jc.defaultTransitionTime, function(){
+        this.panToWorldPoint(this.startViewPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
             //this.placeEnemyTeam();
             //this.nextTouchDo(this.initialSetupAction,true);
             this.finalActions();
@@ -158,22 +159,56 @@ var ArenaGame = jc.WorldLayer.extend({
         var found = _.find(this.sprites, function(obj){
             return obj.id == data;
         });
-        if (!found){
+
+        if (found){
+            var def = spriteDefs[found.name];
+            if (def.creep){
+                this.doCreepSelect(found);
+            }else{
+                this.doHeroSelect(found);
+            }
+        }else{
             this.nextTouchDo(this.placeBarSprite.bind(this));
-        }else if(!found.isAlive()){
+        }
+
+
+
+    },
+    doCreepSelect:function(found){
+        var creeps = _.filter(this.sprites, function(obj){
+            return obj.name == found.name;
+        });
+        var keepGoing =false
+        for(var i =0;i<creeps.length;i++){
+            if (creeps[i].isAlive()){
+                keepGoing = true;
+                this.clearSelection();
+                break;
+            }
+        }
+
+        if (keepGoing){
+            this.selectedCreeps = [];
+            for(var i =0;i<creeps.length;i++){
+                jc.playEffectOnTarget(this.charSelect, creeps[i], this, true);
+                this.selectedCreeps.push(creeps[i]);
+            }
+
+        }
+
+        this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
+    },
+    doHeroSelect:function(found){
+        if(!found.isAlive()){
             return;
         }else{
             var minSprite = found;
 
-            if (this.selectedSprite != minSprite){
-                this.selectedSprite.removeChild(this.selectedSprite.effectAnimations[this.charSelect].sprite, false);
-                this.selectedSprite.effectAnimations[this.charSelect].playing = false;
-            }
+            this.clearSelection();
             this.selectedSprite = minSprite;
             jc.playEffectOnTarget(this.charSelect, minSprite, this, true);
             this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
         }
-
     },
     placeBarSprite:function(touch){
 
@@ -194,6 +229,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     placeCreeps:function(world){
         var def = spriteDefs[this.barSelection.name];
+        this.clearSelection();
         this.schedule(function(data, index){
             return function(){
 
@@ -205,11 +241,32 @@ var ArenaGame = jc.WorldLayer.extend({
                 if (!this.started){
                     this.finalActions();
                 }
+                if (!this.selectedCreeps){
+                    this.selectedCreeps=[];
+                }
+                jc.playEffectOnTarget(this.charSelect, sprite, this, true );
+                this.selectedCreeps.push(sprite);
+                this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
                 this.tableView.disableCell(index);
             }.bind(this);
         }.bind(this)(this.barSelection, this.barIndex),0.5, def.number-1);
 
 
+    },
+    clearSelection:function(){
+        if (this.selectedSprite){
+            this.selectedSprite.removeChild(this.selectedSprite.effectAnimations[this.charSelect].sprite, false);
+            this.selectedSprite.effectAnimations[this.charSelect].playing = false;
+        }
+        this.selectedSprite = undefined;
+
+        if (this.selectedCreeps){
+            for(var i=0;i<this.selectedCreeps.length;i++){
+                this.selectedCreeps[i].removeChild(this.selectedCreeps[i].effectAnimations[this.charSelect].sprite, false);
+                this.selectedCreeps[i].effectAnimations[this.charSelect].playing = false;
+            }
+        }
+        this.selectedCreeps = undefined;
     },
     placeHero:function(world){
         var sprite = this.makeTeamASprite(this.barSelection);
@@ -222,11 +279,8 @@ var ArenaGame = jc.WorldLayer.extend({
         }
         this.tableView.disableCell(this.barIndex);
         if (this.selectedSprite != sprite){
+            this.clearSelection();
             jc.playEffectOnTarget(this.charSelect, sprite, this, true );
-            if (this.selectedSprite){
-                this.selectedSprite.removeChild(this.selectedSprite.effectAnimations[this.charSelect].sprite, false);
-                this.selectedSprite.effectAnimations[this.charSelect].playing = false;
-            }
             this.selectedSprite = sprite;
         }
         this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
@@ -883,17 +937,34 @@ var ArenaGame = jc.WorldLayer.extend({
     setSpriteTargetLocation:function(touch, sprites){
         //play tap effect at touch
         if (sprites){
+
             var temp = [];
             temp = temp.concat(this.getTeam('b'));
             temp = temp.concat(this.getTeam('a'));
             var minSprite = this.getBestSpriteForTouch(touch, sprites, temp);
-            if (minSprite && this.getTeam('b').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an enemy
-                this.doEnemyTouch(minSprite, touch);
-
-//            }else if (minSprite && this.getTeam('a').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an friend
-//                this.doFriendTouch.bind(this)(minSprite);
-            }else{
-                this.doGenericTouch(touch);
+            if (this.selectedSprite){
+                if (minSprite && this.getTeam('b').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an enemy
+                    this.doEnemyTouch(minSprite, touch);
+                }else if (minSprite && this.getTeam('a').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an friend
+                    this.doFriendTouch.bind(this)(minSprite);
+                }else{
+                    this.doGenericTouch(touch);
+                }
+            }else if (this.selectedCreeps){
+                var worldPos = this.screenToWorld(touch);
+                var nodePos = this.convertToItemPosition(worldPos);
+                if (minSprite && this.getTeam('b').indexOf(minSprite)!=-1 && this.selectedCreeps[i].behavior.canTarget(minSprite)){ //if we touched an enemy
+                    jc.playEffectAtLocation(this.enemySelect, sprite.getBasePosition(), jc.shadowZOrder,this);
+                }else{
+                    jc.playEffectAtLocation("movement", nodePos, jc.shadowZOrder,this);
+                }
+                for(var i =0;i<this.selectedCreeps.length;i++){
+                    if (minSprite && this.getTeam('b').indexOf(minSprite)!=-1 && this.selectedCreeps[i].behavior.canTarget(minSprite)){ //if we touched an enemy
+                        this.selectedCreeps[i].behavior.attackCommand(sprite);
+                    }else{
+                        this.selectedCreeps[i].behavior.followCommand(touch);
+                    }
+                }
             }
         }else{
             this.doGenericTouch(touch);
@@ -1282,10 +1353,7 @@ var ArenaGame = jc.WorldLayer.extend({
         if (minSprite){
             if (this.selectedSprite != minSprite){
                 jc.playEffectOnTarget(this.charSelect, minSprite, this, true );
-                if (this.selectedSprite){
-                    this.selectedSprite.removeChild(this.selectedSprite.effectAnimations[this.charSelect].sprite, false);
-                }
-                this.selectedSprite.effectAnimations[this.charSelect].playing = false;
+                this.clearSelection();
                 this.selectedSprite = minSprite;
             }
             this.nextTouchDo(this.setSpriteTargetLocation.bind(this),true);

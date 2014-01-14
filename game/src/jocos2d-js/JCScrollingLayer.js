@@ -255,19 +255,19 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
 				cellSize = this.def.cellWidth;
             }
 
-			if (scrollDistance/cellSize > 3){
-				if (this.def.isVertical){
-					this.scrollDistance.y = 3 * this.def.cellHeight;	
-				}else{
-					this.scrollDistance.x = 3 * this.def.cellWidth;	
-				}
-				
-			}
+//			if (scrollDistance/cellSize > 3){
+//				if (this.def.isVertical){
+//					this.scrollDistance.y = 3 * this.def.cellHeight;
+//				}else{
+//					this.scrollDistance.x = 3 * this.def.cellWidth;
+//				}
+//
+//			}
 
 
             this.setPosition(cc.pAdd(this.getPosition(), this.scrollDistance));
             if (!this.isMoving){
-                var SCROLL_DEACCEL_RATE = 0.75;
+                var SCROLL_DEACCEL_RATE = 0.50;
                 this.scrollDistance = cc.pMult(this.scrollDistance, SCROLL_DEACCEL_RATE);
                 if (Math.abs(scrollDistance)<=1){
                     this.doUpdate = false;
