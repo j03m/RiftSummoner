@@ -389,7 +389,7 @@ GeneralBehavior.prototype.seek = function(toPoint){
     }
 
     if (this.followPoint){
-        if (this.withinThisRadius(toPoint, 25,25)){
+        if (this.withinThisRadius(toPoint, 25*jc.assetScaleFactor,25*jc.assetScaleFactor)){
             this.followPoint = undefined;
             return cc.p(0,0);
         }

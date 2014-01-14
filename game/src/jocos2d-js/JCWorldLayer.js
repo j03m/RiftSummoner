@@ -377,9 +377,9 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         }
 
         jc.log(['MultiTouchDetails'], 'scale post raw:' + newscale );
-        var worldScale = this.getScaleWorld();
-        if (newscale>1){
-            newscale = 1;
+        var worldScale = this.getScaleFloor();
+        if (newscale>1.3){
+            newscale = 1.3;
         }
         if (newscale<worldScale.x){
             newscale = worldScale.x;
