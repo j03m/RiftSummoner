@@ -29,7 +29,7 @@ var tracers = {
     'utilEffects':0,
     'rangeBehavior':0,
     'defenderBehavior':0,
-    'designerout':0,
+    'designerout':1,
     'jc.shade':0,
     'setText':0,
     'missile':0,
@@ -44,7 +44,8 @@ var tracers = {
     'MultiTouchDetails':0,
     'DragDetails':0,
     'TouchClaims':0,
-    'DragTaper':1
+    'DragTaper':0,
+    'ArenaSelection':1
 };
 
 jc.log = function(categories, msg){

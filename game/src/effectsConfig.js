@@ -73,7 +73,7 @@ var effectsConfig = {
         "frames":16,
         "delay":0.05,
         "placement":"bottom",
-        "zorder":"shadow"
+        "zorder":"behind"
 
     },
     "enemySelection":{
@@ -83,7 +83,7 @@ var effectsConfig = {
         "frames":16,
         "delay":0.05,
         "placement":"base2base",
-        "zorder":"shadow",
+        "zorder":"behind",
         "times":3
 
     },
@@ -94,7 +94,7 @@ var effectsConfig = {
         "frames":16,
         "delay":0.05,
         "placement":"base2base",
-        "zorder":"shadow"
+        "zorder":"behind"
 
     },
     "burning":{

@@ -48,20 +48,11 @@ HealerBehavior.prototype.healThink = function(dt){
 
 
 HealerBehavior.prototype.handleHealerIdle = function(dt){
-    if (!this.support || !this.support.isAlive()){
-        this.support = this.getClosestFriendToSupport();
-
-    }
+    this.support = this.getClosestFriendToSupport();
 
     if (!this.support){
-        this.handleTankIdle(dt);
+        //this.handleTankIdle(dt);
     }else{
-        //get close
-//        if(!this.withinThisRadius(this.support.getBasePosition(), this.owner.getTargetRadius(), this.owner.getTargetRadiusY())){
-//            this.setState('move', 'move');
-//            return;
-//        }
-
         var point = this.getWhereIShouldBe('behind', 'facing', this.support);
         point = this.seek(point);
         if (point.x != 0 && point.y != 0){
@@ -69,13 +60,11 @@ HealerBehavior.prototype.handleHealerIdle = function(dt){
             return;
         }
 
-
         if (this.support.gameObject.hp>0 && this.support.gameObject.hp < this.support.gameObject.MaxHP){
             //needs a heal.
             var state = this.getState();
             this.setState('healing', 'attack');
         }
-
     }
 }
 

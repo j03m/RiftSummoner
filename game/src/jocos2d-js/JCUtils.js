@@ -2,7 +2,7 @@ var jc = jc || {};
 if (jc.isBrowser){
     jc.teamSize = 7;
 }else{
-    jc.teamSize = 10;
+    jc.teamSize = 9;
 }
 
 

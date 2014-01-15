@@ -448,7 +448,7 @@ jc.TouchLayer = cc.Layer.extend({
         var seq = cc.Sequence.create(action, callbackAction);
         this.runAction(seq);
     },
-    placeArrowOn:function(item, direction){
+    placeArrowOn:function(item, direction, offset){
         if (direction == "down"){
             var pos = item.getPosition();
 
@@ -456,16 +456,27 @@ jc.TouchLayer = cc.Layer.extend({
                 this.removeChild(this.arrow, true)
             }
             this.arrow = jc.playEffectAtLocation("arrow", cc.p(0,0), jc.topMost, this);
-
+            this.centerThisPeer(this.arrow, item);
             //rotate
             if (direction == "down"){
                 this.arrow.setRotation(90);
             }
 
             var size = this.arrow.getContentSize();
+            var isize = item.getTextureRect();
+            if (direction == "down"){
+                pos.y += size.height + isize.height/2;
 
-            pos.y +=size.height/2;
-            pos.y+=50*jc.assetScaleFactor;
+            }
+
+            if (direction == "left"){
+                pos.x += size.width;
+            }
+
+            if (offset){
+                pos = cc.pAdd(pos, offset);
+            }
+
             this.arrow.setPosition(pos);
         }
     },

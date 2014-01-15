@@ -1,19 +1,14 @@
 var questLevels = {
-    "1":[{name:"goblinKnightNormal"}, {name:"goblinKnightNormal"}],
+    "1":[{name:"orc"}, {name:"orc"}],
     "2":[
-            {name:"goblinKnightNormal"},
-            {name:"goblinKnightNormal"},
-            {name:"goblinKnightNormal"},
             {name:"orc"},
-            {name:"orc"}
+            {name:"goblinKnightBlood"},
+            {name:"necromancer"},
     ],
     "3":[
-            {name:"orc"},
-            {name:"orc"},
-            {name:"orc"},
 
             {name:"dragonFire"},
-            {name:"dragonFire"},
+            {name:"ogre"},
             {name:"dragonFire"},
 
             {name:"orc"},
@@ -21,16 +16,11 @@ var questLevels = {
             {name:"orc"},
 
             {name:"dragonFire"},
-            {name:"dragonFire"},
+            {name:"ogre"},
             {name:"dragonFire"},
 
-
-            {name:"orc"},
-            {name:"orc"},
-            {name:"orc"},
-
             {name:"dragonFire"},
-            {name:"dragonFire"},
+            {name:"ogre"},
             {name:"dragonFire"}
     ]
 }
