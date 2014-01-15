@@ -472,6 +472,9 @@ cc.MouseDispatcher = cc.Class.extend({
                     } else {
                         if (handler.getDelegate().onMouseDown)
                             claimed = handler.getDelegate().onMouseDown(mouseObj);
+                        if (claimed){
+                            breakloop = true;
+                        }
                     }
                     break;
                 case cc.MOUSE_UP:

@@ -7,7 +7,7 @@
             <key>background.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{1136,640}}</string>
+                <string>{{2,738},{1136,640}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>battleButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{644,728},{258,113}}</string>
+                <string>{{759,1122},{258,113}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,20 +33,33 @@
             <key>battleButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{644,374},{267,122}}</string>
+                <string>{{809,738},{267,122}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{267,122}}</string>
                 <key>sourceSize</key>
                 <string>{267,122}</string>
             </dict>
+            <key>cardSummonedFrame.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{968,734}}</string>
+                <key>offset</key>
+                <string>{2,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{86,61},{968,734}}</string>
+                <key>sourceSize</key>
+                <string>{1136,852}</string>
+            </dict>
             <key>musicButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{913,281},{94,91}}</string>
+                <string>{{809,1330},{94,91}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +72,7 @@
             <key>musicButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{913,188},{94,91}}</string>
+                <string>{{644,1258},{94,91}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +85,7 @@
             <key>questButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{644,613},{258,113}}</string>
+                <string>{{759,1007},{258,113}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +98,7 @@
             <key>questButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{644,250},{267,122}}</string>
+                <string>{{540,1876},{267,122}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +111,7 @@
             <key>soundButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{913,95},{94,91}}</string>
+                <string>{{905,1237},{94,91}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +124,7 @@
             <key>soundButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{913,2},{94,91}}</string>
+                <string>{{809,1237},{94,91}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +137,7 @@
             <key>storeButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{904,498},{258,113}}</string>
+                <string>{{644,998},{258,113}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +150,7 @@
             <key>storeButtonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{644,126},{267,122}}</string>
+                <string>{{271,1876},{267,122}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,11 +163,11 @@
             <key>summonButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{644,498},{258,113}}</string>
+                <string>{{644,738},{258,113}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{258,113}}</string>
                 <key>sourceSize</key>
@@ -163,7 +176,7 @@
             <key>summonPressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{644,2},{267,122}}</string>
+                <string>{{2,1876},{267,122}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -183,7 +196,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:33607602251a8e8e2fd4cc7fea43afc0:ba1b28b181d8ca1c9dec3d31c4358268:7629672902ef72e6540dbd10c0f4d8e8$</string>
+            <string>$TexturePacker:SmartUpdate:5de47031786019b280fe064a5be9343d:6a70ff9a8900ccc30f30b3f7bd51ae7f:7629672902ef72e6540dbd10c0f4d8e8$</string>
             <key>textureFileName</key>
             <string>landing-iphone5.png</string>
         </dict>

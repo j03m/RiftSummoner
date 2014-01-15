@@ -71,7 +71,47 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         var size = this[elementName].getContentSize();
 		this.blackBox(size);
 	},
-	blackBox:function(inSize){
+	blackBoxScene:function(){
+        var inSize = jc.designSize;
+        var width=inSize.width*jc.assetScaleFactor;
+        var height=inSize.height*jc.assetScaleFactor;
+        var size = cc.size(width,height);
+        var verticalBarThickness= (this.winSize.width - size.width)/2;
+        var horizontalBarThickness = (this.winSize.height - size.height)/2;
+        this.leftBar = cc.DrawNode.create();
+        this.rightBar = cc.DrawNode.create();
+        this.topBar = cc.DrawNode.create();
+        this.bottomBar = cc.DrawNode.create();
+
+        this.getParent().addChild(this.leftBar);
+        this.getParent().addChild(this.rightBar);
+        this.getParent().addChild(this.topBar);
+        this.getParent().addChild(this.bottomBar);
+
+        var color = cc.c4f(0,0,0,1);
+        var border = cc.c4f(0, 0, 0 , 1);
+        this.leftBar.clear();
+        this.rightBar.clear();
+        this.topBar.clear();
+        this.topBar.clear();
+        this.leftBar.setPosition(cc.p(0,0));
+        var rbPos = cc.p(this.winSize.width - verticalBarThickness,0);
+        this.rightBar.setPosition(rbPos);
+        var tbPos = cc.p(0,this.winSize.height - horizontalBarThickness);
+        this.topBar.setPosition(tbPos);
+        this.bottomBar.setPosition(cc.p(0,0));
+
+        this.drawRect(this.leftBar, cc.rect(0,0,verticalBarThickness,this.winSize.height) , cc.black(), border,1);
+        this.drawRect(this.rightBar, cc.rect(rbPos.x,rbPos.y,verticalBarThickness,this.winSize.height) , cc.black(), border,1);
+        this.drawRect(this.topBar, cc.rect(tbPos.x,tbPos.y,this.winSize.width,horizontalBarThickness) , cc.black(), border,1);
+        this.drawRect(this.bottomBar, cc.rect(0,0,this.winSize.width,horizontalBarThickness) , cc.black(), border,1);
+
+        this.leftBar.setZOrder(jc.topMost);
+        this.rightBar.setZOrder(jc.topMost);
+        this.topBar.setZOrder(jc.topMost);
+        this.bottomBar.setZOrder(jc.topMost);
+    },
+    blackBox:function(inSize){
 		var width=inSize.width*jc.assetScaleFactor;
 		var height=inSize.height*jc.assetScaleFactor;
 		var size = cc.size(width,height);
@@ -110,6 +150,26 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
         this.topBar.setZOrder(jc.topMost);
         this.bottomBar.setZOrder(jc.topMost);
 		
+
+    },
+    flash:function(){
+        //layer color, full screen to white
+        //fade out
+
+        if (!this.whiteFlash){
+            this.whiteFlash = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
+            this.whiteFlash.setContentSize(this.winSize);
+            this.getParent().addChild(this.whiteFlash);
+            this.whiteFlash.setVisible(false);
+            this.whiteFlash.setPosition(cc.p(0,0));
+
+
+        }
+
+        this.whiteFlash.setVisible(true);
+        this.whiteFlash.setOpacity(255);
+
+        jc.fadeOut(this.whiteFlash, jc.defaultTransitionTime);
 
     },
     drawRect:function(poly, rect, fill, border, borderWidth){
@@ -339,6 +399,7 @@ jc.UiElementsLayer = jc.TouchLayer.extend({
                 fntSize = config.fontSize;
                 lblSize = cc.size(config.width, config.height);
             }
+
             window = cc.LabelTTF.create(config.text, config.fontName, fntSize, lblSize, config.alignment);
             if (config.color){
                 window.setColor(config.color);

@@ -37,7 +37,7 @@ jc.CompositeButton = cc.Sprite.extend({
         if ('mouse' in sys.capabilities) {
             cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 0);
         } else {
-            cc.registerTargetedDelegate(0,true, this);
+            cc.registerTargetedDelegate(0, true, this);
             //cc.Director.getInstance().getTouchDispatcher()._addTargetedDelegate(this, 0, true);
         }
     },

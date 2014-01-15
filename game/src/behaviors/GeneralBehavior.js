@@ -149,7 +149,16 @@ GeneralBehavior.prototype.is = function(iss,target){
 }
 
 GeneralBehavior.prototype.getClosestFriendToSupport = function(){
-    return this.lockOnClosest(this.is.bind(this, ['tank', 'range']), this.owner.homeTeam());
+    return this.lockOnClosest(this.needsAHealer, this.owner.homeTeam());
+}
+
+GeneralBehavior.prototype.needsAHealer = function(target){
+
+    if (target.gameObject.hp < target.gameObject.MaxHP && target.isAlive()){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 //loops through all homeTeam() sprites and checks to see if any of them are locked onto the target
