@@ -23,20 +23,19 @@ hotr.levelLogic.getPowers = function(){
     //todo implement me
     return ['poisonCloud', 'healing'];
 }
+
+hotr.randomCard = function randomCard(){
+    var allChars = hotr.getAllCards();
+
+    var val = Math.floor((Math.random()*allChars.length-1)+1);
+    var myname = allChars[val];
+    return myname;
+}
+
 hotr.makeRandomTeam =  function makeRandomTeam(){
-//    var characters = Math.floor((Math.random()*48-1)+1);
-//    if (characters>12){
-//        characters = 12;
-//    }
-
     var characters = jc.teamSize;
-    var allChars = [];
-    for(var entry in spriteDefs){
-        if (!spriteDefs[entry].parentOnly && spriteDefs[entry].notplayable!=1){
-            allChars.push(entry);
-        }
 
-    }
+    var allChars = hotr.getAllCards();
     var team = [];
     for(var i =0;i<characters;i++){
         var val = Math.floor((Math.random()*allChars.length-1)+1);
@@ -45,4 +44,14 @@ hotr.makeRandomTeam =  function makeRandomTeam(){
         team.push({name:myname, id:i+1});
     }
     return team;
+}
+
+hotr.getAllCards = function getAllCards(){
+    var allChars = [];
+    for(var entry in spriteDefs){
+        if (!spriteDefs[entry].parentOnly && spriteDefs[entry].notplayable!=1){
+            allChars.push(entry);
+        }
+    }
+    return allChars;
 }

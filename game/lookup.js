@@ -6,10 +6,13 @@ var map  = fs.readFileSync('/Users/jmordetsky/summoner/game/sourcemap');
 var smc = new sourceMap.SourceMapConsumer(JSON.parse(map));
 console.log(smc.sources);
 
-console.log(smc.originalPositionFor({
-    line: 366,
-    column: 500
-}));
+for(var i=0;i<1000;i++){
+    console.log(smc.originalPositionFor({
+        line: 273,
+        column: i
+    }));
+
+}
 
 
 

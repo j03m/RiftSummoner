@@ -115,26 +115,6 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         }.bind(this));
         this.runAction(this.currentScaleTo);
     },
-    flash:function(){
-        //layer color, full screen to white
-        //fade out
-
-        if (!this.whiteFlash){
-            this.whiteFlash = cc.LayerColor.create(cc.c4(255, 255, 255, 255));
-            this.whiteFlash.setContentSize(this.winSize);
-            this.getParent().addChild(this.whiteFlash);
-            this.whiteFlash.setVisible(false);
-            this.whiteFlash.setPosition(cc.p(0,0));
-
-
-        }
-
-        this.whiteFlash.setVisible(true);
-        this.whiteFlash.setOpacity(255);
-
-        jc.fadeOut(this.whiteFlash, jc.defaultTransitionTime);
-
-    },
     shake:function(){
         if (!this.shaking){
             var rot1 = cc.RotateBy.create(0.04,4);
@@ -207,7 +187,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         return this.getScaleValue(this.worldSize.width/16, this.worldSize.height/16);
     },
     getScaleFloor:function(){
-        return this.getScaleValue(this.worldSize.width *0.9, this.worldSize.height*0.9);
+        return this.getScaleValue(this.worldSize.width *0.7, this.worldSize.height*0.7);
     },
     getScaleWorld:function(){
         return this.getScaleValue(this.worldSize.width, this.worldSize.height);
@@ -258,6 +238,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
     handlePinchZoom:function(type, touches){
         jc.log(['MultiTouch'], 'type:' +  type);
         if (type == jc.touchBegan){
+            this.inDrag = false;
             this.initialTouch = this.screenToWorld(touches[0]);
         }
 
@@ -369,8 +350,8 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
             jc.log(['DragTaper'],"adj-x:" + this.adjustX + " adj-y:" + this.adjustY);
             this.capDrag(cc.p(this.adjustX, this.adjustY));
             this.adjustPosition(this.adjustX, this.adjustY);
-            this.adjustX*=0.95;
-            this.adjustY*=0.95;
+            this.adjustX*=0.85;
+            this.adjustY*=0.65;
             if (Math.abs(this.adjustX) < 0.25){
                 this.adjustX = 0;
             }
@@ -406,9 +387,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
             newscale = worldScale.x;
         }
         jc.log(['MultiTouchDetails'], 'scale post cap:' + scale );
-        if (newscale!=scale){
-//            this.panToWorldPoint(this.pinchMidPoint, cc.p(newscale, newscale), jc.defaultTransitionTime*2, function(){
-//            }.bind(this));
+        if (newscale!=scale ){
             this.setScale(newscale);
 
             //now we need to adjust positions in the event that scale has taken us over.
@@ -433,7 +412,10 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
             }
             this.setPosition(pos);
 
+
+
         }
+
 
     },
     pinchZoomWithMovedTouch: function (movedTouch)

@@ -91,21 +91,21 @@ hotr.blobOperations.getTeam = function(){
         hotr.playerBlob.teamformation = [];
     }
 
-    var formation = hotr.playerBlob.teamformation;
-    var team = [];
-    jc.log(['bloboperations'], 'team loop');
-
-    for (var i=0;i<formation.length; i++){
-        if (formation[i]!=undefined){
-
-            if (characterMap[formation[i]]){       //no invalid ids
-                team[i]=characterMap[formation[i]];
-            }
-
-        }
-    }
-    jc.log(['bloboperations'], 'return');
-    return team;
+//    var formation = hotr.playerBlob.teamformation;
+//    var team = [];
+//    jc.log(['bloboperations'], 'team loop');
+//
+//    for (var i=0;i<formation.length; i++){
+//        if (formation[i]!=undefined){
+//
+//            if (characterMap[formation[i]]){       //no invalid ids
+//                team[i]=characterMap[formation[i]];
+//            }
+//
+//        }
+//    }
+//    jc.log(['bloboperations'], 'return');
+    return hotr.playerBlob.myguys;
 }
 
 hotr.blobOperations.createNewPlayer = function(callback){

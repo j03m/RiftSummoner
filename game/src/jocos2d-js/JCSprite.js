@@ -215,6 +215,14 @@ jc.Sprite = cc.Sprite.extend({
         }
 
     },
+    removeAnimation:function(name){
+        if (this.effectAnimations && this.effectAnimations[name]){
+            this.removeChild(this.effectAnimations[name].sprite, false);
+            this.effectAnimations[name].playing = false;
+        }
+
+
+    },
     getSeekRadius: function(){
         return this.gameObject.seekRadius;
     },

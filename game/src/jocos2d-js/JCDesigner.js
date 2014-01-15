@@ -3,6 +3,7 @@ jc.Designer = jc.UiElementsLayer.extend({
     init: function() {
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(landingPlist);
             cc.SpriteFrameCache.getInstance().addSpriteFrames(touchUiPlist);
             var guideSprite = new cc.Sprite();
             guideSprite.initWithFile(guide);
@@ -19,11 +20,11 @@ jc.Designer = jc.UiElementsLayer.extend({
     },
     targetTouchHandler:function(type, touch, sprites) {
         var sorted = _.sortBy(sprites, function(sprite){
-           return sprite.getZOrder();
+           return sprite.getZOrder() + sprite.getParent().getZOrder();
         });
         var theSprite = sorted[sprites.length-1]
         if (type == jc.touchBegan){
-            jc.log(['console'], theSprite.name);
+            jc.log(['designerout'], theSprite.name);
             this.moving = theSprite;
             this.startPos = theSprite.getPosition();
             this.lastTouch = touch;
@@ -65,7 +66,7 @@ jc.Designer = jc.UiElementsLayer.extend({
             }
         }
     },
-    windowConfig:  {
+    windowConfig: {
         "mainFrame": {
             "type": "sprite",
             "applyAdjustments": true,
@@ -142,11 +143,58 @@ jc.Designer = jc.UiElementsLayer.extend({
                         "x": 600,
                         "y": 241
                     }
+                },
+                "cardSummonFrame": {
+                    "type": "sprite",
+                    "sprite": "cardSummonedFrame.png",
+                    "z": 0,
+                    "pos": {
+                        "x": 1032,
+                        "y": 602
+                    }
+                },
+                "infoDialog": {
+                    "type": "sprite",
+                    "sprite": "titleDescription.png",
+                    "kids": {
+                        "infoTitle": {
+                            "type": "label",
+                            "text": "TITLE",
+                            "width": 400,
+                            "height": 80,
+                            "alignment": 0,
+                            "fontSize": 40,
+                            "fontName": "GODOFWAR",
+                            "z": 4,
+                            "pos": {
+                                "x": 526,
+                                "y": 604
+                            }
+                        },
+                        "infoText": {
+                            "type": "label",
+                            "text": "DESC",
+                            "width": 600,
+                            "height": 400,
+                            "alignment": 0,
+                            "fontSize": 40,
+                            "fontName": "GODOFWAR",
+                            "z": 4,
+                            "pos": {
+                                "x": 620,
+                                "y": 290
+                            }
+                        }
+                    },
+                    "z": 0,
+                    "pos": {
+                        "x": 1458,
+                        "y": 602
+                    }
                 }
             }
         }
     }
-
 
 });
 

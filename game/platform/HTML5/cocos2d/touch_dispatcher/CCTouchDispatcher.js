@@ -392,8 +392,12 @@ cc.TouchDispatcher = cc.Class.extend(/** @lends cc.TouchDispatcher# */ {
         //
         // process standard handlers 2nd
         //
+        var breakloop = false;
         if (standardHandlersCount > 0) {
             for (i = 0; i < this._standardHandlers.length; i++) {
+                if(breakloop){
+                    break;
+                }
                 handler = this._standardHandlers[i];
 
                 if (!handler) {
@@ -403,7 +407,12 @@ cc.TouchDispatcher = cc.Class.extend(/** @lends cc.TouchDispatcher# */ {
                 switch (helper.type) {
                     case cc.TOUCH_BEGAN:
                         if (mutableTouches.length > 0) {
-                            if (handler.getDelegate().onTouchesBegan) handler.getDelegate().onTouchesBegan(mutableTouches, event);
+                            if (handler.getDelegate().onTouchesBegan) {
+                                var val = handler.getDelegate().onTouchesBegan(mutableTouches, event);
+                                if (val){ //handled,
+                                    breakloop = true;
+                                }
+                            }
                         }
                         break;
                     case cc.TOUCH_MOVED:

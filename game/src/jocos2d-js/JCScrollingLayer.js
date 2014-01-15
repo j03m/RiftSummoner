@@ -59,13 +59,18 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
 		}
 	},
     disableCell:function(index){
-        var darkgray = new cc.Color3B(100, 100, 100);;
-        this.sprites[index].oldSetColor(darkgray);
-        if (this.sprites[index].pic){
-            this.sprites[index].pic.oldSetColor(darkgray);
-        }
+        if (jc.isBrowser){
+            jc.shade(this.sprites[index].pic);
+        }else{
+            var darkgray = new cc.Color3B(100, 100, 100);;
+            this.sprites[index].setColor(darkgray);
+            if (this.sprites[index].pic){
+                this.sprites[index].pic.setColor(darkgray);
+            }
 
+        }
         this.sprites[index].disabled = true;
+
     },
     setIndex: function(val){
         jc.log(['scroller'],"set on: "+val);
@@ -267,7 +272,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
 
             this.setPosition(cc.pAdd(this.getPosition(), this.scrollDistance));
             if (!this.isMoving){
-                var SCROLL_DEACCEL_RATE = 0.50;
+                var SCROLL_DEACCEL_RATE = 0.75;
                 this.scrollDistance = cc.pMult(this.scrollDistance, SCROLL_DEACCEL_RATE);
                 if (Math.abs(scrollDistance)<=1){
                     this.doUpdate = false;
