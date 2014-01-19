@@ -201,7 +201,10 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
     for (var i =0; i< team.length; i++){
         var sprite = team[i];
         if (sprite.isAlive() && this.canTarget(sprite)){
-            var vector = this.getVectorTo(sprite.getBasePosition(), this.owner.getBasePosition());
+            var pos = sprite.getBasePosition();
+            var ownerPos = this.owner.getBasePosition();
+            var vector = this.getVectorTo(pos, ownerPos);
+            var isAhead = jc.isAheadOfMe(this.owner, sprite);
             if (vector.distance < minDistance){
                 if (checkFunc != undefined){
                     if (checkFunc(sprite)){
@@ -649,46 +652,29 @@ GeneralBehavior.prototype.deadForGood = function(){
 GeneralBehavior.prototype.handleState = function(dt){
     this.handleDeath();
     var state= this.getState();
+
+//    if (this.owner.layer.amISelected(this.owner)){
+//        if (!this.forceLocked && state.brain != 'followUserCommand'){
+//            return;
+//        }
+//    }
+
     switch(state.brain){
         case 'idle':this.handleIdle(dt);
             break;
-//        case 'move':this.handleMove(dt);
-//            break;
         case 'fighting':this.handleFight(dt);
             break;
         case 'damage':this.handleDamage(dt);
             break;
-//        case 'followUserCommand':this.followUserCommand(dt);
-//            break;
     }
     this.afterEffects();
 }
 
-GeneralBehavior.prototype.handleDamage = function(dt){
-
-//    if (this.damager && this.damager.isAlive() && this.damager != this.locked){
-//        this.resume();
-//    }else{
-//        this.resume();
-//    }
-
-
-    //otherwise do nothing and recheck
-}
 
 GeneralBehavior.prototype.handleFight = function(dt){
 
     //is my target alive?
     var state= this.getState();
-    if (!this.locked){
-        this.setState('idle', state.anim);
-        return;
-    }
-
-    if (!this.locked.isAlive()){
-        this.setState('idle', state.anim);
-        return;
-    }
 
     //get the action delay for attacking
     var actionDelay = this.owner.gameObject.actionDelays['attack'];
@@ -711,7 +697,17 @@ GeneralBehavior.prototype.handleFight = function(dt){
                 return;
             }
         }.bind(this));
-        this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
+
+        if (!this.locked){
+            this.setState('idle', state.anim);
+            return;
+        }else if (!this.locked.isAlive()){
+            this.setState('idle', state.anim);
+            return;
+        }else{
+            this.owner.scheduleOnce(this.hitLogic.bind(this), damageDelay);
+        }
+
         this.lastAttack = 0;
     }else{
         this.lastAttack+=dt;
@@ -939,19 +935,25 @@ GeneralBehavior.prototype.afterEffects = function(){
 };
 
 GeneralBehavior.prototype.followCommand = function(position){
-    this.followPoint = position;
-    this.setState('followUserCommand', 'move');
+    if (this.owner.isAlive()){
+        this.followPoint = position;
+        this.setState('followUserCommand', 'move');
+    }
 }
 
 GeneralBehavior.prototype.attackCommand = function(target){
-    this.locked = target;
-    this.forceLocked = true;
-    this.setState('move', 'move');
+    if (this.owner.isAlive()){
+        this.locked = target;
+        this.forceLocked = true;
+        this.setState('move', 'move');
+    }
 }
 
 GeneralBehavior.prototype.supportCommand = function(target){
-    this.support = target;
-    this.setState('move', 'move');
+    if (this.owner.isAlive()){
+        this.support = target;
+        this.setState('move', 'move');
+    }
 }
 
 

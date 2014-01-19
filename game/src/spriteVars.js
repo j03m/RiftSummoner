@@ -86,6 +86,16 @@ var spriteDefs = {
 		"elementType": "void",
 		"unitType": 1,
 		"special": "None",
+		"damageMods": {
+			"splashDamage": {
+				"damage": 50,
+				"radius": 200
+			},
+			"vampireDistro": {
+				"heal": 5,
+				"damage": 10
+			}
+		},
 		"gameProperties": {
 			"MaxHP": 700,
 			"speed": 320,
@@ -161,11 +171,11 @@ var spriteDefs = {
 		"creep": true,
 		"number": 5,
 		"gameProperties": {
-			"MaxHP": 1300,
+			"MaxHP": 700,
 			"speed": 100,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 25,
+			"damage": 15,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -186,7 +196,7 @@ var spriteDefs = {
 		"creep": true,
 		"number": 5,
 		"gameProperties": {
-			"MaxHP": 700,
+			"MaxHP": 400,
 			"speed": 100,
 			"movementType": 1,
 			"targets": 1,
@@ -214,7 +224,7 @@ var spriteDefs = {
 		"creep": true,
 		"number": 5,
 		"gameProperties": {
-			"MaxHP": 700,
+			"MaxHP": 400,
 			"speed": 100,
 			"damage": 25,
 			"movementType": 1,
@@ -248,7 +258,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 700,
+			"MaxHP": 300,
 			"speed": 100,
 			"damage": 35,
 			"movementType": 1,
@@ -282,7 +292,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 700,
+			"MaxHP": 500,
 			"speed": 100,
 			"damage": 25,
 			"movementType": 1,
@@ -751,7 +761,7 @@ var spriteDefs = {
 	"gargoyleVoid": {
 		"name": "gargoyleVoid",
 		"formalName": "Void Demon",
-		"details": "An winged creature embued with the void. It possesses magic that it uses to destroy other air targets.",
+		"details": "An winged creature embued with the void. It possesses magic that it uses to destroy other air or ground targets.",
 		"elementType": "void",
 		"special": "None",
 		"gameProperties": {
@@ -955,7 +965,7 @@ var spriteDefs = {
 	"goblinKnightFire": {
 		"name": "goblinKnightFire",
 		"formalName": "Goblin Knight - Fire",
-		"details": "Goblin Knights are fast and do reasonable damage. These fire goblins live near magma in deep caves are resist immune to fire based damage.",
+		"details": "Goblin Knights are fast and do reasonable damage. These fire goblins live near magma in deep caves and are immune to fire based damage.",
 		"elementType": "fire",
 		"creep": true,
 		"number": 7,
@@ -990,11 +1000,11 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
-			"MaxHP": 250,
+			"MaxHP": 100,
 			"speed": 140,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 25,
+			"damage": 15,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -1112,7 +1122,7 @@ var spriteDefs = {
 			"vampireRadius": {
 				"damage": 10,
 				"radius": 200,
-				"interval": 0.25
+				"interval": 1.25
 			}
 		},
 		"gameProperties": {
@@ -1281,7 +1291,7 @@ var spriteDefs = {
 				"type": 0
 			}
 		},
-		"behavior": "tank"
+		"behavior": "nexus"
 	},
 	"ogre": {
 		"name": "ogre",
@@ -1467,7 +1477,7 @@ var spriteDefs = {
 			"MaxHP": 10,
 			"movementType": 1,
 			"targets": 1,
-			"resistsRange": 100,
+			"resistsRange": 80,
 			"speed": 400,
 			"damage": 25,
 			"actionDelays": {

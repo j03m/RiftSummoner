@@ -23,7 +23,7 @@ var tracers = {
     'camera':0,
     'console':0,
     'zerverpipe':0,
-    'resource':0,
+    'resource':1,
     'ui':0,
     'scroller':0,
     'utilEffects':0,
@@ -45,7 +45,7 @@ var tracers = {
     'DragDetails':0,
     'TouchClaims':0,
     'DragTaper':0,
-    'ArenaSelection':1
+    'ArenaSelection':0
 };
 
 jc.log = function(categories, msg){
