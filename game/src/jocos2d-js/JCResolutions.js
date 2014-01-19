@@ -8,20 +8,20 @@ jc.resolutions = {};
 
 jc.resolutions.iphone = cc.size(480,320);
 jc.resolutions.iphone.scale =   0.234375;
-jc.resolutions.iphone.charScale =   0.1171875;
+jc.resolutions.iphone.charScale =   0.55;
 jc.resolutions.iphone.adjusty = -20;
 jc.resolutions.iphone.adjustx = 0;
 
 jc.resolutions.iphone5 = cc.size(1136,640);
 jc.resolutions.iphone5.scale = 0.554688;
-jc.resolutions.iphone5.charScale =   0.277344;
+jc.resolutions.iphone5.charScale =   0.75;
 jc.resolutions.iphone5.adjusty = -110;
 jc.resolutions.iphone5.adjustx = 0;
 
 
 jc.resolutions.iphone4 = cc.size(960,640);
 jc.resolutions.iphone4.scale = 0.46875;
-jc.resolutions.iphone4.charScale = 0.234375;
+jc.resolutions.iphone4.charScale = 0.65;
 jc.resolutions.iphone4.adjusty = -50;
 jc.resolutions.iphone4.adjustx = 0;
 
@@ -57,6 +57,7 @@ jc.bestAssetDirectory = function(){
     }else{
         jc.actualSize = cc.Director.getInstance().getWinSize();
         jc.screenSize = jc.actualSize;
+        jc.log(['resource'], "Size:" + JSON.stringify(jc.screenSize));
 
     }
 
@@ -82,11 +83,8 @@ jc.bestAssetDirectory = function(){
     jc.log(['resource'], "selected: " + maxSet + " for assets dir.");
     jc.assetCategory = maxSet;
     jc.assetScaleFactor = scaleFactor;
-    jc.characterScaleFactor =  scaleFactor
+    jc.characterScaleFactor =  charScaleFactor;
     jc.assetCategoryData = jc.resolutions[maxSet];
-
-
-
 
 };
 

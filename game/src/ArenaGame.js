@@ -13,6 +13,7 @@ var ArenaGame = jc.WorldLayer.extend({
     teams:{},
     teamAPowers:undefined,
     teamBPowers:undefined,
+    teamBPowers:undefined,
     presentationSpeed:0.2,
     timeLimit:45,
     init: function() {
@@ -29,30 +30,30 @@ var ArenaGame = jc.WorldLayer.extend({
             this.charSelect = "characterSelection";
             this.enemySelect = "enemySelection";
             this.allySelect = "allySelection";
-            this.powerBarOpenPos = cc.p(400* jc.assetScaleFactor, 187*jc.assetScaleFactor);
-            this.powerBarClosePos = cc.p(-255* jc.assetScaleFactor, 187*jc.assetScaleFactor);
-            this.powerTilePosition = cc.p(159*jc.assetScaleFactor, 100*jc.assetScaleFactor);
-            this.powerTileSpacing = 200 * jc.assetScaleFactor;
+            this.powerBarOpenPos = cc.p(400* jc.characterScaleFactor, 187*jc.characterScaleFactor);
+            this.powerBarClosePos = cc.p(-255* jc.characterScaleFactor, 187*jc.characterScaleFactor);
+            this.powerTilePosition = cc.p(159*jc.characterScaleFactor, 100*jc.characterScaleFactor);
+            this.powerTileSpacing = 200 * jc.characterScaleFactor;
 
-            this.squadBarOpenPos = cc.p(1700* jc.assetScaleFactor, 187*jc.assetScaleFactor);
-            this.squadBarClosePos = cc.p(2310 * jc.assetScaleFactor, 187*jc.assetScaleFactor);
-            this.squadTilePosition = cc.p(250*jc.assetScaleFactor, 85*jc.assetScaleFactor);
-            this.squadTileSpacing = 200 * jc.assetScaleFactor;
+            this.squadBarOpenPos = cc.p(1700* jc.characterScaleFactor, 187*jc.characterScaleFactor);
+            this.squadBarClosePos = cc.p(2310 * jc.characterScaleFactor, 187*jc.characterScaleFactor);
+            this.squadTilePosition = cc.p(250*jc.characterScaleFactor, 85*jc.characterScaleFactor);
+            this.squadTileSpacing = 200 * jc.characterScaleFactor;
 
-            this.tutorialPoint1 = cc.p(600*jc.assetScaleFactor, 600*jc.assetScaleFactor);
-            this.tutorialPoint2 = cc.p(800*jc.assetScaleFactor, 800*jc.assetScaleFactor);
+            this.tutorialPoint1 = cc.p(600*jc.characterScaleFactor, 600*jc.characterScaleFactor);
+            this.tutorialPoint2 = cc.p(800*jc.characterScaleFactor, 800*jc.characterScaleFactor);
 
-            this.tutorial2Point1 = cc.p(300* jc.assetScaleFactor, 180*jc.assetScaleFactor);
-            this.tutorial2Point2 = cc.p(350* jc.assetScaleFactor, 425*jc.assetScaleFactor);
-            this.tutorial2Point3 = cc.p((this.winSize.width/2)+300*jc.assetScaleFactor,this.winSize.height/2);
+            this.tutorial2Point1 = cc.p(300* jc.characterScaleFactor, 180*jc.characterScaleFactor);
+            this.tutorial2Point2 = cc.p(350* jc.characterScaleFactor, 425*jc.characterScaleFactor);
+            this.tutorial2Point3 = cc.p((this.winSize.width/2)+300*jc.characterScaleFactor,this.winSize.height/2);
 
-            this.nexusAPoint = cc.p(550*jc.assetScaleFactor, 1150*jc.assetScaleFactor);
-            this.nexusBPoint = cc.p(3525*jc.assetScaleFactor, 1150*jc.assetScaleFactor);
+            this.nexusAPoint = cc.p(550*jc.characterScaleFactor, 853*jc.characterScaleFactor);
+            this.nexusBPoint = cc.p(3878.3535109*jc.characterScaleFactor, 853*jc.characterScaleFactor);
 
-            var adjustX1 = 600 *jc.assetScaleFactor;
-            var adjustX2 = 400 *jc.assetScaleFactor;
-            var adjustY = 500 *jc.assetScaleFactor;
-            var adjustY1 = 75*jc.assetScaleFactor;
+            var adjustX1 = 600 *jc.characterScaleFactor;
+            var adjustX2 = 400 *jc.characterScaleFactor;
+            var adjustY = 500 *jc.characterScaleFactor;
+            var adjustY1 = 75*jc.characterScaleFactor;
             this.spawnA1 = cc.p(this.nexusAPoint.x + adjustX1, this.nexusAPoint.y + adjustY1);
             this.spawnA2 = cc.p(this.nexusAPoint.x + adjustX2, this.nexusAPoint.y + adjustY);
             this.spawnA3 = cc.p(this.nexusAPoint.x + adjustX2, this.nexusAPoint.y - adjustY);
@@ -61,12 +62,13 @@ var ArenaGame = jc.WorldLayer.extend({
             this.spawnB2 = cc.p(this.nexusBPoint.x - adjustX2, this.nexusBPoint.y + adjustY);
             this.spawnB3 = cc.p(this.nexusBPoint.x - adjustX2, this.nexusBPoint.y - adjustY);
 
-            this.startViewPoint = cc.p(1500*jc.assetScaleFactor,1000*jc.assetScaleFactor);
+            this.startViewPoint = cc.p(1500*jc.characterScaleFactor,1000*jc.characterScaleFactor);
 
+            this.playableRect = cc.rect(0,0, this.worldSize.width, this.worldSize.height - 100 * jc.characterScaleFactor);
 
             this.spawnBPoint = this.nexusBPoint;
-            this.enemyStartPos = cc.p((this.worldSize.width/2)+ 1000 * jc.assetScaleFactor, (this.worldSize.height/2) + 500 *jc.assetScaleFactor);
-            this.enemyStartPosTutorials = cc.p((this.worldSize.width/2)+ 1000 * jc.assetScaleFactor, (this.worldSize.height/2) - 300 *jc.assetScaleFactor);
+            this.enemyStartPos = cc.p((this.worldSize.width/2)+ 1000 * jc.characterScaleFactor, (this.worldSize.height/2) + 500 *jc.characterScaleFactor);
+            this.enemyStartPosTutorials = cc.p((this.worldSize.width/2)+ 1000 * jc.characterScaleFactor, (this.worldSize.height/2) - 300 *jc.characterScaleFactor);
 
             this.nexusMsg = "You cannot summon so far from your nexus gem. Try touching closer to it.";
 
@@ -126,7 +128,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
             var tableDim = this.tableView.getContentSize();
             var y = tableDim.height/2;
-            y += 25 * jc.assetScaleFactor;
+            y += 25 * jc.characterScaleFactor;
             this.tableView.setPosition(cc.p(this.winSize.width/2, y));
             this.reorderChild(this.tableView, jc.topMost);
             this.tableView.hackOn();
@@ -522,8 +524,8 @@ var ArenaGame = jc.WorldLayer.extend({
         jc.log(['Arena'], 'schedule');
         this.schedule(function(dt){
             jc.log(['Arena'], 'updating...');
-            this.doUpdate(0.10);
-        }, 0.10);
+            this.doUpdate(0.20);
+        }, 0.20);
     },
     placeEnemyTeam:function(pos){
         if (!pos){
@@ -810,6 +812,13 @@ var ArenaGame = jc.WorldLayer.extend({
         this.setSquadBarTouched();
         this.slide(this.squadBar, this.squadBarClosePos, this.squadBarOpenPos, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), "after", this.setSquadBarNormal.bind(this));
     },
+    amISelected:function(sprite){
+        if ((this.selectedSprite && this.selectedSprite == sprite) || (this.selectedCreeps && this.selectedCreeps.indexOf(sprite)!=-1)){
+            return true;
+        }else{
+            return false;
+        }
+    },
     update:function(dt){
         for (var i =0; i<this.sprites.length;i++){
             this.sprites[i].behavior.handleMove(dt);
@@ -894,9 +903,9 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite2.homeTeam = this.getTeam.bind(this, 'b');
         sprite2.team = 'b';
 
-        for(var i =0; i< 3;i++){
-            this.summonEnemyHero();
-        }
+
+        this.summonEnemyHero();
+
 
     },
     summonEnemyHero:function(){
@@ -985,7 +994,6 @@ var ArenaGame = jc.WorldLayer.extend({
                 if (shouldThink){
                     sprites[i].think(dt);
                 }
-
 
                 if (compareMaxX > maxX){
                     maxX = compareMaxX;

@@ -2,8 +2,6 @@ var hotr = hotr || {};
 hotr.levelLogic = {};
 
 
-
-
 hotr.levelLogic.getTeamForLevel = function(level){
     var baddies = questLevels[level];
     if (baddies){
@@ -11,8 +9,6 @@ hotr.levelLogic.getTeamForLevel = function(level){
     }else{
         return hotr.makeRandomTeam();
     }
-
-
 }
 
 hotr.levelLogic.getFormationForLevel = function(level){
@@ -26,7 +22,7 @@ hotr.levelLogic.getPowers = function(){
 
 hotr.randomCard = function randomCard(){
     var allChars = hotr.getAllCards();
-
+    Math.seedrandom(Date.now());
     var val = Math.floor((Math.random()*allChars.length-1)+1);
     var myname = allChars[val];
     return myname;
@@ -34,7 +30,7 @@ hotr.randomCard = function randomCard(){
 
 hotr.makeRandomTeam =  function makeRandomTeam(){
     var characters = jc.teamSize;
-
+    Math.seedrandom(Date.now());
     var allChars = hotr.getAllCards();
     var team = [];
     for(var i =0;i<characters;i++){

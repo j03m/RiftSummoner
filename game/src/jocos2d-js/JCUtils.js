@@ -73,6 +73,27 @@ jc.scaleCard = function(card){
     card.setScale(card.getScaleX()*jc.cardScale, card.getScaleY()*jc.cardScale);
 }
 
+jc.isAheadOfMe = function(seeking, target){
+    var pos = seeking.getBasePosition();
+    var targetPos = target.getBasePosition();
+    if (seeking.team == 'a'){
+        if (pos.x <= targetPos.x ){
+            return true;
+        }else{
+            return false;
+        }
+    }else{
+        if (pos.x >= targetPos.x ){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+
+}
+
 jc.makeStats = function(name){
     if (name){
         var def = spriteDefs[name];
@@ -712,6 +733,9 @@ jc.elMinor = 2048;
 jc.insideCircle = function(point, center){
     return ((point.x - center.x)^2 + (point.y - center.y)^2 < jc.elMajor^2);
 }
+
+
+
 jc.insideEllipse = function(point, center){
     //http://math.stackexchange.com/questions/76457/check-if-a-point-is-within-an-ellipse
     var major = jc.elMajor * jc.assetScaleFactor;

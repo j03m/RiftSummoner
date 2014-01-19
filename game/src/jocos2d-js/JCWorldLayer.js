@@ -418,6 +418,9 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
 
 
     },
+    insidePlayableRect:function(point){
+        return cc.rectContainsPoint(this.playableRect, point);
+    },
     pinchZoomWithMovedTouch: function (movedTouch)
     {
         var minDistSqr = Number.MAX_VALUE;

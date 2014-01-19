@@ -7,15 +7,15 @@
             <key>nexus.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{98,114}}</string>
+                <string>{{2,2},{132,152}}</string>
                 <key>offset</key>
-                <string>{1,-85}</string>
+                <string>{1,-116}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{94,170},{98,114}}</string>
+                <string>{{127,232},{132,152}}</string>
                 <key>sourceSize</key>
-                <string>{284,284}</string>
+                <string>{384,384}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -25,9 +25,9 @@
             <key>realTextureFileName</key>
             <string>nexusSheet-iphone5.png</string>
             <key>size</key>
-            <string>{128,128}</string>
+            <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b1f02b51a4e6f0def538ffc427f75c96:9eb0ffcc7f5d9f77e661212aaffa9f46:70b072909082d0b2e098113fbcc525a2$</string>
+            <string>$TexturePacker:SmartUpdate:977cb95edeb465bc292b053c29ed9c75:9eb0ffcc7f5d9f77e661212aaffa9f46:70b072909082d0b2e098113fbcc525a2$</string>
             <key>textureFileName</key>
             <string>nexusSheet-iphone5.png</string>
         </dict>
