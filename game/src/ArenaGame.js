@@ -454,50 +454,6 @@ var ArenaGame = jc.WorldLayer.extend({
 
         this.setUp();
     },
-    initialSetupAction:function(touch){
-
-        this.startPos = this.screenToWorld(touch);
-        var center = this.worldMidPoint;
-        if (jc.insideCircle(this.startPos, center) && this.startPos.x < this.worldMidPoint.x){
-            //play animation
-
-            if (this.placementTouches == 1){
-                jc.log(['Arena'], 'placement a!');
-                var placement = this.placePlayerTeam('a');
-                if (!placement){
-                    jc.log(['Arena'], 'failed placement a!, placing b');
-                    this.placePlayerTeam('b');
-                }
-            }
-
-            if (this.placementTouches == 2){
-                jc.log(['Arena'], 'pre placement b');
-                this.placePlayerTeam('b');
-                jc.log(['Arena'], 'post placement b');
-                if (this.arrow){
-                    this.removeChild(this.arrow, true);
-                }
-                jc.log(['Arena'], 'post placement b');
-            }
-
-
-            if (this.placementTouches==2 || this.teams['a'].length<=9){
-                //place enemy team
-                hotr.blobOperations.saveBlob();
-                this.nextTouchAction = undefined;
-                jc.log(['Arena'], 'before final actions!');
-                this.finalActions();
-            }else{
-                jc.log(['Arena'], 'waiting for next touch!');
-                this.placementTouches++;
-                this.nextTouchDo(this.initialSetupAction,true);
-            }
-
-        }else{
-                jc.log(['Arena'], 'invalid location msg');
-                this.floatMsg(this.nexusMsg);
-        }
-    },
     finalActions:function(){
         function goodSprite(sprite){
             return sprite!=undefined;
@@ -526,92 +482,6 @@ var ArenaGame = jc.WorldLayer.extend({
             jc.log(['Arena'], 'updating...');
             this.doUpdate(0.20);
         }, 0.20);
-    },
-    placeEnemyTeam:function(pos){
-        if (!pos){
-            this.startPos = cc.p(this.enemyStartPos.x, this.enemyStartPos.y);
-        }else{
-            this.startPos = pos;
-        }
-
-        this.placeTeamPosition(this.teams['b'], this.squadNumbers);
-        this.startPos.y-=800*jc.characterScaleFactor;
-        this.placeTeamPosition(this.teams['b'], this.teamSize);
-    },
-    placePlayerTeam:function(squad){
-        var touches = 0;
-        if (squad == 'a'){
-            touches = 1;
-        }else{
-            touches = 2;
-        }
-
-        var nodePos = this.convertToItemPosition(this.startPos);
-        hotr.blobOperations.setSquadLocations(squad, this.startPos);
-        jc.playEffectAtLocation("movement", nodePos, jc.shadowZOrder,this);
-        return this.placeTeamPosition(this.teams['a'], touches * this.squadNumbers);
-    },
-    placeTeamPosition:function(team, squadSize){
-        var placement = false;
-        for(var i=squadSize-this.squadNumbers; i< squadSize; i++){
-            var sprite = team[i];
-            if (sprite){
-                placement = true;
-                var point = cc.p(this.startPos.x, this.startPos.y);
-                var pos = i;
-                if (i>this.squadNumbers){
-                    pos -= this.squadNumbers;
-                }
-                var col = (pos)% 4;
-                var row = Math.floor(pos/4);
-                var valueX = 200 * jc.characterScaleFactor;
-                var valueY = -175* jc.characterScaleFactor;
-                if (team[i].isFlippedX()){
-                    valueX *=-1;
-                }
-                var colAdjust = col * valueX;
-                var rowAdjust = row * valueY;
-                point.x+=colAdjust;
-                point.y+=rowAdjust;
-                var worldPos = point;
-                var nodePos = this.convertToItemPosition(worldPos);
-                sprite.setBasePosition(nodePos);
-                sprite.ready(true);
-                jc.playEffectOnTarget("teleport", sprite, this);
-            }
-
-        }
-        return placement;
-    },
-    getSquadMovePositions:function(whichSquad, location){
-        var returnMe = [];
-        var squadSize = 0;
-        var team = this.originalPositions['a'];
-        if (whichSquad == 'a'){
-            squadSize = this.squadNumbers;
-        }else{
-            squadSize = this.teamSize;
-        }
-
-        for(var i=squadSize-this.squadNumbers; i< squadSize; i++){
-            if (team[i]){
-                var point = cc.p(location.x, location.y);
-                var pos = i;
-                if (i>this.squadNumbers){
-                    pos -= this.squadNumbers;
-                }
-                var col = (pos)% 4;
-                var row = Math.floor(pos/4);
-                var valueX = 200 * jc.characterScaleFactor;
-                var valueY = -175* jc.characterScaleFactor;
-                var colAdjust = col * valueX;
-                var rowAdjust = row * valueY;
-                point.x+=colAdjust;
-                point.y+=rowAdjust;
-                returnMe.push({'member':team[i], 'pos':point});
-            }
-        }
-        return returnMe;
     },
     getSprite:function(nameCreate){
         var sprite;
@@ -701,116 +571,12 @@ var ArenaGame = jc.WorldLayer.extend({
 
 
     },
-    makeForGame:function(ary){
-
-    },
     getTeam:function(who){
         return this.teams[who];
     },
     nextTouchDo:function(action, manualErase){
         this.nextTouchAction = action;
         this.nextTouchAction.manualErase = manualErase;
-    },
-    placeSquadTokens:function(){
-
-        //todo: replace with new bar
-        this.squadBar = jc.makeSpriteWithPlist(uiPlist, uiPng, "squadsBackground.png");
-
-        hotr.arenaScene.addChild(this.squadBar);
-        this.squadBar.setPosition(this.squadBarClosePos);
-
-        this.touchTargets.push(this.squadBar);
-
-        this.squadA = jc.makeSpriteWithPlist(uiPlist, uiPng, "iconA.png");
-        this.squadBar.addChild(this.squadA);
-        this.squadA.setPosition(this.squadTilePosition);
-        this.touchTargets.push(this.squadA);
-
-        this.squadB = jc.makeSpriteWithPlist(uiPlist, uiPng, "iconB.png");
-        this.squadBar.addChild(this.squadB);
-        this.squadB.setPosition(cc.p(this.squadTilePosition.x + this.squadTileSpacing,this.squadTilePosition.y));
-        this.touchTargets.push(this.squadB);
-
-        this.squadBarOpen = false;
-
-    },
-    placePowerTokens:function(){
-        this.availablePowers={};
-        this.powerBar = jc.makeSpriteWithPlist(uiPlist, uiPng, "powersBackground.png");
-        hotr.arenaScene.addChild(this.powerBar);
-        this.powerBar.setPosition(this.powerBarClosePos);
-        this.touchTargets.push(this.powerBar);
-
-        if (this.teamAPowers.length > 3){
-            this.teamAPowers = this.teamAPowers.slice(0,2);
-        }
-
-        for (var i =0;i<this.teamAPowers.length;i++){
-            var powerTileName = "power"+i;
-            this[powerTileName]=jc.makeSpriteWithPlist(uiPlist, uiPng, "powerFrame.png");
-            var powerName = this.teamAPowers[i];
-            this.powerBar.addChild(this[powerTileName]);
-            this[powerTileName].tile = jc.makeSpriteWithPlist(powerTiles[powerName].plist, powerTiles[powerName].png, powerTiles[powerName].icon);
-            this[powerTileName].addChild(this[powerTileName].tile);
-            this.scaleTo(this[powerTileName].tile, this[powerTileName]);
-            this.centerThisChild(this[powerTileName].tile, this[powerTileName]);
-            this[powerTileName].tile.setZOrder(this[powerTileName].getZOrder()-1);
-            this[powerTileName].setPosition(cc.p(this.powerTilePosition.x+ (this.powerTileSpacing*i), this.powerTilePosition.y));
-            this.touchTargets.push(this[powerTileName]);
-            this.availablePowers[powerTileName]=powerName;
-        }
-        this.barOpen = false;
-
-    },
-    closeBar: function(){
-        //function(item, from, to, time, nudge, when, doneDelegate){
-        this.barOpen = false;
-        jc.log(['arena'], 'Closing powerbar');
-        this.setPowerBarFrameTouch();
-        this.slide(this.powerBar, this.powerBarOpenPos, this.powerBarClosePos, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), "before", this.setPowerBarFrameNormal.bind(this));
-    },
-    openBar: function(){
-        this.barOpen = true;
-        jc.log(['arena'], 'opening powerbar');
-        this.setPowerBarFrameTouch();
-        this.slide(this.powerBar, this.powerBarClosePos, this.powerBarOpenPos, jc.defaultTransitionTime, cc.p(jc.defaultNudge*-1,0), "after", this.setPowerBarFrameNormal.bind(this));
-    },
-    setPowerBarFrameTouch:function(){
-        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("powersBackgroundPressed.png");
-        this.powerBar.setDisplayFrame(frame);
-    },
-    setPowerBarFrameNormal:function(){
-        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("powersBackground.png");
-        this.powerBar.setDisplayFrame(frame);
-    },
-    setSquadBarTouched:function(){
-        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("squadsBackgroundPressed.png");
-        this.squadBar.setDisplayFrame(frame);
-
-    },
-    setSquadBarNormal:function(){
-        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("squadsBackground.png");
-        this.squadBar.setDisplayFrame(frame);
-
-    },
-    setFrameTouched:function(item){
-        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("powerFrameSelected.png");
-        item.setDisplayFrame(frame);
-    },
-    setFrameNormal:function(item){
-        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("powerFrame.png");
-        item.setDisplayFrame(frame);
-    },
-    closeSquadBar: function(){
-        //function(item, from, to, time, nudge, when, doneDelegate){
-        this.squadBarOpen = false;
-        this.setSquadBarTouched();
-        this.slide(this.squadBar, this.squadBarOpenPos, this.squadBarClosePos, jc.defaultTransitionTime, cc.p(jc.defaultNudge*-1,0), "before", this.setSquadBarNormal.bind(this));
-    },
-    openSquadBar: function(){
-        this.squadBarOpen = true;
-        this.setSquadBarTouched();
-        this.slide(this.squadBar, this.squadBarClosePos, this.squadBarOpenPos, jc.defaultTransitionTime, cc.p(jc.defaultNudge,0), "after", this.setSquadBarNormal.bind(this));
     },
     amISelected:function(sprite){
         if ((this.selectedSprite && this.selectedSprite == sprite) || (this.selectedCreeps && this.selectedCreeps.indexOf(sprite)!=-1)){
@@ -1132,7 +898,6 @@ var ArenaGame = jc.WorldLayer.extend({
         }
         return true;
     },
-
     handleTutorialTouches:function(type, touch, sprites){
         if (this.level == 1){
             this.handleLevel1Tutorial(type, touch, sprites);
@@ -1228,72 +993,6 @@ var ArenaGame = jc.WorldLayer.extend({
             this.level = 99;
 
         }
-    },
-    checkSquadBar:function(sprites){
-        for(var i=0;i<sprites.length;i++){
-            if (sprites[i]==this.squadA){
-                this.nextTouchDo(this.moveSquad.bind(this, 'a'));
-                return;
-            }
-
-            if(sprites[i]==this.squadB){
-                this.nextTouchDo(this.moveSquad.bind(this, 'b'));
-                return;
-            }
-        }
-
-        for(var i=0;i<sprites.length;i++){
-            if (sprites[i]==this.squadBar){
-                if (this.squadBarOpen){
-                    this.closeSquadBar();
-                }else{
-                    this.openSquadBar();
-                }
-            }
-        }
-
-    },
-    moveSquad:function(squad, touch){
-        //play anim
-        var worldPos = this.screenToWorld(touch);
-        var nodePos = this.convertToItemPosition(worldPos);
-        jc.playEffectAtLocation("movement", nodePos, jc.shadowZOrder,this);
-        var positions = this.getSquadMovePositions(squad, nodePos);
-        _.each(positions, function(entry){
-            this.doGenericTouch(entry.member, entry.pos);
-        }.bind(this));
-    },
-    checkPowerBar:function(sprites){
-        jc.log(['arena'], 'checkpower bar');
-        for (var power in this.availablePowers){
-            for(var i=0;i<sprites.length;i++){
-                if (sprites[i]==this[power]){
-                    //power token touched -
-                    if (!sprites[i].used){
-                        jc.log(['arena'], 'touch - execute');
-                        this.doPower(power, sprites[i]);
-                        return;
-                    }else{
-                        jc.log(['arena'], 'touch - used');
-                        return; //still don't let this become a bar
-                    }
-                }
-            }
-        }
-
-        //if not, check if we touched the powerbar
-        for(var i=0;i<sprites.length;i++){
-            if (sprites[i]==this.powerBar){
-                if (this.barOpen){
-                    jc.log(['arena'], 'bar touch close');
-                    this.closeBar();
-                }else{
-                    jc.log(['arena'], 'bar touch open');
-                    this.openBar();
-                }
-            }
-        }
-
     },
     doPower: function(name, sprite){
         this.setFrameTouched(sprite);
