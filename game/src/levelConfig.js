@@ -13,21 +13,9 @@ var questLevels = {
     ],
     "4":[
 
-            {name:"dragonFire"},
-            {name:"ogre"},
-            {name:"dragonFire"},
 
-            {name:"orc"},
-            {name:"orc"},
-            {name:"orc"},
-
-            {name:"dragonFire"},
             {name:"ogre"},
-            {name:"dragonFire"},
 
-            {name:"dragonFire"},
-            {name:"ogre"},
-            {name:"dragonFire"}
     ]
 }
 
