@@ -16,11 +16,61 @@ var ArenaGame = jc.WorldLayer.extend({
     teamBPowers:undefined,
     presentationSpeed:0.2,
     timeLimit:45,
+    initTiles:function(){
+        if (jc.assetCategory == 'ipadhd'){
+            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-ipadhd0.png'));
+            //add all board frames to the batch node
+            for(var i=0;i<gameboardFrames.length;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
+                gameboardBatchNodes.addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+
+        }
+
+        if (jc.assetCategory == 'iphone5'){
+            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-iphone50.png'));
+            //add all board frames to the batch node
+            for(var i=0;i<gameboardFrames.length;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
+                gameboardBatchNodes.addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+
+        }
+        if (jc.assetCategory == 'iphone4'){
+            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-iphone40.png'));
+            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-iphone41.png'));
+
+            for(var i=0;i<2;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[1], gameboardPngs[1], gameboardFrames[i]);
+                gameboardBatchNodes[1].addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+
+            //add all board frames to the batch node
+            for(var i=2;i<gameboardFrames.length;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
+                gameboardBatchNodes[0].addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+        }
+
+        if (jc.assetCategory == 'iphone'){
+            for(var i=0;i<gameboardFrames.length;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
+                gameboardBatchNodes.addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+        }
+    },
     init: function() {
         this.name = "Arena";
         var arenaSize = cc.size(9088 * jc.characterScaleFactor, 1706 * jc.characterScaleFactor);
 
-        if (this._super(arenaSize, gameboardFrames)) {
+        this.initTiles()
+
+        if (this._super(arenaSize, gameboardSprites, gameboardBatchNodes)) {
             Math.seedrandom('yay i made a game');
             this.teams['a'] = [];
             this.teams['b'] = [];

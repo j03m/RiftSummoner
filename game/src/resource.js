@@ -29,7 +29,7 @@ var powerTilesPlist= transformAsset(dirImg + "powerTiles{v}.plist");
 var touchUiPlist = transformAsset(dirImg + "touch{v}.plist");
 var touchUiPng = transformAsset(dirImg + "touch{v}.png");
 
-var noiseImage = dirImg + "Noise.png";
+
 
 
 var g_characterPngs = {};
@@ -44,7 +44,6 @@ var g_maingame = [
     {src:loadingPng},
     {src:landingPng},
     {src:landingPlist},
-    {src:noiseImage},
     {fontName:"GODOFWAR",
         src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
     }
@@ -52,6 +51,9 @@ var g_maingame = [
 
 var gameboardPlists = [];
 var gameboardPngs = [];
+
+
+var gameboardBatchNodes = [];
 var gameboardFrames = [
     'board1.png',
     'board2.png',
@@ -61,11 +63,14 @@ var gameboardFrames = [
     'board6.png'
 ]
 
+var gameboardSprites = [];
+
 if (jc.assetCategory == 'ipadhd'){
     g_maingame.push({src:dirImg + 'gameboard-ipadhd0.png'})
     g_maingame.push({src:dirImg + 'gameboard-ipadhd0.plist'})
     gameboardPlists.push(dirImg + 'gameboard-ipadhd0.plist');
     gameboardPngs.push(dirImg + 'gameboard-ipadhd0.png');
+
 }
 
 if (jc.assetCategory == 'iphone5'){
@@ -73,7 +78,6 @@ if (jc.assetCategory == 'iphone5'){
     g_maingame.push({src:dirImg + 'gameboard-iphone50.plist'});
     gameboardPlists.push(dirImg + 'gameboard-iphone50.plist');
     gameboardPngs.push(dirImg + 'gameboard-iphone50.png');
-
 }
 if (jc.assetCategory == 'iphone4'){
     g_maingame.push({src:dirImg + 'gameboard-iphone40.png'});
@@ -84,7 +88,6 @@ if (jc.assetCategory == 'iphone4'){
     gameboardPngs.push(dirImg + 'gameboard-iphone40.png');
     gameboardPlists.push(dirImg + 'gameboard-iphone41.plist');
     gameboardPngs.push(dirImg + 'gameboard-iphone41.png');
-
 }
 
 if (jc.assetCategory == 'iphone'){
