@@ -241,7 +241,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         return this.getScaleValue(this.worldSize.width *0.7, this.worldSize.height*0.7);
     },
     getScaleWorld:function(){
-        return cc.p(0.25, 0.25);
+        return cc.p(0.50, 0.50);
     },
     convertToLayerPosition:function(point){
         jc.cap(point, this.worldBoundary);
