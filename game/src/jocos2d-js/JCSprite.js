@@ -39,7 +39,17 @@ jc.Sprite = cc.Sprite.extend({
             throw firstFrame + " for sprite: " + config.name + " was not found.";
         }
 		this.initWithSpriteFrame(frame);
-        this.batch = cc.SpriteBatchNode.create(sheet);
+
+        if (!jc.spriteBatch){
+            jc.spriteBatch = {};
+        }
+
+        if (!jc.spriteBatch[sheet]){
+            jc.spriteBatch[sheet] = cc.SpriteBatchNode.create(sheet);
+            jc.spriteBatch[sheet].sheet = sheet;
+        }
+
+        this.batch = jc.spriteBatch[sheet];
         this.batch.addChild(this);
         this.retain(); //j03m fix leak
         this.type = config.type;
@@ -135,7 +145,7 @@ jc.Sprite = cc.Sprite.extend({
         //this.stopAction(this.animations[this.state].action);
 		this.state = -1;
         this.layer.removeChild(this.shadow, true);
-        this.layer.removeChild(this.healthBar, true);
+        //this.layer.removeChild(this.healthBar, true);
         for(var i =0; i<this.animations.length; i++){
 			this.animations[i].action.release();
 		}

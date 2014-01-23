@@ -1395,8 +1395,6 @@ var spriteDefs = {
 		"details": "Orcs are fast, fierce attackers. What they lack in heavy armor, they make up for in pure tenacity.",
 		"elementType": "none",
 		"unitType": 3,
-		"creep": true,
-		"number": 4,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 400,
