@@ -1,15 +1,16 @@
 var Loading = jc.UiElementsLayer.extend({
     init: function(config) {
 
-        this.assets = config.assets;
-        this.nextScene = config.nextScene;
-        this.apiCalls = config.apiCalls;
-        this.assetFunc = config.assetFunc;
-		this.loaderAdjust = cc.p(-8*jc.assetScaleFactor,13*jc.assetScaleFactor);
         if (this._super()) {
+            this.assets = config.assets;
+            this.nextScene = config.nextScene;
+            this.apiCalls = config.apiCalls;
+            this.assetFunc = config.assetFunc;
+            this.loaderAdjust = cc.p(-8*jc.assetScaleFactor,13*jc.assetScaleFactor);
             cc.SpriteFrameCache.getInstance().addSpriteFrames(loadingPlist);
             this.initFromConfig(this.windowConfig);
-            this.start();      
+            this.bubbleAllTouches(true);
+            this.start();
 			this.blackBox(jc.designSize);     
 			this.spinner.setVisible(false);
             return true;
@@ -74,6 +75,10 @@ var Loading = jc.UiElementsLayer.extend({
 	            this.ccLoaderDone = true;
 	        }.bind(this));			
 		}
+    },
+    targetTouchHandler:function(type, touch,sprites, touches){
+        jc.log(['loader'], "Loader - touch handler");
+        return true;
     },
     startLoadingApiCalls:function(){
         var q = async.queue(function(task,callback){

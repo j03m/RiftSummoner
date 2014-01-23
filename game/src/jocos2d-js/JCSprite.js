@@ -28,9 +28,11 @@ jc.Sprite = cc.Sprite.extend({
 		this.idle = 0;
 		this.name = config.name;
         this.baseOffset = config.baseOffset;
-		cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
-		this.batch = cc.SpriteBatchNode.create(sheet);
-        this.batch.retain();
+        if (!jc.parsed[plist]){
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
+            jc.parsed[plist] = true;
+        }
+
         this.effects = {};
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame);
         if (!frame){
@@ -104,13 +106,13 @@ jc.Sprite = cc.Sprite.extend({
     initShadow:function(){
         this.shadow = new cc.Sprite();
         //todo change to size of sprite
+
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("shadowSmall.png");
         this.shadow.initWithSpriteFrame(frame);
         this.shadow.setScaleX(0.5);
         this.shadow.name = "shadow";
         this.shadow.retain();
-        this.layer.addChild(this.shadow);
-        this.layer.reorderChild(this.shadow, jc.shadowZOrder);
+        this.layer.shadowBatchNode.addChild(this.shadow);
         this.updateShadowPosition();
     },
     initHealthBar:function(){
@@ -135,7 +137,7 @@ jc.Sprite = cc.Sprite.extend({
         for(var i =0; i<this.animations.length; i++){
 			this.animations[i].action.release();
 		}
-        this.batch.release();
+        //this.batch.release();
 
 	},
 	addDef: function(entry) {
@@ -217,6 +219,7 @@ jc.Sprite = cc.Sprite.extend({
     },
     removeAnimation:function(name){
         if (this.effectAnimations && this.effectAnimations[name]){
+            this.effectAnimations[name].sprite.stopAction(this.effectAnimations[name].animation);
             this.removeChild(this.effectAnimations[name].sprite, false);
             this.effectAnimations[name].playing = false;
         }
@@ -379,8 +382,8 @@ jc.Sprite = cc.Sprite.extend({
         }
         this.behavior = new behaviorClass(this);
     },
-    think:function(dt){
-        this.behavior.think(dt);
+    think:function(dt, selected){
+        this.behavior.think(dt, selected);
     },
     drawBorders:function(){
 

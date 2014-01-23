@@ -236,8 +236,28 @@ jc.makeSpriteWithPlist = function(plist, png, startFrame){
     var sprite = new cc.Sprite();
     if (!jc.parsed[plist]){
         cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
-        cc.SpriteBatchNode.create(png);
         jc.parsed[plist]=true;
+    }
+
+    var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(startFrame);
+    if (!frame){
+        throw "Frame: " + startFrame +  " not in cache.";
+    }
+    sprite.initWithSpriteFrame(frame);
+    sprite.retain();
+    return sprite;
+}
+
+
+jc.makeSpriteWithMultipackPlist = function(plists, pngs, startFrame){
+    var sprite = new cc.Sprite();
+    for(var i =0;i<plists.length;i++){
+        var plist = plists[i];
+        var png = pngs[i];
+        if (!jc.parsed[plist]){
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
+            jc.parsed[plist]=true;
+        }
     }
 
     var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(startFrame);
@@ -734,7 +754,9 @@ jc.insideCircle = function(point, center){
     return ((point.x - center.x)^2 + (point.y - center.y)^2 < jc.elMajor^2);
 }
 
-
+jc.insidePlayableRect=function(point){
+    return cc.rectContainsPoint(hotr.arenaScene.layer.playableRect, point);
+}
 
 jc.insideEllipse = function(point, center){
     //http://math.stackexchange.com/questions/76457/check-if-a-point-is-within-an-ellipse
@@ -756,10 +778,7 @@ jc.getCharacterCardFrame = function(name){
     if (indexNumber == undefined){
         indexNumber = 0;
     }
-
     cc.SpriteFrameCache.getInstance().addSpriteFrames(cardsPlists[indexNumber]);
-    cc.SpriteBatchNode.create(cardsPngs[indexNumber]);
-
     return cc.SpriteFrameCache.getInstance().getSpriteFrame(frame);
 }
 
