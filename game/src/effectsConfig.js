@@ -82,7 +82,7 @@ var effectsConfig = {
         "start":"enemySelection.1.png",
         "frames":16,
         "delay":0.05,
-        "placement":"base2base",
+        "placement":"bottom",
         "zorder":"behind",
         "times":3
 
@@ -93,9 +93,9 @@ var effectsConfig = {
         "start":"allySelection.1.png",
         "frames":16,
         "delay":0.05,
-        "placement":"base2base",
-        "zorder":"behind"
-
+        "placement":"bottom",
+        "zorder":"behind",
+        "times":3
     },
     "burning":{
         "png":"art/effects{v}.png",

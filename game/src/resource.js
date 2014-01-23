@@ -13,8 +13,8 @@ var landingPlist = transformAsset(dirImg + "landing{v}.plist");
 var loadingPng = transformAsset(dirImg + "loading{v}.png");
 var loadingPlist = transformAsset(dirImg + "loading{v}.plist");
 
-var cardsPngs = [transformAsset(dirImg + "cards{v}.png")];
-var cardsPlists = [transformAsset(dirImg + "cards{v}.plist")];
+var cardsPngs = [transformAsset(dirImg + "cards{v}.png"), transformAsset(dirImg + "cards2{v}.png")];
+var cardsPlists = [transformAsset(dirImg + "cards{v}.plist"), transformAsset(dirImg + "cards2{v}.plist")];
 var uiPng = transformAsset(dirImg + "uiElements{v}.png");
 var uiPlist = transformAsset(dirImg + "uiElements{v}.plist");
 
@@ -29,21 +29,70 @@ var powerTilesPlist= transformAsset(dirImg + "powerTiles{v}.plist");
 var touchUiPlist = transformAsset(dirImg + "touch{v}.plist");
 var touchUiPng = transformAsset(dirImg + "touch{v}.png");
 
+var noiseImage = dirImg + "Noise.png";
+
 
 var g_characterPngs = {};
 var g_characterPlists = {};
 
+
+
 //core resources - need these to launch ui, loader, etc
+
 var g_maingame = [
     {src:loadingPlist},
-    {src:arenaSheet},
     {src:loadingPng},
     {src:landingPng},
     {src:landingPlist},
+    {src:noiseImage},
     {fontName:"GODOFWAR",
         src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
     }
 ];
+
+var gameboardPlists = [];
+var gameboardPngs = [];
+var gameboardFrames = [
+    'board1.png',
+    'board2.png',
+    'board3.png',
+    'board4.png',
+    'board5.png',
+    'board6.png'
+]
+
+if (jc.assetCategory == 'ipadhd'){
+    g_maingame.push({src:dirImg + 'gameboard-ipadhd0.png'})
+    g_maingame.push({src:dirImg + 'gameboard-ipadhd0.plist'})
+    gameboardPlists.push(dirImg + 'gameboard-ipadhd0.plist');
+    gameboardPngs.push(dirImg + 'gameboard-ipadhd0.png');
+}
+
+if (jc.assetCategory == 'iphone5'){
+    g_maingame.push({src:dirImg + 'gameboard-iphone50.png'});
+    g_maingame.push({src:dirImg + 'gameboard-iphone50.plist'});
+    gameboardPlists.push(dirImg + 'gameboard-iphone50.plist');
+    gameboardPngs.push(dirImg + 'gameboard-iphone50.png');
+
+}
+if (jc.assetCategory == 'iphone4'){
+    g_maingame.push({src:dirImg + 'gameboard-iphone40.png'});
+    g_maingame.push({src:dirImg + 'gameboard-iphone40.plist'});
+    g_maingame.push({src:dirImg + 'gameboard-iphone41.png'});
+    g_maingame.push({src:dirImg + 'gameboard-iphone41.plist'});
+    gameboardPlists.push(dirImg + 'gameboard-iphone40.plist');
+    gameboardPngs.push(dirImg + 'gameboard-iphone40.png');
+    gameboardPlists.push(dirImg + 'gameboard-iphone41.plist');
+    gameboardPngs.push(dirImg + 'gameboard-iphone41.png');
+
+}
+
+if (jc.assetCategory == 'iphone'){
+    g_maingame.push({src:dirImg + 'gameboard0.png'});
+    g_maingame.push({src:dirImg + 'gameboard0.plist'});
+    gameboardPlists.push(dirImg + 'gameboard0.plist');
+    gameboardPngs.push(dirImg + 'gameboard0.png');
+}
 
 
 jc.mainFont = "GODOFWAR";
@@ -81,6 +130,8 @@ if (jc.designMode){
         {src:touchUiPlist},
         {src:cardsPlists[0]},
         {src:cardsPngs[0]},
+        {src:cardsPlists[1]},
+        {src:cardsPngs[1]},
         {src:landingPng},
         {src:landingPlist},
         {src:loadingPng},
@@ -153,6 +204,8 @@ var g_ui =[
     {src:uiPng},
     {src:cardsPlists[0]},
     {src:cardsPngs[0]},
+    {src:cardsPlists[1]},
+    {src:cardsPngs[1]},
     {src:tutorialPng},
     {src:tutorialPlist},
 ];

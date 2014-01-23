@@ -302,7 +302,7 @@ GeneralBehavior.prototype.seekEnemy = function(){
     //this sort of blows.
     if (this.owner.gameObject.movementType == jc.movementType.ground){
         var center = cc.p(this.owner.layer.winSize.width/2, this.owner.layer.winSize.height/2);
-        if (!jc.insideEllipse(attackPosition,center)){
+        if (!jc.insidePlayableRect(attackPosition)){
             attackPosition = center;
         }
     }
@@ -382,7 +382,7 @@ GeneralBehavior.prototype.adjustFlock = function(){
                     //adjust my seek position by 10px y north
                     shouldFlock = true;
                     var num = jc.randomNum(0,1);
-                    var val = jc.randomNum(1, this.owner.getTargetRadiusY()*jc.assetScaleFactor);
+                    var val = jc.randomNum(1, this.owner.getTargetRadiusY()*3);
                     if (num){
                         augment.y+= val;
                     }else{
@@ -611,9 +611,9 @@ GeneralBehavior.applyGenericDamage = function(target, attacker, amount){
     }
 }
 
-GeneralBehavior.prototype.think = function(dt){
+GeneralBehavior.prototype.think = function(dt, selected){
     //todo remove this:
-    this.handleState(dt);
+    this.handleState(dt, selected);
 
 }
 
@@ -649,15 +649,15 @@ GeneralBehavior.prototype.deadForGood = function(){
 //    });
 }
 
-GeneralBehavior.prototype.handleState = function(dt){
+GeneralBehavior.prototype.handleState = function(dt, selected){
     this.handleDeath();
     var state= this.getState();
 
-//    if (this.owner.layer.amISelected(this.owner)){
-//        if (!this.forceLocked && state.brain != 'followUserCommand'){
-//            return;
-//        }
-//    }
+    if (selected){
+        if (!this.forceLocked && state.brain != 'followUserCommand'){
+            return;
+        }
+    }
 
     switch(state.brain){
         case 'idle':this.handleIdle(dt);
@@ -797,12 +797,16 @@ GeneralBehavior.prototype.handleIdle = function(dt){
 GeneralBehavior.prototype.handleMove = function(dt){
     //give me a chance to retarget closer;
 
+
     var state = this.getState();
     if (state.brain != "move" && state.brain != 'followUserCommand'){
         return;
     }
 
 
+    if (this.owner.name == 'goblin'){
+        console.log('break');
+    }
 
     if (state.brain ==  'followUserCommand'){
         this.followUserCommand(dt);
@@ -937,6 +941,8 @@ GeneralBehavior.prototype.afterEffects = function(){
 GeneralBehavior.prototype.followCommand = function(position){
     if (this.owner.isAlive()){
         this.followPoint = position;
+        this.forceLocked = false;
+        this.forceSupport = false;
         this.setState('followUserCommand', 'move');
     }
 }
@@ -945,6 +951,7 @@ GeneralBehavior.prototype.attackCommand = function(target){
     if (this.owner.isAlive()){
         this.locked = target;
         this.forceLocked = true;
+        this.forceSupport = false;
         this.setState('move', 'move');
     }
 }
@@ -952,6 +959,8 @@ GeneralBehavior.prototype.attackCommand = function(target){
 GeneralBehavior.prototype.supportCommand = function(target){
     if (this.owner.isAlive()){
         this.support = target;
+        this.forceSupport = true;
+        this.forceLocked = false;
         this.setState('move', 'move');
     }
 }

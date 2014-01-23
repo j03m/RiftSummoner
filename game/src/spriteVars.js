@@ -525,6 +525,36 @@ var spriteDefs = {
 		},
 		"behavior": "range"
 	},
+	"elfAssassin": {
+		"name": "elfAssassin",
+		"formalName": "Elvish Assassin",
+		"details": "Elvish Assassin's are mixed units, capable of impressive melee and short ranged attacks with her side arm.",
+		"elementType": "none",
+		"unitType": 3,
+		"cardIndex": 1,
+		"gameProperties": {
+			"MaxHP": 9999,
+			"speed": 450,
+			"movementType": 1,
+			"targets": 2,
+			"damage": 200,
+			"heal": 150,
+			"actionDelays": {
+				"attack": 0.35
+			},
+			"effectDelays": {
+				"attack": 0.05
+			},
+			"targetRadius": 200
+		},
+		"baseOffset": {
+			"x": 0,
+			"y": 10
+		},
+		"byStep": 1,
+		"inherit": "femaleSorcerer",
+		"behavior": "range"
+	},
 	"elfEarth": {
 		"name": "elfEarth",
 		"formalName": "Plains Elf",
@@ -666,7 +696,7 @@ var spriteDefs = {
 				"delay": 0.03,
 				"type": 1
 			},
-			"special": {
+			"attack3": {
 				"start": 116,
 				"end": 149,
 				"delay": 0.03,
@@ -1223,7 +1253,7 @@ var spriteDefs = {
 		"name": "necromancer",
 		"formalName": "Necromancer",
 		"details": "Necromancers are light range units, but will summon back your dead team members as skeleton warriors.",
-		"elementType": "earth",
+		"elementType": "void",
 		"unitType": 3,
 		"special": "Healing",
 		"gameProperties": {

@@ -152,8 +152,7 @@ var powerConfig = {
 
         var targetPos = this.locked.getBasePosition();
         targetPos.x+=distance;
-        var center = cc.p(this.owner.layer.worldSize.width/2, this.owner.layer.worldSize.height/2);
-        if (jc.insideEllipse(targetPos,center)){
+        if (jc.insidePlayableRect(targetPos)){
             this.locked.setBasePosition(targetPos);
         }
         jc.playEffectOnTarget("hit", this.locked, this.owner.layer);

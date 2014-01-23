@@ -16,6 +16,15 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             return false;
         }
     },
+    clear: function(){
+        for(var i =0;i<this.sprites.length;i++){
+            this.sprites[i].isVisible(false);
+            this.removeChild(this.sprites[i], true);
+            this.sprites[i].release();
+            this.sprites[i] = undefined;
+        }
+        this.sprites = [];
+    },
 	configure:function(){
 		var maxValue =0;
         var cellSize = 0;
