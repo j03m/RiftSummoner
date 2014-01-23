@@ -557,7 +557,15 @@ var ArenaGame = jc.WorldLayer.extend({
         jc.log(['arena'], "Sprite generated: " + nameCreate);
         sprite.setState('idle');
         jc.log(['arena'], "Adding to batch");
-        this.addChild(sprite.batch);
+
+        if (!this.batches){
+            this.batches = {};
+        }
+        if (!this.batches[sprite.batch.sheet]){
+            this.addChild(sprite.batch);
+            this.batches[sprite.batch.sheet]=true;
+        }
+
         sprite.setVisible(false);
         sprite.layer = this;
         return sprite;
@@ -651,9 +659,10 @@ var ArenaGame = jc.WorldLayer.extend({
             this.lastcreep += dt;
             var creeplimit = 5;
 
-            if (this.lastcreep > creeplimit){
+            if (!this.stopCreeps){
                 this.makeCreeps();
-                this.lastcreep = 0;
+                this.stopCreeps = true;
+                //this.lastcreep = 0;
                 this.creepCount++;
                 if (this.creepCount > 25){
                     //creeplimit=(creeplimit*0.25) + creeplimit;
@@ -713,35 +722,40 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     makeCreeps: function(){
 //        return;
-        var sprite = this.getSprite("goblinKnightNormal");
-        var sprite2 = this.getSprite("goblinKnightNormal");
-        sprite.setVisible(true);
-        sprite2.setVisible(true);
+        for(var i=0;i<15;i++){
+            var sprite = this.getSprite("goblinKnightNormal");
+            var sprite2 = this.getSprite("goblinKnightNormal");
+            sprite.setVisible(true);
+            sprite2.setVisible(true);
 
-        this.teams['a'].push(sprite);
-        sprite.setBasePosition(this.teamASpawn());
-        sprite.ready(true);
-        sprite.homeTeam = this.getTeam.bind(this,'a');
-        sprite.enemyTeam = this.getTeam.bind(this, 'b');
-        sprite.team = 'a';
+            this.teams['a'].push(sprite);
+            sprite.setBasePosition(this.teamASpawn());
+            sprite.ready(true);
+            sprite.homeTeam = this.getTeam.bind(this,'a');
+            sprite.enemyTeam = this.getTeam.bind(this, 'b');
+            sprite.team = 'a';
 
-        jc.playEffectOnTarget("teleport", sprite, this);
+            jc.playEffectOnTarget("teleport", sprite, this);
 
-        sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
-        sprite2.setFlippedX(true);
-        sprite2.setPosition(this.teamBSpawn());
-        jc.playEffectOnTarget("teleport", sprite2, this);
-        this.teams['b'].push(sprite2);
-        sprite2.enemyTeam = this.getTeam.bind(this,'a');
-        sprite2.homeTeam = this.getTeam.bind(this, 'b');
-        sprite2.team = 'b';
+            sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
+            sprite2.setFlippedX(true);
+            sprite2.setPosition(this.teamBSpawn());
+            jc.playEffectOnTarget("teleport", sprite2, this);
+            this.teams['b'].push(sprite2);
+            sprite2.enemyTeam = this.getTeam.bind(this,'a');
+            sprite2.homeTeam = this.getTeam.bind(this, 'b');
+            sprite2.team = 'b';
 
-        this.sprites.push(sprite);
-        this.sprites.push(sprite2);
-        this.teams['a'].push(sprite);
-        this.teams['b'].push(sprite2);
+            this.sprites.push(sprite);
+            this.sprites.push(sprite2);
+            this.teams['a'].push(sprite);
+            this.teams['b'].push(sprite2);
 
-        this.summonEnemyHero();
+        }
+
+        for(var i=0;i<5;i++){
+            this.summonEnemyHero();
+        }
 
 
     },

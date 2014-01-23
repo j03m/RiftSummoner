@@ -15,6 +15,10 @@ var questLevels = {
 
 
             {name:"ogre"},
+            {name:"orc"},
+            {name:"elfVoid"},
+            {name:"dragonFire"},
+            {name:"dragonVoid"},
 
     ]
 }
