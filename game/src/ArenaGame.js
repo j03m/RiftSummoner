@@ -722,7 +722,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     thinkSprites:function(dt){
         for(var i =0;i<this.sprites.length;i++){
-            if (this.sprites[i] && this.sprites[i].getParent()==this && this.sprites[i].isAlive()){
+            if (this.sprites[i] && this.sprites[i].getParent()==this){
                 var selected = false;
                 if (this.selectedSprite && this.selectedSprite == this.sprites[i]){
                     selected = true;
@@ -758,7 +758,6 @@ var ArenaGame = jc.WorldLayer.extend({
             temp = temp.concat(this.getTeam('a'));
             var minSprite = this.getBestSpriteForTouch(nodePos, sprites, temp);
             if (this.selectedSprite){
-                this.activeTrack = true;
                 if (minSprite && this.getTeam('b').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an enemy
                     this.doEnemyTouch(minSprite, nodePos);
                 }else if (minSprite && this.getTeam('a').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)
@@ -768,7 +767,6 @@ var ArenaGame = jc.WorldLayer.extend({
                     this.doGenericTouch(nodePos);
                 }
             }else if (this.selectedCreeps){
-                this.activeTrack = true;
                 if (minSprite && this.getTeam('b').indexOf(minSprite)!=-1 && this.selectedCreeps[0].behavior.canTarget(minSprite)){ //if we touched an enemy
                     jc.playEffectOnTarget(this.enemySelect, minSprite, jc.shadowZOrder,this);
                 }else{
