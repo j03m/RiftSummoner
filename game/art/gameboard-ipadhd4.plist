@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>board6.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{1514,1706}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{1514,1706}}</string>
+                <key>sourceSize</key>
+                <string>{1514,1706}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>gameboard-ipadhd4.png</string>
+            <key>size</key>
+            <string>{2048,2048}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:a95a29c33593db7a97ef2a9f3f0a6f28:1e03f2df9f5670346a04b636438db0ec:27539d453168f144a007a81e94224e61$</string>
+            <key>textureFileName</key>
+            <string>gameboard-ipadhd4.png</string>
+        </dict>
+    </dict>
+</plist>

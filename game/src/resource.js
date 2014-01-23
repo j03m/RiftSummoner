@@ -78,6 +78,31 @@ if (jc.assetCategory == 'iphone5'){
     g_maingame.push({src:dirImg + 'gameboard-iphone50.plist'});
     gameboardPlists.push(dirImg + 'gameboard-iphone50.plist');
     gameboardPngs.push(dirImg + 'gameboard-iphone50.png');
+    g_maingame.push({src:dirImg + 'gameboard-iphone51.png'});
+    g_maingame.push({src:dirImg + 'gameboard-iphone51.plist'});
+    gameboardPlists.push(dirImg + 'gameboard-iphone51.plist');
+    gameboardPngs.push(dirImg + 'gameboard-iphone51.png');
+    g_maingame.push({src:dirImg + 'gameboard-iphone52.png'});
+    g_maingame.push({src:dirImg + 'gameboard-iphone52.plist'});
+    gameboardPlists.push(dirImg + 'gameboard-iphone52.plist');
+    gameboardPngs.push(dirImg + 'gameboard-iphone52.png');
+    g_maingame.push({src:dirImg + 'gameboard-iphone53.png'});
+    g_maingame.push({src:dirImg + 'gameboard-iphone53.plist'});
+    gameboardPlists.push(dirImg + 'gameboard-iphone53.plist');
+    gameboardPngs.push(dirImg + 'gameboard-iphone53.png');
+    g_maingame.push({src:dirImg + 'gameboard-iphone54.png'});
+    g_maingame.push({src:dirImg + 'gameboard-iphone54.plist'});
+    gameboardPlists.push(dirImg + 'gameboard-iphone54.plist');
+    gameboardPngs.push(dirImg + 'gameboard-iphone54.png');
+    g_maingame.push({src:dirImg + 'gameboard-iphone55.png'});
+    g_maingame.push({src:dirImg + 'gameboard-iphone55.plist'});
+    gameboardPlists.push(dirImg + 'gameboard-iphone55.plist');
+    gameboardPngs.push(dirImg + 'gameboard-iphone55.png');
+
+
+
+
+
 }
 if (jc.assetCategory == 'iphone4'){
     g_maingame.push({src:dirImg + 'gameboard-iphone40.png'});

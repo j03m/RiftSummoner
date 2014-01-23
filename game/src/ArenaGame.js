@@ -16,61 +16,11 @@ var ArenaGame = jc.WorldLayer.extend({
     teamBPowers:undefined,
     presentationSpeed:0.2,
     timeLimit:45,
-    initTiles:function(){
-        if (jc.assetCategory == 'ipadhd'){
-            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-ipadhd0.png'));
-            //add all board frames to the batch node
-            for(var i=0;i<gameboardFrames.length;i++){
-                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
-                gameboardBatchNodes[0].addChild(boardSprite);
-                gameboardSprites.push(boardSprite);
-            }
-
-        }
-
-        if (jc.assetCategory == 'iphone5'){
-            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-iphone50.png'));
-            //add all board frames to the batch node
-            for(var i=0;i<gameboardFrames.length;i++){
-                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
-                gameboardBatchNodes[0].addChild(boardSprite);
-                gameboardSprites.push(boardSprite);
-            }
-
-        }
-        if (jc.assetCategory == 'iphone4'){
-            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-iphone40.png'));
-            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-iphone41.png'));
-
-            for(var i=0;i<2;i++){
-                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[1], gameboardPngs[1], gameboardFrames[i]);
-                gameboardBatchNodes[1].addChild(boardSprite);
-                gameboardSprites.push(boardSprite);
-            }
-
-            //add all board frames to the batch node
-            for(var i=2;i<gameboardFrames.length;i++){
-                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
-                gameboardBatchNodes[0].addChild(boardSprite);
-                gameboardSprites.push(boardSprite);
-            }
-        }
-
-        if (jc.assetCategory == 'iphone'){
-            for(var i=0;i<gameboardFrames.length;i++){
-                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
-                gameboardBatchNodes[0].addChild(boardSprite);
-                gameboardSprites.push(boardSprite);
-            }
-        }
-    },
     init: function() {
         this.name = "Arena";
         var arenaSize = cc.size(9088 * jc.characterScaleFactor, 1706 * jc.characterScaleFactor);
 
-        this.initTiles()
-
-        if (this._super(arenaSize, gameboardSprites, gameboardBatchNodes)) {
+        if (this._super(arenaSize, gameboardFrames)) {
             Math.seedrandom('yay i made a game');
             this.teams['a'] = [];
             this.teams['b'] = [];
@@ -722,40 +672,41 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     makeCreeps: function(){
 //        return;
-        for(var i=0;i<15;i++){
-            var sprite = this.getSprite("goblinKnightNormal");
-            var sprite2 = this.getSprite("goblinKnightNormal");
-            sprite.setVisible(true);
-            sprite2.setVisible(true);
+//        for(var i=0;i<15;i++){
+//            var sprite = this.getSprite("goblinKnightNormal");
+//            var sprite2 = this.getSprite("goblinKnightNormal");
+//            sprite.setVisible(true);
+//            sprite2.setVisible(true);
+//
+//            this.teams['a'].push(sprite);
+//            sprite.setBasePosition(this.teamASpawn());
+//            sprite.ready(true);
+//            sprite.homeTeam = this.getTeam.bind(this,'a');
+//            sprite.enemyTeam = this.getTeam.bind(this, 'b');
+//            sprite.team = 'a';
+//
+//            jc.playEffectOnTarget("teleport", sprite, this);
+//
+//            sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
+//            sprite2.setFlippedX(true);
+//            sprite2.setPosition(this.teamBSpawn());
+//            jc.playEffectOnTarget("teleport", sprite2, this);
+//            this.teams['b'].push(sprite2);
+//            sprite2.enemyTeam = this.getTeam.bind(this,'a');
+//            sprite2.homeTeam = this.getTeam.bind(this, 'b');
+//            sprite2.team = 'b';
+//
+//            this.sprites.push(sprite);
+//            this.sprites.push(sprite2);
+//            this.teams['a'].push(sprite);
+//            this.teams['b'].push(sprite2);
+//
+//        }
 
-            this.teams['a'].push(sprite);
-            sprite.setBasePosition(this.teamASpawn());
-            sprite.ready(true);
-            sprite.homeTeam = this.getTeam.bind(this,'a');
-            sprite.enemyTeam = this.getTeam.bind(this, 'b');
-            sprite.team = 'a';
-
-            jc.playEffectOnTarget("teleport", sprite, this);
-
-            sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
-            sprite2.setFlippedX(true);
-            sprite2.setPosition(this.teamBSpawn());
-            jc.playEffectOnTarget("teleport", sprite2, this);
-            this.teams['b'].push(sprite2);
-            sprite2.enemyTeam = this.getTeam.bind(this,'a');
-            sprite2.homeTeam = this.getTeam.bind(this, 'b');
-            sprite2.team = 'b';
-
-            this.sprites.push(sprite);
-            this.sprites.push(sprite2);
-            this.teams['a'].push(sprite);
-            this.teams['b'].push(sprite2);
-
-        }
-
-        for(var i=0;i<5;i++){
-            this.summonEnemyHero();
-        }
+        this.summonEnemyHero();
+//        for(var i=0;i<5;i++){
+//
+//        }
 
 
     },
