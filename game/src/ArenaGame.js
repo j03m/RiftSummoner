@@ -552,9 +552,12 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     getSprite:function(nameCreate){
         var sprite;
+        jc.log(['arena'], "Sprite generating: " + nameCreate);
         sprite = jc.Sprite.spriteGenerator(spriteDefs, nameCreate, this);
+        jc.log(['arena'], "Sprite generated: " + nameCreate);
         sprite.setState('idle');
-		this.addChild(sprite);
+        jc.log(['arena'], "Adding to batch");
+        this.addChild(sprite.batch);
         sprite.setVisible(false);
         sprite.layer = this;
         return sprite;
@@ -775,7 +778,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     thinkSprites:function(dt){
         for(var i =0;i<this.sprites.length;i++){
-            if (this.sprites[i] && this.sprites[i].getParent()==this){
+            if (this.sprites[i]){ //} && this.sprites[i].getParent()==this){
                 var selected = false;
                 if (this.selectedSprite && this.selectedSprite == this.sprites[i]){
                     selected = true;
@@ -968,7 +971,7 @@ var ArenaGame = jc.WorldLayer.extend({
         return minSprite;
     },
     checkWinner: function(){
-
+        return;
 
         //first - is everyone dead on either team?
         var teamaisdead = true;
@@ -1033,8 +1036,15 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     showVictory:function(){
         this.started = false;
-        this.getParent().removeChild(this.tableView, false);
-        this.getParent().removeChild(this.powerView, false);
+
+        if (this.tableView){
+            this.getParent().removeChild(this.tableView, false);
+        }
+
+        if (this.powerView){
+            this.getParent().removeChild(this.powerView, false);
+        }
+
         if (this.level == 1 && this.step == 19){ //show some tutorial stuff first.
             this.showTutorialStep("You did it! We're safe! But that won't be the last of them. Let's head back quickly.", undefined, 'left', 'girl');
             this.step = 20;
@@ -1064,9 +1074,13 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     showDefeat:function(){
         this.started = false;
-        this.getParent().removeChild(this.tableView, false);
-        this.getParent().removeChild(this.powerView, false);
-        if (hotr.arenaScene.data.op){
+        if (this.tableView){
+            this.getParent().removeChild(this.tableView, false);
+        }
+
+        if (this.powerView){
+            this.getParent().removeChild(this.powerView, false);
+        }        if (hotr.arenaScene.data.op){
             hotr.multiplayerOperations.defeat(hotr.arenaScene.data.op, hotr.arenaScene.data);
         }
 
