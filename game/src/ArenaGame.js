@@ -22,7 +22,7 @@ var ArenaGame = jc.WorldLayer.extend({
             //add all board frames to the batch node
             for(var i=0;i<gameboardFrames.length;i++){
                 var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
-                gameboardBatchNodes.addChild(boardSprite);
+                gameboardBatchNodes[0].addChild(boardSprite);
                 gameboardSprites.push(boardSprite);
             }
 
@@ -33,7 +33,7 @@ var ArenaGame = jc.WorldLayer.extend({
             //add all board frames to the batch node
             for(var i=0;i<gameboardFrames.length;i++){
                 var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
-                gameboardBatchNodes.addChild(boardSprite);
+                gameboardBatchNodes[0].addChild(boardSprite);
                 gameboardSprites.push(boardSprite);
             }
 
@@ -59,7 +59,7 @@ var ArenaGame = jc.WorldLayer.extend({
         if (jc.assetCategory == 'iphone'){
             for(var i=0;i<gameboardFrames.length;i++){
                 var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
-                gameboardBatchNodes.addChild(boardSprite);
+                gameboardBatchNodes[0].addChild(boardSprite);
                 gameboardSprites.push(boardSprite);
             }
         }
@@ -709,33 +709,34 @@ var ArenaGame = jc.WorldLayer.extend({
         }
     },
     makeCreeps: function(){
-        var sprite = this.getSprite("goblinKnightNormal");
-        var sprite2 = this.getSprite("goblinKnightNormal");
-        sprite.setVisible(true);
-        sprite2.setVisible(true);
-
-        this.teams['a'].push(sprite);
-        sprite.setBasePosition(this.teamASpawn());
-        sprite.ready(true);
-        sprite.homeTeam = this.getTeam.bind(this,'a');
-        sprite.enemyTeam = this.getTeam.bind(this, 'b');
-        sprite.team = 'a';
-
-        jc.playEffectOnTarget("teleport", sprite, this);
-
-        sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
-        sprite2.setFlippedX(true);
-        sprite2.setPosition(this.teamBSpawn());
-        jc.playEffectOnTarget("teleport", sprite2, this);
-        this.teams['b'].push(sprite2);
-        sprite2.enemyTeam = this.getTeam.bind(this,'a');
-        sprite2.homeTeam = this.getTeam.bind(this, 'b');
-        sprite2.team = 'b';
-
-        this.sprites.push(sprite);
-        this.sprites.push(sprite2);
-        this.teams['a'].push(sprite);
-        this.teams['b'].push(sprite2);
+//        return;
+//        var sprite = this.getSprite("goblinKnightNormal");
+//        var sprite2 = this.getSprite("goblinKnightNormal");
+//        sprite.setVisible(true);
+//        sprite2.setVisible(true);
+//
+//        this.teams['a'].push(sprite);
+//        sprite.setBasePosition(this.teamASpawn());
+//        sprite.ready(true);
+//        sprite.homeTeam = this.getTeam.bind(this,'a');
+//        sprite.enemyTeam = this.getTeam.bind(this, 'b');
+//        sprite.team = 'a';
+//
+//        jc.playEffectOnTarget("teleport", sprite, this);
+//
+//        sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
+//        sprite2.setFlippedX(true);
+//        sprite2.setPosition(this.teamBSpawn());
+//        jc.playEffectOnTarget("teleport", sprite2, this);
+//        this.teams['b'].push(sprite2);
+//        sprite2.enemyTeam = this.getTeam.bind(this,'a');
+//        sprite2.homeTeam = this.getTeam.bind(this, 'b');
+//        sprite2.team = 'b';
+//
+//        this.sprites.push(sprite);
+//        this.sprites.push(sprite2);
+//        this.teams['a'].push(sprite);
+//        this.teams['b'].push(sprite2);
 
         this.summonEnemyHero();
 
