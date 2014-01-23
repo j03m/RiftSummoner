@@ -1,22 +1,24 @@
 var jc = jc || {};
 jc.WorldLayer = jc.UiElementsLayer.extend({
-    init: function(size, sprites) {
+    init: function(size, mapTiles, batches) {
         if (this._super()) {
 
-            var mapTiles = [];
-            for(var i=0;i<sprites.length;i++){
-                //this could possibly be the most ineficient thing ever :) (the function optimized not to reparse plists...so maybe not)
-                mapTiles.push(jc.makeSpriteWithMultipackPlist(gameboardPlists, gameboardPngs, gameboardFrames[i]));
+
+            //add batches, assume sprites are already childed.
+            for(var i =0;i<batches.length;i++){
+                this.addChild(batches[i]);
+                this.reorderChild(batches[i], jc.backDropZOrder);
             }
+
 
             var tileX = mapTiles[0].getContentSize().width/2;
             var tileY = size.height/2;
             this.setContentSize(size);
+
+            //arrange maptiles
             for(var i =0;i<mapTiles.length;i++){
                 mapTiles[i].setPosition(cc.p(tileX,tileY));
                 tileX+= mapTiles[i].getContentSize().width;
-                this.addChild(mapTiles[i]);
-                this.reorderChild(mapTiles[i],  jc.backDropZOrder);
             }
             this.worldSize = size;
             this.worldMidPoint = cc.p(this.worldSize.width/2, this.worldSize.height/2);
@@ -26,7 +28,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
 
             this.setViewCenter(cc.p(this.worldSize.width/2,this.worldSize.height/2));
             this.bubbleAllTouches(true);
-            this.worldScale = {x:this.winSize.width/this.worldSize.width, y:this.winSize.width/this.worldSize.width};
+            //this.worldScale = {x:this.winSize.width/this.worldSize.width, y:this.winSize.width/this.worldSize.width};
             var scaleX = 0;
             this.aspectRatio = this.winSize.width/this.winSize.height;
             this.scaleTable = [];
