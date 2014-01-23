@@ -11,6 +11,15 @@ var RangeBehavior =  function(sprite){
             missileName = "greenbullet"; //todo temp, remove
         }
         var missileType = missileConfig[missileName];
+        if (!jc.missileBatch){
+            jc.missileBatch = {};
+        }
+        if (!jc.missileBatch[missileType.png]){
+            jc.missileBatch[missileType.png] = cc.SpriteBatchNode.create(missileType.png);
+            this.owner.layer.addChild(jc.missileBatch[missileType.png]);
+            this.owner.layer.reorderChild(jc.missileBatch[missileType.png], jc.topMost);
+        }
+
         if (missileType.simple){
             this.missile = jc.makeSpriteWithPlist(missileType.plist,missileType.png, missileType.start);
         }else{
@@ -19,6 +28,8 @@ var RangeBehavior =  function(sprite){
             this.missile.runAction(this.missileAnimation);
         }
         this.missile.setFlippedX(!this.owner.isFlippedX());
+        jc.missileBatch[missileType.png].addChild(this.missile)
+
     }
 }
 
@@ -94,23 +105,6 @@ RangeBehavior.prototype.doMissile = function(){
         var vector = this.getVectorTo(this.locked.getBasePosition(), this.owner.getBasePosition());
         var timeToImpact = vector.distance/missileType.speed;
 
-
-        if (!this.missile){
-            jc.log(['rangeBehavior'], 'Animating: ' + this.owner.name + ' missle: ' + missileName);
-            if (missileType.simple){
-            	this.missile = jc.makeSpriteWithPlist(missileType.plist,missileType.png, missileType.start);
-            }else{
-				this.missile = jc.makeSpriteWithPlist(missileType.plist, missileType.png, missileType.start);
-	            this.missileAnimation = jc.makeAnimationFromRange(missileName, missileType );
-	            this.missile.runAction(this.missileAnimation);
-            }
-
-
-            this.missile.setFlippedX(!this.owner.isFlippedX());
-        }
-
-
-        this.owner.layer.addChild(this.missile);
         this.missile.setVisible(true);
         var ownerPos = this.owner.getBasePosition();
         var tr = this.owner.getTextureRect();
@@ -213,17 +207,15 @@ RangeBehavior.prototype.doMissile = function(){
                 }
             }
             //this.missile.setVisible(false);
-            this.owner.layer.removeChild(this.missile, false);
+            //this.owner.layer.removeChild(this.missile, false);
             this.missile.setVisible(false);
             this.firing = false;
 
         }.bind(this));
-        moveTo.retain();
+
         var seq = cc.Sequence.create(moveTo, callback);
-        seq.retain();
         this.missile.runAction(seq);
         if (rotateTo){
-            rotateTo.retain();
             this.missile.runAction(rotateTo);
         }
 
