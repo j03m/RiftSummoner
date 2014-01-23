@@ -353,6 +353,7 @@ var ArenaGame = jc.WorldLayer.extend({
         this.tableView.disableCell(this.barIndex);
         var count = 0;
         var hold = [];
+
         for(var i =0; i<def.number;i++){
             var sprite = this.makeTeamASprite(this.barSelection);
             this.selectedCreeps.push(sprite);
@@ -698,6 +699,7 @@ var ArenaGame = jc.WorldLayer.extend({
         if (this.lastEnemyHero < this.teamBSprites.length){
             var name = this.teamBSprites[this.lastEnemyHero].name;
             var def = spriteDefs[name];
+
             if (def.creep){
                 this.schedule(function(){
                     var enemyHero = this.makeTeamBSprite(name);
@@ -841,7 +843,7 @@ var ArenaGame = jc.WorldLayer.extend({
             } else if (sprites){
                 //was sprite selected?
                 //check sprites
-                //this.checkSpriteTouch(sprites, touch);
+                this.checkSpriteTouch(sprites, touch);
                 //this.checkPowerBar(sprites);
                 //this.checkSquadBar(sprites);
             }
@@ -885,12 +887,17 @@ var ArenaGame = jc.WorldLayer.extend({
         var nodePos = this.convertToItemPosition(worldPos);
         var minSprite = this.getBestSpriteForTouch(nodePos, sprites, this.getTeam('a'));
         if (minSprite){
-            if (this.selectedSprite != minSprite){
-                jc.playEffectOnTarget(this.charSelect, minSprite, this, true );
-                this.clearSelection();
-                this.selectedSprite = minSprite;
+            var def = spriteDefs[minSprite].name;
+            if (!def.creep){
+                if (this.selectedSprite != minSprite){
+                    this.doHeroSelect(minSprite);
+                }
+            }else{
+                if (this.selectedCreeps.indexOf(minSprite) != -1){
+                    this.doCreepSelect(minSprite);
+                }
             }
-            this.nextTouchDo(this.setSpriteTargetLocation.bind(this),true);
+
         }
     },
     getBestSpriteForTouch:function(touch, sprites, team){

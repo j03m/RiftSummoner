@@ -94,15 +94,6 @@ RangeBehavior.prototype.doMissile = function(){
         var vector = this.getVectorTo(this.locked.getBasePosition(), this.owner.getBasePosition());
         var timeToImpact = vector.distance/missileType.speed;
 
-        if (!jc.missileBatch){
-            jc.missileBatch = {};
-        }
-
-        if (!jc.missileBatch[missileType.png]){
-            jc.missileBatch[missileType.png] = cc.SpriteBatchNode.create(missileType.png);
-            //this.owner.layer.addChild(jc.missileBatch[missileType.png]);
-            //this.owner.layer.reorderChild(jc.missileBatch[missileType.png], jc.topMost);
-        }
 
         if (!this.missile){
             jc.log(['rangeBehavior'], 'Animating: ' + this.owner.name + ' missle: ' + missileName);
@@ -114,9 +105,10 @@ RangeBehavior.prototype.doMissile = function(){
 	            this.missile.runAction(this.missileAnimation);
             }
 
-            //jc.missileBatch[missileType.png].addChild(this.missile);
+
             this.missile.setFlippedX(!this.owner.isFlippedX());
         }
+
 
         this.owner.layer.addChild(this.missile);
         this.missile.setVisible(true);
@@ -222,6 +214,7 @@ RangeBehavior.prototype.doMissile = function(){
             }
             //this.missile.setVisible(false);
             this.owner.layer.removeChild(this.missile, false);
+            this.missile.setVisible(false);
             this.firing = false;
 
         }.bind(this));
