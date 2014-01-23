@@ -112,7 +112,7 @@ var missileConfig = {
                         "frames":7,
                         "delay":0.01,
                         "effect":"explo",
-                        "speed":300,
+                        "speed":600,
                     },
                     "ballVoid":{
                         "png":"art/missiles{v}.png",
@@ -120,7 +120,7 @@ var missileConfig = {
                         "start":"ballVoid.1.png",
                         "frames":6,
                         "delay":0.01,
-                        "speed":300,
+                        "speed":600,
                     },
                     "cannonball":{
                         "png":"art/missiles{v}.png",
@@ -129,7 +129,7 @@ var missileConfig = {
                         "frames":6,
                         "delay":0.05,
                         "effect":"explo",
-                        "speed":170,
+                        "speed":800,
                         "path":"jump"
                     },
 

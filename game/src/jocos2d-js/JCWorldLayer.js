@@ -1,18 +1,29 @@
 var jc = jc || {};
 jc.WorldLayer = jc.UiElementsLayer.extend({
-    init: function(worldMap) {
+    init: function(size, sprites) {
         if (this._super()) {
-            //set background layer
-            this.backDrop = cc.Sprite.create(worldMap);
-            this.addChild(this.backDrop);
-            this.backDrop.setPosition(this.winSize.width/2, this.winSize.height/2);
-            this.reorderChild(this.backDrop,  jc.backDropZOrder);
-            this.worldSize = this.backDrop.getContentSize();
-            var x = this.worldSize.width/2;
-            var y = this.worldSize.height/2;
-            this.worldMidPoint = cc.p(x,y);
+
+            var mapTiles = [];
+            for(var i=0;i<sprites.length;i++){
+                //this could possibly be the most ineficient thing ever :) (the function optimized not to reparse plists...so maybe not)
+                mapTiles.push(jc.makeSpriteWithMultipackPlist(gameboardPlists, gameboardPngs, gameboardFrames[i]));
+            }
+
+            var tileX = mapTiles[0].getContentSize().width/2;
+            var tileY = size.height/2;
+            this.setContentSize(size);
+            for(var i =0;i<mapTiles.length;i++){
+                mapTiles[i].setPosition(cc.p(tileX,tileY));
+                tileX+= mapTiles[i].getContentSize().width;
+                this.addChild(mapTiles[i]);
+                this.reorderChild(mapTiles[i],  jc.backDropZOrder);
+            }
+            this.worldSize = size;
+            this.worldMidPoint = cc.p(this.worldSize.width/2, this.worldSize.height/2);
             this.screenMidPoint = cc.p(this.winSize.width/2, this.winSize.height/2);
-            this.worldBoundary = cc.rect(this.worldSize.width/4, this.worldSize.height/4, this.worldSize.width/2 + this.worldSize.width/4, this.worldSize.height/2 + this.worldSize.height/4);
+            this.worldBoundary = cc.rect(0,0, this.worldSize.width, this.worldSize.height);
+            this.playableRect = cc.rect(0,0, this.worldSize.width, this.worldSize.height);
+
             this.setViewCenter(cc.p(this.worldSize.width/2,this.worldSize.height/2));
             this.bubbleAllTouches(true);
             this.worldScale = {x:this.winSize.width/this.worldSize.width, y:this.winSize.width/this.worldSize.width};
@@ -34,11 +45,17 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
                 this.scaleTable.push({x:myScaleX, y:myScaleX/this.aspectRatio});
                 i+=inc;
             }
-
             return true;
         } else {
             return false;
         }
+    },
+    createBackdropTexture:function(tile){
+
+        var sprite = cc.Sprite.initWithFile(tile);
+        //GL_LINEAR, GL_REPEAT
+        sprite.getTexture().setTexParameters(0x2601,0x2601,0x2901,0x2901);
+        return sprite;
     },
     getOkayScale:function(width,height){
         var okayHeight = width/this.aspectRatio;
@@ -54,9 +71,12 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
     },
     panToWorldPoint:function(point, scale, rate, doneCallback){
         var converted = this.convertToLayerPosition(point)
-        //console.log("Scale:" + JSON.stringify(scale));
-        //Svar okScale = this.getClosestCorrectScale(scale);
-        //console.log("Corrected Scale:" + JSON.stringify(okScale));
+        this.capBounds(converted);
+
+        if (!rate){
+            rate = jc.defaultTransitionTime;
+        }
+
         this.doScale(scale, converted, rate, doneCallback);
     },
     fullZoomOut:function(rate, done){
@@ -67,45 +87,70 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         this.doScale(scale, converted, rate, done);
 
     },
+    capBounds:function(pos, atScale){
+
+        if (!atScale){
+            atScale = this.getScale();
+        }
+
+        var widthMinFactor =  ((this.worldSize.width * atScale) - this.winSize.width)/2;
+        var heightMinFactor = ((this.worldSize.height * atScale) - this.winSize.height)/2;;
+        var convertedMid = this.convertToLayerPosition(this.worldMidPoint);
+
+        var widthMin = convertedMid.x + widthMinFactor;
+        var heightMin = convertedMid.y + heightMinFactor;
+
+        var widthMax = convertedMid.x - widthMinFactor;
+        var heightMax = convertedMid.y - heightMinFactor;
+
+
+        var capped = {x:false, y:false};
+
+
+        if (pos.x <= widthMax){
+            jc.log(['Borders'], 'capping x: ' + pos.x + ' to ' + widthMax);
+            pos.x = widthMax;
+            capped.x = true;
+        }
+
+        if (pos.y <= heightMax){
+            jc.log(['Borders'], 'capping y: ' + pos.y + ' to ' + heightMax);
+            pos.y = heightMax;
+            capped.y = true;
+        }
+
+        if(pos.x >= widthMin){
+            jc.log(['Borders'], 'capping x: ' + pos.x + ' to ' + widthMin);
+            pos.x = widthMin;
+            capped.x = true;
+        }
+
+        if (pos.y >= heightMin){
+            jc.log(['Borders'], 'capping y: ' + pos.y + ' to ' + heightMin);
+            pos.y = heightMin;
+            capped.y = true;
+        }
+
+        return capped;
+    },
     doScale:function(scale, pos, rate, callback){
         if (this.currentScaleTo){
             if (this.panRunning){
                 this.stopAction(this.currentScaleTo);
             }
-            this.currentScaleTo.release();
 
         }
         if (this.currentActionMove){
             if (this.panRunning){
                 this.stopAction(this.currentActionMove);
             }
-            this.currentActionMove.release();
+
         }
 
-        var widthMax = (this.worldSize.width*this.getScale() - this.winSize.width)/2;
-        var heightMax = (this.worldSize.height*this.getScale() - this.winSize.height)/2;
-
-        if (pos.x > widthMax){
-            pos.x = widthMax;
-        }
-
-        if (pos.y >= heightMax){
-            pos.y = heightMax;
-        }
-
-        if(pos.x < widthMax*-1){
-            pos.x = widthMax*-1;
-        }
-
-        if (pos.y < heightMax*-1){
-            pos.y = heightMax*-1;
-        }
-
+        this.capBounds(pos, scale);
 
         this.currentActionMove = cc.MoveTo.create(rate, pos);
-        this.currentScaleTo = cc.ScaleTo.create(rate, scale.x, scale.y);
-        this.currentScaleTo.retain();
-        this.currentActionMove.retain();
+
         this.panRunning = true;
         this.runActionWithCallback(this.currentActionMove, function(){
             this.panRunning = false;
@@ -113,7 +158,13 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
                 callback();
             }
         }.bind(this));
-        this.runAction(this.currentScaleTo);
+
+        if (scale != undefined){
+            this.currentScaleTo = cc.ScaleTo.create(rate, scale.x, scale.y);
+            this.runActionWithCallback(this.currentScaleTo, function(){
+                console.log("pan done");
+            }.bind(this));
+        }
     },
     shake:function(){
         if (!this.shaking){
@@ -190,12 +241,13 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         return this.getScaleValue(this.worldSize.width *0.7, this.worldSize.height*0.7);
     },
     getScaleWorld:function(){
-        return this.getScaleValue(this.worldSize.width, this.worldSize.height);
+        return cc.p(0.25, 0.25);
     },
     convertToLayerPosition:function(point){
         jc.cap(point, this.worldBoundary);
         var pointAug = cc.pMult(point, -1);
-        return cc.pAdd(pointAug, this.worldMidPoint);
+
+        return cc.pAdd(pointAug, this.screenMidPoint);
     },
     convertToItemPosition:function(point){
         //get a screen position
@@ -225,7 +277,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
 
     },
     screenToWorld:function(point){
-        return this.backDrop.convertToNodeSpace(point)
+        return this.convertToNodeSpace(point)
 
     },
     setViewCenter:function(point){
@@ -252,19 +304,23 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
                 this.pinchMidPoint = cc.pMidpoint(world1, world2);
                 var distance = this.sqrOfDistanceBetweenPoints(touches[0], touches[1]);
                 distance = Math.sqrt(distance);
+
+
                 if (this.lastDistance == undefined){
                     this.lastDistance = distance;
-                }else if (distance > this.lastDistance){ //outward, grow
-                    jc.log(['MultiTouchDetails'], 'diff growing:' + distance + " vs " + this.lastDistance );
-                    this.handlePinch(distance);
-                }else if (distance < this.lastDistance){
-                    jc.log(['MultiTouchDetails'], 'diff shrinking:' + distance + " vs " + this.lastDistance );
-                    this.handlePinch(distance, true);
-                }else{
-                    //equal, do nothing
+                }
+
+                var diff = this.lastDistance - distance;
+                if (Math.abs(diff)> 25*jc.characterScaleFactor){
+                    if (diff<0){ //outward, grow
+                        jc.log(['MultiTouchDetails'], 'diff growing:' + distance + " vs " + this.lastDistance );
+                        this.handlePinch(distance);
+                    }else if (distance < this.lastDistance){
+                        jc.log(['MultiTouchDetails'], 'diff shrinking:' + distance + " vs " + this.lastDistance );
+                        this.handlePinch(distance, true);
+                    }
                 }
                 this.lastDistance = distance;
-
                 return true;
             }else{
                 var worldPoint = this.screenToWorld(touches[0]);
@@ -292,7 +348,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
             return;
         }else{
             if (Date.now() - this.dbTouchA.when < 2000){
-                if (Math.abs(this.dbTouchA.touch.x - touch.x) < 10 && Math.abs(this.dbTouchA.touch.y - touch.y) < 10){
+                if (Math.abs(this.dbTouchA.touch.x - touch.x) < 25 * jc.characterScaleFactor && Math.abs(this.dbTouchA.touch.y - touch.y) < 25 * jc.characterScaleFactor){
                     this.dbTouchA = undefined;
                     return true;
                 }else{
@@ -307,10 +363,64 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         return false;
 
     },
+    calculateScaleForSprites:function(sprites){
+        var minX=this.worldSize.width;
+        var maxX=0;
+        var minY=this.worldSize.height;
+        var maxY=0;
+
+        for (var i =0; i<sprites.length;i++){
+            if (sprites[i] && sprites[i].getParent()==this){
+                var position = sprites[i].getBasePosition(); //where am i in the layer
+                var tr = sprites[i].getTextureRect();
+                var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
+                var worldPos = this.screenToWorld(nodePos); //where is that in the world?
+                var compareMaxX = worldPos.x + tr.width;
+                var compareMinX = worldPos.x - tr.width;
+                var compareMaxY = worldPos.y + tr.height*1.5;
+                var compareMinY = worldPos.y - (tr.height/2);
+
+                if (compareMaxX > maxX){
+                    maxX = compareMaxX;
+                    //cosole.log("MaxX:"+this.sprites[i].name);
+                }
+
+                if (compareMinX < minX){
+                    minX = compareMinX;
+                    //cosole.log("MinX:"+this.sprites[i].name);
+                }
+
+                if (compareMaxY > maxY){
+                    maxY = compareMaxY;
+                    //cosole.log("MaxY:"+this.sprites[i].name);
+                }
+
+                if (compareMinY < minY){
+                    minY = compareMinY;
+                    //cosole.log("MinY:"+this.sprites[i].name);
+                }
+            }
+
+        }
+
+        var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
+        var scale = this.getOkayScale(maxX-minX, maxY-minY);
+        return {mid:characterMid, scale:scale};
+    },
     handleDrag:function(newPoint){
+        if (!this.initialTouch){
+            return;
+        }
+
+        if (this.dragDelegate){
+            this.dragDelegate();
+        }
+
         jc.log(['DragDetails'], 'move raw:' + JSON.stringify(newPoint) );
         jc.log(['DragDetails'], 'initial touch:' + JSON.stringify(this.initialTouch) );
         var sub = cc.pSub(newPoint,this.initialTouch);
+        sub.x*=this.getScale();
+        sub.y*=this.getScale();
         jc.log(['DragDetails'], 'diff move:' + JSON.stringify(sub) );
 
 
@@ -329,19 +439,29 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         pos.y+=delta.y;
         jc.log(['DragDetails'], 'position after adjustment:' + JSON.stringify(pos) );
 
-        //cap - no further than furthest visible points
-        var widthMax = (this.worldSize.width*this.getScale() - this.winSize.width)/2;
-        var heightMax = (this.worldSize.height*this.getScale() - this.winSize.height)/2;
+        var capped = this.capBounds(pos);
+
+        jc.log(['DragDetails'], 'position after cap:' + JSON.stringify(pos) );
+
 
         this.adjustX = delta.x ;
         this.adjustY = delta.y ;
 
-
-        if (pos.x >= widthMax || pos.x <= widthMax*-1){
+        //no dragging if the world is too small
+        if (this.worldSize.width * this.getScale() < this.winSize.width){
             this.adjustX =0;
         }
 
-        if (pos.y >= heightMax || pos.y <= heightMax*-1){
+        if (this.worldSize.height * this.getScale() < this.winSize.height){
+            this.adjustY =0;
+        }
+
+
+        if (capped.x){
+            this.adjustX =0;
+        }
+
+        if (capped.y){
             this.adjustY =0;
         }
     },
@@ -392,34 +512,25 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
 
             //now we need to adjust positions in the event that scale has taken us over.
             var pos = this.getPosition();
-            var widthMax = (this.worldSize.width*this.getScale() - this.winSize.width)/2;
-            var heightMax = (this.worldSize.height*this.getScale() - this.winSize.height)/2;
+            var convertedMid = this.convertToLayerPosition(this.worldMidPoint);
+            //tODO: HERE - for some reason, mobile pinch zoom out puts game at bottom of screen
 
-            if (pos.x > widthMax){
-                pos.x = widthMax;
+            if (this.worldSize.width * this.getScale() < this.winSize.width){
+                jc.log(['Borders'], "mid point x")
+                pos.x = convertedMid.x;
             }
 
-            if (pos.y >= heightMax){
-                pos.y = heightMax;
+            this.capBounds(pos);
+            if (this.worldSize.height * this.getScale() < this.winSize.height){
+                jc.log(['Borders'], "mid point y")
+                pos.y = convertedMid.y;
             }
 
-            if(pos.x < widthMax*-1){
-                pos.x = widthMax*-1;
-            }
 
-            if (pos.y < heightMax*-1){
-                pos.y = heightMax*-1;
-            }
             this.setPosition(pos);
-
-
-
         }
 
 
-    },
-    insidePlayableRect:function(point){
-        return cc.rectContainsPoint(this.playableRect, point);
     },
     pinchZoomWithMovedTouch: function (movedTouch)
     {

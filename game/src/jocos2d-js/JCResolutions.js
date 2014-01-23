@@ -8,7 +8,7 @@ jc.resolutions = {};
 
 jc.resolutions.iphone = cc.size(480,320);
 jc.resolutions.iphone.scale =   0.234375;
-jc.resolutions.iphone.charScale =   0.55;
+jc.resolutions.iphone.charScale =   0.25;
 jc.resolutions.iphone.adjusty = -20;
 jc.resolutions.iphone.adjustx = 0;
 
@@ -21,13 +21,13 @@ jc.resolutions.iphone5.adjustx = 0;
 
 jc.resolutions.iphone4 = cc.size(960,640);
 jc.resolutions.iphone4.scale = 0.46875;
-jc.resolutions.iphone4.charScale = 0.65;
+jc.resolutions.iphone4.charScale = 0.55;
 jc.resolutions.iphone4.adjusty = -50;
 jc.resolutions.iphone4.adjustx = 0;
 
 jc.resolutions.ipadhd = cc.size(2048, 1536);
 jc.resolutions.ipadhd.scale = 1;
-jc.resolutions.ipadhd.charScale = .5;
+jc.resolutions.ipadhd.charScale = 1;
 jc.resolutions.ipadhd.adjusty = 0;
 jc.resolutions.ipadhd.adjustx = 0;
 

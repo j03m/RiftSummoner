@@ -7,6 +7,7 @@ var tracers = {
     'touchlayer':0,
     'touchid':0,
     'touchout':0,
+    'loader':1,
 	'mouse':0,
 	'states':0,
 	'sprite':0,
@@ -33,7 +34,7 @@ var tracers = {
     'jc.shade':0,
     'setText':0,
     'missile':0,
-    'map':0,
+    'map':1,
     'bubble':0,
     'tutorials':0,
     'blobOperations':0,
@@ -45,15 +46,25 @@ var tracers = {
     'DragDetails':0,
     'TouchClaims':0,
     'DragTaper':0,
-    'ArenaSelection':0
+    'ArenaSelection':0,
+    'bgtexture':0,
+    'Borders':0,
 };
 
 jc.log = function(categories, msg){
-	for (var i =0;i<categories.length; i++){
-		if (tracers[categories[i]]!=1){
-			return;
-		}
-	}
+
+    if (categories instanceof Array){
+        for (var i =0;i<categories.length; i++){
+            if (tracers[categories[i]]!=1){
+                return;
+            }
+        }
+    }else{
+        if (tracers[categories]!=1){
+            return;
+        }
+    }
+
 	if (typeof msg == 'string' || msg instanceof String){
 		cc.log(JSON.stringify(categories) + ': ' + msg);
 	}else{

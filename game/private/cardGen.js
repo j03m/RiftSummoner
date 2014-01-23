@@ -18,13 +18,11 @@ exports.generateCards = function(stones, cards, callback){
 
 exports.getDefault = function(){
     var result = [];
-    var card = {name:"dwarvenKnightEarth", id:uuid.v4()};
+    var card = {name:"priestessEarth", id:uuid.v4()};
     result.push(card);
-    card = {name:"dwarvenKnightEarth", id:uuid.v4()};
+    card = {name:"necromancer", id:uuid.v4()};
     result.push(card);
-    card = {name:"elfLife", id:uuid.v4()};
-    result.push(card);
-    card = {name:"priestessEarth", id:uuid.v4()};
+    card = {name:"elfAssassin", id:uuid.v4()};
     result.push(card);
     return result;
 }

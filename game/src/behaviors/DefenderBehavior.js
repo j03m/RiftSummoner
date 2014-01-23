@@ -90,10 +90,16 @@ DefenderBehavior.prototype.handleDefenderDamage = function(dt){
     }
 }
 
-DefenderBehavior.prototype.defendThink = function(dt){
+DefenderBehavior.prototype.defendThink = function(dt, selected){
 
     var state= this.getState();
     this.handleDeath();
+
+    if (selected){
+        if (!this.forceLocked && state.brain != 'followUserCommand' && !this.forceSupport){
+            return;
+        }
+    }
 
     switch(state.brain){
         case 'idle':this.handleDefenderIdle(dt);
