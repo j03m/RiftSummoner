@@ -87,7 +87,7 @@ jc.Sprite = cc.Sprite.extend({
     die:function(){
         this.imdeadman=true;
         this.layer.removeChild(this, true);
-        this.layer.removeChild(this.shadow, true);
+        this.layer.shadowBatchNode.removeChild(this.shadow, true);
         this.layer.removeChild(this.healthBar, true);
         this.cleanUp();
     },

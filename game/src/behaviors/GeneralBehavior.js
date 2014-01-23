@@ -382,7 +382,7 @@ GeneralBehavior.prototype.adjustFlock = function(){
                     //adjust my seek position by 10px y north
                     shouldFlock = true;
                     var num = jc.randomNum(0,1);
-                    var val = jc.randomNum(1, this.owner.getTargetRadiusY()*3);
+                    var val = jc.randomNum(1, this.owner.getTargetRadiusY());
                     if (num){
                         augment.y+= val;
                     }else{
