@@ -476,7 +476,9 @@ jc.scaleToCharacter = function(scaleMe, toMe, factor){
 }
 
 jc.playEffectOnTarget = function(name, target, layer, child){
-	if (!target){
+	return;
+
+    if (!target){
 		return;
 	}
     var config = effectsConfig[name];

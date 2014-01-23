@@ -39,6 +39,8 @@ jc.Sprite = cc.Sprite.extend({
             throw firstFrame + " for sprite: " + config.name + " was not found.";
         }
 		this.initWithSpriteFrame(frame);
+        this.batch = cc.SpriteBatchNode.create(sheet);
+        this.batch.addChild(this);
         this.retain(); //j03m fix leak
         this.type = config.type;
         if(this.type != 'background'){
@@ -88,7 +90,7 @@ jc.Sprite = cc.Sprite.extend({
         this.imdeadman=true;
         this.layer.removeChild(this, true);
         this.layer.shadowBatchNode.removeChild(this.shadow, true);
-        this.layer.removeChild(this.healthBar, true);
+        //this.layer.removeChild(this.healthBar, true);
         this.cleanUp();
     },
     fallToShadow:function(){
@@ -116,11 +118,11 @@ jc.Sprite = cc.Sprite.extend({
         this.updateShadowPosition();
     },
     initHealthBar:function(){
-        this.healthBar = cc.DrawNode.create();
-        this.healthBar.retain(); //j03m fix leak
-        this.healthBar.contentSize = cc.size(this.HealthBarWidth, this.HealthBarHeight);
-        this.healthBar.name = "healthBar";
-        this.layer.addChild(this.healthBar);
+//        this.healthBar = cc.DrawNode.create();
+//        this.healthBar.retain(); //j03m fix leak
+//        this.healthBar.contentSize = cc.size(this.HealthBarWidth, this.HealthBarHeight);
+//        this.healthBar.name = "healthBar";
+//        this.layer.addChild(this.healthBar);
         this.updateHealthBarPos();
     },
 	cleanUp: function(){
@@ -240,7 +242,7 @@ jc.Sprite = cc.Sprite.extend({
         var box = this.getContentSize();
         point.y += box.height/2;
         this.setPosition(point);
-        this.layer.reorderChild(this, point.y*-1);
+        //this.layer.reorderChild(this, point.y*-1);
         this.updateHealthBarPos();
         this.updateShadowPosition();
     },
@@ -449,17 +451,17 @@ jc.Sprite = cc.Sprite.extend({
         }
     },
     update:function(){
-        this.drawHealthBar();
+        //this.drawHealthBar();
     },
     updateHealthBarPos:function(){
-        if (this.type != 'background' && this.isVisible()){
-            var myPos = this.getBasePosition();
-            var tr = this.getTextureRect();
-            myPos.y += tr.height + 10;
-            myPos.x -= this.HealthBarWidth/2;
-            this.healthBar.setPosition(myPos);
-
-        }
+//        if (this.type != 'background' && this.isVisible()){
+//            var myPos = this.getBasePosition();
+//            var tr = this.getTextureRect();
+//            myPos.y += tr.height + 10;
+//            myPos.x -= this.HealthBarWidth/2;
+//            this.healthBar.setPosition(myPos);
+//
+//        }
     },
     updateShadowPosition:function(){
         if (this.type!='background'){
