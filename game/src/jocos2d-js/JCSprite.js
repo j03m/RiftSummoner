@@ -53,17 +53,17 @@ jc.Sprite = cc.Sprite.extend({
         }
 		this.initWithSpriteFrame(frame);
 
-//        if (!jc.spriteBatch){
-//            jc.spriteBatch = {};
-//        }
-//
-//        if (!jc.spriteBatch[sheet]){
-//            jc.spriteBatch[sheet] = cc.SpriteBatchNode.create(sheet);
-//            jc.spriteBatch[sheet].sheet = sheet;
-//        }
-//
-//        this.batch = jc.spriteBatch[sheet];
-//        this.batch.addChild(this);
+        if (!jc.spriteBatch){
+            jc.spriteBatch = {};
+        }
+
+        if (!jc.spriteBatch[sheet]){
+            jc.spriteBatch[sheet] = cc.SpriteBatchNode.create(sheet);
+            jc.spriteBatch[sheet].sheet = sheet;
+        }
+
+        this.batch = jc.spriteBatch[sheet];
+        this.batch.addChild(this);
         this.retain(); //j03m fix leak
         this.type = config.type;
         if(this.type != 'background'){

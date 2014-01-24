@@ -508,16 +508,14 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite.setState('idle');
 
 
-//        if (!this.batches){
-//            this.batches = {};
-//        }
-//        if (!this.batches[sprite.batch.sheet]){
-//            this.addChild(sprite.batch);
-//            this.batches[sprite.batch.sheet]=true;
-//        }
-
-        jc.log(['arena'], "Add child");
-        this.addChild(sprite);
+        if (!this.batches){
+            this.batches = {};
+        }
+        if (!this.batches[sprite.batch.sheet]){
+            jc.log(['arena'], "new batch, adding");
+            this.addChild(sprite.batch);
+            this.batches[sprite.batch.sheet]=true;
+        }
 
         sprite.setVisible(false);
         sprite.layer = this;
@@ -750,8 +748,13 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     thinkSprites:function(dt){
+        var alive = 0;
         for(var i =0;i<this.sprites.length;i++){
-            if (this.sprites[i]){ //} && this.sprites[i].getParent()==this){
+            if (this.sprites[i]){ // && this.sprites[i].getParent()==this){
+                if(this.sprites[i].isAlive()){
+                    alive++;
+                    jc.log(['spritesonboard'], "Alive - team: " + this.sprites[i].team + ' ' + this.sprites[i].name);
+                }
                 var selected = false;
                 if (this.selectedSprite && this.selectedSprite == this.sprites[i]){
                     selected = true;
@@ -775,6 +778,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
             }
         }
+        jc.log(['spritesonboard'], "Total alive: " + alive + " fps:" + cc.Director.getInstance()._frameRate);
     },
     setSpriteTargetLocation:function(touch, sprites){
         var worldPos = this.screenToWorld(touch);
@@ -944,7 +948,7 @@ var ArenaGame = jc.WorldLayer.extend({
         return minSprite;
     },
     checkWinner: function(){
-
+        return;
         //first - is everyone dead on either team?
         var teamaisdead = true;
         var teambisdead = true;
