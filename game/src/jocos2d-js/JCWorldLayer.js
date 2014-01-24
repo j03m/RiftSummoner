@@ -136,12 +136,14 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         if (this.currentScaleTo){
             if (this.panRunning){
                 this.stopAction(this.currentScaleTo);
+                this.currentScaleTo.release();
             }
 
         }
         if (this.currentActionMove){
             if (this.panRunning){
                 this.stopAction(this.currentActionMove);
+                this.currentActionMove.release();
             }
 
         }
@@ -149,7 +151,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         this.capBounds(pos, scale);
 
         this.currentActionMove = cc.MoveTo.create(rate, pos);
-
+        this.currentActionMove.retain();
         this.panRunning = true;
         this.runActionWithCallback(this.currentActionMove, function(){
             this.panRunning = false;
@@ -160,6 +162,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
 
         if (scale != undefined){
             this.currentScaleTo = cc.ScaleTo.create(rate, scale.x, scale.y);
+            this.currentScaleTo.retain();
             this.runActionWithCallback(this.currentScaleTo, function(){
                 console.log("pan done");
             }.bind(this));

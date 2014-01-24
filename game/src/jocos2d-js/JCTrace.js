@@ -50,6 +50,7 @@ var tracers = {
     'bgtexture':0,
     'Borders':0,
     'spritesonboard':1,
+    'batching':1
 };
 
 jc.log = function(categories, msg){

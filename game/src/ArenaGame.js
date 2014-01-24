@@ -19,7 +19,14 @@ var ArenaGame = jc.WorldLayer.extend({
     init: function() {
         this.name = "Arena";
         var arenaSize = cc.size(9088 * jc.characterScaleFactor, 1706 * jc.characterScaleFactor);
-
+        var pointQuad = true;
+        var bounds = {
+            x:0,
+            y:0,
+            width:arenaSize.width,
+            height:arenaSize.height
+        }
+        jc.quad = new QuadTree(bounds, pointQuad);
         if (this._super(arenaSize, gameboardFrames)) {
             Math.seedrandom('yay i made a game');
             this.teams['a'] = [];
@@ -359,6 +366,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.selectedCreeps.push(sprite);
             hold.push(sprite);
             if (i == 0){
+                jc.log(['arena'], "play charselect effect on sprite");
                 jc.playEffectOnTarget(this.charSelect, sprite, this, true );
             }
         }
@@ -497,8 +505,8 @@ var ArenaGame = jc.WorldLayer.extend({
         jc.log(['Arena'], 'schedule');
         this.schedule(function(dt){
             jc.log(['Arena'], 'updating...');
-            this.doUpdate(0.20);
-        }, 0.20);
+            this.doUpdate(0.5);
+        }, 0.5);
     },
     getSprite:function(nameCreate){
         var sprite;
@@ -507,18 +515,28 @@ var ArenaGame = jc.WorldLayer.extend({
         jc.log(['arena'], "Sprite generated: " + nameCreate);
         sprite.setState('idle');
 
+        if (jc.config.batch){
+            if (!this.batches){
+                this.batches = {};
+            }
+            if (!this.batches[sprite.batch.sheet]){
+                jc.log(['arena'], "new batch, adding");
+                this.addChild(sprite.batch);
+                this.batches[sprite.batch.sheet]=true;
+            }
+        }else{
+            this.addChild(sprite);
+        }
 
-        if (!this.batches){
-            this.batches = {};
-        }
-        if (!this.batches[sprite.batch.sheet]){
-            jc.log(['arena'], "new batch, adding");
-            this.addChild(sprite.batch);
-            this.batches[sprite.batch.sheet]=true;
-        }
 
         sprite.setVisible(false);
         sprite.layer = this;
+        if (this.totalGets == undefined){
+            this.totalGets = 0;
+        }else{
+            this.totalGets++;
+        }
+        sprite.id = this.totalGets;
         return sprite;
 	},
     makeTeamASprite:function(data){
@@ -528,6 +546,7 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite.homeTeam = this.getTeam.bind(this,'a');
         sprite.enemyTeam = this.getTeam.bind(this, 'b');
         sprite.team = 'a';
+        sprite.otherteam = 'b';
         sprite.setVisible(false);
         sprite.id = data.id;
         this.teams['a'].push(sprite);
@@ -543,6 +562,7 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite.homeTeam = this.getTeam.bind(this,'b');
         sprite.enemyTeam = this.getTeam.bind(this, 'a');
         sprite.team = 'b';
+        sprite.otherteam = 'a';
         sprite.setVisible(false);
         this.teams['b'].push(sprite);
         this.touchTargets.push(sprite);
@@ -584,9 +604,12 @@ var ArenaGame = jc.WorldLayer.extend({
         }
     },
     update:function(dt){
-        for (var i =0; i<this.sprites.length;i++){
+
+        for(var i=0;i<this.sprites.length;i++)   {
             this.sprites[i].behavior.handleMove(dt);
         }
+
+
     },
     doUpdate:function (dt){
         //pulse each sprite
@@ -624,8 +647,6 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.makeCreeps();
                 this.creepOnce = true;
             }
-
-
 
             this.panToSelected();
 
@@ -680,7 +701,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     makeCreeps: function(){
 
-        for(var i =0;i<10;i++){
+        for(var i =0;i<50;i++){
             var sprite = this.getSprite("goblinKnightNormal");
             var sprite2 = this.getSprite("goblinKnightNormal");
             sprite.setVisible(true);
@@ -750,30 +771,59 @@ var ArenaGame = jc.WorldLayer.extend({
     thinkSprites:function(dt){
         var alive = 0;
         for(var i =0;i<this.sprites.length;i++){
-            if (this.sprites[i]){ // && this.sprites[i].getParent()==this){
+            if (this.sprites[i] && this.sprites[i].getParent()==this && this.sprites[i].name != "nexus"){
                 if(this.sprites[i].isAlive()){
                     alive++;
-                    jc.log(['spritesonboard'], "Alive - team: " + this.sprites[i].team + ' ' + this.sprites[i].name);
-                }
-                var selected = false;
-                if (this.selectedSprite && this.selectedSprite == this.sprites[i]){
-                    selected = true;
-                }
-                if (this.selectedCreeps && this.selectedCreeps.indexOf(this.sprites[i])!=-1){
-                    selected = true;
-                }
-                if (selected){
-                    this.sprites[i].selectedTime = 1;
-                }else if (this.sprites[i].selectedTime != undefined){
-                    this.sprites[i].selectedTime-=dt;
                 }
 
-                if (selected){
-                    this.sprites[i].think(dt, selected);
-                }else if (this.sprites[i].selectedTime>0){
-                    this.sprites[i].think(dt, true);
-                }else{
-                    this.sprites[i].think(dt, false);
+                if(jc.config.think){
+                    var selected = false;
+                    if (this.selectedSprite && this.selectedSprite == this.sprites[i]){
+                        selected = true;
+                    }
+                    if (this.selectedCreeps && this.selectedCreeps.indexOf(this.sprites[i])!=-1){
+                        selected = true;
+                    }
+                    if (selected){
+                        this.sprites[i].selectedTime = 1;
+                    }else if (this.sprites[i].selectedTime != undefined){
+                        this.sprites[i].selectedTime-=dt;
+                    }
+
+                    if (selected){
+                        this.sprites[i].think(dt, selected);
+                    }else if (this.sprites[i].selectedTime>0){
+                        this.sprites[i].think(dt, true);
+                    }else{
+                        this.sprites[i].think(dt, false);
+                    }
+                }
+
+
+                if (jc.config.harlemShake){
+                    if (this.sprites[i].name != "nexus"){
+                        var x = jc.randomNum(0, this.worldSize.width);
+                        var y = jc.randomNum(0, this.worldSize.height);
+                        this.sprites[i].behavior.followCommand(cc.p(x,y));
+                    }
+                }
+
+                if (jc.config.blink){
+                    var x = jc.randomNum(0, this.worldSize.width);
+                    var y = jc.randomNum(0, this.worldSize.height);
+                    this.sprites[i].setPosition(cc.p(x,y));
+
+                }
+
+                if (jc.config.blinkAndDance){
+                    var x = jc.randomNum(0, this.worldSize.width);
+                    var y = jc.randomNum(0, this.worldSize.height);
+                    this.sprites[i].setBasePosition(cc.p(x,y));
+                    if (this.sprites[i].name != "nexus"){
+                        this.sprites[i].behavior.setState('idle', 'move');
+                    }
+
+
                 }
 
             }

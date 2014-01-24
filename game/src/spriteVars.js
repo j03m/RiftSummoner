@@ -558,31 +558,31 @@ var spriteDefs = {
 		"inherit": "femaleSorcerer",
 		"behavior": "tank"
 	},
-	"elfEarth": {
-		"name": "elfEarth",
-		"formalName": "Plains Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
-		"elementType": "earth",
-		"unitType": 4,
-		"special": "None",
-		"gameProperties": {
-			"MaxHP": 300,
-			"resistsRange": 50,
-			"movementType": 1,
-			"targets": 2,
-			"missile": "arrowNormal",
-			"damage": 35,
-			"speed": 250,
-			"actionDelays": {
-				"attack": 0.5
-			},
-			"effectDelays": {
-				"attack": 1
-			},
-			"targetRadius": 1200
-		},
-		"inherit": "elf"
-	},
+//	"elfEarth": {
+//		"name": "elfEarth",
+//		"formalName": "Plains Elf",
+//		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
+//		"elementType": "earth",
+//		"unitType": 4,
+//		"special": "None",
+//		"gameProperties": {
+//			"MaxHP": 300,
+//			"resistsRange": 50,
+//			"movementType": 1,
+//			"targets": 2,
+//			"missile": "arrowNormal",
+//			"damage": 35,
+//			"speed": 250,
+//			"actionDelays": {
+//				"attack": 0.5
+//			},
+//			"effectDelays": {
+//				"attack": 1
+//			},
+//			"targetRadius": 1200
+//		},
+//		"inherit": "elf"
+//	},
 	"elfFire": {
 		"name": "elfFire",
 		"formalName": "Fire Elf",

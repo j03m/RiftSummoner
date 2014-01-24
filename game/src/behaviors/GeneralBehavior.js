@@ -368,31 +368,43 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
 }
 
 GeneralBehavior.prototype.adjustFlock = function(){
-
-    var friends = this.allFriendsWithinRadius(300 * jc.characterScaleFactor);
+    if (!jc.config.flock){
+        return false;
+    }
+    //var friends = this.allFriendsWithinRadius(300 * jc.characterScaleFactor);
     var pos = this.owner.getBasePosition();
     var augment = cc.p(0,0);
-    var shouldFlock = false;
-    if (friends.length!=0){
-        for (var i =0; i<friends.length;i++){
-            //if we're locked onto the same person
-            if (friends[i].gameObject.movementType == this.owner.gameObject.movementType){
-                var diff = Math.abs(friends[i].getBasePosition().y-pos.y);
-                if (diff<20* jc.characterScaleFactor){
-                    //adjust my seek position by 10px y north
-                    shouldFlock = true;
-                    var num = jc.randomNum(0,1);
-                    var val = jc.randomNum(1, this.owner.getTargetRadiusY());
-                    if (num){
-                        augment.y+= val;
-                    }else{
-                        augment.y-= val;
-                    }
-                    break;
-                }
-            }
-        }
+    var shouldFlock = jc.randomNum(0,1);
+//    if (friends.length!=0){
+//        for (var i =0; i<friends.length;i++){
+//            //if we're locked onto the same person
+//            if (friends[i].gameObject.movementType == this.owner.gameObject.movementType){
+//                var diff = Math.abs(friends[i].getBasePosition().y-pos.y);
+//                if (diff<20* jc.characterScaleFactor){
+//                    //adjust my seek position by 10px y north
+//                    shouldFlock = true;
+//                    var num = jc.randomNum(0,1);
+//                    var val = jc.randomNum(1, this.owner.getTargetRadiusY());
+//                    if (num){
+//                        augment.y+= val;
+//                    }else{
+//                        augment.y-= val;
+//                    }
+//                    break;
+//                }
+//            }
+//        }
+//    }
+
+    var num = jc.randomNum(0,1);
+    var val = jc.randomNum(1, jc.randomNum(0,this.owner.getTargetRadiusY()));
+    if (num){
+        augment.y+= val;
+    }else{
+        augment.y-= val;
     }
+
+
     if (!this.flockAdjust){
         this.flockAdjust = augment;
     }
@@ -426,6 +438,9 @@ GeneralBehavior.prototype.seek = function(toPoint){
 
 
     var speed = this.owner.gameObject.speed;
+    var aug = jc.randomNum(0,25);
+    speed+=aug;
+
     speed *= jc.characterScaleFactor;
     if (!speed){
         throw "Character: " + this.owner.name + " speed not defined.";
