@@ -66,8 +66,8 @@ if (jc.assetCategory == 'ipadhd'){
     jc.gameboardTiles = 2
 }
 
-if (jc.gameboardTiles.assetCategory == 'iphone5'){
-    tiles = 6;
+if (jc.assetCategory == 'iphone5'){
+    jc.gameboardTiles = 6;
 }
 
 if (jc.assetCategory == 'iphone4'){

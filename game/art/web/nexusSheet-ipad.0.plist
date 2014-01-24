@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>nexus.1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{176,202}}</string>
+                <key>offset</key>
+                <string>{1,-155}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{169,310},{176,202}}</string>
+                <key>sourceSize</key>
+                <string>{512,512}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>nexusSheet-ipad.0.png</string>
+            <key>size</key>
+            <string>{256,256}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:f3f52b65cbc6e8ac221f63edda06d861:9eb0ffcc7f5d9f77e661212aaffa9f46:896aca78a76b7203c30c69746ceed581$</string>
+            <key>textureFileName</key>
+            <string>nexusSheet-ipad.0.png</string>
+        </dict>
+    </dict>
+</plist>
