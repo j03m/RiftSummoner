@@ -409,6 +409,7 @@ var spriteDefs = {
 		"details": "Extraordinarily powerful, but slow moving. These elementals inflict additional burn damage.",
 		"elementType": "fire",
 		"unitType": 3,
+		"multisheet-ipadhd": 2,
 		"damageMods": {
 			"burn": {
 				"damage": 40,
@@ -439,6 +440,7 @@ var spriteDefs = {
 		"details": "Fast elemental creatures that fire at range. Water elementals also have regenerative abilities.",
 		"elementType": "water",
 		"unitType": 3,
+		"multisheet-ipadhd": 2,
 		"special": "None",
 		"powers": {
 			"regeneration": {
@@ -469,6 +471,7 @@ var spriteDefs = {
 		"details": "Fast elemental creatures that fire at range. Wind elementals have knock back capability.",
 		"elementType": "air",
 		"unitType": 3,
+		"multisheet-ipadhd": 2,
 		"damageMods": {
 			"knockBack": {
 				"distance": 30
@@ -533,7 +536,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"cardIndex": 1,
 		"gameProperties": {
-			"MaxHP": 9999,
+			"MaxHP": 200,
 			"speed": 450,
 			"movementType": 1,
 			"targets": 2,
@@ -553,7 +556,7 @@ var spriteDefs = {
 		},
 		"byStep": 1,
 		"inherit": "femaleSorcerer",
-		"behavior": "range"
+		"behavior": "tank"
 	},
 	"elfEarth": {
 		"name": "elfEarth",
@@ -696,7 +699,7 @@ var spriteDefs = {
 				"delay": 0.03,
 				"type": 1
 			},
-			"attack3": {
+			"special": {
 				"start": 116,
 				"end": 149,
 				"delay": 0.03,
@@ -1093,6 +1096,7 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of earth, this unit has almost 2x the health of other elemental knights.",
 		"elementType": "earth",
 		"unitType": 3,
+		"multisheet-ipadhd": 2,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 1000,
@@ -1117,6 +1121,7 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of fire, this unit deals additional burn damage to its targets.",
 		"elementType": "fire",
 		"unitType": 3,
+		"multisheet-ipadhd": 2,
 		"damageMods": {
 			"burn": {
 				"damage": 50,
@@ -1147,6 +1152,7 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
 		"elementType": "void",
 		"unitType": 3,
+		"multisheet-ipadhd": 2,
 		"effect": "voidFire",
 		"powers": {
 			"vampireRadius": {
@@ -1179,6 +1185,7 @@ var spriteDefs = {
 		"elementType": "water",
 		"unitType": 3,
 		"effect": "healingRadius",
+		"multisheet-ipadhd": 2,
 		"gameProperties": {
 			"MaxHP": 500,
 			"movementType": 1,
@@ -1340,6 +1347,8 @@ var spriteDefs = {
 		"targetRadius": 150,
 		"startFrame": 1,
 		"endFrame": 204,
+		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"gameProperties": {
 			"movementType": 1,
 			"targets": 1,
@@ -1395,6 +1404,8 @@ var spriteDefs = {
 		"details": "Orcs are fast, fierce attackers. What they lack in heavy armor, they make up for in pure tenacity.",
 		"elementType": "none",
 		"unitType": 3,
+		"creep": true,
+		"number": 4,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 400,
@@ -1654,6 +1665,8 @@ var spriteDefs = {
 		"unitType": 3,
 		"flip": true,
 		"special": "Poison",
+		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"damageMods": {
 			"poison": {
 				"damage": 50,

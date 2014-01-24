@@ -1,55 +1,55 @@
 var powerTiles = {
     "fireBall":{
-        "png":"art/powerTiles{v}.png",
-        "plist":"art/powerTiles{v}.plist",
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
         "icon":"Fire4.png",
         "cooldown":2000,
         "type":"direct",
         "offense":"fireBall"
     },
     "poisonCloud":{
-        "png":"art/powerTiles{v}.png",
-        "plist":"art/powerTiles{v}.plist",
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
         "icon":"Poison4.png",
         "cooldown":2000,
         "type":"direct",
         "offense":"poisonCloud"
     },
     "lightningBolt":{
-        "png":"art/powerTiles{v}.png",
-        "plist":"art/powerTiles{v}.plist",
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
         "icon":"Holy1.png",
         "cooldown":2000,
         "type":"direct",
         "offense":"lightningBolt"
     },
     "healing":{
-        "png":"art/powerTiles{v}.png",
-        "plist":"art/powerTiles{v}.plist",
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
         "icon":"Holy5.png",
         "cooldown":2000,
         "type":"global",
         "offense":"healAll"
     },
     "leech":{
-        "png":"art/powerTiles.png",
-        "plist":"art/powerTiles.plist",
+        "png":dirImg + "powerTiles.png",
+        "plist":dirImg + "powerTiles.plist",
         "icon":"Shadow4.png",
         "cooldown":2000,
         "type":"global",
         "offense":"leechAll"
     },
     "iceStorm":{
-        "png":"art/powerTiles{v}.png",
-        "plist":"art/powerTiles{v}.plist",
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
         "icon":"Frost5.png",
         "cooldown":2000,
         "type":"global",
         "offense":"iceStorm"
     },
     "cannon":{
-        "png":"art/powerTiles{v}.png",
-        "plist":"art/powerTiles{v}.plist",
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
         "icon":"cannonballTile.png",
         "cooldown":2000,
         "type":"direct",

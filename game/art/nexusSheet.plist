@@ -7,15 +7,15 @@
             <key>nexus.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{80,92}}</string>
+                <string>{{2,2},{46,52}}</string>
                 <key>offset</key>
-                <string>{0,-69}</string>
+                <string>{0,-38}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{75,138},{80,92}}</string>
+                <string>{{41,76},{46,52}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{128,128}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -23,13 +23,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>nexusSheet.png</string>
+            <string>nexusSheet.pvr.ccz</string>
             <key>size</key>
-            <string>{128,128}</string>
+            <string>{64,64}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:977cb95edeb465bc292b053c29ed9c75:9eb0ffcc7f5d9f77e661212aaffa9f46:70b072909082d0b2e098113fbcc525a2$</string>
+            <string>$TexturePacker:SmartUpdate:ed3da9764d09a209c97179ec632330a6:9eb0ffcc7f5d9f77e661212aaffa9f46:0cc0117b1f0ceec6ce8c8b262bf24443$</string>
             <key>textureFileName</key>
-            <string>nexusSheet.png</string>
+            <string>nexusSheet.pvr.ccz</string>
         </dict>
     </dict>
 </plist>

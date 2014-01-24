@@ -59,7 +59,7 @@
             <key>dragonVoid.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,798},{238,178}}</string>
+                <string>{{244,688},{238,178}}</string>
                 <key>offset</key>
                 <string>{-9,-103}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>dragonVoid.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{248,386},{244,162}}</string>
+                <string>{{2,342},{244,162}}</string>
                 <key>offset</key>
                 <string>{-14,-87}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>dragonVoid.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,342},{244,162}}</string>
+                <string>{{248,386},{244,162}}</string>
                 <key>offset</key>
                 <string>{-14,6}</string>
                 <key>rotated</key>
@@ -371,7 +371,7 @@
             <key>dragonVoid.223.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{244,688},{238,178}}</string>
+                <string>{{2,798},{238,178}}</string>
                 <key>offset</key>
                 <string>{-13,-103}</string>
                 <key>rotated</key>
@@ -553,7 +553,7 @@
             <key>dragonVoid.248.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{444,1652},{84,190}}</string>
+                <string>{{680,1578},{84,190}}</string>
                 <key>offset</key>
                 <string>{0,-61}</string>
                 <key>rotated</key>
@@ -579,7 +579,7 @@
             <key>dragonVoid.250.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{680,1578},{84,190}}</string>
+                <string>{{444,1652},{84,190}}</string>
                 <key>offset</key>
                 <string>{-3,-76}</string>
                 <key>rotated</key>
@@ -618,7 +618,7 @@
             <key>dragonVoid.253.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{230,1578},{212,84}}</string>
+                <string>{{466,1566},{212,84}}</string>
                 <key>offset</key>
                 <string>{-6,-150}</string>
                 <key>rotated</key>
@@ -644,7 +644,7 @@
             <key>dragonVoid.255.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{466,1566},{212,84}}</string>
+                <string>{{230,1578},{212,84}}</string>
                 <key>offset</key>
                 <string>{-5,-150}</string>
                 <key>rotated</key>
@@ -660,13 +660,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>dragonVoidSheet-iphone5.png</string>
+            <string>dragonVoidSheet-iphone5.pvr.ccz</string>
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0f6037c0e82f83f25d3d90befdad1b4d:35c0a7d82bcc05655a82756cd7164a5b:3806b373374cefb9530d398b2988b74e$</string>
+            <string>$TexturePacker:SmartUpdate:0ffb03629022f86b53f497c217b892c5:35c0a7d82bcc05655a82756cd7164a5b:f888d0b985c9a4c4c6418d2fd087cb27$</string>
             <key>textureFileName</key>
-            <string>dragonVoidSheet-iphone5.png</string>
+            <string>dragonVoidSheet-iphone5.pvr.ccz</string>
         </dict>
     </dict>
 </plist>
