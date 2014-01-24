@@ -7,7 +7,7 @@
             <key>dwarvenKnightFire.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{330,1112},{62,62}}</string>
+                <string>{{266,1090},{62,62}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>dwarvenKnightFire.10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{592,1180},{60,62}}</string>
+                <string>{{946,970},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>dwarvenKnightFire.100.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{398,1100},{62,62}}</string>
+                <string>{{200,1106},{62,62}}</string>
                 <key>offset</key>
                 <string>{6,-159}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>dwarvenKnightFire.101.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,1066},{62,62}}</string>
+                <string>{{134,1120},{62,62}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -59,11 +59,11 @@
             <key>dwarvenKnightFire.102.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{600,994},{58,64}}</string>
+                <string>{{964,576},{58,64}}</string>
                 <key>offset</key>
                 <string>{2,-159}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{165,319},{58,64}}</string>
                 <key>sourceSize</key>
@@ -72,7 +72,7 @@
             <key>dwarvenKnightFire.103.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{398,1042},{56,64}}</string>
+                <string>{{532,1002},{56,64}}</string>
                 <key>offset</key>
                 <string>{-1,-159}</string>
                 <key>rotated</key>
@@ -85,11 +85,11 @@
             <key>dwarvenKnightFire.104.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{816,886},{60,64}}</string>
+                <string>{{700,584},{60,64}}</string>
                 <key>offset</key>
                 <string>{0,-159}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{162,319},{60,64}}</string>
                 <key>sourceSize</key>
@@ -98,7 +98,7 @@
             <key>dwarvenKnightFire.105.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{360,550},{62,66}}</string>
+                <string>{{498,498},{62,66}}</string>
                 <key>offset</key>
                 <string>{1,-158}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>dwarvenKnightFire.106.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{82,204},{78,68}}</string>
+                <string>{{2,204},{78,68}}</string>
                 <key>offset</key>
                 <string>{-6,-157}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>dwarvenKnightFire.107.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{766,320},{84,70}}</string>
+                <string>{{680,318},{84,70}}</string>
                 <key>offset</key>
                 <string>{-7,-156}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>dwarvenKnightFire.108.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{680,318},{84,70}}</string>
+                <string>{{766,320},{84,70}}</string>
                 <key>offset</key>
                 <string>{-7,-156}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>dwarvenKnightFire.109.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{86,136},{82,66}}</string>
+                <string>{{2,136},{82,66}}</string>
                 <key>offset</key>
                 <string>{-6,-158}</string>
                 <key>rotated</key>
@@ -163,7 +163,7 @@
             <key>dwarvenKnightFire.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{658,1156},{60,62}}</string>
+                <string>{{874,1002},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -215,7 +215,7 @@
             <key>dwarvenKnightFire.113.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{784,2},{106,62}}</string>
+                <string>{{676,2},{106,62}}</string>
                 <key>offset</key>
                 <string>{-22,-159}</string>
                 <key>rotated</key>
@@ -228,7 +228,7 @@
             <key>dwarvenKnightFire.114.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{624,196},{92,62}}</string>
+                <string>{{530,134},{92,62}}</string>
                 <key>offset</key>
                 <string>{-19,-161}</string>
                 <key>rotated</key>
@@ -241,7 +241,7 @@
             <key>dwarvenKnightFire.115.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{720,454},{40,62}}</string>
+                <string>{{722,390},{40,62}}</string>
                 <key>offset</key>
                 <string>{-1,-161}</string>
                 <key>rotated</key>
@@ -254,11 +254,11 @@
             <key>dwarvenKnightFire.116.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,1314},{48,62}}</string>
+                <string>{{718,196},{48,62}}</string>
                 <key>offset</key>
                 <string>{10,-161}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{178,322},{48,62}}</string>
                 <key>sourceSize</key>
@@ -306,7 +306,7 @@
             <key>dwarvenKnightFire.12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{726,1128},{60,62}}</string>
+                <string>{{802,1012},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -345,7 +345,7 @@
             <key>dwarvenKnightFire.122.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{930,1094},{60,60}}</string>
+                <string>{{2,1336},{60,60}}</string>
                 <key>offset</key>
                 <string>{6,-159}</string>
                 <key>rotated</key>
@@ -358,7 +358,7 @@
             <key>dwarvenKnightFire.123.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1336},{60,60}}</string>
+                <string>{{930,1094},{60,60}}</string>
                 <key>offset</key>
                 <string>{6,-159}</string>
                 <key>rotated</key>
@@ -371,7 +371,7 @@
             <key>dwarvenKnightFire.124.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{522,1246},{58,60}}</string>
+                <string>{{722,1190},{58,60}}</string>
                 <key>offset</key>
                 <string>{7,-159}</string>
                 <key>rotated</key>
@@ -384,7 +384,7 @@
             <key>dwarvenKnightFire.125.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{590,1242},{58,60}}</string>
+                <string>{{656,1218},{58,60}}</string>
                 <key>offset</key>
                 <string>{7,-159}</string>
                 <key>rotated</key>
@@ -449,7 +449,7 @@
             <key>dwarvenKnightFire.13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{794,1074},{60,62}}</string>
+                <string>{{730,1066},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -475,7 +475,7 @@
             <key>dwarvenKnightFire.131.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1086},{60,64}}</string>
+                <string>{{266,966},{60,64}}</string>
                 <key>offset</key>
                 <string>{15,-158}</string>
                 <key>rotated</key>
@@ -488,11 +488,11 @@
             <key>dwarvenKnightFire.132.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{400,916},{62,64}}</string>
+                <string>{{960,642},{62,64}}</string>
                 <key>offset</key>
                 <string>{16,-158}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{177,318},{62,64}}</string>
                 <key>sourceSize</key>
@@ -501,11 +501,11 @@
             <key>dwarvenKnightFire.133.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{468,882},{62,64}}</string>
+                <string>{{960,708},{62,64}}</string>
                 <key>offset</key>
                 <string>{15,-158}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{176,318},{62,64}}</string>
                 <key>sourceSize</key>
@@ -514,7 +514,7 @@
             <key>dwarvenKnightFire.134.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{828,564},{64,64}}</string>
+                <string>{{432,530},{64,64}}</string>
                 <key>offset</key>
                 <string>{12,-158}</string>
                 <key>rotated</key>
@@ -527,7 +527,7 @@
             <key>dwarvenKnightFire.135.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{898,552},{64,64}}</string>
+                <string>{{762,558},{64,64}}</string>
                 <key>offset</key>
                 <string>{9,-158}</string>
                 <key>rotated</key>
@@ -540,7 +540,7 @@
             <key>dwarvenKnightFire.136.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{530,1060},{62,62}}</string>
+                <string>{{68,1126},{62,62}}</string>
                 <key>offset</key>
                 <string>{7,-159}</string>
                 <key>rotated</key>
@@ -553,7 +553,7 @@
             <key>dwarvenKnightFire.137.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{598,1054},{62,62}}</string>
+                <string>{{2,1148},{62,62}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -566,7 +566,7 @@
             <key>dwarvenKnightFire.138.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{540,876},{62,64}}</string>
+                <string>{{632,612},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -579,11 +579,11 @@
             <key>dwarvenKnightFire.139.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{612,868},{62,64}}</string>
+                <string>{{698,650},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{165,319},{62,64}}</string>
                 <key>sourceSize</key>
@@ -592,7 +592,7 @@
             <key>dwarvenKnightFire.14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{866,1064},{60,62}}</string>
+                <string>{{662,1094},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -605,7 +605,7 @@
             <key>dwarvenKnightFire.140.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{684,844},{62,64}}</string>
+                <string>{{762,688},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -618,7 +618,7 @@
             <key>dwarvenKnightFire.141.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,1064},{60,64}}</string>
+                <string>{{200,982},{60,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -631,7 +631,7 @@
             <key>dwarvenKnightFire.142.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{666,1030},{62,62}}</string>
+                <string>{{882,938},{62,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -644,7 +644,7 @@
             <key>dwarvenKnightFire.143.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{566,556},{64,62}}</string>
+                <string>{{894,618},{64,62}}</string>
                 <key>offset</key>
                 <string>{8,-160}</string>
                 <key>rotated</key>
@@ -670,7 +670,7 @@
             <key>dwarvenKnightFire.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,1192},{62,58}}</string>
+                <string>{{526,1186},{62,58}}</string>
                 <key>offset</key>
                 <string>{16,-163}</string>
                 <key>rotated</key>
@@ -735,7 +735,7 @@
             <key>dwarvenKnightFire.15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{938,1032},{60,62}}</string>
+                <string>{{594,1118},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -813,7 +813,7 @@
             <key>dwarvenKnightFire.155.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{768,184},{96,62}}</string>
+                <string>{{670,132},{96,62}}</string>
                 <key>offset</key>
                 <string>{-16,-160}</string>
                 <key>rotated</key>
@@ -826,7 +826,7 @@
             <key>dwarvenKnightFire.156.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{414,136},{88,62}}</string>
+                <string>{{860,268},{88,62}}</string>
                 <key>offset</key>
                 <string>{-16,-160}</string>
                 <key>rotated</key>
@@ -852,7 +852,7 @@
             <key>dwarvenKnightFire.158.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{532,1002},{56,64}}</string>
+                <string>{{398,1042},{56,64}}</string>
                 <key>offset</key>
                 <string>{-8,-159}</string>
                 <key>rotated</key>
@@ -878,7 +878,7 @@
             <key>dwarvenKnightFire.16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1274},{60,62}}</string>
+                <string>{{528,1124},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -891,7 +891,7 @@
             <key>dwarvenKnightFire.160.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{894,682},{64,62}}</string>
+                <string>{{634,548},{64,62}}</string>
                 <key>offset</key>
                 <string>{10,-160}</string>
                 <key>rotated</key>
@@ -904,7 +904,7 @@
             <key>dwarvenKnightFire.161.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{530,134},{92,62}}</string>
+                <string>{{624,196},{92,62}}</string>
                 <key>offset</key>
                 <string>{20,-160}</string>
                 <key>rotated</key>
@@ -930,7 +930,7 @@
             <key>dwarvenKnightFire.163.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{670,132},{96,62}}</string>
+                <string>{{768,184},{96,62}}</string>
                 <key>offset</key>
                 <string>{20,-160}</string>
                 <key>rotated</key>
@@ -995,7 +995,7 @@
             <key>dwarvenKnightFire.168.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{762,558},{64,64}}</string>
+                <string>{{898,552},{64,64}}</string>
                 <key>offset</key>
                 <string>{17,-159}</string>
                 <key>rotated</key>
@@ -1008,7 +1008,7 @@
             <key>dwarvenKnightFire.169.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,960},{62,64}}</string>
+                <string>{{828,694},{62,64}}</string>
                 <key>offset</key>
                 <string>{15,-159}</string>
                 <key>rotated</key>
@@ -1021,7 +1021,7 @@
             <key>dwarvenKnightFire.17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,1252},{60,62}}</string>
+                <string>{{462,1130},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -1034,7 +1034,7 @@
             <key>dwarvenKnightFire.170.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,938},{62,64}}</string>
+                <string>{{894,746},{62,64}}</string>
                 <key>offset</key>
                 <string>{12,-159}</string>
                 <key>rotated</key>
@@ -1047,11 +1047,11 @@
             <key>dwarvenKnightFire.171.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,932},{62,64}}</string>
+                <string>{{960,774},{62,64}}</string>
                 <key>offset</key>
                 <string>{9,-159}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{170,319},{62,64}}</string>
                 <key>sourceSize</key>
@@ -1060,7 +1060,7 @@
             <key>dwarvenKnightFire.172.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{200,918},{62,64}}</string>
+                <string>{{498,562},{62,64}}</string>
                 <key>offset</key>
                 <string>{6,-159}</string>
                 <key>rotated</key>
@@ -1073,7 +1073,7 @@
             <key>dwarvenKnightFire.173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,902},{62,64}}</string>
+                <string>{{564,620},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -1086,7 +1086,7 @@
             <key>dwarvenKnightFire.174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{334,870},{62,64}}</string>
+                <string>{{630,676},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -1099,7 +1099,7 @@
             <key>dwarvenKnightFire.175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{402,852},{62,64}}</string>
+                <string>{{696,716},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -1112,7 +1112,7 @@
             <key>dwarvenKnightFire.176.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,818},{62,64}}</string>
+                <string>{{762,752},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -1125,7 +1125,7 @@
             <key>dwarvenKnightFire.177.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{546,812},{62,64}}</string>
+                <string>{{828,758},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -1138,7 +1138,7 @@
             <key>dwarvenKnightFire.178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{618,804},{62,64}}</string>
+                <string>{{894,810},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -1151,11 +1151,11 @@
             <key>dwarvenKnightFire.179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,896},{62,64}}</string>
+                <string>{{960,840},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{165,319},{62,64}}</string>
                 <key>sourceSize</key>
@@ -1164,7 +1164,7 @@
             <key>dwarvenKnightFire.18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{130,1246},{60,62}}</string>
+                <string>{{394,1164},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -1177,7 +1177,7 @@
             <key>dwarvenKnightFire.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,874},{62,64}}</string>
+                <string>{{428,596},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -1190,7 +1190,7 @@
             <key>dwarvenKnightFire.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{196,1232},{60,62}}</string>
+                <string>{{328,1176},{60,62}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -1203,7 +1203,7 @@
             <key>dwarvenKnightFire.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{738,1002},{62,62}}</string>
+                <string>{{810,948},{62,62}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -1216,7 +1216,7 @@
             <key>dwarvenKnightFire.183.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{828,630},{64,62}}</string>
+                <string>{{762,624},{64,62}}</string>
                 <key>offset</key>
                 <string>{8,-159}</string>
                 <key>rotated</key>
@@ -1229,7 +1229,7 @@
             <key>dwarvenKnightFire.184.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{810,948},{62,62}}</string>
+                <string>{{738,1002},{62,62}}</string>
                 <key>offset</key>
                 <string>{12,-159}</string>
                 <key>rotated</key>
@@ -1268,7 +1268,7 @@
             <key>dwarvenKnightFire.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{722,390},{40,62}}</string>
+                <string>{{720,454},{40,62}}</string>
                 <key>offset</key>
                 <string>{8,-159}</string>
                 <key>rotated</key>
@@ -1281,11 +1281,11 @@
             <key>dwarvenKnightFire.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{718,196},{48,62}}</string>
+                <string>{{66,1314},{48,62}}</string>
                 <key>offset</key>
                 <string>{7,-159}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{175,320},{48,62}}</string>
                 <key>sourceSize</key>
@@ -1320,7 +1320,7 @@
             <key>dwarvenKnightFire.190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,1294},{58,62}}</string>
+                <string>{{392,1226},{58,62}}</string>
                 <key>offset</key>
                 <string>{2,-158}</string>
                 <key>rotated</key>
@@ -1333,7 +1333,7 @@
             <key>dwarvenKnightFire.191.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{882,938},{62,62}}</string>
+                <string>{{666,1030},{62,62}}</string>
                 <key>offset</key>
                 <string>{-2,-158}</string>
                 <key>rotated</key>
@@ -1359,7 +1359,7 @@
             <key>dwarvenKnightFire.193.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,530},{64,64}}</string>
+                <string>{{828,564},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,-157}</string>
                 <key>rotated</key>
@@ -1372,7 +1372,7 @@
             <key>dwarvenKnightFire.194.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{832,454},{54,66}}</string>
+                <string>{{764,392},{54,66}}</string>
                 <key>offset</key>
                 <string>{8,-153}</string>
                 <key>rotated</key>
@@ -1398,7 +1398,7 @@
             <key>dwarvenKnightFire.196.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,136},{82,66}}</string>
+                <string>{{86,136},{82,66}}</string>
                 <key>offset</key>
                 <string>{34,-138}</string>
                 <key>rotated</key>
@@ -1411,7 +1411,7 @@
             <key>dwarvenKnightFire.197.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{80,274},{76,70}}</string>
+                <string>{{2,274},{76,70}}</string>
                 <key>offset</key>
                 <string>{29,-129}</string>
                 <key>rotated</key>
@@ -1424,11 +1424,11 @@
             <key>dwarvenKnightFire.198.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{148,416},{56,70}}</string>
+                <string>{{170,136},{56,70}}</string>
                 <key>offset</key>
                 <string>{2,-119}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{166,276},{56,70}}</string>
                 <key>sourceSize</key>
@@ -1450,7 +1450,7 @@
             <key>dwarvenKnightFire.2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,868},{62,64}}</string>
+                <string>{{494,626},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -1463,7 +1463,7 @@
             <key>dwarvenKnightFire.20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{328,1176},{60,62}}</string>
+                <string>{{196,1232},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -1476,7 +1476,7 @@
             <key>dwarvenKnightFire.200.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{676,2},{106,62}}</string>
+                <string>{{784,2},{106,62}}</string>
                 <key>offset</key>
                 <string>{-19,-108}</string>
                 <key>rotated</key>
@@ -1528,7 +1528,7 @@
             <key>dwarvenKnightFire.204.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{230,2},{112,64}}</string>
+                <string>{{116,2},{112,64}}</string>
                 <key>offset</key>
                 <string>{-21,-101}</string>
                 <key>rotated</key>
@@ -1541,7 +1541,7 @@
             <key>dwarvenKnightFire.205.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{116,2},{112,64}}</string>
+                <string>{{230,2},{112,64}}</string>
                 <key>offset</key>
                 <string>{-21,-100}</string>
                 <key>rotated</key>
@@ -1567,7 +1567,7 @@
             <key>dwarvenKnightFire.207.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{116,68},{110,66}}</string>
+                <string>{{344,2},{110,66}}</string>
                 <key>offset</key>
                 <string>{-21,-98}</string>
                 <key>rotated</key>
@@ -1580,7 +1580,7 @@
             <key>dwarvenKnightFire.208.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{344,2},{110,66}}</string>
+                <string>{{116,68},{110,66}}</string>
                 <key>offset</key>
                 <string>{-20,-97}</string>
                 <key>rotated</key>
@@ -1606,7 +1606,7 @@
             <key>dwarvenKnightFire.21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{394,1164},{60,62}}</string>
+                <string>{{130,1246},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -1619,7 +1619,7 @@
             <key>dwarvenKnightFire.210.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{566,66},{102,66}}</string>
+                <string>{{892,2},{102,66}}</string>
                 <key>offset</key>
                 <string>{-16,-96}</string>
                 <key>rotated</key>
@@ -1658,7 +1658,7 @@
             <key>dwarvenKnightFire.213.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,274},{76,70}}</string>
+                <string>{{80,274},{76,70}}</string>
                 <key>offset</key>
                 <string>{-3,-92}</string>
                 <key>rotated</key>
@@ -1671,7 +1671,7 @@
             <key>dwarvenKnightFire.214.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{382,272},{74,64}}</string>
+                <string>{{306,270},{74,64}}</string>
                 <key>offset</key>
                 <string>{-2,-94}</string>
                 <key>rotated</key>
@@ -1684,7 +1684,7 @@
             <key>dwarvenKnightFire.215.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{580,324},{74,64}}</string>
+                <string>{{228,328},{74,64}}</string>
                 <key>offset</key>
                 <string>{-2,-94}</string>
                 <key>rotated</key>
@@ -1710,7 +1710,7 @@
             <key>dwarvenKnightFire.217.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{228,328},{74,64}}</string>
+                <string>{{580,324},{74,64}}</string>
                 <key>offset</key>
                 <string>{-2,-94}</string>
                 <key>rotated</key>
@@ -1723,7 +1723,7 @@
             <key>dwarvenKnightFire.218.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{306,270},{74,64}}</string>
+                <string>{{382,272},{74,64}}</string>
                 <key>offset</key>
                 <string>{-2,-94}</string>
                 <key>rotated</key>
@@ -1736,7 +1736,7 @@
             <key>dwarvenKnightFire.219.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,346},{72,64}}</string>
+                <string>{{380,338},{72,64}}</string>
                 <key>offset</key>
                 <string>{-2,-94}</string>
                 <key>rotated</key>
@@ -1749,7 +1749,7 @@
             <key>dwarvenKnightFire.22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{462,1130},{60,62}}</string>
+                <string>{{66,1252},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -1762,7 +1762,7 @@
             <key>dwarvenKnightFire.220.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{380,338},{72,64}}</string>
+                <string>{{2,346},{72,64}}</string>
                 <key>offset</key>
                 <string>{-3,-94}</string>
                 <key>rotated</key>
@@ -1775,7 +1775,7 @@
             <key>dwarvenKnightFire.221.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{224,394},{70,64}}</string>
+                <string>{{2,412},{70,64}}</string>
                 <key>offset</key>
                 <string>{-2,-94}</string>
                 <key>rotated</key>
@@ -1827,11 +1827,11 @@
             <key>dwarvenKnightFire.225.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,136},{56,70}}</string>
+                <string>{{148,416},{56,70}}</string>
                 <key>offset</key>
                 <string>{3,-119}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{167,276},{56,70}}</string>
                 <key>sourceSize</key>
@@ -1840,7 +1840,7 @@
             <key>dwarvenKnightFire.226.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,204},{78,68}}</string>
+                <string>{{82,204},{78,68}}</string>
                 <key>offset</key>
                 <string>{10,-132}</string>
                 <key>rotated</key>
@@ -1853,7 +1853,7 @@
             <key>dwarvenKnightFire.227.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{892,2},{102,66}}</string>
+                <string>{{566,66},{102,66}}</string>
                 <key>offset</key>
                 <string>{22,-145}</string>
                 <key>rotated</key>
@@ -1879,7 +1879,7 @@
             <key>dwarvenKnightFire.229.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{860,268},{88,62}}</string>
+                <string>{{414,136},{88,62}}</string>
                 <key>offset</key>
                 <string>{17,-157}</string>
                 <key>rotated</key>
@@ -1892,7 +1892,7 @@
             <key>dwarvenKnightFire.23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{528,1124},{60,62}}</string>
+                <string>{{2,1274},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -1918,7 +1918,7 @@
             <key>dwarvenKnightFire.231.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{672,970},{64,58}}</string>
+                <string>{{744,942},{64,58}}</string>
                 <key>offset</key>
                 <string>{19,-162}</string>
                 <key>rotated</key>
@@ -1931,7 +1931,7 @@
             <key>dwarvenKnightFire.232.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{920,1156},{60,56}}</string>
+                <string>{{456,1252},{60,56}}</string>
                 <key>offset</key>
                 <string>{18,-163}</string>
                 <key>rotated</key>
@@ -1944,7 +1944,7 @@
             <key>dwarvenKnightFire.233.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{790,1136},{60,58}}</string>
+                <string>{{858,1126},{60,58}}</string>
                 <key>offset</key>
                 <string>{18,-163}</string>
                 <key>rotated</key>
@@ -1957,7 +1957,7 @@
             <key>dwarvenKnightFire.234.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1212},{62,60}}</string>
+                <string>{{264,1154},{62,60}}</string>
                 <key>offset</key>
                 <string>{19,-162}</string>
                 <key>rotated</key>
@@ -1970,7 +1970,7 @@
             <key>dwarvenKnightFire.235.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{66,1190},{62,60}}</string>
+                <string>{{198,1170},{62,60}}</string>
                 <key>offset</key>
                 <string>{15,-161}</string>
                 <key>rotated</key>
@@ -1983,7 +1983,7 @@
             <key>dwarvenKnightFire.236.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1148},{62,62}}</string>
+                <string>{{598,1054},{62,62}}</string>
                 <key>offset</key>
                 <string>{8,-160}</string>
                 <key>rotated</key>
@@ -1996,7 +1996,7 @@
             <key>dwarvenKnightFire.237.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{594,1118},{60,62}}</string>
+                <string>{{938,1032},{60,62}}</string>
                 <key>offset</key>
                 <string>{4,-160}</string>
                 <key>rotated</key>
@@ -2009,7 +2009,7 @@
             <key>dwarvenKnightFire.238.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{200,854},{62,64}}</string>
+                <string>{{560,684},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2022,7 +2022,7 @@
             <key>dwarvenKnightFire.239.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{268,838},{62,64}}</string>
+                <string>{{626,740},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -2035,7 +2035,7 @@
             <key>dwarvenKnightFire.24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{662,1094},{60,62}}</string>
+                <string>{{866,1064},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -2048,7 +2048,7 @@
             <key>dwarvenKnightFire.240.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,1126},{62,62}}</string>
+                <string>{{530,1060},{62,62}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -2061,7 +2061,7 @@
             <key>dwarvenKnightFire.241.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{730,1066},{60,62}}</string>
+                <string>{{794,1074},{60,62}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2074,7 +2074,7 @@
             <key>dwarvenKnightFire.242.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{336,806},{62,64}}</string>
+                <string>{{692,780},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2087,7 +2087,7 @@
             <key>dwarvenKnightFire.243.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{408,788},{62,64}}</string>
+                <string>{{758,816},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2100,7 +2100,7 @@
             <key>dwarvenKnightFire.244.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{480,754},{62,64}}</string>
+                <string>{{824,822},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2113,7 +2113,7 @@
             <key>dwarvenKnightFire.245.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{552,748},{62,64}}</string>
+                <string>{{890,874},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2126,7 +2126,7 @@
             <key>dwarvenKnightFire.246.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,832},{62,64}}</string>
+                <string>{{956,906},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2139,7 +2139,7 @@
             <key>dwarvenKnightFire.247.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,810},{62,64}}</string>
+                <string>{{354,614},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2152,7 +2152,7 @@
             <key>dwarvenKnightFire.248.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,804},{62,64}}</string>
+                <string>{{282,646},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2165,7 +2165,7 @@
             <key>dwarvenKnightFire.249.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{202,790},{62,64}}</string>
+                <string>{{210,662},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2178,7 +2178,7 @@
             <key>dwarvenKnightFire.25.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{260,1278},{58,62}}</string>
+                <string>{{326,1238},{58,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -2191,7 +2191,7 @@
             <key>dwarvenKnightFire.250.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{270,774},{62,64}}</string>
+                <string>{{138,676},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2204,7 +2204,7 @@
             <key>dwarvenKnightFire.26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,1058},{60,64}}</string>
+                <string>{{134,996},{60,64}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -2217,7 +2217,7 @@
             <key>dwarvenKnightFire.27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{200,1044},{60,64}}</string>
+                <string>{{68,1002},{60,64}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -2230,7 +2230,7 @@
             <key>dwarvenKnightFire.28.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,1028},{60,64}}</string>
+                <string>{{2,1024},{60,64}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -2243,7 +2243,7 @@
             <key>dwarvenKnightFire.29.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,742},{62,64}}</string>
+                <string>{{70,682},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2256,7 +2256,7 @@
             <key>dwarvenKnightFire.3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{332,996},{60,64}}</string>
+                <string>{{750,880},{60,64}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -2269,7 +2269,7 @@
             <key>dwarvenKnightFire.30.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{414,724},{62,64}}</string>
+                <string>{{2,704},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2282,7 +2282,7 @@
             <key>dwarvenKnightFire.300.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{194,1354},{60,56}}</string>
+                <string>{{390,1286},{60,56}}</string>
                 <key>offset</key>
                 <string>{0,-164}</string>
                 <key>rotated</key>
@@ -2295,7 +2295,7 @@
             <key>dwarvenKnightFire.301.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{858,1126},{60,58}}</string>
+                <string>{{790,1136},{60,58}}</string>
                 <key>offset</key>
                 <string>{0,-163}</string>
                 <key>rotated</key>
@@ -2308,7 +2308,7 @@
             <key>dwarvenKnightFire.302.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{452,1310},{58,58}}</string>
+                <string>{{584,1302},{58,58}}</string>
                 <key>offset</key>
                 <string>{-1,-163}</string>
                 <key>rotated</key>
@@ -2334,7 +2334,7 @@
             <key>dwarvenKnightFire.304.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{584,1302},{58,58}}</string>
+                <string>{{452,1310},{58,58}}</string>
                 <key>offset</key>
                 <string>{-2,-163}</string>
                 <key>rotated</key>
@@ -2347,7 +2347,7 @@
             <key>dwarvenKnightFire.305.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{656,1218},{58,60}}</string>
+                <string>{{590,1242},{58,60}}</string>
                 <key>offset</key>
                 <string>{-2,-162}</string>
                 <key>rotated</key>
@@ -2360,7 +2360,7 @@
             <key>dwarvenKnightFire.306.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{722,1190},{58,60}}</string>
+                <string>{{522,1246},{58,60}}</string>
                 <key>offset</key>
                 <string>{-2,-162}</string>
                 <key>rotated</key>
@@ -2373,7 +2373,7 @@
             <key>dwarvenKnightFire.307.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{326,1238},{58,62}}</string>
+                <string>{{260,1278},{58,62}}</string>
                 <key>offset</key>
                 <string>{0,-161}</string>
                 <key>rotated</key>
@@ -2386,7 +2386,7 @@
             <key>dwarvenKnightFire.308.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{398,980},{60,64}}</string>
+                <string>{{678,908},{60,64}}</string>
                 <key>offset</key>
                 <string>{2,-160}</string>
                 <key>rotated</key>
@@ -2399,7 +2399,7 @@
             <key>dwarvenKnightFire.309.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{486,690},{62,64}}</string>
+                <string>{{420,660},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -2412,7 +2412,7 @@
             <key>dwarvenKnightFire.31.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{466,946},{60,64}}</string>
+                <string>{{606,932},{60,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2425,7 +2425,7 @@
             <key>dwarvenKnightFire.310.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,768},{62,64}}</string>
+                <string>{{348,678},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2451,7 +2451,7 @@
             <key>dwarvenKnightFire.312.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,746},{62,64}}</string>
+                <string>{{276,710},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2464,7 +2464,7 @@
             <key>dwarvenKnightFire.313.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{136,740},{62,64}}</string>
+                <string>{{204,726},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2477,7 +2477,7 @@
             <key>dwarvenKnightFire.314.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{204,726},{62,64}}</string>
+                <string>{{136,740},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2490,7 +2490,7 @@
             <key>dwarvenKnightFire.315.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{276,710},{62,64}}</string>
+                <string>{{68,746},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2503,7 +2503,7 @@
             <key>dwarvenKnightFire.316.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{348,678},{62,64}}</string>
+                <string>{{2,768},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2516,7 +2516,7 @@
             <key>dwarvenKnightFire.317.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,660},{62,64}}</string>
+                <string>{{486,690},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2529,7 +2529,7 @@
             <key>dwarvenKnightFire.318.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,704},{62,64}}</string>
+                <string>{{414,724},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2542,7 +2542,7 @@
             <key>dwarvenKnightFire.319.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,682},{62,64}}</string>
+                <string>{{342,742},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2555,7 +2555,7 @@
             <key>dwarvenKnightFire.32.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{138,676},{62,64}}</string>
+                <string>{{270,774},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2568,7 +2568,7 @@
             <key>dwarvenKnightFire.320.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,662},{62,64}}</string>
+                <string>{{202,790},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2581,7 +2581,7 @@
             <key>dwarvenKnightFire.321.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{606,932},{60,64}}</string>
+                <string>{{466,946},{60,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2594,11 +2594,11 @@
             <key>dwarvenKnightFire.322.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{964,576},{58,64}}</string>
+                <string>{{600,994},{58,64}}</string>
                 <key>offset</key>
                 <string>{2,-159}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{165,319},{58,64}}</string>
                 <key>sourceSize</key>
@@ -2607,11 +2607,11 @@
             <key>dwarvenKnightFire.323.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{968,442},{54,66}}</string>
+                <string>{{832,398},{54,66}}</string>
                 <key>offset</key>
                 <string>{0,-159}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{165,318},{54,66}}</string>
                 <key>sourceSize</key>
@@ -2620,7 +2620,7 @@
             <key>dwarvenKnightFire.324.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{900,442},{54,66}}</string>
+                <string>{{764,448},{54,66}}</string>
                 <key>offset</key>
                 <string>{0,-159}</string>
                 <key>rotated</key>
@@ -2633,7 +2633,7 @@
             <key>dwarvenKnightFire.325.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{566,500},{54,66}}</string>
+                <string>{{642,492},{54,66}}</string>
                 <key>offset</key>
                 <string>{0,-159}</string>
                 <key>rotated</key>
@@ -2646,11 +2646,11 @@
             <key>dwarvenKnightFire.326.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,646},{56,66}}</string>
+                <string>{{440,462},{56,66}}</string>
                 <key>offset</key>
                 <string>{-1,-159}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{163,318},{56,66}}</string>
                 <key>sourceSize</key>
@@ -2659,7 +2659,7 @@
             <key>dwarvenKnightFire.327.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{642,492},{54,66}}</string>
+                <string>{{566,500},{54,66}}</string>
                 <key>offset</key>
                 <string>{-2,-159}</string>
                 <key>rotated</key>
@@ -2672,7 +2672,7 @@
             <key>dwarvenKnightFire.328.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{830,510},{52,66}}</string>
+                <string>{{900,498},{52,66}}</string>
                 <key>offset</key>
                 <string>{-3,-159}</string>
                 <key>rotated</key>
@@ -2698,7 +2698,7 @@
             <key>dwarvenKnightFire.33.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{282,646},{62,64}}</string>
+                <string>{{134,804},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -2724,7 +2724,7 @@
             <key>dwarvenKnightFire.331.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{900,498},{52,66}}</string>
+                <string>{{830,510},{52,66}}</string>
                 <key>offset</key>
                 <string>{-5,-159}</string>
                 <key>rotated</key>
@@ -2763,7 +2763,7 @@
             <key>dwarvenKnightFire.334.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{292,522},{62,66}}</string>
+                <string>{{364,486},{62,66}}</string>
                 <key>offset</key>
                 <string>{2,-159}</string>
                 <key>rotated</key>
@@ -2776,7 +2776,7 @@
             <key>dwarvenKnightFire.335.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{364,486},{62,66}}</string>
+                <string>{{292,522},{62,66}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -2789,7 +2789,7 @@
             <key>dwarvenKnightFire.336.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{678,908},{60,64}}</string>
+                <string>{{398,980},{60,64}}</string>
                 <key>offset</key>
                 <string>{6,-160}</string>
                 <key>rotated</key>
@@ -2802,7 +2802,7 @@
             <key>dwarvenKnightFire.337.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{750,880},{60,64}}</string>
+                <string>{{332,996},{60,64}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -2815,7 +2815,7 @@
             <key>dwarvenKnightFire.338.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,1120},{62,62}}</string>
+                <string>{{464,1066},{62,62}}</string>
                 <key>offset</key>
                 <string>{5,-161}</string>
                 <key>rotated</key>
@@ -2828,7 +2828,7 @@
             <key>dwarvenKnightFire.339.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{802,1012},{60,62}}</string>
+                <string>{{726,1128},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-161}</string>
                 <key>rotated</key>
@@ -2841,7 +2841,7 @@
             <key>dwarvenKnightFire.34.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{354,614},{62,64}}</string>
+                <string>{{68,810},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -2854,7 +2854,7 @@
             <key>dwarvenKnightFire.340.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{392,1226},{58,62}}</string>
+                <string>{{194,1294},{58,62}}</string>
                 <key>offset</key>
                 <string>{7,-161}</string>
                 <key>rotated</key>
@@ -2867,7 +2867,7 @@
             <key>dwarvenKnightFire.341.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{200,1106},{62,62}}</string>
+                <string>{{398,1100},{62,62}}</string>
                 <key>offset</key>
                 <string>{11,-161}</string>
                 <key>rotated</key>
@@ -2880,7 +2880,7 @@
             <key>dwarvenKnightFire.342.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{762,624},{64,62}}</string>
+                <string>{{828,630},{64,62}}</string>
                 <key>offset</key>
                 <string>{10,-161}</string>
                 <key>rotated</key>
@@ -2906,7 +2906,7 @@
             <key>dwarvenKnightFire.344.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,1170},{62,60}}</string>
+                <string>{{66,1190},{62,60}}</string>
                 <key>offset</key>
                 <string>{10,-162}</string>
                 <key>rotated</key>
@@ -2945,7 +2945,7 @@
             <key>dwarvenKnightFire.347.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{258,1338},{60,56}}</string>
+                <string>{{324,1298},{60,56}}</string>
                 <key>offset</key>
                 <string>{12,-164}</string>
                 <key>rotated</key>
@@ -2958,7 +2958,7 @@
             <key>dwarvenKnightFire.348.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{324,1298},{60,56}}</string>
+                <string>{{258,1338},{60,56}}</string>
                 <key>offset</key>
                 <string>{12,-164}</string>
                 <key>rotated</key>
@@ -2971,7 +2971,7 @@
             <key>dwarvenKnightFire.349.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{390,1286},{60,56}}</string>
+                <string>{{194,1354},{60,56}}</string>
                 <key>offset</key>
                 <string>{12,-164}</string>
                 <key>rotated</key>
@@ -2984,7 +2984,7 @@
             <key>dwarvenKnightFire.35.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{956,906},{62,64}}</string>
+                <string>{{2,832},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -3010,7 +3010,7 @@
             <key>dwarvenKnightFire.351.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{780,1252},{52,54}}</string>
+                <string>{{846,1244},{52,54}}</string>
                 <key>offset</key>
                 <string>{20,-165}</string>
                 <key>rotated</key>
@@ -3023,7 +3023,7 @@
             <key>dwarvenKnightFire.352.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{846,1244},{52,54}}</string>
+                <string>{{780,1252},{52,54}}</string>
                 <key>offset</key>
                 <string>{20,-165}</string>
                 <key>rotated</key>
@@ -3062,7 +3062,7 @@
             <key>dwarvenKnightFire.355.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,404},{70,40}}</string>
+                <string>{{296,400},{70,40}}</string>
                 <key>offset</key>
                 <string>{29,-172}</string>
                 <key>rotated</key>
@@ -3075,30 +3075,17 @@
             <key>dwarvenKnightFire.356.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{650,390},{70,38}}</string>
+                <string>{{464,200},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{186,346},{70,38}}</string>
                 <key>sourceSize</key>
                 <string>{384,384}</string>
             </dict>
             <key>dwarvenKnightFire.357.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{502,392},{70,40}}</string>
-                <key>offset</key>
-                <string>{29,-172}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{186,344},{70,40}}</string>
-                <key>sourceSize</key>
-                <string>{384,384}</string>
-            </dict>
-            <key>dwarvenKnightFire.358.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{578,390},{70,40}}</string>
@@ -3111,10 +3098,23 @@
                 <key>sourceSize</key>
                 <string>{384,384}</string>
             </dict>
+            <key>dwarvenKnightFire.358.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{502,392},{70,40}}</string>
+                <key>offset</key>
+                <string>{29,-172}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{186,344},{70,40}}</string>
+                <key>sourceSize</key>
+                <string>{384,384}</string>
+            </dict>
             <key>dwarvenKnightFire.359.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{296,400},{70,40}}</string>
+                <string>{{368,404},{70,40}}</string>
                 <key>offset</key>
                 <string>{29,-172}</string>
                 <key>rotated</key>
@@ -3127,7 +3127,7 @@
             <key>dwarvenKnightFire.36.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{890,874},{62,64}}</string>
+                <string>{{552,748},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -3140,7 +3140,7 @@
             <key>dwarvenKnightFire.360.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,544},{70,38}}</string>
+                <string>{{296,442},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3153,7 +3153,7 @@
             <key>dwarvenKnightFire.361.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,522},{70,38}}</string>
+                <string>{{220,460},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3166,7 +3166,7 @@
             <key>dwarvenKnightFire.362.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,514},{70,38}}</string>
+                <string>{{148,474},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3179,7 +3179,7 @@
             <key>dwarvenKnightFire.363.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{220,500},{70,38}}</string>
+                <string>{{74,482},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3192,7 +3192,7 @@
             <key>dwarvenKnightFire.364.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{292,482},{70,38}}</string>
+                <string>{{368,446},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3205,7 +3205,7 @@
             <key>dwarvenKnightFire.365.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{368,446},{70,38}}</string>
+                <string>{{292,482},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3218,7 +3218,7 @@
             <key>dwarvenKnightFire.366.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,482},{70,38}}</string>
+                <string>{{220,500},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3231,7 +3231,7 @@
             <key>dwarvenKnightFire.367.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{148,474},{70,38}}</string>
+                <string>{{146,514},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3244,7 +3244,7 @@
             <key>dwarvenKnightFire.368.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{220,460},{70,38}}</string>
+                <string>{{74,522},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3257,7 +3257,7 @@
             <key>dwarvenKnightFire.369.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{296,442},{70,38}}</string>
+                <string>{{2,544},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
@@ -3270,7 +3270,7 @@
             <key>dwarvenKnightFire.37.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{824,822},{62,64}}</string>
+                <string>{{480,754},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3283,11 +3283,11 @@
             <key>dwarvenKnightFire.370.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{464,200},{70,38}}</string>
+                <string>{{650,390},{70,38}}</string>
                 <key>offset</key>
                 <string>{29,-173}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{186,346},{70,38}}</string>
                 <key>sourceSize</key>
@@ -3296,7 +3296,7 @@
             <key>dwarvenKnightFire.38.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{758,816},{62,64}}</string>
+                <string>{{408,788},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3309,7 +3309,7 @@
             <key>dwarvenKnightFire.39.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{692,780},{62,64}}</string>
+                <string>{{336,806},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3322,7 +3322,7 @@
             <key>dwarvenKnightFire.4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1024},{60,64}}</string>
+                <string>{{266,1028},{60,64}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -3335,7 +3335,7 @@
             <key>dwarvenKnightFire.40.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{626,740},{62,64}}</string>
+                <string>{{268,838},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3348,7 +3348,7 @@
             <key>dwarvenKnightFire.41.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{560,684},{62,64}}</string>
+                <string>{{200,854},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3361,7 +3361,7 @@
             <key>dwarvenKnightFire.42.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{494,626},{62,64}}</string>
+                <string>{{134,868},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3374,7 +3374,7 @@
             <key>dwarvenKnightFire.43.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{428,596},{62,64}}</string>
+                <string>{{68,874},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3387,11 +3387,11 @@
             <key>dwarvenKnightFire.44.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{960,840},{62,64}}</string>
+                <string>{{2,896},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{164,319},{62,64}}</string>
                 <key>sourceSize</key>
@@ -3400,7 +3400,7 @@
             <key>dwarvenKnightFire.45.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{894,810},{62,64}}</string>
+                <string>{{618,804},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3413,7 +3413,7 @@
             <key>dwarvenKnightFire.46.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{828,758},{62,64}}</string>
+                <string>{{546,812},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3426,7 +3426,7 @@
             <key>dwarvenKnightFire.47.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{762,752},{62,64}}</string>
+                <string>{{474,818},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3439,7 +3439,7 @@
             <key>dwarvenKnightFire.48.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{696,716},{62,64}}</string>
+                <string>{{402,852},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3452,7 +3452,7 @@
             <key>dwarvenKnightFire.49.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{630,676},{62,64}}</string>
+                <string>{{334,870},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3465,7 +3465,7 @@
             <key>dwarvenKnightFire.5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,1002},{60,64}}</string>
+                <string>{{200,1044},{60,64}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -3478,7 +3478,7 @@
             <key>dwarvenKnightFire.50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{564,620},{62,64}}</string>
+                <string>{{266,902},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3491,7 +3491,7 @@
             <key>dwarvenKnightFire.51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{498,562},{62,64}}</string>
+                <string>{{200,918},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3504,11 +3504,11 @@
             <key>dwarvenKnightFire.52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{960,774},{62,64}}</string>
+                <string>{{134,932},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{164,319},{62,64}}</string>
                 <key>sourceSize</key>
@@ -3517,7 +3517,7 @@
             <key>dwarvenKnightFire.53.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{894,746},{62,64}}</string>
+                <string>{{68,938},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3530,7 +3530,7 @@
             <key>dwarvenKnightFire.54.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{828,694},{62,64}}</string>
+                <string>{{2,960},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3543,7 +3543,7 @@
             <key>dwarvenKnightFire.55.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{762,688},{62,64}}</string>
+                <string>{{684,844},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3556,11 +3556,11 @@
             <key>dwarvenKnightFire.56.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{698,650},{62,64}}</string>
+                <string>{{612,868},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{164,319},{62,64}}</string>
                 <key>sourceSize</key>
@@ -3569,7 +3569,7 @@
             <key>dwarvenKnightFire.57.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{632,612},{62,64}}</string>
+                <string>{{540,876},{62,64}}</string>
                 <key>offset</key>
                 <string>{3,-159}</string>
                 <key>rotated</key>
@@ -3582,7 +3582,7 @@
             <key>dwarvenKnightFire.58.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,996},{60,64}}</string>
+                <string>{{134,1058},{60,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -3595,7 +3595,7 @@
             <key>dwarvenKnightFire.59.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{200,982},{60,64}}</string>
+                <string>{{68,1064},{60,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
@@ -3608,7 +3608,7 @@
             <key>dwarvenKnightFire.6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,966},{60,64}}</string>
+                <string>{{2,1086},{60,64}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -3621,11 +3621,11 @@
             <key>dwarvenKnightFire.60.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{960,708},{62,64}}</string>
+                <string>{{468,882},{62,64}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{165,319},{62,64}}</string>
                 <key>sourceSize</key>
@@ -3634,11 +3634,11 @@
             <key>dwarvenKnightFire.7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{700,584},{60,64}}</string>
+                <string>{{816,886},{60,64}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{167,319},{60,64}}</string>
                 <key>sourceSize</key>
@@ -3647,7 +3647,7 @@
             <key>dwarvenKnightFire.70.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{266,1090},{62,62}}</string>
+                <string>{{330,1112},{62,62}}</string>
                 <key>offset</key>
                 <string>{22,-157}</string>
                 <key>rotated</key>
@@ -3660,7 +3660,7 @@
             <key>dwarvenKnightFire.71.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{634,548},{64,62}}</string>
+                <string>{{894,682},{64,62}}</string>
                 <key>offset</key>
                 <string>{19,-157}</string>
                 <key>rotated</key>
@@ -3673,7 +3673,7 @@
             <key>dwarvenKnightFire.72.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{894,618},{64,62}}</string>
+                <string>{{566,556},{64,62}}</string>
                 <key>offset</key>
                 <string>{16,-157}</string>
                 <key>rotated</key>
@@ -3686,11 +3686,11 @@
             <key>dwarvenKnightFire.73.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{960,642},{62,64}}</string>
+                <string>{{400,916},{62,64}}</string>
                 <key>offset</key>
                 <string>{11,-157}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{172,317},{62,64}}</string>
                 <key>sourceSize</key>
@@ -3699,7 +3699,7 @@
             <key>dwarvenKnightFire.74.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{142,616},{58,66}}</string>
+                <string>{{214,602},{58,66}}</string>
                 <key>offset</key>
                 <string>{7,-158}</string>
                 <key>rotated</key>
@@ -3712,7 +3712,7 @@
             <key>dwarvenKnightFire.75.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{764,448},{54,66}}</string>
+                <string>{{900,442},{54,66}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -3725,11 +3725,11 @@
             <key>dwarvenKnightFire.76.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{440,462},{56,66}}</string>
+                <string>{{2,646},{56,66}}</string>
                 <key>offset</key>
                 <string>{4,-159}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{168,318},{56,66}}</string>
                 <key>sourceSize</key>
@@ -3738,11 +3738,11 @@
             <key>dwarvenKnightFire.77.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{832,398},{54,66}}</string>
+                <string>{{968,442},{54,66}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{170,318},{54,66}}</string>
                 <key>sourceSize</key>
@@ -3751,7 +3751,7 @@
             <key>dwarvenKnightFire.78.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{764,392},{54,66}}</string>
+                <string>{{832,454},{54,66}}</string>
                 <key>offset</key>
                 <string>{5,-159}</string>
                 <key>rotated</key>
@@ -3777,7 +3777,7 @@
             <key>dwarvenKnightFire.8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{874,1002},{60,62}}</string>
+                <string>{{658,1156},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -3803,7 +3803,7 @@
             <key>dwarvenKnightFire.81.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{214,602},{58,66}}</string>
+                <string>{{142,616},{58,66}}</string>
                 <key>offset</key>
                 <string>{12,-159}</string>
                 <key>rotated</key>
@@ -3816,7 +3816,7 @@
             <key>dwarvenKnightFire.82.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{498,498},{62,66}}</string>
+                <string>{{360,550},{62,66}}</string>
                 <key>offset</key>
                 <string>{18,-159}</string>
                 <key>rotated</key>
@@ -3842,7 +3842,7 @@
             <key>dwarvenKnightFire.84.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,412},{70,64}}</string>
+                <string>{{224,394},{70,64}}</string>
                 <key>offset</key>
                 <string>{18,-158}</string>
                 <key>rotated</key>
@@ -3881,7 +3881,7 @@
             <key>dwarvenKnightFire.87.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{74,562},{66,60}}</string>
+                <string>{{218,540},{66,60}}</string>
                 <key>offset</key>
                 <string>{12,-154}</string>
                 <key>rotated</key>
@@ -3894,7 +3894,7 @@
             <key>dwarvenKnightFire.88.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{744,942},{64,58}}</string>
+                <string>{{672,970},{64,58}}</string>
                 <key>offset</key>
                 <string>{10,-154}</string>
                 <key>rotated</key>
@@ -3907,7 +3907,7 @@
             <key>dwarvenKnightFire.89.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{456,1252},{60,56}}</string>
+                <string>{{920,1156},{60,56}}</string>
                 <key>offset</key>
                 <string>{9,-153}</string>
                 <key>rotated</key>
@@ -3920,7 +3920,7 @@
             <key>dwarvenKnightFire.9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{946,970},{60,62}}</string>
+                <string>{{592,1180},{60,62}}</string>
                 <key>offset</key>
                 <string>{5,-160}</string>
                 <key>rotated</key>
@@ -3933,7 +3933,7 @@
             <key>dwarvenKnightFire.90.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{526,1186},{62,58}}</string>
+                <string>{{458,1192},{62,58}}</string>
                 <key>offset</key>
                 <string>{10,-154}</string>
                 <key>rotated</key>
@@ -3946,7 +3946,7 @@
             <key>dwarvenKnightFire.91.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{264,1154},{62,60}}</string>
+                <string>{{2,1212},{62,60}}</string>
                 <key>offset</key>
                 <string>{14,-155}</string>
                 <key>rotated</key>
@@ -3972,7 +3972,7 @@
             <key>dwarvenKnightFire.93.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,540},{66,60}}</string>
+                <string>{{74,562},{66,60}}</string>
                 <key>offset</key>
                 <string>{21,-156}</string>
                 <key>rotated</key>
@@ -3988,13 +3988,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>dwarvenKnightFireSheet-iphone5.png</string>
+            <string>dwarvenKnightFireSheet-iphone5.pvr.ccz</string>
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ca4b22b75acdacf3013557ac40ce3c31:6200c0e9c74a73a08c06ce0a0020197a:57f8d0eadcfbb48640d8d457d49c5263$</string>
+            <string>$TexturePacker:SmartUpdate:d88272e1c1e5aa55d3e4c53b8dbf3305:6200c0e9c74a73a08c06ce0a0020197a:7889dff8e50eb39dea4f70036e9b7d68$</string>
             <key>textureFileName</key>
-            <string>dwarvenKnightFireSheet-iphone5.png</string>
+            <string>dwarvenKnightFireSheet-iphone5.pvr.ccz</string>
         </dict>
     </dict>
 </plist>

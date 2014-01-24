@@ -59,7 +59,7 @@
             <key>dragonFire.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,798},{238,178}}</string>
+                <string>{{244,688},{238,178}}</string>
                 <key>offset</key>
                 <string>{-9,-103}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>dragonFire.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{248,386},{244,162}}</string>
+                <string>{{2,342},{244,162}}</string>
                 <key>offset</key>
                 <string>{-14,-87}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>dragonFire.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,342},{244,162}}</string>
+                <string>{{248,386},{244,162}}</string>
                 <key>offset</key>
                 <string>{-14,6}</string>
                 <key>rotated</key>
@@ -371,7 +371,7 @@
             <key>dragonFire.223.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{244,688},{238,178}}</string>
+                <string>{{2,798},{238,178}}</string>
                 <key>offset</key>
                 <string>{-13,-103}</string>
                 <key>rotated</key>
@@ -553,7 +553,7 @@
             <key>dragonFire.248.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{444,1652},{84,190}}</string>
+                <string>{{680,1578},{84,190}}</string>
                 <key>offset</key>
                 <string>{0,-61}</string>
                 <key>rotated</key>
@@ -579,7 +579,7 @@
             <key>dragonFire.250.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{680,1578},{84,190}}</string>
+                <string>{{444,1652},{84,190}}</string>
                 <key>offset</key>
                 <string>{-3,-76}</string>
                 <key>rotated</key>
@@ -618,7 +618,7 @@
             <key>dragonFire.253.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{230,1578},{212,84}}</string>
+                <string>{{466,1566},{212,84}}</string>
                 <key>offset</key>
                 <string>{-6,-150}</string>
                 <key>rotated</key>
@@ -644,7 +644,7 @@
             <key>dragonFire.255.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{466,1566},{212,84}}</string>
+                <string>{{230,1578},{212,84}}</string>
                 <key>offset</key>
                 <string>{-5,-150}</string>
                 <key>rotated</key>
@@ -660,13 +660,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>dragonFireSheet-iphone5.png</string>
+            <string>dragonFireSheet-iphone5.pvr.ccz</string>
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:48f394ad5efed02a6c917003eafcd50d:f7af4289bf4659002555db8fda112993:c1ac0aa67ceb1968c5c186f6388b6250$</string>
+            <string>$TexturePacker:SmartUpdate:ca1db613a31ef2db117a1c1b9c97dc89:f7af4289bf4659002555db8fda112993:92768079b72394c3fc9e8393bbfc0361$</string>
             <key>textureFileName</key>
-            <string>dragonFireSheet-iphone5.png</string>
+            <string>dragonFireSheet-iphone5.pvr.ccz</string>
         </dict>
     </dict>
 </plist>

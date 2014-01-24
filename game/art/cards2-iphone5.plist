@@ -7,13 +7,13 @@
             <key>elfAssassin_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{255,332}}</string>
+                <string>{{2,2},{311,344}}</string>
                 <key>offset</key>
-                <string>{5,1}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{33,5},{255,332}}</string>
+                <string>{{0,0},{311,344}}</string>
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
@@ -23,13 +23,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>cards2-iphone5.png</string>
+            <string>cards2-iphone5.pvr.ccz</string>
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:7b161e266bc8df95f1cc0e606bd1cf6c:5bfb80b7011b37de66630c0b13604d65:2bf29494edb8a9d3ce28b3a75b1b2187$</string>
+            <string>$TexturePacker:SmartUpdate:1dd725ecfc573858155a2e232ce2fa44:0b2c50e9509d45c208ee2eb39eafc43f:5dd7d3c6870a0b6da142c0a80e3dfd9a$</string>
             <key>textureFileName</key>
-            <string>cards2-iphone5.png</string>
+            <string>cards2-iphone5.pvr.ccz</string>
         </dict>
     </dict>
 </plist>

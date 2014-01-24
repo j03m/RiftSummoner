@@ -7,7 +7,7 @@
             <key>dragonVoid.178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{540,2},{182,136}}</string>
+                <string>{{188,2},{182,136}}</string>
                 <key>offset</key>
                 <string>{-10,15}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>dragonVoid.179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{358,270},{182,106}}</string>
+                <string>{{186,140},{182,106}}</string>
                 <key>offset</key>
                 <string>{-10,-1}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>dragonVoid.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{724,378},{178,94}}</string>
+                <string>{{2,840},{178,94}}</string>
                 <key>offset</key>
                 <string>{-8,-12}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>dragonVoid.181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{526,582},{178,96}}</string>
+                <string>{{182,744},{178,96}}</string>
                 <key>offset</key>
                 <string>{-8,-59}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>dragonVoid.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{180,178},{176,130}}</string>
+                <string>{{180,936},{176,130}}</string>
                 <key>offset</key>
                 <string>{-7,-76}</string>
                 <key>rotated</key>
@@ -72,11 +72,11 @@
             <key>dragonVoid.183.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{156,506},{174,122}}</string>
+                <string>{{180,1314},{174,122}}</string>
                 <key>offset</key>
                 <string>{-7,-69}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{47,149},{174,122}}</string>
                 <key>sourceSize</key>
@@ -85,11 +85,11 @@
             <key>dragonVoid.184.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{276,682},{176,112}}</string>
+                <string>{{180,1200},{176,112}}</string>
                 <key>offset</key>
                 <string>{-8,-68}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{45,153},{176,112}}</string>
                 <key>sourceSize</key>
@@ -98,7 +98,7 @@
             <key>dragonVoid.185.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{722,474},{178,104}}</string>
+                <string>{{182,638},{178,104}}</string>
                 <key>offset</key>
                 <string>{-9,-66}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>dragonVoid.186.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{358,150},{180,118}}</string>
+                <string>{{2,402},{180,118}}</string>
                 <key>offset</key>
                 <string>{-11,-71}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>dragonVoid.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{724,138},{180,118}}</string>
+                <string>{{184,518},{180,118}}</string>
                 <key>offset</key>
                 <string>{-11,-64}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>dragonVoid.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{542,252},{180,120}}</string>
+                <string>{{184,396},{180,120}}</string>
                 <key>offset</key>
                 <string>{-10,4}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>dragonVoid.206.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,2},{172,162}}</string>
+                <string>{{2,1434},{172,162}}</string>
                 <key>offset</key>
                 <string>{-6,26}</string>
                 <key>rotated</key>
@@ -163,11 +163,11 @@
             <key>dragonVoid.207.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,860},{172,142}}</string>
+                <string>{{366,248},{172,142}}</string>
                 <key>offset</key>
                 <string>{-7,15}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{48,55},{172,142}}</string>
                 <key>sourceSize</key>
@@ -176,11 +176,11 @@
             <key>dragonVoid.208.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{280,506},{174,110}}</string>
+                <string>{{2,1322},{174,110}}</string>
                 <key>offset</key>
                 <string>{-9,-1}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{45,87},{174,110}}</string>
                 <key>sourceSize</key>
@@ -189,7 +189,7 @@
             <key>dragonVoid.209.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{722,580},{178,92}}</string>
+                <string>{{182,842},{178,92}}</string>
                 <key>offset</key>
                 <string>{-7,-10}</string>
                 <key>rotated</key>
@@ -202,7 +202,7 @@
             <key>dragonVoid.210.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{172,404},{178,100}}</string>
+                <string>{{2,738},{178,100}}</string>
                 <key>offset</key>
                 <string>{-8,-57}</string>
                 <key>rotated</key>
@@ -215,7 +215,7 @@
             <key>dragonVoid.211.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{392,506},{170,132}}</string>
+                <string>{{362,830},{170,132}}</string>
                 <key>offset</key>
                 <string>{-7,-75}</string>
                 <key>rotated</key>
@@ -228,11 +228,11 @@
             <key>dragonVoid.212.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{406,854},{166,124}}</string>
+                <string>{{172,1662},{166,124}}</string>
                 <key>offset</key>
                 <string>{-6,-71}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{52,150},{166,124}}</string>
                 <key>sourceSize</key>
@@ -241,11 +241,11 @@
             <key>dragonVoid.213.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{906,2},{166,116}}</string>
+                <string>{{2,1710},{166,116}}</string>
                 <key>offset</key>
                 <string>{-5,-69}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{53,152},{166,116}}</string>
                 <key>sourceSize</key>
@@ -254,11 +254,11 @@
             <key>dragonVoid.214.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{904,342},{168,110}}</string>
+                <string>{{2,1598},{168,110}}</string>
                 <key>offset</key>
                 <string>{-5,-68}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{52,154},{168,110}}</string>
                 <key>sourceSize</key>
@@ -267,11 +267,11 @@
             <key>dragonVoid.215.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{500,680},{166,132}}</string>
+                <string>{{358,1178},{166,132}}</string>
                 <key>offset</key>
                 <string>{-4,-69}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{54,144},{166,132}}</string>
                 <key>sourceSize</key>
@@ -280,11 +280,11 @@
             <key>dragonVoid.216.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{176,860},{164,134}}</string>
+                <string>{{362,664},{164,134}}</string>
                 <key>offset</key>
                 <string>{-3,-67}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{56,141},{164,134}}</string>
                 <key>sourceSize</key>
@@ -293,11 +293,11 @@
             <key>dragonVoid.217.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{390,682},{170,108}}</string>
+                <string>{{176,1552},{170,108}}</string>
                 <key>offset</key>
                 <string>{-5,-2}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{51,89},{170,108}}</string>
                 <key>sourceSize</key>
@@ -306,7 +306,7 @@
             <key>dragonVoid.218.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,178},{176,162}}</string>
+                <string>{{2,936},{176,162}}</string>
                 <key>offset</key>
                 <string>{-8,26}</string>
                 <key>rotated</key>
@@ -319,7 +319,7 @@
             <key>dragonVoid.219.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{358,2},{180,146}}</string>
+                <string>{{184,248},{180,146}}</string>
                 <key>offset</key>
                 <string>{-11,17}</string>
                 <key>rotated</key>
@@ -332,7 +332,7 @@
             <key>dragonVoid.220.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{536,470},{184,110}}</string>
+                <string>{{2,2},{184,110}}</string>
                 <key>offset</key>
                 <string>{-13,-2}</string>
                 <key>rotated</key>
@@ -345,7 +345,7 @@
             <key>dragonVoid.221.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{542,374},{180,94}}</string>
+                <string>{{2,522},{180,94}}</string>
                 <key>offset</key>
                 <string>{-12,-12}</string>
                 <key>rotated</key>
@@ -358,7 +358,7 @@
             <key>dragonVoid.222.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{180,310},{176,92}}</string>
+                <string>{{2,1228},{176,92}}</string>
                 <key>offset</key>
                 <string>{-10,-54}</string>
                 <key>rotated</key>
@@ -371,11 +371,11 @@
             <key>dragonVoid.223.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{144,682},{176,130}}</string>
+                <string>{{180,1068},{176,130}}</string>
                 <key>offset</key>
                 <string>{-10,-76}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{43,152},{176,130}}</string>
                 <key>sourceSize</key>
@@ -384,7 +384,7 @@
             <key>dragonVoid.224.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{358,378},{176,126}}</string>
+                <string>{{2,1100},{176,126}}</string>
                 <key>offset</key>
                 <string>{-9,-71}</string>
                 <key>rotated</key>
@@ -397,7 +397,7 @@
             <key>dragonVoid.225.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{724,258},{178,118}}</string>
+                <string>{{2,618},{178,118}}</string>
                 <key>offset</key>
                 <string>{-9,-69}</string>
                 <key>rotated</key>
@@ -410,7 +410,7 @@
             <key>dragonVoid.226.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{540,140},{182,110}}</string>
+                <string>{{2,114},{182,110}}</string>
                 <key>offset</key>
                 <string>{-11,-68}</string>
                 <key>rotated</key>
@@ -423,11 +423,11 @@
             <key>dragonVoid.227.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{724,2},{180,134}}</string>
+                <string>{{372,66},{180,134}}</string>
                 <key>offset</key>
                 <string>{-10,-67}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{41,141},{180,134}}</string>
                 <key>sourceSize</key>
@@ -436,7 +436,7 @@
             <key>dragonVoid.228.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,682},{176,140}}</string>
+                <string>{{366,422},{176,140}}</string>
                 <key>offset</key>
                 <string>{-8,-61}</string>
                 <key>rotated</key>
@@ -449,11 +449,11 @@
             <key>dragonVoid.229.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{906,170},{170,112}}</string>
+                <string>{{176,1438},{170,112}}</string>
                 <key>offset</key>
                 <string>{-5,1}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{51,84},{170,112}}</string>
                 <key>sourceSize</key>
@@ -462,11 +462,11 @@
             <key>dragonVoid.230.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,342},{168,162}}</string>
+                <string>{{348,1476},{168,162}}</string>
                 <key>offset</key>
                 <string>{-4,26}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{53,34},{168,162}}</string>
                 <key>sourceSize</key>
@@ -475,7 +475,7 @@
             <key>dragonVoid.242.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{180,174}}</string>
+                <string>{{2,226},{180,174}}</string>
                 <key>offset</key>
                 <string>{-10,32}</string>
                 <key>rotated</key>
@@ -488,7 +488,7 @@
             <key>dragonVoid.243.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,506},{174,152}}</string>
+                <string>{{358,1002},{174,152}}</string>
                 <key>offset</key>
                 <string>{-11,14}</string>
                 <key>rotated</key>
@@ -501,11 +501,11 @@
             <key>dragonVoid.244.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{532,814},{128,130}}</string>
+                <string>{{356,1346},{128,130}}</string>
                 <key>offset</key>
                 <string>{-21,-21}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{56,97},{128,130}}</string>
                 <key>sourceSize</key>
@@ -514,11 +514,11 @@
             <key>dragonVoid.245.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{902,512},{108,120}}</string>
+                <string>{{92,1920},{108,120}}</string>
                 <key>offset</key>
                 <string>{-21,-27}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{66,108},{108,120}}</string>
                 <key>sourceSize</key>
@@ -527,11 +527,11 @@
             <key>dragonVoid.246.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{880,886},{106,108}}</string>
+                <string>{{202,1852},{106,108}}</string>
                 <key>offset</key>
                 <string>{-11,-34}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{77,121},{106,108}}</string>
                 <key>sourceSize</key>
@@ -540,7 +540,7 @@
             <key>dragonVoid.247.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{662,820},{88,124}}</string>
+                <string>{{2,1920},{88,124}}</string>
                 <key>offset</key>
                 <string>{-9,-32}</string>
                 <key>rotated</key>
@@ -553,11 +553,11 @@
             <key>dragonVoid.248.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,860},{62,140}}</string>
+                <string>{{366,600},{62,140}}</string>
                 <key>offset</key>
                 <string>{0,-45}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{110,116},{62,140}}</string>
                 <key>sourceSize</key>
@@ -566,7 +566,7 @@
             <key>dragonVoid.249.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{532,946},{64,158}}</string>
+                <string>{{348,1646},{64,158}}</string>
                 <key>offset</key>
                 <string>{-5,-62}</string>
                 <key>rotated</key>
@@ -579,11 +579,11 @@
             <key>dragonVoid.250.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{668,680},{62,138}}</string>
+                <string>{{372,2},{62,138}}</string>
                 <key>offset</key>
                 <string>{-2,-56}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{108,128},{62,138}}</string>
                 <key>sourceSize</key>
@@ -592,7 +592,7 @@
             <key>dragonVoid.251.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{902,622},{104,112}}</string>
+                <string>{{328,1840},{104,112}}</string>
                 <key>offset</key>
                 <string>{-17,-65}</string>
                 <key>rotated</key>
@@ -605,7 +605,7 @@
             <key>dragonVoid.252.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{732,674},{130,90}}</string>
+                <string>{{2,1828},{130,90}}</string>
                 <key>offset</key>
                 <string>{-7,-96}</string>
                 <key>rotated</key>
@@ -618,11 +618,11 @@
             <key>dragonVoid.253.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{880,728},{156,62}}</string>
+                <string>{{340,1712},{156,62}}</string>
                 <key>offset</key>
                 <string>{-4,-110}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{59,220},{156,62}}</string>
                 <key>sourceSize</key>
@@ -631,11 +631,11 @@
             <key>dragonVoid.254.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{816,766},{156,62}}</string>
+                <string>{{340,1776},{156,62}}</string>
                 <key>offset</key>
                 <string>{-5,-110}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{58,220},{156,62}}</string>
                 <key>sourceSize</key>
@@ -644,11 +644,11 @@
             <key>dragonVoid.255.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{752,766},{156,62}}</string>
+                <string>{{170,1788},{156,62}}</string>
                 <key>offset</key>
                 <string>{-4,-110}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{59,220},{156,62}}</string>
                 <key>sourceSize</key>
@@ -660,13 +660,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>dragonVoidSheet-iphone4.png</string>
+            <string>dragonVoidSheet-iphone4.pvr.ccz</string>
             <key>size</key>
-            <string>{1024,1024}</string>
+            <string>{512,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0f6037c0e82f83f25d3d90befdad1b4d:35c0a7d82bcc05655a82756cd7164a5b:3806b373374cefb9530d398b2988b74e$</string>
+            <string>$TexturePacker:SmartUpdate:0ffb03629022f86b53f497c217b892c5:35c0a7d82bcc05655a82756cd7164a5b:f888d0b985c9a4c4c6418d2fd087cb27$</string>
             <key>textureFileName</key>
-            <string>dragonVoidSheet-iphone4.png</string>
+            <string>dragonVoidSheet-iphone4.pvr.ccz</string>
         </dict>
     </dict>
 </plist>

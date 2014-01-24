@@ -1,7 +1,7 @@
 var effectsConfig = {
     "explo":{
-        "png":"art/effects{v}.png",
-        "plist":"art/effects{v}.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"explo.1.png",
         "placement":"bottom",
         "zorder":"behind",
@@ -16,8 +16,8 @@ var effectsConfig = {
         "shake":true
     },
     "healingRadius":{
-        "png":"art/effects{v}.png",
-        "plist":"art/effects{v}.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"healingRadius.1.png",
         "frames":39,
         "delay":0.05,
@@ -30,8 +30,8 @@ var effectsConfig = {
 
     },
     "heal":{
-        "png":"art/effects{v}.png",
-        "plist":"art/effects{v}.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"heal.1.png",
         "frames":50,
         "delay":0.03,
@@ -41,16 +41,16 @@ var effectsConfig = {
 
     },
     "arrow":{
-        "png":"art/uiElements{v}.png",
-        "plist":"art/uiElements{v}.plist",
+        "png":dirImg + "uiElements{v}.png",
+        "plist":dirImg + "uiElements{v}.plist",
         "start":"arrow.1.png",
         "frames":16,
         "delay":0.04,
         "placement":"center"
     },
     "teleport":{
-        "png":"art/teleport.png",
-        "plist":"art/teleport.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"teleport.1.png",
         "frames":14,
         "delay":0.02,
@@ -58,8 +58,8 @@ var effectsConfig = {
         "times":1
     },
     "movement":{
-        "png":"art/touch{v}.png",
-        "plist":"art/touch{v}.plist",
+        "png":dirImg + "touch{v}.png",
+        "plist":dirImg + "touch{v}.plist",
         "start":"movement.1.png",
         "frames":8,
         "delay":0.05,
@@ -67,8 +67,8 @@ var effectsConfig = {
         "times":4
     },
     "characterSelection":{
-        "png":"art/touch{v}.png",
-        "plist":"art/touch{v}.plist",
+        "png":dirImg + "touch{v}.png",
+        "plist":dirImg + "touch{v}.plist",
         "start":"characterSelection.1.png",
         "frames":16,
         "delay":0.05,
@@ -77,8 +77,8 @@ var effectsConfig = {
 
     },
     "enemySelection":{
-        "png":"art/touch{v}.png",
-        "plist":"art/touch{v}.plist",
+        "png":dirImg + "touch{v}.png",
+        "plist":dirImg + "touch{v}.plist",
         "start":"enemySelection.1.png",
         "frames":16,
         "delay":0.05,
@@ -88,8 +88,8 @@ var effectsConfig = {
 
     },
     "allySelection":{
-        "png":"art/touch{v}.png",
-        "plist":"art/touch{v}.plist",
+        "png":dirImg + "touch{v}.png",
+        "plist":dirImg + "touch{v}.plist",
         "start":"allySelection.1.png",
         "frames":16,
         "delay":0.05,
@@ -98,8 +98,8 @@ var effectsConfig = {
         "times":3
     },
     "burning":{
-        "png":"art/effects{v}.png",
-        "plist":"art/effects{v}.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"burning.1.png",
         "frames":33,
         "delay":0.02,
@@ -112,8 +112,8 @@ var effectsConfig = {
         "times":6
     },
     "poisoned2":{
-        "png":"art/effects{v}.png",
-        "plist":"art/effects{v}.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"poisoned2.1.png",
         "frames":24,
         "delay":0.05,
@@ -128,8 +128,8 @@ var effectsConfig = {
 
     },
     "lifeDrain":{
-        "png":"art/effects{v}.png",
-        "plist":"art/effects{v}.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"lifeDrain.1.png",
         "frames":38,
         "delay":0.05,
@@ -143,8 +143,8 @@ var effectsConfig = {
         times:5
     },
     "vampireRadius":{
-        "png":"art/effects{v}.png",
-        "plist":"art/effects{v}.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"vampireRadius.1.png",
         "frames":30,
         "delay":0.05,
@@ -157,8 +157,8 @@ var effectsConfig = {
         }
     },
     "voidFire":{
-        "png":"art/effects{v}.png",
-        "plist":"art/effects{v}.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"voidFire.1.png",
         "frames":32,
         "delay":0.05,
@@ -171,8 +171,8 @@ var effectsConfig = {
         }
     },
     "hit":{
-        "png":"art/effects{v}.png",
-        "plist":"art/effects{v}.plist",
+        "png":dirImg + "effects{v}.png",
+        "plist":dirImg + "effects{v}.plist",
         "start":"hit.1.png",
         "frames":20,
         "delay":0.05,

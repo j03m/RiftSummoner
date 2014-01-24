@@ -33,7 +33,7 @@
             <key>dragonVoid.180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{172,100},{82,44}}</string>
+                <string>{{172,54},{82,44}}</string>
                 <key>offset</key>
                 <string>{-4,-5}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>dragonVoid.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,190},{80,60}}</string>
+                <string>{{84,150},{80,60}}</string>
                 <key>offset</key>
                 <string>{-3,-34}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>dragonVoid.186.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{428,122},{82,54}}</string>
+                <string>{{428,66},{82,54}}</string>
                 <key>offset</key>
                 <string>{-5,-32}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>dragonVoid.188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{428,66},{82,54}}</string>
+                <string>{{428,122},{82,54}}</string>
                 <key>offset</key>
                 <string>{-5,2}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>dragonVoid.206.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{340,126},{80,74}}</string>
+                <string>{{2,114},{80,74}}</string>
                 <key>offset</key>
                 <string>{-3,12}</string>
                 <key>rotated</key>
@@ -306,7 +306,7 @@
             <key>dragonVoid.218.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,114},{80,74}}</string>
+                <string>{{340,126},{80,74}}</string>
                 <key>offset</key>
                 <string>{-4,12}</string>
                 <key>rotated</key>
@@ -332,7 +332,7 @@
             <key>dragonVoid.220.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{174,2},{84,50}}</string>
+                <string>{{88,2},{84,50}}</string>
                 <key>offset</key>
                 <string>{-6,-1}</string>
                 <key>rotated</key>
@@ -345,7 +345,7 @@
             <key>dragonVoid.221.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{172,54},{82,44}}</string>
+                <string>{{172,100},{82,44}}</string>
                 <key>offset</key>
                 <string>{-5,-5}</string>
                 <key>rotated</key>
@@ -371,7 +371,7 @@
             <key>dragonVoid.223.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{84,150},{80,60}}</string>
+                <string>{{2,190},{80,60}}</string>
                 <key>offset</key>
                 <string>{-4,-34}</string>
                 <key>rotated</key>
@@ -410,7 +410,7 @@
             <key>dragonVoid.226.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{88,2},{84,50}}</string>
+                <string>{{174,2},{84,50}}</string>
                 <key>offset</key>
                 <string>{-5,-31}</string>
                 <key>rotated</key>
@@ -553,7 +553,7 @@
             <key>dragonVoid.248.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,398},{28,64}}</string>
+                <string>{{394,370},{28,64}}</string>
                 <key>offset</key>
                 <string>{0,-20}</string>
                 <key>rotated</key>
@@ -579,7 +579,7 @@
             <key>dragonVoid.250.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{394,370},{28,64}}</string>
+                <string>{{310,398},{28,64}}</string>
                 <key>offset</key>
                 <string>{-1,-25}</string>
                 <key>rotated</key>
@@ -618,7 +618,7 @@
             <key>dragonVoid.253.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{320,368},{72,28}}</string>
+                <string>{{404,340},{72,28}}</string>
                 <key>offset</key>
                 <string>{-2,-50}</string>
                 <key>rotated</key>
@@ -644,7 +644,7 @@
             <key>dragonVoid.255.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{404,340},{72,28}}</string>
+                <string>{{320,368},{72,28}}</string>
                 <key>offset</key>
                 <string>{-2,-50}</string>
                 <key>rotated</key>
@@ -660,13 +660,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>dragonVoidSheet.png</string>
+            <string>dragonVoidSheet.pvr.ccz</string>
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0f6037c0e82f83f25d3d90befdad1b4d:35c0a7d82bcc05655a82756cd7164a5b:3806b373374cefb9530d398b2988b74e$</string>
+            <string>$TexturePacker:SmartUpdate:0ffb03629022f86b53f497c217b892c5:35c0a7d82bcc05655a82756cd7164a5b:f888d0b985c9a4c4c6418d2fd087cb27$</string>
             <key>textureFileName</key>
-            <string>dragonVoidSheet.png</string>
+            <string>dragonVoidSheet.pvr.ccz</string>
         </dict>
     </dict>
 </plist>
