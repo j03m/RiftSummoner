@@ -7,15 +7,15 @@
             <key>nexus.1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{176,202}}</string>
+                <string>{{2,2},{132,152}}</string>
                 <key>offset</key>
-                <string>{1,-155}</string>
+                <string>{1,-116}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{169,310},{176,202}}</string>
+                <string>{{127,232},{132,152}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -27,7 +27,7 @@
             <key>size</key>
             <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:72730fcf2f5c729a905129e90a356e0c:9eb0ffcc7f5d9f77e661212aaffa9f46:642d92a87b34263ec94c5da0a2b98390$</string>
+            <string>$TexturePacker:SmartUpdate:59a97c424739e3e35404aebc55d10ae0:9eb0ffcc7f5d9f77e661212aaffa9f46:642d92a87b34263ec94c5da0a2b98390$</string>
             <key>textureFileName</key>
             <string>nexusSheet-ipad.0.pvr.ccz</string>
         </dict>
