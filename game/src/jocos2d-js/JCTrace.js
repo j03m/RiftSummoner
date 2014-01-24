@@ -49,6 +49,7 @@ var tracers = {
     'ArenaSelection':0,
     'bgtexture':0,
     'Borders':0,
+    'spritesonboard':1,
 };
 
 jc.log = function(categories, msg){
