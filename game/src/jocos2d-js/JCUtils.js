@@ -5,6 +5,15 @@ if (jc.isBrowser){
     jc.teamSize = 9;
 }
 
+jc.config = {};
+jc.config.batch = false;
+jc.config.think = true;
+jc.config.harlemShake = false;
+jc.config.blink = false
+jc.config.blinkAndDance = false;
+jc.config.frozen = false;
+jc.config.flock = true;
+
 
 jc.adjustPosition = function(x,y){
     var pos = this.getPosition();
@@ -477,7 +486,9 @@ jc.scaleToCharacter = function(scaleMe, toMe, factor){
 
 jc.playEffectOnTarget = function(name, target, layer, child){
 
-
+    if (child){
+        return;
+    }
     if (!target){
 		return;
 	}

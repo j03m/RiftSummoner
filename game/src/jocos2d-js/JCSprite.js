@@ -29,8 +29,28 @@ jc.Sprite = cc.Sprite.extend({
 		this.name = config.name;
         this.baseOffset = config.baseOffset;
 
+
+        if (jc.config.batch){
+            jc.log(['batching'], 'in sprite creation');
+            if (!jc.spriteBatch){
+                jc.log(['batching'], 'jc batches not defined, defining');
+                jc.spriteBatch = {};
+            }
+
+            if (!jc.spriteBatch[sheet]){
+                jc.log(['batching'], 'Sheet: ' + sheet + ' not batched, creating');
+                jc.spriteBatch[sheet] = cc.SpriteBatchNode.create(sheet);
+                jc.spriteBatch[sheet].sheet = sheet;
+                jc.spriteBatch[sheet].retain();
+            }
+
+            this.batch = jc.spriteBatch[sheet];
+        }
+
         var multipack = config['multipack-'+jc.assetCategory];
         if (multipack){
+            jc.log(['batching'], 'multipacked sprite');
+            //todo this is going to break my batching code, could be multipacked sprites are a ++no good.
             for(var i=0;i<multipack;i++){
                 var actualPlist = plist.replace('{n}',i);
                 if (!jc.parsed[actualPlist]){
@@ -45,25 +65,19 @@ jc.Sprite = cc.Sprite.extend({
             }
         }
 
-
         this.effects = {};
+        jc.log(['batching'], 'init from frame');
         var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame(firstFrame);
         if (!frame){
             throw firstFrame + " for sprite: " + config.name + " was not found.";
         }
 		this.initWithSpriteFrame(frame);
+        jc.log(['batching'], 'add child to batch');
 
-        if (!jc.spriteBatch){
-            jc.spriteBatch = {};
+        if (jc.config.batch){
+            this.batch.addChild(this);
         }
 
-        if (!jc.spriteBatch[sheet]){
-            jc.spriteBatch[sheet] = cc.SpriteBatchNode.create(sheet);
-            jc.spriteBatch[sheet].sheet = sheet;
-        }
-
-        this.batch = jc.spriteBatch[sheet];
-        this.batch.addChild(this);
         this.retain(); //j03m fix leak
         this.type = config.type;
         if(this.type != 'background'){
@@ -97,8 +111,6 @@ jc.Sprite = cc.Sprite.extend({
 
         this.behavior = behavior;
         this.behaviorType = config.behavior;
-
-
 
 		return this;
 	},
@@ -268,6 +280,11 @@ jc.Sprite = cc.Sprite.extend({
         this.layer.reorderChild(this, point.y*-1);
         this.updateHealthBarPos();
         this.updateShadowPosition();
+        this.x = point.x;
+        this.y = point.y;
+        if (jc.quad){
+            jc.quad.insert(this);
+        }
     },
     moveTo: function(point, state, velocity, callback){
 		jc.log(['sprite', 'move'],"Moving:"+ this.name);
