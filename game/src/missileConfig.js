@@ -1,6 +1,6 @@
 var missileConfig = {
                      "greenbullet":{
-                         "png":dirImg + "missiles{v}.png",
+                         "png":dirImg + "missiles{v}.{ext}",
                          "plist":dirImg + "missiles{v}.plist",
                          "start":"greenbullet.1.png",
                          "effect":"hit",
@@ -11,7 +11,7 @@ var missileConfig = {
 						 "height":150
                      },
                      "arrowFire":{
-                         "png":dirImg + "missiles{v}.png",
+                         "png":dirImg + "missiles{v}.{ext}",
                          "plist":dirImg + "missiles{v}.plist",
                          "start":"arrowFire.1.png",
 						 "hasDirection":true,
@@ -24,7 +24,7 @@ var missileConfig = {
                          "delay":0.02
                      },
                     "arrowPoison":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles{v}.plist",
                         "start":"arrowPoison.1.png",
                         "hasDirection":true,
@@ -37,7 +37,7 @@ var missileConfig = {
                         "delay":0.02
                     },
                     "arrowVoid":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles{v}.plist",
                         "start":"arrowVoid.1.png",
                         "hasDirection":true,
@@ -50,7 +50,7 @@ var missileConfig = {
                         "delay":0.02
                     },
                     "arrowNormal":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles.plist",
                         "start":"arrowNormal.1.png",
                         "hasDirection":true,
@@ -63,7 +63,7 @@ var missileConfig = {
 
                     },
                     "bomb":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles{v}.plist",
                         "start":"bomb.1.png",
                         "frames":8,
@@ -73,7 +73,7 @@ var missileConfig = {
                         "speed":170
                     },
                     "magicFire":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles{v}.plist",
                         "start":"magicFire.1.png",
                         "frames":6,
@@ -84,7 +84,7 @@ var missileConfig = {
                         "effect":"hit",
                     },
                     "magicVoid":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles{v}.plist",
                         "start":"magicVoid.1.png",
                         "frames":6,
@@ -95,7 +95,7 @@ var missileConfig = {
                         "effect":"hit",
                     },
                     "magicNormal":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles{v}.plist",
                         "start":"magicNormal.1.png",
                         "frames":6,
@@ -106,7 +106,7 @@ var missileConfig = {
                         "effect":"hit",
                     },
                     "ballFire":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles{v}.plist",
                         "start":"ballFire.1.png",
                         "frames":7,
@@ -115,7 +115,7 @@ var missileConfig = {
                         "speed":600,
                     },
                     "ballVoid":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles{v}.plist",
                         "start":"ballVoid.1.png",
                         "frames":6,
@@ -123,7 +123,7 @@ var missileConfig = {
                         "speed":600,
                     },
                     "cannonball":{
-                        "png":dirImg + "missiles{v}.png",
+                        "png":dirImg + "missiles{v}.{ext}",
                         "plist":dirImg + "missiles{v}.plist",
                         "start":"cannonball.1.png",
                         "frames":6,
