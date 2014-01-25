@@ -188,6 +188,9 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         }
 
         var slice = Math.floor(point.x / this.sliceSize);
+        if (slice>this.sliceCount){
+            slice = this.sliceCount;
+        }
         var group = team+movementType;
 
         //clear my old settings

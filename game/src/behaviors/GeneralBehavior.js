@@ -203,6 +203,7 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
     var mySlice = this.owner.layer.getSliceFor(this.owner.id);
     if (mySlice == undefined){
         this.owner.setBasePosition(this.owner.getBasePosition());//hack force a reset
+        mySlice = this.owner.layer.getSliceFor(this.owner.id);
     }
 
     //which direction should we search?

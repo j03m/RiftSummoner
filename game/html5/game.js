@@ -24,7 +24,6 @@ var hotrSrc = [
         '../src/blobOperations.js',
         '../src/multiplayerOperations.js',
         '../src/levelLogic.js',
-        '../src/jocos2d-js/JCQuadTree.js',
         '../src/jocos2d-js/JCUtils.js',
         '../src/jocos2d-js/JCLocalStorage.js',
         '../src/jocos2d-js/JCPanAndZoomAction.js',
