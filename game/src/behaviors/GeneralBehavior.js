@@ -116,20 +116,20 @@ GeneralBehavior.prototype.targetWithinSeekRadius = function(target){
 
 //find an enemy that that is within my attack radius
 GeneralBehavior.prototype.lockOnEnemyInRadius = function(){
-    return this.lockOnClosest(this.targetWithinSeekRadius.bind(this), this.owner.enemyTeam());
+    return this.lockOnClosest(undefined, this.owner.otherteam, this.owner.getSeekRadius(), this.owner.getSeekRadius());
 }
 
 //call lock on closest, but pass isUnlocked to check if anyone is locked on already, if so pass and check the next.
 GeneralBehavior.prototype.lockOnClosestUnlocked = function(){
-    return this.lockOnClosest(this.isUnlocked.bind(this), this.owner.enemyTeam());
+    return this.lockOnClosest(this.isUnlocked.bind(this), this.owner.otherteam);
 }
 
 GeneralBehavior.prototype.lockOnClosestFriendlyNonTank = function(){
-    return this.lockOnClosest(this.isUndefended.bind(this), this.owner.homeTeam());
+    return this.lockOnClosest(this.isUndefended.bind(this), this.owner.team);
 }
 
 GeneralBehavior.prototype.lockOnClosestNonTank = function(){
-    return this.lockOnClosest(this.is.bind(this, ['healer', 'range']), this.owner.enemyTeam());
+    return this.lockOnClosest(this.is.bind(this, ['healer', 'range']), this.owner.otherteam);
 }
 
 GeneralBehavior.prototype.isNot = function(nots,target){
@@ -149,7 +149,7 @@ GeneralBehavior.prototype.is = function(iss,target){
 }
 
 GeneralBehavior.prototype.getClosestFriendToSupport = function(){
-    return this.lockOnClosest(this.needsAHealer, this.owner.homeTeam());
+    return this.lockOnClosest(this.needsAHealer, this.owner.team);
 }
 
 GeneralBehavior.prototype.needsAHealer = function(target){
@@ -195,51 +195,79 @@ GeneralBehavior.prototype.isUndefended = function(target){
 
 //lock onto the closest bad guy but use the check function for exceptions
 GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
-    var currentlyLocked = undefined;
-    var winSize = this.getWorldSize();
-    var minDistance = winSize.width;
-    for (var i =0; i< team.length; i++){
-        var sprite = team[i];
-        if (sprite.isAlive() && this.canTarget(sprite)){
-            var pos = sprite.getBasePosition();
-            var ownerPos = this.owner.getBasePosition();
-            var vector = this.getVectorTo(pos, ownerPos);
-            var isAhead = jc.isAheadOfMe(this.owner, sprite);
-            if (vector.distance < minDistance){
-                if (checkFunc != undefined){
-                    if (checkFunc(sprite)){
-                        minDistance = vector.distance;
-                        currentlyLocked = sprite;
-                    }
-                }else{
-                    minDistance = vector.distance;
-                    currentlyLocked = sprite;
-                }
+    var slices = this.owner.layer.slices;
+    if (!slices){
+        throw "slice map not init";
+    }
+
+    var mySlice = this.owner.layer.getSliceFor(this.owner.id);
+    if (mySlice == undefined){
+        this.owner.setBasePosition(this.owner.getBasePosition());//hack force a reset
+    }
+
+    //which direction should we search?
+    var iter = 0;
+    var start = 0;
+    if (this.owner.team == 'a'){
+        start = mySlice;
+        iter = 1;
+    }else{
+        start = mySlice;
+        iter = -1;
+    }
+
+    //slices are broken up into search groups based on target movement type (air to ground) etc
+    var group1 = team + jc.movementType.air;
+    var group2 = team + jc.movementType.ground;
+    var mySlices;
+
+    //depending on what I can target
+    if (this.owner.gameObject.targets == jc.targetType.both){
+        if (team == 'a'){
+            //a iterates forward through slices so this should prioritize air targets
+            mySlices = slices[group1].concat(slices[group2]);
+        }else if (team == 'b'){
+            //a iterates backward through slices so this should prioritize air targets
+            mySlices = slices[group2].concat(slices[group1]);
+        }
+
+    }else if (this.owner.gameObject.targets == jc.targetType.air){
+        mySlices = slices[group1];
+    }else if (this.owner.gameObject.targets == jc.targetType.ground){
+        mySlices = slices[group2];
+    }else{
+        throw "we seem to have an invalid target type.";
+    }
+
+    var sliceAry
+    //find the closest, non-empty slice
+    if (iter==1){
+        for(var i=start;i<mySlices.length;i++){
+            sliceAry = _.toArray(mySlices[i]);
+            if (sliceAry.length!=0){
+                break;
+            }
+        }
+    }else{
+        for(var i=start;i>0;i--){
+            sliceAry = _.toArray(mySlices[i]);
+            if (sliceAry.length!=0){
+                break;
             }
         }
     }
 
-    return currentlyLocked;
-}
-
-
-GeneralBehavior.prototype.lockOnSomeoneClose = function(team){
-    var currentlyLocked = undefined;
-    var winSize = this.getWorldSize();
-    var possibles = [];
-    for (var i =0; i< team.length; i++){
-        var sprite = team[i];
-        if (sprite.isAlive() && this.canTarget(sprite)){
-            if (this.withinThisRadius(sprite.getBasePosition(), this.owner.getTargetRadius(), this.owner.getTargetRadius())){
-                possibles.push(sprite);
-            }
-        }
-    }
-    if (possibles.length !=0){
-        return possibles[jc.randomNum(0, possibles.length-1)];
+    //return an random dude from that slice
+    if (sliceAry){
+        var index = jc.randomNum(0,sliceAry.length-1);
+        return sliceAry[index];
+    }else{
+        jc.log['lockon', "couldn't find a target"];
     }
 
-    return undefined;
+
+
+
 }
 
 
@@ -647,6 +675,7 @@ GeneralBehavior.prototype.handleDeath = function(){
             this.owner.unscheduleAllCallbacks();
             this.deathEffects();
             this.callbacksDisabled = 1;
+            this.owner.layer.removeSlice(this.owner.id, this.owner.team, this.owner.gameObject.movementType);
         }
     }else{
         if (this.callbacksDisabled == 1){
@@ -667,6 +696,10 @@ GeneralBehavior.prototype.deadForGood = function(){
 GeneralBehavior.prototype.handleState = function(dt, selected){
     this.handleDeath();
     var state= this.getState();
+
+    if (this.owner.team == 'b'){
+        jc.log('state', this.owner.name + ' ' + this.owner.id + ' ' + state.brain)
+    }
 
     if (selected){
         if (!this.forceLocked && state.brain != 'followUserCommand'){
@@ -789,18 +822,14 @@ GeneralBehavior.prototype.handleIdle = function(dt){
 
     }
 
-    if (!this.locked){
-        this.locked = this.lockOnSomeoneClose(this.owner.enemyTeam);
-    }
-
     if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){
         this.forceLocked = false;
-        this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam());
+        this.locked = this.lockOnClosest(undefined, this.owner.otherteam);
     }
 
     if (this.locked && !this.locked.isAlive()){
         this.forceLocked = false;
-        this.locked = this.lockOnClosest(undefined, this.owner.enemyTeam());
+        this.locked = this.lockOnClosest(undefined, this.owner.otherteam);
     }
 
     if (this.locked){
