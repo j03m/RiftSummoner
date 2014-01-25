@@ -249,7 +249,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
         if (found){
             if (found.name == 'nexus'){
-                throw "Nexus selected, something wrong.";
+                console.log("Nexus selected from id: " + data.id +" something wrong.");
             }
             var def = spriteDefs[found.name];
             if (def.creep){
