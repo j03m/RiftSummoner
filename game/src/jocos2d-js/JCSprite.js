@@ -280,11 +280,11 @@ jc.Sprite = cc.Sprite.extend({
         this.layer.reorderChild(this, point.y*-1);
         this.updateHealthBarPos();
         this.updateShadowPosition();
-        this.x = point.x;
-        this.y = point.y;
-        if (jc.quad){
-            jc.quad.insert(this);
+
+        if (this.id){ //if i hae an id that means we're tracking slices
+            this.layer.trackSlice(this.id, this.team, this.gameObject.movementType, this, point);
         }
+
     },
     moveTo: function(point, state, velocity, callback){
 		jc.log(['sprite', 'move'],"Moving:"+ this.name);

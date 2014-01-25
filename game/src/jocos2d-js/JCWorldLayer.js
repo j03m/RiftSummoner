@@ -168,6 +168,71 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
             }.bind(this));
         }
     },
+    getSliceCount:function(){
+        return this.sliceCount;
+    },
+    getSliceFor:function(id){
+        return this.idToSlice[id];
+    },
+    removeSlice:function(id, team, movementType){
+        var group = team+movementType;
+        var oldSlice = this.idToSlice[id];
+        if (oldSlice!=undefined){
+            delete this.slices[group][oldSlice][id];
+            delete this.idToSlice[id];
+        }
+    },
+    trackSlice:function(id, team, movementType, sprite, point){
+        if (!this.slices){
+            this.initSlices();
+        }
+
+        var slice = Math.floor(point.x / this.sliceSize);
+        var group = team+movementType;
+
+        //clear my old settings
+        if(this.idToSlice[id]){
+            var oldSlice = this.idToSlice[id];
+            if (oldSlice == slice){
+                return; //no change;
+            }else{
+                delete this.slices[group][oldSlice][id];
+                delete this.idToSlice[id];
+            }
+        }
+
+        //store an id to slice map for later
+        this.idToSlice[id]=slice;
+
+        //store my id in my slice
+        this.slices[group][slice][id]=sprite;
+    },
+    initSlices:function(){
+        if (!this.sliceSize){
+            this.sliceSize =200 * jc.characterScaleFactor;
+        }
+
+        if (!this.slices){
+            //array of slices for each team
+            this.slices = {};
+            this.slices['a'+jc.movementType.air]=[];
+            this.slices['a'+jc.movementType.ground]=[];
+            this.slices['b'+jc.movementType.air]=[];
+            this.slices['b'+jc.movementType.ground]=[];
+            //number of slices
+            this.sliceCount = Math.ceil(this.worldSize.width/this.sliceSize);
+
+            //make each slice an object
+            for(var i=0;i<this.sliceCount;i++){
+                this.slices['a0'][i] = {}
+                this.slices['a1'][i] = {}
+                this.slices['b0'][i] = {}
+                this.slices['b1'][i] = {}
+            }
+
+            this.idToSlice={}
+        }
+    },
     shake:function(){
         if (!this.shaking){
             var rot1 = cc.RotateBy.create(0.04,4);

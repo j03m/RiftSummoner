@@ -485,10 +485,6 @@ jc.scaleToCharacter = function(scaleMe, toMe, factor){
 }
 
 jc.playEffectOnTarget = function(name, target, layer, child){
-
-    if (child){
-        return;
-    }
     if (!target){
 		return;
 	}

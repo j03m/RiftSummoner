@@ -16,7 +16,7 @@ var tracers = {
     'updatetime':0,
 	'memory':0,
 	'tests':0,
-    'arena':1,
+    'arena':0,
 	'requestManager':0,
     'gameplay':0 ,
     'mainLayer':0,
@@ -49,8 +49,9 @@ var tracers = {
     'ArenaSelection':0,
     'bgtexture':0,
     'Borders':0,
-    'spritesonboard':1,
-    'batching':1
+    'spritesonboard':0,
+    'batching':0,
+    'state':1
 };
 
 jc.log = function(categories, msg){
