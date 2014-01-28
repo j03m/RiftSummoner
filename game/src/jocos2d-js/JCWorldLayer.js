@@ -20,8 +20,8 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
             }
             this.worldSize = size;            this.worldMidPoint = cc.p(this.worldSize.width/2, this.worldSize.height/2);
             this.screenMidPoint = cc.p(this.winSize.width/2, this.winSize.height/2);
-            this.worldBoundary = cc.rect(0,0, this.worldSize.width, this.worldSize.height);
-            this.playableRect = cc.rect(0,0, this.worldSize.width, this.worldSize.height);
+
+            this.playableRect = cc.rect(0,0, this.worldSize.width, this.worldSize.height-400*jc.characterScaleFactor);
 
             this.setViewCenter(cc.p(this.worldSize.width/2,this.worldSize.height/2));
             this.bubbleAllTouches(true);
@@ -190,6 +190,12 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         var slice = Math.floor(point.x / this.sliceSize);
         if (slice>this.sliceCount){
             slice = this.sliceCount;
+            jc.log('targetting', 'The slice: ' + slice);
+            jc.log('targetting', 'The slice calculated was larger then the total available slices.');
+        }if (slice<0){
+            jc.log('targetting', 'The slice: ' + slice);
+            jc.log('targetting', 'The slice calculated was less than 0.');
+            slice = 0;
         }
         var group = team+movementType;
 
@@ -205,6 +211,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         }
 
         //store an id to slice map for later
+
         this.idToSlice[id]=slice;
 
         //store my id in my slice
@@ -314,7 +321,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         return cc.p(0.50, 0.50);
     },
     convertToLayerPosition:function(point){
-        jc.cap(point, this.worldBoundary);
+        jc.cap(point, this.playableRect);
         var pointAug = cc.pMult(point, -1);
 
         return cc.pAdd(pointAug, this.screenMidPoint);

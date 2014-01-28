@@ -63,6 +63,11 @@ var ArenaGame = jc.WorldLayer.extend({
             this.enemyStartPos = cc.p((this.worldSize.width/2)+ 1000 * jc.characterScaleFactor, (this.worldSize.height/2) + 500 *jc.characterScaleFactor);
             this.enemyStartPosTutorials = cc.p((this.worldSize.width/2)+ 1000 * jc.characterScaleFactor, (this.worldSize.height/2) - 300 *jc.characterScaleFactor);
 
+            this.hurt = {};
+            this.hurt['a']=[];
+            this.hurt['b']=[];
+
+
             this.nexusMsg = "You must summon closer to another hero or your nexus.";
             this.playableMsg = "You must summon within the arena.";
             this.dragDelegate = function(){
@@ -246,10 +251,9 @@ var ArenaGame = jc.WorldLayer.extend({
         });
 
 
-
         if (found){
             if (found.name == 'nexus'){
-                console.log("Nexus selected from id: " + data.id +" something wrong.");
+                jc.log(['error'], "Nexus selected from id: " + data.id +" something wrong.");
             }
             var def = spriteDefs[found.name];
             if (def.creep){
@@ -258,7 +262,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 this.doHeroSelect(found);
             }
         }else{
-            this.nextTouchDo(this.placeBarSprite.bind(this));
+            this.nextTouchDo(this.placeBarSprite.bind(this), true);
         }
     },
 
@@ -268,7 +272,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     getLivingCreeps:function(name){
         var creeps = _.filter(this.sprites, function(obj){
-            return obj.name == name;
+            return obj.name == name && obj.team == 'a';
         });
         var keepGoing =false
         var firstAlive = -1;
@@ -297,11 +301,13 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     doHeroSelect:function(found){
         if(!found.isAlive()){
+            jc.log(['spritecommands'], 'Found Hero is dead:' + found.name);
             return;
         }else{
             var minSprite = found;
             this.activeTrack = true;
             this.clearSelection();
+            jc.log(['spritecommands'], 'Hero selected:' + minSprite.name);
             this.selectedSprite = minSprite;
             this.selectedSprite.behavior.setState('idle', 'idle');
             jc.playEffectOnTarget(this.charSelect, minSprite, this, true);
@@ -317,8 +323,10 @@ var ArenaGame = jc.WorldLayer.extend({
                 var def = spriteDefs[this.barSelection.name];
                 if (def.creep){
                     this.placeCreeps(world);
+                    this.nextTouchAction = undefined;
                 }else{
                     this.placeHero(world)
+                    this.nextTouchAction = undefined;
                 }
             }else{
                 this.floatMsg(this.nexusMsg);
@@ -353,9 +361,7 @@ var ArenaGame = jc.WorldLayer.extend({
     placeCreeps:function(world){
         var def = spriteDefs[this.barSelection.name];
         this.clearSelection();
-        if (!this.selectedCreeps){
-            this.selectedCreeps=[];
-        }
+
         this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
         this.tableView.disableCell(this.barIndex);
         var count = 0;
@@ -363,7 +369,6 @@ var ArenaGame = jc.WorldLayer.extend({
 
         for(var i =0; i<def.number;i++){
             var sprite = this.makeTeamASprite(this.barSelection);
-            this.selectedCreeps.push(sprite);
             hold.push(sprite);
             if (i == 0){
                 jc.log(['arena'], "play charselect effect on sprite");
@@ -385,6 +390,10 @@ var ArenaGame = jc.WorldLayer.extend({
                 sprite.setBasePosition(nodePos);
                 sprite.ready(true);
                 jc.playEffectOnTarget("teleport", sprite, this);
+                if (!this.selectedCreeps){
+                    this.selectedCreeps=[];
+                }
+                this.selectedCreeps.push(sprite);
                 count++;
 
             }.bind(this);
@@ -393,6 +402,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     clearSelection:function(){
+        jc.log(['spritecommands'], 'clearing selected hero:' + this.selectedSprite);
         if (this.selectedSprite){
             this.selectedSprite.removeAnimation(this.charSelect);
         }
@@ -412,10 +422,13 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite.ready(true);
         jc.playEffectOnTarget("teleport", sprite, this);
         this.tableView.disableCell(this.barIndex);
+        jc.log(['spritecommands'], "Placing hero: " + sprite.name);
         if (this.selectedSprite != sprite){
             this.clearSelection();
             jc.playEffectOnTarget(this.charSelect, sprite, this, true );
             this.selectedSprite = sprite;
+        }else{
+            jc.log(['spritecommands'], "Already selected? How can that be? " + this.selectedSprite.name);
         }
         this.makePowerBar();
         this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
@@ -701,19 +714,21 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     makeCreeps: function(){
 
-        for(var i =0;i<10;i++){
-            var sprite = this.makeTeamASprite({name:"goblinKnightNormal"});
-            var sprite2 = this.makeTeamBSprite({name:"goblinKnightNormal"});
-            sprite.setVisible(true);
-            sprite2.setVisible(true);
+        if (jc.config.creeps){
+            for(var i =0;i<10;i++){
+                var sprite = this.makeTeamASprite({name:"goblinKnightNormal"});
+                var sprite2 = this.makeTeamBSprite({name:"goblinKnightNormal"});
+                sprite.setVisible(true);
+                sprite2.setVisible(true);
 
-            sprite.setBasePosition(this.teamASpawn());
-            jc.playEffectOnTarget("teleport", sprite, this);
+                sprite.setBasePosition(this.teamASpawn());
+                jc.playEffectOnTarget("teleport", sprite, this);
 
-            sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
-            sprite2.setBasePosition(this.teamBSpawn());
-            jc.playEffectOnTarget("teleport", sprite2, this);
+                sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
+                sprite2.setBasePosition(this.teamBSpawn());
+                jc.playEffectOnTarget("teleport", sprite2, this);
 
+            }
         }
 
         for(var i=0;i<5;i++){
@@ -755,6 +770,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     thinkSprites:function(dt){
         var alive = 0;
+
         for(var i =0;i<this.sprites.length;i++){
             if (this.sprites[i] && this.sprites[i].getParent()==this && this.sprites[i].name != "nexus"){
                 if(this.sprites[i].isAlive()){
@@ -807,15 +823,55 @@ var ArenaGame = jc.WorldLayer.extend({
                     if (this.sprites[i].name != "nexus"){
                         this.sprites[i].behavior.setState('idle', 'move');
                     }
+                }
+
+                if (this.sprites[i].gameObject.hp < this.sprites[i].gameObject.MaxHP){
+                    this.hurt[this.sprites[i].team].push(this.sprites[i]);
+                }else{
+                    var index = this.hurt[this.sprites[i].team].indexOf(this.sprites[i]);
+                    if (index!=-1){
+                        this.hurt[this.sprites[i].team].splice(index, 1);
+                    }
+                }
+
+            }
+            else if (!this.sprites[i].isAlive()){
+                if (!this.deadTeamA){
+                    this.deadTeamA = [];
+                }
+                if (!this.deadTeamB){
+                    this.deadTeamB = [];
+                }
+                var deadSprite = this.sprites.splice(i,1)[0]; // remove it if it's not parented. might have to revisit this when necro
+                if (deadSprite.team == 'a'){
+                    this.deadTeamA.push(deadSprite);
+                }
+                if (deadSprite.team == 'b'){
+                    this.deadTeamB.push(deadSprite);
+                }
 
 
+                //TODO: make this work for creeps
+                for(var ii=0;ii<this.tableView.metaData.length;ii++){
+                    if (this.tableView.metaData[ii].id == deadSprite.id){
+                        this.tableView.placeSpriteOver(ii, uiPlist, uiPng, "deathFrame.png")
+                        break;
+                    }
                 }
 
             }
         }
+
         jc.log(['spritesonboard'], "Total alive: " + alive + " fps:" + cc.Director.getInstance()._frameRate);
     },
     setSpriteTargetLocation:function(touch, sprites){
+        jc.log(['spritecommands'], 'setSpriteTargetLocation invoked');
+        if (this.selectedSprite){
+            jc.log(['spritecommands'], 'selected sprite is:' + this.selectedSprite.name);
+        }else{
+            jc.log(['spritecommands'], 'no sprite selected.');
+        }
+
         var worldPos = this.screenToWorld(touch);
         var nodePos = this.convertToItemPosition(worldPos);
         //play tap effect at touch
@@ -828,7 +884,7 @@ var ArenaGame = jc.WorldLayer.extend({
             if (this.selectedSprite){
                 if (minSprite && this.getTeam('b').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)){ //if we touched an enemy
                     this.doEnemyTouch(minSprite, nodePos);
-                }else if (minSprite && this.getTeam('a').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite)
+                }else if (minSprite && this.getTeam('a').indexOf(minSprite)!=-1 && this.selectedSprite.behavior.canTarget(minSprite) && this.selectedSprite != minSprite
                     && (this.selectedSprite.behaviorType == "healer" || this.selectedSprite.behaviorType == "defender")){ //if we touched an friend
                     this.doFriendTouch.bind(this)(minSprite);
                 }else{
@@ -849,6 +905,7 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
             }
         }else{
+            jc.log(['spritecommands'], 'do generic touch invoked');
             this.doGenericTouch(touch);
         }
     },
@@ -906,7 +963,10 @@ var ArenaGame = jc.WorldLayer.extend({
                         this.nextTouchAction = undefined;
                     }
                 }
-            } else if (sprites){
+            }else if (this.selectedSprite!=undefined || this.selectedCreeps!=undefined){
+                //if we have a selected unit but not an action, set sprite location with touch.
+                this.setSpriteTargetLocation(touch, sprites);
+            }else if (sprites){
                 //was sprite selected?
                 //check sprites
                 this.checkSpriteTouch(sprites, touch);

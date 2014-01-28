@@ -1,7 +1,8 @@
 
 var jc = jc || {};
 var tracers = {
-	'general':0,
+	'error':1,
+    'general':0,
 	'touch':0,
     'touchcore':0,
     'touchlayer':0,
@@ -50,8 +51,11 @@ var tracers = {
     'bgtexture':0,
     'Borders':0,
     'spritesonboard':0,
+    'spritecommands':0,
     'batching':0,
-    'state':1
+    'state':0,
+    'targetting':1,
+    'missiles':1
 };
 
 jc.log = function(categories, msg){

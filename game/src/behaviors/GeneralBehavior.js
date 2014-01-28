@@ -148,13 +148,34 @@ GeneralBehavior.prototype.is = function(iss,target){
     }
 }
 
+GeneralBehavior.prototype.getHurtComrads = function(){
+    return this.owner.layer.hurt[this.owner.team];
+}
+
 GeneralBehavior.prototype.getClosestFriendToSupport = function(){
-    return this.lockOnClosest(this.needsAHealer, this.owner.team);
+    var whosHurt = this.getHurtComrads();
+    var minSprite;
+    var minDistance= this.owner.layer.worldSize.width;
+    var pos = this.owner.getBasePosition();
+    for(var i =0;i<whosHurt.length;i++){
+        var vector = this.getVectorTo(whosHurt[i].getBasePosition(), pos);
+        if (vector.distance < minDistance){
+            minDistance = vector.distance;
+            minSprite = whosHurt[i];
+        }
+    }
+    if (minSprite){
+        return minSprite;
+    }else{
+        return this.lockOnClosest(undefined, this.owner.team, true); //lock on and follow anyone
+    }
+
+
 }
 
 GeneralBehavior.prototype.needsAHealer = function(target){
 
-    if (target.gameObject.hp < target.gameObject.MaxHP && target.isAlive()){
+    if (target.gameObject.hp < target.gameObject.MaxHP && target.isAlive() && target.name != "nexus"){
         return true;
     }else{
         return false;
@@ -193,8 +214,7 @@ GeneralBehavior.prototype.isUndefended = function(target){
 }
 
 
-//lock onto the closest bad guy but use the check function for exceptions
-GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
+GeneralBehavior.prototype.getSliceData = function(){
     var slices = this.owner.layer.slices;
     if (!slices){
         throw "slice map not init";
@@ -210,65 +230,159 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team){
     var iter = 0;
     var start = 0;
     if (this.owner.team == 'a'){
-        start = mySlice;
+        if (mySlice != 0){
+            start = mySlice-1;
+        }else{
+            start =0;
+        }
         iter = 1;
     }else{
-        start = mySlice;
+        if (mySlice != this.owner.layer.sliceCount){
+            start = mySlice+1;
+        }else{
+            start = this.owner.layer.sliceCount
+        }
+
         iter = -1;
     }
 
-    //slices are broken up into search groups based on target movement type (air to ground) etc
-    var group1 = team + jc.movementType.air;
-    var group2 = team + jc.movementType.ground;
-    var mySlices;
+    return {start:start, iter:iter, slices:slices};
+}
 
-    //depending on what I can target
-    if (this.owner.gameObject.targets == jc.targetType.both){
-        if (team == 'a'){
-            //a iterates forward through slices so this should prioritize air targets
-            mySlices = slices[group1].concat(slices[group2]);
-        }else if (team == 'b'){
-            //a iterates backward through slices so this should prioritize air targets
-            mySlices = slices[group2].concat(slices[group1]);
-        }
 
-    }else if (this.owner.gameObject.targets == jc.targetType.air){
-        mySlices = slices[group1];
-    }else if (this.owner.gameObject.targets == jc.targetType.ground){
-        mySlices = slices[group2];
-    }else{
-        throw "we seem to have an invalid target type.";
+
+
+GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team, ignoreNexus){
+
+    var sliceData = this.getSliceData()
+    var slices = sliceData.slices;
+    var start = sliceData.start;
+    var iter = sliceData.iter;
+    var nexusSlice;
+    if (this.owner.team == 'a'){
+        var id = this.owner.layer.teamANexus.id;
+        nexusSlice = this.owner.layer.idToSlice[id];
     }
 
+    //slices are broken up into search groups based on target movement type (air to ground) etc
+    var airGroup = team + jc.movementType.air;
+    var groundGroup = team + jc.movementType.ground;
+
+
+    //depending on what I can target
+
     var sliceAry
-    //find the closest, non-empty slice
+    var finalSliceAry = [];
+    var aryCount = 0;
     if (iter==1){
-        for(var i=start;i<mySlices.length;i++){
-            sliceAry = _.toArray(mySlices[i]);
-            if (sliceAry.length!=0){
-                break;
+        for(var i=start;i<slices[airGroup].length;i++){
+            if (i == nexusSlice && ignoreNexus){
+                continue;
             }
+
+            if (this.targetsAir()){
+                var sliceAry = this.sliceMapAsArray(slices, airGroup, i);
+                if (sliceAry.length != 0){
+                    //don't select a slice with just me in it
+                    if (sliceAry.indexOf(this.owner)!=-1 && sliceAry.length == 1){
+                        continue;
+                    }
+                    finalSliceAry = finalSliceAry.concat(sliceAry);
+                    break;
+                }
+            }
+            if (this.targetsGround()){
+                var sliceAry = this.sliceMapAsArray(slices, groundGroup, i);
+                if (sliceAry.length != 0){
+                    //don't select a slice with just me in it
+                    if (sliceAry.indexOf(this.owner)!=-1 && sliceAry.length == 1){
+                        continue;
+                    }
+                    finalSliceAry = finalSliceAry.concat(sliceAry);
+                    break;
+                }
+            }
+
         }
     }else{
         for(var i=start;i>0;i--){
-            sliceAry = _.toArray(mySlices[i]);
-            if (sliceAry.length!=0){
-                break;
+            if (i == nexusSlice && ignoreNexus){
+                continue;
+            }
+
+            if (this.targetsAir()){
+                var sliceAry = this.sliceMapAsArray(slices, airGroup, i);
+                if (sliceAry.length != 0){
+                    //don't select a slice with just me in it
+                    if (sliceAry.indexOf(this.owner)!=-1 && sliceAry.length == 1){
+                        continue;
+                    }
+                    finalSliceAry = finalSliceAry.concat(sliceAry);
+                    break;
+                }
+            }
+            if (this.targetsGround()){
+                var sliceAry = this.sliceMapAsArray(slices, groundGroup, i);
+                if (sliceAry.length != 0){
+                    //don't select a slice with just me in it
+                    if (sliceAry.indexOf(this.owner)!=-1 && sliceAry.length == 1){
+                        continue;
+                    }
+                    finalSliceAry = finalSliceAry.concat(sliceAry);
+                    break;
+                }
+
             }
         }
     }
 
     //return an random dude from that slice
-    if (sliceAry){
-        var index = jc.randomNum(0,sliceAry.length-1);
-        return sliceAry[index];
+    if (finalSliceAry && finalSliceAry.length>0){
+        for(var i =0;i<5;i++){
+            var index = jc.randomNum(0,finalSliceAry.length-1);
+            var target = finalSliceAry[index];
+            if (target != this.owner && target.isAlive() && target != this.owner){
+                if (!checkFunc){
+                    return target;
+                }else{
+                    if (checkFunc(target)){
+                        return target;
+                    }
+                }
+            }
+        }
+        jc.log['targetting', "Tried 3 times to locate a target that was not me and alive"];
     }else{
-        jc.log['lockon', "couldn't find a target"];
+        jc.log['targetting', "couldn't find a target"];
     }
 
 
 
 
+}
+
+GeneralBehavior.prototype.sliceMapAsArray = function(slices, group, index){
+    for(var key in slices[group][index]){
+        var sliceAry = _.toArray(slices[group][index]);
+        return sliceAry;
+    }
+    return [];
+}
+
+GeneralBehavior.prototype.targetsAir = function(){
+    if (jc.targetType.air == this.owner.gameObject.targets || this.owner.gameObject.targets == jc.targetType.both ){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+GeneralBehavior.prototype.targetsGround = function(){
+    if (jc.targetType.ground == this.owner.gameObject.targets || this.owner.gameObject.targets == jc.targetType.both ){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 
@@ -312,9 +426,6 @@ GeneralBehavior.prototype.seekEnemy = function(){
         return;
     }
 
-    if (this.owner.name == "dwarvenKnightFire"){
-        console.log("");
-    }
 
     var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
 
@@ -401,44 +512,31 @@ GeneralBehavior.prototype.adjustFlock = function(){
         return false;
     }
     //var friends = this.allFriendsWithinRadius(300 * jc.characterScaleFactor);
-    var pos = this.owner.getBasePosition();
-    var augment = cc.p(0,0);
-    var shouldFlock = jc.randomNum(0,1);
-//    if (friends.length!=0){
-//        for (var i =0; i<friends.length;i++){
-//            //if we're locked onto the same person
-//            if (friends[i].gameObject.movementType == this.owner.gameObject.movementType){
-//                var diff = Math.abs(friends[i].getBasePosition().y-pos.y);
-//                if (diff<20* jc.characterScaleFactor){
-//                    //adjust my seek position by 10px y north
-//                    shouldFlock = true;
-//                    var num = jc.randomNum(0,1);
-//                    var val = jc.randomNum(1, this.owner.getTargetRadiusY());
-//                    if (num){
-//                        augment.y+= val;
-//                    }else{
-//                        augment.y-= val;
-//                    }
-//                    break;
-//                }
-//            }
-//        }
-//    }
+    var def = spriteDefs[this.owner.name];
+    if (def.creep){
+        var pos = this.owner.getBasePosition();
+        var augment = cc.p(0,0);
+        var shouldFlock = jc.randomNum(0,1);
+        var num = jc.randomNum(0,1);
+        var flockMin = Math.min(10, this.owner.getTargetRadiusY()/3);
+        var flockMax = Math.min(25, this.owner.getTargetRadiusY());
+        var val = jc.randomNum(flockMin, flockMax);
+        if (num){
+            augment.y+= val;
+        }else{
+            augment.y-= val;
+        }
 
-    var num = jc.randomNum(0,1);
-    var val = jc.randomNum(1, jc.randomNum(0,this.owner.getTargetRadiusY()));
-    if (num){
-        augment.y+= val;
+
+        if (!this.flockAdjust){
+            this.flockAdjust = augment;
+        }
+
+        return shouldFlock;
     }else{
-        augment.y-= val;
+        return false
     }
 
-
-    if (!this.flockAdjust){
-        this.flockAdjust = augment;
-    }
-
-    return shouldFlock;
 
 
 }
@@ -460,6 +558,11 @@ GeneralBehavior.prototype.seek = function(toPoint){
         }
 
     }
+
+    //if not, first thing - cap the toPoint to the worldBoundry
+    jc.cap(toPoint, this.owner.layer.playableRect);
+
+
 
     var myFeet = this.owner.getBasePosition();
 
@@ -609,8 +712,8 @@ GeneralBehavior.applyDamage = function(target, attacker, amount, elementType){
             if (element == elementType){
                 var reduction = amount * (target.gameObject.defense[element]/100);
                 amount -=reduction;
-                if (amount<0){
-                    amount = 0;
+                if (amount<=0){
+                    amount = 3; // 3 is the min damage to avoid for example to void dwarves never being able to kill one another
                 }
             }
         }
@@ -713,8 +816,8 @@ GeneralBehavior.prototype.handleState = function(dt, selected){
             break;
         case 'fighting':this.handleFight(dt);
             break;
-        case 'damage':this.handleDamage(dt);
-            break;
+//        case 'damage':this.handleDamage(dt);
+//            break;
     }
     this.afterEffects();
 }
@@ -846,11 +949,6 @@ GeneralBehavior.prototype.handleMove = function(dt){
     var state = this.getState();
     if (state.brain != "move" && state.brain != 'followUserCommand'){
         return;
-    }
-
-
-    if (this.owner.name == 'goblin'){
-        console.log('break');
     }
 
     if (state.brain ==  'followUserCommand'){

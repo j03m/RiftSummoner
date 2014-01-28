@@ -31,7 +31,7 @@ HealerBehavior.prototype.healThink = function(dt, selected){
     this.handleDeath();
 
     if (selected){
-        if (!this.forceLocked && state.brain != 'followUserCommand' && !this.forceSupport){
+        if (!this.forceLocked && state.brain != 'followUserCommand'){
             return;
         }
     }
@@ -44,8 +44,6 @@ HealerBehavior.prototype.healThink = function(dt, selected){
         case 'fighting':this.handleFight(dt);
             break;
         case 'healing':this.handleHeal(dt);
-            break;
-        case 'damage':this.handleDamage(dt);
             break;
     }
 
@@ -103,14 +101,20 @@ HealerBehavior.prototype.handleHeal = function(dt){
         return;
     }
 
-    if (!this.support.isAlive()){
+    if (!this.needsAHealer(this.support) && !this.forceSupport){
+        //possibly consider healing someone else
+        this.handleHealerIdle(dt);
+    }
+
+    if (!this.support || !this.support.isAlive()){
         this.setState('idle', 'idle');
         return;
     }
 
+
     var point = this.getWhereIShouldBe('behind', 'facing', this.support);
     point = this.seek(point);
-    if (point.x != 0 || point.y > 100){
+    if (point.x != 0 || point.y !=0){
         //arrived - heal
         this.setState('move', 'move');
         return;
@@ -142,12 +146,8 @@ HealerBehavior.prototype.handleHeal = function(dt){
                 this.setState('healing', this.getAttackAnim());
           }
         }
-
-
-
     }else{
         this.lastHeal+=dt;
         this.setState('healing', 'idle');
-
     }
 }

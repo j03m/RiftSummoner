@@ -1,5 +1,22 @@
-clear up dead code
-Hero control powers
+Selection bug - mobile only. Add logging to second click, understand state.
+Lock on bug(s) -
+    *people can't find locks
+    *spiders walk off the screen
+    *lock on in same slice seem broken
+-camera doesn't follow main selected hero
+* when dropping a creep that is on the other team (same name) camera pans to the enemy version
+* when dropping a creep, camera does a crazy overpan
+pinch zoom/drag bugs
+* healers don't heal
+- when attacked, retaliate
+*resistant dwarves/goblins can't kill each other. Make damage 5% rather than 0.
+*archers get too close on target
+mark dead
+5 heroes, 3 reinforcements
+
+Loader bug
+mobile web art config
+Hero powers
     elf - gunshot, cannon fire
     priestess - heal all,
     necro
@@ -10,14 +27,9 @@ Hero control powers
     ogre
     fire elemental
 
-6x map with tiles?
-How does it feel?
-
-3 nexus's
-
-Mixpanel
+Mixpanel/swrve
 Error population
-Loader
+
 
 
 
