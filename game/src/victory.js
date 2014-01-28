@@ -27,7 +27,6 @@ var Victory = jc.UiElementsLayer.extend({
         jc.log(['victory'], "out transition complete");
     },
     targetTouchHandler: function(type, touch, sprites) {
-        console.log(sprites[0].name);
         return false;
     },
     close:function(){

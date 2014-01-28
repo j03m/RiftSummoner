@@ -18,7 +18,7 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     },
     clear: function(){
         for(var i =0;i<this.sprites.length;i++){
-            this.sprites[i].isVisible(false);
+            this.sprites[i].setVisible(false);
             this.removeChild(this.sprites[i], true);
             this.sprites[i].release();
             this.sprites[i] = undefined;
@@ -80,6 +80,12 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         }
         this.sprites[index].disabled = true;
 
+    },
+    placeSpriteOver:function(index, plist, png, frame){
+        var mask = jc.makeSpriteWithPlist(plist, png, frame);
+        this.sprites[index].mask = mask;
+        this.sprites[index].addChild(mask);
+        jc.centerThisChild(this.sprites[index].mask, this.sprites[i]);
     },
     setIndex: function(val){
         jc.log(['scroller'],"set on: "+val);

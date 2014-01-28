@@ -43,7 +43,7 @@ var Multiplayer = jc.UiElementsLayer.extend({
         }
     },
 	selectionCallback:function(){
-		console.log("Touch");
+
 	},
     getGames:function(){
 		var returnme = [];		

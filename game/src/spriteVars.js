@@ -141,7 +141,7 @@ var spriteDefs = {
 				"delay": 0.025,
 				"type": 1
 			},
-			"attack3": {
+			"special": {
 				"start": 180,
 				"end": 250,
 				"delay": 0.025,
@@ -202,7 +202,7 @@ var spriteDefs = {
 			"targets": 1,
 			"damage": 25,
 			"defense": {
-				"fire": 100
+				"fire": 90
 			},
 			"actionDelays": {
 				"attack": 0.5
@@ -230,7 +230,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"defense": {
-				"life": 100
+				"life": 90
 			},
 			"actionDelays": {
 				"attack": 0.5
@@ -264,7 +264,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"defense": {
-				"void": 100
+				"void": 90
 			},
 			"actionDelays": {
 				"attack": 0.5
@@ -558,31 +558,31 @@ var spriteDefs = {
 		"inherit": "femaleSorcerer",
 		"behavior": "tank"
 	},
-//	"elfEarth": {
-//		"name": "elfEarth",
-//		"formalName": "Plains Elf",
-//		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
-//		"elementType": "earth",
-//		"unitType": 4,
-//		"special": "None",
-//		"gameProperties": {
-//			"MaxHP": 300,
-//			"resistsRange": 50,
-//			"movementType": 1,
-//			"targets": 2,
-//			"missile": "arrowNormal",
-//			"damage": 35,
-//			"speed": 250,
-//			"actionDelays": {
-//				"attack": 0.5
-//			},
-//			"effectDelays": {
-//				"attack": 1
-//			},
-//			"targetRadius": 1200
-//		},
-//		"inherit": "elf"
-//	},
+	"elfEarth": {
+		"name": "elfEarth",
+		"formalName": "Plains Elf",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
+		"elementType": "earth",
+		"unitType": 4,
+		"special": "None",
+		"gameProperties": {
+			"MaxHP": 300,
+			"resistsRange": 50,
+			"movementType": 1,
+			"targets": 2,
+			"missile": "arrowNormal",
+			"damage": 35,
+			"speed": 250,
+			"actionDelays": {
+				"attack": 0.5
+			},
+			"effectDelays": {
+				"attack": 1
+			},
+			"targetRadius": 1200
+		},
+		"inherit": "elf"
+	},
 	"elfFire": {
 		"name": "elfFire",
 		"formalName": "Fire Elf",
@@ -916,7 +916,7 @@ var spriteDefs = {
 				"delay": 0.025,
 				"type": 1
 			},
-			"attack3": {
+			"special": {
 				"start": 180,
 				"end": 250,
 				"delay": 0.025,
@@ -1010,7 +1010,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"defense": {
-				"fire": 100
+				"fire": 90
 			},
 			"damage": 35,
 			"actionDelays": {
@@ -1352,9 +1352,9 @@ var spriteDefs = {
 		"gameProperties": {
 			"movementType": 1,
 			"targets": 1,
-			"MaxHP": 1500,
+			"MaxHP": 3000,
 			"speed": 80,
-			"damage": 300,
+			"damage": 50,
 			"actionDelays": {
 				"attack": 1
 			},

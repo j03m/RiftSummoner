@@ -10,14 +10,19 @@ var RangeBehavior =  function(sprite){
         if (!missileName){
             missileName = "greenbullet"; //todo temp, remove
         }
+
         var missileType = missileConfig[missileName];
-        if (!jc.missileBatch){
-            jc.missileBatch = {};
-        }
-        if (!jc.missileBatch[missileType.png]){
-            jc.missileBatch[missileType.png] = cc.SpriteBatchNode.create(missileType.png);
-            this.owner.layer.addChild(jc.missileBatch[missileType.png]);
-            this.owner.layer.reorderChild(jc.missileBatch[missileType.png], jc.topMost);
+
+        if (jc.config.missileBatch){
+            if (!jc.missileBatch){
+                jc.missileBatch = {};
+            }
+            if (!jc.missileBatch[missileType.png]){
+                jc.missileBatch[missileType.png] = cc.SpriteBatchNode.create(missileType.png);
+                this.owner.layer.addChild(jc.missileBatch[missileType.png]);
+                this.owner.layer.reorderChild(jc.missileBatch[missileType.png], jc.topMost);
+            }
+
         }
 
         if (missileType.simple){
@@ -28,8 +33,12 @@ var RangeBehavior =  function(sprite){
             this.missile.runAction(this.missileAnimation);
         }
         this.missile.setFlippedX(!this.owner.isFlippedX());
-        jc.missileBatch[missileType.png].addChild(this.missile)
 
+        if (jc.config.missileBatch){
+            jc.missileBatch[missileType.png].addChild(this.missile)
+        }else{
+            this.owner.layer.addChild(this.missile);
+        }
     }
 }
 
@@ -94,6 +103,8 @@ RangeBehavior.prototype.doMissile = function(){
     }
     //make missile sprite
     if (!this.firing){ //do missile
+
+        jc.log('missiles', this.owner.name + ' ready, aim fire!');
 
         this.firing = true;
         var missileName = this.owner.gameObject.missile;
@@ -208,6 +219,7 @@ RangeBehavior.prototype.doMissile = function(){
             }
             //this.missile.setVisible(false);
             //this.owner.layer.removeChild(this.missile, false);
+            jc.log('missiles', this.owner.name + ' fire completed.')
             this.missile.setVisible(false);
             this.firing = false;
 

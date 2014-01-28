@@ -13,6 +13,7 @@ jc.config.blink = false
 jc.config.blinkAndDance = false;
 jc.config.frozen = false;
 jc.config.flock = true;
+jc.config.creeps = false;
 
 
 jc.adjustPosition = function(x,y){
