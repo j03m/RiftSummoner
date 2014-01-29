@@ -19,6 +19,9 @@ var ArenaGame = jc.WorldLayer.extend({
     init: function() {
         this.name = "Arena";
         this.idCount = 0;
+        this.maxTeamCreeps = 20;
+        this.creepBatch = 10;
+        this.creeplimit = 10;
         var arenaSize = cc.size(9088 * jc.characterScaleFactor, 1706 * jc.characterScaleFactor);
         var bounds = {
             x:0,
@@ -55,7 +58,8 @@ var ArenaGame = jc.WorldLayer.extend({
             this.spawnB1 = cc.p(this.nexusBPoint.x - adjustX1, this.nexusBPoint.y+ adjustY1);
             this.spawnB2 = cc.p(this.nexusBPoint.x - adjustX2, this.nexusBPoint.y + adjustY);
             this.spawnB3 = cc.p(this.nexusBPoint.x - adjustX2, this.nexusBPoint.y - adjustY);
-
+            this.teamACreeps = [];
+            this.teamBCreeps = [];
 
             this.playableRect = cc.rect(0,0, this.worldSize.width, this.worldSize.height - 100 * jc.characterScaleFactor);
 
@@ -152,6 +156,7 @@ var ArenaGame = jc.WorldLayer.extend({
     makeSelectionBar:function(){
         if (!this.tableView){
             this.tableView = new jc.ScrollingLayer();
+            this.tableView.retain();
             this.getParent().addChild(this.tableView);
             var scrollData = this.getDisplaySpritesAndMetaData();
             this.cellWidth = scrollData.sprites[0].getContentSize().width*2;
@@ -199,6 +204,7 @@ var ArenaGame = jc.WorldLayer.extend({
     makeScrollSprite: function(name){
         var sprite = jc.makeSimpleSprite("characterPortraitFrame.png");
         sprite.pic = jc.getCharacterCard(name);
+        sprite.pic.retain();
         sprite.addChild(sprite.pic);
         this.scaleTo(sprite.pic, sprite);
         jc.scaleCard(sprite.pic);
@@ -288,7 +294,7 @@ var ArenaGame = jc.WorldLayer.extend({
         return {firstAlive:firstAlive, creeps:creeps};
     },
     doCreepSelect:function(found){
-        var val = this.getLivingCreeps(found.name);
+        var val = this.getLivingCreeps(found.id);
         if (val.firstAlive != -1){
             this.clearSelection();
             var creeps = val.creeps;
@@ -439,36 +445,46 @@ var ArenaGame = jc.WorldLayer.extend({
     teamASpawn:function(){
         var spot = jc.randomNum(0,2);
 
+        var randx = jc.randomNum(-100*jc.characterScaleFactor, 100*jc.characterScaleFactor);
+        var randy = jc.randomNum(-100*jc.characterScaleFactor, 100*jc.characterScaleFactor);
+
         if (spot == 0){
-            return this.convertToItemPosition(this.spawnA1);
+            var pos = this.convertToItemPosition(this.spawnA1);
         }
 
         if (spot == 1){
-            return this.convertToItemPosition(this.spawnA2);
+            var pos = this.convertToItemPosition(this.spawnA2);
         }
 
         if (spot == 2){
-            return this.convertToItemPosition(this.spawnA3);
+            var pos = this.convertToItemPosition(this.spawnA3);
         }
 
+        pos.x+=randx;
+        pos.y+=randy;
         return pos;
     },
     teamBSpawn:function(){
         var spot = jc.randomNum(0,2);
 
+        var randx = jc.randomNum(-100*jc.characterScaleFactor, 100*jc.characterScaleFactor);
+        var randy = jc.randomNum(-100*jc.characterScaleFactor, 100*jc.characterScaleFactor);
+
         if (spot == 0){
-            return this.convertToItemPosition(this.spawnB1);
+            var pos = this.convertToItemPosition(this.spawnB1);
         }
 
         if (spot == 1){
-            return this.convertToItemPosition(this.spawnB2);
+            var pos = this.convertToItemPosition(this.spawnB2);
         }
 
         if (spot == 2){
-            return this.convertToItemPosition(this.spawnB3);
+            var pos = this.convertToItemPosition(this.spawnB3);
         }
 
-        throw "did someone back randomNum? ";
+        pos.x+=randx;
+        pos.y+=randy;
+        return pos;
 
     },
     getDisplaySpritesAndMetaData: function(){
@@ -647,21 +663,15 @@ var ArenaGame = jc.WorldLayer.extend({
             this.thinkSprites(dt);
 
             this.lastcreep += dt;
-            var creeplimit = 5;
 
-//            if (this.lastcreep > creeplimit){
-//                this.makeCreeps();
-//                this.lastcreep = 0;
-//                this.creepCount++;
-//
-//                if (this.creepCount > 25){
-//                    creeplimit++;
-//                }
-//            }
+            if (this.lastcreep > this.creeplimit || !this.firstCreepSummon){
 
-            if (!this.creepOnce){
                 this.makeCreeps();
-                this.creepOnce = true;
+                if (this.firstCreepSummon){
+                    this.lastcreep = 0;
+                }
+                this.firstCreepSummon = true;
+                this.creepCount++;
             }
 
             this.panToSelected();
@@ -715,29 +725,48 @@ var ArenaGame = jc.WorldLayer.extend({
             this.panToWorldPoint(pos);
         }
     },
+    aliveGenericCreeps:function(teamCreeps){
+        var i=0;
+        while(i<teamCreeps.length){
+            if (!teamCreeps[i].isAlive()){
+                teamCreeps.splice(i,1);
+            }else{
+                i++;
+            }
+        }
+        var notInGameYet =  this.maxTeamCreeps - teamCreeps.length;
+        return notInGameYet
+    },
     makeCreeps: function(){
-
         if (jc.config.creeps){
-            for(var i =0;i<10;i++){
+            var createCreeps =this.aliveGenericCreeps(this.teamACreeps);
+            createCreeps = Math.min(createCreeps, this.creepBatch);
+            for(var i =0;i<createCreeps;i++){
                 var sprite = this.makeTeamASprite({name:"goblinKnightNormal"});
                 sprite.setVisible(true);
                 sprite.setBasePosition(this.teamASpawn());
                 jc.playEffectOnTarget("teleport", sprite, this);
+                this.teamACreeps.push(sprite);
+            }
 
-//                var sprite2 = this.makeTeamBSprite({name:"goblinKnightNormal"});
-//                sprite2.setVisible(true);
-//                sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
-//                sprite2.setBasePosition(this.teamBSpawn());
-//                jc.playEffectOnTarget("teleport", sprite2, this);
-
+            createCreeps =this.aliveGenericCreeps(this.teamBCreeps);
+            createCreeps = Math.min(createCreeps, this.creepBatch);
+            for(var i =0;i<createCreeps;i++){
+                var sprite2 = this.makeTeamBSprite({name:"goblinKnightNormal"});
+                sprite2.setVisible(true);
+                sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
+                sprite2.setBasePosition(this.teamBSpawn());
+                jc.playEffectOnTarget("teleport", sprite2, this);
+                this.teamBCreeps.push(sprite);
             }
         }
 
-        for(var i=0;i<jc.teamSize;i++){
-            this.summonEnemyHero();
+        if (!this.enemiesSummoned){
+            for(var i=0;i<jc.teamSize;i++){
+                this.summonEnemyHero();
+            }
+            this.enemiesSummoned=true;
         }
-
-
     },
     summonEnemyHero:function(){
         if (!this.lastEnemyHero){
@@ -772,7 +801,10 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     thinkSprites:function(dt){
         var alive = 0;
-
+        var maxX;
+        var minX = this.worldSize.width;
+        var maxY;
+        var minY = this.worldSize.height;
         for(var i =0;i<this.sprites.length;i++){
             var currentSprite = this.sprites[i];
             var currentSpriteTeam = currentSprite.team;
@@ -790,7 +822,7 @@ var ArenaGame = jc.WorldLayer.extend({
                         selected = true;
                     }
                     if (selected){
-                        currentSprite.selectedTime = 1;
+                        currentSprite.selectedTime = 3;
                     }else if (currentSprite.selectedTime != undefined){
                         currentSprite.selectedTime-=dt;
                     }
@@ -840,8 +872,37 @@ var ArenaGame = jc.WorldLayer.extend({
                         this.hurt[currentSpriteTeam].splice(index, 1);
                     }
                 }
-            }
-            else if (!currentSprite.isAlive()){
+
+
+                var position = currentSprite.getBasePosition(); //where am i in the layer
+                var tr = currentSprite.getTextureRect();
+                var nodePos = this.convertToWorldSpace(position); //where is that on the screen?
+                var worldPos = this.screenToWorld(nodePos); //where is that in the world?
+                var compareMaxX = worldPos.x + tr.width;
+                var compareMinX = worldPos.x - tr.width;
+                var compareMaxY = worldPos.y + tr.height*1.5;
+                var compareMinY = worldPos.y - (tr.height/2);
+
+                if (compareMaxX > maxX){
+                    maxX = compareMaxX;
+
+                }
+
+                if (compareMinX < minX){
+                    minX = compareMinX;
+
+                }
+
+                if (compareMaxY > maxY){
+                    maxY = compareMaxY;
+
+                }
+
+                if (compareMinY < minY){
+                    minY = compareMinY;
+
+                }
+            }else if (!currentSprite.isAlive()){
                 if (!this.deadTeamA){
                     this.deadTeamA = [];
                 }
@@ -880,10 +941,30 @@ var ArenaGame = jc.WorldLayer.extend({
                 if (index!=-1){
                     this.hurt[currentSpriteTeam].splice(index, 1);
                 }
+            }
 
-
-
-
+            if (jc.isBrowser){
+                var characterMid = cc.pMidpoint(cc.p(minX,minY), cc.p(maxX,maxY));
+                var shouldScale = false;
+                if (!this.lastMid){
+                    this.lastMid = characterMid;
+                    shouldScale = true;
+                }else{
+                    var diff = cc.pSub(this.lastMid, characterMid);
+                    if (diff >100 * jc.characterScaleFactor){
+                        shouldScale = true;
+                    }else{
+                        shouldScale = false;
+                    }
+                    this.lastMid = characterMid;
+                }
+                var scale = this.getOkayScale(maxX-minX, maxY-minY);
+                if (!this.scaling && shouldScale){
+                    this.scaling = true;
+//                    this.panToWorldPoint(characterMid, scale, undefined, function(){
+//                        this.scaling = false;
+//                    }.bind(this));
+                }
             }
         }
 
@@ -895,6 +976,13 @@ var ArenaGame = jc.WorldLayer.extend({
             jc.log(['spritecommands'], 'selected sprite is:' + this.selectedSprite.name);
         }else{
             jc.log(['spritecommands'], 'no sprite selected.');
+        }
+
+
+        if (this.selectedCreeps){
+            jc.log(['spritecommands'], 'selected selectedCreeps is:' + this.selectedCreeps[0].name);
+        }else{
+            jc.log(['spritecommands'], 'no creeps selected.');
         }
 
         var worldPos = this.screenToWorld(touch);
@@ -923,8 +1011,10 @@ var ArenaGame = jc.WorldLayer.extend({
                 }
                 for(var i =0;i<this.selectedCreeps.length;i++){
                     if (minSprite && this.getTeam('b').indexOf(minSprite)!=-1 && this.selectedCreeps[i].behavior.canTarget(minSprite)){ //if we touched an enemy
+                        jc.log(['spritecommands'], 'Creeps attack!.');
                         this.selectedCreeps[i].behavior.attackCommand(minSprite);
                     }else{
+                        jc.log(['spritecommands'], 'Creeps go!.');
                         this.selectedCreeps[i].behavior.followCommand(nodePos);
                     }
                 }

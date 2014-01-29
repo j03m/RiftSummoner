@@ -4,7 +4,7 @@ hotr.levelLogic = {};
 
 hotr.levelLogic.getTeamForLevel = function(level){
 
-    //return hotr.makeRandomTeam();
+    return hotr.makeRandomTeam();
     var baddies = questLevels["4"];
     return baddies;
     if (baddies){

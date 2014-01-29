@@ -91,8 +91,11 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     placeSpriteOver:function(index, plist, png, frame){
         var mask = jc.makeSpriteWithPlist(plist, png, frame);
         this.sprites[index].mask = mask;
-        this.sprites[index].addChild(mask);
-        jc.centerThisChild(this.sprites[index].mask, this.sprites[i]);
+        this.addChild(mask);
+        this.sprites[index].mask.setVisible(true);
+        this.sprites[index].mask.setZOrder(this.sprites[index].getZOrder()+1);
+        jc.scaleTo(this.sprites[index].mask, this.sprites[index]);
+        jc.centerThisPeer(this.sprites[index].mask, this.sprites[index]);
     },
     setIndex: function(val){
         jc.log(['scroller'],"set on: "+val);

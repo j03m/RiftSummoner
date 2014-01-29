@@ -117,6 +117,11 @@ jc.TouchLayer = cc.Layer.extend({
         }else{
             firstTouch = this.touchToPoint(touches);
         }
+
+        if (firstTouch == undefined){
+            throw "Could not get a first touch  - it is undefined!";
+        }
+
         jc.log(['touchcore'], "First Raw Touch Point:" + JSON.stringify(firstTouch));
 
         var handled = [];

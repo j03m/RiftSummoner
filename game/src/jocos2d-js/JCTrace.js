@@ -51,11 +51,11 @@ var tracers = {
     'bgtexture':0,
     'Borders':0,
     'spritesonboard':0,
-    'spritecommands':0,
+    'spritecommands':1,
     'batching':0,
     'state':0,
-    'targetting':1,
-    'missiles':1
+    'targetting':0,
+    'missiles':0
 };
 
 jc.log = function(categories, msg){
