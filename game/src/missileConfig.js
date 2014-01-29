@@ -7,7 +7,7 @@ var missileConfig = {
                          "frames":27,
                          "delay":0.02 ,
                          "first":9,
-                         "speed":300,
+                         "speed":600,
 						 "height":150
                      },
                      "arrowFire":{

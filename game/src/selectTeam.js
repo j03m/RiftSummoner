@@ -261,11 +261,11 @@ var SelectTeam = jc.UiElementsLayer.extend({
                             "sprite": "portraitSmallDarkBackground.png"
                         }
                     ],
-                    "membersTotal": 5,
+                    "membersTotal": 10,
                     "sprite": "portraitSmallDarkBackground.png",
                     "pos": {
-                        "x": 310,
-                        "y": 834
+                        "x": 550,
+                        "y": 585
                     }
                 },
                 "fightButton": {

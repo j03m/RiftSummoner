@@ -5,7 +5,7 @@ var spriteDefs = {
 		"byStep": 3,
 		"startFrame": 1,
 		"endFrame": 780,
-		"targetRadius": 100,
+		"targetRadius": 50,
 		"step": 1,
 		"animations": {
 			"move": {
@@ -43,19 +43,19 @@ var spriteDefs = {
 		"unitType": 2,
 		"damageMods": {
 			"splashDamage": {
-				"damage": 50,
+				"damage": 100,
 				"radius": 200
 			},
 			"burn": {
-				"damage": 50,
+				"damage": 25,
 				"duration": 1,
 				"interval": 0.25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 320,
-			"damage": 250,
+			"MaxHP": 10000,
+			"speed": 400,
+			"damage": 1000,
 			"missile": "ballFire",
 			"missileOffset": {
 				"x": 0,
@@ -88,17 +88,17 @@ var spriteDefs = {
 		"special": "None",
 		"damageMods": {
 			"splashDamage": {
-				"damage": 50,
+				"damage": 100,
 				"radius": 200
 			},
 			"vampireDistro": {
-				"heal": 5,
-				"damage": 10
+				"heal": 10,
+				"damage": 25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 700,
-			"speed": 320,
+			"MaxHP": 5000,
+			"speed": 500,
 			"movementType": 0,
 			"missile": "ballVoid",
 			"missileOffset": {
@@ -107,7 +107,7 @@ var spriteDefs = {
 			},
 			"missleTarget": "base",
 			"targets": 1,
-			"damage": 300,
+			"damage": 1000,
 			"actionDelays": {
 				"attack": 1
 			},
@@ -171,18 +171,18 @@ var spriteDefs = {
 		"creep": true,
 		"number": 5,
 		"gameProperties": {
-			"MaxHP": 700,
-			"speed": 100,
+			"MaxHP": 1500,
+			"speed": 150,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 15,
+			"damage": 60,
 			"actionDelays": {
 				"attack": 0.5
 			},
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "dwarvenKnight"
@@ -196,11 +196,11 @@ var spriteDefs = {
 		"creep": true,
 		"number": 5,
 		"gameProperties": {
-			"MaxHP": 400,
-			"speed": 100,
+			"MaxHP": 1300,
+			"speed": 150,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 25,
+			"damage": 60,
 			"defense": {
 				"fire": 90
 			},
@@ -210,7 +210,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "dwarvenKnight"
@@ -224,9 +224,9 @@ var spriteDefs = {
 		"creep": true,
 		"number": 5,
 		"gameProperties": {
-			"MaxHP": 400,
-			"speed": 100,
-			"damage": 25,
+			"MaxHP": 1300,
+			"speed": 150,
+			"damage": 60,
 			"movementType": 1,
 			"targets": 1,
 			"defense": {
@@ -238,7 +238,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "dwarvenKnight"
@@ -253,14 +253,14 @@ var spriteDefs = {
 		"number": 5,
 		"damageMods": {
 			"vampireDrain": {
-				"heal": 20,
-				"damage": 20
+				"heal": 10,
+				"damage": 10
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 300,
-			"speed": 100,
-			"damage": 35,
+			"MaxHP": 1200,
+			"speed": 150,
+			"damage": 50,
 			"movementType": 1,
 			"targets": 1,
 			"defense": {
@@ -272,7 +272,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "dwarvenKnight"
@@ -288,13 +288,13 @@ var spriteDefs = {
 		"powers": {
 			"regeneration": {
 				"heal": 20,
-				"interval": 0.5
+				"interval": 0.35
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 100,
-			"damage": 25,
+			"MaxHP": 1200,
+			"speed": 150,
+			"damage": 60,
 			"movementType": 1,
 			"targets": 1,
 			"actionDelays": {
@@ -303,7 +303,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "dwarvenKnight"
@@ -318,31 +318,31 @@ var spriteDefs = {
 			"move": {
 				"start": 41,
 				"end": 65,
-				"delay": 0.08,
+				"delay": 0.05,
 				"type": 0
 			},
 			"attack": {
 				"start": 71,
 				"end": 92,
-				"delay": 0.08,
+				"delay": 0.07,
 				"type": 1
 			},
 			"attack2": {
 				"start": 101,
 				"end": 125,
-				"delay": 0.08,
+				"delay": 0.07,
 				"type": 1
 			},
 			"idle": {
 				"start": 1,
 				"end": 37,
-				"delay": 0.08,
+				"delay": 0.05,
 				"type": 0
 			},
 			"dead": {
 				"start": 131,
 				"end": 152,
-				"delay": 0.08,
+				"delay": 0.05,
 				"type": 1
 			}
 		},
@@ -387,18 +387,18 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 2000,
-			"speed": 70,
-			"damage": 100,
+			"MaxHP": 18000,
+			"speed": 120,
+			"damage": 500,
 			"movementType": 1,
 			"targets": 1,
 			"actionDelays": {
 				"attack": 0.5
 			},
 			"effectDelays": {
-				"attack": 0.05
+				"attack": 1
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "elemental1"
@@ -412,24 +412,24 @@ var spriteDefs = {
 		"multisheet-ipadhd": 2,
 		"damageMods": {
 			"burn": {
-				"damage": 40,
+				"damage": 50,
 				"duration": 1,
 				"interval": 0.25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 1000,
-			"speed": 70,
-			"damage": 250,
+			"MaxHP": 16000,
+			"speed": 120,
+			"damage": 700,
 			"movementType": 1,
 			"targets": 1,
 			"actionDelays": {
 				"attack": 0.5
 			},
 			"effectDelays": {
-				"attack": 0.05
+				"attack": 1
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "elemental1"
@@ -445,13 +445,13 @@ var spriteDefs = {
 		"powers": {
 			"regeneration": {
 				"heal": 20,
-				"interval": 0.5
+				"interval": 0.25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 200,
-			"speed": 100,
-			"damage": 75,
+			"MaxHP": 6000,
+			"speed": 250,
+			"damage": 250,
 			"movementType": 1,
 			"targets": 2,
 			"actionDelays": {
@@ -460,7 +460,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 1
 			},
-			"targetRadius": 500,
+			"targetRadius": 600,
 			"seekRadius": 100
 		},
 		"inherit": "elemental2"
@@ -474,13 +474,13 @@ var spriteDefs = {
 		"multisheet-ipadhd": 2,
 		"damageMods": {
 			"knockBack": {
-				"distance": 30
+				"distance": 250
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 200,
-			"damage": 50,
+			"MaxHP": 6000,
+			"speed": 250,
+			"damage": 250,
 			"movementType": 1,
 			"targets": 2,
 			"actionDelays": {
@@ -489,7 +489,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 1
 			},
-			"targetRadius": 500,
+			"targetRadius": 600,
 			"seekRadius": 100
 		},
 		"inherit": "elemental2"
@@ -547,13 +547,13 @@ var spriteDefs = {
 		"unitType": 4,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 300,
+			"MaxHP": 7000,
 			"resistsRange": 50,
 			"movementType": 1,
 			"targets": 2,
 			"missile": "arrowNormal",
-			"damage": 35,
-			"speed": 250,
+			"damage": 500,
+			"speed": 350,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -564,7 +564,7 @@ var spriteDefs = {
 				"x": 0,
 				"y": 10
 			},
-			"targetRadius": 1200
+			"targetRadius": 2400
 		},
 		"inherit": "elf"
 	},
@@ -578,18 +578,18 @@ var spriteDefs = {
 		"special": "None",
 		"damageMods": {
 			"burn": {
-				"damage": 25,
-				"duration": 1,
-				"interval": 0.5
+				"damage": 200,
+				"duration": 5,
+				"interval": 0.25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 5000,
+			"MaxHP": 4000,
 			"movementType": 1,
 			"targets": 2,
 			"missile": "arrowFire",
-			"damage": 35,
-			"speed": 200,
+			"damage": 250,
+			"speed": 300,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -600,7 +600,7 @@ var spriteDefs = {
 				"x": 0,
 				"y": 10
 			},
-			"targetRadius": 1200
+			"targetRadius": 2400
 		},
 		"inherit": "elf"
 	},
@@ -613,19 +613,19 @@ var spriteDefs = {
 		"unitType": 4,
 		"damageMods": {
 			"poison": {
-				"damage": 10,
+				"damage": 200,
 				"duration": 5,
 				"interval": 0.25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 100,
+			"MaxHP": 4000,
 			"damage": 25,
 			"movementType": 1,
 			"targets": 2,
 			"missile": "arrowPoison",
 			"poisonDamage": 10,
-			"speed": 200,
+			"speed": 300,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -636,8 +636,7 @@ var spriteDefs = {
 				"x": 0,
 				"y": 10
 			},
-			"targetRadius": 1200,
-			"seekRadius": 50
+			"targetRadius": 2400
 		},
 		"inherit": "elf"
 	},
@@ -650,17 +649,17 @@ var spriteDefs = {
 		"unitType": 4,
 		"damageMods": {
 			"vampireDistro": {
-				"heal": 10,
-				"damage": 20
+				"heal": 50,
+				"damage": 50
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 200,
-			"damage": 45,
+			"MaxHP": 2000,
+			"damage": 250,
 			"movementType": 1,
 			"missile": "arrowVoid",
 			"targets": 2,
-			"speed": 200,
+			"speed": 300,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -671,7 +670,7 @@ var spriteDefs = {
 				"x": 0,
 				"y": 10
 			},
-			"targetRadius": 1200
+			"targetRadius": 2400
 		},
 		"inherit": "elf"
 	},
@@ -683,19 +682,19 @@ var spriteDefs = {
 		"unitType": 3,
 		"cardIndex": 1,
 		"gameProperties": {
-			"MaxHP": 200,
+			"MaxHP": 7500,
 			"speed": 450,
 			"movementType": 1,
 			"targets": 2,
-			"damage": 200,
-			"heal": 150,
+			"damage": 500,
+			"resistsRange": 80,
 			"actionDelays": {
-				"attack": 0.35
+				"attack": 0
 			},
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 200
+			"targetRadius": 300
 		},
 		"baseOffset": {
 			"x": 0,
@@ -790,16 +789,18 @@ var spriteDefs = {
 		"details": "An winged creature embued with elemental fire. It possesses magic that it uses to attack other air or ground targets. Fire demons inflict additional burn damage to enemies.",
 		"elementType": "fire",
 		"unitType": 0,
+		"creep": true,
+		"number": 5,
 		"special": "Splash Damage, Burn Damage",
 		"damageMods": {
 			"burn": {
-				"damage": 5,
+				"damage": 50,
 				"duration": 1,
 				"interval": 0.25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 200,
+			"MaxHP": 1000,
 			"speed": 300,
 			"movementType": 0,
 			"targets": 2,
@@ -827,12 +828,14 @@ var spriteDefs = {
 		"details": "An winged creature embued with the void. It possesses magic that it uses to destroy other air or ground targets.",
 		"elementType": "void",
 		"special": "None",
+		"creep": true,
+		"number": 5,
 		"gameProperties": {
-			"MaxHP": 200,
+			"MaxHP": 1000,
 			"movementType": 0,
 			"targets": 2,
 			"speed": 300,
-			"damage": 100,
+			"damage": 75,
 			"missile": "magicVoid",
 			"resistsRange": 25,
 			"vsAirDamage": 5,
@@ -866,13 +869,13 @@ var spriteDefs = {
 		"special": "Splash Damage",
 		"damageMods": {
 			"splashDamage": {
-				"damage": 100,
+				"damage": 200,
 				"radius": 200
 			}
 		},
 		"deathMods": {
 			"explodeFire": {
-				"damage": 25,
+				"damage": 200,
 				"radius": 200,
 				"burn": {
 					"damage": 50,
@@ -882,19 +885,19 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 50,
+			"MaxHP": 2500,
 			"movementType": 1,
 			"targets": 1,
 			"missile": "bomb",
-			"damage": 80,
-			"speed": 110,
+			"damage": 750,
+			"speed": 200,
 			"actionDelays": {
-				"attack": 0.5
+				"attack": 1
 			},
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 300
+			"targetRadius": 600
 		},
 		"animations": {
 			"move": {
@@ -977,19 +980,19 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
-			"MaxHP": 200,
+			"MaxHP": 1000,
 			"speed": 340,
 			"movementType": 1,
 			"targets": 1,
 			"resistsRange": 50,
-			"damage": 25,
+			"damage": 50,
 			"actionDelays": {
 				"attack": 0.5
 			},
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "goblinKnight"
@@ -1009,18 +1012,18 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 160,
+			"MaxHP": 1000,
+			"speed": 180,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 35,
+			"damage": 75,
 			"actionDelays": {
 				"attack": 0.5
 			},
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "goblinKnight"
@@ -1035,21 +1038,21 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
-			"MaxHP": 200,
-			"speed": 160,
+			"MaxHP": 1000,
+			"speed": 200,
 			"movementType": 1,
 			"targets": 1,
 			"defense": {
 				"fire": 90
 			},
-			"damage": 35,
+			"damage": 50,
 			"actionDelays": {
 				"attack": 0.5
 			},
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "goblinKnight"
@@ -1064,18 +1067,18 @@ var spriteDefs = {
 		"creep": true,
 		"special": "Resist Fire",
 		"gameProperties": {
-			"MaxHP": 100,
-			"speed": 140,
+			"MaxHP": 1000,
+			"speed": 150,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 15,
+			"damage": 50,
 			"actionDelays": {
 				"attack": 0.5
 			},
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "goblinKnight"
@@ -1091,19 +1094,19 @@ var spriteDefs = {
 			"move": {
 				"start": 4,
 				"end": 27,
-				"delay": 0.08,
+				"delay": 0.05,
 				"type": 0
 			},
 			"attack": {
 				"start": 144,
 				"end": 174,
-				"delay": 0.08,
+				"delay": 0.06,
 				"type": 1
 			},
 			"attack2": {
 				"start": 174,
 				"end": 206,
-				"delay": 0.08,
+				"delay": 0.06,
 				"type": 1
 			},
 			"dead": {
@@ -1130,18 +1133,18 @@ var spriteDefs = {
 		"multisheet-ipadhd": 2,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 1000,
-			"speed": 80,
-			"damage": 160,
+			"MaxHP": 16000,
+			"speed": 120,
+			"damage": 1000,
 			"movementType": 1,
 			"targets": 1,
 			"actionDelays": {
 				"attack": 1
 			},
 			"effectDelays": {
-				"attack": 0.05
+				"attack": 1
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "knight"
@@ -1156,23 +1159,23 @@ var spriteDefs = {
 		"damageMods": {
 			"burn": {
 				"damage": 50,
-				"duration": 2,
+				"duration": 5,
 				"interval": 0.25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 80,
-			"damage": 200,
+			"MaxHP": 13000,
+			"speed": 120,
+			"damage": 1000,
 			"movementType": 1,
 			"targets": 1,
 			"actionDelays": {
 				"attack": 1
 			},
 			"effectDelays": {
-				"attack": 0.05
+				"attack": 1
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 100
 		},
 		"inherit": "knight"
@@ -1187,24 +1190,24 @@ var spriteDefs = {
 		"effect": "voidFire",
 		"powers": {
 			"vampireRadius": {
-				"damage": 10,
+				"damage": 50,
 				"radius": 200,
-				"interval": 1.25
+				"interval": 1
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 500,
-			"speed": 80,
+			"MaxHP": 12000,
+			"speed": 120,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 160,
+			"damage": 1000,
 			"actionDelays": {
 				"attack": 1
 			},
 			"effectDelays": {
-				"attack": 0.05
+				"attack": 1
 			},
-			"targetRadius": 100,
+			"targetRadius": 0,
 			"seekRadius": 100
 		},
 		"inherit": "knight"
@@ -1218,16 +1221,16 @@ var spriteDefs = {
 		"effect": "healingRadius",
 		"multisheet-ipadhd": 2,
 		"gameProperties": {
-			"MaxHP": 500,
+			"MaxHP": 12000,
 			"movementType": 1,
 			"targets": 1,
-			"speed": 80,
-			"damage": 160,
+			"speed": 175,
+			"damage": 1000,
 			"actionDelays": {
 				"attack": 0.05
 			},
 			"effectDelays": {
-				"attack": 0.05
+				"attack": 1
 			},
 			"targetRadius": 100,
 			"seekRadius": 100,
@@ -1235,7 +1238,7 @@ var spriteDefs = {
 		},
 		"powers": {
 			"healingRadius": {
-				"heal": 5,
+				"heal": 50,
 				"interval": 0.25,
 				"radius": 300
 			}
@@ -1295,12 +1298,11 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Healing",
 		"gameProperties": {
-			"MaxHP": 200,
-			"speed": 200,
+			"MaxHP": 4000,
+			"speed": 300,
 			"movementType": 1,
 			"targets": 2,
-			"damage": 200,
-			"heal": 150,
+			"damage": 500,
 			"actionDelays": {
 				"attack": 0.5,
 				"heal": 0.4
@@ -1309,7 +1311,7 @@ var spriteDefs = {
 				"attack": 0.05,
 				"heal": 0.05
 			},
-			"targetRadius": 200
+			"targetRadius": 600
 		},
 		"baseOffset": {
 			"x": 0,
@@ -1327,7 +1329,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 2000,
+			"MaxHP": 20000,
 			"speed": 0,
 			"movementType": 1,
 			"targetRadius": 100
@@ -1383,9 +1385,9 @@ var spriteDefs = {
 		"gameProperties": {
 			"movementType": 1,
 			"targets": 1,
-			"MaxHP": 1500,
-			"speed": 80,
-			"damage": 300,
+			"MaxHP": 20000,
+			"speed": 120,
+			"damage": 2000,
 			"actionDelays": {
 				"attack": 1
 			},
@@ -1436,14 +1438,14 @@ var spriteDefs = {
 		"elementType": "none",
 		"unitType": 3,
 		"creep": true,
-		"number": 4,
+		"number": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 400,
-			"speed": 110,
+			"MaxHP": 2000,
+			"speed": 160,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 50,
+			"damage": 100,
 			"actionDelays": {
 				"attack": 0.25
 			},
@@ -1499,21 +1501,21 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Healing",
 		"gameProperties": {
-			"MaxHP": 200,
+			"MaxHP": 4000,
 			"speed": 200,
 			"movementType": 1,
 			"targets": 2,
-			"damage": 10,
-			"heal": 150,
+			"damage": 100,
+			"heal": 300,
 			"actionDelays": {
 				"attack": 0.5,
-				"heal": 0.4
+				"heal": 0.25
 			},
 			"effectDelays": {
 				"attack": 0.05,
 				"heal": 0.05
 			},
-			"targetRadius": 200
+			"targetRadius": 300
 		},
 		"baseOffset": {
 			"x": 0,
@@ -1534,10 +1536,10 @@ var spriteDefs = {
 		"special": "None",
 		"deathMods": {
 			"explodePoison": {
-				"damage": 200,
+				"damage": 500,
 				"radius": 300,
 				"poison": {
-					"damage": 25,
+					"damage": 50,
 					"duration": 5,
 					"interval": 0.25
 				}
@@ -1548,8 +1550,8 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"resistsRange": 80,
-			"speed": 400,
-			"damage": 25,
+			"speed": 500,
+			"damage": 10,
 			"actionDelays": {
 				"attack": 0.01
 			},
@@ -1596,11 +1598,11 @@ var spriteDefs = {
 		"number": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 400,
+			"MaxHP": 2000,
 			"movementType": 1,
 			"targets": 1,
 			"speed": 450,
-			"damage": 25,
+			"damage": 50,
 			"resistsRange": 100,
 			"actionDelays": {
 				"attack": 0.01
@@ -1646,18 +1648,18 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 150,
-			"speed": 280,
+			"MaxHP": 10000,
+			"speed": 300,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 45,
+			"damage": 500,
 			"actionDelays": {
 				"attack": 0.2
 			},
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 150
 		},
 		"animations": {
@@ -1702,23 +1704,23 @@ var spriteDefs = {
 			"poison": {
 				"damage": 50,
 				"duration": 5,
-				"interval": 0.5
+				"interval": 0.25
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 500,
+			"MaxHP": 10000,
 			"speed": 400,
 			"movementType": 1,
 			"targets": 1,
 			"resistsRange": 50,
-			"damage": 55,
+			"damage": 750,
 			"actionDelays": {
 				"attack": 0.2
 			},
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 100,
+			"targetRadius": 50,
 			"seekRadius": 300
 		},
 		"animations": {
@@ -1757,12 +1759,12 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Healing",
 		"gameProperties": {
-			"MaxHP": 100,
+			"MaxHP": 6000,
 			"speed": 110,
 			"movementType": 1,
 			"targets": 2,
-			"damage": 10,
-			"heal": 70,
+			"damage": 100,
+			"heal": 200,
 			"actionDelays": {
 				"attack": 0.5,
 				"heal": 0.4
@@ -1814,11 +1816,11 @@ var spriteDefs = {
 		"unitType": 4,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 100,
+			"MaxHP": 5000,
 			"movementType": 1,
 			"targets": 2,
-			"speed": 100,
-			"damage": 80,
+			"speed": 200,
+			"damage": 250,
 			"missile": "magicNormal",
 			"actionDelays": {
 				"attack": 0.05
@@ -1826,7 +1828,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 600
+			"targetRadius": 1200
 		},
 		"baseOffset": {
 			"x": 0,
@@ -1836,31 +1838,31 @@ var spriteDefs = {
 			"move": {
 				"start": 26,
 				"end": 48,
-				"delay": 0.05,
+				"delay": 0.03,
 				"type": 0
 			},
 			"attack": {
 				"start": 49,
 				"end": 72,
-				"delay": 0.05,
+				"delay": 0.03,
 				"type": 1
 			},
 			"attack2": {
 				"start": 73,
 				"end": 97,
-				"delay": 0.05,
+				"delay": 0.03,
 				"type": 1
 			},
 			"idle": {
 				"start": 1,
 				"end": 24,
-				"delay": 0.05,
+				"delay": 0.03,
 				"type": 0
 			},
 			"dead": {
 				"start": 110,
 				"end": 155,
-				"delay": 0.06,
+				"delay": 0.03,
 				"type": 1
 			}
 		},

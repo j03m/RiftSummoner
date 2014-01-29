@@ -52,7 +52,10 @@ HealerBehavior.prototype.healThink = function(dt, selected){
 
 
 HealerBehavior.prototype.handleHealerIdle = function(dt){
-    this.support = this.getClosestFriendToSupport();
+    if (!this.supportLocked){
+        this.support = this.getClosestFriendToSupport();
+    }
+
 
     if (!this.support){
         //this.handleTankIdle(dt);

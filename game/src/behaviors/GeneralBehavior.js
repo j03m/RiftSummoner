@@ -97,7 +97,7 @@ GeneralBehavior.prototype.withinThisRadius = function(toPoint, xRad, yRad){
 }
 
 GeneralBehavior.prototype.vectorTest = function(v, xd, yd){
-    var vxd = v.xd - this.getMaxWidth();
+    var vxd = v.xd - this.getMaxWidth()/4;
     var vyd = v.yd;
     if (vxd <= xd && vyd <= yd){
         return true;
@@ -160,12 +160,15 @@ GeneralBehavior.prototype.getClosestFriendToSupport = function(){
     var minDistance= this.owner.layer.worldSize.width;
     var pos = this.owner.getBasePosition();
     for(var i =0;i<whosHurt.length;i++){
-        var vector = this.getVectorTo(whosHurt[i].getBasePosition(), pos);
-        if (vector.distance < minDistance){
-            minDistance = vector.distance;
-            minSprite = whosHurt[i];
+        if (whosHurt[i]!= this.owner){
+            var vector = this.getVectorTo(whosHurt[i].getBasePosition(), pos);
+            if (vector.distance < minDistance){
+                minDistance = vector.distance;
+                minSprite = whosHurt[i];
+            }
         }
     }
+
     if (minSprite){
         return minSprite;
     }else{
@@ -515,7 +518,7 @@ GeneralBehavior.prototype.adjustFlock = function(){
     }
     //var friends = this.allFriendsWithinRadius(300 * jc.characterScaleFactor);
     var def = spriteDefs[this.owner.name];
-    if (def.creep){
+
         var pos = this.owner.getBasePosition();
         var augment = cc.p(0,0);
         var shouldFlock = jc.randomNum(0,1);
@@ -530,17 +533,11 @@ GeneralBehavior.prototype.adjustFlock = function(){
         }
 
 
-        if (!this.flockAdjust){
+        //if (!this.flockAdjust){
             this.flockAdjust = augment;
-        }
+        //}
 
         return shouldFlock;
-    }else{
-        return false
-    }
-
-
-
 }
 
 GeneralBehavior.prototype.seek = function(toPoint){
@@ -552,24 +549,21 @@ GeneralBehavior.prototype.seek = function(toPoint){
     if (this.followPoint){
         if (this.withinThisRadius(toPoint, 25*jc.assetScaleFactor,25*jc.assetScaleFactor)){
             this.followPoint = undefined;
+            this.setState('idle', 'idle');
             return cc.p(0,0);
         }
     }else{
         if (this.withinRadius(toPoint)){
             return cc.p(0,0);
         }
-
     }
 
     //if not, first thing - cap the toPoint to the worldBoundry
     jc.cap(toPoint, this.owner.layer.playableRect);
 
-
-
     var myFeet = this.owner.getBasePosition();
 
     var vector = this.getVectorTo(toPoint, myFeet);
-
 
     var speed = this.owner.gameObject.speed;
     var aug = jc.randomNum(0,25);
@@ -1103,6 +1097,7 @@ GeneralBehavior.prototype.followCommand = function(position){
         this.followPoint = position;
         this.forceLocked = false;
         this.forceSupport = false;
+        this.supportLocked = false;
         this.setState('followUserCommand', 'move');
     }
 }
@@ -1110,8 +1105,10 @@ GeneralBehavior.prototype.followCommand = function(position){
 GeneralBehavior.prototype.attackCommand = function(target){
     if (this.owner.isAlive()){
         this.locked = target;
+        this.followPoint = undefined;
         this.forceLocked = true;
         this.forceSupport = false;
+        this.supportLocked = false;
         this.setState('move', 'move');
     }
 }
@@ -1119,8 +1116,10 @@ GeneralBehavior.prototype.attackCommand = function(target){
 GeneralBehavior.prototype.supportCommand = function(target){
     if (this.owner.isAlive()){
         this.support = target;
+        this.followPoint = undefined;
         this.forceSupport = true;
         this.forceLocked = false;
+        this.supportLocked = true;
         this.setState('move', 'move');
     }
 }

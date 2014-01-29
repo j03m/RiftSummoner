@@ -1,5 +1,6 @@
 var jc = jc || {};
-jc.teamSize = 5;
+jc.teamSize = 10;
+
 
 
 jc.config = {};
@@ -435,7 +436,16 @@ jc.makeAnimationFromRange = function(name, config){
         rf.retain(); //j03m fix leak
         return rf;
     }else{
+        if (!config.times){
+            jc.log(['error'], 'Data issue - animation: ' + name + ' configured as a hit without # of plays. A value for .times must be defined. Defaulting to 1');
+            config.times = 1;
+
+        }
+
         var r = cc.Repeat.create(cc.Animate.create(animation), config.times);
+        if (r == undefined){
+            jc.log(['error'], 'could not create action in make animation from range.');
+        }
         r.retain();  //j03m fix leak
         return r;
     }
