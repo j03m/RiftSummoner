@@ -23,6 +23,10 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
             this.sprites[i].release();
             this.sprites[i] = undefined;
         }
+        if (this.drawNode){
+            this.drawNode.clear();
+        }
+
         this.sprites = [];
     },
 	configure:function(){
@@ -80,6 +84,9 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
         }
         this.sprites[index].disabled = true;
 
+    },
+    addMeta:function(index, name, value){
+        this.metaData[index][name]=value;
     },
     placeSpriteOver:function(index, plist, png, frame){
         var mask = jc.makeSpriteWithPlist(plist, png, frame);

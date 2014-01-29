@@ -22,26 +22,33 @@ var EditTeam = jc.UiElementsLayer.extend({
 
         //this.infoFadeWorker();
 
-        if (!this.tableView){
-            this.tableView = new jc.ScrollingLayer();
-            this["characterPortraitsFrame"].addChild(this.tableView);
-            var scrollData = this.getDisplaySpritesAndMetaData();
-			this.cellWidth = scrollData.sprites[0].getContentSize().width*2;
-            this.tableView.init({
-                sprites:scrollData.sprites,
-                metaData:scrollData.ids,
-                cellWidth:this.cellWidth,
-                selectionCallback:this.selectionCallback.bind(this),
-                width:this.winSize.width
-            });
-
-			var tableDim = this.tableView.getContentSize();
-			var y = tableDim.height/2;
-			y += 25 * jc.assetScaleFactor;
-			this.tableView.setPosition(cc.p(tableDim.width/2,y ));		            
-            this.reorderChild(this.tableView, 3);
-            this.tableView.hackOn();
+        var scrollData = this.getDisplaySpritesAndMetaData();
+        this.cellWidth = scrollData.sprites[0].getContentSize().width*2;
+        if (this.tableView){
+            this.tableView.clear()
+            this.removeChild(this.tableView, true);
         }
+
+        this.tableView = new jc.ScrollingLayer();
+
+        this.tableView.init({
+            sprites:scrollData.sprites,
+            metaData:scrollData.ids,
+            cellWidth:this.cellWidth,
+            selectionCallback:this.selectionCallback.bind(this),
+            width:this.winSize.width
+        });
+
+        var tableDim = this.tableView.getContentSize();
+        var y = tableDim.height/2;
+        y += 25 * jc.assetScaleFactor;
+        this.tableView.setPosition(cc.p(tableDim.width/2,y ));
+        this.reorderChild(this.tableView, 3);
+        this["characterPortraitsFrame"].addChild(this.tableView);
+        this.tableView.hackOn();
+        this.tableView.setIndex(1);
+
+
     },
     inTransitionsComplete:function(){
         this.level = hotr.blobOperations.getTutorialLevel();
@@ -307,16 +314,7 @@ var EditTeam = jc.UiElementsLayer.extend({
         this.tableView.right();
     },
     close:function(){
-        if (this.level == 1){
-            if (this.step != 9 && this.step != 13){
-                return;
-            }
-        }
         this.done();
-//        if (this.card){
-//            //jc.fadeOut(this.card,1);
-//        }
-
     },
     windowConfig: 	{
 	"mainFrame": {

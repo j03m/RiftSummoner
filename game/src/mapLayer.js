@@ -2,10 +2,11 @@ var MapLayer = jc.UiElementsLayer.extend({
     init: function() {
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
+            this.name = "tehmap";
             cc.SpriteFrameCache.getInstance().addSpriteFrames(touchUiPlist);
             this.initFromConfig(this.windowConfig);
             this.bubbleAllTouches(true);
-            jc.layerManager.pushLayer(this);
+            jc.layerManager.pushLayer(this, true);
             jc.log(['map'], 'init');
             this.tutorialStep1 = cc.p(500 * jc.assetScaleFactor,500* jc.assetScaleFactor);
             this.tutorialStep2 = cc.p(800 * jc.assetScaleFactor,500* jc.assetScaleFactor);
@@ -81,7 +82,7 @@ var MapLayer = jc.UiElementsLayer.extend({
         if (!this.buttonsEnabled){ return;}
         this.removeArrow();
         this.buttonsEnabled = false;
-        jc.layerManager.pushLayer(EditTeam.getInstance(),10);
+        jc.layerManager.pushLayer(SelectTeam.getInstance(),false);
 
     },
     summon:function(){
@@ -142,6 +143,9 @@ var MapLayer = jc.UiElementsLayer.extend({
     storeClick:function(){
         if (!this.buttonsEnabled){ return;}
     },
+    attackClick:function(){
+        if (!this.buttonsEnabled){ return;}
+    },
     windowConfig: {
         "mainFrame": {
             "type": "sprite",
@@ -153,17 +157,6 @@ var MapLayer = jc.UiElementsLayer.extend({
                 "y": 756
             },
             "kids": {
-                "buttonHero": {
-                    "type": "button",
-                    "main": "buttonStore.png",
-                    "pressed": "buttonStorePressed.png",
-                    "touchDelegateName": "heroClick",
-                    "z": 1,
-                    "pos": {
-                        "x": 1700,
-                        "y": 110
-                    }
-                },
                 "buttonStore": {
                     "type": "button",
                     "main": "buttonStore.png",
@@ -171,7 +164,7 @@ var MapLayer = jc.UiElementsLayer.extend({
                     "touchDelegateName": "storeClick",
                     "z": 1,
                     "pos": {
-                        "x": 1520,
+                        "x": 1427,
                         "y": 110
                     }
                 },
@@ -184,6 +177,28 @@ var MapLayer = jc.UiElementsLayer.extend({
                     "pos": {
                         "x": 1880,
                         "y": 110
+                    }
+                },
+                "buttonAttack": {
+                    "type": "button",
+                    "main": "buttonAttack.png",
+                    "pressed": "buttonAttackPressed.png",
+                    "touchDelegateName": "attackClick",
+                    "z": 1,
+                    "pos": {
+                        "x": 1733,
+                        "y": 110
+                    }
+                },
+                "buttonChampions": {
+                    "type": "button",
+                    "main": "buttonChampions.png",
+                    "pressed": "buttonChampionsPressed.png",
+                    "touchDelegateName": "heroClick",
+                    "z": 1,
+                    "pos": {
+                        "x": 1580,
+                        "y": 107
                     }
                 },
                 "flagAttack1": {
@@ -249,7 +264,7 @@ var MapLayer = jc.UiElementsLayer.extend({
                             "text": "TITLE",
                             "width": 500,
                             "height": 80,
-                            "alignment": cc.TEXT_ALIGNMENT_CENTER,
+                            "alignment": 1,
                             "fontSize": 40,
                             "fontName": "GODOFWAR",
                             "z": 4,
@@ -263,7 +278,7 @@ var MapLayer = jc.UiElementsLayer.extend({
                             "text": "DESC",
                             "width": 600,
                             "height": 400,
-                            "alignment": cc.TEXT_ALIGNMENT_LEFT,
+                            "alignment": 0,
                             "fontSize": 40,
                             "fontName": "GODOFWAR",
                             "z": 4,

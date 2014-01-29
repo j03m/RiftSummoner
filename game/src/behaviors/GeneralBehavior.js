@@ -87,17 +87,19 @@ GeneralBehavior.prototype.whosCloser = function(first, second){
 }
 GeneralBehavior.prototype.withinThisRadiusOf = function(fromPoint, toPoint, xRad, yRad){
     var vector = this.getVectorTo(toPoint, fromPoint);
-    if (vector.xd <= xRad && vector.yd <= yRad){
-        return true;
-    }else{
-        return false;
-    }
+    return this.vectorTest(vector,xRad, yRad);
 }
 
 GeneralBehavior.prototype.withinThisRadius = function(toPoint, xRad, yRad){
     var feet = this.owner.getBasePosition();
     var vector = this.getVectorTo(toPoint, feet);
-    if (vector.xd <= xRad && vector.yd <= yRad){
+    return this.vectorTest(vector,xRad, yRad);
+}
+
+GeneralBehavior.prototype.vectorTest = function(v, xd, yd){
+    var vxd = v.xd - this.getMaxWidth();
+    var vyd = v.yd;
+    if (vxd <= xd && vyd <= yd){
         return true;
     }else{
         return false;
@@ -457,7 +459,7 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
     if (!target){
         return this.owner.getBasePosition();
     }
-    var mySize = this.owner.getTextureRect();
+
     var toPoint = target.getBasePosition();
     var supportPos;
 
@@ -465,9 +467,9 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
         //if my target is flip x and i am supposed to be infront of them, that means
         //I need to position myself to their right, ortherwise left
         if (target.isFlippedX()){
-            supportPos = cc.p(toPoint.x - mySize.width, toPoint.y);
+            supportPos = cc.p(toPoint.x - this.getMaxWidth(), toPoint.y);
         }else{
-            supportPos = cc.p(toPoint.x + mySize.width, toPoint.y);
+            supportPos = cc.p(toPoint.x + this.getMaxWidth(), toPoint.y);
         }
 
     }
@@ -476,9 +478,9 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
         //if my target is flip x and i am supposed to be behind of them, that means
         //I need to position myself to their left, otherwise right
         if (target.isFlippedX()){
-            supportPos = cc.p(toPoint.x + mySize.width, toPoint.y);
+            supportPos = cc.p(toPoint.x + this.getMaxWidth(), toPoint.y);
         }else{
-            supportPos = cc.p(toPoint.x - mySize.width, toPoint.y);
+            supportPos = cc.p(toPoint.x - this.getMaxWidth(), toPoint.y);
         }
 
     }
@@ -587,7 +589,8 @@ GeneralBehavior.prototype.seek = function(toPoint){
 
 
 GeneralBehavior.prototype.getVectorTo= function(to, from){
-    return jc.getVectorTo(to,from);
+    var v = jc.getVectorTo(to,from);
+    return v;
 }
 
 
@@ -797,7 +800,25 @@ GeneralBehavior.prototype.deadForGood = function(){
 //    });
 }
 
+GeneralBehavior.prototype.collectTextureWidth = function(){
+    var width = this.owner.getTextureRect().width;
+    if (!this.maxWidth){
+        this.maxWidth =width;
+    }else if(this.maxWidth < width){
+       this.maxWidth = width;
+    }
+
+}
+
+GeneralBehavior.prototype.getMaxWidth = function(){
+    if (!this.maxWidth){
+       this.collectTextureWidth();
+    }
+    return this.maxWidth;
+}
+
 GeneralBehavior.prototype.handleState = function(dt, selected){
+    this.collectTextureWidth();
     this.handleDeath();
     var state= this.getState();
 
@@ -837,6 +858,11 @@ GeneralBehavior.prototype.handleFight = function(dt){
 
     //if time is past the actiondelay and im not in another animation other than idle or damage
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1){
+        var attackType = jc.attackStatePrefix.attack;
+        if (this.locked.gameObject.hp - this.owner.gameObject.damage <= 0){
+            attackType = jc.attackStatePrefix.special;
+        }
+
         this.setAttackAnim('fighting', function(){
             var point = this.seekEnemy();
             if (!point){
@@ -848,7 +874,7 @@ GeneralBehavior.prototype.handleFight = function(dt){
                 this.setState('move', 'move');
                 return;
             }
-        }.bind(this));
+        }.bind(this), attackType);
 
         if (!this.locked){
             this.setState('idle', state.anim);
@@ -866,13 +892,21 @@ GeneralBehavior.prototype.handleFight = function(dt){
     }
 }
 
-GeneralBehavior.prototype.setAttackAnim = function(state, callback){
+GeneralBehavior.prototype.setAttackAnim = function(state, callback, prefix){
 
     var animation = '';
     var foundOne = false;
+    if (!prefix){
+        prefix = jc.attackStatePrefix.attack;
+    }
+    var def = spriteDefs[this.owner.name];
+    if (!def.animations[prefix]){
+        prefix = jc.attackStatePrefix.attack;
+    }
+
     for(var i=0;i<3;i++){
-        var num = jc.randomNum(0,5);
-        var animation = 'attack'+num;
+        var num = jc.randomNum(0,3);
+        var animation = prefix+num;
         if (this.owner.animations[animation]){
             foundOne = true;
             break
@@ -880,7 +914,7 @@ GeneralBehavior.prototype.setAttackAnim = function(state, callback){
     }
 
     if(!foundOne){
-        animation = 'attack';
+        animation = prefix;
     }
 
     this.setState(state, animation, callback);
@@ -986,23 +1020,6 @@ GeneralBehavior.prototype.followUserCommand = function(dt){
         return;
     }
     this.moveToward(point, dt);
-}
-
-GeneralBehavior.prototype.separate = function(){
-    var steering = cc.p(0,0);
-    var myTeam = this.owner.homeTeam();
-    for (var i =0; i< myTeam.length; i++) {
-        if (myTeam[i] != this.owner){
-            var ally = myTeam[i];
-            var vector = this.getVectorTo(this.owner.getBasePosition(), ally.getBasePosition());
-            var SEPARATE_THRESHHOLD = 100;
-
-            if (vector.xd < SEPARATE_THRESHHOLD || vector.yd < SEPARATE_THRESHHOLD) {
-                steering = cc.pAdd(steering, vector.direction);
-            }
-        }
-    }
-    return steering;
 }
 
 GeneralBehavior.prototype.doPower = function(power){

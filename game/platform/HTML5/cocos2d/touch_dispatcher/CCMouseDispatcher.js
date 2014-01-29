@@ -408,7 +408,7 @@ cc.MouseDispatcher = cc.Class.extend({
                     ++u;
                 }
                 if (h.getDelegate() == handler.getDelegate()) {
-                    cc.Assert(0, "TouchDispatcher.forceAddHandler()");
+//                    cc.Assert(0, "TouchDispatcher.forceAddHandler()");
                     return array;
                 }
             }
