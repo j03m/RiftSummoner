@@ -104,6 +104,17 @@ hotr.blobOperations.getTeam = function(){
         }
     }
     jc.log(['bloboperations'], 'return');
+    if (team.length == 0){
+        var count =0;
+        for(var character in characterMap){
+            team.push(characterMap[character]);
+            count++
+            if (count==5){
+                break;
+            }
+        }
+    }
+
     return team;
 }
 
