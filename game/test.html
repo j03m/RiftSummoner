@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html manifest='cache.manifest'>
+  <head>
+    <title>Have You Heard?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="kik-more" content="omghyh.com">
+    <meta name="description" content="OMG! Have you heard? Keep up to date with all your celebrity gossip using this simple RSS Reader for PerezHilton.com">
+    <meta name="kik-user-token" content="ag9zfmNhcmRzLW1hbmFnZXJyEQsSBFVzZXIYgICAgNCFrQkM">
+
+
+    <style>
+    img {
+      width: 100%;
+    }
+    .wrapper {
+      height: 100%; 
+    }
+    </style>
+  </head>
+
+  <!-- Have You Heard -->
+  <body>
+    <div class="app-page" data-page="Have You Heard?">
+      <!-- Nav Bar -->
+      <div class="app-topbar">
+        <div class="app-title" id = "title">Have You Heard?</div>
+        <div class="app-button" id="kik" ></div>
+      </div>
+      <!-- Article Information -->
+        <div class="app-content" data-no-scroll="true">
+          <div id="dots"></div>
+          <div class="wrapper">
+            <div class="app-section loader"></div>
+          </div>
+        </div>
+    </div>
+
+  <!-- Opened from Kik -->
+  <div class="app-page" data-page="fromKikPerez">
+    <!-- Nav Bar -->
+    <div class="app-topbar fromKikTopBar">
+      <div class="app-title" id = "title">Have You Heard?</div>
+      <div class="app-button left" id ="home"></div>
+      <div class="app-button right" id ="kik"></div>
+    </div>
+    <!-- Content Area -->
+    <div class="app-content fromKikContent">
+      <div class="app-section fromKikSection">
+        <h2 id ="headline" style="padding: 10px;">Loading New Headline!</h2>
+        <p id="story" style="padding: 5px;"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
