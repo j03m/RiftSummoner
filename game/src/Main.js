@@ -44,28 +44,21 @@ var MainGame = cc.Layer.extend({
 			case 'selectEditTeamPre':
 				this.selectEditTeamPre();
 				break;
-            case 'selectTeam':
-                cc.Director.getInstance().replaceScene(SelectTeam.scene());
-                break;
-            case 'editTeam':
-                cc.Director.getInstance().replaceScene(EditTeam.scene());
-                break;
             case 'arena':
+                hotr.currentScene = hotr.arenaScene;
                 cc.Director.getInstance().replaceScene(hotr.arenaScene);
                 break;
             case 'landing':
-                cc.Director.getInstance().replaceScene(Landing.scene());
-                break;
-            case 'animationTest':
-                cc.Director.getInstance().replaceScene(AnimationTest.scene());
+                hotr.currentScene = Landing.scene();
                 break;
             case 'multiplayer':
-                cc.Director.getInstance().replaceScene(Multiplayer.scene());
+                hotr.currentScene = Multiplayer.scene();
                 break;
             case 'map':
-                cc.Director.getInstance().replaceScene(MapLayer.scene());
+                hotr.currentScene = MapLayer.scene()
         }
 		this.currentScene = key;
+        cc.Director.getInstance().replaceScene(hotr.currentScene);
     },
     showLoader:function(config){
         this.loader = new Loading();

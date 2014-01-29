@@ -147,7 +147,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elfEarth_bg.png</key>
+            <key>elfArcherFire_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1254,628},{311,344}}</string>
@@ -160,7 +160,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elfFire_bg.png</key>
+            <key>elfArcherLife_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1007,1666},{311,344}}</string>
@@ -173,7 +173,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elfLife_bg.png</key>
+            <key>elfArcherVoid_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{941,1320},{311,344}}</string>
@@ -186,7 +186,7 @@
                 <key>sourceSize</key>
                 <string>{311,344}</string>
             </dict>
-            <key>elfVoid_bg.png</key>
+            <key>elfAssassin_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{941,974},{311,344}}</string>
@@ -482,7 +482,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b4ed3b6ab290a485d25eede000c38dce:cf47541211c689317407dc97bf797d03:0a6105e6626a9d1495ccfa3ac26b8bc1$</string>
+            <string>$TexturePacker:SmartUpdate:c00375212d32cb5c39cf779c344440ae:ce5660876fcba1e9b03b824a327f79c2:0a6105e6626a9d1495ccfa3ac26b8bc1$</string>
             <key>textureFileName</key>
             <string>cards-iphone5.pvr.ccz</string>
         </dict>

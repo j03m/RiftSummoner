@@ -78,6 +78,16 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
     //if time is past the actiondelay and im not in another animation other than idle or damage
     var state = this.getState();
     if (this.lastAttack >= actionDelay && state.anim.indexOf('attack')==-1 && !this.firing){
+        //if the character is inside of my target radius and <= my closerange radius
+        var attackType = jc.attackStatePrefix.attack;
+        var targetPos = this.locked.getBasePosition();
+        var ownerWidth = this.getMaxWidth();
+        if (this.withinThisRadius(targetPos, ownerWidth + 100*jc.assetScaleFactor, ownerWidth+100*jc.assetScaleFactor)){
+            attackType = jc.attackStatePrefix.close;
+            this.owner.scheduleOnce(this.hitLogic.bind(this), effectDelay);
+        }else{
+            this.owner.scheduleOnce(this.doMissile.bind(this),effectDelay);
+        }
         this.setAttackAnim('fighting', function(){
             var point = this.seekEnemy();
             if (!point){
@@ -89,8 +99,8 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
                 this.setState('move', 'move');
                 return;
             }
-        }.bind(this));
-        this.owner.scheduleOnce(this.doMissile.bind(this),effectDelay);
+        }.bind(this),attackType);
+
         this.lastAttack = 0;
     }else{
         this.lastAttack+=dt;
@@ -132,7 +142,8 @@ RangeBehavior.prototype.doMissile = function(){
         }
 
         if (this.owner.gameObject.missileOffset){
-            ownerPos = cc.pAdd(ownerPos, this.owner.gameObject.missileOffset);
+            var offset = cc.p(this.owner.gameObject.missileOffset.x*jc.characterScaleFactor, this.owner.gameObject.missileOffset.y * jc.characterScaleFactor);
+            ownerPos = cc.pAdd(ownerPos, offset);
         }
 
         this.missile.setPosition(ownerPos);

@@ -213,7 +213,10 @@ var ArenaGame = jc.WorldLayer.extend({
         jc.log(['ArenaSelection'], 'index:' + index);
         this.clearSelection();
         this.activeTrack = true;
-        this.doPlaceHero(index, data);
+        if (!data.dead){
+            this.doPlaceHero(index, data);
+        }
+
     },
     doPlacePower: function(index, data){
         if (!data.used){
@@ -267,12 +270,12 @@ var ArenaGame = jc.WorldLayer.extend({
     },
 
     getLeaderCreep:function(name){
-        var val = this.getLivingCreeps(this.selectedCreeps[0].name);
+        var val = this.getLivingCreeps(this.selectedCreeps[0].id);
         return val.creeps[val.firstAlive];
     },
-    getLivingCreeps:function(name){
+    getLivingCreeps:function(id){
         var creeps = _.filter(this.sprites, function(obj){
-            return obj.name == name && obj.team == 'a';
+            return obj.id == id && obj.team == 'a';
         });
         var keepGoing =false
         var firstAlive = -1;
@@ -469,7 +472,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     getDisplaySpritesAndMetaData: function(){
-        var characters = hotr.blobOperations.getCharacterIdsAndTypes();
+        var characters = hotr.blobOperations.getTeam();
         var names = _.pluck(characters, 'name');
         var ids = _.pluck(characters, 'id');
 
@@ -717,21 +720,20 @@ var ArenaGame = jc.WorldLayer.extend({
         if (jc.config.creeps){
             for(var i =0;i<10;i++){
                 var sprite = this.makeTeamASprite({name:"goblinKnightNormal"});
-                var sprite2 = this.makeTeamBSprite({name:"goblinKnightNormal"});
                 sprite.setVisible(true);
-                sprite2.setVisible(true);
-
                 sprite.setBasePosition(this.teamASpawn());
                 jc.playEffectOnTarget("teleport", sprite, this);
 
-                sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
-                sprite2.setBasePosition(this.teamBSpawn());
-                jc.playEffectOnTarget("teleport", sprite2, this);
+//                var sprite2 = this.makeTeamBSprite({name:"goblinKnightNormal"});
+//                sprite2.setVisible(true);
+//                sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
+//                sprite2.setBasePosition(this.teamBSpawn());
+//                jc.playEffectOnTarget("teleport", sprite2, this);
 
             }
         }
 
-        for(var i=0;i<5;i++){
+        for(var i=0;i<jc.teamSize;i++){
             this.summonEnemyHero();
         }
 
@@ -772,70 +774,74 @@ var ArenaGame = jc.WorldLayer.extend({
         var alive = 0;
 
         for(var i =0;i<this.sprites.length;i++){
-            if (this.sprites[i] && this.sprites[i].getParent()==this && this.sprites[i].name != "nexus"){
-                if(this.sprites[i].isAlive()){
+            var currentSprite = this.sprites[i];
+            var currentSpriteTeam = currentSprite.team;
+            if (currentSprite && currentSprite.getParent()==this && currentSprite.name != "nexus"){
+                if(currentSprite.isAlive()){
                     alive++;
                 }
 
                 if(jc.config.think){
                     var selected = false;
-                    if (this.selectedSprite && this.selectedSprite == this.sprites[i]){
+                    if (this.selectedSprite && this.selectedSprite == currentSprite){
                         selected = true;
                     }
-                    if (this.selectedCreeps && this.selectedCreeps.indexOf(this.sprites[i])!=-1){
+                    if (this.selectedCreeps && this.selectedCreeps.indexOf(currentSprite)!=-1){
                         selected = true;
                     }
                     if (selected){
-                        this.sprites[i].selectedTime = 1;
-                    }else if (this.sprites[i].selectedTime != undefined){
-                        this.sprites[i].selectedTime-=dt;
+                        currentSprite.selectedTime = 1;
+                    }else if (currentSprite.selectedTime != undefined){
+                        currentSprite.selectedTime-=dt;
                     }
 
                     if (selected){
-                        this.sprites[i].think(dt, selected);
-                    }else if (this.sprites[i].selectedTime>0){
-                        this.sprites[i].think(dt, true);
+                        currentSprite.think(dt, selected);
+                    }else if (currentSprite.selectedTime>0){
+                        currentSprite.think(dt, true);
                     }else{
-                        this.sprites[i].think(dt, false);
+                        currentSprite.think(dt, false);
                     }
                 }
 
 
                 if (jc.config.harlemShake){
-                    if (this.sprites[i].name != "nexus"){
+                    if (currentSprite.name != "nexus"){
                         var x = jc.randomNum(0, this.worldSize.width);
                         var y = jc.randomNum(0, this.worldSize.height);
-                        this.sprites[i].behavior.followCommand(cc.p(x,y));
+                        currentSprite.behavior.followCommand(cc.p(x,y));
                     }
                 }
 
                 if (jc.config.blink){
                     var x = jc.randomNum(0, this.worldSize.width);
                     var y = jc.randomNum(0, this.worldSize.height);
-                    this.sprites[i].setPosition(cc.p(x,y));
+                    currentSprite.setPosition(cc.p(x,y));
 
                 }
 
                 if (jc.config.blinkAndDance){
                     var x = jc.randomNum(0, this.worldSize.width);
                     var y = jc.randomNum(0, this.worldSize.height);
-                    this.sprites[i].setBasePosition(cc.p(x,y));
-                    if (this.sprites[i].name != "nexus"){
-                        this.sprites[i].behavior.setState('idle', 'move');
+                    currentSprite.setBasePosition(cc.p(x,y));
+                    if (currentSprite.name != "nexus"){
+                        currentSprite.behavior.setState('idle', 'move');
                     }
                 }
 
-                if (this.sprites[i].gameObject.hp < this.sprites[i].gameObject.MaxHP){
-                    this.hurt[this.sprites[i].team].push(this.sprites[i]);
+
+                if (currentSprite.gameObject.hp < currentSprite.gameObject.MaxHP && this.hurt){
+                    if (this.hurt[currentSpriteTeam].indexOf(currentSprite)==-1){
+                        this.hurt[currentSpriteTeam].push(currentSprite);
+                    }
                 }else{
-                    var index = this.hurt[this.sprites[i].team].indexOf(this.sprites[i]);
+                    var index = this.hurt[currentSpriteTeam].indexOf(currentSprite);
                     if (index!=-1){
-                        this.hurt[this.sprites[i].team].splice(index, 1);
+                        this.hurt[currentSpriteTeam].splice(index, 1);
                     }
                 }
-
             }
-            else if (!this.sprites[i].isAlive()){
+            else if (!currentSprite.isAlive()){
                 if (!this.deadTeamA){
                     this.deadTeamA = [];
                 }
@@ -850,14 +856,33 @@ var ArenaGame = jc.WorldLayer.extend({
                     this.deadTeamB.push(deadSprite);
                 }
 
+                var def = spriteDefs[deadSprite.name];
+                var markDead = false;
+                if (!def.creep){
+                    markDead = true;
+                }else{
+                    //todo: create a creep data structure
+                    //id - creeps
+                    //change areas where we loop for creeps (getlivingcreeps)
+                }
 
-                //TODO: make this work for creeps
-                for(var ii=0;ii<this.tableView.metaData.length;ii++){
-                    if (this.tableView.metaData[ii].id == deadSprite.id){
-                        this.tableView.placeSpriteOver(ii, uiPlist, uiPng, "deathFrame.png")
-                        break;
+                if (markDead){
+                    for(var ii=0;ii<this.tableView.metaData.length;ii++){
+                        if (this.tableView.metaData[ii].id == deadSprite.id){
+                            this.tableView.placeSpriteOver(ii, uiPlist, uiPng, "deathFrame.png")
+                            this.tableView.addMeta(ii, "dead", "true");
+                            break;
+                        }
                     }
                 }
+
+                var index = this.hurt[currentSpriteTeam].indexOf(currentSprite);
+                if (index!=-1){
+                    this.hurt[currentSpriteTeam].splice(index, 1);
+                }
+
+
+
 
             }
         }
@@ -1013,7 +1038,7 @@ var ArenaGame = jc.WorldLayer.extend({
         var nodePos = this.convertToItemPosition(worldPos);
         var minSprite = this.getBestSpriteForTouch(nodePos, sprites, this.getTeam('a'));
         if (minSprite){
-            var def = spriteDefs[minSprite].name;
+            var def = spriteDefs[minSprite.name];
             if (!def.creep){
                 if (this.selectedSprite != minSprite){
                     this.doHeroSelect(minSprite);

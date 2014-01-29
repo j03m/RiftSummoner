@@ -17,8 +17,6 @@ var SelectTeam = jc.UiElementsLayer.extend({
             this.mainFrame.addChild(this.highlight);
             this.name = "SelectTeam";
             this.bubbleAllTouches(true);
-            jc.layerManager.pushLayer(this);
-
 
             //if blob formation is not set
             //use it
@@ -35,12 +33,12 @@ var SelectTeam = jc.UiElementsLayer.extend({
     },
     onShow:function(){
 		this.nextEnabled = true;
-        this.level = hotr.blobOperations.getTutorialLevel();
+
         if (!this.first){
             //llp through characters
             this.start();
             var formationOrder = hotr.blobOperations.getFormationOrder();
-            var length = hotr.teamformationSize/2;
+            var length = jc.teamSize;
 
             //first 9 characters == squad 1
             for (var i =0; i<length; i++){
@@ -77,22 +75,6 @@ var SelectTeam = jc.UiElementsLayer.extend({
                 }
             }
 
-            this.step = hotr.blobOperations.getTutorialStep();
-            if (this.level == 1){
-                if (this.step == 13){
-                    this.showTutorialStep("Now let's show these goblins who they're messing with.",undefined, "left", "girl");
-                    this.placeArrowOn(this.fightButton, "down");
-                    this.step = 14;
-                    hotr.blobOperations.setTutorialStep(14);
-                }
-
-                if (this.step == 9){
-                    this.showTutorialStep("Okay, now place a second character in Squad B. Using two squads allows for advanced tactics.", undefined,"left", "girl");
-                    this.step = 10;
-                    hotr.blobOperations.setTutorialStep(10);
-                }
-
-            }
         }
     },
     cellFromCellName:function(name){
@@ -106,11 +88,10 @@ var SelectTeam = jc.UiElementsLayer.extend({
 
         this.step = hotr.blobOperations.getTutorialStep();
         if (this.first){
-            if (this.level == 1 && this.step == 4){
-                this.showTutorialStep("We need to build your team - click here to select a fighter.", undefined, "right", "girl");
-                this.step = 5;
-            }
         }
+    },
+    outTransitionsComplete:function(){
+        jc.layerManager.popLayer();
     },
     removeExistingVisual:function(id){
         var oldCell = hotr.blobOperations.getCurrentFormationPosition(id);
@@ -138,17 +119,16 @@ var SelectTeam = jc.UiElementsLayer.extend({
         this.scaleTo(card,this[cellName]);
         jc.scaleCard(card);
 
-
-        //center on selected cell
-        this.centerThisPeer(card, this[cellName]);
-
-
         //if one is there, hide it
+        this.mainFrame.addChild(card);
         if (this[cellName].pic){
-            jc.swapFade.bind(this)(this[cellName].pic, card);
+            jc.swapFade.bind(this)(this[cellName].pic, card, function(){
+                this.centerThisPeer(card, this[cellName]);
+            }.bind(this));
         }else{ //otherwise show it
-            this.mainFrame.addChild(card);
-            jc.fadeIn(card, 255);
+            jc.fadeIn(card, 255, undefined, function(){
+                this.centerThisPeer(card, this[cellName]);
+            }.bind(this));
         }
 
         //set it
@@ -174,29 +154,26 @@ var SelectTeam = jc.UiElementsLayer.extend({
     nextFormation:function(){
         jc.log(['selectTeam'], "nextButton");
     },
-    fightStart:function(){
+    selectionDone:function(){
 
-        jc.log(['selectTeam'], 'fightStart')
+        jc.log(['selectTeam'], 'selectionDone')
         if (this.level == 1 && this.step != 14){
-            jc.log(['selectTeam'], 'fightStart before ready');
+            jc.log(['selectTeam'], 'selectionDone before ready');
             return;
         }
 
         if (!this.nextEnabled){
-            jc.log(['selectTeam'], 'fightStart invalid state');
+            jc.log(['selectTeam'], 'selectionDone invalid state');
             return;
-        }
-        if (this.arrow){
-            this.removeTutorialStep('girl', 'left');
-            this.removeChild(this.arrow, true);
         }
         this.nextEnabled = false;
 		var formationOrder = hotr.blobOperations.getFormationOrder();
 		if (formationOrder.length!=0){
-            jc.log(['selectTeam'], 'fightStart!!!!');
-            hotr.mainScene.layer.arenaPre();
+            jc.log(['selectTeam'], 'selectionDone!!!!');
+            this.done();
+
 		}else{
-            jc.log(['selectTeam'], 'fightStart no dudes');
+            jc.log(['selectTeam'], 'selectionDone no dudes');
         }
     },
     kikStart:function(){
@@ -239,16 +216,6 @@ var SelectTeam = jc.UiElementsLayer.extend({
         jc.log(['selectTeam'], "close");
     },
     targetTouchHandler: function(type, touch, sprites) {
-
-        if (this.level == 1 && this.step == 14){
-            return; //locks clicks to fight start button
-        }
-
-        if (this.handleTutorialTouches(type, touch, sprites)){
-            return;
-        }
-
-
         if (sprites[0]){
             if (type == jc.touchEnded){
                 this.highlight.setVisible(true);
@@ -261,43 +228,11 @@ var SelectTeam = jc.UiElementsLayer.extend({
                 if (this.arrow){
                     this.arrow.setVisible(false);
                 }
-                jc.layerManager.pushLayer(EditTeam.getInstance(),10);
+                jc.layerManager.pushLayer(EditTeam.getInstance(),false);
             }
             return true;
         }
         return false;
-    },
-    handleTutorialTouches:function(type, touch, sprites){
-        if (this.level == 1){
-            if (this.step == 5){
-                this.removeTutorialStep('girl', 'left');
-                this.placeArrowOn(this.squad1Cells0, "down");
-                this.step =6;
-                return true;
-            }else if (this.step == 6){
-                if (!sprites || !sprites[0] || sprites[0].name != "squad1Cells0"){
-                    return true;
-                }else{
-                    this.step = 7;
-                    hotr.blobOperations.setTutorialStep(7);
-                    return false;
-                }
-            }else if (this.step == 10){
-                this.removeTutorialStep('girl', 'left');
-                this.placeArrowOn(this.squad2Cells0, "down");
-                this.step = 11;
-            }else if (this.step == 11){
-                if (!sprites || !sprites[0] || sprites[0].name != "squad2Cells0"){
-                    return true;
-                }else{
-                    this.step = 12;
-                    hotr.blobOperations.setTutorialStep(12);
-                    return false;
-                }
-            }
-
-        }
-
     },
     windowConfig: {
         "mainFrame": {
@@ -313,7 +248,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "isGroup": true,
                     "z": 1,
                     "type": "grid",
-                    "cols": 3,
+                    "cols": 5,
                     "itemPadding": {
                         "top": 3,
                         "left": 4
@@ -326,64 +261,22 @@ var SelectTeam = jc.UiElementsLayer.extend({
                             "sprite": "portraitSmallDarkBackground.png"
                         }
                     ],
-                    "membersTotal": 9,
+                    "membersTotal": 5,
                     "sprite": "portraitSmallDarkBackground.png",
                     "pos": {
                         "x": 310,
                         "y": 834
                     }
                 },
-                "squad2Cells": {
-                    "isGroup": true,
-                    "z": 1,
-                    "type": "grid",
-                    "cols": 3,
-                    "itemPadding": {
-                        "top": 3,
-                        "left": 4
-                    },
-                    "input": true,
-                    "members": [
-                        {
-                            "type": "sprite",
-                            "input": true,
-                            "sprite": "portraitSmallDarkBackground.png"
-                        }
-                    ],
-                    "membersTotal": 9,
-                    "sprite": "portraitSmallDarkBackground.png",
-                    "pos": {
-                        "x": 1234,
-                        "y": 831
-                    }
-                },
                 "fightButton": {
                     "type": "button",
-                    "main": "buttonFight.png",
-                    "pressed": "buttonFight.png",
-                    "touchDelegateName": "fightStart",
+                    "main": "buttonDone.png",
+                    "pressed": "buttonDone.png",
+                    "touchDelegateName": "selectionDone",
                     "z": 1,
                     "pos": {
                         "x": 1023,
                         "y": 145
-                    }
-                },
-                "leftSquadFrame": {
-                    "type": "sprite",
-                    "sprite": "frameA.png",
-                    "z": 0,
-                    "pos": {
-                        "x": 535,
-                        "y": 597
-                    }
-                },
-                "rightSquadFrame": {
-                    "type": "sprite",
-                    "sprite": "frameB.png",
-                    "z": 0,
-                    "pos": {
-                        "x": 1502,
-                        "y": 593
                     }
                 },
                 "banner": {
@@ -406,14 +299,13 @@ var SelectTeam = jc.UiElementsLayer.extend({
 
 
 
-SelectTeam.scene = function() {
+
+
+SelectTeam.getInstance = function() {
     if (!hotr.selectTeamScene){
-        hotr.selectTeamScene = cc.Scene.create();
+        hotr.selectTeamScene = new SelectTeam();
         hotr.selectTeamScene.retain();
-        hotr.selectTeamScene.layer = new SelectTeam();
-        hotr.selectTeamScene.layer.retain();
-        hotr.selectTeamScene.addChild(hotr.selectTeamScene.layer);
-        hotr.selectTeamScene.layer.init();
+        hotr.selectTeamScene.init();
     }
     return hotr.selectTeamScene;
 };

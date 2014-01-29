@@ -147,7 +147,7 @@
                 <key>sourceSize</key>
                 <string>{560,620}</string>
             </dict>
-            <key>elfEarth_bg.png</key>
+            <key>elfArcherFire_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1688,1126},{560,620}}</string>
@@ -160,7 +160,7 @@
                 <key>sourceSize</key>
                 <string>{560,620}</string>
             </dict>
-            <key>elfFire_bg.png</key>
+            <key>elfArcherLife_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1126,2992},{560,620}}</string>
@@ -173,7 +173,7 @@
                 <key>sourceSize</key>
                 <string>{560,620}</string>
             </dict>
-            <key>elfLife_bg.png</key>
+            <key>elfArcherVoid_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1126,2370},{560,620}}</string>
@@ -186,7 +186,7 @@
                 <key>sourceSize</key>
                 <string>{560,620}</string>
             </dict>
-            <key>elfVoid_bg.png</key>
+            <key>elfAssassin_bg.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1126,1748},{560,620}}</string>
@@ -482,7 +482,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c82e11d2846af5e1633d6974c03fcd7a:cf47541211c689317407dc97bf797d03:0afd5d88c1d04885828391deeb2050d9$</string>
+            <string>$TexturePacker:SmartUpdate:82b1897d7e960ca51f07bcfa8b34f52c:ce5660876fcba1e9b03b824a327f79c2:0afd5d88c1d04885828391deeb2050d9$</string>
             <key>textureFileName</key>
             <string>cards-ipadhd.png</string>
         </dict>

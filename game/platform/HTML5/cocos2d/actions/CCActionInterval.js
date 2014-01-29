@@ -2390,6 +2390,9 @@ cc.Animate = cc.ActionInterval.extend(/** @lends cc.Animate# */{
         var numberOfFrames = frames.length, locSplitTimes = this._splitTimes;
         for (var i = this._nextFrame; i < numberOfFrames; i++) {
             if (locSplitTimes[i] <= time) {
+                if (!this._target){
+                    break;
+                }
                 this._target.setDisplayFrame(frames[i].getSpriteFrame());
                 this._nextFrame = i + 1;
             } else {

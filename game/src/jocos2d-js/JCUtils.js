@@ -1,9 +1,6 @@
 var jc = jc || {};
-if (jc.isBrowser){
-    jc.teamSize = 7;
-}else{
-    jc.teamSize = 9;
-}
+jc.teamSize = 5;
+
 
 jc.config = {};
 jc.config.batch = false;
@@ -13,7 +10,12 @@ jc.config.blink = false
 jc.config.blinkAndDance = false;
 jc.config.frozen = false;
 jc.config.flock = true;
-jc.config.creeps = false;
+jc.config.creeps = true;
+
+jc.attackStatePrefix = {};
+jc.attackStatePrefix.attack = 'attack';
+jc.attackStatePrefix.close = 'attackClose';
+jc.attackStatePrefix.special = 'special';
 
 
 jc.adjustPosition = function(x,y){
@@ -342,7 +344,7 @@ jc.fadeIn= function(item, opacity , time, action){
 }
 
 //expects to be bound to cocos2d layer
-jc.swapFade = function(swapOut, swapIn){
+jc.swapFade = function(swapOut, swapIn, action){
 
     jc.log(['utilEffects'], "fade out name:" + swapOut.name);
     jc.log(['utilEffects'], "fade in name:" + swapIn.name);
@@ -359,9 +361,7 @@ jc.swapFade = function(swapOut, swapIn){
     function doFadeIn(){
         swapIn.setOpacity(0);
 
-        this.addChild(swapIn);
-
-        jc.fadeIn(swapIn, 255, jc.defaultTransitionTime/4);
+        jc.fadeIn(swapIn, 255, jc.defaultTransitionTime/4, action);
     }
 }
 
@@ -393,6 +393,8 @@ jc.getVectorTo = function(to, from){
     var direction = cc.pSub(to,from);
     var xd = Math.abs(to.x - from.x);
     var yd = Math.abs(to.y - from.y);
+    xd = Math.round(xd / 10) * 10;
+    yd = Math.round(yd / 10) * 10;
     var distance = cc.pLength(direction);
     return {direction:direction, distance:distance, xd:xd, yd:yd};
 }

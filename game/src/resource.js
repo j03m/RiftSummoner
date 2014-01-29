@@ -1,8 +1,7 @@
 jc.bestAssetDirectory();
 jc.setDesignSize(cc.size(2048,1154));
 
-//todo {v}-ify these
-var arenaSheet = transformAsset(dirImg + "arena{v}.{ext}",'-iphone4');
+
 var landingPng = transformAsset(dirImg + "landing{v}.{ext}");
 var landingPlist = transformAsset(dirImg + "landing{v}.plist");
 var loadingPng = transformAsset(dirImg + "loading{v}.{ext}");
@@ -103,8 +102,8 @@ jc.font.fontName='GODOFWAR';
 //*****uncomment for designmode
 if (jc.designMode){
     //var dirImg = "artIpad/";
-    var cardsPngs = [transformAsset(dirImg + "cards-ipadhd.{ext}")];
-    var cardsPlists = [transformAsset(dirImg + "cards-ipadhd.plist")];
+    var cardsPngs = [transformAsset(dirImg + "cards-ipadhd.{ext}"), transformAsset(dirImg + "cards2-ipadhd.{ext}")];
+    var cardsPlists = [transformAsset(dirImg + "cards-ipadhd.plist"), transformAsset(dirImg + "cards2-ipadhd.plist")];
     var uiPng = transformAsset(dirImg + "uiElements-ipadhd.{ext}");
     var uiPlist = transformAsset(dirImg + "uiElements-ipadhd.plist");
     var landingPng = transformAsset(dirImg + "landing-ipadhd.{ext}");
@@ -113,9 +112,9 @@ if (jc.designMode){
     var loadingPlist = transformAsset(dirImg + "loading-ipadhd.plist");
     var touchUiPlist = transformAsset(dirImg + "touch-ipadhd.plist");
     var touchUiPng = transformAsset(dirImg + "touch-ipadhd.{ext}");
-    var guide = dirImg + "map.{ext}";
+//    var guide = dirImg + "map.png";
     var g_maingame = [
-        {src:guide},
+//        {src:guide},
         {src:uiPng},
         {src:uiPlist},
         {src:touchUiPng},
@@ -128,11 +127,10 @@ if (jc.designMode){
         {src:landingPlist},
         {src:loadingPng},
         {src:loadingPlist},
-        {src:arenaSheet},
-            {src:powerTilesPlist},
-            {src:powerTilesPng},
-            {fontName:jc.mainFont,
-            src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
+        {src:powerTilesPlist},
+        {src:powerTilesPng},
+        {fontName:jc.mainFont,
+        src:[{src:dirImg+"GODOFWAR.TTF",type:"truetype"}]
         }
     ];
 }

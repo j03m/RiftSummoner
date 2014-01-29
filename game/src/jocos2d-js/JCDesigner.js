@@ -6,8 +6,8 @@ jc.Designer = jc.UiElementsLayer.extend({
             cc.SpriteFrameCache.getInstance().addSpriteFrames(landingPlist);
             cc.SpriteFrameCache.getInstance().addSpriteFrames(touchUiPlist);
             var guideSprite = new cc.Sprite();
-            guideSprite.initWithFile(guide);
-            cc.SpriteFrameCache.getInstance().addSpriteFrame(guideSprite.displayFrame(), "guide");
+            //guideSprite.initWithFile(guide);
+            //cc.SpriteFrameCache.getInstance().addSpriteFrame(guideSprite.displayFrame(), "guide");
             this.designMode = true;
             this.initFromConfig(this.windowConfig);
             return true;
@@ -69,129 +69,61 @@ jc.Designer = jc.UiElementsLayer.extend({
     windowConfig: {
         "mainFrame": {
             "type": "sprite",
+            "blackBox": true,
             "applyAdjustments": true,
-            "sprite": "map2.png",
-            "z": 1,
-            "pos": {
-                "x": 1004,
-                "y": 756
-            },
+            "transitionIn": "top",
+            "transitionOut": "top",
+            "sprite": "genericBackground.png",
+            "z": 0,
             "kids": {
-                "buttonStore": {
-                    "type": "button",
-                    "main": "buttonStore.png",
-                    "pressed": "buttonStorePressed.png",
-                    "touchDelegateName": "storeClick",
+                "squad1Cells": {
+                    "isGroup": true,
                     "z": 1,
-                    "pos": {
-                        "x": 1707,
-                        "y": 99
-                    }
-                },
-                "buttonSummon": {
-                    "type": "button",
-                    "main": "buttonSummon.png",
-                    "pressed": "buttonSummonPressed.png",
-                    "touchDelegateName": "summon",
-                    "z": 1,
-                    "pos": {
-                        "x": 1878,
-                        "y": 102
-                    }
-                },
-                "flagAttack1": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
-                    "z": 1,
-                    "pos": {
-                        "x": 1383,
-                        "y": 820
-                    }
-                },
-                "flagAttack2": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
-                    "z": 1,
-                    "pos": {
-                        "x": 989,
-                        "y": 793
-                    }
-                },
-                "flagAttack3": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
-                    "z": 1,
-                    "pos": {
-                        "x": 662,
-                        "y": 639
-                    }
-                },
-                "flagAttack4": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
-                    "z": 1,
-                    "pos": {
-                        "x": 407,
-                        "y": 493
-                    }
-                },
-                "flagAttack5": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
-                    "z": 1,
-                    "pos": {
-                        "x": 600,
-                        "y": 241
-                    }
-                },
-                "cardSummonFrame": {
-                    "type": "sprite",
-                    "sprite": "cardSummonedFrame.png",
-                    "z": 0,
-                    "pos": {
-                        "x": 1032,
-                        "y": 602
-                    }
-                },
-                "infoDialog": {
-                    "type": "sprite",
-                    "sprite": "titleDescription.png",
-                    "kids": {
-                        "infoTitle": {
-                            "type": "label",
-                            "text": "TITLE",
-                            "width": 400,
-                            "height": 80,
-                            "alignment": 0,
-                            "fontSize": 40,
-                            "fontName": "GODOFWAR",
-                            "z": 4,
-                            "pos": {
-                                "x": 526,
-                                "y": 604
-                            }
-                        },
-                        "infoText": {
-                            "type": "label",
-                            "text": "DESC",
-                            "width": 600,
-                            "height": 400,
-                            "alignment": 0,
-                            "fontSize": 40,
-                            "fontName": "GODOFWAR",
-                            "z": 4,
-                            "pos": {
-                                "x": 620,
-                                "y": 290
-                            }
-                        }
+                    "type": "grid",
+                    "cols": 5,
+                    "itemPadding": {
+                        "top": 3,
+                        "left": 4
                     },
+                    "input": true,
+                    "members": [
+                        {
+                            "type": "sprite",
+                            "input": true,
+                            "sprite": "portraitSmallDarkBackground.png"
+                        }
+                    ],
+                    "membersTotal": 5,
+                    "sprite": "portraitSmallDarkBackground.png",
+                    "pos": {
+                        "x": 310,
+                        "y": 834
+                    }
+                },
+                "doneButton": {
+                    "type": "button",
+                    "main": "buttonDone.png",
+                    "pressed": "buttonDonePressed.png",
+                    "touchDelegateName": "fightStart",
+                    "z": 1,
+                    "pos": {
+                        "x": 1023,
+                        "y": 145
+                    }
+                },
+                "banner": {
+                    "type": "sprite",
+                    "sprite": "buildYourTeamTitle.png",
                     "z": 0,
                     "pos": {
-                        "x": 1458,
-                        "y": 602
+                        "x": 1021,
+                        "y": 1020
                     }
                 }
+            },
+            "pos": {
+                "x": 1024,
+                "y": 777.9999999999999
             }
         }
     }

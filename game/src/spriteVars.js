@@ -497,36 +497,183 @@ var spriteDefs = {
 	"elf": {
 		"name": "elf",
 		"parentOnly": true,
-		"byStep": 3,
-		"startFrame": 1,
-		"endFrame": 1820,
+		"byStep": 1,
 		"animations": {
 			"move": {
-				"start": 244,
-				"end": 251,
-				"delay": 0.08,
+				"start": 26,
+				"end": 49,
+				"delay": 0.04,
 				"type": 0
 			},
 			"attack": {
-				"start": 454,
-				"end": 471,
-				"delay": 0.08,
+				"start": 52,
+				"end": 80,
+				"delay": 0.04,
+				"type": 1
+			},
+			"attackClose": {
+				"start": 82,
+				"end": 115,
+				"delay": 0.04,
+				"type": 1
+			},
+			"special": {
+				"start": 118,
+				"end": 149,
+				"delay": 0.04,
 				"type": 1
 			},
 			"idle": {
-				"start": 422,
-				"end": 432,
-				"delay": 0.08,
+				"start": 1,
+				"end": 24,
+				"delay": 0.05,
 				"type": 0
 			},
 			"dead": {
-				"start": 287,
-				"end": 298,
-				"delay": 0.08,
+				"start": 161,
+				"end": 176,
+				"delay": 0.05,
 				"type": 1
 			}
 		},
 		"behavior": "range"
+	},
+	"elfArcherEarth": {
+		"name": "elfArcherEarth",
+		"formalName": "Plains Elf",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
+		"elementType": "earth",
+		"flip": true,
+		"unitType": 4,
+		"special": "None",
+		"gameProperties": {
+			"MaxHP": 300,
+			"resistsRange": 50,
+			"movementType": 1,
+			"targets": 2,
+			"missile": "arrowNormal",
+			"damage": 35,
+			"speed": 250,
+			"actionDelays": {
+				"attack": 0.5
+			},
+			"effectDelays": {
+				"attack": 0.7
+			},
+			"missileOffset": {
+				"x": 0,
+				"y": 10
+			},
+			"targetRadius": 1200
+		},
+		"inherit": "elf"
+	},
+	"elfArcherFire": {
+		"name": "elfArcherFire",
+		"formalName": "Fire Elf",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. These elves have arrows that burn their targets alive.",
+		"elementType": "earth",
+		"flip": true,
+		"unitType": 4,
+		"special": "None",
+		"damageMods": {
+			"burn": {
+				"damage": 25,
+				"duration": 1,
+				"interval": 0.5
+			}
+		},
+		"gameProperties": {
+			"MaxHP": 5000,
+			"movementType": 1,
+			"targets": 2,
+			"missile": "arrowFire",
+			"damage": 35,
+			"speed": 200,
+			"actionDelays": {
+				"attack": 0.5
+			},
+			"effectDelays": {
+				"attack": 0.7
+			},
+			"missileOffset": {
+				"x": 0,
+				"y": 10
+			},
+			"targetRadius": 1200
+		},
+		"inherit": "elf"
+	},
+	"elfArcherLife": {
+		"name": "elfArcherLife",
+		"formalName": "Forest Elf",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Forest Elves deal poison damage with each arrow.",
+		"elementType": "life",
+		"flip": true,
+		"unitType": 4,
+		"damageMods": {
+			"poison": {
+				"damage": 10,
+				"duration": 5,
+				"interval": 0.25
+			}
+		},
+		"gameProperties": {
+			"MaxHP": 100,
+			"damage": 25,
+			"movementType": 1,
+			"targets": 2,
+			"missile": "arrowPoison",
+			"poisonDamage": 10,
+			"speed": 200,
+			"actionDelays": {
+				"attack": 0.5
+			},
+			"effectDelays": {
+				"attack": 0.7
+			},
+			"missileOffset": {
+				"x": 0,
+				"y": 10
+			},
+			"targetRadius": 1200,
+			"seekRadius": 50
+		},
+		"inherit": "elf"
+	},
+	"elfArcherVoid": {
+		"name": "elfArcherVoid",
+		"formalName": "Dark Elf",
+		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the magic arrows that steal life from targets and give it to all allies on the board.",
+		"elementType": "void",
+		"flip": true,
+		"unitType": 4,
+		"damageMods": {
+			"vampireDistro": {
+				"heal": 10,
+				"damage": 20
+			}
+		},
+		"gameProperties": {
+			"MaxHP": 200,
+			"damage": 45,
+			"movementType": 1,
+			"missile": "arrowVoid",
+			"targets": 2,
+			"speed": 200,
+			"actionDelays": {
+				"attack": 0.5
+			},
+			"effectDelays": {
+				"attack": 0.7
+			},
+			"missileOffset": {
+				"x": 0,
+				"y": 10
+			},
+			"targetRadius": 1200
+		},
+		"inherit": "elf"
 	},
 	"elfAssassin": {
 		"name": "elfAssassin",
@@ -557,123 +704,6 @@ var spriteDefs = {
 		"byStep": 1,
 		"inherit": "femaleSorcerer",
 		"behavior": "tank"
-	},
-	"elfEarth": {
-		"name": "elfEarth",
-		"formalName": "Plains Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
-		"elementType": "earth",
-		"unitType": 4,
-		"special": "None",
-		"gameProperties": {
-			"MaxHP": 300,
-			"resistsRange": 50,
-			"movementType": 1,
-			"targets": 2,
-			"missile": "arrowNormal",
-			"damage": 35,
-			"speed": 250,
-			"actionDelays": {
-				"attack": 0.5
-			},
-			"effectDelays": {
-				"attack": 1
-			},
-			"targetRadius": 1200
-		},
-		"inherit": "elf"
-	},
-	"elfFire": {
-		"name": "elfFire",
-		"formalName": "Fire Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. These elves have arrows that burn their targets alive.",
-		"elementType": "earth",
-		"unitType": 4,
-		"special": "None",
-		"damageMods": {
-			"burn": {
-				"damage": 25,
-				"duration": 1,
-				"interval": 0.5
-			}
-		},
-		"gameProperties": {
-			"MaxHP": 100,
-			"movementType": 1,
-			"targets": 2,
-			"missile": "arrowFire",
-			"damage": 35,
-			"speed": 200,
-			"actionDelays": {
-				"attack": 0.5
-			},
-			"effectDelays": {
-				"attack": 1
-			},
-			"targetRadius": 1200
-		},
-		"inherit": "elf"
-	},
-	"elfLife": {
-		"name": "elfLife",
-		"formalName": "Forest Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Forest Elves deal poison damage with each arrow.",
-		"elementType": "life",
-		"unitType": 4,
-		"damageMods": {
-			"poison": {
-				"damage": 10,
-				"duration": 5,
-				"interval": 0.25
-			}
-		},
-		"gameProperties": {
-			"MaxHP": 100,
-			"damage": 25,
-			"movementType": 1,
-			"targets": 2,
-			"missile": "arrowPoison",
-			"poisonDamage": 10,
-			"speed": 200,
-			"actionDelays": {
-				"attack": 0.5
-			},
-			"effectDelays": {
-				"attack": 1
-			},
-			"targetRadius": 1200,
-			"seekRadius": 50
-		},
-		"inherit": "elf"
-	},
-	"elfVoid": {
-		"name": "elfVoid",
-		"formalName": "Dark Elf",
-		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the magic arrows that steal life from targets and give it to all allies on the board.",
-		"elementType": "void",
-		"unitType": 4,
-		"damageMods": {
-			"vampireDistro": {
-				"heal": 10,
-				"damage": 20
-			}
-		},
-		"gameProperties": {
-			"MaxHP": 200,
-			"damage": 45,
-			"movementType": 1,
-			"missile": "arrowVoid",
-			"targets": 2,
-			"speed": 200,
-			"actionDelays": {
-				"attack": 0.5
-			},
-			"effectDelays": {
-				"attack": 1
-			},
-			"targetRadius": 1200
-		},
-		"inherit": "elf"
 	},
 	"femaleSorcerer": {
 		"name": "femaleSorcerer",
@@ -1031,6 +1061,7 @@ var spriteDefs = {
 		"elementType": "none",
 		"notplayable": 1,
 		"unitType": 3,
+		"creep": true,
 		"special": "Resist Fire",
 		"gameProperties": {
 			"MaxHP": 100,
@@ -1352,9 +1383,9 @@ var spriteDefs = {
 		"gameProperties": {
 			"movementType": 1,
 			"targets": 1,
-			"MaxHP": 3000,
+			"MaxHP": 1500,
 			"speed": 80,
-			"damage": 50,
+			"damage": 300,
 			"actionDelays": {
 				"attack": 1
 			},

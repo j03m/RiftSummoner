@@ -31,7 +31,7 @@ var tracers = {
     'utilEffects':0,
     'rangeBehavior':0,
     'defenderBehavior':0,
-    'designerout':0,
+    'designerout':1,
     'jc.shade':0,
     'setText':0,
     'missile':0,

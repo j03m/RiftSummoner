@@ -13,7 +13,7 @@ var questLevels = {
     ],
     "4":[
 
-            {name:"ogre"},
+            {name:"dwarvenKnightEarth"},
 
 
     ]

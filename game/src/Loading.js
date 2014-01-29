@@ -11,6 +11,7 @@ var Loading = jc.UiElementsLayer.extend({
             this.initFromConfig(this.windowConfig);
             this.bubbleAllTouches(true);
             this.start();
+            this.totalBars = 21;
 			this.blackBox(jc.designSize);     
 			this.spinner.setVisible(false);
             return true;
@@ -65,7 +66,8 @@ var Loading = jc.UiElementsLayer.extend({
             this.startLoadingApiCalls();
         }
 
-        this.schedule(this.checkPercent);
+        this.schedule(this.checkPercent.bind(this));
+        this.schedule(this.updateBar.bind(this),0.025);
     },
     startLoadingAssets:function(){
 		if (!this.assets){
@@ -111,7 +113,7 @@ var Loading = jc.UiElementsLayer.extend({
         //implement loading bar once we have the sprites
         if (this.animationDone){
 
-            var parts = 21; //we have 21 animation states for the bar
+            var parts = this.totalBars; //we have 21 animation states for the bar
 
             //first, what is the asset loader at?
             var getPercentage;
@@ -156,16 +158,30 @@ var Loading = jc.UiElementsLayer.extend({
             if (part > parts){
                 part = parts;
             }
-            var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader."+part+".png");
-            this.spinner.setDisplayFrame(frame)
+            this.allowUntil = part;
 
-            if (tempDoneCount >= this.totalItemsToLoad){
-                var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader.21.png");
-                this.spinner.setDisplayFrame(frame);
-                this.scheduleOnce(this.raiseComplete.bind(this));
-
-            }
         }
+    },
+    updateBar:function(){
+        if(!this.currentPart){
+            this.currentPart = 1;
+        }
+
+        if (this.currentPart < this.allowUntil){
+            this.currentPart++;
+        }
+
+        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader." + this.currentPart + ".png");
+        this.spinner.setDisplayFrame(frame);
+
+
+        if (this.currentPart >= this.totalBars){
+            var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("loader.21.png");
+            this.spinner.setDisplayFrame(frame);
+            this.scheduleOnce(this.raiseComplete.bind(this));
+
+        }
+
     },
     windowConfig:{
 	"leftDoor": {
