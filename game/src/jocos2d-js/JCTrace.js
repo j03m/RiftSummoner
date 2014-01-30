@@ -23,7 +23,7 @@ var tracers = {
     'mainLayer':0,
     'resource':0,
     'camera':0,
-    'console':0,
+    'console':1,
     'zerverpipe':0,
     'resource':0,
     'ui':0,

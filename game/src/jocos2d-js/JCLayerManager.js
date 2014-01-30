@@ -13,6 +13,9 @@ LayerManager.prototype.pushLayer = function(layer, skip){
         hotr.currentScene.addChild(layer);
     }
 
+    if (this.currentLayer){
+        layer.setZOrder(this.currentLayer.getZOrder()+1);
+    }
     this.currentLayer = layer;
     this.layers.push(layer);
     layer.setPosition(cc.p(0,0));

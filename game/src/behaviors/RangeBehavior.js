@@ -82,7 +82,9 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
         var attackType = jc.attackStatePrefix.attack;
         var targetPos = this.locked.getBasePosition();
         var ownerWidth = this.getMaxWidth();
-        if (this.withinThisRadius(targetPos, ownerWidth + 100*jc.assetScaleFactor, ownerWidth+100*jc.assetScaleFactor)){
+        var closeRangeTargetRadius = this.owner.getTargetRadius() * 0.05;
+        var def = spriteDefs[this.owner.name].animations['attackClose'];
+        if (this.withinThisRadius(targetPos,closeRangeTargetRadius,closeRangeTargetRadius) && def!=undefined){
             attackType = jc.attackStatePrefix.close;
             this.owner.scheduleOnce(this.hitLogic.bind(this), effectDelay);
         }else{
