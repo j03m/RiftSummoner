@@ -516,28 +516,38 @@ GeneralBehavior.prototype.adjustFlock = function(){
     if (!jc.config.flock){
         return false;
     }
-    //var friends = this.allFriendsWithinRadius(300 * jc.characterScaleFactor);
+
+
+    if(this.flockCount > 5000){
+        this.flockAdjust = undefined;
+    }
+
     var def = spriteDefs[this.owner.name];
 
-        var pos = this.owner.getBasePosition();
-        var augment = cc.p(0,0);
-        var shouldFlock = jc.randomNum(0,1);
-        var num = jc.randomNum(0,1);
-        var flockMin = 25 * jc.characterScaleFactor;
-        var flockMax = 150 * jc.characterScaleFactor;
-        var val = jc.randomNum(flockMin, flockMax);
-        if (num){
-            augment.y+= val;
-        }else{
-            augment.y-= val;
-        }
 
 
-        //if (!this.flockAdjust){
-            this.flockAdjust = augment;
-        //}
+    var pos = this.owner.getBasePosition();
+    var augment = cc.p(0,0);
+    var shouldFlock = jc.randomNum(0,1);
+    var num = jc.randomNum(0,1);
+    var flockMin = 25 * jc.characterScaleFactor;
+    var flockMax = 50 * jc.characterScaleFactor;
+    var val = jc.randomNum(flockMin, flockMax);
+    if (num){
+        augment.y+= val;
+    }else{
+        augment.y-= val;
+    }
 
-        return shouldFlock;
+
+    if (!this.flockAdjust){
+        this.flockCount = 0;
+        this.flockAdjust = augment;
+    }
+
+    this.flockCount++;
+
+    return shouldFlock;
 }
 
 GeneralBehavior.prototype.seek = function(toPoint){
@@ -735,7 +745,7 @@ GeneralBehavior.applyDamage = function(target, attacker, amount, elementType){
         }
     }
 
-   return  GeneralBehavior.applyGenericDamage(target, attacker, amount)
+    return  GeneralBehavior.applyGenericDamage(target, attacker, amount)
 
 }
 
@@ -799,14 +809,14 @@ GeneralBehavior.prototype.collectTextureWidth = function(){
     if (!this.maxWidth){
         this.maxWidth =width;
     }else if(this.maxWidth < width){
-       this.maxWidth = width;
+        this.maxWidth = width;
     }
 
 }
 
 GeneralBehavior.prototype.getMaxWidth = function(){
     if (!this.maxWidth){
-       this.collectTextureWidth();
+        this.collectTextureWidth();
     }
     return this.maxWidth;
 }
@@ -821,8 +831,11 @@ GeneralBehavior.prototype.handleState = function(dt, selected){
     }
 
     if (selected){
+        //if im not locked and I'm following a user command, leave - unless i have a damager and their alive.
         if (!this.forceLocked && state.brain != 'followUserCommand'){
-            return;
+            if (!this.damager || !this.damager.isAlive()){
+                return;
+            }
         }
     }
 
