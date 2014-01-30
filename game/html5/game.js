@@ -44,6 +44,7 @@ var hotrSrc = [
         '../src/behaviors/FlankerBehavior.js',
         '../src/behaviors/HealerBehavior.js',
         '../src/behaviors/TankBehavior.js',
+        '../src/behaviors/SwitchBehavior.js',
         '../src/behaviors/BehaviorMap.js',
         '../src/api.js',
         '../src/selectTeam.js',

@@ -245,6 +245,14 @@ hotr.blobOperations.getFormationOrder = function(){
     if (!hotr.playerBlob.teamformation){
         hotr.playerBlob.teamformation=[];
     }
+
+    if (hotr.playerBlob.teamformation.length < jc.teamSize){
+        for(var i =hotr.playerBlob.teamformation.length-1;i<jc.teamSize;i++){
+            if (hotr.playerBlob.myguys[i]!=undefined){
+                hotr.blobOperations.placeCharacterFormation(hotr.playerBlob.myguys[i].id, i);
+            }
+        }
+    }
     return hotr.playerBlob.teamformation;
 }
 

@@ -219,7 +219,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
     },
     initSlices:function(){
         if (!this.sliceSize){
-            this.sliceSize =200 * jc.characterScaleFactor;
+            this.sliceSize =500 * jc.characterScaleFactor;
         }
 
         if (!this.slices){

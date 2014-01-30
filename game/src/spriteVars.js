@@ -687,6 +687,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 2,
 			"damage": 500,
+			"spdamage": 1000,
 			"resistsRange": 80,
 			"actionDelays": {
 				"attack": 0
@@ -694,15 +695,16 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 300
+			"targetRadius": 300,
+			"closeRadius": 100
 		},
 		"baseOffset": {
 			"x": 0,
 			"y": 10
 		},
 		"byStep": 1,
-		"inherit": "femaleSorcerer",
-		"behavior": "tank"
+		"behavior": "switch",
+		"inherit": "femaleSorcerer"
 	},
 	"femaleSorcerer": {
 		"name": "femaleSorcerer",

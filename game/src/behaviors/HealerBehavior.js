@@ -31,7 +31,7 @@ HealerBehavior.prototype.healThink = function(dt, selected){
     this.handleDeath();
 
     if (selected){
-        if (!this.forceLocked && state.brain != 'followUserCommand'){
+        if (!this.forceLocked && state.brain != 'followUserCommand' && !this.forceSupport){
             return;
         }
     }

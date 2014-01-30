@@ -321,7 +321,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.selectedSprite.behavior.setState('idle', 'idle');
             jc.playEffectOnTarget(this.charSelect, minSprite, this, true);
             this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
-            this.makePowerBar();
+            //this.makePowerBar();
         }
     },
     placeBarSprite:function(touch){
@@ -439,7 +439,7 @@ var ArenaGame = jc.WorldLayer.extend({
         }else{
             jc.log(['spritecommands'], "Already selected? How can that be? " + this.selectedSprite.name);
         }
-        this.makePowerBar();
+        //this.makePowerBar();
         this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
     },
     teamASpawn:function(){
@@ -671,7 +671,7 @@ var ArenaGame = jc.WorldLayer.extend({
                     this.lastcreep = 0;
                 }
                 this.firstCreepSummon = true;
-                this.creepCount++;
+                this.creeplimit+=2; //add 2 seconds each summon
             }
 
             this.panToSelected();
@@ -1236,9 +1236,9 @@ var ArenaGame = jc.WorldLayer.extend({
             this.getParent().removeChild(this.tableView, false);
         }
 
-        if (this.powerView){
-            this.getParent().removeChild(this.powerView, false);
-        }
+//        if (this.powerView){
+//            this.getParent().removeChild(this.powerView, false);
+//        }
 
         if (this.level == 1 && this.step == 19){ //show some tutorial stuff first.
             this.showTutorialStep("You did it! We're safe! But that won't be the last of them. Let's head back quickly.", undefined, 'left', 'girl');
@@ -1273,9 +1273,12 @@ var ArenaGame = jc.WorldLayer.extend({
             this.getParent().removeChild(this.tableView, false);
         }
 
-        if (this.powerView){
-            this.getParent().removeChild(this.powerView, false);
-        }        if (hotr.arenaScene.data.op){
+//        if (this.powerView){
+//            this.getParent().removeChild(this.powerView, false);
+//        }
+
+
+        if (hotr.arenaScene.data.op){
             hotr.multiplayerOperations.defeat(hotr.arenaScene.data.op, hotr.arenaScene.data);
         }
 

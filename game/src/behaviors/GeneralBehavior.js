@@ -516,28 +516,36 @@ GeneralBehavior.prototype.adjustFlock = function(){
     if (!jc.config.flock){
         return false;
     }
-    //var friends = this.allFriendsWithinRadius(300 * jc.characterScaleFactor);
+
+
+    if(this.flockCount > 5000){
+        this.flockAdjust = undefined;
+    }
+
     var def = spriteDefs[this.owner.name];
 
-        var pos = this.owner.getBasePosition();
-        var augment = cc.p(0,0);
-        var shouldFlock = jc.randomNum(0,1);
-        var num = jc.randomNum(0,1);
-        var flockMin = 25 * jc.characterScaleFactor;
-        var flockMax = 150 * jc.characterScaleFactor;
-        var val = jc.randomNum(flockMin, flockMax);
-        if (num){
-            augment.y+= val;
-        }else{
-            augment.y-= val;
-        }
+    var pos = this.owner.getBasePosition();
+    var augment = cc.p(0,0);
+    var shouldFlock = jc.randomNum(0,1);
+    var num = jc.randomNum(0,1);
+    var flockMin = 25 * jc.characterScaleFactor;
+    var flockMax = 150 * jc.characterScaleFactor;
+    var val = jc.randomNum(flockMin, flockMax);
+    if (num){
+        augment.y+= val;
+    }else{
+        augment.y-= val;
+    }
 
 
-        //if (!this.flockAdjust){
-            this.flockAdjust = augment;
-        //}
+    if (!this.flockAdjust){
+        this.flockCount = 0;
+        this.flockAdjust = augment;
+    }
 
-        return shouldFlock;
+    this.flockCount++;
+
+    return shouldFlock;
 }
 
 GeneralBehavior.prototype.seek = function(toPoint){
@@ -821,8 +829,11 @@ GeneralBehavior.prototype.handleState = function(dt, selected){
     }
 
     if (selected){
+        //if im not locked and I'm following a user command, leave - unless i have a damager and their alive.
         if (!this.forceLocked && state.brain != 'followUserCommand'){
-            return;
+            if (!this.damager || !this.damager.isAlive()){
+                return;
+            }
         }
     }
 

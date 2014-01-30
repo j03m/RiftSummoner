@@ -91,6 +91,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
         }
     },
     outTransitionsComplete:function(){
+        this.first = false;
         jc.layerManager.popLayer();
     },
     removeExistingVisual:function(id){
@@ -265,7 +266,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                     "sprite": "portraitSmallDarkBackground.png",
                     "pos": {
                         "x": 550,
-                        "y": 585
+                        "y": 685
                     }
                 },
                 "fightButton": {
