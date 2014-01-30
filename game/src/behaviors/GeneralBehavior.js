@@ -529,7 +529,7 @@ GeneralBehavior.prototype.adjustFlock = function(){
     var shouldFlock = jc.randomNum(0,1);
     var num = jc.randomNum(0,1);
     var flockMin = 25 * jc.characterScaleFactor;
-    var flockMax = 150 * jc.characterScaleFactor;
+    var flockMax = 50 * jc.characterScaleFactor;
     var val = jc.randomNum(flockMin, flockMax);
     if (num){
         augment.y+= val;
