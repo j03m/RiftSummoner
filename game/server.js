@@ -54,7 +54,7 @@ app.use('/html5', express.static(__dirname + "/html5"));  //html5 specific stuff
 app.use('/platform', express.static(__dirname + "/platform")); //cocos2d raw
 app.use('/art', express.static(__dirname + "/art")); //art - tbd replaced by urls to cdn
 app.use('/web/', express.static(__dirname + "/web"));
-app.use('/art', express.static(__dirname + "/artIpad")); //art - tbd replaced by urls to cdn
+app.use('/deploy/', express.static(__dirname + "/deploy"));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
