@@ -727,21 +727,27 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     aliveGenericCreeps:function(teamCreeps){
         var i=0;
+        var alive = 0;
         while(i<teamCreeps.length){
-            if (!teamCreeps[i].isAlive()){
-                teamCreeps.splice(i,1);
+            if (teamCreeps[i].getParent() != this){
+                var item = teamCreeps.splice(i,1);
+                console.log("alive? " + item[0].isAlive());
             }else{
+                alive++;
                 i++;
             }
         }
-        var notInGameYet =  this.maxTeamCreeps - teamCreeps.length;
+        var notInGameYet =  this.maxTeamCreeps - alive;
         return notInGameYet
     },
     makeCreeps: function(){
         if (jc.config.creeps){
             var createCreeps =this.aliveGenericCreeps(this.teamACreeps);
-            createCreeps = Math.min(createCreeps, this.creepBatch);
-            for(var i =0;i<createCreeps;i++){
+            var createCreepsFin = Math.min(createCreeps, this.creepBatch);
+            for(var i =0;i<createCreepsFin;i++){
+                if (this.teamACreeps.length >= this.maxTeamCreeps){
+                    break; //no idea why this keeps going over. don't care right now.
+                }
                 var sprite = this.makeTeamASprite({name:"goblinKnightNormal"});
                 sprite.setVisible(true);
                 sprite.setBasePosition(this.teamASpawn());
@@ -750,14 +756,18 @@ var ArenaGame = jc.WorldLayer.extend({
             }
 
             createCreeps =this.aliveGenericCreeps(this.teamBCreeps);
-            createCreeps = Math.min(createCreeps, this.creepBatch);
-            for(var i =0;i<createCreeps;i++){
+            createCreepsFin = Math.min(createCreeps, this.creepBatch);
+            for(var i =0;i<createCreepsFin;i++){
+                console.log(this.teamBCreeps.length + " vs " + this.maxTeamCreeps);
+                if (this.teamBCreeps.length >= this.maxTeamCreeps){
+                    break; //no idea why this keeps going over. don't care right now.
+                }
                 var sprite2 = this.makeTeamBSprite({name:"goblinKnightNormal"});
                 sprite2.setVisible(true);
                 sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
                 sprite2.setBasePosition(this.teamBSpawn());
                 jc.playEffectOnTarget("teleport", sprite2, this);
-                this.teamBCreeps.push(sprite);
+                this.teamBCreeps.push(sprite2);
             }
         }
 

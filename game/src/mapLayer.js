@@ -65,6 +65,7 @@ var MapLayer = jc.UiElementsLayer.extend({
             if (this.summoning){
                 this.summoning = false;
                 this.slideoutSummonStuff();
+                return;
             }
             jc.log(['map'], "I like the clicking! More clicking! More!!!");
 
