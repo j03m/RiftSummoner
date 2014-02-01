@@ -10,7 +10,7 @@ if (!jc.isBrowser){
     var dirImg = "art/";
     var dirMusic = "sounds/";
 }else{
-    var dirImg = "art/web/";
+    var dirImg = "web/";
     var dirMusic = "sounds/web/";
 
 }

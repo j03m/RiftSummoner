@@ -3,7 +3,7 @@ var MapLayer = jc.UiElementsLayer.extend({
         if (this._super()) {
             cc.SpriteFrameCache.getInstance().addSpriteFrames(uiPlist);
             this.name = "tehmap";
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(touchUiPlist);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(cardsPlists[1]);
             this.initFromConfig(this.windowConfig);
             this.bubbleAllTouches(true);
             jc.layerManager.pushLayer(this, true);
@@ -24,7 +24,6 @@ var MapLayer = jc.UiElementsLayer.extend({
         this.infoDialog.setVisible(false);
         this.infoDialog.setZOrder(jc.topMost);
         this.summonRestore = this.summonFrame.getPosition();
-        this.centerThisChild(this.summonFrame, this);
         if (this.level < 5){
             this.buttonSummon.setVisible(false);
             this.buttonStore.setVisible(false);
@@ -69,10 +68,6 @@ var MapLayer = jc.UiElementsLayer.extend({
             }
             jc.log(['map'], "I like the clicking! More clicking! More!!!");
 
-            if (!this.once){
-                this.once = true;
-                hotr.mainScene.layer.arenaPre();
-            }
 
         }
 
@@ -146,16 +141,22 @@ var MapLayer = jc.UiElementsLayer.extend({
     },
     attackClick:function(){
         if (!this.buttonsEnabled){ return;}
+
+        if (!this.once){
+            this.once = true;
+            hotr.mainScene.layer.arenaPre();
+        }
+
     },
     windowConfig: {
         "mainFrame": {
             "type": "sprite",
-            "applyAdjustments": true,
             "sprite": "map2.png",
+            "applyAdjustments":true,
             "z": 1,
             "pos": {
-                "x": 1004,
-                "y": 756
+                "x": 1024,
+                "y": 577
             },
             "kids": {
                 "buttonStore": {
@@ -252,8 +253,8 @@ var MapLayer = jc.UiElementsLayer.extend({
                     "sprite": "cardSummonedFrame.png",
                     "z": 0,
                     "pos": {
-                        "x": 1032,
-                        "y": 602
+                        "x": 1024 ,
+                        "y": 670
                     }
                 },
                 "infoDialog": {

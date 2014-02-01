@@ -1,114 +1,25 @@
-Selection bug - mobile only. Add logging to second click, understand state.
-Lock on bug(s) -
-    *people can't find locks
-    *spiders walk off the screen
-    *lock on in same slice seem broken
--camera doesn't follow main selected hero
-* when dropping a creep that is on the other team (same name) camera pans to the enemy version
-* when dropping a creep, camera does a crazy overpan
-pinch zoom/drag bugs
-* healers don't heal
-- when attacked, retaliate
-*resistant dwarves/goblins can't kill each other. Make damage 5% rather than 0.
-*archers get too close on target
-* mark dead
-* 5 slots
-* Loader bug
-* archer running?
-Light FTUE
-Balance
-Creeps don't target*
-bar mark dead sprite position broken*
+pinch/zoom/drag - buggy - over scroll
+scrollbar - buggy (sluggish response)
+Combat flock -
+    search 2 slices
+    flip x-axis
+    5 tries - lock on closest unlocked
+lock table - when I lock an enemy - mark him. check locked in flock prevent
+load everyone before game starts - avoid framerate tank
+give everyone slower reaction movement times
+cool down before summon again
+less creeps, less often
 
-target radius seems very broken - too far
-
-
-
-
-Hero powers
-    elf - gunshot, cannon fire
-    priestess - heal all,
-    necro
-
-    vs
-
-    fireknight
-    ogre
-    fire elemental
-Defense uses powers - AI?
-
-mobile web art config
-
-
-
-Mixpanel/swrve
-Error population
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Notes:
-
-Pre demo:
-
-  	kik collector
-  	4x map
-  	towers
-  	hero customization
-  	multiplayer
-  	Offense/Defense arrangement
-  	25 additional heroes + creeps
-
-
-
-  	Marketing:
-  		Torrent
-  		Adult
-  		FB Web to Mobile
-  		Kik
-  		Highschools
-  		paid tweet (from users - cards for tweets, stones for battle posts)
-  		paid post (from users - cards for tweets, stones for battle posts)
-  		http://www.twilio.com/elements/mobile-app-distribution <- web to app
-  		txt everyone -
-
-
-
-  		cpv - 15/20 sec view
-  		kiip
-  		can pipeline be a mechanism for pushing branded assets?
-  		??build in branded power ups, with incentives??
-  		chart boost/fiksu
-  		1000/2 impressions
-  		nintendo clones?
-
-
-  		slide -
-  			sponsored asset - redbull tower
-  			add to deck - pipeliner - asset to game
-  			add to deck - streamer - asset to game
-  			Riptide - viral gets kicked
-  			viral gets watched
-  			also tracks impression???
-
-
-  		Fix resolution thing
-
-
-
-
+powers:
+    assassin -
+        gun shot - 50% health reduce
+        air strike
+    elf archer -
+        poison cloud
+        rain poison
+    Stone elemental
+        quake - cracks ground, punches ground
+        throw boulder?
 
 
 

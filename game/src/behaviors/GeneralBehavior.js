@@ -310,6 +310,7 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team, ignoreNexus)
 
         }
     }else{
+        var count = 0;
         for(var i=start;i>0;i--){
             if (i == nexusSlice && ignoreNexus){
                 continue;
@@ -323,9 +324,13 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team, ignoreNexus)
                         continue;
                     }
                     finalSliceAry = finalSliceAry.concat(sliceAry);
-                    break;
+                    count++;
+                    if (count > 3){
+                        break;
+                    }
                 }
             }
+            count = 0;
             if (this.targetsGround()){
                 var sliceAry = this.sliceMapAsArray(slices, groundGroup, i);
                 if (sliceAry.length != 0){
@@ -334,7 +339,11 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team, ignoreNexus)
                         continue;
                     }
                     finalSliceAry = finalSliceAry.concat(sliceAry);
-                    break;
+                    count++;
+                    if (count > 3){
+                        break;
+                    }
+
                 }
 
             }

@@ -35,6 +35,7 @@ var Landing = jc.UiElementsLayer.extend({
             "cell": 5,
             "type": "sprite",
             "sprite": "background.png",
+            "applyAdjustments":true,
             "z": 1,
             "kids": {
                 "questButton": {
@@ -84,7 +85,7 @@ var Landing = jc.UiElementsLayer.extend({
             },
             "pos": {
                 "x": 1024,
-                "y": 677
+                "y": 577
 
             }
         }

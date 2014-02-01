@@ -21,11 +21,10 @@ var tracers = {
 	'requestManager':0,
     'gameplay':0 ,
     'mainLayer':0,
-    'resource':0,
+    'resource':1,
     'camera':0,
     'console':1,
     'zerverpipe':0,
-    'resource':0,
     'ui':0,
     'scroller':0,
     'utilEffects':0,
@@ -55,7 +54,8 @@ var tracers = {
     'batching':0,
     'state':0,
     'targetting':0,
-    'missiles':0
+    'missiles':0,
+    'resolutions':1
 };
 
 jc.log = function(categories, msg){

@@ -649,10 +649,10 @@ var EditTeam = jc.UiElementsLayer.extend({
 				}
 			}
 		},
-		"pos": {
-			"x": 1024,
-			"y": 768
-		}
+        "pos": {
+            "x": 1024,
+            "y": 577
+        },
 	}
 } 
 });

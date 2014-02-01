@@ -19,10 +19,10 @@ var ArenaGame = jc.WorldLayer.extend({
     init: function() {
         this.name = "Arena";
         this.idCount = 0;
-        this.maxTeamCreeps = 20;
-        this.creepBatch = 10;
-        this.creeplimit = 10;
-        var arenaSize = cc.size(9088 * jc.characterScaleFactor, 1706 * jc.characterScaleFactor);
+        this.maxTeamCreeps = 10;
+        this.creepBatch = 5;
+        this.creeplimit = 5;
+        var arenaSize = cc.size(5345 * jc.characterScaleFactor, 1505 * jc.characterScaleFactor);
         var bounds = {
             x:0,
             y:0,

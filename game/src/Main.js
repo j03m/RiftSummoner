@@ -196,14 +196,20 @@ var MainGame = cc.Layer.extend({
         var teamAFormation = hotr.blobOperations.getFormation();
         var teamAPowers = hotr.blobOperations.getPowers();
 
+        var teamASprites = jc.Sprite.namesToSprites(teamA);
+        var teamACreeps = jc.Sprite.makeCreeps(10);
 
         var teamB = hotr.levelLogic.getTeamForLevel(level);
         var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
         var teamBPowers = hotr.levelLogic.getPowers();
 
+        var teamBSprites = jc.Sprite.namesToSprites(teamB);
+        var teamBCreeps = jc.Sprite.makeCreeps(10);
+
+
 
         var fightConfig = {
-            teamA:teamA,
+            teamA:teamASprites,
             teamAFormation:teamAFormation,
             teamB:teamB,
             teamBFormation:teamBFormation,

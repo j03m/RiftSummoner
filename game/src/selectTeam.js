@@ -292,8 +292,8 @@ var SelectTeam = jc.UiElementsLayer.extend({
             },
             "pos": {
                 "x": 1024,
-                "y": 777.9999999999999
-            }
+                "y": 577
+            },
         }
     }
 });

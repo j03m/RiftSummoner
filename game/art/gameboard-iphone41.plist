@@ -4,31 +4,18 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>board1.png</key>
+            <key>board3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,837},{830,938}}</string>
+                <string>{{2,2},{1136,1280}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{830,938}}</string>
+                <string>{{0,0},{1136,1280}}</string>
                 <key>sourceSize</key>
-                <string>{830,938}</string>
-            </dict>
-            <key>board2.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{833,938}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{833,938}}</string>
-                <key>sourceSize</key>
-                <string>{833,938}</string>
+                <string>{1136,1280}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -38,9 +25,9 @@
             <key>realTextureFileName</key>
             <string>gameboard-iphone41.pvr.ccz</string>
             <key>size</key>
-            <string>{1024,2048}</string>
+            <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c69b0ac552728c853d909cdde277abdc:1e03f2df9f5670346a04b636438db0ec:cc7ba5524ab0ba71fa6b949c1a88b790$</string>
+            <string>$TexturePacker:SmartUpdate:24e0b660abcfb947a281ad6b52dbd0b6:ab65b5d6db310d35afdb29153ce6a491:30b4d4105ed6910e175cb208fa70d0e7$</string>
             <key>textureFileName</key>
             <string>gameboard-iphone41.pvr.ccz</string>
         </dict>

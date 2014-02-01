@@ -169,7 +169,7 @@ var spriteDefs = {
 		"elementType": "earth",
 		"unitType": 3,
 		"creep": true,
-		"number": 5,
+		"number": 3,
 		"gameProperties": {
 			"MaxHP": 1500,
 			"speed": 150,
@@ -194,7 +194,7 @@ var spriteDefs = {
 		"elementType": "fire",
 		"unitType": 3,
 		"creep": true,
-		"number": 5,
+		"number": 3,
 		"gameProperties": {
 			"MaxHP": 1300,
 			"speed": 150,
@@ -222,7 +222,7 @@ var spriteDefs = {
 		"elementType": "life",
 		"unitType": 3,
 		"creep": true,
-		"number": 5,
+		"number": 3,
 		"gameProperties": {
 			"MaxHP": 1300,
 			"speed": 150,
@@ -250,7 +250,7 @@ var spriteDefs = {
 		"elementType": "void",
 		"unitType": 3,
 		"creep": true,
-		"number": 5,
+		"number": 3,
 		"damageMods": {
 			"vampireDrain": {
 				"heal": 10,
@@ -284,7 +284,7 @@ var spriteDefs = {
 		"elementType": "water",
 		"unitType": 3,
 		"creep": true,
-		"number": 5,
+		"number": 3,
 		"powers": {
 			"regeneration": {
 				"heal": 20,
@@ -441,6 +441,7 @@ var spriteDefs = {
 		"elementType": "water",
 		"unitType": 3,
 		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"special": "None",
 		"powers": {
 			"regeneration": {
@@ -792,7 +793,7 @@ var spriteDefs = {
 		"elementType": "fire",
 		"unitType": 0,
 		"creep": true,
-		"number": 5,
+		"number": 3,
 		"special": "Splash Damage, Burn Damage",
 		"damageMods": {
 			"burn": {
@@ -831,7 +832,7 @@ var spriteDefs = {
 		"elementType": "void",
 		"special": "None",
 		"creep": true,
-		"number": 5,
+		"number": 3,
 		"gameProperties": {
 			"MaxHP": 1000,
 			"movementType": 0,
@@ -978,7 +979,7 @@ var spriteDefs = {
 		"details": "Goblin Knights are fast and do reasonable damage. Plains goblins are incredibly fast runners.",
 		"elementType": "none",
 		"creep": true,
-		"number": 7,
+		"number": 3,
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
@@ -1010,7 +1011,7 @@ var spriteDefs = {
 		"details": "Goblin Knights are fast and do reasonable damage. These blood goblins are tougher, faster then their cousins.",
 		"elementType": "none",
 		"creep": true,
-		"number": 7,
+		"number": 3,
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
@@ -1036,7 +1037,7 @@ var spriteDefs = {
 		"details": "Goblin Knights are fast and do reasonable damage. These fire goblins live near magma in deep caves and are immune to fire based damage.",
 		"elementType": "fire",
 		"creep": true,
-		"number": 7,
+		"number": 3,
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
@@ -1133,6 +1134,7 @@ var spriteDefs = {
 		"elementType": "earth",
 		"unitType": 3,
 		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 16000,
@@ -1158,6 +1160,7 @@ var spriteDefs = {
 		"elementType": "fire",
 		"unitType": 3,
 		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"damageMods": {
 			"burn": {
 				"damage": 50,
@@ -1189,6 +1192,7 @@ var spriteDefs = {
 		"elementType": "void",
 		"unitType": 3,
 		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"effect": "voidFire",
 		"powers": {
 			"vampireRadius": {
@@ -1222,6 +1226,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"effect": "healingRadius",
 		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"gameProperties": {
 			"MaxHP": 12000,
 			"movementType": 1,
@@ -1382,8 +1387,9 @@ var spriteDefs = {
 		"targetRadius": 150,
 		"startFrame": 1,
 		"endFrame": 204,
-		"multisheet-ipadhd": 2,
-		"multisheet-iphone5": 2,
+		"multisheet-ipadhd": 4,
+		"multisheet-iphone5": 3,
+		"multisheet-iphone4": 2,
 		"gameProperties": {
 			"movementType": 1,
 			"targets": 1,
@@ -1439,15 +1445,13 @@ var spriteDefs = {
 		"details": "Orcs are fast, fierce attackers. What they lack in heavy armor, they make up for in pure tenacity.",
 		"elementType": "none",
 		"unitType": 3,
-		"creep": true,
-		"number": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 2000,
-			"speed": 160,
+			"MaxHP": 9000,
+			"speed": 250,
 			"movementType": 1,
 			"targets": 1,
-			"damage": 100,
+			"damage": 1000,
 			"actionDelays": {
 				"attack": 0.25
 			},
@@ -1700,8 +1704,9 @@ var spriteDefs = {
 		"unitType": 3,
 		"flip": true,
 		"special": "Poison",
-		"multisheet-ipadhd": 2,
+		"multisheet-ipadhd": 3,
 		"multisheet-iphone5": 2,
+		"multisheet-iphone4": 2,
 		"damageMods": {
 			"poison": {
 				"damage": 50,

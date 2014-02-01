@@ -4,18 +4,18 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>board2.png</key>
+            <key>board6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{1136,1280}}</string>
+                <string>{{2,2},{1287,1450}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{1136,1280}}</string>
+                <string>{{0,0},{1287,1450}}</string>
                 <key>sourceSize</key>
-                <string>{1136,1280}</string>
+                <string>{1287,1450}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -27,7 +27,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c69b0ac552728c853d909cdde277abdc:1e03f2df9f5670346a04b636438db0ec:cc7ba5524ab0ba71fa6b949c1a88b790$</string>
+            <string>$TexturePacker:SmartUpdate:74c111797f1f47ebf0801f92cd59aa3e:1e03f2df9f5670346a04b636438db0ec:a9343a8fcb294b49d47cacb70133720a$</string>
             <key>textureFileName</key>
             <string>gameboard-iphone54.pvr.ccz</string>
         </dict>

@@ -7,7 +7,7 @@
             <key>elfAssassin_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{263,291}}</string>
+                <string>{{2,545},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -17,6 +17,19 @@
                 <key>sourceSize</key>
                 <string>{263,291}</string>
             </dict>
+            <key>map2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{960,541}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{960,541}}</string>
+                <key>sourceSize</key>
+                <string>{960,541}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -25,9 +38,9 @@
             <key>realTextureFileName</key>
             <string>cards2-iphone4.pvr.ccz</string>
             <key>size</key>
-            <string>{512,512}</string>
+            <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:1dd725ecfc573858155a2e232ce2fa44:0b2c50e9509d45c208ee2eb39eafc43f:5dd7d3c6870a0b6da142c0a80e3dfd9a$</string>
+            <string>$TexturePacker:SmartUpdate:e324c31447d6c6a117f7c7f0904bad24:cee1ddd92293713c7a9318f8f5aebd33:5dd7d3c6870a0b6da142c0a80e3dfd9a$</string>
             <key>textureFileName</key>
             <string>cards2-iphone4.pvr.ccz</string>
         </dict>

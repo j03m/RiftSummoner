@@ -8,29 +8,24 @@ jc.resolutions = {};
 
 jc.resolutions.iphone = cc.size(480,320);
 jc.resolutions.iphone.scale =   0.234375;
-jc.resolutions.iphone.charScale =   0.25;
-jc.resolutions.iphone.adjusty = -20;
-jc.resolutions.iphone.adjustx = 0;
+jc.resolutions.iphone.charScale =   0.55;
+jc.resolutions.iphone.scaledArea = cc.size(480,270);
 
 jc.resolutions.iphone5 = cc.size(1136,640);
 jc.resolutions.iphone5.scale = 0.554688;
-jc.resolutions.iphone5.charScale =   0.55;
-jc.resolutions.iphone5.adjusty = -110;
-jc.resolutions.iphone5.adjustx = 0;
+jc.resolutions.iphone5.charScale =   0.85;
+jc.resolutions.iphone5.scaledArea = cc.size(1136,640);
 
 
 jc.resolutions.iphone4 = cc.size(960,640);
 jc.resolutions.iphone4.scale = 0.46875;
-jc.resolutions.iphone4.charScale = 0.45;
-jc.resolutions.iphone4.adjusty = -50;
-jc.resolutions.iphone4.adjustx = 0;
+jc.resolutions.iphone4.charScale = 0.75;
+jc.resolutions.iphone4.scaledArea = cc.size(960,541);
 
 jc.resolutions.ipadhd = cc.size(2048, 1536);
 jc.resolutions.ipadhd.scale = 1;
-jc.resolutions.ipadhd.charScale = 0.75;
-jc.resolutions.ipadhd.adjusty = 0;
-jc.resolutions.ipadhd.adjustx = 0;
-
+jc.resolutions.ipadhd.charScale = 1;
+jc.resolutions.ipadhd.scaledArea = cc.size(2048,1154);
 
 
 jc.setDesignSize = function(size){
@@ -67,7 +62,9 @@ jc.bestAssetDirectory = function(){
     //we are designing for iphone 5, but scaling down from ipad 3
     //so we mostly care about width, our height will get cut.
     var maxSet = "";
+    var charMinSet = "";
     var max = 0;
+    var charMin = Number.MAX_VALUE;
     var scaleFactor;
     var charScaleFactor;
     for(var res in jc.resolutions){
@@ -76,16 +73,26 @@ jc.bestAssetDirectory = function(){
                 max = jc.resolutions[res].width;
                 maxSet = res;
                 scaleFactor = jc.resolutions[res].scale;
+            }
+        }
+
+        if (jc.resolutions[res].width>= actualSize.width){
+            if (jc.resolutions[res].width < charMin){
+                charMin = jc.resolutions[res].width;
+                charMinSet = res;
                 charScaleFactor = jc.resolutions[res].charScale;
             }
         }
+
     }
     jc.log(['resource'], "selected: " + maxSet + " for assets dir.");
     jc.assetCategory = maxSet;
+    jc.characterAssetCategory = charMinSet;
     jc.assetScaleFactor = scaleFactor;
     jc.characterScaleFactor =  charScaleFactor;
     jc.assetCategoryData = jc.resolutions[maxSet];
-
+    jc.assetCategoryData.adjustx = (actualSize.width - jc.resolutions[maxSet].scaledArea.width)/2;
+    jc.assetCategoryData.adjusty = (actualSize.height - jc.resolutions[maxSet].scaledArea.height)/2;
 };
 
 if (!jc.isBrowser){
