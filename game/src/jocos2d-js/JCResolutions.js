@@ -2,6 +2,10 @@ var jc = jc || {};
 
 jc.assetWildCard = "{v}";
 
+jc.multiSheetPrefix = 'multisheet-';
+
+jc.multiSheetWildCard = "{n}";
+
 //this assumes you want landscape. todo: mod for portrait
 jc.resolutions = {};
 

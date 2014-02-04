@@ -16,6 +16,7 @@ var MainGame = cc.Layer.extend({
     signThis:"yoyoyoyoyosignthissonsignitsignitsignit",
     init: function() {
         if (this._super()) {
+            this.scheduleUpdate();
             return true;
         } else {
             return false;
@@ -191,31 +192,19 @@ var MainGame = cc.Layer.extend({
         //fight config
         ArenaGame.scene();
         this.returnPoint = this.map.bind(this);
+
         var teamA = hotr.blobOperations.getTeam();
+        teamA.push({'name':'nexus','id':'teamanexus'});
+
         var level = hotr.blobOperations.getLevel();
-        var teamAFormation = hotr.blobOperations.getFormation();
-        var teamAPowers = hotr.blobOperations.getPowers();
-
-        var teamASprites = jc.Sprite.namesToSprites(teamA);
-        var teamACreeps = jc.Sprite.makeCreeps(10);
-
         var teamB = hotr.levelLogic.getTeamForLevel(level);
-        var teamBFormation = hotr.levelLogic.getFormationForLevel(level);
-        var teamBPowers = hotr.levelLogic.getPowers();
-
-        var teamBSprites = jc.Sprite.namesToSprites(teamB);
-        var teamBCreeps = jc.Sprite.makeCreeps(10);
-
+        teamB.push({'name':'nexus',
+        'id':'teambnexus'});
 
 
         var fightConfig = {
-            teamA:teamASprites,
-            teamAFormation:teamAFormation,
-            teamB:teamB,
-            teamBFormation:teamBFormation,
-            teamAPowers:teamAPowers,
-            teamBPowers:teamBPowers,
-            offense:'a'
+            teamA:teamA,
+            teamB:teamB
         };
 
         this.doArena(fightConfig);
@@ -226,15 +215,11 @@ var MainGame = cc.Layer.extend({
         var fightConfig = {
             type:"replay",
             teamA:data.teamB,
-            teamAFormation:"4x4x4a",
             teamB:data.teamA,
-            teamBFormation:"4x4x4b",
-            teamAPowers:[],
-            teamBPowers:[],
             offense:'a'
         };
 
-        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB, fightConfig.teamAPowers, fightConfig.teamBPowers);
+        var assets = this.makeAssetDictionary(fightConfig.teamA, fightConfig.teamB);
         hotr.arenaScene.data = fightConfig;
         //go to arena - show team dropdown attacker - VS -  defender
         this.showLoader(            {
@@ -253,14 +238,16 @@ var MainGame = cc.Layer.extend({
                     hotr.blobOperations.saveBlob(function(){
                         callback();
                     });
-                }
+                },
             ],
+            "doSpriteLoad":true,
+            "spriteLoadItems":hotr.arenaScene.data.teamA.length + hotr.arenaScene.data.teamB.length + jc.totalCreeps + jc.totalCreeps,
             "nextScene":'arena'
         });
     },
     onEnter:function(){
-         jc.log(['mainLayer'], "main starting")
-        this.startGame();
+             jc.log(['mainLayer'], "main starting")
+            this.startGame();
 
     },
     goArenaTest:function(){
@@ -354,7 +341,7 @@ var MainGame = cc.Layer.extend({
                     cardPlist:cardsPlists[cardIndex]
         };
     },
-    makeAssetDictionary:function(teamA, teamB, teamAPowers, teamBPowers){
+    makeAssetDictionary:function(teamA, teamB){
         var assets = [];
         for (var i=0;i<teamA.length;i++){
             if (teamA[i]){
@@ -371,16 +358,7 @@ var MainGame = cc.Layer.extend({
             }
         }
 
-        for (var i=0;i<teamAPowers.length;i++){
-            var name = teamAPowers[i];
-            this.addPowerAssets(assets, name);
-        }
-
-        for (var i=0;i<teamAPowers.length;i++){
-            var name = teamAPowers[i];
-            this.addPowerAssets(assets, name);
-        }
-
+        //todo: load character powers - oh boy.
 
         assets.pushUnique(g_characterPlists["cannonball"]);
         assets.pushUnique(g_characterPngs["cannonball"]);
@@ -419,8 +397,17 @@ var MainGame = cc.Layer.extend({
         }
     },
     addAssetChain:function(assetAry, name){
-        assetAry.pushUnique(g_characterPlists[name]);
-        assetAry.pushUnique(g_characterPngs[name]);
+
+        if (g_characterPlists[name] instanceof Array){
+            for(var i =0;i<g_characterPlists[name].length;i++){
+                assetAry.pushUnique(g_characterPlists[name][i]);
+                assetAry.pushUnique(g_characterPngs[name][i]);
+            }
+        }else{
+            assetAry.pushUnique(g_characterPlists[name]);
+            assetAry.pushUnique(g_characterPngs[name]);
+        }
+
 
         if (spriteDefs[name].effect){
 

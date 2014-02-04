@@ -32,6 +32,7 @@ var ArenaGame = jc.WorldLayer.extend({
 
         if (this._super(arenaSize, gameboardFrames)) {
             Math.seedrandom('yay i made a game');
+
             this.teams['a'] = [];
             this.teams['b'] = [];
             this.teamSize = jc.teamSize;
@@ -83,14 +84,7 @@ var ArenaGame = jc.WorldLayer.extend({
 		}
 	},
     onShow:function(){
-        if (!jc.parsed[effectsPlist]){
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(effectsPlist);
-            jc.parsed[effectsPlist]= true;
-        }
 
-        this.shadowBatchNode = cc.SpriteBatchNode.create(effectsPng);
-        this.addChild(this.shadowBatchNode);
-        this.reorderChild(this.shadowBatchNode, jc.shadowZOrder);
         this.level = hotr.blobOperations.getTutorialLevel();
 
         this.scheduleOnce(function(){
@@ -107,10 +101,11 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     runScenario:function(){
-        this.teamASprites = hotr.arenaScene.data.teamA;
-        this.teamAPowers = hotr.arenaScene.data.teamAPowers;
-        this.teamBSprites = hotr.arenaScene.data.teamB;
-        this.teamBPowers = hotr.arenaScene.data.teamBPowers;
+        this.teamASprites = hotr.arenaScene.data.teamASprites;
+        this.teamBSprites = hotr.arenaScene.data.teamBSprites;
+        this.teamACount = _.toArray(this.teamASprites).length;
+        this.teamBAry = _.toArray(this.teamBSprites);
+        this.teamBCount = this.teamBAry.length;
         this.panToWorldPoint(this.nexusAPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
             //this.placeEnemyTeam();
             //this.nextTouchDo(this.initialSetupAction,true);
@@ -377,7 +372,7 @@ var ArenaGame = jc.WorldLayer.extend({
         var hold = [];
 
         for(var i =0; i<def.number;i++){
-            var sprite = this.makeTeamASprite(this.barSelection);
+            var sprite = this.makeTeamASprite(this.barSelection, i);
             hold.push(sprite);
             if (i == 0){
                 jc.log(['arena'], "play charselect effect on sprite");
@@ -566,29 +561,48 @@ var ArenaGame = jc.WorldLayer.extend({
 
         return sprite;
 	},
-    makeTeamASprite:function(data){
-        var sprite = this.getSprite(data.name);
+    makeTeamASprite:function(data, sub){
+        if (!sub){
+            sub = 0;
+        }
+        var sprite = this.teamASprites[data.id][sub];
+        sprite = this.teamASpritePrep(sprite, data.id);
+        this.addChild(sprite);
+        return sprite;
+
+    },
+    teamASpritePrep:function(sprite, id){
         sprite.healthBarColor = cc.c4f(26.0/255.0, 245.0/255.0, 15.0/255.0, 1.0);
         //todo: augment sprite using data fetched via the id
         sprite.homeTeam = this.getTeam.bind(this,'a');
         sprite.enemyTeam = this.getTeam.bind(this, 'b');
         sprite.team = 'a';
         sprite.otherteam = 'b';
-        sprite.setVisible(false);
+        sprite.setVisible(true);
         this.idCount++;
-        if (!data.id){
-            sprite.id= this.idCount;
-        }else{
-            sprite.id = data.id;
+        if (id && !sprite.id){
+            sprite.id = id;
+        }else if (!id && !sprite.id){
+            sprite.id = this.idCount;
         }
 
         this.teams['a'].push(sprite);
         this.touchTargets.push(sprite);
         this.sprites.push(sprite);
         return sprite;
+
     },
-    makeTeamBSprite:function(data){
-        sprite = this.getSprite(data.name);
+    makeTeamBSprite:function(data, sub){
+        if (!sub){
+            sub = 0;
+        }
+        var sprite = this.teamBSprites[data.id][sub];
+        sprite = this.teamBSpritePrep(sprite);
+        this.addChild(sprite);
+        return sprite;
+
+    },
+    teamBSpritePrep:function(sprite){
         //todo: augment sprite using data fetched via the id
         sprite.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
         sprite.setFlippedX(true);
@@ -596,24 +610,29 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite.enemyTeam = this.getTeam.bind(this, 'a');
         sprite.team = 'b';
         sprite.otherteam = 'a';
-        sprite.setVisible(false);
+        sprite.setVisible(true);
         this.teams['b'].push(sprite);
         this.touchTargets.push(sprite);
         this.sprites.push(sprite);
         this.idCount++;
         sprite.id = this.idCount;
         return sprite;
-
     },
     setUp:function(){
-        var sprite = this.makeTeamASprite({name:"nexus"});
+
+        this.teamASprites = hotr.arenaScene.data.teamASprites;
+        this.teamBSprites = hotr.arenaScene.data.teamBSprites;
+        this.teamACreeps = hotr.arenaScene.data.teamACreeps;
+        this.teamBCreeps = hotr.arenaScene.data.teamBCreeps;
+
+        var sprite = this.makeTeamASprite({name:"nexus", 'id':'teamanexus'});
         this.teamANexus = sprite;
         var point = cc.p(this.nexusAPoint.x+sprite.getTextureRect().width, this.nexusAPoint.y);
         point = this.convertToItemPosition(point);
         sprite.setBasePosition(point);
         sprite.ready(true);
 
-        var sprite = this.makeTeamBSprite({name:"nexus"});
+        var sprite = this.makeTeamBSprite({name:"nexus",'id':'teambnexus'});
         var point = cc.p(this.nexusBPoint.x-sprite.getTextureRect().width, this.nexusBPoint.y);
         point = this.convertToItemPosition(point);
         sprite.setBasePosition(point);
@@ -665,13 +684,10 @@ var ArenaGame = jc.WorldLayer.extend({
             this.lastcreep += dt;
 
             if (this.lastcreep > this.creeplimit || !this.firstCreepSummon){
-
                 this.makeCreeps();
-                if (this.firstCreepSummon){
-                    this.lastcreep = 0;
-                }
                 this.firstCreepSummon = true;
                 this.creeplimit+=2; //add 2 seconds each summon
+                this.lastcreep = 0;
             }
 
             this.panToSelected();
@@ -725,50 +741,38 @@ var ArenaGame = jc.WorldLayer.extend({
             this.panToWorldPoint(pos);
         }
     },
-    aliveGenericCreeps:function(teamCreeps){
+    inflateCreeps:function(teamCreeps, team){
         var i=0;
         var alive = 0;
         while(i<teamCreeps.length){
-            if (teamCreeps[i].getParent() != this){
-                var item = teamCreeps.splice(i,1);
-                console.log("alive? " + item[0].isAlive());
-            }else{
-                alive++;
-                i++;
+            if (teamCreeps[i].getParent() != this){ //not in play, recycle
+                teamCreeps[i].gameObject.hp = teamCreeps[i].gameObject.MaxHP;
+                teamCreeps[i].behavior.setState('idle', 'idle');
+                teamCreeps[i].clearEffects();
+                jc.playEffectOnTarget("teleport", teamCreeps[i], this);
+                teamCreeps[i].setVisible(true);
+
+                if (team == 'b'){
+                    this.addChild(teamCreeps[i]);
+                    teamCreeps[i] = this.teamBSpritePrep(teamCreeps[i]);
+                    teamCreeps[i].setBasePosition(this.teamBSpawn());
+
+                }
+
+                if (team == 'a'){
+                    this.addChild(teamCreeps[i]);
+                    teamCreeps[i] = this.teamASpritePrep(teamCreeps[i], teamCreeps[i].id);
+                    teamCreeps[i].setBasePosition(this.teamASpawn());
+
+                }
             }
+            i++;
         }
-        var notInGameYet =  this.maxTeamCreeps - alive;
-        return notInGameYet
     },
     makeCreeps: function(){
         if (jc.config.creeps){
-            var createCreeps =this.aliveGenericCreeps(this.teamACreeps);
-            var createCreepsFin = Math.min(createCreeps, this.creepBatch);
-            for(var i =0;i<createCreepsFin;i++){
-                if (this.teamACreeps.length >= this.maxTeamCreeps){
-                    break; //no idea why this keeps going over. don't care right now.
-                }
-                var sprite = this.makeTeamASprite({name:"goblinKnightNormal"});
-                sprite.setVisible(true);
-                sprite.setBasePosition(this.teamASpawn());
-                jc.playEffectOnTarget("teleport", sprite, this);
-                this.teamACreeps.push(sprite);
-            }
-
-            createCreeps =this.aliveGenericCreeps(this.teamBCreeps);
-            createCreepsFin = Math.min(createCreeps, this.creepBatch);
-            for(var i =0;i<createCreepsFin;i++){
-                console.log(this.teamBCreeps.length + " vs " + this.maxTeamCreeps);
-                if (this.teamBCreeps.length >= this.maxTeamCreeps){
-                    break; //no idea why this keeps going over. don't care right now.
-                }
-                var sprite2 = this.makeTeamBSprite({name:"goblinKnightNormal"});
-                sprite2.setVisible(true);
-                sprite2.healthBarColor = cc.c4f(150.0/255.0, 0.0/255.0, 255.0/255.0, 1.0);
-                sprite2.setBasePosition(this.teamBSpawn());
-                jc.playEffectOnTarget("teleport", sprite2, this);
-                this.teamBCreeps.push(sprite2);
-            }
+            this.inflateCreeps(this.teamACreeps, 'a');
+            this.inflateCreeps(this.teamBCreeps, 'b');
         }
 
         if (!this.enemiesSummoned){
@@ -783,22 +787,26 @@ var ArenaGame = jc.WorldLayer.extend({
             this.lastEnemyHero = 0;
         }
 
-        if (this.lastEnemyHero < this.teamBSprites.length){
-            var name = this.teamBSprites[this.lastEnemyHero].name;
+        if (this.lastEnemyHero < this.teamBCount){
+            var name = this.teamBAry[this.lastEnemyHero][0].name;
+            var id = this.teamBAry[this.lastEnemyHero][0].id;
+            this.teamBAry[this.lastEnemyHero].count = 0;
             var def = spriteDefs[name];
 
             if (def.creep){
-                this.schedule(function(){
-                    var enemyHero = this.makeTeamBSprite({name:name});
-                    enemyHero.setBasePosition(this.teamBSpawn());
-                    enemyHero.ready(true);
-                    jc.playEffectOnTarget("teleport", enemyHero, this);
-
-                }.bind(this), 0.5, def.number-1);
+                this.schedule(function(entry){
+                    return function(){
+                        var enemyHero = this.makeTeamBSprite({name:name, id:id}, this.teamBAry[entry].count);
+                        this.teamBAry[entry].count++;
+                        enemyHero.setBasePosition(this.teamBSpawn());
+                        enemyHero.ready(true);
+                        jc.playEffectOnTarget("teleport", enemyHero, this);
+                    }.bind(this);
+                }.bind(this)(this.lastEnemyHero), 0.5, def.number-1);
 
                 this.lastEnemyHero++;
             }else{
-                var enemyHero = this.makeTeamBSprite({name:name});
+                var enemyHero = this.makeTeamBSprite({name:name, id:id});
                 enemyHero.setBasePosition(this.teamBSpawn());
                 enemyHero.ready(true);
                 jc.playEffectOnTarget("teleport", enemyHero, this);
@@ -1231,7 +1239,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     showVictory:function(){
         this.started = false;
-
+        this.cleanup();
         if (this.tableView){
             this.getParent().removeChild(this.tableView, false);
         }
@@ -1269,6 +1277,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     showDefeat:function(){
         this.started = false;
+        this.cleanup();
         if (this.tableView){
             this.getParent().removeChild(this.tableView, false);
         }
@@ -1297,6 +1306,13 @@ var ArenaGame = jc.WorldLayer.extend({
         this.defeat.init(); //todo pass stats
 
         hotr.arenaScene.addChild(this.defeat);
+    },
+    cleanup:function(){
+        for(var i =0;i<this.sprites.length;i++){
+            this.removeChild(this.sprites[i],true);
+            this.sprites[i].cleanUp();
+            this.sprites[i] = undefined;
+        }
     },
     timeExpired:function(){
         var time = this.gameTime;

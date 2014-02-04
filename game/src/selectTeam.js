@@ -262,7 +262,7 @@ var SelectTeam = jc.UiElementsLayer.extend({
                             "sprite": "portraitSmallDarkBackground.png"
                         }
                     ],
-                    "membersTotal": 10,
+                    "membersTotal": jc.teamSize,
                     "sprite": "portraitSmallDarkBackground.png",
                     "pos": {
                         "x": 550,

@@ -47,22 +47,14 @@ jc.Sprite = cc.Sprite.extend({
             this.batch = jc.spriteBatch[sheet];
         }
 
-        var multipack = config['multipack-'+jc.assetCategory];
-        if (multipack){
-            jc.log(['batching'], 'multipacked sprite');
-            //todo this is going to break my batching code, could be multipacked sprites are a ++no good.
-            for(var i=0;i<multipack;i++){
-                var actualPlist = plist.replace('{n}',i);
-                if (!jc.parsed[actualPlist]){
-                    cc.SpriteFrameCache.getInstance().addSpriteFrames(actualPlist);
-                    jc.parsed[actualPlist] = true;
-                }
-            }
-        }else{
-            if (!jc.parsed[plist]){
-                cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
-                jc.parsed[plist] = true;
-            }
+        if (plist instanceof Array){
+            _.each(plist, function(plistitem){
+                cc.SpriteFrameCache.getInstance().addSpriteFrames(plistitem);
+                jc.parsed[plistitem] = true;
+            });
+        }else if (!jc.parsed[plist]){
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(plist);
+            jc.parsed[plist] = true;
         }
 
         this.effects = {};
@@ -112,6 +104,8 @@ jc.Sprite = cc.Sprite.extend({
         this.behavior = behavior;
         this.behaviorType = config.behavior;
 
+        this.getTexture().generateMipmap();
+
 		return this;
 	},
     ready: function(){
@@ -124,13 +118,11 @@ jc.Sprite = cc.Sprite.extend({
     die:function(){
         this.imdeadman=true;
         this.layer.removeChild(this, true);
-        this.layer.shadowBatchNode.removeChild(this.shadow, true);
         this.layer.removeChild(this.healthBar, true);
         this.cleanUp();
     },
     fallToShadow:function(){
-        this.noShadowUpdate = true;
-        var pos = this.shadow.getPosition();
+        var pos = this.shadow;
         var moveDiff = cc.pSub(pos, this.getPosition());
         var distanceToMove = cc.pLength(moveDiff);
         var moveDuration = distanceToMove/this.gameObject.speed;
@@ -141,15 +133,6 @@ jc.Sprite = cc.Sprite.extend({
         this.hideHealthbar = true;
     },
     initShadow:function(){
-        this.shadow = new cc.Sprite();
-        //todo change to size of sprite
-
-        var frame = cc.SpriteFrameCache.getInstance().getSpriteFrame("shadowSmall.png");
-        this.shadow.initWithSpriteFrame(frame);
-        this.shadow.setScaleX(0.5);
-        this.shadow.name = "shadow";
-        this.shadow.retain();
-        this.layer.shadowBatchNode.addChild(this.shadow);
         this.updateShadowPosition();
     },
     initHealthBar:function(){
@@ -169,7 +152,6 @@ jc.Sprite = cc.Sprite.extend({
 
         //this.stopAction(this.animations[this.state].action);
 		this.state = -1;
-        this.layer.removeChild(this.shadow, true);
         this.layer.removeChild(this.healthBar, true);
         for(var i =0; i<this.animations.length; i++){
 			this.animations[i].action.release();
@@ -350,6 +332,9 @@ jc.Sprite = cc.Sprite.extend({
     removeEffect:function(effect){
         delete this.effects[effect];
     },
+    clearEffects:function(){
+        this.effects = {};
+    },
 	setState:function(state, callback){
         if (!state){
             throw "Undefined state passed to setState";
@@ -510,7 +495,7 @@ jc.Sprite = cc.Sprite.extend({
                 pos.y-= this.gameObject.flightAug.y/2; //for flight, shadow should be further away
             }
 
-            this.shadow.setPosition(pos);
+            this.shadow = pos;
         }
     }
 });
@@ -548,6 +533,8 @@ jc.Sprite.getMinMax = function(character){
     character.startFrame = min;
     character.endFrame = max;
 }
+
+
 
 jc.Sprite.spriteGenerator = function(allDefs, def, layer){
 
@@ -621,6 +608,7 @@ jc.Sprite.spriteGenerator = function(allDefs, def, layer){
 
     return sprite;
 }
+
 
 
 jc.randomNum= function(min, max){

@@ -8,7 +8,7 @@ var tracers = {
     'touchlayer':0,
     'touchid':0,
     'touchout':0,
-    'loader':0,
+    'loader':1,
 	'mouse':0,
 	'states':0,
 	'sprite':0,
@@ -50,12 +50,13 @@ var tracers = {
     'bgtexture':0,
     'Borders':0,
     'spritesonboard':0,
-    'spritecommands':1,
+    'spritecommands':0,
     'batching':0,
     'state':0,
     'targetting':0,
     'missiles':0,
-    'resolutions':1
+    'resolutions':0,
+    'multipack':1,
 };
 
 jc.log = function(categories, msg){

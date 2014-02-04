@@ -1,6 +1,6 @@
 var jc = jc || {};
-jc.teamSize = 10;
-
+jc.teamSize = 5;
+jc.totalCreeps = 10;
 
 
 jc.config = {};
@@ -498,6 +498,7 @@ jc.scaleToCharacter = function(scaleMe, toMe, factor){
 }
 
 jc.playEffectOnTarget = function(name, target, layer, child){
+
     if (!target){
 		return;
 	}

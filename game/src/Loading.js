@@ -5,6 +5,8 @@ var Loading = jc.UiElementsLayer.extend({
             this.assets = config.assets;
             this.nextScene = config.nextScene;
             this.apiCalls = config.apiCalls;
+            this.doSpriteLoad = config.doSpriteLoad;
+            this.spriteLoadItems = config.spriteLoadItems;
             this.assetFunc = config.assetFunc;
             this.loaderAdjust = cc.p(-8*jc.assetScaleFactor,13*jc.assetScaleFactor);
             cc.SpriteFrameCache.getInstance().addSpriteFrames(loadingPlist);
@@ -44,6 +46,9 @@ var Loading = jc.UiElementsLayer.extend({
             this.totalItemsToLoad +=this.apiCalls.length;
         }
 
+        if (this.doSpriteLoad){
+            this.totalItemsToLoad +=this.spriteLoadItems;
+        }
 
         //before anything we need to get the assetFunc out of the way
         if (this.assetFunc){
@@ -97,14 +102,40 @@ var Loading = jc.UiElementsLayer.extend({
             jc.log(['loader'],"apiCalls done");
         }.bind(this);
     },
+    startPostCalls:function(){
+        if (!this.spriteLoadStarted && this.doSpriteLoad){
+            this.postProc(function(item, total){
+                jc.log('loader', 'Sprite created...');
+                this.totalItemsCompleted++;
+            }.bind(this));
+        }
+        this.spriteLoadStarted = true;
+    },
+    postProc:function(statuscb){
+        if (!jc.parsed[effectsPlist]){
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(effectsPlist);
+            jc.parsed[effectsPlist]= true;
+        }
+        hotr.arenaScene.layer.shadowBatchNode = cc.SpriteBatchNode.create(effectsPng);
+
+        hotr.arenaScene.data.teamASprites = {};
+        this.idsToSprites(hotr.arenaScene.data.teamA, 'a', statuscb);
+
+        hotr.arenaScene.data.teamACreeps = [];
+        this.makeCreeps(jc.totalCreeps, 'a',statuscb);
+
+        hotr.arenaScene.data.teamBSprites = {};
+        this.idsToSprites(hotr.arenaScene.data.teamB,'b', statuscb);
+
+        hotr.arenaScene.data.teamBCreeps = [];
+        this.makeCreeps(jc.totalCreeps, 'b',statuscb);
+    },
     raiseComplete:function(){
         //this.done();
         this.unschedule(this.checkPercent);
         this.scheduleOnce(function(){
             hotr.changeScene(this.nextScene);
         },1);
-
-
     },
     getPercentage:function(){
         return 100;
@@ -142,6 +173,9 @@ var Loading = jc.UiElementsLayer.extend({
                 totalAssets = 0;
             }
 
+            if (percent == 100){ //ccLoader is done, postproc allowed
+                this.startPostCalls();
+            }
 
             //what does that represent?
             var tempDoneCount = totalAssets + this.totalItemsCompleted;
@@ -183,6 +217,56 @@ var Loading = jc.UiElementsLayer.extend({
         }
 
     },
+    idsToSprites: function(datas, team, status){
+        var sprites;
+        var i =0;
+        if (team == 'a'){
+            sprites = hotr.arenaScene.data.teamASprites;
+        }else{
+            sprites = hotr.arenaScene.data.teamBSprites;
+        }
+        this.schedule(function(){
+            var id = datas[i].id;
+            var name = datas[i].name
+            if (spriteDefs[name].creep){
+                for(var ii=0;ii<spriteDefs[name].number;ii++){
+                    var sprite = jc.Sprite.spriteGenerator(spriteDefs, name, hotr.arenaScene.layer);
+                    if (!sprites[id]){
+                        sprites[id]= [];
+                    }
+                    sprite.id = id;
+                    sprites[id].push(sprite);
+                }
+            }else{
+                var sprite = jc.Sprite.spriteGenerator(spriteDefs, name, hotr.arenaScene.layer);
+                if (!sprites[id]){
+                    sprites[id]= [];
+                }
+                sprite.id =id;
+                sprites[id].push(sprite);
+            }
+            status(i, datas.length);
+            i++;
+        }, 0.05, datas.length-1);
+    },
+    makeCreeps: function(number, team, status){
+        var creeps = [];
+        var i =0;
+        if (team == 'a'){
+            creeps = hotr.arenaScene.data.teamACreeps;
+        }else{
+            creeps = hotr.arenaScene.data.teamBCreeps;
+        }
+
+        this.schedule(function(){
+            var sprite = jc.Sprite.spriteGenerator(spriteDefs, 'goblinKnightNormal', hotr.arenaScene.layer);
+            sprite.id = 'creep-'+team+'-'+i;
+            creeps.push(sprite);
+            status(i, number);
+        },0.05, number-1);
+
+    },
+
     windowConfig:{
 	"leftDoor": {
 		

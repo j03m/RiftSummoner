@@ -7,8 +7,8 @@ var landingPlist = transformAsset(dirImg + "landing{v}.plist");
 var loadingPng = transformAsset(dirImg + "loading{v}.{ext}");
 var loadingPlist = transformAsset(dirImg + "loading{v}.plist");
 
-var cardsPngs = [transformAsset(dirImg + "cards{v}.{ext}",  jc.characterAssetCategory), transformAsset(dirImg + "cards2{v}.{ext}")];
-var cardsPlists = [transformAsset(dirImg + "cards{v}.plist",  jc.characterAssetCategory), transformAsset(dirImg + "cards2{v}.plist")];
+var cardsPngs = [transformAsset(dirImg + "cards{v}.{ext}"), transformAsset(dirImg + "cards2{v}.{ext}")];
+var cardsPlists = [transformAsset(dirImg + "cards{v}.plist"), transformAsset(dirImg + "cards2{v}.plist")];
 var uiPng = transformAsset(dirImg + "uiElements{v}.{ext}");
 var uiPlist = transformAsset(dirImg + "uiElements{v}.plist");
 
@@ -135,14 +135,27 @@ if (jc.designMode){
 
 for (var entry in spriteDefs ){
     if (!spriteDefs[entry].parentOnly && spriteDefs[entry].name){
-        var multipack = spriteDefs[entry]['multipack-'+jc.assetCategory];
+        var multipack = spriteDefs[entry][jc.multiSheetPrefix+jc.characterAssetCategory];
+        jc.log('multipack', "Resource: " + entry + " is multipack:" + multipack);
         if (multipack){
-            g_characterPngs[entry] = transformAsset(dirImg + entry + 'Sheet{v}.{n}.{ext}',  jc.characterAssetCategory);
-            g_characterPlists[entry] = transformAsset(dirImg + entry + 'Sheet{v}.{n}.plist', jc.characterAssetCategory);
+            jc.log('multipack', "looping...");
+            var multiplist = [];
+            var multipng= [];
+            for(var i=0;i<multipack;i++){
+                var mplist = transformAsset(dirImg + entry + 'Sheet{v}.{n}.plist', jc.characterAssetCategory, i);
+                var mpng = transformAsset(dirImg + entry + 'Sheet{v}.{n}.{ext}',  jc.characterAssetCategory, i);
+
+                jc.log('multipack', "transformed plist:" +mplist);
+                jc.log('multipack', "transformed png:" +mpng);
+                multipng.push(mpng);
+                multiplist.push(mplist);
+            }
+            g_characterPngs[entry] = multipng;
+            g_characterPlists[entry]= multiplist;
+
         }else{
             g_characterPngs[entry] = transformAsset(dirImg + entry + 'Sheet{v}.0.{ext}', jc.characterAssetCategory);
             g_characterPlists[entry] = transformAsset(dirImg + entry + 'Sheet{v}.0.plist', jc.characterAssetCategory);
-
         }
     }
 }
@@ -204,7 +217,7 @@ var g_ui =[
 ];
 
 
-function transformAsset(input, category){
+function transformAsset(input, category, number){
 	if (!input){
 		return; 
 	}
@@ -217,6 +230,9 @@ function transformAsset(input, category){
         token = "";
     }
 
+    if (number!=undefined){
+        input = input.replace(jc.multiSheetWildCard, number);
+    }
 
     if (!jc.isBrowser){
         input = input.replace("{ext}", "pvr.ccz");
