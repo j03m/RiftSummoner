@@ -118,8 +118,7 @@ jc.Sprite = cc.Sprite.extend({
     die:function(){
         this.imdeadman=true;
         this.layer.removeChild(this, true);
-        this.layer.removeChild(this.healthBar, true);
-        this.cleanUp();
+        this.healthBar.setVisible(false);
     },
     fallToShadow:function(){
         var pos = this.shadow;
@@ -136,12 +135,26 @@ jc.Sprite = cc.Sprite.extend({
         this.updateShadowPosition();
     },
     initHealthBar:function(){
-        this.healthBar = cc.DrawNode.create();
-        this.healthBar.retain(); //j03m fix leak
-        this.healthBar.contentSize = cc.size(this.HealthBarWidth, this.HealthBarHeight);
-        this.healthBar.name = "healthBar";
-        this.layer.addChild(this.healthBar);
+        if (!this.healthBar){
+            this.healthBar = cc.DrawNode.create();
+            this.healthBar.retain(); //j03m fix leak
+            this.healthBar.contentSize = cc.size(this.HealthBarWidth, this.HealthBarHeight);
+            this.healthBar.name = "healthBar";
+            this.layer.addChild(this.healthBar);
+        }
+
         this.updateHealthBarPos();
+    },
+    reset: function(){
+        this.clearEffects();
+        this.removeAllChildren(true);
+        this.behavior.reset();
+
+        this.gameObject.hp = this.gameObject.MaxHP;
+        this.initHealthBar();
+        this.healthBar.setVisible(true);
+        this.drawHealthBar();
+
     },
 	cleanUp: function(){
 		if (this.currentMove){

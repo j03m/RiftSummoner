@@ -8,7 +8,7 @@ var tracers = {
     'touchlayer':0,
     'touchid':0,
     'touchout':0,
-    'loader':1,
+    'loader':0,
 	'mouse':0,
 	'states':0,
 	'sprite':0,
@@ -21,9 +21,9 @@ var tracers = {
 	'requestManager':0,
     'gameplay':0 ,
     'mainLayer':0,
-    'resource':1,
+    'resource':0,
     'camera':0,
-    'console':1,
+    'console':0,
     'zerverpipe':0,
     'ui':0,
     'scroller':0,
@@ -56,7 +56,8 @@ var tracers = {
     'targetting':0,
     'missiles':0,
     'resolutions':0,
-    'multipack':1,
+    'multipack':0,
+    'lockon':0
 };
 
 jc.log = function(categories, msg){

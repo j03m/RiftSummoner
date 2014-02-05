@@ -441,7 +441,6 @@ var spriteDefs = {
 		"elementType": "water",
 		"unitType": 3,
 		"multisheet-ipadhd": 2,
-		"multisheet-iphone5": 2,
 		"special": "None",
 		"powers": {
 			"regeneration": {
@@ -691,7 +690,7 @@ var spriteDefs = {
 			"spdamage": 1000,
 			"resistsRange": 80,
 			"actionDelays": {
-				"attack": 0
+				"attack": 0.05
 			},
 			"effectDelays": {
 				"attack": 0.05
@@ -705,7 +704,11 @@ var spriteDefs = {
 		},
 		"byStep": 1,
 		"behavior": "switch",
-		"inherit": "femaleSorcerer"
+		"inherit": "femaleSorcerer",
+		"powerTiles": [
+			"cannon",
+			"firearm"
+		]
 	},
 	"femaleSorcerer": {
 		"name": "femaleSorcerer",
@@ -1133,8 +1136,6 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of earth, this unit has almost 2x the health of other elemental knights.",
 		"elementType": "earth",
 		"unitType": 3,
-		"multisheet-ipadhd": 2,
-		"multisheet-iphone5": 2,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 16000,
@@ -1159,8 +1160,6 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of fire, this unit deals additional burn damage to its targets.",
 		"elementType": "fire",
 		"unitType": 3,
-		"multisheet-ipadhd": 2,
-		"multisheet-iphone5": 2,
 		"damageMods": {
 			"burn": {
 				"damage": 50,
@@ -1191,8 +1190,6 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
 		"elementType": "void",
 		"unitType": 3,
-		"multisheet-ipadhd": 2,
-		"multisheet-iphone5": 2,
 		"effect": "voidFire",
 		"powers": {
 			"vampireRadius": {
@@ -1225,8 +1222,6 @@ var spriteDefs = {
 		"elementType": "water",
 		"unitType": 3,
 		"effect": "healingRadius",
-		"multisheet-ipadhd": 2,
-		"multisheet-iphone5": 2,
 		"gameProperties": {
 			"MaxHP": 12000,
 			"movementType": 1,
@@ -1387,9 +1382,7 @@ var spriteDefs = {
 		"targetRadius": 150,
 		"startFrame": 1,
 		"endFrame": 204,
-		"multisheet-ipadhd": 4,
-		"multisheet-iphone5": 3,
-		"multisheet-iphone4": 2,
+		"multisheet-ipadhd": 2,
 		"gameProperties": {
 			"movementType": 1,
 			"targets": 1,
@@ -1529,7 +1522,11 @@ var spriteDefs = {
 		},
 		"byStep": 1,
 		"inherit": "femaleSorcerer",
-		"behavior": "healer"
+		"behavior": "healer",
+		"powerTiles": [
+			"healall",
+			"cureall"
+		]
 	},
 	"scowerer": {
 		"name": "scowerer",
@@ -1704,9 +1701,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"flip": true,
 		"special": "Poison",
-		"multisheet-ipadhd": 3,
-		"multisheet-iphone5": 2,
-		"multisheet-iphone4": 2,
+		"multisheet-ipadhd": 2,
 		"damageMods": {
 			"poison": {
 				"damage": 50,

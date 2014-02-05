@@ -4,1084 +4,265 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>spider.14.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{164,272},{158,268}}</string>
-                <key>offset</key>
-                <string>{-6,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{171,242},{158,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.15.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{210,2},{158,268}}</string>
-                <key>offset</key>
-                <string>{-6,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{171,242},{158,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.16.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{164,542},{158,268}}</string>
-                <key>offset</key>
-                <string>{-6,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{171,242},{158,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.167.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{374,1618},{246,264}}</string>
-                <key>offset</key>
-                <string>{13,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{146,244},{246,264}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.168.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1136,1018},{216,262}}</string>
-                <key>offset</key>
-                <string>{20,-121}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{168,246},{216,262}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.169.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1268,1546},{212,260}}</string>
-                <key>offset</key>
-                <string>{15,-122}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{165,248},{212,260}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.17.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,272},{160,268}}</string>
-                <key>offset</key>
-                <string>{-7,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{169,242},{160,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
             <key>spider.170.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1482,1520},{210,260}}</string>
+                <string>{{2,2},{158,196}}</string>
                 <key>offset</key>
-                <string>{9,-122}</string>
+                <string>{6,-91}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{160,248},{210,260}}</string>
+                <string>{{119,185},{158,196}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.171.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1096,2},{206,262}}</string>
-                <key>offset</key>
-                <string>{3,-122}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{156,247},{206,262}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.172.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{480,1350},{204,264}}</string>
-                <key>offset</key>
-                <string>{-4,-121}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{150,245},{204,264}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.179.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{206,268}}</string>
-                <key>offset</key>
-                <string>{15,-121}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{168,243},{206,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.18.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,542},{160,268}}</string>
-                <key>offset</key>
-                <string>{-7,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{169,242},{160,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.180.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{164,1622},{208,266}}</string>
-                <key>offset</key>
-                <string>{8,-122}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{160,245},{208,266}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1548,1782},{210,258}}</string>
+                <string>{{2,398},{158,194}}</string>
                 <key>offset</key>
-                <string>{-4,-121}</string>
+                <string>{-3,-91}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{147,248},{210,258}}</string>
+                <string>{{110,186},{158,194}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.183.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1760,1368},{210,258}}</string>
+                <string>{{132,200},{158,194}}</string>
                 <key>offset</key>
-                <string>{-10,-121}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{141,248},{210,258}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.184.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1354,998},{228,260}}</string>
-                <key>offset</key>
-                <string>{-8,-120}</string>
+                <string>{-8,-91}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{134,246},{228,260}}</string>
+                <string>{{105,186},{158,194}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
-            <key>spider.185.png</key>
+            <key>spider.217.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1002,1284},{258,262}}</string>
+                <string>{{2,594},{148,192}}</string>
                 <key>offset</key>
-                <string>{1,-119}</string>
+                <string>{13,-95}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{128,244},{258,262}}</string>
+                <string>{{131,191},{148,192}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.19.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,812},{160,268}}</string>
-                <key>offset</key>
-                <string>{-7,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{169,242},{160,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.193.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,1892},{154,266}}</string>
-                <key>offset</key>
-                <string>{-5,-121}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{174,244},{154,266}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.194.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1414,1260},{152,258}}</string>
-                <key>offset</key>
-                <string>{-5,-124}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{175,251},{152,258}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.195.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1262,1282},{150,262}}</string>
-                <key>offset</key>
-                <string>{-6,-122}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{175,247},{150,262}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.20.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,1082},{160,268}}</string>
-                <key>offset</key>
-                <string>{-7,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{169,242},{160,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.21.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,1352},{160,268}}</string>
-                <key>offset</key>
-                <string>{-7,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{169,242},{160,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.215.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1760,1580},{256,246}}</string>
-                <key>offset</key>
-                <string>{49,-132}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{177,265},{256,246}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.218.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1272,734},{172,262}}</string>
-                <key>offset</key>
-                <string>{3,-123}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{173,248},{172,262}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.219.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{164,812},{158,268}}</string>
-                <key>offset</key>
-                <string>{-5,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{172,242},{158,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.22.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,1622},{160,268}}</string>
-                <key>offset</key>
-                <string>{-7,-120}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{169,242},{160,268}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.334.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{322,1082},{180,266}}</string>
-                <key>offset</key>
-                <string>{3,-123}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{169,246},{180,266}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.335.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{804,1864},{180,258}}</string>
+                <string>{{162,2},{136,194}}</string>
                 <key>offset</key>
-                <string>{-14,-127}</string>
+                <string>{-11,-95}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{152,254},{180,258}}</string>
+                <string>{{113,190},{136,194}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.336.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1760,1828},{218,252}}</string>
+                <string>{{162,396},{164,188}}</string>
                 <key>offset</key>
-                <string>{-14,-130}</string>
+                <string>{-10,-98}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{133,260},{218,252}}</string>
+                <string>{{100,196},{164,188}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.337.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1584,1134},{232,252}}</string>
+                <string>{{134,788},{176,190}}</string>
                 <key>offset</key>
-                <string>{-21,-130}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{119,260},{232,252}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.338.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1584,634},{252,250}}</string>
-                <key>offset</key>
-                <string>{-19,-131}</string>
+                <string>{-16,-97}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{111,262},{252,250}}</string>
+                <string>{{88,194},{176,190}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.339.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1584,886},{252,246}}</string>
-                <key>offset</key>
-                <string>{-17,-133}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{113,266},{252,246}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.340.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1306,1808},{238,240}}</string>
+                <string>{{284,586},{178,180}}</string>
                 <key>offset</key>
-                <string>{-12,-136}</string>
+                <string>{-8,-102}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{125,272},{238,240}}</string>
+                <string>{{95,204},{178,180}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
-            <key>spider.345.png</key>
+            <key>spider.342.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1838,2},{234,202}}</string>
+                <string>{{580,2},{166,170}}</string>
                 <key>offset</key>
-                <string>{10,-155}</string>
+                <string>{-3,-106}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{106,213},{166,170}}</string>
+                <key>sourceSize</key>
+                <string>{384,384}</string>
+            </dict>
+            <key>spider.343.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{312,768},{170,164}}</string>
+                <key>offset</key>
+                <string>{-1,-110}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{149,310},{234,202}}</string>
+                <string>{{106,220},{170,164}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
+            </dict>
+            <key>spider.344.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{578,182},{176,158}}</string>
+                <key>offset</key>
+                <string>{4,-113}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{108,226},{176,158}}</string>
+                <key>sourceSize</key>
+                <string>{384,384}</string>
+            </dict>
+            <key>spider.346.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{426,186},{178,150}}</string>
+                <key>offset</key>
+                <string>{8,-117}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{111,234},{178,150}}</string>
+                <key>sourceSize</key>
+                <string>{384,384}</string>
             </dict>
             <key>spider.347.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1096,266},{236,190}}</string>
+                <string>{{434,2},{178,144}}</string>
                 <key>offset</key>
-                <string>{11,-161}</string>
+                <string>{8,-120}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{149,322},{236,190}}</string>
+                <string>{{111,240},{178,144}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.348.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1838,734},{236,174}}</string>
+                <string>{{462,366},{178,130}}</string>
                 <key>offset</key>
-                <string>{10,-169}</string>
+                <string>{7,-127}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{148,338},{236,174}}</string>
+                <string>{{110,254},{178,130}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.349.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1838,492},{240,174}}</string>
+                <string>{{328,386},{180,132}}</string>
                 <key>offset</key>
-                <string>{8,-169}</string>
+                <string>{6,-126}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{144,338},{240,174}}</string>
+                <string>{{108,252},{180,132}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.350.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1064,1864},{240,176}}</string>
+                <string>{{300,2},{182,132}}</string>
                 <key>offset</key>
-                <string>{3,-168}</string>
+                <string>{2,-126}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{139,336},{240,176}}</string>
+                <string>{{103,252},{182,132}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.351.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1096,504},{246,174}}</string>
+                <string>{{292,198},{186,132}}</string>
                 <key>offset</key>
-                <string>{0,-169}</string>
+                <string>{-1,-126}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{133,338},{246,174}}</string>
+                <string>{{98,252},{186,132}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.352.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1838,238},{252,174}}</string>
+                <string>{{152,594},{190,130}}</string>
                 <key>offset</key>
-                <string>{-3,-169}</string>
+                <string>{-2,-127}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{127,338},{252,174}}</string>
+                <string>{{95,254},{190,130}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.353.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1838,972},{256,172}}</string>
+                <string>{{2,788},{192,130}}</string>
                 <key>offset</key>
-                <string>{-4,-170}</string>
+                <string>{-3,-127}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{124,340},{256,172}}</string>
+                <string>{{93,254},{192,130}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
             <key>spider.354.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1096,1548},{262,170}}</string>
+                <string>{{2,200},{196,128}}</string>
                 <key>offset</key>
-                <string>{-2,-171}</string>
+                <string>{-1,-128}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{123,342},{262,170}}</string>
+                <string>{{93,256},{196,128}}</string>
                 <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.361.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{164,1082},{268,156}}</string>
-                <key>offset</key>
-                <string>{-6,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{116,356},{268,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.362.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{164,1352},{268,156}}</string>
-                <key>offset</key>
-                <string>{-7,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{268,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.363.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{270,1890},{266,156}}</string>
-                <key>offset</key>
-                <string>{-7,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{116,356},{266,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.364.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{322,1350},{266,156}}</string>
-                <key>offset</key>
-                <string>{-8,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{266,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.365.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{538,1884},{264,156}}</string>
-                <key>offset</key>
-                <string>{-8,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{116,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.366.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{622,1616},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.367.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{324,272},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.368.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{370,2},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.369.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{324,538},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.370.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{324,804},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.371.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{482,268},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.372.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{528,2},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.373.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{482,534},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.374.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{482,800},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.375.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{504,1066},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.376.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{640,268},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.377.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{686,2},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.378.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{640,534},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.379.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{640,800},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.380.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{662,1066},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.381.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{686,1332},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.382.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{780,1598},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.383.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{798,268},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.384.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{844,2},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.385.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{798,534},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.386.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{798,800},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.387.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{820,1066},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.388.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{844,1332},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.389.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{938,1598},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.390.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1306,2},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.391.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1572,2},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.392.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1306,160},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.393.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1572,160},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.394.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1306,318},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.395.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1572,318},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.396.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1306,476},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.397.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1572,476},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.398.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{956,752},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.399.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{978,1018},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
-            </dict>
-            <key>spider.400.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1114,752},{264,156}}</string>
-                <key>offset</key>
-                <string>{-9,-178}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{115,356},{264,156}}</string>
-                <key>sourceSize</key>
-                <string>{512,512}</string>
+                <string>{384,384}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -1091,9 +272,9 @@
             <key>realTextureFileName</key>
             <string>spiderSheet-ipadhd.1.pvr.ccz</string>
             <key>size</key>
-            <string>{2048,2048}</string>
+            <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:237d922f15ecf5cbe3124cd4a061d945:fdc080e57c3ee0aaf09dcaa333ff3fe4:e8d4851575d3404d713532ef18d0f8d0$</string>
+            <string>$TexturePacker:SmartUpdate:dfe28432f155c01550d01671b698b85b:fdc080e57c3ee0aaf09dcaa333ff3fe4:6a6ad8f2ae40728b371d3f644714e3d9$</string>
             <key>textureFileName</key>
             <string>spiderSheet-ipadhd.1.pvr.ccz</string>
         </dict>

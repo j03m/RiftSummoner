@@ -4,6 +4,19 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>elfArcherEarth_bg.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{135,274},{131,145}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{131,145}}</string>
+                <key>sourceSize</key>
+                <string>{131,145}</string>
+            </dict>
             <key>elfAssassin_bg.png</key>
             <dict>
                 <key>frame</key>
@@ -40,7 +53,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:d29dfdd9e2e0864b7ee3b6edfdb29b1a:cee1ddd92293713c7a9318f8f5aebd33:2bf29494edb8a9d3ce28b3a75b1b2187$</string>
+            <string>$TexturePacker:SmartUpdate:ff5f4511536ec41bd5b357028126f2af:69bb86243cac34214f43c441096ed285:2bf29494edb8a9d3ce28b3a75b1b2187$</string>
             <key>textureFileName</key>
             <string>cards2.png</string>
         </dict>

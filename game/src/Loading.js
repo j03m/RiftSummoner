@@ -226,27 +226,30 @@ var Loading = jc.UiElementsLayer.extend({
             sprites = hotr.arenaScene.data.teamBSprites;
         }
         this.schedule(function(){
-            var id = datas[i].id;
-            var name = datas[i].name
-            if (spriteDefs[name].creep){
-                for(var ii=0;ii<spriteDefs[name].number;ii++){
+            if (datas[i]){
+                var id = datas[i].id;
+                var name = datas[i].name
+                if (spriteDefs[name].creep){
+                    for(var ii=0;ii<spriteDefs[name].number;ii++){
+                        var sprite = jc.Sprite.spriteGenerator(spriteDefs, name, hotr.arenaScene.layer);
+                        if (!sprites[id]){
+                            sprites[id]= [];
+                        }
+                        sprite.id = id;
+                        sprites[id].push(sprite);
+                    }
+                }else{
                     var sprite = jc.Sprite.spriteGenerator(spriteDefs, name, hotr.arenaScene.layer);
                     if (!sprites[id]){
                         sprites[id]= [];
                     }
-                    sprite.id = id;
+                    sprite.id =id;
                     sprites[id].push(sprite);
                 }
-            }else{
-                var sprite = jc.Sprite.spriteGenerator(spriteDefs, name, hotr.arenaScene.layer);
-                if (!sprites[id]){
-                    sprites[id]= [];
-                }
-                sprite.id =id;
-                sprites[id].push(sprite);
             }
             status(i, datas.length);
             i++;
+
         }, 0.05, datas.length-1);
     },
     makeCreeps: function(number, team, status){
@@ -263,6 +266,7 @@ var Loading = jc.UiElementsLayer.extend({
             sprite.id = 'creep-'+team+'-'+i;
             creeps.push(sprite);
             status(i, number);
+            i++;
         },0.05, number-1);
 
     },

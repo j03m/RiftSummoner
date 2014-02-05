@@ -8,8 +8,8 @@ var smc = new sourceMap.SourceMapConsumer(JSON.parse(map));
 
 
     console.log(smc.originalPositionFor({
-        line: 287,
-        column: 304
+        line: 288,
+        column: 312
     }));
 
 

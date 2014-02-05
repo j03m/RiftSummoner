@@ -23,10 +23,18 @@ var powerTiles = {
         "type":"direct",
         "offense":"lightningBolt"
     },
-    "healing":{
+    "healall":{
         "png":dirImg + "powerTiles{v}.png",
         "plist":dirImg + "powerTiles{v}.plist",
         "icon":"Holy5.png",
+        "cooldown":2000,
+        "type":"global",
+        "offense":"healAll"
+    },
+    "cureall":{
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
+        "icon":"Holy3.png",
         "cooldown":2000,
         "type":"global",
         "offense":"healAll"
@@ -55,6 +63,14 @@ var powerTiles = {
         "type":"direct",
         "offense":"cannon",
         "defense":"tripleCannon"
+    },
+    "firearm":{
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
+        "icon":"Fire5.png",
+        "cooldown":2000,
+        "type":"direct",
+        "offense":"cannon"
     }
 }
 
@@ -63,6 +79,24 @@ var globalPowers = {
     "fireBall":function(){
 
     },
+    "firearm":function(touch, sprites){
+        var arena = hotr.arenaScene.layer;
+
+        //play tap effect at touch
+        var minSprite = this.getBestSpriteForTouch(touch, sprites);
+        if (minSprite.team == arena.selectedSprite.team){
+            return;
+        }else{
+            var swords = jc.makeSpriteWithPlist(touchUiPlist, touchUiPng, "swordsIcon.png");
+            arena.addChild(swords);
+            swords.setPosition(touch);
+            arena.selectedSprite.behavior.setState('special', 'special');
+            minSprite.gameObject.hp = 0; //instant death
+        }
+
+
+
+        },
     "cannon":function(touch){
         var arena = hotr.arenaScene.layer;
         var behavior = hotr.arenaScene.layer.teams['a'][0].behavior;
@@ -114,7 +148,7 @@ var globalPowers = {
             layer.removeChild(blinky, true);
             var foes = behavior.allFoesWithinRadiusOfPoint(400*jc.assetScaleFactor, touch);
             for (var i=0;i<foes.length;i++){
-                GeneralBehavior.applyDamage(foes[i], undefined, 200, jc.elementTypes.none);
+                GeneralBehavior.applyDamage(foes[i], undefined, 5000, jc.elementTypes.none);
             }
         }.bind(undefined, arena, touch));
         var seq = cc.Sequence.create(moveTo, func);
@@ -142,7 +176,7 @@ var globalPowers = {
         //damage them
         for(var i=0;i<foes.length;i++){
                 jc.genericPower('poison', undefined, undefined, foes[i], {
-                    "damage": 20,
+                    "damage": 1000,
                     "duration": 2,
                     "interval": 0.25
                 }, "life");

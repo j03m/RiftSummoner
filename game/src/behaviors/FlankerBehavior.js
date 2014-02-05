@@ -9,12 +9,12 @@ var FlankerBehavior = function(sprite){
 
 FlankerBehavior.prototype.handleFlankerIdle = function(dt){
     if (!this.locked){
-        this.locked = this.lockOnClosestNonTank();
+        this.lockOnClosestNonTank();
     }
 
     if (this.locked && !this.locked.isAlive()){
-            this.locked = undefined;
-            this.locked = this.lockOnClosestNonTank();
+            this.clearLock();
+            this.lockOnClosestNonTank();
     }
 
 

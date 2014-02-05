@@ -22,15 +22,9 @@ var ArenaGame = jc.WorldLayer.extend({
         this.maxTeamCreeps = 10;
         this.creepBatch = 5;
         this.creeplimit = 5;
-        var arenaSize = cc.size(5345 * jc.characterScaleFactor, 1505 * jc.characterScaleFactor);
-        var bounds = {
-            x:0,
-            y:0,
-            width:arenaSize.width,
-            height:arenaSize.height
-        }
 
-        if (this._super(arenaSize, gameboardFrames)) {
+
+        if (this._super(gameboardFrames)) {
             Math.seedrandom('yay i made a game');
 
             this.teams['a'] = [];
@@ -48,8 +42,8 @@ var ArenaGame = jc.WorldLayer.extend({
             this.nexusAPoint = cc.p(nexusOffset, this.worldSize.height/2);
             this.nexusBPoint = cc.p(this.worldSize.width - nexusOffset, this.worldSize.height/2);
 
-            var adjustX1 = 600 *jc.characterScaleFactor;
-            var adjustX2 = 400 *jc.characterScaleFactor;
+            var adjustX1 = 300 *jc.characterScaleFactor;
+            var adjustX2 = 200 *jc.characterScaleFactor;
             var adjustY = 200 *jc.characterScaleFactor;
             var adjustY1 = 75*jc.characterScaleFactor;
             this.spawnA1 = cc.p(this.nexusAPoint.x + adjustX1, this.nexusAPoint.y + adjustY1);
@@ -116,17 +110,33 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     makePowerBar:function(){
-        var powerNames = hotr.blobOperations.getPowers();
-        var powers = this.makeScrollPowers(powerNames);
-        var finalIds = [];
-        _.each(powerNames, function(power){
-            finalIds.push(power);
-        });
+        if (!this.selectedSprite){
+            throw "wat?";
+        }
+
         if (this.powerView){
             this.slideOutToTop(this.powerView);
             this.getParent().removeChild(this.powerView, false);
             this.powerView.clear();
         }
+
+        var powerNames = hotr.blobOperations.getPowersFor(this.selectedSprite.name, this.selectedSprite.id);
+        if (this.selectedSprite.powerTiles == undefined){
+            this.selectedSprite.powerTiles = {};
+            for(var i =0;i<powerNames.length;i++){
+                this.selectedSprite.powerTiles[powerNames[i]] = true;
+            }
+        }
+        if (powerNames.length == 0){
+            return;
+        }
+
+        var powers = this.makeScrollPowers(powerNames, this.selectedSprite.powerTiles);
+        var finalIds = [];
+        _.each(powerNames, function(power){
+            finalIds.push(power);
+        });
+
         this.powerView = new jc.ScrollingLayer();
         this.getParent().addChild(this.powerView);
 
@@ -145,7 +155,12 @@ var ArenaGame = jc.WorldLayer.extend({
         this.powerView.setPosition(cc.p(this.winSize.width/2, y));
         this.reorderChild(this.tableView, jc.topMost);
         this.powerView.hackOn();
-        this.powerView.setIndex(Math.floor(powers.length/2));
+
+        for(var i =0;i<powerNames.length;i++){
+            if (this.selectedSprite.powerTiles[powerNames[i]] == false){
+                this.powerView.disableCell(i);
+            }
+        }
 
     },
     makeSelectionBar:function(){
@@ -180,11 +195,15 @@ var ArenaGame = jc.WorldLayer.extend({
         return characters;
 
     },
-    makeScrollPowers: function(powers){
+    makeScrollPowers: function(powers, enabled){
         var powers =  _.map(powers, function(name){
-            return this.makePowerSprite(name);
+            if (enabled[name]){
+                return this.makePowerSprite(name);
+            }else{
+                return undefined;
+            }
         }.bind(this));
-        return powers;
+        return powers.clean(undefined);
     },
     makePowerSprite: function(powerName){
         var sprite = jc.makeSimpleSprite("characterPortraitFrame.png");
@@ -208,7 +227,7 @@ var ArenaGame = jc.WorldLayer.extend({
         return sprite;
     },
     powerSelectionCallback:function(index, sprite,data){
-        //this.doPlacePower(index, data);
+        this.doPlacePower(index, data);
     },
     selectionCallback:function(index, sprite, data){
         jc.log(['ArenaSelection'], 'index:' + index);
@@ -220,29 +239,41 @@ var ArenaGame = jc.WorldLayer.extend({
 
     },
     doPlacePower: function(index, data){
-        if (!data.used){
-
-            this.tableView.disableCell(index);
-            var config = powerTiles[data];
-            if (!config){
-                throw "unknown power: " + data;
-            }
-            var func = globalPowers[config['offense']].bind(this);
-            if (config.type == "direct"){
-                hotr.arenaScene.layer.nextTouchDo(function(touch, sprites){
-                    var worldPos = this.screenToWorld(touch);
-                    var nodePos = this.convertToItemPosition(worldPos);
-                    data.used = true;
-                    func(nodePos, sprites);
-                    jc.log(['arena'], 'fading out!');
-                }.bind(this));
-
-            }else if (config.type == "global"){
-                func();
-            }else{
-                throw "Unknown power type.";
-            }
+        if (!this.selectedSprite){
+            return;
         }
+
+        if (!this.selectedSprite.powerTiles[data]){
+            return;    //used
+        }
+
+
+        this.selectedSprite.powerTiles[data] = false; //disable it, used.
+        this.tableView.disableCell(index);
+        var config = powerTiles[data];
+        if (!config){
+            throw "unknown power: " + data;
+        }
+        var func = globalPowers[config['offense']].bind(this);
+        if (config.type == "direct"){
+            hotr.arenaScene.layer.nextTouchDo(function(touch, sprites){
+                var worldPos = this.screenToWorld(touch);
+                var nodePos = this.convertToItemPosition(worldPos);
+                data.used = true;
+                func(nodePos, sprites);
+                this.makePowerBar();
+                jc.log(['arena'], 'fading out!');
+            }.bind(this));
+
+        }else if (config.type == "global"){
+            func();
+            this.makePowerBar();
+        }else{
+            throw "Unknown power type.";
+        }
+
+
+
     },
     doPlaceHero:function(index, data){
         if (data.id == undefined){
@@ -316,7 +347,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.selectedSprite.behavior.setState('idle', 'idle');
             jc.playEffectOnTarget(this.charSelect, minSprite, this, true);
             this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
-            //this.makePowerBar();
+            this.makePowerBar();
         }
     },
     placeBarSprite:function(touch){
@@ -434,7 +465,7 @@ var ArenaGame = jc.WorldLayer.extend({
         }else{
             jc.log(['spritecommands'], "Already selected? How can that be? " + this.selectedSprite.name);
         }
-        //this.makePowerBar();
+        this.makePowerBar();
         this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
     },
     teamASpawn:function(){
@@ -484,6 +515,7 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     getDisplaySpritesAndMetaData: function(){
         var characters = hotr.blobOperations.getTeam();
+        characters = characters.slice(0, jc.teamSize)
         var names = _.pluck(characters, 'name');
         var ids = _.pluck(characters, 'id');
 
@@ -532,8 +564,8 @@ var ArenaGame = jc.WorldLayer.extend({
         jc.log(['Arena'], 'schedule');
         this.schedule(function(dt){
             jc.log(['Arena'], 'updating...');
-            this.doUpdate(0.5);
-        }, 0.5);
+            this.doUpdate(0.25);
+        },0.25);
     },
     getSprite:function(nameCreate){
         var sprite;
@@ -632,12 +664,15 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite.setBasePosition(point);
         sprite.ready(true);
 
+        delete this.teamASprites['teamanexus']
+
         var sprite = this.makeTeamBSprite({name:"nexus",'id':'teambnexus'});
         var point = cc.p(this.nexusBPoint.x-sprite.getTextureRect().width, this.nexusBPoint.y);
         point = this.convertToItemPosition(point);
         sprite.setBasePosition(point);
         sprite.ready(true);
         this.teamBNexus = sprite;
+        delete this.teamBSprites['teambnexus']
 
     },
     getTeam:function(who){
@@ -657,7 +692,9 @@ var ArenaGame = jc.WorldLayer.extend({
     update:function(dt){
 
         for(var i=0;i<this.sprites.length;i++)   {
-            this.sprites[i].behavior.handleMove(dt);
+            if (this.sprites[i] != undefined){
+                this.sprites[i].behavior.handleMove(dt);
+            }
         }
 
 
@@ -746,10 +783,8 @@ var ArenaGame = jc.WorldLayer.extend({
         var alive = 0;
         while(i<teamCreeps.length){
             if (teamCreeps[i].getParent() != this){ //not in play, recycle
-                teamCreeps[i].gameObject.hp = teamCreeps[i].gameObject.MaxHP;
-                teamCreeps[i].behavior.setState('idle', 'idle');
-                teamCreeps[i].clearEffects();
-                jc.playEffectOnTarget("teleport", teamCreeps[i], this);
+                teamCreeps[i].reset();
+
                 teamCreeps[i].setVisible(true);
 
                 if (team == 'b'){
@@ -765,6 +800,7 @@ var ArenaGame = jc.WorldLayer.extend({
                     teamCreeps[i].setBasePosition(this.teamASpawn());
 
                 }
+                jc.playEffectOnTarget("teleport", teamCreeps[i], this);
             }
             i++;
         }
@@ -1044,7 +1080,10 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     doGenericTouch:function(touch){
         this.selectedSprite.behavior.followCommand(touch);
-        jc.playEffectAtLocation("movement", touch, jc.shadowZOrder,this);
+        if (this.movement){
+            this.removeChild(this.movement, true);
+        }
+        this.movement = jc.playEffectAtLocation("movement", touch, jc.shadowZOrder,this);
 
     },
     doFriendTouch:function (sprite){
@@ -1239,11 +1278,10 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     showVictory:function(){
         this.started = false;
-        this.cleanup();
         if (this.tableView){
             this.getParent().removeChild(this.tableView, false);
         }
-
+        this.cleanUp();
 //        if (this.powerView){
 //            this.getParent().removeChild(this.powerView, false);
 //        }
@@ -1277,11 +1315,11 @@ var ArenaGame = jc.WorldLayer.extend({
     },
     showDefeat:function(){
         this.started = false;
-        this.cleanup();
+
         if (this.tableView){
             this.getParent().removeChild(this.tableView, false);
         }
-
+        this.cleanUp();
 //        if (this.powerView){
 //            this.getParent().removeChild(this.powerView, false);
 //        }
@@ -1307,11 +1345,14 @@ var ArenaGame = jc.WorldLayer.extend({
 
         hotr.arenaScene.addChild(this.defeat);
     },
-    cleanup:function(){
+    cleanUp:function(){
+        this.started = false;
         for(var i =0;i<this.sprites.length;i++){
-            this.removeChild(this.sprites[i],true);
-            this.sprites[i].cleanUp();
-            this.sprites[i] = undefined;
+            if (this.sprites[i]!=undefined){
+                this.removeChild(this.sprites[i],true);
+                this.sprites[i].cleanUp();
+                this.sprites[i] = undefined;
+            }
         }
     },
     timeExpired:function(){

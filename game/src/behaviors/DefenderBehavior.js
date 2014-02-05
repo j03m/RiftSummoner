@@ -18,12 +18,12 @@ DefenderBehavior.prototype.handleSeek = function(dt){
 
     //glade would not approve :(
     if (this.support && this.support.behavior.damager && this.support.behavior.damager.isAlive() && this.canTarget(this.support.behavior.damager)){
-        this.locked = this.support.behavior.damager;
+        this.setLock(this.support.behavior.damager);
         this.setState('attackmove', 'move');
         return;
     }
 
-    this.locked = this.lockOnEnemyInRadius();
+    this.lockOnEnemyInRadius();
     if (this.locked){
         this.setState('attackmove','move');
         return;
@@ -38,6 +38,10 @@ DefenderBehavior.prototype.handleSeek = function(dt){
     }
 
 
+}
+
+DefenderBehavior.prototype.lockOnEnemyInRadius = function(){
+    this.lockOnClosest(this.targetWithinRadius.bind(this), this.owner.otherteam);
 }
 
 DefenderBehavior.prototype.handleDefenderMove = function(dt){
@@ -75,15 +79,13 @@ DefenderBehavior.prototype.handleDefenderMove = function(dt){
         //this.setState('idle', 'move');
         this.moveToward(point, dt);
     }
-
-
 }
 
 
 
 DefenderBehavior.prototype.handleDefenderDamage = function(dt){
     if (this.damager && this.damager.isAlive() && this.damager != this.locked && this.isNot(['range', 'mage'], this.damager)){
-        this.locked = this.damager;
+        this.setLock(this.damager);
         this.setState('attackmove', 'move');
     }else{
         this.resume();
@@ -104,12 +106,12 @@ DefenderBehavior.prototype.defendThink = function(dt, selected){
     switch(state.brain){
         case 'idle':this.handleDefenderIdle(dt);
             break;
-//        case 'move':
-//            this.handleDefenderMove(dt);
-//            break;
-//        case 'attackmove':
-//            this.handleAttackMove(dt);
-//            break;
+        case 'move':
+            this.handleDefenderIdle(dt);
+            break;
+        case 'attackmove':
+            this.handleDefenderIdle(dt);
+            break;
         case 'fighting':this.handleFight(dt);
             break;
         case 'seek':this.handleSeek(dt);
@@ -122,12 +124,12 @@ DefenderBehavior.prototype.defendThink = function(dt, selected){
 
 DefenderBehavior.prototype.handleDefenderIdle = function(dt){
     if (!this.support){
-        this.support = this.lockOnClosestFriendlyNonTank();
+        this.lockOnClosestFriendlyNonTank();
     }
 
     if (!this.support || !this.support.isAlive()){
         this.support = undefined;
-        this.locked = this.lockOnClosestFriendlyNonTank();
+        this.lockOnClosestFriendlyNonTank();
     }
 
 

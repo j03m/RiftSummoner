@@ -16,6 +16,13 @@ GeneralBehavior.prototype.getState = function(){
     return {brain:this.brainState, anim:this.animationState};
 }
 
+GeneralBehavior.prototype.reset = function(){
+    this.clearLock()
+    this.support = undefined;
+    this.setState('idle', 'idle');
+    this.callbacksDisabled = undefined;
+}
+
 GeneralBehavior.prototype.resume = function(){
     this.setState(this.lastBrain, this.lastAnim);
 }
@@ -116,18 +123,9 @@ GeneralBehavior.prototype.targetWithinSeekRadius = function(target){
     }
 }
 
-//find an enemy that that is within my attack radius
-GeneralBehavior.prototype.lockOnEnemyInRadius = function(){
-    return this.lockOnClosest(undefined, this.owner.otherteam, this.owner.getSeekRadius(), this.owner.getSeekRadius());
-}
-
-//call lock on closest, but pass isUnlocked to check if anyone is locked on already, if so pass and check the next.
-GeneralBehavior.prototype.lockOnClosestUnlocked = function(){
-    return this.lockOnClosest(this.isUnlocked.bind(this), this.owner.otherteam);
-}
 
 GeneralBehavior.prototype.lockOnClosestFriendlyNonTank = function(){
-    return this.lockOnClosest(this.isUndefended.bind(this), this.owner.team);
+    return this.lockOnClosest(this.isUndefended.bind(this), this.owner.team, true);
 }
 
 GeneralBehavior.prototype.lockOnClosestNonTank = function(){
@@ -255,124 +253,178 @@ GeneralBehavior.prototype.getSliceData = function(){
 }
 
 
+GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team, support, skipTable){
 
+    jc.log('lockon', 'I am: ' + this.owner.name + ' id:' + this.owner.id + ' team:' + this.owner.team);
 
-GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team, ignoreNexus){
-
-    var sliceData = this.getSliceData()
+    var sliceData = this.getSliceData();
     var slices = sliceData.slices;
     var start = sliceData.start;
     var iter = sliceData.iter;
     var nexusSlice;
+
+    jc.log('lockon', 'I start: ' + start);
+
+
     if (this.owner.team == 'a'){
         var id = this.owner.layer.teamANexus.id;
         nexusSlice = this.owner.layer.idToSlice[id];
+    }
+
+
+    var lockFunc;
+    if (support){
+        lockFunc = this.setSupport.bind(this);
+    }else{
+        lockFunc = this.setLock.bind(this);
     }
 
     //slices are broken up into search groups based on target movement type (air to ground) etc
     var airGroup = team + jc.movementType.air;
     var groundGroup = team + jc.movementType.ground;
 
-
     //depending on what I can target
-
     var sliceAry
     var finalSliceAry = [];
     var aryCount = 0;
-    if (iter==1){
-        for(var i=start;i<slices[airGroup].length;i++){
-            if (i == nexusSlice && ignoreNexus){
-                continue;
-            }
+    var end;
+    if (iter == 1){
+        end = slices[airGroup].length
 
-            if (this.targetsAir()){
-                var sliceAry = this.sliceMapAsArray(slices, airGroup, i);
-                if (sliceAry.length != 0){
-                    //don't select a slice with just me in it
-                    if (sliceAry.indexOf(this.owner)!=-1 && sliceAry.length == 1){
-                        continue;
-                    }
-                    finalSliceAry = finalSliceAry.concat(sliceAry);
-                    break;
-                }
-            }
-            if (this.targetsGround()){
-                var sliceAry = this.sliceMapAsArray(slices, groundGroup, i);
-                if (sliceAry.length != 0){
-                    //don't select a slice with just me in it
-                    if (sliceAry.indexOf(this.owner)!=-1 && sliceAry.length == 1){
-                        continue;
-                    }
-                    finalSliceAry = finalSliceAry.concat(sliceAry);
-                    break;
-                }
-            }
-
-        }
     }else{
-        var count = 0;
-        for(var i=start;i>0;i--){
-            if (i == nexusSlice && ignoreNexus){
-                continue;
-            }
+        end = 0;
+    }
 
-            if (this.targetsAir()){
-                var sliceAry = this.sliceMapAsArray(slices, airGroup, i);
-                if (sliceAry.length != 0){
-                    //don't select a slice with just me in it
-                    if (sliceAry.indexOf(this.owner)!=-1 && sliceAry.length == 1){
-                        continue;
-                    }
-                    finalSliceAry = finalSliceAry.concat(sliceAry);
-                    count++;
-                   // if (count > 3){
-                        break;
-                    //}
-                }
-            }
-            count = 0;
-            if (this.targetsGround()){
-                var sliceAry = this.sliceMapAsArray(slices, groundGroup, i);
-                if (sliceAry.length != 0){
-                    //don't select a slice with just me in it
-                    if (sliceAry.indexOf(this.owner)!=-1 && sliceAry.length == 1){
-                        continue;
-                    }
-                    finalSliceAry = finalSliceAry.concat(sliceAry);
-                    count++;
-                    //if (count > 3){
-                        break;
-                    //}
+    jc.log('lockon', 'I end: ' + end);
 
-                }
-
-            }
+    var check = function(iterator, end, val){
+        if (val==1){
+            return iterator < end;
+        }else{
+            return iterator > end;
         }
     }
 
+    var final = [];
+    var target;
+    for(var i=start;check(i, end, iter);i+=iter){
+        if (i == nexusSlice){
+            continue;
+        }
+
+        var sliceAry;
+        if (this.targetsAir()){
+            jc.log('lockon', 'I target air: ' + end);
+            sliceAry = this.sliceMapAsArray(slices, airGroup, i);
+            jc.log('lockon', 'slice: ' + i + ' has: ' + sliceAry.length + ' enemies.');
+            target = this.checkSlice(checkFunc, sliceAry);
+        }
+
+        if (this.targetsGround()){
+            jc.log('lockon', 'I target ground: ' + end);
+            sliceAry = this.sliceMapAsArray(slices, groundGroup, i);
+            jc.log('lockon', 'slice: ' + i + ' has: ' + sliceAry.length + ' enemies.');
+            target = this.checkSlice(checkFunc, sliceAry);
+
+        }
+
+        jc.log('lockon', 'Did I find one? Target is not undefined: ' + (target!=undefined));
+
+        final = final.concat(sliceAry);
+        if (target!=undefined){
+            jc.log('lockon', 'Found a target: ' + target.name + ' - breaking.');
+            break;
+        }
+    }
+
+    if (!target){
+        jc.log('lockon', 'No target found');
+        target = this.pickRandomTarget(undefined, final, true, 10);
+
+        if (target){
+            jc.log('lockon', 'grab random');
+            lockFunc(target, skipTable);
+        }else if (!support){
+            jc.log('lockon', 'target the -nexus-');
+            if (this.owner.team == 'a'){
+                this.setLock(this.owner.layer.teamBNexus, skipTable);
+            }
+
+            if (this.owner.team == 'b'){
+                this.setLock(this.owner.layer.teamANexus, skipTable);
+            }
+        }
+    }
+}
+
+GeneralBehavior.prototype.checkSlice = function(checkFunc, sliceAry){
+
+    if (sliceAry.length != 0){
+
+
+        //don't select a slice with just me in it
+        if (sliceAry.indexOf(this.owner)!=-1 && sliceAry.length == 1){
+            jc.log('lockon', 'Im the only one in this slice.');
+            return false;
+        }
+
+        var target = this.pickRandomTarget(checkFunc, sliceAry);
+        if(target){
+            this.setLock(target);
+            jc.log('lockon', 'found - ' + target.name);
+            return target;
+        }
+
+    }else{
+        jc.log('lockon', 'No enemies in this slice.');
+    }
+    jc.log('lockon', 'found no one. ');
+    return undefined;
+}
+
+GeneralBehavior.prototype.pickRandomTarget = function(checkFunc, ary, ignoreCheck, limit){
     //return an random dude from that slice
-    if (finalSliceAry && finalSliceAry.length>0){
-        for(var i =0;i<5;i++){
-            var index = jc.randomNum(0,finalSliceAry.length-1);
-            var target = finalSliceAry[index];
-            if (target != this.owner && target.isAlive() && target != this.owner){
-                if (!checkFunc){
-                    return target;
-                }else{
-                    if (checkFunc(target)){
+    if (!limit){
+        limit = ary.length-1;
+    }
+    if (limit > ary.length-1){
+        limit = ary.length-1;
+    }
+
+    if (ary && ary.length>0){
+        for(var i =0;i<5;i++){ //5 tries
+            jc.log('lockon', '>>>select random - try: ' + i);
+            var index = jc.randomNum(0,limit);
+            var target = ary[index];
+            if (target != this.owner && target.isAlive()){
+                jc.log('lockon', '>>>not owner and is alive!');
+                if (target.id != 'teamanexus' && target.id != 'teambnexus'){
+                    jc.log('lockon', '>>>not a nexus!');
+                    if (checkFunc && !ignoreCheck){
+                        jc.log('lockon', '>>>check Func!');
+                        if (checkFunc(target)){
+                            jc.log('lockon', '>>>check Func pass - select!');
+                            return target;
+                        }else{
+                            jc.log('lockon', '>>>check Func failed - select!');
+                        }
+                    }else{
+                        jc.log('lockon', 'No check func - select!');
                         return target;
                     }
+                }else{
+                    jc.log('lockon', 'nexus - skip');
+                    continue; //don't attack the nexus until last
                 }
+
             }
         }
-        jc.log['targetting', "Tried 3 times to locate a target that was not me and alive"];
+        jc.log['lockon', "Tried 5 times to locate a target that was not me and alive"];
     }else{
-        jc.log['targetting', "couldn't find a target"];
+        jc.log['lockon', "couldn't find a target, no one in there"];
     }
 
-
-
-
+    return undefined;
 }
 
 GeneralBehavior.prototype.sliceMapAsArray = function(slices, group, index){
@@ -851,8 +903,8 @@ GeneralBehavior.prototype.handleState = function(dt, selected){
             break;
         case 'fighting':this.handleFight(dt);
             break;
-//        case 'damage':this.handleDamage(dt);
-//            break;
+      case 'move':this.handleIdle(dt);
+            break;
     }
     this.afterEffects();
 }
@@ -957,6 +1009,10 @@ GeneralBehavior.prototype.getAttackAnim = function(){
 
 GeneralBehavior.prototype.handleIdle = function(dt){
     //lock on who-ever is closest
+    if (this.forceLocked){
+        return;
+    }
+
     if (this.locked && this.damager && this.locked!=this.damager){ //if im being attacked and I'm locked, and they are not the same person
         var closer = this.whosCloser(this.locked, this.damager);
         if (closer == 1){
@@ -964,7 +1020,7 @@ GeneralBehavior.prototype.handleIdle = function(dt){
         }
 
         if (closer == -1){ //switch targets
-            this.locked = this.damager;
+            this.setLock(this.damager);
             this.damager = undefined;
         }
 
@@ -976,12 +1032,12 @@ GeneralBehavior.prototype.handleIdle = function(dt){
 
     if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){
         this.forceLocked = false;
-        this.locked = this.lockOnClosest(undefined, this.owner.otherteam);
+        this.lockOnClosest(this.targetUnlocked.bind(this), this.owner.otherteam);
     }
 
     if (this.locked && !this.locked.isAlive()){
         this.forceLocked = false;
-        this.locked = this.lockOnClosest(undefined, this.owner.otherteam);
+        this.lockOnClosest(this.targetUnlocked.bind(this), this.owner.otherteam);
     }
 
     if (this.locked){
@@ -1004,11 +1060,6 @@ GeneralBehavior.prototype.handleMove = function(dt){
         return;
     }
 
-    if (!this.forceLocked){
-        this.handleIdle(dt);
-    }
-
-
     var point = this.seekEnemy();
     if (!point){
         this.setState('idle','idle');
@@ -1028,7 +1079,7 @@ GeneralBehavior.prototype.followUserCommand = function(dt){
     var point = this.seek(this.followPoint);
     if (point.x == 0 && point.y == 0){
         //arrived - attack
-        this.locked = undefined;
+        this.clearLock()
         this.support = undefined;
         this.setState('idle', 'idle'); //switch to idle - user command is done
         return;
@@ -1124,7 +1175,7 @@ GeneralBehavior.prototype.followCommand = function(position){
 
 GeneralBehavior.prototype.attackCommand = function(target){
     if (this.owner.isAlive()){
-        this.locked = target;
+        this.setLock(target);
         this.followPoint = undefined;
         this.forceLocked = true;
         this.forceSupport = false;
@@ -1157,4 +1208,42 @@ GeneralBehavior.prototype.removeEffects = function(effect, effectFunc, effectNam
 GeneralBehavior.prototype.applyEffects = function(effect){
     var func = powerConfig[effect.name + "-apply"].bind(this);
     func(effect);
+}
+
+GeneralBehavior.prototype.setSupport = function(target){
+    this.support = target;
+}
+
+
+GeneralBehavior.prototype.setLock = function(target, noMark){
+    this.lazyInitLockTable();
+    this.locked = target;
+    if (!noMark){
+        jc.lockTable[this.owner.team][target.id] = this.owner.name + '-' + this.owner.id;
+    }
+}
+
+GeneralBehavior.prototype.clearLock = function(){
+    this.lazyInitLockTable();
+    if (this.locked){
+        jc.lockTable[this.owner.team][this.locked.id] = false;
+    }
+}
+GeneralBehavior.prototype.targetUnlocked = function(target){
+    this.lazyInitLockTable();
+    var result = jc.lockTable[this.owner.team][target.id];
+    if (result == undefined){
+        return true;
+    }else if (this.owner.name + '-' + this.owner.id == result){ //am I locked onto this, if so - its okay to stay locked
+        return true;
+    }
+    return false;
+}
+
+GeneralBehavior.prototype.lazyInitLockTable = function(target){
+    if (!jc.lockTable){
+        jc.lockTable = {};
+        jc.lockTable['a'] = {};
+        jc.lockTable['b'] = {};
+    }
 }

@@ -4,6 +4,19 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>elfArcherEarth_bg.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1158,564},{560,620}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{560,620}}</string>
+                <key>sourceSize</key>
+                <string>{560,620}</string>
+            </dict>
             <key>elfAssassin_bg.png</key>
             <dict>
                 <key>frame</key>
@@ -40,7 +53,7 @@
             <key>size</key>
             <string>{2048,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e324c31447d6c6a117f7c7f0904bad24:cee1ddd92293713c7a9318f8f5aebd33:5dd7d3c6870a0b6da142c0a80e3dfd9a$</string>
+            <string>$TexturePacker:SmartUpdate:fe2319a5853969f091512711dd14f106:69bb86243cac34214f43c441096ed285:5dd7d3c6870a0b6da142c0a80e3dfd9a$</string>
             <key>textureFileName</key>
             <string>cards2-ipadhd.pvr.ccz</string>
         </dict>

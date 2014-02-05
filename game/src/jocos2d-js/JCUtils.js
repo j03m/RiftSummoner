@@ -1,5 +1,5 @@
 var jc = jc || {};
-jc.teamSize = 5;
+jc.teamSize = 6;
 jc.totalCreeps = 10;
 
 
@@ -18,6 +18,16 @@ jc.attackStatePrefix.attack = 'attack';
 jc.attackStatePrefix.close = 'attackClose';
 jc.attackStatePrefix.special = 'special';
 
+
+Array.prototype.clean = function(deleteValue) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == deleteValue) {
+            this.splice(i, 1);
+            i--;
+        }
+    }
+    return this;
+};
 
 jc.adjustPosition = function(x,y){
     var pos = this.getPosition();

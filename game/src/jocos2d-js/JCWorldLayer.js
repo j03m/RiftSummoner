@@ -1,6 +1,6 @@
 var jc = jc || {};
 jc.WorldLayer = jc.UiElementsLayer.extend({
-    init: function(size, sprites) {
+    init: function(sprites) {
         if (this._super()) {
 
             var mapTiles = [];
@@ -9,16 +9,19 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
                 mapTiles.push(jc.makeSpriteWithMultipackPlist(gameboardPlists, gameboardPngs, gameboardFrames[i]));
             }
 
-            var tileX = mapTiles[0].getContentSize().width/2;
-            var tileY = size.height/2;
-            this.setContentSize(size);
+            var tileCs = mapTiles[0].getContentSize();
+            var tileX = tileCs.width/2;
+            var tileY = tileCs.height/2;
+            this.worldSize = cc.size(tileCs.width * sprites.length, tileCs.height);
+            this.setContentSize(this.worldSize);
             for(var i =0;i<mapTiles.length;i++){
                 mapTiles[i].setPosition(cc.p(tileX,tileY));
                 tileX+= mapTiles[i].getContentSize().width;
                 this.addChild(mapTiles[i]);
                 this.reorderChild(mapTiles[i],  jc.backDropZOrder);
             }
-            this.worldSize = size;            this.worldMidPoint = cc.p(this.worldSize.width/2, this.worldSize.height/2);
+
+            this.worldMidPoint = cc.p(this.worldSize.width/2, this.worldSize.height/2);
             this.screenMidPoint = cc.p(this.winSize.width/2, this.winSize.height/2);
 
             this.playableRect = cc.rect(0,0, this.worldSize.width, this.worldSize.height-400*jc.characterScaleFactor);
@@ -219,7 +222,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
     },
     initSlices:function(){
         if (!this.sliceSize){
-            this.sliceSize =500 * jc.characterScaleFactor;
+            this.sliceSize = 500 * jc.characterScaleFactor;
         }
 
         if (!this.slices){

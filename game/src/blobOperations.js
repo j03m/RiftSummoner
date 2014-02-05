@@ -115,7 +115,7 @@ hotr.blobOperations.getTeam = function(){
         }
     }
 
-    return team;
+    return team.clean(undefined);
 }
 
 hotr.blobOperations.createNewPlayer = function(callback){
@@ -225,9 +225,13 @@ hotr.blobOperations.incrementLevel = function(){
     hotr.playerBlob.questLevel++;
 }
 
-hotr.blobOperations.getPowers = function(){
-    //todo implement me
-    return ['poisonCloud', 'cannon'];
+hotr.blobOperations.getPowersFor = function(name, id){
+    var powers = spriteDefs[name].powerTiles;
+    //todo: use id to apply augments
+    if (!powers){
+        return [];
+    }
+    return powers;
 }
 
 hotr.blobOperations.indexToId = function(index){

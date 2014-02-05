@@ -4,6 +4,19 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>elfArcherEarth_bg.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{644,315},{311,344}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{311,344}}</string>
+                <key>sourceSize</key>
+                <string>{311,344}</string>
+            </dict>
             <key>elfAssassin_bg.png</key>
             <dict>
                 <key>frame</key>
@@ -40,7 +53,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:d29dfdd9e2e0864b7ee3b6edfdb29b1a:cee1ddd92293713c7a9318f8f5aebd33:2bf29494edb8a9d3ce28b3a75b1b2187$</string>
+            <string>$TexturePacker:SmartUpdate:ff5f4511536ec41bd5b357028126f2af:69bb86243cac34214f43c441096ed285:2bf29494edb8a9d3ce28b3a75b1b2187$</string>
             <key>textureFileName</key>
             <string>cards2-iphone5.png</string>
         </dict>

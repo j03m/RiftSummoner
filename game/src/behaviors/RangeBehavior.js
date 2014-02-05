@@ -47,7 +47,7 @@ RangeBehavior.prototype.handleRangeFight = function(dt){
 
     //is anyone closer?
     if (!this.forceLocked){
-        this.locked = this.lockOnClosest(undefined, this.owner.otherteam);
+        this.lockOnClosest(undefined, this.owner.otherteam);
     }
 
     //is my target alive?
@@ -269,7 +269,8 @@ RangeBehavior.prototype.doMissile = function(){
 
 RangeBehavior.prototype.handleRangeIdle = function(dt){
     //always lock on who-ever is closest
-    this.locked = this.lockOnClosest(undefined, this.owner.otherteam);
+    this.lockOnClosest(undefined, this.owner.otherteam, false, true ); //don't mark it in the lock table
+
 
     if (this.locked){
         this.setState('move', 'move');
