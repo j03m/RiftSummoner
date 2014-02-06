@@ -1,6 +1,6 @@
 var jc = jc || {};
-jc.teamSize = 6;
-jc.totalCreeps = 10;
+jc.teamSize = 10;
+jc.totalCreeps = 20;
 
 
 jc.config = {};

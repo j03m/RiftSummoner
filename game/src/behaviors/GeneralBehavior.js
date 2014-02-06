@@ -905,10 +905,19 @@ GeneralBehavior.prototype.handleState = function(dt, selected){
             break;
       case 'move':this.handleIdle(dt);
             break;
+      case 'special':this.handleSpecial(dt);
+            break;
     }
     this.afterEffects();
 }
 
+
+GeneralBehavior.prototype.handleSpecial = function(dt){
+    var state = this.getState();
+    if (state.anim != "special"){
+        this.setState('idle', 'idle');
+    }
+}
 
 GeneralBehavior.prototype.handleFight = function(dt){
 

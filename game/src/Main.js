@@ -468,6 +468,13 @@ var MainGame = cc.Layer.extend({
             }
         }
 
+        if (name == 'necromancer'){
+            this.addAssetChain(assetAry, 'skeletonSwordsman');
+            this.addAssetChain(assetAry,'skeletonArcher');
+        }
+
+
+
     }
 
 });

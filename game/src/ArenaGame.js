@@ -42,10 +42,10 @@ var ArenaGame = jc.WorldLayer.extend({
             this.nexusAPoint = cc.p(nexusOffset, this.worldSize.height/2);
             this.nexusBPoint = cc.p(this.worldSize.width - nexusOffset, this.worldSize.height/2);
 
-            var adjustX1 = 300 *jc.characterScaleFactor;
-            var adjustX2 = 200 *jc.characterScaleFactor;
-            var adjustY = 200 *jc.characterScaleFactor;
-            var adjustY1 = 75*jc.characterScaleFactor;
+            var adjustX1 = -300 *jc.characterScaleFactor;
+            var adjustX2 = -200 *jc.characterScaleFactor;
+            var adjustY = -200 *jc.characterScaleFactor;
+            var adjustY1 = -75*jc.characterScaleFactor;
             this.spawnA1 = cc.p(this.nexusAPoint.x + adjustX1, this.nexusAPoint.y + adjustY1);
             this.spawnA2 = cc.p(this.nexusAPoint.x + adjustX2, this.nexusAPoint.y + adjustY);
             this.spawnA3 = cc.p(this.nexusAPoint.x + adjustX2, this.nexusAPoint.y - adjustY);
@@ -118,6 +118,7 @@ var ArenaGame = jc.WorldLayer.extend({
             this.slideOutToTop(this.powerView);
             this.getParent().removeChild(this.powerView, false);
             this.powerView.clear();
+            this.powerView = undefined;
         }
 
         var powerNames = hotr.blobOperations.getPowersFor(this.selectedSprite.name, this.selectedSprite.id);
@@ -132,6 +133,10 @@ var ArenaGame = jc.WorldLayer.extend({
         }
 
         var powers = this.makeScrollPowers(powerNames, this.selectedSprite.powerTiles);
+        if (powers.length == 0){
+            return;
+        }
+
         var finalIds = [];
         _.each(powerNames, function(power){
             finalIds.push(power);
@@ -248,8 +253,7 @@ var ArenaGame = jc.WorldLayer.extend({
         }
 
 
-        this.selectedSprite.powerTiles[data] = false; //disable it, used.
-        this.tableView.disableCell(index);
+
         var config = powerTiles[data];
         if (!config){
             throw "unknown power: " + data;
@@ -261,12 +265,14 @@ var ArenaGame = jc.WorldLayer.extend({
                 var nodePos = this.convertToItemPosition(worldPos);
                 data.used = true;
                 func(nodePos, sprites);
+                this.selectedSprite.powerTiles[data] = false; //disable it, used.
                 this.makePowerBar();
                 jc.log(['arena'], 'fading out!');
             }.bind(this));
 
         }else if (config.type == "global"){
             func();
+            this.selectedSprite.powerTiles[data] = false; //disable it, used.
             this.makePowerBar();
         }else{
             throw "Unknown power type.";

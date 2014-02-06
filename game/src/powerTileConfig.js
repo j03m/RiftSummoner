@@ -37,15 +37,23 @@ var powerTiles = {
         "icon":"Holy3.png",
         "cooldown":2000,
         "type":"global",
-        "offense":"healAll"
+        "offense":"cureAll"
     },
-    "leech":{
-        "png":dirImg + "powerTiles.png",
-        "plist":dirImg + "powerTiles.plist",
+    "leechall":{
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
         "icon":"Shadow4.png",
         "cooldown":2000,
         "type":"global",
         "offense":"leechAll"
+    },
+    "raisedead":{
+        "png":dirImg + "powerTiles{v}.png",
+        "plist":dirImg + "powerTiles{v}.plist",
+        "icon":"Shadow2.png",
+        "cooldown":2000,
+        "type":"global",
+        "offense":"raiseDead"
     },
     "iceStorm":{
         "png":dirImg + "powerTiles{v}.png",
@@ -70,7 +78,7 @@ var powerTiles = {
         "icon":"Fire5.png",
         "cooldown":2000,
         "type":"direct",
-        "offense":"cannon"
+        "offense":"firearm"
     }
 }
 
@@ -83,13 +91,12 @@ var globalPowers = {
         var arena = hotr.arenaScene.layer;
 
         //play tap effect at touch
-        var minSprite = this.getBestSpriteForTouch(touch, sprites);
-        if (minSprite.team == arena.selectedSprite.team){
+
+        var minSprite = this.getBestSpriteForTouch(touch, sprites, arena.selectedSprite.enemyTeam());
+        if (!minSprite){
             return;
         }else{
-            var swords = jc.makeSpriteWithPlist(touchUiPlist, touchUiPng, "swordsIcon.png");
-            arena.addChild(swords);
-            swords.setPosition(touch);
+            arena.flash();
             arena.selectedSprite.behavior.setState('special', 'special');
             minSprite.gameObject.hp = 0; //instant death
         }
@@ -188,9 +195,58 @@ var globalPowers = {
 
     },
     "healAll":function(){
+        var arena = hotr.arenaScene.layer;
+        arena.flash();
+        arena.selectedSprite.behavior.setState('special', 'special');
+        var team = hotr.arenaScene.layer.teams['a'];
+        for(var i=0;i<team.length;i++){
+            if (team[i].name != 'nexus'){
+                jc.playEffectOnTarget('heal', team[i], arena, true );
+                team[i].gameObject.hp = team[i].gameObject.MaxHP;
+            }
+        }
+    },
+    "cureAll":function(){
+        var arena = hotr.arenaScene.layer;
+        arena.flash();
+        arena.selectedSprite.behavior.setState('special', 'special');
+        var team = hotr.arenaScene.layer.teams['a'];
+        for(var i=0;i<team.length;i++){
+            if (team[i].name != 'nexus' && team[i].isAlive()){
+                team[i].clearEffects();
+                jc.playEffectOnTarget('heal', team[i], arena, true );
+            }
+        }
+    },
+    "leechAll":function(){
 
     },
-    "leech":function(){
+    "raiseDead":function(){
+        //raise and place 5 skeletons on the board 3 sword, 2 archers
+        var arena = hotr.arenaScene.layer;
+        var necro = arena.selectedSprite;
+        var pos = necro.getBasePosition();
+        arena.flash();
+
+        function makeSkel(arena, name, pos){
+            var sprite = jc.Sprite.spriteGenerator(spriteDefs, name, hotr.arenaScene.layer);
+            arena.teamASpritePrep(sprite);
+            sprite.behavior.setState('special', 'special');
+            sprite.setPosition(cc.p(pos.x + jc.randomNum(-200, 200), pos.y + jc.randomNum(-200, 200)));
+            arena.addChild(sprite);
+        }
+
+        for (var i =0;i<5;i++){
+            arena.scheduleOnce(
+                function(){makeSkel(arena, 'skeletonSwordsman', pos)}, i/100 + 0.05
+            );
+        }
+
+        for (var i =0;i<5;i++){
+            arena.scheduleOnce(
+                function(){makeSkel(arena, 'skeletonArcher', pos)}, i/100 + 0.05
+            );
+        }
 
     },
     "iceStorm":function(){

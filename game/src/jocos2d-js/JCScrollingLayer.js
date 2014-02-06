@@ -72,17 +72,19 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
 		}
 	},
     disableCell:function(index){
-        if (jc.isBrowser){
-            jc.shade(this.sprites[index].pic);
-        }else{
-            var darkgray = new cc.Color3B(100, 100, 100);;
-            this.sprites[index].setColor(darkgray);
-            if (this.sprites[index].pic){
-                this.sprites[index].pic.setColor(darkgray);
-            }
+        if(this.sprites[index] && this.sprites[index].pic){
+            if (jc.isBrowser){
+                jc.shade(this.sprites[index].pic);
+            }else{
+                var darkgray = new cc.Color3B(100, 100, 100);;
+                this.sprites[index].setColor(darkgray);
+                if (this.sprites[index].pic){
+                    this.sprites[index].pic.setColor(darkgray);
+                }
 
+            }
+            this.sprites[index].disabled = true;
         }
-        this.sprites[index].disabled = true;
 
     },
     addMeta:function(index, name, value){

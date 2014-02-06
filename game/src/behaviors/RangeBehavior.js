@@ -119,13 +119,14 @@ RangeBehavior.prototype.doMissile = function(){
         jc.log('missiles', this.owner.name + ' ready, aim fire!');
 
         this.firing = true;
+        this.targetting = this.locked;
         var missileName = this.owner.gameObject.missile;
         if (!missileName){
             missileName = "greenbullet"; //todo temp, remove
         }
 
         var missileType = missileConfig[missileName];
-        var vector = this.getVectorTo(this.locked.getBasePosition(), this.owner.getBasePosition());
+        var vector = this.getVectorTo(this.targetting.getBasePosition(), this.owner.getBasePosition());
         var timeToImpact = vector.distance/missileType.speed;
 
         this.missile.setVisible(true);
@@ -155,10 +156,10 @@ RangeBehavior.prototype.doMissile = function(){
         //move it to the target at damageDelay speed
         var targetPos;
         if (this.owner.gameObject.missleTarget == "base"){
-            targetPos = this.locked.getBasePosition()
+            targetPos = this.targetting.getBasePosition()
         }else{
-            targetPos = this.locked.getBasePosition();
-            var targetTr = this.locked.getTextureRect();
+            targetPos = this.targetting.getBasePosition();
+            var targetTr = this.targetting.getTextureRect();
             targetPos.y += targetTr.height/2;
         }
 
@@ -220,10 +221,13 @@ RangeBehavior.prototype.doMissile = function(){
 
         var callback = cc.CallFunc.create(function(){
 
-            if (this.locked){
-                this.hitLogic();
+            if (this.targetting){
+                GeneralBehavior.applyDamage(this.targetting, this.owner, this.owner.gameObject.damage);
+
+                //if the character in question has damageMod effects, we need to do them here
+                this.damageEffects();
                 if (missileType.effect){
-                    jc.playEffectOnTarget(missileType.effect, this.locked, this.owner.layer);
+                    jc.playEffectOnTarget(missileType.effect, this.targetting, this.owner.layer);
                 }
             }else{
                 if (missileType.effect){

@@ -98,7 +98,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 5000,
-			"speed": 500,
+			"speed": 250,
 			"movementType": 0,
 			"missile": "ballVoid",
 			"missileOffset": {
@@ -172,7 +172,7 @@ var spriteDefs = {
 		"number": 3,
 		"gameProperties": {
 			"MaxHP": 1500,
-			"speed": 150,
+			"speed": 75,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 60,
@@ -197,7 +197,7 @@ var spriteDefs = {
 		"number": 3,
 		"gameProperties": {
 			"MaxHP": 1300,
-			"speed": 150,
+			"speed": 75,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 60,
@@ -225,7 +225,7 @@ var spriteDefs = {
 		"number": 3,
 		"gameProperties": {
 			"MaxHP": 1300,
-			"speed": 150,
+			"speed": 75,
 			"damage": 60,
 			"movementType": 1,
 			"targets": 1,
@@ -259,7 +259,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 1200,
-			"speed": 150,
+			"speed": 75,
 			"damage": 50,
 			"movementType": 1,
 			"targets": 1,
@@ -293,7 +293,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 1200,
-			"speed": 150,
+			"speed": 75,
 			"damage": 60,
 			"movementType": 1,
 			"targets": 1,
@@ -388,7 +388,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 18000,
-			"speed": 120,
+			"speed": 60,
 			"damage": 500,
 			"movementType": 1,
 			"targets": 1,
@@ -419,7 +419,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 16000,
-			"speed": 120,
+			"speed": 60,
 			"damage": 700,
 			"movementType": 1,
 			"targets": 1,
@@ -450,7 +450,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 6000,
-			"speed": 250,
+			"speed": 125,
 			"damage": 250,
 			"movementType": 1,
 			"targets": 2,
@@ -479,7 +479,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 6000,
-			"speed": 250,
+			"speed": 125,
 			"damage": 250,
 			"movementType": 1,
 			"targets": 2,
@@ -553,7 +553,7 @@ var spriteDefs = {
 			"targets": 2,
 			"missile": "arrowNormal",
 			"damage": 500,
-			"speed": 350,
+			"speed": 175,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -589,7 +589,7 @@ var spriteDefs = {
 			"targets": 2,
 			"missile": "arrowFire",
 			"damage": 250,
-			"speed": 300,
+			"speed": 150,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -625,7 +625,7 @@ var spriteDefs = {
 			"targets": 2,
 			"missile": "arrowPoison",
 			"poisonDamage": 10,
-			"speed": 300,
+			"speed": 150,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -659,7 +659,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"missile": "arrowVoid",
 			"targets": 2,
-			"speed": 300,
+			"speed": 150,
 			"actionDelays": {
 				"attack": 0.5
 			},
@@ -683,9 +683,9 @@ var spriteDefs = {
 		"cardIndex": 1,
 		"gameProperties": {
 			"MaxHP": 7500,
-			"speed": 450,
+			"speed": 225,
 			"movementType": 1,
-			"targets": 2,
+			"targets": 1,
 			"damage": 500,
 			"spdamage": 1000,
 			"resistsRange": 80,
@@ -695,15 +695,14 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.05
 			},
-			"targetRadius": 300,
-			"closeRadius": 100
+			"targetRadius": 50
 		},
 		"baseOffset": {
 			"x": 0,
 			"y": 10
 		},
 		"byStep": 1,
-		"behavior": "switch",
+		"behavior": "tank",
 		"inherit": "femaleSorcerer",
 		"powerTiles": [
 			"cannon",
@@ -807,7 +806,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 1000,
-			"speed": 300,
+			"speed": 150,
 			"movementType": 0,
 			"targets": 2,
 			"damage": 50,
@@ -840,7 +839,7 @@ var spriteDefs = {
 			"MaxHP": 1000,
 			"movementType": 0,
 			"targets": 2,
-			"speed": 300,
+			"speed": 150,
 			"damage": 75,
 			"missile": "magicVoid",
 			"resistsRange": 25,
@@ -896,7 +895,7 @@ var spriteDefs = {
 			"targets": 1,
 			"missile": "bomb",
 			"damage": 750,
-			"speed": 200,
+			"speed": 100,
 			"actionDelays": {
 				"attack": 1
 			},
@@ -987,7 +986,7 @@ var spriteDefs = {
 		"special": "Burn Damage",
 		"gameProperties": {
 			"MaxHP": 1000,
-			"speed": 340,
+			"speed": 175,
 			"movementType": 1,
 			"targets": 1,
 			"resistsRange": 50,
@@ -1019,7 +1018,7 @@ var spriteDefs = {
 		"special": "Burn Damage",
 		"gameProperties": {
 			"MaxHP": 1000,
-			"speed": 180,
+			"speed": 90,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 75,
@@ -1045,7 +1044,7 @@ var spriteDefs = {
 		"special": "Resist Fire",
 		"gameProperties": {
 			"MaxHP": 1000,
-			"speed": 200,
+			"speed": 100,
 			"movementType": 1,
 			"targets": 1,
 			"defense": {
@@ -1074,7 +1073,7 @@ var spriteDefs = {
 		"special": "Resist Fire",
 		"gameProperties": {
 			"MaxHP": 1000,
-			"speed": 150,
+			"speed": 75,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 50,
@@ -1139,7 +1138,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 16000,
-			"speed": 120,
+			"speed": 60,
 			"damage": 1000,
 			"movementType": 1,
 			"targets": 1,
@@ -1169,7 +1168,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 13000,
-			"speed": 120,
+			"speed": 60,
 			"damage": 1000,
 			"movementType": 1,
 			"targets": 1,
@@ -1200,7 +1199,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 12000,
-			"speed": 120,
+			"speed": 60,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 1000,
@@ -1226,7 +1225,7 @@ var spriteDefs = {
 			"MaxHP": 12000,
 			"movementType": 1,
 			"targets": 1,
-			"speed": 175,
+			"speed": 75,
 			"damage": 1000,
 			"actionDelays": {
 				"attack": 0.05
@@ -1301,7 +1300,7 @@ var spriteDefs = {
 		"special": "Healing",
 		"gameProperties": {
 			"MaxHP": 4000,
-			"speed": 300,
+			"speed": 150,
 			"movementType": 1,
 			"targets": 2,
 			"damage": 500,
@@ -1321,7 +1320,11 @@ var spriteDefs = {
 		},
 		"byStep": 1,
 		"inherit": "femaleSorcerer",
-		"behavior": "range"
+		"behavior": "range",
+		"powerTiles": [
+			"leechall",
+			"raisedead"
+		]
 	},
 	"nexus": {
 		"name": "nexus",
@@ -1379,7 +1382,7 @@ var spriteDefs = {
 		"elementType": "none",
 		"unitType": 3,
 		"special": "None",
-		"targetRadius": 150,
+		"targetRadius": 50,
 		"startFrame": 1,
 		"endFrame": 204,
 		"multisheet-ipadhd": 2,
@@ -1387,7 +1390,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"MaxHP": 20000,
-			"speed": 120,
+			"speed": 60,
 			"damage": 2000,
 			"actionDelays": {
 				"attack": 1
@@ -1441,7 +1444,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 9000,
-			"speed": 250,
+			"speed": 125,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 1000,
@@ -1501,7 +1504,7 @@ var spriteDefs = {
 		"special": "Healing",
 		"gameProperties": {
 			"MaxHP": 4000,
-			"speed": 200,
+			"speed": 100,
 			"movementType": 1,
 			"targets": 2,
 			"damage": 100,
@@ -1553,7 +1556,7 @@ var spriteDefs = {
 			"movementType": 1,
 			"targets": 1,
 			"resistsRange": 80,
-			"speed": 500,
+			"speed": 250,
 			"damage": 10,
 			"actionDelays": {
 				"attack": 0.01
@@ -1604,7 +1607,7 @@ var spriteDefs = {
 			"MaxHP": 2000,
 			"movementType": 1,
 			"targets": 1,
-			"speed": 450,
+			"speed": 225,
 			"damage": 50,
 			"resistsRange": 100,
 			"actionDelays": {
@@ -1643,6 +1646,133 @@ var spriteDefs = {
 		},
 		"behavior": "flanker"
 	},
+	"skeletonArcher": {
+		"name": "skeletonArcher",
+		"formalName": "Skeleton Archer",
+		"details": "An undead minion wielding a bow and attacking at range. ",
+		"elementType": "earth",
+		"unitType": 3,
+		"flip": true,
+		"special": "None",
+		"gameProperties": {
+			"MaxHP": 1500,
+			"speed": 60,
+			"damage": 500,
+			"movementType": 1,
+			"targets": 2,
+			"missile": "arrowNormal",
+			"actionDelays": {
+				"attack": 1
+			},
+			"effectDelays": {
+				"attack": 2
+			},
+			"targetRadius": 1500,
+			"seekRadius": 100
+		},
+		"animations": {
+			"move": {
+				"start": 206,
+				"end": 229,
+				"delay": 0.08,
+				"type": 0
+			},
+			"attackClose": {
+				"start": 232,
+				"end": 260,
+				"delay": 0.08,
+				"type": 1
+			},
+			"attack": {
+				"start": 262,
+				"end": 295,
+				"delay": 0.08,
+				"type": 1
+			},
+			"idle": {
+				"start": 181,
+				"end": 203,
+				"delay": 0.08,
+				"type": 0
+			},
+			"special": {
+				"start": 321,
+				"end": 350,
+				"delay": 0.08,
+				"type": 1
+			},
+			"dead": {
+				"start": 297,
+				"end": 318,
+				"delay": 0.08,
+				"type": 1
+			}
+		},
+		"behavior": "range"
+	},
+	"skeletonSwordsman": {
+		"name": "skeletonSwordsman",
+		"formalName": "Skeleton Swordsman",
+		"details": "An undead minion wielding a sword and dealing melee attacks.",
+		"elementType": "earth",
+		"unitType": 3,
+		"flip": true,
+		"special": "None",
+		"gameProperties": {
+			"MaxHP": 2500,
+			"speed": 60,
+			"damage": 300,
+			"movementType": 1,
+			"targets": 1,
+			"actionDelays": {
+				"attack": 1
+			},
+			"effectDelays": {
+				"attack": 1
+			},
+			"targetRadius": 50,
+			"seekRadius": 100
+		},
+		"animations": {
+			"move": {
+				"start": 26,
+				"end": 49,
+				"delay": 0.025,
+				"type": 0
+			},
+			"attack": {
+				"start": 52,
+				"end": 80,
+				"delay": 0.02,
+				"type": 1
+			},
+			"attack2": {
+				"start": 82,
+				"end": 115,
+				"delay": 0.02,
+				"type": 1
+			},
+			"idle": {
+				"start": 1,
+				"end": 23,
+				"delay": 0.02,
+				"type": 0
+			},
+			"special": {
+				"start": 141,
+				"end": 170,
+				"delay": 0.06,
+				"type": 1
+			},
+			"dead": {
+				"start": 117,
+				"end": 138,
+				"delay": 0.06,
+				"type": 1
+			}
+		},
+		"behavior": "tank"
+	},
 	"snakeThing": {
 		"name": "snakeThing",
 		"formalName": "Serpent Guardian",
@@ -1652,7 +1782,7 @@ var spriteDefs = {
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 10000,
-			"speed": 300,
+			"speed": 150,
 			"movementType": 1,
 			"targets": 1,
 			"damage": 500,
@@ -1711,7 +1841,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 10000,
-			"speed": 400,
+			"speed": 200,
 			"movementType": 1,
 			"targets": 1,
 			"resistsRange": 50,
@@ -1762,7 +1892,7 @@ var spriteDefs = {
 		"special": "Healing",
 		"gameProperties": {
 			"MaxHP": 6000,
-			"speed": 110,
+			"speed": 70,
 			"movementType": 1,
 			"targets": 2,
 			"damage": 100,
@@ -1821,7 +1951,7 @@ var spriteDefs = {
 			"MaxHP": 5000,
 			"movementType": 1,
 			"targets": 2,
-			"speed": 200,
+			"speed": 100,
 			"damage": 250,
 			"missile": "magicNormal",
 			"actionDelays": {

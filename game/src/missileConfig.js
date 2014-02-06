@@ -70,7 +70,7 @@ var missileConfig = {
                         "delay":0.1,
                         "path":"jump",
                         "effect":"explo",
-                        "speed":170
+                        "speed":250
                     },
                     "magicFire":{
                         "png":dirImg + "missiles{v}.{ext}",
@@ -129,7 +129,7 @@ var missileConfig = {
                         "frames":6,
                         "delay":0.05,
                         "effect":"explo",
-                        "speed":800,
+                        "speed":400,
                         "path":"jump"
                     },
 
