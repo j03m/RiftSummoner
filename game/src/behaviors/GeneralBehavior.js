@@ -896,6 +896,11 @@ GeneralBehavior.prototype.handleState = function(dt, selected){
                 return;
             }
         }
+    }else{
+        if (this.forceLocked && !this.locked.isAlive()){
+            this.forceLocked = false;
+            this.locked = false;
+        }
     }
 
     switch(state.brain){
@@ -1031,17 +1036,10 @@ GeneralBehavior.prototype.handleIdle = function(dt){
         if (closer == -1){ //switch targets
             this.setLock(this.damager);
             this.damager = undefined;
+            return;
         }
-
-        if (closer == 0){
-            //don't change anything for now, but check again later.
-        }
-
     }
 
-    if (!this.locked){
-        this.locked = this.lockOnSomeoneClose(this.owner.enemyTeam);
-    }
 
     if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){
         this.forceLocked = false;

@@ -90,6 +90,9 @@ jc.ScrollingLayer = jc.TouchLayer.extend({
     addMeta:function(index, name, value){
         this.metaData[index][name]=value;
     },
+    getMeta:function(index){
+        return this.metaData[index];
+    },
     placeSpriteOver:function(index, plist, png, frame){
         var mask = jc.makeSpriteWithPlist(plist, png, frame);
         this.sprites[index].mask = mask;

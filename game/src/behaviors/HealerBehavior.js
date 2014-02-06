@@ -39,8 +39,8 @@ HealerBehavior.prototype.healThink = function(dt, selected){
     switch(state.brain){
         case 'idle':this.handleHealerIdle(dt);
             break;
-//        case 'move':
-
+        case 'move':this.handleHealerIdle(dt);
+            break;
         case 'fighting':this.handleFight(dt);
             break;
         case 'healing':this.handleHeal(dt);

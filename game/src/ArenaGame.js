@@ -67,9 +67,7 @@ var ArenaGame = jc.WorldLayer.extend({
     init: function() {
         this.name = "Arena";
         this.idCount = 0;
-        this.maxTeamCreeps = 10;
-        this.creepBatch = 5;
-        this.creeplimit = 5;
+        this.creeplimit = 3.5;
 
 
         if (this._super(gameboardFrames)) {
@@ -148,26 +146,53 @@ var ArenaGame = jc.WorldLayer.extend({
         this.teamACount = _.toArray(this.teamASprites).length;
         this.teamBAry = _.toArray(this.teamBSprites);
         this.teamBCount = this.teamBAry.length;
+
+
         this.panToWorldPoint(this.nexusAPoint, this.getScaleOne(), jc.defaultTransitionTime, function(){
             //this.placeEnemyTeam();
             //this.nextTouchDo(this.initialSetupAction,true);
             this.makeSelectionBar();
             this.finalActions();
+
+//            //if first play -
+//            var first = hotr.blobOperations.isFirstPlay();
+//            //stop game
+//            if (first){
+//                this.started = false;
+//                //place character
+//                var data = this.tableView.getMeta(0);
+//                this.doPlaceHero(0, data);
+//                this.nextTouchAction = undefined;
+//                this.placeBarSprite(this.teamANexus.getPosition());
+//                this.placeArrowOn(this.teamANexus, "down");
+//            }
+
+
+                //this is your nexus, defend it. If it gets destroyed you lose.
+                //place heroes using the bar below
+                //Use hero powers to turn the tide of the battle
+                //summon swarm - this is the creep swarm. they spawn every 10 seconds or so - support them to destroy the enemy nexus
+            //place bad guys
+                //This is the enemy team - kill them all and destroy their nexus to win
+
         }.bind(this));
 
 
     },
-    makePowerBar:function(){
-        if (!this.selectedSprite){
-            throw "wat?";
-        }
-
+    clearPowerBar:function(){
         if (this.powerView){
             this.slideOutToTop(this.powerView);
             this.getParent().removeChild(this.powerView, false);
             this.powerView.clear();
             this.powerView = undefined;
         }
+    },
+    makePowerBar:function(){
+        if (!this.selectedSprite){
+            throw "wat?";
+        }
+
+        this.clearPowerBar();
 
         var powerNames = hotr.blobOperations.getPowersFor(this.selectedSprite.name, this.selectedSprite.id);
         if (this.selectedSprite.powerTiles == undefined){
@@ -280,7 +305,11 @@ var ArenaGame = jc.WorldLayer.extend({
         return sprite;
     },
     powerSelectionCallback:function(index, sprite,data){
-        this.doPlacePower(index, data);
+
+        if (this.selectedSprite && this.selectedSprite.isAlive()){
+            this.doPlacePower(index, data);
+        }
+
     },
     selectionCallback:function(index, sprite, data){
         jc.log(['ArenaSelection'], 'index:' + index);
@@ -461,12 +490,6 @@ var ArenaGame = jc.WorldLayer.extend({
         this.makePowerBar();
         this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
     },
-    teamASpawn:function(){
-        var spot = jc.randomNum(0,2);
-
-
-        }
-    },
     placeCreeps:function(world){
         var def = spriteDefs[this.barSelection.name];
         this.clearSelection();
@@ -523,6 +546,8 @@ var ArenaGame = jc.WorldLayer.extend({
         }
         this.selectedCreeps = undefined;
         this.nextTouchAction = undefined;
+        this.clearPowerBar();
+
     },
     placeHero:function(world){
         var sprite = this.makeTeamASprite(this.barSelection);
@@ -727,6 +752,7 @@ var ArenaGame = jc.WorldLayer.extend({
     setUp:function(){
 
         this.teamASprites = hotr.arenaScene.data.teamASprites;
+
         this.teamBSprites = hotr.arenaScene.data.teamBSprites;
         this.teamACreeps = hotr.arenaScene.data.teamACreeps;
         this.teamBCreeps = hotr.arenaScene.data.teamBCreeps;
@@ -746,7 +772,7 @@ var ArenaGame = jc.WorldLayer.extend({
         sprite.setBasePosition(point);
         sprite.ready(true);
         this.teamBNexus = sprite;
-        delete this.teamBSprites['teambnexus']
+        delete this.teamBSprites['teambnexus'];
 
     },
     getTeam:function(who){
@@ -797,7 +823,7 @@ var ArenaGame = jc.WorldLayer.extend({
             if (this.lastcreep > this.creeplimit || !this.firstCreepSummon){
                 this.makeCreeps();
                 this.firstCreepSummon = true;
-                this.creeplimit+=2; //add 2 seconds each summon
+                this.creeplimit*=2; //add 2 seconds each summon
                 this.lastcreep = 0;
             }
 
@@ -933,6 +959,12 @@ var ArenaGame = jc.WorldLayer.extend({
         var minX = this.worldSize.width;
         var maxY;
         var minY = this.worldSize.height;
+
+        //check selected sprite is alive if not, clear
+        if (this.selectedSprite && !this.selectedSprite.isAlive()){
+            this.clearSelection();
+        }
+
         for(var i =0;i<this.sprites.length;i++){
             var currentSprite = this.sprites[i];
             var currentSpriteTeam = currentSprite.team;

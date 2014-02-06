@@ -1695,7 +1695,7 @@ var spriteDefs = {
 				"delay": 0.08,
 				"type": 0
 			},
-			"special": {
+			"rise": {
 				"start": 321,
 				"end": 350,
 				"delay": 0.08,
@@ -1758,7 +1758,7 @@ var spriteDefs = {
 				"delay": 0.02,
 				"type": 0
 			},
-			"special": {
+			"rise": {
 				"start": 141,
 				"end": 170,
 				"delay": 0.06,

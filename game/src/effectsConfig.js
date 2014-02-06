@@ -1,6 +1,6 @@
 var effectsConfig = {
     "explo":{
-        "png":dirImg + "effects{v}.png",
+        "png":dirImg + "effects{v}.{ext}",
         "plist":dirImg + "effects{v}.plist",
         "start":"explo.1.png",
         "placement":"bottom",
@@ -16,7 +16,7 @@ var effectsConfig = {
         "shake":true
     },
     "healingRadius":{
-        "png":dirImg + "effects{v}.png",
+        "png":dirImg + "effects{v}.{ext}",
         "plist":dirImg + "effects{v}.plist",
         "start":"healingRadius.1.png",
         "frames":39,
@@ -30,8 +30,8 @@ var effectsConfig = {
 
     },
     "heal":{
-        "png":dirImg + "effects{v}.png",
-        "plist":dirImg + "effects{v}.plist",
+        "png":dirImg + "effects2{v}.{ext}",
+        "plist":dirImg + "effects2{v}.plist",
         "start":"heal.1.png",
         "frames":50,
         "delay":0.03,
@@ -41,16 +41,16 @@ var effectsConfig = {
 
     },
     "arrow":{
-        "png":dirImg + "uiElements{v}.png",
-        "plist":dirImg + "uiElements{v}.plist",
+        "png":dirImg + "effects2{v}.{ext}",
+        "plist":dirImg + "effects2{v}.plist",
         "start":"arrow.1.png",
         "frames":16,
         "delay":0.04,
         "placement":"center"
     },
     "teleport":{
-        "png":dirImg + "effects{v}.png",
-        "plist":dirImg + "effects{v}.plist",
+        "png":dirImg + "effects2{v}.{ext}",
+        "plist":dirImg + "effects2{v}.plist",
         "start":"teleport.1.png",
         "frames":14,
         "delay":0.02,
@@ -58,7 +58,7 @@ var effectsConfig = {
         "times":1
     },
     "movement":{
-        "png":dirImg + "touch{v}.png",
+        "png":dirImg + "touch{v}.{ext}",
         "plist":dirImg + "touch{v}.plist",
         "start":"movement.1.png",
         "frames":8,
@@ -67,7 +67,7 @@ var effectsConfig = {
         "times":4
     },
     "characterSelection":{
-        "png":dirImg + "touch{v}.png",
+        "png":dirImg + "touch{v}.{ext}",
         "plist":dirImg + "touch{v}.plist",
         "start":"characterSelection.1.png",
         "frames":16,
@@ -77,7 +77,7 @@ var effectsConfig = {
 
     },
     "enemySelection":{
-        "png":dirImg + "touch{v}.png",
+        "png":dirImg + "touch{v}.{ext}",
         "plist":dirImg + "touch{v}.plist",
         "start":"enemySelection.1.png",
         "frames":16,
@@ -88,7 +88,7 @@ var effectsConfig = {
 
     },
     "allySelection":{
-        "png":dirImg + "touch{v}.png",
+        "png":dirImg + "touch{v}.{ext}",
         "plist":dirImg + "touch{v}.plist",
         "start":"allySelection.1.png",
         "frames":16,
@@ -98,7 +98,7 @@ var effectsConfig = {
         "times":3
     },
     "burning":{
-        "png":dirImg + "effects{v}.png",
+        "png":dirImg + "effects{v}.{ext}",
         "plist":dirImg + "effects{v}.plist",
         "start":"burning.1.png",
         "frames":33,
@@ -112,7 +112,7 @@ var effectsConfig = {
         "times":6
     },
     "poisoned2":{
-        "png":dirImg + "effects{v}.png",
+        "png":dirImg + "effects{v}.{ext}",
         "plist":dirImg + "effects{v}.plist",
         "start":"poisoned2.1.png",
         "frames":24,
@@ -128,7 +128,7 @@ var effectsConfig = {
 
     },
     "lifeDrain":{
-        "png":dirImg + "effects{v}.png",
+        "png":dirImg + "effects{v}.{ext}",
         "plist":dirImg + "effects{v}.plist",
         "start":"lifeDrain.1.png",
         "frames":38,
@@ -143,7 +143,7 @@ var effectsConfig = {
         times:5
     },
     "vampireRadius":{
-        "png":dirImg + "effects{v}.png",
+        "png":dirImg + "effects{v}.{ext}",
         "plist":dirImg + "effects{v}.plist",
         "start":"vampireRadius.1.png",
         "frames":30,
@@ -157,8 +157,8 @@ var effectsConfig = {
         }
     },
     "voidFire":{
-        "png":dirImg + "effects{v}.png",
-        "plist":dirImg + "effects{v}.plist",
+        "png":dirImg + "effects2{v}.{ext}",
+        "plist":dirImg + "effects2{v}.plist",
         "start":"voidFire.1.png",
         "frames":32,
         "delay":0.05,
@@ -171,7 +171,7 @@ var effectsConfig = {
         }
     },
     "hit":{
-        "png":dirImg + "effects{v}.png",
+        "png":dirImg + "effects{v}.{ext}",
         "plist":dirImg + "effects{v}.plist",
         "start":"hit.1.png",
         "frames":20,

@@ -29,6 +29,14 @@ makeSig = function(creds){
     };
 }
 
+hotr.blobOperations.isFirstPlay = function(){
+    return hotr.playerBlob.tutorial == undefined;
+}
+
+hotr.blobOperations.setFirstPlayComplete = function(){
+    hotr.playerBlob.tutorial = true;
+}
+
 hotr.blobOperations.getCreds = function(){
     return jc.getLocalStorage(hotr.credsKey);
 }
@@ -40,8 +48,6 @@ hotr.blobOperations.generateCreds = function(){
     jc.setLocalStorage(hotr.credsKey, creds);
     return creds;
 }
-
-
 
 hotr.blobOperations.getBlob = function(callback){
     var authToken = hotr.blobOperations.getCachedAuthToken()

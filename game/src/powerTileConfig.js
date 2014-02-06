@@ -231,7 +231,7 @@ var globalPowers = {
         function makeSkel(arena, name, pos){
             var sprite = jc.Sprite.spriteGenerator(spriteDefs, name, hotr.arenaScene.layer);
             arena.teamASpritePrep(sprite);
-            sprite.behavior.setState('special', 'special');
+            sprite.behavior.setState('special', 'rise');
             sprite.setPosition(cc.p(pos.x + jc.randomNum(-200, 200), pos.y + jc.randomNum(-200, 200)));
             arena.addChild(sprite);
         }
