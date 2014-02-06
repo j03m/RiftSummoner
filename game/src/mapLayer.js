@@ -151,6 +151,7 @@ var MapLayer = jc.UiElementsLayer.extend({
     windowConfig: {
         "mainFrame": {
             "type": "sprite",
+            "applyAdjustments": true,
             "sprite": "map2.png",
             "applyAdjustments":true,
             "z": 1,

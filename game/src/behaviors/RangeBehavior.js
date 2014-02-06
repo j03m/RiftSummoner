@@ -233,6 +233,10 @@ RangeBehavior.prototype.doMissile = function(){
                 if (missileType.effect){
                     jc.playEffectAtLocation(missileType.effect, this.missile.getPosition(), jc.shadowZOrder, this.owner.layer);
                 }
+            }else{
+                if (missileType.effect){
+                    jc.playEffectAtLocation(missileType.effect, this.missile.getPosition(), jc.shadowZOrder, this.owner.layer);
+                }
             }
             //this.missile.setVisible(false);
             //this.owner.layer.removeChild(this.missile, false);

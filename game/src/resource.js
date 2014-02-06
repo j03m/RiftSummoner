@@ -27,6 +27,8 @@ var effectsPng = transformAsset(dirImg + "effects{v}.{ext}",  jc.characterAssetC
 
 
 
+
+
 var g_characterPngs = {};
 var g_characterPlists = {};
 

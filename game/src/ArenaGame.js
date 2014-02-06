@@ -16,6 +16,54 @@ var ArenaGame = jc.WorldLayer.extend({
     teamBPowers:undefined,
     presentationSpeed:0.2,
     timeLimit:45,
+    initTiles:function(){
+        if (jc.assetCategory == 'ipadhd'){
+            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-ipadhd0.png'));
+            //add all board frames to the batch node
+            for(var i=0;i<gameboardFrames.length;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
+                gameboardBatchNodes[0].addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+
+        }
+
+        if (jc.assetCategory == 'iphone5'){
+            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-iphone50.png'));
+            //add all board frames to the batch node
+            for(var i=0;i<gameboardFrames.length;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
+                gameboardBatchNodes[0].addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+
+        }
+        if (jc.assetCategory == 'iphone4'){
+            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-iphone40.png'));
+            gameboardBatchNodes.push(cc.SpriteBatchNode.create(dirImg + 'gameboard-iphone41.png'));
+
+            for(var i=0;i<2;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[1], gameboardPngs[1], gameboardFrames[i]);
+                gameboardBatchNodes[1].addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+
+            //add all board frames to the batch node
+            for(var i=2;i<gameboardFrames.length;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
+                gameboardBatchNodes[0].addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+        }
+
+        if (jc.assetCategory == 'iphone'){
+            for(var i=0;i<gameboardFrames.length;i++){
+                var boardSprite = jc.makeSpriteWithPlist(gameboardPlists[0], gameboardPngs[0], gameboardFrames[i]);
+                gameboardBatchNodes[0].addChild(boardSprite);
+                gameboardSprites.push(boardSprite);
+            }
+        }
+    },
     init: function() {
         this.name = "Arena";
         this.idCount = 0;
@@ -241,7 +289,6 @@ var ArenaGame = jc.WorldLayer.extend({
         if (!data.dead){
             this.doPlaceHero(index, data);
         }
-
     },
     doPlacePower: function(index, data){
         if (!this.selectedSprite){
@@ -395,6 +442,27 @@ var ArenaGame = jc.WorldLayer.extend({
             }else{
                 return true;
             }
+        }
+        this.selectedCreeps = undefined;
+        this.nextTouchAction = undefined;
+    },
+    placeHero:function(world){
+        var sprite = this.makeTeamASprite(this.barSelection);
+        var nodePos = this.convertToItemPosition(world);
+        sprite.setBasePosition(nodePos);
+        sprite.ready(true);
+        jc.playEffectOnTarget("teleport", sprite, this);
+        this.tableView.disableCell(this.barIndex);
+        if (this.selectedSprite != sprite){
+            this.clearSelection();
+            jc.playEffectOnTarget(this.charSelect, sprite, this, true );
+            this.selectedSprite = sprite;
+        }
+        this.makePowerBar();
+        this.nextTouchDo(this.setSpriteTargetLocation.bind(this), true);
+    },
+    teamASpawn:function(){
+        var spot = jc.randomNum(0,2);
 
 
         }
@@ -1221,6 +1289,8 @@ var ArenaGame = jc.WorldLayer.extend({
         return minSprite;
     },
     checkWinner: function(){
+
+
         //first - is everyone dead on either team?
         var teamaisdead = true;
         var teambisdead = true;

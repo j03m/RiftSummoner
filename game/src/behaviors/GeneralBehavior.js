@@ -1039,6 +1039,10 @@ GeneralBehavior.prototype.handleIdle = function(dt){
 
     }
 
+    if (!this.locked){
+        this.locked = this.lockOnSomeoneClose(this.owner.enemyTeam);
+    }
+
     if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){
         this.forceLocked = false;
         this.lockOnClosest(this.targetUnlocked.bind(this), this.owner.otherteam);
@@ -1062,6 +1066,11 @@ GeneralBehavior.prototype.handleMove = function(dt){
     var state = this.getState();
     if (state.brain != "move" && state.brain != 'followUserCommand'){
         return;
+    }
+
+
+    if (this.owner.name == 'goblin'){
+        console.log('break');
     }
 
     if (state.brain ==  'followUserCommand'){

@@ -34,7 +34,7 @@ var tracers = {
     'jc.shade':0,
     'setText':0,
     'missile':0,
-    'map':0,
+    'map':1,
     'bubble':0,
     'tutorials':0,
     'blobOperations':0,
