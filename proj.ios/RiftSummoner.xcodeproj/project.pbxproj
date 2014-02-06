@@ -1678,7 +1678,7 @@
 				LastUpgradeCheck = 0430;
 				TargetAttributes = {
 					A922753C1517C094001B78AA = {
-						DevelopmentTeam = UDL7JEM3SA;
+						DevelopmentTeam = TUNB2E35YK;
 					};
 				};
 			};
@@ -1993,8 +1993,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Cranial Trauma Games Corp";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Cranial Trauma Games Corp";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2021,8 +2021,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Cranial Trauma Games Corp";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Cranial Trauma Games Corp";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joseph Mordetsky (UDL7JEM3SA)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -2091,8 +2091,8 @@
 					"-ljs_static",
 				);
 				PRODUCT_NAME = "Rift Summoner";
-				PROVISIONING_PROFILE = "0671ECB1-2DD3-4A89-971C-6DBBE8FBCD5F";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "F0E3221A-12C2-45D7-B9DA-4C92D9F8F777";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2142,8 +2142,8 @@
 					"-ljs_static",
 				);
 				PRODUCT_NAME = "Rift Summoner";
-				PROVISIONING_PROFILE = "0671ECB1-2DD3-4A89-971C-6DBBE8FBCD5F";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "F0E3221A-12C2-45D7-B9DA-4C92D9F8F777";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
