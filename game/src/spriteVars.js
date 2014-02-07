@@ -450,6 +450,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 6000,
+			"missile": "greenbullet",
 			"speed": 125,
 			"damage": 250,
 			"movementType": 1,
@@ -479,6 +480,7 @@ var spriteDefs = {
 		},
 		"gameProperties": {
 			"MaxHP": 6000,
+			"missile": "greenbullet",
 			"speed": 125,
 			"damage": 250,
 			"movementType": 1,
@@ -564,7 +566,7 @@ var spriteDefs = {
 				"x": 0,
 				"y": 10
 			},
-			"targetRadius": 2400
+			"targetRadius": 1800
 		},
 		"inherit": "elf"
 	},
@@ -600,7 +602,7 @@ var spriteDefs = {
 				"x": 0,
 				"y": 10
 			},
-			"targetRadius": 2400
+			"targetRadius": 1800
 		},
 		"inherit": "elf"
 	},
@@ -636,7 +638,7 @@ var spriteDefs = {
 				"x": 0,
 				"y": 10
 			},
-			"targetRadius": 2400
+			"targetRadius": 1800
 		},
 		"inherit": "elf"
 	},
@@ -670,7 +672,7 @@ var spriteDefs = {
 				"x": 0,
 				"y": 10
 			},
-			"targetRadius": 2400
+			"targetRadius": 1800
 		},
 		"inherit": "elf"
 	},
@@ -1302,6 +1304,7 @@ var spriteDefs = {
 			"MaxHP": 4000,
 			"speed": 150,
 			"movementType": 1,
+			"missile": "greenbullet",
 			"targets": 2,
 			"damage": 500,
 			"actionDelays": {
@@ -1309,7 +1312,7 @@ var spriteDefs = {
 				"heal": 0.4
 			},
 			"effectDelays": {
-				"attack": 0.05,
+				"attack": 0.15,
 				"heal": 0.05
 			},
 			"targetRadius": 600
@@ -1454,7 +1457,7 @@ var spriteDefs = {
 			"effectDelays": {
 				"attack": 0.5
 			},
-			"targetRadius": 100
+			"targetRadius": 50
 		},
 		"baseOffset": {
 			"x": -20,
@@ -1653,6 +1656,8 @@ var spriteDefs = {
 		"elementType": "earth",
 		"unitType": 3,
 		"flip": true,
+		"creep": true,
+		"number": 3,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 1500,
@@ -1717,6 +1722,8 @@ var spriteDefs = {
 		"elementType": "earth",
 		"unitType": 3,
 		"flip": true,
+		"creep": true,
+		"number": 3,
 		"special": "None",
 		"gameProperties": {
 			"MaxHP": 2500,

@@ -8,7 +8,7 @@ var RangeBehavior =  function(sprite){
     if (!this.missile){
         var missileName = this.owner.gameObject.missile;
         if (!missileName){
-            missileName = "greenbullet"; //todo temp, remove
+            throw "In correct range config - no missile!"
         }
 
         var missileType = missileConfig[missileName];
@@ -182,9 +182,6 @@ RangeBehavior.prototype.doMissile = function(){
 			moveTo = cc.JumpTo.create(timeToImpact, targetPos, v.distance/2, 1);
 		}else if (missileType.path =="arrow"){
             var height = v.distance/2;
-            if (missileStart.y + height <= targetPos.y){
-                height = targetPos.y+height/2;
-            }
             moveTo = cc.JumpTo.create(timeToImpact, targetPos, height, 1);
         }else if (missileType.path == "bullet"){
             var subbed = cc.pSub(missileStart, cc.p(targetPos.x, targetPos.y));
@@ -273,8 +270,9 @@ RangeBehavior.prototype.doMissile = function(){
 
 RangeBehavior.prototype.handleRangeIdle = function(dt){
     //always lock on who-ever is closest
-    this.lockOnClosest(undefined, this.owner.otherteam, false, true ); //don't mark it in the lock table
-
+    if (!this.forceLocked){
+        this.lockOnClosest(undefined, this.owner.otherteam, false, true ); //don't mark it in the lock table
+    }
 
     if (this.locked){
         this.setState('move', 'move');

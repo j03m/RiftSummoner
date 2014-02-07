@@ -268,7 +268,6 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team, support, ski
 
     if (this.owner.team == 'a'){
         var id = this.owner.layer.teamANexus.id;
-        nexusSlice = this.owner.layer.idToSlice[id];
     }
 
 
@@ -283,10 +282,7 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team, support, ski
     var airGroup = team + jc.movementType.air;
     var groundGroup = team + jc.movementType.ground;
 
-    //depending on what I can target
-    var sliceAry
-    var finalSliceAry = [];
-    var aryCount = 0;
+
     var end;
     if (iter == 1){
         end = slices[airGroup].length
@@ -308,9 +304,6 @@ GeneralBehavior.prototype.lockOnClosest = function(checkFunc, team, support, ski
     var final = [];
     var target;
     for(var i=start;check(i, end, iter);i+=iter){
-        if (i == nexusSlice){
-            continue;
-        }
 
         var sliceAry;
         if (this.targetsAir()){

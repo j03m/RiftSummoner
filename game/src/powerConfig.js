@@ -28,7 +28,7 @@ var powerConfig = {
         //heal them
         for(var i =0;i<friends.length;i++){
             if (GeneralBehavior.heal(this.owner, friends[i], config.heal)){
-                jc.playEffectOnTarget("heal", friends[i],  this.owner.layer);
+                //jc.playEffectOnTarget("heal", friends[i],  this.owner.layer);
             }
         }
     },
@@ -44,8 +44,8 @@ var powerConfig = {
         var heal = 0;
         for(var i =0;i<foes.length;i++){
             if (GeneralBehavior.applyDamage( foes[i], this.owner, config.damage)){
-                jc.playTintedEffectOnTarget("lifeDrain", foes[i], this.owner.layer, true, cc.magenta());
-                heal+=config.damage;
+                //jc.playTintedEffectOnTarget("lifeDrain", foes[i], this.owner.layer, true, cc.magenta());
+                heal+=config.damage * 0.2; //20%
             }
         }
         if (heal!=0){
@@ -73,7 +73,7 @@ var powerConfig = {
         //damage them
         for(var i=0;i<foes.length;i++){
             if (GeneralBehavior.applyDamage(foes[i], this.owner, config.damage)){
-              //  jc.playEffectOnTarget("burning", foes[i], this.owner.layer);
+                //jc.playEffectOnTarget("burning", foes[i], this.owner.layer);
             }
         }
     },
@@ -129,7 +129,7 @@ var powerConfig = {
         jc.checkPower(value, "vampireDrain");
         var config = spriteDefs[value].damageMods["vampireDrain"];
         if (GeneralBehavior.applyDamage(this.locked, this.owner, config.damage)){
-            jc.playTintedEffectOnTarget("lifeDrain", this.locked, this.owner.layer, true, cc.magenta());
+            //jc.playTintedEffectOnTarget("lifeDrain", this.locked, this.owner.layer, true, cc.magenta());
         }
 
         if (GeneralBehavior.heal(this.owner, this.owner, config.heal)){
