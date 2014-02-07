@@ -358,13 +358,14 @@ var MainGame = cc.Layer.extend({
             }
         }
 
-        //todo: load character powers - oh boy.
-
-        assets.pushUnique(g_characterPlists["cannonball"]);
-        assets.pushUnique(g_characterPngs["cannonball"]);
-
         this.addAssetChain(assets, 'goblinKnightNormal');
         this.addAssetChain(assets, 'nexus');
+
+        //todo: load character powers - oh boy.
+
+//        assets.pushUnique(g_characterPlists["cannonball"]);
+//        assets.pushUnique(g_characterPngs["cannonball"]);
+
 
         //transform
         for (var i =0;i<assets.length;i++){

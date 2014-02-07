@@ -112,11 +112,11 @@ var Loading = jc.UiElementsLayer.extend({
         this.spriteLoadStarted = true;
     },
     postProc:function(statuscb){
-        if (!jc.parsed[effectsPlist]){
-            cc.SpriteFrameCache.getInstance().addSpriteFrames(effectsPlist);
-            jc.parsed[effectsPlist]= true;
-        }
-        hotr.arenaScene.layer.shadowBatchNode = cc.SpriteBatchNode.create(effectsPng);
+//        if (!jc.parsed[effectsPlist]){
+//            cc.SpriteFrameCache.getInstance().addSpriteFrames(effectsPlist);
+//            jc.parsed[effectsPlist]= true;
+//        }
+//        hotr.arenaScene.layer.shadowBatchNode = cc.SpriteBatchNode.create(effectsPng);
 
         hotr.arenaScene.data.teamASprites = {};
         this.idsToSprites(hotr.arenaScene.data.teamA, 'a', statuscb);

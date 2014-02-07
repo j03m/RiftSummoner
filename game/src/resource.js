@@ -25,6 +25,8 @@ var touchUiPng = transformAsset(dirImg + "touch{v}.{ext}",  jc.characterAssetCat
 var effectsPlist = transformAsset(dirImg + "effects{v}.plist",  jc.characterAssetCategory);
 var effectsPng = transformAsset(dirImg + "effects{v}.{ext}",  jc.characterAssetCategory);
 
+var effects2Plist = transformAsset(dirImg + "effects2{v}.plist",  jc.characterAssetCategory);
+var effects2Png = transformAsset(dirImg + "effects2{v}.{ext}",  jc.characterAssetCategory);
 
 
 
@@ -176,7 +178,7 @@ for (var entry in missileConfig){
 }
 
 for (var entry in effectsConfig){
-    var png = transformAsset(effectsConfig[entry].png);
+    var png = transformAsset(effectsConfig[entry].png, jc.characterAssetCategory);
     g_characterPngs[entry] =png;
     effectsConfig[entry].png = png;
 	if (effectsConfig[entry].plist){
@@ -188,7 +190,7 @@ for (var entry in effectsConfig){
 
 
 for (var entry in powerTiles){
-    var png = transformAsset(powerTiles[entry].png);
+    var png = transformAsset(powerTiles[entry].png, jc.characterAssetCategory);
     g_characterPngs[entry] =png;
     powerTiles[entry].png = png;
     if (powerTiles[entry].plist){

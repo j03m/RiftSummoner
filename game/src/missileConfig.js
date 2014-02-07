@@ -51,7 +51,7 @@ var missileConfig = {
                     },
                     "arrowNormal":{
                         "png":dirImg + "missiles{v}.{ext}",
-                        "plist":dirImg + "missiles.plist",
+                        "plist":dirImg + "missiles{v}.plist",
                         "start":"arrowNormal.1.png",
                         "hasDirection":true,
                         "initialAngle":-45,
