@@ -7,7 +7,7 @@
             <key>elfArcherEarth_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1158,564},{560,620}}</string>
+                <string>{{1158,1126},{560,620}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>elfAssassin_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1158,2},{560,620}}</string>
+                <string>{{1158,564},{560,620}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -43,6 +43,32 @@
                 <key>sourceSize</key>
                 <string>{2048,1154}</string>
             </dict>
+            <key>skeletonArcher_bg.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1158,2},{560,620}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{560,620}}</string>
+                <key>sourceSize</key>
+                <string>{560,620}</string>
+            </dict>
+            <key>skeletonArcher_pose.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1158,1688},{538,612}}</string>
+                <key>offset</key>
+                <string>{-3,-4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{8,8},{538,612}}</string>
+                <key>sourceSize</key>
+                <string>{560,620}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -53,7 +79,7 @@
             <key>size</key>
             <string>{2048,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ff5f4511536ec41bd5b357028126f2af:69bb86243cac34214f43c441096ed285:2bf29494edb8a9d3ce28b3a75b1b2187$</string>
+            <string>$TexturePacker:SmartUpdate:427b578e8049084bae4eaf876246495e:68b65dfb4128534c85fb20a2cdc260ad:2bf29494edb8a9d3ce28b3a75b1b2187$</string>
             <key>textureFileName</key>
             <string>cards2-ipadhd.png</string>
         </dict>
