@@ -24,7 +24,7 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
             this.worldMidPoint = cc.p(this.worldSize.width/2, this.worldSize.height/2);
             this.screenMidPoint = cc.p(this.winSize.width/2, this.winSize.height/2);
 
-            this.playableRect = cc.rect(0,0, this.worldSize.width, this.worldSize.height-400*jc.characterScaleFactor);
+            this.playableRect = cc.rect(0,0, this.worldSize.width, this.worldSize.height-800*jc.characterScaleFactor);
 
             this.setViewCenter(cc.p(this.worldSize.width/2,this.worldSize.height/2));
             this.bubbleAllTouches(true);

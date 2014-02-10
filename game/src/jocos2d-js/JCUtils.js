@@ -793,8 +793,8 @@ jc.insidePlayableRect=function(point){
 
 jc.insideEllipse = function(point, center){
     //http://math.stackexchange.com/questions/76457/check-if-a-point-is-within-an-ellipse
-    var major = jc.elMajor * jc.assetScaleFactor;
-    var minor = jc.elMinor * jc.assetScaleFactor;
+    var major = jc.elMajor * jc.characterScaleFactor;
+    var minor = jc.elMinor * jc.characterScaleFactor;
     var xDiff = point.x - center.x;
     var yDiff = point.y - center.y;
     var majorSq = major*major;

@@ -4,2319 +4,1227 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>ogre.1.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{870,1806},{106,112}}</string>
-                <key>offset</key>
-                <string>{13,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{75,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.10.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1314,462},{100,112}}</string>
-                <key>offset</key>
-                <string>{15,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{80,118},{100,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
             <key>ogre.100.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{530,708},{94,128}}</string>
+                <string>{{1430,666},{156,212}}</string>
                 <key>offset</key>
-                <string>{7,-43}</string>
+                <string>{12,-73}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{75,94},{94,128}}</string>
+                <string>{{126,159},{156,212}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.101.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,1134},{98,126}}</string>
+                <string>{{1884,252},{162,208}}</string>
                 <key>offset</key>
-                <string>{9,-44}</string>
+                <string>{16,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{75,96},{98,126}}</string>
+                <string>{{127,163},{162,208}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.102.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{626,700},{112,124}}</string>
+                <string>{{1412,1124},{186,208}}</string>
                 <key>offset</key>
-                <string>{18,-45}</string>
+                <string>{30,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{77,98},{112,124}}</string>
+                <string>{{129,163},{186,208}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.103.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{352,1004},{116,128}}</string>
+                <string>{{1112,1452},{190,212}}</string>
                 <key>offset</key>
-                <string>{22,-43}</string>
+                <string>{37,-73}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{79,94},{116,128}}</string>
+                <string>{{134,159},{190,212}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.104.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,1406},{114,130}}</string>
+                <string>{{1236,692},{192,216}}</string>
                 <key>offset</key>
-                <string>{25,-42}</string>
+                <string>{41,-71}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{83,92},{114,130}}</string>
+                <string>{{137,155},{192,216}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.105.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{196,1702},{112,130}}</string>
+                <string>{{1368,448},{186,216}}</string>
                 <key>offset</key>
-                <string>{26,-42}</string>
+                <string>{44,-71}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{85,92},{112,130}}</string>
+                <string>{{143,155},{186,216}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.106.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{456,600},{106,126}}</string>
+                <string>{{1128,1666},{176,210}}</string>
                 <key>offset</key>
-                <string>{26,-44}</string>
+                <string>{44,-74}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{88,96},{106,126}}</string>
+                <string>{{148,161},{176,210}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.107.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,1958},{88,116}}</string>
+                <string>{{1556,976},{146,192}}</string>
                 <key>offset</key>
-                <string>{23,-49}</string>
+                <string>{39,-83}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{94,106},{88,116}}</string>
+                <string>{{158,179},{146,192}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.108.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1508,2},{92,112}}</string>
+                <string>{{1884,650},{154,186}}</string>
                 <key>offset</key>
-                <string>{28,-54}</string>
+                <string>{46,-91}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{97,113},{92,112}}</string>
+                <string>{{161,190},{154,186}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.109.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{548,1886},{100,114}}</string>
-                <key>offset</key>
-                <string>{31,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{96,116},{100,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1298,232},{102,112}}</string>
+                <string>{{1714,632},{168,188}}</string>
                 <key>offset</key>
-                <string>{14,-59}</string>
+                <string>{24,-98}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{78,118},{102,112}}</string>
+                <string>{{132,196},{168,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.110.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{554,1752},{100,114}}</string>
-                <key>offset</key>
-                <string>{33,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{98,116},{100,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.111.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{652,1618},{100,114}}</string>
-                <key>offset</key>
-                <string>{24,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{89,116},{100,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.112.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{640,1348},{106,114}}</string>
-                <key>offset</key>
-                <string>{14,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{76,116},{106,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.113.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{870,1920},{106,112}}</string>
-                <key>offset</key>
-                <string>{13,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{75,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.114.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{732,1202},{106,114}}</string>
-                <key>offset</key>
-                <string>{13,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{75,116},{106,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.115.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{758,1064},{106,114}}</string>
-                <key>offset</key>
-                <string>{13,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{75,116},{106,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.12.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1370,116},{102,112}}</string>
-                <key>offset</key>
-                <string>{13,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{77,118},{102,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.122.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{546,2},{134,116}}</string>
+                <string>{{1060,246},{222,192}}</string>
                 <key>offset</key>
-                <string>{32,-57}</string>
+                <string>{55,-96}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{80,114},{134,116}}</string>
+                <string>{{136,192},{222,192}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.123.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{130,188}}</string>
+                <string>{{2,2},{216,312}}</string>
                 <key>offset</key>
-                <string>{43,-11}</string>
+                <string>{73,-18}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{93,32},{130,188}}</string>
+                <string>{{157,54},{216,312}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.124.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,192},{104,186}}</string>
+                <string>{{2,316},{174,308}}</string>
                 <key>offset</key>
-                <string>{1,-9}</string>
+                <string>{2,-16}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{64,31},{104,186}}</string>
+                <string>{{107,54},{174,308}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.125.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{108,192},{108,176}}</string>
+                <string>{{178,316},{180,294}}</string>
                 <key>offset</key>
-                <string>{-3,-12}</string>
+                <string>{-4,-19}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{58,39},{108,176}}</string>
+                <string>{{98,64},{180,294}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.126.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{114,908},{110,166}}</string>
+                <string>{{390,1770},{182,276}}</string>
                 <key>offset</key>
-                <string>{-7,-14}</string>
+                <string>{-11,-24}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{53,46},{110,166}}</string>
+                <string>{{90,78},{182,276}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.127.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1252},{110,156}}</string>
+                <string>{{558,1144},{182,260}}</string>
                 <key>offset</key>
-                <string>{-9,-17}</string>
+                <string>{-15,-28}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{51,54},{110,156}}</string>
+                <string>{{86,90},{182,260}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{130,1076},{110,150}}</string>
+                <string>{{732,2},{180,248}}</string>
                 <key>offset</key>
-                <string>{-10,-19}</string>
+                <string>{-16,-32}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{50,59},{110,150}}</string>
+                <string>{{86,100},{180,248}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.129.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{226,900},{108,146}}</string>
+                <string>{{856,528},{180,244}}</string>
                 <key>offset</key>
-                <string>{-8,-21}</string>
+                <string>{-14,-34}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{53,63},{108,146}}</string>
+                <string>{{88,104},{180,244}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.13.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1206,692},{104,112}}</string>
-                <key>offset</key>
-                <string>{12,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{75,118},{104,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.130.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{308,710},{108,146}}</string>
+                <string>{{878,252},{180,244}}</string>
                 <key>offset</key>
-                <string>{-5,-22}</string>
+                <string>{-8,-36}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{56,64},{108,146}}</string>
+                <string>{{94,106},{180,244}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.131.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{242,1048},{108,144}}</string>
+                <string>{{914,2},{180,242}}</string>
                 <key>offset</key>
-                <string>{-3,-23}</string>
+                <string>{-6,-38}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{58,66},{108,144}}</string>
+                <string>{{96,109},{180,242}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.132.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1084},{126,166}}</string>
+                <string>{{344,1210},{212,278}}</string>
                 <key>offset</key>
-                <string>{39,-20}</string>
+                <string>{64,-33}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{91,52},{126,166}}</string>
+                <string>{{150,86},{212,278}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.133.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{208,732},{166,98}}</string>
+                <string>{{354,1490},{278,164}}</string>
                 <key>offset</key>
-                <string>{32,-55}</string>
+                <string>{53,-92}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{64,121},{166,98}}</string>
+                <string>{{106,202},{278,164}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.134.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{108,1410},{156,100}}</string>
+                <string>{{222,1788},{258,166}}</string>
                 <key>offset</key>
-                <string>{23,-58}</string>
+                <string>{40,-97}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{60,123},{156,100}}</string>
+                <string>{{103,206},{258,166}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.135.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1884},{156,102}}</string>
+                <string>{{684,532},{260,170}}</string>
                 <key>offset</key>
-                <string>{21,-60}</string>
+                <string>{35,-100}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{58,124},{156,102}}</string>
+                <string>{{97,207},{260,170}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.136.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1410},{156,104}}</string>
+                <string>{{706,266},{260,170}}</string>
                 <key>offset</key>
-                <string>{19,-60}</string>
+                <string>{31,-101}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{56,123},{156,104}}</string>
+                <string>{{93,208},{260,170}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.137.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1568},{156,104}}</string>
+                <string>{{510,880},{262,170}}</string>
                 <key>offset</key>
-                <string>{17,-60}</string>
+                <string>{28,-101}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,123},{156,104}}</string>
+                <string>{{89,208},{262,170}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.138.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{106,1884},{156,102}}</string>
+                <string>{{512,558},{262,170}}</string>
                 <key>offset</key>
-                <string>{16,-60}</string>
+                <string>{26,-101}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{53,124},{156,102}}</string>
+                <string>{{87,208},{262,170}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.139.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,326},{158,102}}</string>
+                <string>{{534,268},{262,170}}</string>
                 <key>offset</key>
-                <string>{15,-59}</string>
+                <string>{25,-99}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{51,123},{158,102}}</string>
+                <string>{{86,206},{262,170}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.14.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1218,806},{104,112}}</string>
-                <key>offset</key>
-                <string>{11,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{74,118},{104,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.140.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{416,162},{158,102}}</string>
+                <string>{{562,2},{262,168}}</string>
                 <key>offset</key>
-                <string>{15,-58}</string>
+                <string>{25,-97}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{51,122},{158,102}}</string>
+                <string>{{86,205},{262,168}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.141.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{216,370},{160,100}}</string>
+                <string>{{574,1764},{266,166}}</string>
                 <key>offset</key>
-                <string>{14,-57}</string>
+                <string>{24,-95}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{49,122},{160,100}}</string>
+                <string>{{83,204},{266,166}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.142.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{218,178},{160,98}}</string>
+                <string>{{188,612},{266,162}}</string>
                 <key>offset</key>
-                <string>{15,-56}</string>
+                <string>{25,-93}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,122},{160,98}}</string>
+                <string>{{84,204},{266,162}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.143.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{244,2},{160,96}}</string>
+                <string>{{348,880},{266,160}}</string>
                 <key>offset</key>
-                <string>{15,-55}</string>
+                <string>{25,-91}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,122},{160,96}}</string>
+                <string>{{84,203},{266,160}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{318,164},{160,96}}</string>
+                <string>{{352,612},{266,158}}</string>
                 <key>offset</key>
-                <string>{15,-54}</string>
+                <string>{26,-90}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{50,121},{160,96}}</string>
+                <string>{{85,203},{266,158}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{448,2},{158,96}}</string>
+                <string>{{402,2},{264,158}}</string>
                 <key>offset</key>
-                <string>{16,-54}</string>
+                <string>{27,-90}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{52,121},{158,96}}</string>
+                <string>{{87,203},{264,158}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.146.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1726},{156,104}}</string>
+                <string>{{682,822},{260,174}}</string>
                 <key>offset</key>
-                <string>{17,-57}</string>
+                <string>{29,-95}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{54,120},{156,104}}</string>
+                <string>{{91,200},{260,174}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.147.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{418,708},{142,110}}</string>
+                <string>{{742,1084},{234,184}}</string>
                 <key>offset</key>
-                <string>{21,-60}</string>
+                <string>{36,-100}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{65,120},{142,110}}</string>
+                <string>{{111,200},{234,184}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.148.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{618,1230},{116,112}}</string>
-                <key>offset</key>
-                <string>{27,-59}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{84,118},{116,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.149.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{718,1464},{110,112}}</string>
+                <string>{{1696,252},{184,186}}</string>
                 <key>offset</key>
-                <string>{18,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{78,118},{110,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.15.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{876,1660},{106,112}}</string>
-                <key>offset</key>
-                <string>{9,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{71,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.150.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{748,1318},{110,112}}</string>
-                <key>offset</key>
-                <string>{10,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{70,118},{110,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.151.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{848,634},{110,114}}</string>
-                <key>offset</key>
-                <string>{6,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,116},{110,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.16.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{974,1522},{106,112}}</string>
-                <key>offset</key>
-                <string>{9,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{71,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.169.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1046,118},{108,114}}</string>
-                <key>offset</key>
-                <string>{13,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{74,116},{108,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.17.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1050,1360},{106,112}}</string>
-                <key>offset</key>
-                <string>{8,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{70,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.170.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{996,362},{104,114}}</string>
-                <key>offset</key>
-                <string>{26,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{89,116},{104,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.171.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{932,130},{112,114}}</string>
-                <key>offset</key>
-                <string>{28,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{87,116},{112,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.172.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{426,1652},{116,114}}</string>
-                <key>offset</key>
-                <string>{30,-58}</string>
+                <string>{31,-99}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{87,116},{116,114}}</string>
+                <string>{{131,198},{184,186}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{530,1110},{118,114}}</string>
+                <string>{{1792,1124},{198,188}}</string>
                 <key>offset</key>
-                <string>{31,-58}</string>
+                <string>{51,-98}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{87,116},{118,114}}</string>
+                <string>{{144,196},{198,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,1530},{120,112}}</string>
+                <string>{{1792,1314},{198,186}}</string>
                 <key>offset</key>
-                <string>{30,-58}</string>
+                <string>{51,-96}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{85,117},{120,112}}</string>
+                <string>{{144,195},{198,186}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{414,1396},{120,110}}</string>
+                <string>{{1788,1502},{198,182}}</string>
                 <key>offset</key>
-                <string>{30,-57}</string>
+                <string>{51,-95}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{85,117},{120,110}}</string>
+                <string>{{144,196},{198,182}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.176.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{508,1262},{120,108}}</string>
+                <string>{{1450,1540},{198,178}}</string>
                 <key>offset</key>
-                <string>{29,-56}</string>
+                <string>{50,-95}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{84,117},{120,108}}</string>
+                <string>{{143,198},{198,178}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.177.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{666,826},{118,106}}</string>
+                <string>{{1508,1740},{198,176}}</string>
                 <key>offset</key>
-                <string>{29,-56}</string>
+                <string>{48,-94}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{85,118},{118,106}}</string>
+                <string>{{141,198},{198,176}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.178.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{740,664},{118,106}}</string>
-                <key>offset</key>
-                <string>{28,-56}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{84,118},{118,106}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.179.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{672,946},{116,106}}</string>
-                <key>offset</key>
-                <string>{27,-55}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{84,117},{116,106}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.18.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1080,1208},{106,112}}</string>
-                <key>offset</key>
-                <string>{8,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{70,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.180.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{608,1502},{114,108}}</string>
-                <key>offset</key>
-                <string>{27,-55}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{85,116},{114,108}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.181.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{972,246},{114,110}}</string>
-                <key>offset</key>
-                <string>{27,-55}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{85,115},{114,110}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.182.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{768,518},{114,112}}</string>
-                <key>offset</key>
-                <string>{27,-55}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{85,114},{114,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.183.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{768,402},{114,114}}</string>
-                <key>offset</key>
-                <string>{27,-56}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{85,114},{114,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.184.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{328,1910},{114,116}}</string>
-                <key>offset</key>
-                <string>{27,-57}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{85,114},{114,116}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.185.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{526,1384},{112,116}}</string>
-                <key>offset</key>
-                <string>{28,-57}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{87,114},{112,116}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.186.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{646,1084},{110,116}}</string>
-                <key>offset</key>
-                <string>{28,-57}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{88,114},{110,116}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{774,784},{102,116}}</string>
+                <string>{{1714,438},{168,192}}</string>
                 <key>offset</key>
-                <string>{28,-57}</string>
+                <string>{47,-96}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{92,114},{102,116}}</string>
+                <string>{{155,192},{168,192}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.188.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1084,234},{104,114}}</string>
-                <key>offset</key>
-                <string>{25,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{88,116},{104,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.189.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1390,576},{106,110}}</string>
-                <key>offset</key>
-                <string>{18,-60}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{80,120},{106,110}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.19.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1170,1092},{106,112}}</string>
-                <key>offset</key>
-                <string>{8,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{70,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1418,344},{100,102}}</string>
+                <string>{{1876,1876},{166,170}}</string>
                 <key>offset</key>
-                <string>{8,-64}</string>
+                <string>{13,-107}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{73,128},{100,102}}</string>
+                <string>{{122,214},{166,170}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.191.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1416,460},{108,90}}</string>
+                <string>{{1636,1324},{180,150}}</string>
                 <key>offset</key>
-                <string>{8,-70}</string>
+                <string>{14,-117}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{69,140},{108,90}}</string>
+                <string>{{116,234},{180,150}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.192.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1312,690},{112,88}}</string>
+                <string>{{1750,976},{186,146}}</string>
                 <key>offset</key>
-                <string>{10,-71}</string>
+                <string>{17,-119}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{69,142},{112,88}}</string>
+                <string>{{116,238},{186,146}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.193.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{680,538},{124,86}}</string>
+                <string>{{1306,1596},{206,142}}</string>
                 <key>offset</key>
-                <string>{4,-72}</string>
+                <string>{7,-121}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{57,144},{124,86}}</string>
+                <string>{{96,242},{206,142}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.194.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{284,1538},{130,92}}</string>
+                <string>{{1398,222},{216,152}}</string>
                 <key>offset</key>
-                <string>{-2,-69}</string>
+                <string>{-3,-116}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,138},{130,92}}</string>
+                <string>{{81,232},{216,152}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.195.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{750,2},{132,98}}</string>
+                <string>{{1058,1232},{218,162}}</string>
                 <key>offset</key>
-                <string>{-4,-66}</string>
+                <string>{-7,-111}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{45,132},{132,98}}</string>
+                <string>{{76,222},{218,162}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.196.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{746,138},{132,100}}</string>
+                <string>{{1288,2},{218,166}}</string>
                 <key>offset</key>
-                <string>{-5,-65}</string>
+                <string>{-8,-109}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{44,130},{132,100}}</string>
+                <string>{{75,218},{218,166}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.197.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{764,272},{128,90}}</string>
+                <string>{{1588,822},{212,152}}</string>
                 <key>offset</key>
-                <string>{-4,-70}</string>
+                <string>{-6,-116}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{47,140},{128,90}}</string>
+                <string>{{80,232},{212,152}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.198.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{584,570},{128,94}}</string>
+                <string>{{1556,438},{212,156}}</string>
                 <key>offset</key>
-                <string>{-3,-68}</string>
+                <string>{-5,-114}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{48,136},{128,94}}</string>
+                <string>{{81,228},{212,156}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.199.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{470,982},{126,84}}</string>
+                <string>{{1304,1384},{210,140}}</string>
                 <key>offset</key>
-                <string>{-1,-73}</string>
+                <string>{-3,-122}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{51,146},{126,84}}</string>
+                <string>{{84,244},{210,140}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.2.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1210,348},{104,112}}</string>
-                <key>offset</key>
-                <string>{14,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{77,118},{104,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.20.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1196,956},{106,112}}</string>
-                <key>offset</key>
-                <string>{7,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{69,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.200.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{848,136},{128,82}}</string>
+                <string>{{1802,838},{212,136}}</string>
                 <key>offset</key>
-                <string>{0,-74}</string>
+                <string>{1,-124}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{51,148},{128,82}}</string>
+                <string>{{87,248},{212,136}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.201.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{246,1326},{128,70}}</string>
+                <string>{{1762,132},{214,118}}</string>
                 <key>offset</key>
-                <string>{1,-80}</string>
+                <string>{1,-133}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{52,160},{128,70}}</string>
+                <string>{{86,266},{214,118}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.202.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{324,630},{130,76}}</string>
+                <string>{{1762,2},{214,128}}</string>
                 <key>offset</key>
-                <string>{0,-77}</string>
+                <string>{1,-128}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{50,154},{130,76}}</string>
+                <string>{{86,256},{214,128}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.203.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{376,1326},{130,68}}</string>
+                <string>{{706,1648},{214,114}}</string>
                 <key>offset</key>
-                <string>{0,-81}</string>
+                <string>{1,-135}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{50,162},{130,68}}</string>
+                <string>{{86,270},{214,114}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.21.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1102,350},{106,112}}</string>
-                <key>offset</key>
-                <string>{7,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{69,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.22.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{840,1180},{108,112}}</string>
-                <key>offset</key>
-                <string>{6,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{67,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.23.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{866,1018},{108,112}}</string>
-                <key>offset</key>
-                <string>{6,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{67,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.24.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{888,866},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.25.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{986,750},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.26.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1068,614},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.27.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{650,1868},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.28.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{656,1734},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.29.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{754,1578},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.3.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1156,118},{104,114}}</string>
-                <key>offset</key>
-                <string>{14,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{77,116},{104,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.30.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{830,1432},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.31.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{860,1294},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.32.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{950,1132},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.33.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{976,980},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.34.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{998,864},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.35.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1096,728},{108,112}}</string>
-                <key>offset</key>
-                <string>{5,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{66,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.36.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{760,1848},{108,112}}</string>
-                <key>offset</key>
-                <string>{6,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{67,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.37.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{766,1692},{108,112}}</string>
-                <key>offset</key>
-                <string>{6,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{67,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.38.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{864,1546},{108,112}}</string>
-                <key>offset</key>
-                <string>{7,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{68,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.39.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{940,1408},{108,112}}</string>
-                <key>offset</key>
-                <string>{7,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{68,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.4.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{444,1886},{102,114}}</string>
-                <key>offset</key>
-                <string>{15,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{79,116},{102,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.40.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{970,1246},{108,112}}</string>
-                <key>offset</key>
-                <string>{8,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{69,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.41.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1060,1094},{108,112}}</string>
-                <key>offset</key>
-                <string>{8,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{69,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.42.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1086,978},{108,112}}</string>
-                <key>offset</key>
-                <string>{8,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{69,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.43.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1108,842},{108,112}}</string>
-                <key>offset</key>
-                <string>{9,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{70,118},{108,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.44.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1190,234},{106,112}}</string>
-                <key>offset</key>
-                <string>{10,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{72,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.45.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1262,118},{106,112}}</string>
-                <key>offset</key>
-                <string>{11,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{73,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.46.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1296,2},{106,112}}</string>
-                <key>offset</key>
-                <string>{11,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{73,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.47.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1102,464},{106,112}}</string>
-                <key>offset</key>
-                <string>{12,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{74,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.48.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1178,578},{106,112}}</string>
-                <key>offset</key>
-                <string>{12,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{74,118},{106,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1404,2},{102,112}}</string>
+                <string>{{1686,1876},{170,188}}</string>
                 <key>offset</key>
-                <string>{15,-59}</string>
+                <string>{24,-98}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{79,118},{102,112}}</string>
+                <string>{{131,196},{170,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{650,274},{132,112}}</string>
+                <string>{{1046,728},{220,188}}</string>
                 <key>offset</key>
-                <string>{-10,-59}</string>
+                <string>{-17,-98}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{39,118},{132,112}}</string>
+                <string>{{65,196},{220,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{536,300},{134,112}}</string>
+                <string>{{868,1320},{222,188}}</string>
                 <key>offset</key>
-                <string>{-12,-59}</string>
+                <string>{-19,-98}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{36,118},{134,112}}</string>
+                <string>{{62,196},{222,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{632,138},{134,112}}</string>
+                <string>{{938,1764},{222,188}}</string>
                 <key>offset</key>
-                <string>{-13,-59}</string>
+                <string>{-21,-98}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{35,118},{134,112}}</string>
+                <string>{{60,196},{222,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.53.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{558,436},{132,114}}</string>
+                <string>{{922,1544},{218,188}}</string>
                 <key>offset</key>
-                <string>{-13,-58}</string>
+                <string>{-21,-98}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{36,116},{132,114}}</string>
+                <string>{{62,196},{218,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.54.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{434,852},{128,114}}</string>
+                <string>{{1222,1170},{212,188}}</string>
                 <key>offset</key>
-                <string>{-12,-58}</string>
+                <string>{-20,-98}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{39,116},{128,114}}</string>
+                <string>{{66,196},{212,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.55.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{550,838},{124,114}}</string>
+                <string>{{1318,1804},{204,188}}</string>
                 <key>offset</key>
-                <string>{-12,-58}</string>
+                <string>{-19,-98}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{41,116},{124,114}}</string>
+                <string>{{71,196},{204,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.56.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,1670},{120,114}}</string>
+                <string>{{1600,1124},{198,190}}</string>
                 <key>offset</key>
-                <string>{-11,-58}</string>
+                <string>{-18,-97}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{44,116},{120,114}}</string>
+                <string>{{75,194},{198,190}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.57.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{492,1518},{116,114}}</string>
-                <key>offset</key>
-                <string>{-10,-58}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{47,116},{116,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.58.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{966,2},{112,114}}</string>
-                <key>offset</key>
-                <string>{-9,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{50,116},{112,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.59.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{882,518},{110,114}}</string>
-                <key>offset</key>
-                <string>{-7,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{53,116},{110,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1210,462},{102,112}}</string>
+                <string>{{1128,1878},{168,188}}</string>
                 <key>offset</key>
-                <string>{15,-59}</string>
+                <string>{25,-98}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{79,118},{102,112}}</string>
+                <string>{{133,196},{168,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.60.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{884,382},{110,114}}</string>
-                <key>offset</key>
-                <string>{-4,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{56,116},{110,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.61.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1080,2},{108,114}}</string>
-                <key>offset</key>
-                <string>{-1,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{60,116},{108,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.62.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{444,1770},{108,114}}</string>
-                <key>offset</key>
-                <string>{0,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{61,116},{108,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.63.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{780,902},{106,114}}</string>
-                <key>offset</key>
-                <string>{3,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{65,116},{106,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.64.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1190,2},{104,114}}</string>
-                <key>offset</key>
-                <string>{4,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{67,116},{104,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.65.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{878,750},{106,114}}</string>
-                <key>offset</key>
-                <string>{3,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{65,116},{106,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.66.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{960,634},{106,114}}</string>
-                <key>offset</key>
-                <string>{0,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{62,116},{106,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.67.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{994,498},{106,114}}</string>
-                <key>offset</key>
-                <string>{-2,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{60,116},{106,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.68.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{542,1636},{108,114}}</string>
-                <key>offset</key>
-                <string>{-4,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{57,116},{108,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.69.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{856,266},{114,114}}</string>
-                <key>offset</key>
-                <string>{-6,-58}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{52,116},{114,114}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.7.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1286,576},{102,112}}</string>
-                <key>offset</key>
-                <string>{15,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{79,118},{102,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.70.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{556,964},{118,114}}</string>
+                <string>{{1686,1686},{196,188}}</string>
                 <key>offset</key>
-                <string>{-6,-58}</string>
+                <string>{-10,-98}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{50,116},{118,114}}</string>
+                <string>{{84,196},{196,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.71.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,1834},{122,114}}</string>
+                <string>{{1446,1334},{204,188}}</string>
                 <key>offset</key>
-                <string>{-7,-58}</string>
+                <string>{-12,-98}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{47,116},{122,114}}</string>
+                <string>{{78,196},{204,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.72.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{850,2},{126,114}}</string>
+                <string>{{1366,910},{212,188}}</string>
                 <key>offset</key>
-                <string>{-8,-58}</string>
+                <string>{-14,-98}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{44,116},{126,114}}</string>
+                <string>{{72,196},{212,188}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.74.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1474,116},{96,112}}</string>
+                <string>{{1884,462},{158,186}}</string>
                 <key>offset</key>
-                <string>{1,-59}</string>
+                <string>{2,-99}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{68,118},{96,112}}</string>
+                <string>{{115,198},{158,186}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.75.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{520,162},{136,110}}</string>
+                <string>{{1038,498},{228,184}}</string>
                 <key>offset</key>
-                <string>{-16,-60}</string>
+                <string>{-28,-100}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{31,120},{136,110}}</string>
+                <string>{{50,200},{228,184}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.76.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{212,544},{164,110}}</string>
+                <string>{{520,1490},{272,184}}</string>
                 <key>offset</key>
-                <string>{-27,-60}</string>
+                <string>{-45,-100}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{6,120},{164,110}}</string>
+                <string>{{11,200},{272,184}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.77.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,910},{172,110}}</string>
+                <string>{{2,1502},{286,182}}</string>
                 <key>offset</key>
-                <string>{-29,-60}</string>
+                <string>{-49,-101}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,120},{172,110}}</string>
+                <string>{{0,202},{286,182}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.78.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,2},{174,108}}</string>
+                <string>{{220,2},{288,180}}</string>
                 <key>offset</key>
-                <string>{-28,-61}</string>
+                <string>{-48,-102}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,122},{174,108}}</string>
+                <string>{{0,204},{288,180}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.79.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,558},{174,106}}</string>
+                <string>{{2,922},{288,174}}</string>
                 <key>offset</key>
-                <string>{-28,-59}</string>
+                <string>{-48,-99}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,121},{174,106}}</string>
+                <string>{{0,204},{288,174}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.8.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1316,346},{100,112}}</string>
-                <key>offset</key>
-                <string>{15,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{80,118},{100,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.80.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{106,734},{172,100}}</string>
+                <string>{{186,1500},{286,166}}</string>
                 <key>offset</key>
-                <string>{-29,-57}</string>
+                <string>{-49,-95}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,122},{172,100}}</string>
+                <string>{{0,204},{286,166}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.81.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{110,558},{172,100}}</string>
+                <string>{{174,1212},{286,168}}</string>
                 <key>offset</key>
-                <string>{-29,-57}</string>
+                <string>{-49,-95}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,122},{172,100}}</string>
+                <string>{{0,203},{286,168}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.82.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{114,370},{172,100}}</string>
+                <string>{{178,922},{286,168}}</string>
                 <key>offset</key>
-                <string>{-29,-57}</string>
+                <string>{-49,-95}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,122},{172,100}}</string>
+                <string>{{0,203},{286,168}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.83.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,734},{174,102}}</string>
+                <string>{{2,1212},{288,170}}</string>
                 <key>offset</key>
-                <string>{-28,-57}</string>
+                <string>{-48,-95}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,121},{174,102}}</string>
+                <string>{{0,202},{288,170}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.84.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,380},{176,110}}</string>
+                <string>{{2,626},{294,184}}</string>
                 <key>offset</key>
-                <string>{-27,-60}</string>
+                <string>{-45,-100}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,120},{176,110}}</string>
+                <string>{{0,200},{294,184}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.85.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{442,464},{134,114}}</string>
+                <string>{{1096,2},{222,190}}</string>
                 <key>offset</key>
-                <string>{-5,-58}</string>
+                <string>{-7,-97}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{43,116},{134,114}}</string>
+                <string>{{74,194},{222,190}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.86.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{326,1792},{116,116}}</string>
-                <key>offset</key>
-                <string>{31,-57}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{88,114},{116,116}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.87.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{324,486},{142,116}}</string>
+                <string>{{742,1764},{234,194}}</string>
                 <key>offset</key>
-                <string>{44,-57}</string>
+                <string>{75,-95}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{88,114},{142,116}}</string>
+                <string>{{150,190},{234,194}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.88.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{422,322},{140,112}}</string>
+                <string>{{858,774},{232,186}}</string>
                 <key>offset</key>
-                <string>{45,-53}</string>
+                <string>{76,-88}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{90,112},{140,112}}</string>
+                <string>{{152,187},{232,186}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.89.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{114,1252},{130,152}}</string>
+                <string>{{2,1790},{218,254}}</string>
                 <key>offset</key>
-                <string>{42,-33}</string>
+                <string>{70,-54}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{92,72},{130,152}}</string>
+                <string>{{153,119},{218,254}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
-            </dict>
-            <key>ogre.9.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1402,230},{100,112}}</string>
-                <key>offset</key>
-                <string>{15,-59}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{80,118},{100,112}}</string>
-                <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.90.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{342,2},{104,158}}</string>
+                <string>{{360,292},{172,264}}</string>
                 <key>offset</key>
-                <string>{25,-29}</string>
+                <string>{43,-48}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{88,65},{104,158}}</string>
+                <string>{{149,108},{172,264}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.91.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{336,858},{96,144}}</string>
+                <string>{{706,1406},{160,240}}</string>
                 <key>offset</key>
-                <string>{19,-36}</string>
+                <string>{31,-60}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{86,79},{96,144}}</string>
+                <string>{{143,132},{160,240}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.92.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{246,1194},{90,130}}</string>
+                <string>{{1070,950},{148,218}}</string>
                 <key>offset</key>
-                <string>{13,-43}</string>
+                <string>{22,-72}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{83,93},{90,130}}</string>
+                <string>{{140,155},{148,218}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.93.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{326,1398},{86,130}}</string>
+                <string>{{1552,220},{142,216}}</string>
                 <key>offset</key>
-                <string>{8,-45}</string>
+                <string>{14,-75}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{80,95},{86,130}}</string>
+                <string>{{135,159},{142,216}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.94.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{108,1568},{86,132}}</string>
+                <string>{{1224,470},{142,220}}</string>
                 <key>offset</key>
-                <string>{6,-45}</string>
+                <string>{10,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{78,94},{86,132}}</string>
+                <string>{{131,156},{142,220}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.95.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{664,2},{84,134}}</string>
+                <string>{{928,1008},{140,222}}</string>
                 <key>offset</key>
-                <string>{4,-44}</string>
+                <string>{7,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{77,92},{84,134}}</string>
+                <string>{{129,155},{140,222}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.96.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{108,1702},{86,132}}</string>
+                <string>{{1254,226},{142,220}}</string>
                 <key>offset</key>
-                <string>{3,-44}</string>
+                <string>{6,-74}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{75,93},{86,132}}</string>
+                <string>{{127,156},{142,220}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.97.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{196,1568},{86,132}}</string>
+                <string>{{1220,950},{144,218}}</string>
                 <key>offset</key>
-                <string>{4,-43}</string>
+                <string>{6,-72}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{76,92},{86,132}}</string>
+                <string>{{126,155},{144,218}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.98.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{338,1194},{90,130}}</string>
+                <string>{{1456,2},{150,216}}</string>
                 <key>offset</key>
-                <string>{5,-43}</string>
+                <string>{8,-72}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{75,93},{90,130}}</string>
+                <string>{{125,156},{150,216}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
             <key>ogre.99.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{674,408},{92,128}}</string>
+                <string>{{1608,2},{152,214}}</string>
                 <key>offset</key>
-                <string>{6,-43}</string>
+                <string>{10,-72}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{75,94},{92,128}}</string>
+                <string>{{126,157},{152,214}}</string>
                 <key>sourceSize</key>
-                <string>{230,230}</string>
+                <string>{384,384}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -2328,7 +1236,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b586843be68b850f206c313163c0d918:a4b7a3e6d685d09fe11877e065bf26af:877b6e3f6e014494f76bd0d236a50958$</string>
+            <string>$TexturePacker:SmartUpdate:157f59e71cdea015d5b5b5aee4b0fb94:a4b7a3e6d685d09fe11877e065bf26af:949e069e1d33d5780beda4eb468e706e$</string>
             <key>textureFileName</key>
             <string>ogreSheet-iphone4.0.png</string>
         </dict>

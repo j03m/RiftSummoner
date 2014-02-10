@@ -1,6 +1,11 @@
 
 jc.indecisionFactor = 0.025;
 jc.stayOnTarget = 0.1;
+jc.orient = {};
+jc.orient.front = 'front';
+jc.orient.behind = 'behind';
+jc.orient.facing = 'facing';
+jc.orient.away = 'away';
 
 var GeneralBehavior = cc.Node.extend({});
 
@@ -486,11 +491,13 @@ GeneralBehavior.prototype.seekEnemy = function(){
         return;
     }
 
-    if (this.timeLocked < this.stayOnTarget && this.lastAttackPoint){
+    if (this.timeLocked < this.stayOnTarget){
         return this.stayOnTarget;
     }
 
-    var attackPosition = this.getWhereIShouldBe(undefined, undefined , this.locked);
+    this.orient(undefined, undefined , this.locked);
+
+    var attackPosition = this.lockPosition.supportPos;
 
     //apply a position augment if it's there - usually for flying animals to be far off their targets
     if (this.owner.gameObject.flightAug && this.locked.gameObject.movementType == jc.movementType.ground){
@@ -514,11 +521,7 @@ GeneralBehavior.prototype.seekEnemy = function(){
 }
 
 
-GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target){
-
-    if (!target){
-        return this.owner.getBasePosition();
-    }
+GeneralBehavior.prototype.getPositionalData = function(position, facing, target){
 
     var toPoint = target.getBasePosition();
     var myPos = this.owner.getBasePosition();
@@ -530,33 +533,42 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
     if (facing == undefined){ //if facing is not defined
         //we need to understand where we are approaching from
         if (diff > 0 && targetFlip){  //if diff positive, we are to the right so we need to be behind and facing
-            position = 'behind';
-            facing = 'facing';
+            position = jc.orient.behind;
+            facing = jc.orient.facing;
         }
 
         if (diff > 0 && !targetFlip){  //if diff positive, we are to the right but the target is looking at us so we need to be in front and facing
-            position = 'front';
-            facing = 'facing';
+            position = jc.orient.front;
+            facing = jc.orient.facing;
         }
 
         if (diff < 0 && targetFlip){  //if diff negative, we are to the left but the target is looking at us so we need to be in front and facing
-            position = 'front';
-            facing = 'facing';
+            position = jc.orient.front;
+            facing = jc.orient.facing;
         }
 
         if (diff < 0 && !targetFlip){  //if diff negative, we are to the left we need to be behind.
-            position = 'behind';
-            facing = 'facing';
+            position = jc.orient.behind;
+            facing = jc.orient.facing;
         }
     }
 
+    //rethink the position based on lock counts, flank if one side is already overloaded
+
+    var frontLockCount = this.getLockCount(target.id, jc.orient.front);
+    var backLockCount = this.getLockCount(target.id, jc.orient.behind);
 
 
+    if (position == jc.orient.front && frontLockCount >=2 ){
+        position = 'behind';
+    }
 
+    if (position == jc.orient.behind && backLockCount >=2 ){
+        position = 'front';
+    }
 
     var supportPos;
-
-    if (position == 'front'){
+    if (position == jc.orient.front){
         //if my target is flip x and i am supposed to be infront of them, that means
         //I need to position myself to their right, ortherwise left
         if (target.isFlippedX()){
@@ -565,9 +577,18 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
             supportPos = cc.p(toPoint.x + this.getMaxWidth(), toPoint.y);
         }
 
+        //augment the y of my position base
+        if (frontLockCount == 1){
+            supportPos.y += 25 * jc.characterScaleFactor;
+        }
+
+        if (frontLockCount == 2){
+            supportPos.y -= 25 * jc.characterScaleFactor;
+        }
+
     }
 
-    if (position == 'behind'){
+    if (position == jc.orient.behind){
         //if my target is flip x and i am supposed to be behind of them, that means
         //I need to position myself to their left, otherwise right
         if (target.isFlippedX()){
@@ -576,32 +597,48 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
             supportPos = cc.p(toPoint.x - this.getMaxWidth(), toPoint.y);
         }
 
+        if (backLockCount == 1){
+            supportPos.y += 25 * jc.characterScaleFactor;
+        }
+
+        if (backLockCount == 2){
+            supportPos.y -= 25 * jc.characterScaleFactor;
+        }
     }
 
+    return {position:position, facing:facing, supportPos:supportPos};
+}
+
+GeneralBehavior.prototype.orient = function(position, facing, target){
+
+    if (!target){
+        return this.owner.getBasePosition();
+    }
+
+    this.lockPosition = this.getPositionalData(position, facing, target);
+
     //if I am to face the character and I am in front of them, I need to be the opposite flipx
-    if (facing == 'facing' && position == 'front'){
+    if (this.lockPosition.facing == jc.orient.facing && this.lockPosition.position == jc.orient.front){
         this.owner.setFlippedX(!target.isFlippedX())
     }
 
     //if I am to face the character and i am behind them I need to be the same flipx
-    if (facing == 'facing' && position == 'behind'){
+    if (this.lockPosition.facing == jc.orient.facing && this.lockPosition.position == jc.orient.behind){
         this.owner.setFlippedX(target.isFlippedX())
     }
 
     //if I am NOT to face the character and i am front of them I need to be same flipx
-    if (facing == 'away' && position == 'font'){
+    if (this.lockPosition.facing == jc.orient.away && this.lockPosition.position == 'font'){
         this.owner.setFlippedX(target.isFlippedX())
     }
 
     //if I am NOT to face the character and i am behind them of them I need to be opposite flipx
-    if (facing == 'away' && position == 'behind'){
+    if (this.lockPosition.facing == jc.orient.away && this.lockPosition.position == jc.orient.behind){
         this.owner.setFlippedX(!target.isFlippedX())
     }
 
-    //where is the character in relation to me - if they are more than 10
+    return this.lockPosition.supportPos;
 
-
-    return supportPos;
 }
 
 GeneralBehavior.prototype.adjustFlock = function(){
@@ -1296,16 +1333,57 @@ GeneralBehavior.prototype.setLock = function(target, noMark){
     this.locked = target;
     if (!noMark){
         jc.lockTable[this.owner.team][target.id] = this.owner.name + '-' + this.owner.id;
+        this.lockPosition = this.getPositionalData(undefined, undefined, target);
+        this.incrementLock();
     }
+}
+
+GeneralBehavior.prototype.incrementLock = function(){
+    this.lazyInitLockCounts(this.locked, this.lockPosition.position);
+    jc.lockCounts[this.owner.team][this.locked.id][this.lockPosition.position]++;
+
+}
+
+GeneralBehavior.prototype.decrementLock = function(){
+    this.lazyInitLockCounts(this.locked, this.lockPosition.position);
+    jc.lockCounts[this.owner.team][this.locked.id][this.lockPosition.position]--;
+}
+
+GeneralBehavior.prototype.lazyInitLockCounts = function(target, direction){
+    if (jc.lockCounts[this.owner.team][target.id] == undefined){
+        jc.lockCounts[this.owner.team][target.id] = {};
+    }
+
+    if (jc.lockCounts[this.owner.team][target.id][direction]){
+        jc.lockCounts[this.owner.team][target.id][direction] = 0;
+    }
+}
+
+
+
+GeneralBehavior.prototype.getLockCount = function(id, pos){
+    this.lazyInitLockTable();
+
+    if (!jc.lockCounts[this.owner.team][id]){
+         return 0;
+    }
+
+    if (!jc.lockCounts[this.owner.team][id][pos]){
+        return 0;
+    }
+
+    return jc.lockCounts[this.owner.team][id][pos];
 }
 
 GeneralBehavior.prototype.clearLock = function(){
     this.lazyInitLockTable();
     if (this.locked){
         jc.lockTable[this.owner.team][this.locked.id] = false;
+        this.decrementLock();
         this.timeLocked=0;
     }
 }
+
 GeneralBehavior.prototype.targetUnlocked = function(target){
     this.lazyInitLockTable();
     var result = jc.lockTable[this.owner.team][target.id];
@@ -1322,5 +1400,11 @@ GeneralBehavior.prototype.lazyInitLockTable = function(target){
         jc.lockTable = {};
         jc.lockTable['a'] = {};
         jc.lockTable['b'] = {};
+    }
+
+    if (!jc.lockCounts){
+        jc.lockCounts = {};
+        jc.lockCounts['a'] = {};
+        jc.lockCounts['b'] = {};
     }
 }

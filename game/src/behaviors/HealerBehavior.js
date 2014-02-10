@@ -56,7 +56,7 @@ HealerBehavior.prototype.handleHealerIdle = function(dt){
     if (!this.support){
         //this.handleTankIdle(dt);
     }else{
-        var point = this.getWhereIShouldBe('behind', 'facing', this.support);
+        var point = this.orient(jc.orient.behind, jc.orient.facing, this.support);
         point = this.seek(point);
         if (point.x != 0 && point.y != 0){
             this.setState('move', 'move');
@@ -74,7 +74,7 @@ HealerBehavior.prototype.handleHealerIdle = function(dt){
 
 HealerBehavior.prototype.handleHealMove = function(dt){
     var state = this.getState();
-    var point = this.getWhereIShouldBe('behind', 'facing', this.support);
+    var point = this.orient(jc.orient.behind, jc.orient.facing, this.support);
     point = this.seek(point);
     if (point.x == 0 && point.y == 0){
         //arrived - heal
@@ -111,7 +111,7 @@ HealerBehavior.prototype.handleHeal = function(dt){
     }
 
 
-    var point = this.getWhereIShouldBe('behind', 'facing', this.support);
+    var point = this.orient(jc.orient.behind, jc.orient.facing, this.support);
     point = this.seek(point);
     if (point.x != 0 || point.y !=0){
         //arrived - heal

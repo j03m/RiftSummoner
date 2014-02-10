@@ -100,7 +100,7 @@ var globalPowers = {
             jc.playEffectOnTarget("voidFire", arena.selectedSprite, arena, true);
             this.scheduleOnce(function(){
                 arena.selectedSprite.behavior.setLock(minSprite);
-                var pos = arena.selectedSprite.behavior.getWhereIShouldBe('front','faceing', minSprite );
+                var pos = arena.selectedSprite.behavior.orient(jc.orient.front,'faceing', minSprite );
                 arena.selectedSprite.setBasePosition(pos);
                 arena.selectedSprite.behavior.setState('special', 'special');
                 GeneralBehavior.applyDamage( minSprite, arena.selectedSprite, minSprite.gameObject.MaxHP/2);

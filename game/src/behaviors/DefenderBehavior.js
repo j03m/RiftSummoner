@@ -30,7 +30,7 @@ DefenderBehavior.prototype.handleSeek = function(dt){
     }
 
     if (this.support){
-        var point = this.getWhereIShouldBe('front', 'away', this.support);
+        var point = this.orient(jc.orient.front, jc.orient.away, this.support);
         var topoint = this.seek(point);
         if (topoint.x != 0 && topoint.y != 0){
             this.setState('move', 'move');
@@ -70,7 +70,7 @@ DefenderBehavior.prototype.handleDefenderMove = function(dt){
         this.moveToward(point, dt);
         return;
     }else{
-        var point = this.getWhereIShouldBe('front', 'away', this.support);
+        var point = this.orient(jc.orient.front, jc.orient.away, this.support);
         point = this.seek(point);
         if (point.x == 0 && point.y == 0){
             this.setState('seek', 'idle');
