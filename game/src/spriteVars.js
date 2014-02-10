@@ -441,6 +441,7 @@ var spriteDefs = {
 		"elementType": "water",
 		"unitType": 3,
 		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"special": "None",
 		"powers": {
 			"regeneration": {
@@ -473,6 +474,7 @@ var spriteDefs = {
 		"elementType": "air",
 		"unitType": 3,
 		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"damageMods": {
 			"knockBack": {
 				"distance": 250
@@ -577,6 +579,7 @@ var spriteDefs = {
 		"elementType": "earth",
 		"flip": true,
 		"unitType": 4,
+		"multisheet-ipad": 2,
 		"special": "None",
 		"damageMods": {
 			"burn": {
@@ -1138,6 +1141,8 @@ var spriteDefs = {
 		"elementType": "earth",
 		"unitType": 3,
 		"special": "None",
+		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"gameProperties": {
 			"MaxHP": 16000,
 			"speed": 60,
@@ -1161,6 +1166,8 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of fire, this unit deals additional burn damage to its targets.",
 		"elementType": "fire",
 		"unitType": 3,
+		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"damageMods": {
 			"burn": {
 				"damage": 50,
@@ -1191,6 +1198,8 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
 		"elementType": "void",
 		"unitType": 3,
+		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"effect": "voidFire",
 		"powers": {
 			"vampireRadius": {
@@ -1222,6 +1231,8 @@ var spriteDefs = {
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of water, this unit also heals any units nearby.",
 		"elementType": "water",
 		"unitType": 3,
+		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 2,
 		"effect": "healingRadius",
 		"gameProperties": {
 			"MaxHP": 12000,
@@ -1383,12 +1394,14 @@ var spriteDefs = {
 		},
 		"details": "Ogres are massive, powerful creatures. Though they are slow movers, you do not want to be at the wrong end of their weapons.",
 		"elementType": "none",
+		"multisheet-ipadhd": 2,
+		"multisheet-iphone5": 3,
+		"multisheet-iphone4": 2,
 		"unitType": 3,
 		"special": "None",
 		"targetRadius": 50,
 		"startFrame": 1,
 		"endFrame": 204,
-		"multisheet-ipadhd": 2,
 		"gameProperties": {
 			"movementType": 1,
 			"targets": 1,
@@ -1838,7 +1851,9 @@ var spriteDefs = {
 		"unitType": 3,
 		"flip": true,
 		"special": "Poison",
-		"multisheet-ipadhd": 2,
+		"multisheet-ipadhd": 3,
+		"multisheet-iphone5": 2,
+		"multisheet-iphone4": 2,
 		"damageMods": {
 			"poison": {
 				"damage": 50,

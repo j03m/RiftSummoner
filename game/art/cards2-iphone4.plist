@@ -7,7 +7,7 @@
             <key>elfArcherEarth_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{588,545},{263,291}}</string>
+                <string>{{2,810},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>elfAssassin_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{295,545},{263,291}}</string>
+                <string>{{588,545},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>skeletonArcher_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,545},{263,291}}</string>
+                <string>{{295,545},{263,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -56,16 +56,16 @@
                 <key>sourceSize</key>
                 <string>{263,291}</string>
             </dict>
-            <key>skeletonArcher_pose.png</key>
+            <key>skeletonSwordsman_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,810},{255,287}}</string>
+                <string>{{2,545},{263,291}}</string>
                 <key>offset</key>
-                <string>{-2,-2}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{2,4},{255,287}}</string>
+                <string>{{0,0},{263,291}}</string>
                 <key>sourceSize</key>
                 <string>{263,291}</string>
             </dict>
@@ -79,7 +79,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ad36c75708d5bec2ccb30a18c46ddc6e:68b65dfb4128534c85fb20a2cdc260ad:5dd7d3c6870a0b6da142c0a80e3dfd9a$</string>
+            <string>$TexturePacker:SmartUpdate:246be006097807293a0ca53e60a5ce7f:5bb38e02db1698eb7a45a5531b3883f5:5dd7d3c6870a0b6da142c0a80e3dfd9a$</string>
             <key>textureFileName</key>
             <string>cards2-iphone4.pvr.ccz</string>
         </dict>

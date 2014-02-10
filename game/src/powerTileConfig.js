@@ -94,16 +94,26 @@ var globalPowers = {
 
         var minSprite = this.getBestSpriteForTouch(touch, sprites, arena.selectedSprite.enemyTeam());
         if (!minSprite){
-            return;
+            return false;
         }else{
-            arena.flash();
-            arena.selectedSprite.behavior.setState('special', 'special');
-            minSprite.gameObject.hp = 0; //instant death
+
+            jc.playEffectOnTarget("voidFire", arena.selectedSprite, arena, true);
+            this.scheduleOnce(function(){
+                arena.selectedSprite.behavior.setLock(minSprite);
+                var pos = arena.selectedSprite.behavior.getWhereIShouldBe('front','faceing', minSprite );
+                arena.selectedSprite.setBasePosition(pos);
+                arena.selectedSprite.behavior.setState('special', 'special');
+                GeneralBehavior.applyDamage( minSprite, arena.selectedSprite, minSprite.gameObject.MaxHP/2);
+                arena.flash();
+
+            });
+
+            return true;
         }
 
 
 
-        },
+    },
     "cannon":function(touch){
         var arena = hotr.arenaScene.layer;
         var behavior = hotr.arenaScene.layer.teams['a'][0].behavior;
@@ -160,6 +170,7 @@ var globalPowers = {
         }.bind(undefined, arena, touch));
         var seq = cc.Sequence.create(moveTo, func);
         cannonball.runAction(seq);
+        return true;
 
     },
     "poisonCloud":function(touch, sprites){
@@ -189,7 +200,7 @@ var globalPowers = {
                 }, "life");
         }
 
-
+        return true;
     },
     "lightningBolt":function(){
 
@@ -205,6 +216,7 @@ var globalPowers = {
                 team[i].gameObject.hp = team[i].gameObject.MaxHP;
             }
         }
+        return true;
     },
     "cureAll":function(){
         var arena = hotr.arenaScene.layer;
@@ -217,9 +229,10 @@ var globalPowers = {
                 jc.playEffectOnTarget('heal', team[i], arena, true );
             }
         }
+        return true;
     },
     "leechAll":function(){
-
+        return true;
     },
     "raiseDead":function(){
         //raise and place 5 skeletons on the board 3 sword, 2 archers
@@ -247,10 +260,11 @@ var globalPowers = {
                 function(){makeSkel(arena, 'skeletonArcher', pos)}, i/100 + 0.05
             );
         }
+        return true;
 
     },
     "iceStorm":function(){
-
+        return true;
     }
 
 }

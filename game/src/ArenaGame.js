@@ -234,11 +234,11 @@ var ArenaGame = jc.WorldLayer.extend({
         this.reorderChild(this.tableView, jc.topMost);
         this.powerView.hackOn();
 
-        for(var i =0;i<powerNames.length;i++){
-            if (this.selectedSprite.powerTiles[powerNames[i]] == false){
-                this.powerView.disableCell(i);
-            }
-        }
+//        for(var i =0;i<powerNames.length;i++){
+//            if (this.selectedSprite.powerTiles[powerNames[i]] == false){
+//                this.powerView.disableCell(i);
+//            }
+//        }
 
     },
     makeSelectionBar:function(){
@@ -328,8 +328,6 @@ var ArenaGame = jc.WorldLayer.extend({
             return;    //used
         }
 
-
-
         var config = powerTiles[data];
         if (!config){
             throw "unknown power: " + data;
@@ -340,11 +338,15 @@ var ArenaGame = jc.WorldLayer.extend({
                 var worldPos = this.screenToWorld(touch);
                 var nodePos = this.convertToItemPosition(worldPos);
                 data.used = true;
-                func(nodePos, sprites);
-                this.selectedSprite.powerTiles[data] = false; //disable it, used.
-                this.makePowerBar();
+                var res = func(nodePos, sprites);
+                if (res){
+                    this.selectedSprite.powerTiles[data] = false;
+                    this.makePowerBar();
+                    this.nextTouchAction = undefined;
+                } //disable it, used.
+
                 jc.log(['arena'], 'fading out!');
-            }.bind(this));
+            }.bind(this), true);
 
         }else if (config.type == "global"){
             func();
@@ -353,8 +355,6 @@ var ArenaGame = jc.WorldLayer.extend({
         }else{
             throw "Unknown power type.";
         }
-
-
 
     },
     doPlaceHero:function(index, data){

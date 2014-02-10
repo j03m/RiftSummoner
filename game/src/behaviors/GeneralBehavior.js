@@ -1,5 +1,6 @@
 
-
+jc.indecisionFactor = 0.025;
+jc.stayOnTarget = 0.1;
 
 var GeneralBehavior = cc.Node.extend({});
 
@@ -485,6 +486,9 @@ GeneralBehavior.prototype.seekEnemy = function(){
         return;
     }
 
+    if (this.timeLocked < this.stayOnTarget && this.lastAttackPoint){
+        return this.stayOnTarget;
+    }
 
     var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
 
@@ -561,6 +565,8 @@ GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target)
     if (facing == 'away' && position == 'behind'){
         this.owner.setFlippedX(!target.isFlippedX())
     }
+
+    //where is the character in relation to me - if they are more than 10
 
 
     return supportPos;
@@ -873,10 +879,33 @@ GeneralBehavior.prototype.getMaxWidth = function(){
     return this.maxWidth;
 }
 
-GeneralBehavior.prototype.handleState = function(dt, selected){
+GeneralBehavior.prototype.commonThink = function(dt,selected){
     this.collectTextureWidth();
-    this.handleDeath();
     var state= this.getState();
+    this.handleDeath();
+    if (!this.timeLocked ){
+        this.timeLocked = 0;
+    }else{
+        if (this.locked){
+            this.timeLocked +=dt;
+        }
+    }
+
+    if (selected){
+        if (!this.forceLocked && state.brain != 'followUserCommand' && !this.forceSupport){
+            return;
+        }
+    }
+    return state;
+}
+
+GeneralBehavior.prototype.handleState = function(dt, selected){
+
+    var state = this.commonThink(dt,selected);
+    if (!state){
+        return;
+    }
+
 
     if (this.owner.team == 'b'){
         jc.log('state', this.owner.name + ' ' + this.owner.id + ' ' + state.brain)
@@ -1016,6 +1045,8 @@ GeneralBehavior.prototype.getAttackAnim = function(){
 
 GeneralBehavior.prototype.handleIdle = function(dt){
     //lock on who-ever is closest
+
+
     if (this.forceLocked){
         return;
     }
@@ -1029,14 +1060,18 @@ GeneralBehavior.prototype.handleIdle = function(dt){
         if (closer == -1){ //switch targets
             this.setLock(this.damager);
             this.damager = undefined;
-            return;
         }
     }
 
-
-    if (!this.locked || !this.withinRadius(this.locked.getBasePosition())){
+    if (!this.locked){
         this.forceLocked = false;
         this.lockOnClosest(this.targetUnlocked.bind(this), this.owner.otherteam);
+    }
+
+    if (this.locked && !this.withinRadius(this.locked.getBasePosition())){
+        if (this.timeLocked > this.indecisionFactor){
+            this.lockOnClosest(this.targetUnlocked.bind(this), this.owner.otherteam);
+        }
     }
 
     if (this.locked && !this.locked.isAlive()){
@@ -1223,9 +1258,9 @@ GeneralBehavior.prototype.setSupport = function(target){
     this.support = target;
 }
 
-
 GeneralBehavior.prototype.setLock = function(target, noMark){
     this.lazyInitLockTable();
+    this.timeLocked = 0;
     this.locked = target;
     if (!noMark){
         jc.lockTable[this.owner.team][target.id] = this.owner.name + '-' + this.owner.id;
@@ -1236,6 +1271,7 @@ GeneralBehavior.prototype.clearLock = function(){
     this.lazyInitLockTable();
     if (this.locked){
         jc.lockTable[this.owner.team][this.locked.id] = false;
+        this.timeLocked=0;
     }
 }
 GeneralBehavior.prototype.targetUnlocked = function(target){

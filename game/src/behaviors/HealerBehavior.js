@@ -27,13 +27,9 @@ HealerBehavior.prototype.handleHealerMove = function(dt){
 
 HealerBehavior.prototype.healThink = function(dt, selected){
 
-    var state= this.getState();
-    this.handleDeath();
-
-    if (selected){
-        if (!this.forceLocked && state.brain != 'followUserCommand' && !this.forceSupport){
-            return;
-        }
+    var state = this.commonThink(dt,selected);
+    if (!state){
+        return;
     }
 
     switch(state.brain){

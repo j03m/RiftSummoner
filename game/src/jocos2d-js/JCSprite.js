@@ -269,10 +269,24 @@ jc.Sprite = cc.Sprite.extend({
         return point;
     },
     setBasePosition:function(point){
-        var box = this.getContentSize();
-        point.y += box.height/2;
+        if (!this.box){
+            this.box = this.getContentSize();
+        }
+
+        point.y += this.box.height/2;
+        if (!this.lastPoint){
+            this.layer.reorderChild(this, point.y*-1);
+            this.lastPoint = point;
+        }else{
+            var diff = Math.abs(this.lastPoint.y - point.y);
+            if (diff > 25 * jc.characterScaleFactor) {
+                this.layer.reorderChild(this, point.y*-1);
+                this.lastPoint = point;
+            }
+        }
+
         this.setPosition(point);
-        this.layer.reorderChild(this, point.y*-1);
+
         this.updateHealthBarPos();
         this.updateShadowPosition();
 
