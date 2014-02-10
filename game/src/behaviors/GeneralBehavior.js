@@ -490,7 +490,7 @@ GeneralBehavior.prototype.seekEnemy = function(){
         return this.stayOnTarget;
     }
 
-    var attackPosition = this.getWhereIShouldBe('front', 'facing', this.locked);
+    var attackPosition = this.getWhereIShouldBe(undefined, undefined , this.locked);
 
     //apply a position augment if it's there - usually for flying animals to be far off their targets
     if (this.owner.gameObject.flightAug && this.locked.gameObject.movementType == jc.movementType.ground){
@@ -516,12 +516,44 @@ GeneralBehavior.prototype.seekEnemy = function(){
 
 GeneralBehavior.prototype.getWhereIShouldBe = function(position, facing, target){
 
-
     if (!target){
         return this.owner.getBasePosition();
     }
 
     var toPoint = target.getBasePosition();
+    var myPos = this.owner.getBasePosition();
+    var diff = myPos.x - toPoint.x;
+    var ownerFlip = this.owner.isFlippedX();
+    var targetFlip = target.isFlippedX();
+
+    //where am I approaching, front or back?
+    if (facing == undefined){ //if facing is not defined
+        //we need to understand where we are approaching from
+        if (diff > 0 && targetFlip){  //if diff positive, we are to the right so we need to be behind and facing
+            position = 'behind';
+            facing = 'facing';
+        }
+
+        if (diff > 0 && !targetFlip){  //if diff positive, we are to the right but the target is looking at us so we need to be in front and facing
+            position = 'front';
+            facing = 'facing';
+        }
+
+        if (diff < 0 && targetFlip){  //if diff negative, we are to the left but the target is looking at us so we need to be in front and facing
+            position = 'front';
+            facing = 'facing';
+        }
+
+        if (diff < 0 && !targetFlip){  //if diff negative, we are to the left we need to be behind.
+            position = 'behind';
+            facing = 'facing';
+        }
+    }
+
+
+
+
+
     var supportPos;
 
     if (position == 'front'){
