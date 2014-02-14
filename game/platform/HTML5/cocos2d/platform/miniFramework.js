@@ -93,7 +93,7 @@ cc.Browser = {};
     }
 
     //j03m
-    cc.Browser.supportWebGL = false;
+    //cc.Browser.supportWebGL = false;
 
 
 
