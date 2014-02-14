@@ -4,57 +4,18 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>board1.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{837,837},{830,938}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{830,938}}</string>
-                <key>sourceSize</key>
-                <string>{830,938}</string>
-            </dict>
-            <key>board2.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{833,938}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{833,938}}</string>
-                <key>sourceSize</key>
-                <string>{833,938}</string>
-            </dict>
-            <key>board3.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,942},{833,938}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{833,938}}</string>
-                <key>sourceSize</key>
-                <string>{833,938}</string>
-            </dict>
             <key>board4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{837,2},{833,938}}</string>
+                <string>{{2,2},{1288,1450}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{833,938}}</string>
+                <string>{{0,0},{1288,1450}}</string>
                 <key>sourceSize</key>
-                <string>{833,938}</string>
+                <string>{1288,1450}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -66,7 +27,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5a822f7e643d7f26efada2c205a684c8:ab65b5d6db310d35afdb29153ce6a491:bbd2b5601fe66734d3d2bb35918c1dfe$</string>
+            <string>$TexturePacker:SmartUpdate:41f883371da04731743304481b29506e:ab65b5d6db310d35afdb29153ce6a491:30b4d4105ed6910e175cb208fa70d0e7$</string>
             <key>textureFileName</key>
             <string>gameboard-iphone50.pvr.ccz</string>
         </dict>
