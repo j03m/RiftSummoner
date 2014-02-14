@@ -240,26 +240,22 @@ var globalPowers = {
         var necro = arena.selectedSprite;
         var pos = necro.getBasePosition();
         arena.flash();
-
-        function makeSkel(arena, name, pos){
-            var sprite = jc.Sprite.spriteGenerator(spriteDefs, name, hotr.arenaScene.layer);
+        var count = 0;
+        function makeSkel(arena, pos){
+            var sprite = arena.makeTeamASkeleton(count);
+            count++;
             arena.teamASpritePrep(sprite);
             sprite.behavior.setState('special', 'rise');
             sprite.setPosition(cc.p(pos.x + jc.randomNum(-200, 200), pos.y + jc.randomNum(-200, 200)));
             arena.addChild(sprite);
         }
 
-        for (var i =0;i<5;i++){
+        for (var i =0;i<4;i++){  //if you change this, you have to change the preloader as well (loading.js)
             arena.scheduleOnce(
-                function(){makeSkel(arena, 'skeletonSwordsman', pos)}, i/100 + 0.05
+                function(){makeSkel(arena, pos)}, i/100 + 0.05
             );
         }
 
-        for (var i =0;i<5;i++){
-            arena.scheduleOnce(
-                function(){makeSkel(arena, 'skeletonArcher', pos)}, i/100 + 0.05
-            );
-        }
         return true;
 
     },

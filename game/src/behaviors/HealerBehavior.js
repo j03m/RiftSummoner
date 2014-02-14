@@ -78,7 +78,7 @@ HealerBehavior.prototype.handleHealMove = function(dt){
     point = this.seek(point);
     if (point.x == 0 && point.y == 0){
         //arrived - heal
-        this.setState('healing',state.anim );
+        this.setState('healing','idle' );
         return;
     }
 

@@ -284,7 +284,8 @@ jc.Sprite = cc.Sprite.extend({
                 this.lastPoint = point;
             }
         }
-
+        point.x = Math.ceil(point.x);
+        point.y = Math.ceil(point.y);
         this.setPosition(point);
 
         this.updateHealthBarPos();

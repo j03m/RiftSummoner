@@ -6,7 +6,7 @@ var Loading = jc.UiElementsLayer.extend({
             this.nextScene = config.nextScene;
             this.apiCalls = config.apiCalls;
             this.doSpriteLoad = config.doSpriteLoad;
-            this.spriteLoadItems = config.spriteLoadItems;
+            this.spriteLoadItems = config.spriteLoadItems + 8 + 2; //skeletons and orcs
             this.assetFunc = config.assetFunc;
             this.loaderAdjust = cc.p(-8*jc.assetScaleFactor,13*jc.assetScaleFactor);
             cc.SpriteFrameCache.getInstance().addSpriteFrames(loadingPlist);
@@ -119,16 +119,35 @@ var Loading = jc.UiElementsLayer.extend({
 //        hotr.arenaScene.layer.shadowBatchNode = cc.SpriteBatchNode.create(effectsPng);
 
         hotr.arenaScene.data.teamASprites = {};
+
         this.idsToSprites(hotr.arenaScene.data.teamA, 'a', statuscb);
 
         hotr.arenaScene.data.teamACreeps = [];
-        this.makeCreeps(jc.totalCreeps, 'a',statuscb);
+        this.makeCreeps(jc.totalCreeps, 'a',statuscb, 'goblinKnightNormal', 'creeps', hotr.arenaScene.data.teamACreeps);
 
         hotr.arenaScene.data.teamBSprites = {};
         this.idsToSprites(hotr.arenaScene.data.teamB,'b', statuscb);
 
         hotr.arenaScene.data.teamBCreeps = [];
-        this.makeCreeps(jc.totalCreeps, 'b',statuscb);
+        this.makeCreeps(jc.totalCreeps, 'b',statuscb, 'goblinKnightNormal', 'creeps', hotr.arenaScene.data.teamBCreeps);
+
+
+        hotr.arenaScene.data.teamASkels = [];
+        this.makeCreeps(2, 'a', statuscb, 'skeletonSwordsman', 'skels',hotr.arenaScene.data.teamASkels);
+        this.makeCreeps(2, 'a', statuscb, 'skeletonArcher', 'skels',hotr.arenaScene.data.teamASkels);
+
+
+        hotr.arenaScene.data.teamBSkels = [];
+        this.makeCreeps(2, 'b', statuscb, 'skeletonSwordsman', 'skels',hotr.arenaScene.data.teamASkels);
+        this.makeCreeps(2, 'b', statuscb, 'skeletonArcher', 'skels',hotr.arenaScene.data.teamASkels);
+
+
+
+        hotr.arenaScene.data.tutorialOrcs = [];
+        this.makeCreeps(2, 'b', statuscb, 'orc', 'orc',hotr.arenaScene.data.tutorialOrcs);
+
+
+
     },
     raiseComplete:function(){
         //this.done();
@@ -252,18 +271,14 @@ var Loading = jc.UiElementsLayer.extend({
 
         }, 0.05, datas.length-1);
     },
-    makeCreeps: function(number, team, status){
-        var creeps = [];
+    makeCreeps: function(number, team, status, name, prefix, creeps){
+
         var i =0;
-        if (team == 'a'){
-            creeps = hotr.arenaScene.data.teamACreeps;
-        }else{
-            creeps = hotr.arenaScene.data.teamBCreeps;
-        }
+
 
         this.schedule(function(){
-            var sprite = jc.Sprite.spriteGenerator(spriteDefs, 'goblinKnightNormal', hotr.arenaScene.layer);
-            sprite.id = 'creep-'+team+'-'+i;
+            var sprite = jc.Sprite.spriteGenerator(spriteDefs, name, hotr.arenaScene.layer);
+            sprite.id =  prefix + '-'+team+'-'+i;
             creeps.push(sprite);
             status(i, number);
             i++;

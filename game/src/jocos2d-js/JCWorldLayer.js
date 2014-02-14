@@ -81,6 +81,15 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
 
         this.doScale(scale, converted, rate, doneCallback);
     },
+    panToLayerPoint:function(point, scale, rate, doneCallback){
+        this.capBounds(point);
+        if (!rate){
+            rate = jc.defaultTransitionTime;
+        }
+
+        this.doScale(scale, point, rate, doneCallback);
+
+    },
     fullZoomOut:function(rate, done){
         var scale = this.getScaleWorld();
         //scale = this.getClosestCorrectScale(scale);
@@ -247,25 +256,26 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
         }
     },
     shake:function(){
-        if (!this.shaking){
-            var rot1 = cc.RotateBy.create(0.04,4);
-            var rot2 = cc.RotateBy.create(0.04,-4);
-            var vibrateAction = cc.Sequence.create(rot1,rot2);
+        if (!jc.isBrowser){
+            if (!this.shaking){
+                var rot1 = cc.RotateBy.create(0.04,4);
+                var rot2 = cc.RotateBy.create(0.04,-4);
+                var vibrateAction = cc.Sequence.create(rot1,rot2);
 
-            var vb = cc.Repeat.create(vibrateAction,10);
-            var dt = cc.DelayTime.create(0.05);
+                var vb = cc.Repeat.create(vibrateAction,10);
+                var dt = cc.DelayTime.create(0.05);
 
-            var cb = cc.CallFunc.create(function(){
-                console.log("shake done!");
-                this.shaking=false;
-                this.setRotation(0);
-            }.bind(this));
-            var vibrateAndWait = cc.Sequence.create(vb,dt,cb);
+                var cb = cc.CallFunc.create(function(){
+                    console.log("shake done!");
+                    this.shaking=false;
+                    this.setRotation(0);
+                }.bind(this));
+                var vibrateAndWait = cc.Sequence.create(vb,dt,cb);
 
-            this.runAction(vibrateAndWait);
-            this.shaking = true;
+                this.runAction(vibrateAndWait);
+                this.shaking = true;
+            }
         }
-
     },
     getClosestCorrectScale:function(scale){
         //don't allow a zoom further in than 1
@@ -322,6 +332,9 @@ jc.WorldLayer = jc.UiElementsLayer.extend({
     },
     getScaleWorld:function(){
         return cc.p(0.50, 0.50);
+    },
+    getScaleFull:function(){
+        return cc.p(0.20, 0.20);
     },
     convertToLayerPosition:function(point){
         jc.cap(point, this.playableRect);

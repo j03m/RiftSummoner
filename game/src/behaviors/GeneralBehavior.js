@@ -990,7 +990,7 @@ GeneralBehavior.prototype.handleState = function(dt, selected){
     }else{
         if (this.forceLocked && !this.locked.isAlive()){
             this.forceLocked = false;
-            this.locked = false;
+            this.clearLock();
         }
     }
 
@@ -1381,6 +1381,7 @@ GeneralBehavior.prototype.clearLock = function(){
         jc.lockTable[this.owner.team][this.locked.id] = false;
         this.decrementLock();
         this.timeLocked=0;
+        this.locked = undefined
     }
 }
 

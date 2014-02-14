@@ -15,6 +15,7 @@ makeGuid = function(){
 
 }
 
+
 makeSig = function(creds){
     //make random data
     var random = makeGuid();
@@ -198,31 +199,23 @@ hotr.blobOperations.getLevel = function(){
     return hotr.playerBlob.questLevel;
 }
 
+hotr.blobOperations.getFtueStep = function(){
+    if(!hotr.playerBlob.step){
+        hotr.playerBlob.step=0;
+    }
+    return hotr.playerBlob.step;
+}
+
+
+hotr.blobOperations.incFtueStep = function(){
+    if(!hotr.playerBlob.step){
+        hotr.playerBlob.step=0;
+    }
+    hotr.playerBlob.step++;
+
+}
+
 hotr.inMultiplayer = 0; //until it's set otherwise, disables tutorial steps
-
-hotr.blobOperations.getTutorialLevel = function(){
-    //todo implement me
-    if (hotr.inMultiplayer){
-        return -1;
-    }
-
-    if(!hotr.playerBlob.questLevel){
-        hotr.playerBlob.questLevel=1;
-    }
-
-    return hotr.playerBlob.questLevel;
-}
-
-hotr.blobOperations.getTutorialStep= function(){
-    if (!hotr.playerBlob.tutortialStep){
-        hotr.playerBlob.tutortialStep=1;
-    }
-    return hotr.playerBlob.tutortialStep;
-}
-
-hotr.blobOperations.setTutorialStep= function(val){
-    hotr.playerBlob.tutortialStep = val;
-}
 
 hotr.blobOperations.incrementLevel = function(){
     if(!hotr.playerBlob.questLevel){
@@ -323,6 +316,19 @@ hotr.blobOperations.getEntryWithId = function(id){
 
     if (!entry){
         throw "Could not locate a character with id:"+id;
+    }
+
+    return entry;
+}
+
+hotr.blobOperations.getEntryWithName = function(name){
+    hotr.blobOperations.validate();
+    var entry = _.find(hotr.playerBlob.myguys, function(character){
+        return character.name == name;
+    });
+
+    if (!entry){
+        throw "Could not locate a character with name:"+name;
     }
 
     return entry;

@@ -8,32 +8,35 @@ var MapLayer = jc.UiElementsLayer.extend({
             this.bubbleAllTouches(true);
             jc.layerManager.pushLayer(this, true);
             jc.log(['map'], 'init');
-            this.tutorialStep1 = cc.p(500 * jc.assetScaleFactor,500* jc.assetScaleFactor);
-            this.tutorialStep2 = cc.p(800 * jc.assetScaleFactor,500* jc.assetScaleFactor);
-            this.tutorialStep3 = cc.p(400 * jc.assetScaleFactor,600* jc.assetScaleFactor);
             this.start();
             return true;
         } else {
             return false;
         }
     },
+    enableButtons:function(){
+        this.buttonsEnabled = true;
+    },
     inTransitionsComplete:function(){
 
+        this.level = hotr.blobOperations.getLevel();
         this.summonFrame.setVisible(false);
         this.summonFrame.setZOrder(jc.topMost);
         this.infoDialog.setVisible(false);
         this.infoDialog.setZOrder(jc.topMost);
         this.summonRestore = this.summonFrame.getPosition();
-        if (this.level < 5){
+        if (this.level == 0){
+
+            this.showFTUE();
+            this.buttonsEnabled = false;
             this.buttonSummon.setVisible(false);
+            this.buttonChampions.setVisible(false);
             this.buttonStore.setVisible(false);
-            this.buttonHero.setVisible(false);
         }
 
     },
     onShow:function(){
         this.once = false;
-        this.buttonsEnabled = true;
         jc.log(['map'], 'show');
 
         this.flagAttack1.setVisible(false);
@@ -43,20 +46,6 @@ var MapLayer = jc.UiElementsLayer.extend({
         this.flagAttack5.setVisible(true);
 
 
-        //remove this:
-        if (this.level == 1){
-            jc.log(['map'], 'ftue');
-            //(msg, time, direction, character, callbackIn, callbackOut){
-            hotr.blobOperations.setTutorialStep(1);
-            this.scheduleOnce(function(){
-                this.showTutorialStep("I am honored to meet you, Summoner. But, an orc raiding party approaches. We have work to do.",
-                    undefined,
-                    "left",
-                    "girl");
-            }.bind(this));
-
-            this.step = 1;
-        }
     },
     targetTouchHandler:function(type, touch, sprites) {
         //hide the summoner card
@@ -67,12 +56,8 @@ var MapLayer = jc.UiElementsLayer.extend({
                 return;
             }
             jc.log(['map'], "I like the clicking! More clicking! More!!!");
-
-
         }
-
-       return true;
-
+        return true;
     },
     heroClick:function(){
         if (!this.buttonsEnabled){ return;}
@@ -103,12 +88,9 @@ var MapLayer = jc.UiElementsLayer.extend({
         this.scheduleOnce(function(){
             var pos = this.summonFrame.getPosition();
             var size = this.summonFrame.getContentSize();
-
             var move = cc.MoveTo.create(jc.defaultTransitionTime,cc.p(512*jc.assetScaleFactor,pos.y));
             this.summonFrame.runAction(move);
             this.infoSlideIn(card);
-
-
         }.bind(this), 0.25);
     },
     infoSlideIn:function(name){
@@ -140,10 +122,22 @@ var MapLayer = jc.UiElementsLayer.extend({
         if (!this.buttonsEnabled){ return;}
     },
     attackClick:function(){
+
+
+
         if (!this.buttonsEnabled){ return;}
 
         if (!this.once){
             this.once = true;
+            this.removeArrow();
+            hotr.mainScene.layer.arenaPre();
+        }
+
+    },
+    flagTouch:function(){
+        if (!this.once){
+            this.once = true;
+            this.removeArrow();
             hotr.mainScene.layer.arenaPre();
         }
 
@@ -205,8 +199,10 @@ var MapLayer = jc.UiElementsLayer.extend({
                     }
                 },
                 "flagAttack1": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
+                    "type": "button",
+                    "main": "flagAttack.png",
+                    "pressed": "flagAttack.png",
+                    "touchDelegateName": "flagTouch",
                     "z": 1,
                     "pos": {
                         "x": 1383,
@@ -214,8 +210,10 @@ var MapLayer = jc.UiElementsLayer.extend({
                     }
                 },
                 "flagAttack2": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
+                    "type": "button",
+                    "main": "flagAttack.png",
+                    "pressed": "flagAttack.png",
+                    "touchDelegateName": "flagTouch",
                     "z": 1,
                     "pos": {
                         "x": 989,
@@ -223,8 +221,10 @@ var MapLayer = jc.UiElementsLayer.extend({
                     }
                 },
                 "flagAttack3": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
+                    "type": "button",
+                    "main": "flagAttack.png",
+                    "pressed": "flagAttack.png",
+                    "touchDelegateName": "flagTouch",
                     "z": 1,
                     "pos": {
                         "x": 662,
@@ -232,8 +232,10 @@ var MapLayer = jc.UiElementsLayer.extend({
                     }
                 },
                 "flagAttack4": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
+                    "type": "button",
+                    "main": "flagAttack.png",
+                    "pressed": "flagAttack.png",
+                    "touchDelegateName": "flagTouch",
                     "z": 1,
                     "pos": {
                         "x": 407,
@@ -241,8 +243,10 @@ var MapLayer = jc.UiElementsLayer.extend({
                     }
                 },
                 "flagAttack5": {
-                    "type": "sprite",
-                    "sprite": "flagAttack.png",
+                    "type": "button",
+                    "main": "flagAttack.png",
+                    "pressed": "flagAttack.png",
+                    "touchDelegateName": "flagTouch",
                     "z": 1,
                     "pos": {
                         "x": 600,

@@ -64,19 +64,19 @@ var gameboardSprites = [];
 
 jc.gameboardTiles = 1
 if (jc.characterAssetCategory == 'ipadhd'){
-    jc.gameboardTiles = 2
+    jc.gameboardTiles = 1;
 }
 
 if (jc.characterAssetCategory == 'iphone5'){
-    jc.gameboardTiles = 6;
+    jc.gameboardTiles = 4;
 }
 
 if (jc.characterAssetCategory == 'iphone4'){
-    jc.gameboardTiles = 6
+    jc.gameboardTiles = 4
 }
 
 if (jc.characterAssetCategory == 'iphone'){
-    jc.gameboardTiles = 2
+    jc.gameboardTiles = 1
 }
 
 for(var i =0;i<jc.gameboardTiles;i++){

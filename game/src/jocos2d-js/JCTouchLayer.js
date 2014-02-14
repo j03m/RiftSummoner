@@ -6,8 +6,11 @@ jc.touchEnded = 'end';
 jc.touchBegan = 'began';
 jc.touchMoved = 'moved';
 jc.touchCancelled = 'cancel';
+jc.touchPriorityNormal  = 3;
+jc.touchPriorityHigh  = 0;
+jc.touchPriorityLow  = 5;
 jc.TouchLayer = cc.Layer.extend({
-    init: function() {
+    init: function(touchPriority) {
         if (this._super()) {
 
             this.winSize =  jc.actualSize;
@@ -18,6 +21,10 @@ jc.TouchLayer = cc.Layer.extend({
             this.superOnExit = this.onExit;
             this.onExit = this.childOnExit;
             this.touchTargets=[];
+            if (touchPriority==undefined){
+                touchPriority = jc.touchPriorityNormal;
+            }
+            this.priority = touchPriority;
             this.retain();
             return true;
         } else {
@@ -50,13 +57,13 @@ jc.TouchLayer = cc.Layer.extend({
     wireInput: function(val){
         if ('mouse' in sys.capabilities) {
             if (val){
-                cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, 1);
+                cc.Director.getInstance().getMouseDispatcher().addMouseDelegate(this, this.priority);
             }else{
                 cc.Director.getInstance().getMouseDispatcher().removeMouseDelegate(this);
             }
         } else {
             if (val){
-                cc.registerStandardDelegate(this,0);
+                cc.registerStandardDelegate(this,this.priority);
                 //cc.registerTargetedDelegate(0,true, this);
                 //cc.Director.getInstance().getTouchDispatcher()._addTargetedDelegate(this, 1, true);
             }else{
@@ -102,6 +109,7 @@ jc.TouchLayer = cc.Layer.extend({
         throw "child must implement!"
     },
     hitSpriteTarget:function(type, touches, event){
+
         jc.log(['touchcore'], "Raw Touch:" + JSON.stringify(touches));
 
         var firstTouch = undefined;
@@ -123,6 +131,20 @@ jc.TouchLayer = cc.Layer.extend({
         }
 
         jc.log(['touchcore'], "First Raw Touch Point:" + JSON.stringify(firstTouch));
+
+
+        if (this.ftueMode && type == jc.touchEnded){
+            if (this.pauseFTUE){ //todo implement me
+
+            }else{
+                this.showFTUE();
+                return true;
+            }
+
+        }
+
+
+
 
         var handled = [];
         for (var i=0;i<this.touchTargets.length;i++){
@@ -511,6 +533,76 @@ jc.TouchLayer = cc.Layer.extend({
         }
 
     },
+    showFTUE:function(){
+        var step = hotr.blobOperations.getFtueStep();
+        this.ftueMode = true;
+        if (!hotr.subStep){
+            hotr.subStep = 0;
+        }
+
+        if (step != hotr.currentStep){
+            hotr.currentStep = step;
+            hotr.subStep = 0;
+        }
+
+        continueActions = continueActions.bind(this);
+        var tutorialData = tutorialConfig[hotr.currentStep][hotr.subStep];
+        if (tutorialData){
+            if (tutorialData.exit){
+                this.removeTutorialStep(tutorialData.exit, tutorialData.exitDir, continueActions);
+            }else{
+                continueActions();
+            }
+        }
+
+        function continueActions(){
+            if (tutorialData.type == jc.tutorials.types.character){
+                this.showTutorialStep( tutorialData.msg,
+                    undefined,
+                    tutorialData.direction,
+                    tutorialData.actor,
+                    undefined,
+                    undefined,
+                    tutorialData.y
+                );
+            }
+
+            if (tutorialData.type == jc.tutorials.types.arrow){
+                var position = cc.p(tutorialData.location.x*jc.assetScaleFactor, tutorialData.location.y*jc.assetScaleFactor);
+                this.placeArrow(position, tutorialData.direction);
+            }
+
+
+            if (tutorialData.type == jc.tutorials.types.action){
+                //?
+            }
+
+
+            if (tutorialData.check){
+                var func = this[tutorialData.check].bind(this);
+                func();
+            }
+
+            if (tutorialData.pause){
+                this.pauseFTUE = true;
+            }
+
+            if (tutorialData.unpause){
+                this.pauseFTUE = false;
+            }
+
+            if (tutorialData.hightlightRect){
+                this.clickMask = new jc.LightLayer();
+                this.addChild(this.clickMask);
+                this.clickMask.init(tutorialData.hightlightRect);
+
+            }
+
+            hotr.subStep++;
+        }
+
+    },
+
     getGuide:function(char){
         if (char == 'girl'){
             return "priestessEarth_pose.png";
@@ -526,7 +618,7 @@ jc.TouchLayer = cc.Layer.extend({
 
 
     },
-    showTutorialStep:function(msg, time, direction, character, callbackIn, callbackOut){
+    showTutorialStep:function(msg, time, direction, character, callbackIn, callbackOut, yLevel){
         jc.log(['tutorials'], 'showing:' + character);
         if (!this.guideCharacters){
             jc.log(['tutorials'], 'init');
@@ -540,6 +632,11 @@ jc.TouchLayer = cc.Layer.extend({
             this.getParent().addChild(this.guideCharacters[character]);
         }
 
+        if (this.guideCharacters[character].guideVisible){
+            this.attachMsgTo(msg, character, direction=='left'?'right':'left');
+            return;
+        }
+
         var itemRect = this.guideCharacters[character].getContentSize();
         if (character == 'girl'){
             var adjust = 4.5;
@@ -551,36 +648,47 @@ jc.TouchLayer = cc.Layer.extend({
 
         if (direction == 'right'){
             jc.log(['tutorials'], 'direction:right');
+
             var fromX = (this.winSize.width + itemRect.width);
             jc.log(['tutorials'], 'fromX:'+fromX);
-            var fromY = this.winSize.height/2 -  (itemRect.height/adjust);
-            jc.log(['tutorials'], 'fromY:'+fromY);
+
             var toX = (this.winSize.width +  jc.defaultNudge) - (itemRect.width);
             jc.log(['tutorials'], 'toX:'+toX);
-            var toY = fromY -  (itemRect.height/adjust);
-            jc.log(['tutorials'], 'toY:'+toY);
-            var to = cc.p(toX, toY);
+
             var nudge =  cc.p(jc.defaultNudge,0);
             jc.log(['tutorials'], 'nudge:'+  jc.defaultNudge);
         }else{
             var fromX = (0 - itemRect.width);
             jc.log(['tutorials'], 'fromX:'+fromX);
-            var fromY = this.winSize.height/2 -  (itemRect.height/adjust);
-            jc.log(['tutorials'], 'fromY:'+fromY);
+
             var toX = ((itemRect.width) - jc.defaultNudge);
             jc.log(['tutorials'], 'toX:'+toX);
-            var toY = fromY -  (itemRect.height/adjust);
-            jc.log(['tutorials'], 'toY:'+toY);
-            var to = cc.p(toX, toY);
+
             var nudge =  cc.p(jc.defaultNudge*-1,0);
             jc.log(['tutorials'], 'nudge:' + jc.defaultNudge);
         }
 
+        if (yLevel != undefined){
+            var fromY = yLevel + itemRect.height/2;
+        }else{
+            var fromY = this.winSize.height/2 -  (itemRect.height/adjust);
+        }
+        jc.log(['tutorials'], 'fromY:'+fromY);
+
+        if (yLevel != undefined){
+            var toY = yLevel + itemRect.height/2;
+        }else{
+            var toY = fromY -  (itemRect.height/adjust);
+        }
+        jc.log(['tutorials'], 'toY:'+toY);
+
+        var to = cc.p(toX, toY);
+
         jc.log(['tutorials'], 'sliding');
         this.slide(this.guideCharacters[character], cc.p(fromX,fromY), to, jc.defaultTransitionTime,nudge, 'after',function(){
             //show ms
-            this.guideVisible = true;
-            this.attachMsgTo(msg, this.guideCharacters[character], direction=='left'?'right':'left');
+            this.guideCharacters[character].guideVisible = true;
+            this.attachMsgTo(msg, character, direction=='left'?'right':'left');
             jc.log(['touchlayer'], 'scheduling tutorial removal');
             if(callbackIn){
                 callbackIn();
@@ -593,7 +701,7 @@ jc.TouchLayer = cc.Layer.extend({
 
         }.bind(this));
     },
-    removeTutorialStep: function(character,direction, callback){
+    removeTutorialStep: function(character, direction, callback){
         if (!character){
             character = 'girl';
         }
@@ -604,7 +712,7 @@ jc.TouchLayer = cc.Layer.extend({
             this.shrinkBubble();
             if (direction == 'right'){
                 this.slideOutToRight(this.guideCharacters[character], jc.defaultTransitionTime, undefined, function(){
-                    this.guideVisible = false;
+                    this.guideCharacters[character].guideVisible = false;
                     if (callback){
                         callback();
                     }
@@ -613,7 +721,7 @@ jc.TouchLayer = cc.Layer.extend({
 
             if (direction =='left'){
                 this.slideOutToLeft(this.guideCharacters[character], jc.defaultTransitionTime, undefined, function(){
-                    this.guideVisible = false;
+                    this.guideCharacters[character].guideVisible = false;
                     if (callback){
                         callback();
                     }
@@ -622,21 +730,21 @@ jc.TouchLayer = cc.Layer.extend({
 
         }
     },
-    attachMsgTo:function(msg, element, where){
+    attachMsgTo:function(msg, character, where){
         if (this.bubble){
             this.shrinkBubble(function(){
-                this.doBubble(msg, element, where);
+                this.doBubble(msg, character, where);
             }.bind(this));
         }else{
-            this.doBubble(msg, element, where);
+            this.doBubble(msg, character, where);
         }
     },
-    doBubble:function(msg, element, where){
+    doBubble:function(msg, character, where){
         this.bubble = jc.makeSpriteWithPlist(uiPlist, uiPng, "dialog1.png");
         if (where == 'left'){
             this.bubble.setFlippedX(true);
         }
-        if(!element) {
+        if(!character) {
             throw "nope, need character now.";
         }
 
@@ -644,11 +752,19 @@ jc.TouchLayer = cc.Layer.extend({
             throw "nope, need where now.";
         }
 
+        var element = this.guideCharacters[character];
         var elPos = element.getPosition();
         var elSize = element.getContentSize();
         elSize.width += 50 *jc.assetScaleFactor;
 
-        this.bubble.setPosition(cc.p(this.winSize.width/2, this.winSize.height/2));
+        if (this.name == "Arena"){
+            var y = this.winSize.height/2;
+           // y = y - (y * .25); //move down by 25%
+            this.bubble.setPosition(cc.p(this.winSize.width/2, y));
+        }else{
+            this.bubble.setPosition(cc.p(this.winSize.width/2, this.winSize.height/2));
+        }
+
 
 
         var size = this.bubbleMsgSize(msg);

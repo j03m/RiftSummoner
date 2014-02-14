@@ -37,7 +37,7 @@ var spriteDefs = {
 	},
 	"dragonFire": {
 		"name": "dragonFire",
-		"formalName": "Fire Dragon",
+		"formalName": "Draconis",
 		"details": "These small dragons are aerial terrors that do massive damage to the ground units below them. However, they have a difficulty targeting other air born units. Fire Dragons inflict additional burn damage to targets and splash damage to surrounding units.",
 		"elementType": "fire",
 		"unitType": 2,
@@ -81,7 +81,7 @@ var spriteDefs = {
 	},
 	"dragonVoid": {
 		"name": "dragonVoid",
-		"formalName": "Void Dragon",
+		"formalName": "Bezel",
 		"details": "These small dragons are aerial terrors doing massive damage to ground units below but they have a difficulty targeting other air born units.",
 		"elementType": "void",
 		"unitType": 1,
@@ -171,7 +171,7 @@ var spriteDefs = {
 		"creep": true,
 		"number": 3,
 		"gameProperties": {
-			"MaxHP": 1500,
+			"MaxHP": 3500,
 			"speed": 75,
 			"movementType": 1,
 			"targets": 1,
@@ -196,7 +196,7 @@ var spriteDefs = {
 		"creep": true,
 		"number": 3,
 		"gameProperties": {
-			"MaxHP": 1300,
+			"MaxHP": 3300,
 			"speed": 75,
 			"movementType": 1,
 			"targets": 1,
@@ -224,7 +224,7 @@ var spriteDefs = {
 		"creep": true,
 		"number": 3,
 		"gameProperties": {
-			"MaxHP": 1300,
+			"MaxHP": 3300,
 			"speed": 75,
 			"damage": 60,
 			"movementType": 1,
@@ -258,7 +258,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 1200,
+			"MaxHP": 3200,
 			"speed": 75,
 			"damage": 50,
 			"movementType": 1,
@@ -292,7 +292,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 1200,
+			"MaxHP": 3200,
 			"speed": 75,
 			"damage": 60,
 			"movementType": 1,
@@ -381,7 +381,7 @@ var spriteDefs = {
 	},
 	"elementalEarth": {
 		"name": "elementalEarth",
-		"formalName": "Stone Elemental",
+		"formalName": "Colossus",
 		"details": "Extraordinarily powerful, but slow moving.",
 		"elementType": "earth",
 		"unitType": 3,
@@ -405,7 +405,7 @@ var spriteDefs = {
 	},
 	"elementalFire": {
 		"name": "elementalFire",
-		"formalName": "Fire Elemental",
+		"formalName": "Inferno",
 		"details": "Extraordinarily powerful, but slow moving. These elementals inflict additional burn damage.",
 		"elementType": "fire",
 		"unitType": 3,
@@ -436,7 +436,7 @@ var spriteDefs = {
 	},
 	"elementalWater": {
 		"name": "elementalWater",
-		"formalName": "Water Elemental",
+		"formalName": "Seiche",
 		"details": "Fast elemental creatures that fire at range. Water elementals also have regenerative abilities.",
 		"elementType": "water",
 		"unitType": 3,
@@ -469,12 +469,11 @@ var spriteDefs = {
 	},
 	"elementalWind": {
 		"name": "elementalWind",
-		"formalName": "Wind Elemental",
+		"formalName": "Cyclone",
 		"details": "Fast elemental creatures that fire at range. Wind elementals have knock back capability.",
 		"elementType": "air",
 		"unitType": 3,
 		"multisheet-ipadhd": 2,
-		"multisheet-iphone5": 2,
 		"damageMods": {
 			"knockBack": {
 				"distance": 250
@@ -544,7 +543,7 @@ var spriteDefs = {
 	},
 	"elfArcherEarth": {
 		"name": "elfArcherEarth",
-		"formalName": "Plains Elf",
+		"formalName": "Alada",
 		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Plains Elves are heartier and faster then their other elven cousins.",
 		"elementType": "earth",
 		"flip": true,
@@ -574,7 +573,7 @@ var spriteDefs = {
 	},
 	"elfArcherFire": {
 		"name": "elfArcherFire",
-		"formalName": "Fire Elf",
+		"formalName": "Esha",
 		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. These elves have arrows that burn their targets alive.",
 		"elementType": "earth",
 		"flip": true,
@@ -589,7 +588,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 4000,
+			"MaxHP": 6000,
 			"movementType": 1,
 			"targets": 2,
 			"missile": "arrowFire",
@@ -611,7 +610,7 @@ var spriteDefs = {
 	},
 	"elfArcherLife": {
 		"name": "elfArcherLife",
-		"formalName": "Forest Elf",
+		"formalName": "Eio",
 		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Forest Elves deal poison damage with each arrow.",
 		"elementType": "life",
 		"flip": true,
@@ -624,7 +623,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 4000,
+			"MaxHP": 6000,
 			"damage": 25,
 			"movementType": 1,
 			"targets": 2,
@@ -647,7 +646,7 @@ var spriteDefs = {
 	},
 	"elfArcherVoid": {
 		"name": "elfArcherVoid",
-		"formalName": "Dark Elf",
+		"formalName": "Vorcia",
 		"details": "Elves are powerful archers dealing decent damage while they stay safely at range. Touched with Void magic, Dark Elves have the magic arrows that steal life from targets and give it to all allies on the board.",
 		"elementType": "void",
 		"flip": true,
@@ -659,7 +658,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 2000,
+			"MaxHP": 6000,
 			"damage": 250,
 			"movementType": 1,
 			"missile": "arrowVoid",
@@ -681,7 +680,7 @@ var spriteDefs = {
 	},
 	"elfAssassin": {
 		"name": "elfAssassin",
-		"formalName": "Elvish Assassin",
+		"formalName": "Drakkar",
 		"details": "Elvish Assassin's are mixed units, capable of impressive melee and short ranged attacks with her side arm.",
 		"elementType": "none",
 		"unitType": 3,
@@ -795,7 +794,7 @@ var spriteDefs = {
 	},
 	"gargoyleFire": {
 		"name": "gargoyleFire",
-		"formalName": "Fire Demon",
+		"formalName": "Winged Demon - Fire",
 		"details": "An winged creature embued with elemental fire. It possesses magic that it uses to attack other air or ground targets. Fire demons inflict additional burn damage to enemies.",
 		"elementType": "fire",
 		"unitType": 0,
@@ -810,7 +809,7 @@ var spriteDefs = {
 			}
 		},
 		"gameProperties": {
-			"MaxHP": 1000,
+			"MaxHP": 2000,
 			"speed": 150,
 			"movementType": 0,
 			"targets": 2,
@@ -834,14 +833,14 @@ var spriteDefs = {
 	},
 	"gargoyleVoid": {
 		"name": "gargoyleVoid",
-		"formalName": "Void Demon",
+		"formalName": "Winged Demon - Void",
 		"details": "An winged creature embued with the void. It possesses magic that it uses to destroy other air or ground targets.",
 		"elementType": "void",
 		"special": "None",
 		"creep": true,
 		"number": 3,
 		"gameProperties": {
-			"MaxHP": 1000,
+			"MaxHP": 2000,
 			"movementType": 0,
 			"targets": 2,
 			"speed": 150,
@@ -990,7 +989,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
-			"MaxHP": 1000,
+			"MaxHP": 2500,
 			"speed": 175,
 			"movementType": 1,
 			"targets": 1,
@@ -1022,7 +1021,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Burn Damage",
 		"gameProperties": {
-			"MaxHP": 1000,
+			"MaxHP": 2500,
 			"speed": 90,
 			"movementType": 1,
 			"targets": 1,
@@ -1048,7 +1047,7 @@ var spriteDefs = {
 		"unitType": 3,
 		"special": "Resist Fire",
 		"gameProperties": {
-			"MaxHP": 1000,
+			"MaxHP": 2500,
 			"speed": 100,
 			"movementType": 1,
 			"targets": 1,
@@ -1077,7 +1076,7 @@ var spriteDefs = {
 		"creep": true,
 		"special": "Resist Fire",
 		"gameProperties": {
-			"MaxHP": 1000,
+			"MaxHP": 2500,
 			"speed": 75,
 			"movementType": 1,
 			"targets": 1,
@@ -1136,7 +1135,7 @@ var spriteDefs = {
 	},
 	"knightEarth": {
 		"name": "knightEarth",
-		"formalName": "Elemental Knight - Earth",
+		"formalName": "Durge",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of earth, this unit has almost 2x the health of other elemental knights.",
 		"elementType": "earth",
 		"unitType": 3,
@@ -1162,7 +1161,7 @@ var spriteDefs = {
 	},
 	"knightFire": {
 		"name": "knightFire",
-		"formalName": "Elemental Knight - Fire",
+		"formalName": "Volcanis",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of fire, this unit deals additional burn damage to its targets.",
 		"elementType": "fire",
 		"unitType": 3,
@@ -1194,7 +1193,7 @@ var spriteDefs = {
 	},
 	"knightVoid": {
 		"name": "knightVoid",
-		"formalName": "Elemental Knight - Void",
+		"formalName": "Demeter",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of the void, this unit saps life from nearby enemies, healing itself.",
 		"elementType": "void",
 		"unitType": 3,
@@ -1227,7 +1226,7 @@ var spriteDefs = {
 	},
 	"knightWater": {
 		"name": "knightWater",
-		"formalName": "Elemental Knight - Water",
+		"formalName": "Mist",
 		"details": "Elemental Knights are heavy tank units that are slow, but deal massive amounts of damage. Embued with the elemental power of water, this unit also heals any units nearby.",
 		"elementType": "water",
 		"unitType": 3,
@@ -1306,7 +1305,7 @@ var spriteDefs = {
 	},
 	"necromancer": {
 		"name": "necromancer",
-		"formalName": "Necromancer",
+		"formalName": "Cassandra",
 		"details": "Necromancers are light range units, but will summon back your dead team members as skeleton warriors.",
 		"elementType": "void",
 		"unitType": 3,
@@ -1384,7 +1383,7 @@ var spriteDefs = {
 	},
 	"ogre": {
 		"name": "ogre",
-		"formalName": "Ogre",
+		"formalName": "Gor",
 		"byStep": 1,
 		"flip": true,
 		"cardIndex": 0,
@@ -1453,7 +1452,7 @@ var spriteDefs = {
 	"orc": {
 		"name": "orc",
 		"flip": true,
-		"formalName": "Orc Warrior",
+		"formalName": "Orc",
 		"details": "Orcs are fast, fierce attackers. What they lack in heavy armor, they make up for in pure tenacity.",
 		"elementType": "none",
 		"unitType": 3,
@@ -1513,7 +1512,7 @@ var spriteDefs = {
 	},
 	"priestessEarth": {
 		"name": "priestessEarth",
-		"formalName": "Priestess - Earth",
+		"formalName": "Gaia",
 		"details": "A priestess of the element earth. She will support your warriors with the healing arts.",
 		"elementType": "earth",
 		"unitType": 3,
@@ -1620,7 +1619,7 @@ var spriteDefs = {
 		"number": 3,
 		"special": "None",
 		"gameProperties": {
-			"MaxHP": 2000,
+			"MaxHP": 4000,
 			"movementType": 1,
 			"targets": 1,
 			"speed": 225,
@@ -1907,7 +1906,7 @@ var spriteDefs = {
 	},
 	"troll": {
 		"name": "troll",
-		"formalName": "Goblin Cleric",
+		"formalName": "Graak",
 		"details": "These small trolls are expert in healing magic. They will stay back, supporting your warriors and healing them in battle.",
 		"elementType": "none",
 		"unitType": 3,
@@ -1964,7 +1963,7 @@ var spriteDefs = {
 	},
 	"wizard": {
 		"name": "wizard",
-		"formalName": "Goblin Wizard",
+		"formalName": "Secanis",
 		"details": "These goblins are masters of destructive magic and can do serious damage at an impressive range.",
 		"elementType": "none",
 		"unitType": 4,

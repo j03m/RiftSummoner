@@ -359,6 +359,7 @@ var MainGame = cc.Layer.extend({
         }
 
         this.addAssetChain(assets, 'goblinKnightNormal');
+        this.addAssetChain(assets, 'orc');
         this.addAssetChain(assets, 'nexus');
 
         //todo: load character powers - oh boy.
@@ -473,9 +474,6 @@ var MainGame = cc.Layer.extend({
             this.addAssetChain(assetAry, 'skeletonSwordsman');
             this.addAssetChain(assetAry,'skeletonArcher');
         }
-
-
-
     }
 
 });
