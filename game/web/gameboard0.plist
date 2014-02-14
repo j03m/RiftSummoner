@@ -7,54 +7,54 @@
             <key>board1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{383,383},{377,427}}</string>
+                <string>{{686,686},{679,768}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{377,427}}</string>
+                <string>{{0,0},{679,768}}</string>
                 <key>sourceSize</key>
-                <string>{377,427}</string>
+                <string>{679,768}</string>
             </dict>
             <key>board2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{379,427}}</string>
+                <string>{{2,2},{682,768}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{379,427}}</string>
+                <string>{{0,0},{682,768}}</string>
                 <key>sourceSize</key>
-                <string>{379,427}</string>
+                <string>{682,768}</string>
             </dict>
             <key>board3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,431},{379,427}}</string>
+                <string>{{2,772},{682,768}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{379,427}}</string>
+                <string>{{0,0},{682,768}}</string>
                 <key>sourceSize</key>
-                <string>{379,427}</string>
+                <string>{682,768}</string>
             </dict>
             <key>board4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{383,2},{379,427}}</string>
+                <string>{{686,2},{682,768}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{379,427}}</string>
+                <string>{{0,0},{682,768}}</string>
                 <key>sourceSize</key>
-                <string>{379,427}</string>
+                <string>{682,768}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -64,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>gameboard0.png</string>
             <key>size</key>
-            <string>{1024,1024}</string>
+            <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:940d8e326c76540023efb3d3ad706c38:ab65b5d6db310d35afdb29153ce6a491:65936735b695a4d23de3910587e7b045$</string>
+            <string>$TexturePacker:SmartUpdate:2bff9fd59a73df380c1e7d0a25640e67:ab65b5d6db310d35afdb29153ce6a491:ab09f15d39a6579beed151fc3bfd8bcd$</string>
             <key>textureFileName</key>
             <string>gameboard0.png</string>
         </dict>
